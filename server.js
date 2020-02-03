@@ -11,11 +11,13 @@ const port =  process.env.PORT || 3000;
 let app = express();
 
 app.use(sassMiddleware({
-  src: __dirname + '/public/styles/',
-  dest: __dirname + '/styles/',
+  src: __dirname + '/public',
+  dest: __dirname + '/',
   outputStyle: 'compressed',
   debug: true
 }));
+
+app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use("/assets", express.static(path.join(__dirname, '/assets')));
@@ -40,6 +42,11 @@ function startServer() {
 // GET method for home page
 app.get('/', function(request, response) {
   response.render('pages/index.html');
+});
+
+// GET method for components page
+app.get('/components', function(request, response) {
+  response.render('pages/components.html');
 });
 
 // GET method to prevent 404 not found
