@@ -1,0 +1,103 @@
+:root {
+  --viewport-width: 1280px;
+}
+
+html {
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  margin-top: 64px;
+  background-color: rgba(0,0,0,0.02); /* Duda: como defino este color?? */
+}
+
+.top-nav {
+  background-color: #7ABDEB; /* Duda: donde defino este color?? */
+}
+
+.main-wrapper {
+  max-width: var(--viewport-width);
+  margin: 0 auto;
+
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px 0;
+}
+
+.aulas-card__title, .projects-card__title {
+  text-align: center;
+}
+
+.aulas-card__action-icons {
+  justify-content: center;
+}
+
+.aulas-card {
+  background-color: var(--mdc-theme-aulas__blue);
+}
+
+.projects-card__secondary {
+  display: flex;
+  justify-content: center;
+}
+
+.projects-link {
+  display: flex;
+  align-items: center;
+}
+
+.projects-card__media, .aulas-card__media {
+  height: 110px;
+  width: 110px;
+  border-radius: 50% !important;
+  margin: 24px auto;
+  position: relative;
+}
+
+.projects-card__media::after {
+  content: "";
+  border-radius: 50%;
+  height: 33px;
+  width: 33px;
+  background-color: var(--mdc-theme-primary);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.aulas-card__action-icons {
+  flex-grow: 0;
+}
+
+.aulas-card__actions {
+  justify-content: center;
+}
+
+.class-number-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.class-number {
+  background-color: var(--mdc-theme-primary);
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.class-number::before {
+
+}
