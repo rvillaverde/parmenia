@@ -1,5 +1,11 @@
 :root {
   --viewport-width: 1280px;
+
+  --app-nav__heigth--desktop: 64px;
+  --app-nav__heigth--mobile: 56px;
+
+  --header__height: 240px;
+  --top-nav-heigth: 48px;
 }
 
 html {
@@ -9,18 +15,79 @@ html {
 
 body {
   margin: 0;
-  margin-top: 64px;
+  margin-top: var(--app-nav__heigth--desktop);
   background-color: rgba(0,0,0,0.02); /* Duda: como defino este color?? */
 }
 
+@media (max-width: 599px) {
+  body {
+    margin-top: var(--app-nav__heigth--mobile);
+  }
+}
+
+.max-width {
+  margin: 0 auto;
+  max-width: var(--viewport-width);
+}
+
+.sticky {
+  position: fixed;
+  z-index: 2;
+}
+
 .top-nav {
-  background-color: #7ABDEB; /* Duda: donde defino este color?? */
+  background-color: white;
+  margin-top: calc(var(--top-nav-heigth) * -1);
+  opacity: 0.6;
+  width: 100%;
+}
+
+.mdc-header {
+  background-color: var(--mdc-theme-custom__01);
+  height: var(--header__height);
+  width: 100%;
+}
+
+.mcd-header__welcome {
+  background-color: var(--mdc-theme-primary);
+}
+
+.mdc-header__cover {
+  height: 444px;
+  width: 444px;
+  border-radius: 50%;
+  background-image: url('img/nature.png');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  transform: translateX(-42%) translateY(-62%);
+}
+
+.mdc-header__row {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.mdc-header__section-background {
+  background-image: url('img/home.png');
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.mdc-tab-bar {
+  margin: 0 auto;
+  max-width: var(--viewport-width);
 }
 
 .main-wrapper {
-  max-width: var(--viewport-width);
-  margin: 0 auto;
-
   min-height: 100vh;
   padding: 20px;
 }

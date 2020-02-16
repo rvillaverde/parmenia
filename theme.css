@@ -3,15 +3,15 @@
   --mdc-theme-secondary: #6274E5;
 
   --mdc-theme-aulas__blue: #7ABDEB;
+  --mdc-theme-custom__01: #5FBC98;
 }
 
 .mdc-top-app-bar {
   top: 0;
 }
 
-.mdc-tab-bar {
-  margin: 0 auto;
-  max-width: var(--viewport-width);
+.mdc-tab {
+  flex-basis: 0;
 }
 
 .mdc-tab-indicator--active {

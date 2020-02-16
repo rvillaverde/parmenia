@@ -2,16 +2,100 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato|Poppins|Roboto&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="theme.css">
   </head>
-  <body class="container mdc-typography">
 
-    <main class="main-wrapper">
+  <body class="container mdc-typography">
+    <nav class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+          <span class="mdc-top-app-bar__title">Colegio Lasalle</span>
+        </section>
+
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__actions" role="toolbar">
+          <button class="mdc-top-app-bar__action-item mdc-button" aria-label="Download">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.7715 19.6467L17.6955 22.2027" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M7.22771 19.6467L6.30371 22.2027" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M22.0147 4.67737H1.98535V19.6454H22.0147V4.67737Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M22.6666 3.81336C22.6666 4.2907 22.2773 4.67736 21.7959 4.67736H2.20392C1.72259 4.67736 1.33325 4.2907 1.33325 3.81336V2.66136C1.33325 2.18403 1.72259 1.79736 2.20392 1.79736H21.7959C22.2773 1.79736 22.6666 2.18403 22.6666 2.66136V3.81336Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M11.668 8.61469H17.3146" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M11.668 12.164H18.9826" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M11.668 15.7133H17.3146" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M6.87576 12.584C7.90227 12.584 8.73442 11.7519 8.73442 10.7254C8.73442 9.69885 7.90227 8.8667 6.87576 8.8667C5.84924 8.8667 5.01709 9.69885 5.01709 10.7254C5.01709 11.7519 5.84924 12.584 6.87576 12.584Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+            </svg>
+            <span class="mdc-button__label">Mis Aulas</span>
+          </button>
+
+          <button class="mdc-top-app-bar__action-item mdc-button" aria-label="Download">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.33325 2.98132H7.73325C10.0893 2.98132 11.9999 4.90799 11.9999 7.28532V22.352C11.9999 20.5693 10.5666 19.124 8.79992 19.124H1.33325V2.98132Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M22.6667 2.98132H16.2667C13.9107 2.98132 12 4.90799 12 7.28532V22.352C12 20.5693 13.4333 19.124 15.2 19.124H22.6667V2.98132Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M14.7717 8.06531H19.8997" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M14.7717 11.288H19.8997" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M14.7717 14.512H19.8997" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+            </svg>
+            <span class="mdc-button__label">Biblioteca</span>
+          </button>
+
+          <button class="mdc-top-app-bar__action-item mdc-button" aria-label="Download">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.02533 4.35468H19.9747C21.0933 4.35468 22 5.27068 22 6.40001V19.9547C22 21.084 21.0933 22 19.9747 22H4.02533C2.90667 22 2 21.084 2 19.9547V6.40001C2 5.27068 2.90667 4.35468 4.02533 4.35468Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M17.688 2V4.572" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M6.31201 2V4.572" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M2 8.90399H22" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M6.06244 14.2026C6.62872 14.2026 7.08778 13.7436 7.08778 13.1773C7.08778 12.611 6.62872 12.152 6.06244 12.152C5.49617 12.152 5.03711 12.611 5.03711 13.1773C5.03711 13.7436 5.49617 14.2026 6.06244 14.2026Z" fill="white"/>
+              <path d="M10.0624 14.2026C10.6287 14.2026 11.0878 13.7436 11.0878 13.1773C11.0878 12.611 10.6287 12.152 10.0624 12.152C9.49617 12.152 9.03711 12.611 9.03711 13.1773C9.03711 13.7436 9.49617 14.2026 10.0624 14.2026Z" fill="white"/>
+              <path d="M14.0624 14.2026C14.6287 14.2026 15.0878 13.7436 15.0878 13.1773C15.0878 12.611 14.6287 12.152 14.0624 12.152C13.4962 12.152 13.0371 12.611 13.0371 13.1773C13.0371 13.7436 13.4962 14.2026 14.0624 14.2026Z" fill="white"/>
+              <path d="M18.0624 14.2026C18.6287 14.2026 19.0878 13.7436 19.0878 13.1773C19.0878 12.611 18.6287 12.152 18.0624 12.152C17.4962 12.152 17.0371 12.611 17.0371 13.1773C17.0371 13.7436 17.4962 14.2026 18.0624 14.2026Z" fill="white"/>
+              <path d="M6.06244 18.2026C6.62872 18.2026 7.08778 17.7436 7.08778 17.1773C7.08778 16.611 6.62872 16.152 6.06244 16.152C5.49617 16.152 5.03711 16.611 5.03711 17.1773C5.03711 17.7436 5.49617 18.2026 6.06244 18.2026Z" fill="white"/>
+              <path d="M10.0624 18.2026C10.6287 18.2026 11.0878 17.7436 11.0878 17.1773C11.0878 16.611 10.6287 16.152 10.0624 16.152C9.49617 16.152 9.03711 16.611 9.03711 17.1773C9.03711 17.7436 9.49617 18.2026 10.0624 18.2026Z" fill="white"/>
+              <path d="M14.0624 18.2026C14.6287 18.2026 15.0878 17.7436 15.0878 17.1773C15.0878 16.611 14.6287 16.152 14.0624 16.152C13.4962 16.152 13.0371 16.611 13.0371 17.1773C13.0371 17.7436 13.4962 18.2026 14.0624 18.2026Z" fill="white"/>
+              <path d="M18.0624 18.2026C18.6287 18.2026 19.0878 17.7436 19.0878 17.1773C19.0878 16.611 18.6287 16.152 18.0624 16.152C17.4962 16.152 17.0371 16.611 17.0371 17.1773C17.0371 17.7436 17.4962 18.2026 18.0624 18.2026Z" fill="white"/>
+            </svg>
+            <span class="mdc-button__label">Agenda</span>
+          </button>
+        </section>
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__actions" role="toolbar">
+          <button class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Download">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.2292 11.5627H7.77056C5.21589 11.5627 3.69189 9.40666 3.69189 6.74666V22.6667H20.3066V6.20667C20.3066 6.20667 20.2999 6.80266 20.2986 6.82666C20.2572 9.44933 18.7572 11.5627 16.2292 11.5627Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M5.24645 4.58801C4.38778 4.58801 3.69312 5.31201 3.69312 6.20535C3.69312 6.20535 3.69312 6.67868 3.69312 6.74668C3.69312 9.40668 5.21712 11.5627 7.77178 11.5627H16.2304C18.7585 11.5627 20.2584 9.44935 20.3011 6.82668C20.3024 6.80268 20.3091 6.20668 20.3091 6.20668C20.3091 5.31335 19.6131 4.58935 18.7558 4.58935H5.24645V4.58801Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M16.6292 18.9373C16.6292 19.2146 16.4132 19.4386 16.1478 19.4386H7.85316C7.58649 19.4386 7.37183 19.2146 7.37183 18.9373V15.6853C7.37183 15.408 7.58783 15.184 7.85316 15.184H16.1478C16.4145 15.184 16.6292 15.408 16.6292 15.6853V18.9373V18.9373Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              <path d="M8.29858 4.58798C8.29858 2.79065 9.95592 1.33331 11.9999 1.33331C14.0439 1.33331 15.7013 2.79065 15.7013 4.58798" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+            </svg>
+          </button>
+
+          <button class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Download">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </section>
+      </div>
+    </nav>
+
+    <header class="mdc-header mcd-header__welcome mdc--theme-primary">
+      <div class="mdc-header__row max-width">
+        <div class="mdc-header__section-background max-width" data-speed="0.2"></div>
+        <section class="mdc-header__section mdc-header__section--align-start">
+        </section>
+      </div>
+    </header>
+
+    <main class="main-wrapper max-width">
       <h1 class="mdc-typography mdc-typography--headline1">Bienvenide a Parmenia!</h1>
 
       <a class="mdc-button mdc-button--raised" href="components.html">
