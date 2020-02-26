@@ -1,0 +1,185 @@
+:root {
+  --mdc-theme-primary: #54637A;
+  --mdc-theme-secondary: #6274E5;
+
+  --mdc-theme-secondary__050: #D2D8FF;
+  --mdc-theme-secondary__075: #E0E3FA;
+  --mdc-theme-secondary__100: #BCC4FF;
+  --mdc-theme-secondary__200: #A5AFFE;
+  --mdc-theme-secondary__300: #8E9AF6;
+
+  --mdc-theme-gray__025: #F2F2F2;
+  --mdc-theme-gray__050: #ECEEF1;
+  --mdc-theme-gray__100: #CFD5DC;
+  --mdc-theme-gray__200: #B0B7C5;
+
+  --mdc-theme-aulas__blue: #7ABDEB;
+  --mdc-theme-custom__01: #5FBC98;
+
+  --mdc-theme-typography: 'Poppins';
+}
+
+.mdc-typography, .mdc-components, .mdc-text-field, .mdc-text-field__input {
+  font-family: var(--mdc-theme-typography), sans-serif;
+}
+
+.mdc-typography--headline1 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 44px;
+  margin: 0;
+}
+
+.mdc-typography--headline2 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 0;
+}
+
+.mdc-typography--headline3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 0;
+}
+
+.mdc-typography--headline4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+}
+
+.mdc-typography--subtitle2 {
+  font-family: Lato;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 16px;
+  margin: 0;
+}
+
+.mdc-typography--caption {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.mdc-button--raised {
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 24px;
+  text-transform: none;
+}
+
+.mdc-button--raised, .mdc-button--raised:not(:disabled) {
+  background-color: white;
+  border: 2px solid var(--mdc-theme-secondary);
+  color: var(--mdc-theme-secondary);
+}
+
+.mdc-button--raised:disabled {
+  background-color: white;
+  border-color: gray;
+  color: gray;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) {
+  background-color: white;
+}
+
+.mdc-text-field:not(.mdc-text-field--outlined):not(.mdc-text-field--disabled):hover {
+  background: var(--mdc-theme-secondary__050);
+}
+
+.mdc-text-field:not(.mdc-text-field--outlined):not(.mdc-text-field--disabled).mdc-text-field--focused {
+  background: var(--mdc-theme-secondary__075);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+  border-bottom-color: white;
+}
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--mdc-theme-secondary);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading, 
+.mdc-text-field:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch,
+.mdc-text-field:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: var(--mdc-theme-secondary);
+}
+
+.mdc-text-field .mdc-line-ripple::after {
+  border-bottom-color: var(--mdc-theme-secondary);
+}
+
+.mdc-top-app-bar {
+  top: 0;
+}
+
+.mdc-top-app-bar__actions {
+  flex-grow: 0;
+}
+
+.mdc-tab {
+  flex-basis: 0;
+}
+
+.mdc-tab-indicator--active {
+  display: none;
+}
+
+.mdc-tab--active > .mdc-tab-indicator--active {
+  display: flex;
+}
+
+.mdc-button .mdc-button__icon {
+  height: 24px;
+  width: 24px;
+}
+
+.mdc-header {
+  background-color: var(--mdc-theme-custom__01);
+  height: var(--header__height);
+  width: 100%;
+}
+
+.mcd-header__welcome {
+  background-color: var(--mdc-theme-primary);
+}
+
+.mdc-header__cover {
+  height: 444px;
+  width: 444px;
+  border-radius: 50%;
+  background-image: url('../img/nature.png');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  transform: translateX(-42%) translateY(-62%);
+}
+
+.mdc-header__row {
+  height: 100%;
+  margin: 0 auto;
+  max-width: var(--viewport-width);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.mdc-header__section-background {
+  background-image: url('img/home.png');
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
