@@ -2,6 +2,16 @@
   --mdc-theme-primary: #54637A;
   --mdc-theme-secondary: #6274E5;
 
+  --mdc-theme-primary__050: #ECEEF1;
+  --mdc-theme-primary__100: #CFD5DC;
+  --mdc-theme-primary__200: #B0B7C5;
+  --mdc-theme-primary__300: #909CAE;
+  --mdc-theme-primary__400: #78869C;
+  --mdc-theme-primary__500: #60718B;
+  --mdc-theme-primary__700: #455564;
+  --mdc-theme-primary__800: #37424F;
+  --mdc-theme-primary__900: #262E38;
+
   --mdc-theme-secondary__050: #D2D8FF;
   --mdc-theme-secondary__075: #E0E3FA;
   --mdc-theme-secondary__100: #BCC4FF;
@@ -65,6 +75,12 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
+}
+
+.mdc-button {
+  font-family: var(--mdc-theme-typography);
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .mdc-button--raised {
@@ -139,7 +155,12 @@
 
 .mdc-button .mdc-button__icon {
   height: 24px;
+  margin-right: 0;
   width: 24px;
+}
+
+.mdc-button .mdc-button__icon + .mdc-button__label {
+  margin-left: 8px;
 }
 
 .mdc-header {

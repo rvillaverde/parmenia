@@ -5,6 +5,7 @@
   justify-content: space-between;
   padding: 24px 48px;
   width: 100%;
+  z-index: 24;
 }
 
 @media (max-width: 599px) {
@@ -16,7 +17,7 @@
 }
 
 .login-footer {
-  background-color: transparent;
+  background-color: var(--mdc-theme-primary);
   bottom: 0;
   color: white;
   position: fixed;

@@ -1,0 +1,15 @@
+.mdc-top-app-bar__section {
+  padding: 0;
+}
+
+.mdc-top-app-bar__action-item {
+  font-weight: 600;
+  height: 100%;
+  text-transform: none;
+  padding: 0 16px;
+  border-radius: 0;
+}
+
+.mdc-top-app-bar__action-item:hover {
+  background: var(--mdc-theme-primary__700);
+}
