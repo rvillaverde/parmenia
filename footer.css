@@ -29,7 +29,6 @@
 }
 
 .footer-left-col span {
-  font-family: var(--mdc-theme-typography), sans-serif;
   margin: 0 8px;
   margin-bottom: 12px;
 }
@@ -44,7 +43,7 @@
 }
 
 .footer-right-col a {
-  color: black;
+  color: var(--mdc-theme-gray__700);
 }
 
 .login-footer .footer-right-col a {

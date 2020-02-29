@@ -22,7 +22,12 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  padding: 24px 0;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.aulas-card__title {
+  color: white;
 }
 
 .aulas-card__title, .projects-card__title {

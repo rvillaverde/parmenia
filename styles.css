@@ -29,3 +29,54 @@ body {
   margin: 36px auto;
   max-width: var(--viewport-width);
 }
+
+.headline-wrapper {
+  align-items: center;
+  display: flex;
+  margin: 24px 0;
+}
+
+.headline-icon {
+  height: 34px;
+  widows: 34px;
+}
+
+.headline-icon + .mdc-typography--headline4 {
+  margin-left: 8px;
+}
+
+/* -- Notifications -- */
+.mdc-card.notifications {
+  padding: 12px;
+}
+
+.notification-wrapper {
+  display: flex;
+  padding: 12px;
+}
+
+.notification-icon {
+  background-color: var(--mdc-theme-custom__00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+
+.notification {
+  flex-grow: 1;
+  display: flex;
+  margin-left: 18px;
+  border-bottom: 1px solid var(--mdc-theme-gray__300);
+}
+
+.notification-inner {
+  flex-grow: 1;
+  padding-bottom: 24px;
+}
+
+.notification-date {
+  flex-grow: 0;
+}
