@@ -2,6 +2,10 @@
   border-radius: 8px;
 }
 
+.mdc-card__primary-action {
+  height: 100%;
+}
+
 .mdc-card__primary-action:hover::before {
   opacity: 0;
 }
@@ -42,14 +46,26 @@
   background-color: var(--mdc-theme-aulas__blue);
 }
 
+.projects-card__primary {
+  margin-bottom: 4px;
+}
+
 .projects-card__secondary {
   display: flex;
+  margin: 48px 0;
+  margin-top: 0;
   justify-content: center;
 }
 
 .projects-link {
-  display: flex;
   align-items: center;
+  display: flex;
+  margin: 0 12px;
+  text-decoration: none;
+}
+
+.projects-link > *:last-child {
+  margin-left: 8px;
 }
 
 .projects-card__media, .aulas-card__media {
@@ -60,21 +76,49 @@
   position: relative;
 }
 
-.projects-card__media::after {
-  content: "";
+.mdc-card__status {
   border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
   height: 33px;
   width: 33px;
   background-color: var(--mdc-theme-primary);
   position: absolute;
   right: 0;
   bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.mdc-card__status.loading {
+  background-color: var(--mdc-theme-secondary);
+}
+
+.mdc-card__status.unpublished {
+  background-color: var(--mdc-theme-gray__400);
+}
+
+.mdc-card__status.finished {
+  background-color: var(--mdc-theme-primary);
+}
+
+.mdc-card__status-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.project-card.loading .projects-card__media::after {
+  background-color: var(--mdc-theme-secondary);
+}
 .aulas-card__action-icons {
   flex-grow: 0;
 }
 
 .aulas-card__actions {
   justify-content: center;
+}
+
+.mdc-card__linear-progress-wrapper {
+  margin: 4px 16px;
+  margin-top: auto;
 }

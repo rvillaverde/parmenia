@@ -34,5 +34,9 @@
   --mdc-theme-custom__00: #7ABDEB;
   --mdc-theme-custom__01: #5FBC98;
 
+  --mdc-theme-progress__01: #F5B651;
+  --mdc-theme-progress__02: #67C98E;
+  --mdc-theme-progress__03: var(--mdc-theme-secondary__300);
+
   --mdc-theme-typography: 'Poppins';
 }
