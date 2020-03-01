@@ -122,6 +122,12 @@ body {
   border-bottom: 1px solid var(--mdc-theme-gray__300);
 }
 
+@media (max-width: 480px) {
+  .notification {
+    flex-wrap: wrap;
+  }
+}
+
 .notification-inner {
   flex-grow: 1;
   padding-bottom: 24px;
@@ -129,6 +135,13 @@ body {
 
 .notification-date {
   flex-grow: 0;
+  min-width: 80px;
+}
+
+@media (max-width: 480px) {
+  .notification-date {
+    width: 100%;
+  }
 }
 
 .mdc-linear-progress__wrapper {

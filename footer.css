@@ -46,7 +46,7 @@
   color: var(--mdc-theme-gray__700);
 }
 
-.login-footer .footer-right-col a {
+.login-footer .footer-right-col * {
   color: white;
 }
 
