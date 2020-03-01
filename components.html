@@ -107,73 +107,163 @@
     </header>
 
     <main class="main-wrapper">
-      <!-- Noticias { -->
-      <div class="headline-wrapper">
-        <i class="headline-icon">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.53509 23.7548C9.96437 23.7548 10.3124 23.4068 10.3124 22.9775C10.3124 22.5482 9.96437 22.2002 9.53509 22.2002C9.10581 22.2002 8.75781 22.5482 8.75781 22.9775C8.75781 23.4068 9.10581 23.7548 9.53509 23.7548Z" fill="#757575"/>
-            <path d="M9.53509 26.4709C9.96437 26.4709 10.3124 26.1229 10.3124 25.6937C10.3124 25.2644 9.96437 24.9164 9.53509 24.9164C9.10581 24.9164 8.75781 25.2644 8.75781 25.6937C8.75781 26.1229 9.10581 26.4709 9.53509 26.4709Z" fill="#757575"/>
-            <path d="M12.3996 18.6094H5.6884C3.06851 18.6094 0.944458 16.4777 0.944458 13.8579C0.944458 11.238 3.06851 9.1073 5.6884 9.1073H12.3996V18.6094Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-            <path d="M21.2028 22.576L13.4272 18.9503C12.8133 18.7463 12.3997 18.173 12.3997 17.5261V10.1906C12.3997 9.54364 12.8133 8.97036 13.4272 8.76636L21.2028 5.14064C22.1747 4.81764 23.1767 5.54108 23.1767 6.56486V21.1527C23.1767 22.1756 22.1737 22.899 21.2028 22.576Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-            <path d="M26.2632 15.8658L23.1768 16.8565V11.459L26.2632 12.4497V15.8658Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-            <path d="M12.02 18.6056V26.4539C12.02 27.8262 10.9074 28.9378 9.53607 28.9378C8.1638 28.9378 7.05219 27.8253 7.05219 26.4539V18.6056" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-            <path d="M29.3279 14.1582H33.0556" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-            <path d="M28.2512 9.75143L31.1374 7.39221" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-            <path d="M28.2512 18.5641L31.1374 20.9243" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-            <path d="M9.53516 9.75146V18.6094" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-          </svg>
-        </i>
-        <h4 class="mdc-typography--headline4">Cartelera de noticias</h4>
-      </div>
-
-      <div class="mdc-layout-grid cards news">
+      <div class="mdc-layout-grid cards">
         <div class="mdc-layout-grid__inner">
-          <div class="mdc-card news-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
-            <div class="mdc-card__primary-action news-card__primary-action" tabindex="0">
-              <div class="mdc-card__media mdc-card__media--16-9 news-card__media" style="background-image: url('img/placeholder.png');"></div>
-              <div class="mdc-card__primary news-card__primary">
-                <h2 class="news-card__title mdc-typography mdc-typography--headline3">Título noticia</h2>
-              </div>
-              <div class="mdc-card__secondary news-card__secondary mdc-typography mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-              </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop">
+            <!-- Noticias { -->
+            <div class="headline-wrapper">
+              <i class="headline__icon">
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.53509 23.7548C9.96437 23.7548 10.3124 23.4068 10.3124 22.9775C10.3124 22.5482 9.96437 22.2002 9.53509 22.2002C9.10581 22.2002 8.75781 22.5482 8.75781 22.9775C8.75781 23.4068 9.10581 23.7548 9.53509 23.7548Z" fill="#757575"/>
+                  <path d="M9.53509 26.4709C9.96437 26.4709 10.3124 26.1229 10.3124 25.6937C10.3124 25.2644 9.96437 24.9164 9.53509 24.9164C9.10581 24.9164 8.75781 25.2644 8.75781 25.6937C8.75781 26.1229 9.10581 26.4709 9.53509 26.4709Z" fill="#757575"/>
+                  <path d="M12.3996 18.6094H5.6884C3.06851 18.6094 0.944458 16.4777 0.944458 13.8579C0.944458 11.238 3.06851 9.1073 5.6884 9.1073H12.3996V18.6094Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M21.2028 22.576L13.4272 18.9503C12.8133 18.7463 12.3997 18.173 12.3997 17.5261V10.1906C12.3997 9.54364 12.8133 8.97036 13.4272 8.76636L21.2028 5.14064C22.1747 4.81764 23.1767 5.54108 23.1767 6.56486V21.1527C23.1767 22.1756 22.1737 22.899 21.2028 22.576Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M26.2632 15.8658L23.1768 16.8565V11.459L26.2632 12.4497V15.8658Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M12.02 18.6056V26.4539C12.02 27.8262 10.9074 28.9378 9.53607 28.9378C8.1638 28.9378 7.05219 27.8253 7.05219 26.4539V18.6056" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M29.3279 14.1582H33.0556" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M28.2512 9.75143L31.1374 7.39221" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M28.2512 18.5641L31.1374 20.9243" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M9.53516 9.75146V18.6094" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                </svg>
+              </i>
+              <h4 class="mdc-typography--headline4">Cartelera de noticias</h4>
             </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button">
-                  <span class="mdc-button__ripple"></span>
-                  VER MÁS
-                </button>
-              </div>
-            </div>
-          </div>
 
-          <div class="mdc-card news-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
-            <div class="mdc-card__primary-action news-card__primary-action" tabindex="0">
-              <div class="mdc-card__media mdc-card__media--16-9 news-card__media" style="background-image: url('img/placeholder.png');"></div>
-              <div class="mdc-card__primary news-card__primary">
-                <h2 class="news-card__title mdc-typography mdc-typography--headline3">Título noticia</h2>
-              </div>
-              <div class="mdc-card__secondary news-card__secondary mdc-typography mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            <div class="mdc-layout-grid cards news">
+              <div class="mdc-layout-grid__inner">
+                <div class="mdc-card news-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+                  <div class="mdc-card__primary-action news-card__primary-action" tabindex="0">
+                    <div class="mdc-card__media mdc-card__media--16-9 news-card__media" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary news-card__primary">
+                      <h2 class="news-card__title mdc-typography mdc-typography--headline3">Título noticia</h2>
+                    </div>
+                    <div class="mdc-card__secondary news-card__secondary mdc-typography mdc-typography--body1">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                    </div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                      <button class="mdc-button">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mdc-card news-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+                  <div class="mdc-card__primary-action news-card__primary-action" tabindex="0">
+                    <div class="mdc-card__media mdc-card__media--16-9 news-card__media" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary news-card__primary">
+                      <h2 class="news-card__title mdc-typography mdc-typography--headline3">Título noticia</h2>
+                    </div>
+                    <div class="mdc-card__secondary news-card__secondary mdc-typography mdc-typography--body1">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                    </div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                      <button class="mdc-button">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
+            <!-- } -->
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+            <!-- Eventos { -->
+            <div class="headline-wrapper">
+              <i class="headline__icon">
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.45533 6.8916H27.5438C29.0238 6.8916 30.2223 8.10238 30.2223 9.59555V27.5183C30.2223 29.0114 29.0238 30.2222 27.5448 30.2222H6.45533C4.97633 30.2222 3.77783 29.0114 3.77783 27.5183V9.59555C3.77783 8.10238 4.97633 6.8916 6.45533 6.8916Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M24.5205 3.77777V6.45244" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M9.47949 3.77777V6.45244" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M3.77783 12.9068H30.2223" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M15.3484 19.7455C15.5741 19.7115 15.7649 19.5613 15.8508 19.3507L17.0002 17.0529L18.1496 19.3507C18.2355 19.5622 18.4263 19.7115 18.652 19.7455L21.2011 20.1044L19.3698 21.8639C19.1989 22.0329 19.1195 22.2728 19.1545 22.5099L19.5851 25.0589L17.3232 23.8377L17.0002 23.7669L16.6772 23.8387L14.4153 25.0599L14.8459 22.5108C14.8809 22.2737 14.8006 22.0329 14.6306 21.8648L12.7993 20.1053L15.3484 19.7455Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+              <h4 class="mdc-typography--headline4">Próximos eventos</h4>
+            </div>
+
+            <div class="upcoming-events-wrapper">
+              <div class="upcoming-event">
+                <div class="upcoming-event__title">
+                  <i class="upcoming-event__icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#757575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Fecha</span>
+                </div>
+                <p class="upcoming-event__text mdc-typography--body2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+              </div>
+              <div class="upcoming-event">
+                <div class="upcoming-event__title">
+                  <i class="upcoming-event__icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#757575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Fecha</span>
+                </div>
+                <p class="upcoming-event__text mdc-typography--body2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+              </div>
+              <div class="upcoming-event">
+                <div class="upcoming-event__title">
+                  <i class="upcoming-event__icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#757575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Fecha</span>
+                </div>
+                <p class="upcoming-event__text mdc-typography--body2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+              </div>
+              <div class="upcoming-event">
+                <div class="upcoming-event__title">
+                  <i class="upcoming-event__icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#757575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">10 de Marzo de 2020</span>
+                </div>
+                <p class="upcoming-event__text mdc-typography--body2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+              </div>
+              <div class="upcoming-events__actions">
                 <button class="mdc-button">
                   <span class="mdc-button__ripple"></span>
-                  VER MÁS
+                  <span class="mdc-button__label">VER TODOS</span>
+                  <i class="mdc-button__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
                 </button>
               </div>
             </div>
+            <!-- } -->
           </div>
         </div>
       </div>
-      <!-- } -->
+
 
       <!-- Aulas { -->
       <div class="headline-wrapper">
-        <i class="headline-icon">
+        <i class="headline__icon">
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M21.0151 25.9442L22.1796 29.1667" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
             <path d="M8.98481 25.9442L7.82031 29.1667" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
@@ -519,7 +609,7 @@
 
       <!-- Proyectos { -->
       <div class="headline-wrapper">
-        <i class="headline-icon">
+        <i class="headline__icon">
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.4167 2.8335H8.50008C7.74863 2.8335 7.02796 3.13201 6.49661 3.66336C5.96526 4.19471 5.66675 4.91538 5.66675 5.66683V28.3335C5.66675 29.0849 5.96526 29.8056 6.49661 30.337C7.02796 30.8683 7.74863 31.1668 8.50008 31.1668H25.5001C26.2515 31.1668 26.9722 30.8683 27.5035 30.337C28.0349 29.8056 28.3334 29.0849 28.3334 28.3335V12.7502L18.4167 2.8335Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M18.4167 2.8335V12.7502H28.3334" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -529,7 +619,7 @@
       </div>
 
       <div class="subtitle-wrapper">
-        <i class="subtitle-icon">
+        <i class="subtitle__icon">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 1.5V4.5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M9 13.5V16.5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -547,7 +637,7 @@
             <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">3</span>
           </span>
         </div>
-        <a class="collapse-link">
+        <a class="collapse-link" href="#" onclick="return collapse(this);">
           <i class="collapse-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -621,7 +711,7 @@
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button">
                   <span class="mdc-button__ripple"></span>
-                  Ver proyecto
+                  <span class="mdc-button__label">VER PROYECTO</span>
                 </button>
               </div>
 
@@ -704,7 +794,7 @@
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button">
                   <span class="mdc-button__ripple"></span>
-                  Ver proyecto
+                  <span class="mdc-button__label">VER PROYECTO</span>
                 </button>
               </div>
 
@@ -787,7 +877,7 @@
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button">
                   <span class="mdc-button__ripple"></span>
-                  Ver proyecto
+                  <span class="mdc-button__label">VER PROYECTO</span>
                 </button>
               </div>
 
@@ -811,7 +901,7 @@
       </div>
 
       <div class="subtitle-wrapper">
-        <i class="subtitle-icon">
+        <i class="subtitle__icon">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.425 3.18002C7.94125 3.05918 8.4698 2.99877 9 3.00002C14.25 3.00002 17.25 9.00002 17.25 9.00002C16.7947 9.85172 16.2518 10.6536 15.63 11.3925M10.59 10.59C10.384 10.8111 10.1356 10.9884 9.85961 11.1114C9.58362 11.2343 9.28568 11.3005 8.98357 11.3058C8.68146 11.3111 8.38137 11.2556 8.10121 11.1424C7.82104 11.0292 7.56654 10.8608 7.35288 10.6471C7.13923 10.4335 6.97079 10.179 6.85763 9.89881C6.74447 9.61865 6.68889 9.31856 6.69423 9.01645C6.69956 8.71434 6.76568 8.4164 6.88866 8.1404C7.01163 7.86441 7.18894 7.61601 7.41 7.41002M13.455 13.455C12.1729 14.4323 10.6118 14.9737 9 15C3.75 15 0.75 9.00002 0.75 9.00002C1.68292 7.26144 2.97685 5.74247 4.545 4.54502L13.455 13.455Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M0.75 0.75L17.25 17.25" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -824,7 +914,7 @@
             <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">2</span>
           </span>
         </div>
-        <a class="collapse-link">
+        <a class="collapse-link" href="#" onclick="return collapse(this);">
           <i class="collapse-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -899,7 +989,7 @@
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button">
                   <span class="mdc-button__ripple"></span>
-                  Ver proyecto
+                  <span class="mdc-button__label">VER PROYECTO</span>
                 </button>
               </div>
 
@@ -983,7 +1073,7 @@
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button">
                   <span class="mdc-button__ripple"></span>
-                  Ver proyecto
+                  <span class="mdc-button__label">VER PROYECTO</span>
                 </button>
               </div>
 
@@ -1008,7 +1098,7 @@
 
 
       <div class="subtitle-wrapper">
-        <i class="subtitle-icon">
+        <i class="subtitle__icon">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.5 8.3099V8.9999C16.4991 10.6172 15.9754 12.1909 15.007 13.4863C14.0386 14.7816 12.6775 15.7293 11.1265 16.1878C9.57557 16.6464 7.91794 16.5913 6.40085 16.0308C4.88376 15.4704 3.58849 14.4345 2.70822 13.0777C1.82795 11.7209 1.40984 10.1159 1.51626 8.50214C1.62267 6.88832 2.24791 5.35214 3.29871 4.1227C4.34951 2.89326 5.76959 2.03644 7.34714 1.68001C8.92469 1.32358 10.5752 1.48665 12.0525 2.1449" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M16.5 3L9 10.5075L6.75 8.2575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1020,7 +1110,7 @@
             <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">2</span>
           </span>
         </div>
-        <a class="collapse-link">
+        <a class="collapse-link" href="#" onclick="return collapse(this);">
           <i class="collapse-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1089,7 +1179,7 @@
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button">
                   <span class="mdc-button__ripple"></span>
-                  Ver proyecto
+                  <span class="mdc-button__label">VER PROYECTO</span>
                 </button>
               </div>
 
@@ -1167,7 +1257,7 @@
               <div class="mdc-card__action-buttons">
                 <button class="mdc-button">
                   <span class="mdc-button__ripple"></span>
-                  Ver proyecto
+                  <span class="mdc-button__label">VER PROYECTO</span>
                 </button>
               </div>
 
@@ -1215,7 +1305,7 @@
                 <td class="mdc-data-table__cell">
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
-                    Ver recurso
+                    <span class="mdc-button__label">VER RECURSO</span>
                   </button>
                 </td>
                 <td class="mdc-data-table__cell">
@@ -1239,7 +1329,7 @@
                 <td class="mdc-data-table__cell">
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
-                    Ver recurso
+                    <span class="mdc-button__label">VER RECURSO</span>
                   </button>
                 </td>
                 <td class="mdc-data-table__cell">
@@ -1263,7 +1353,7 @@
                 <td class="mdc-data-table__cell">
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
-                    Ver recurso
+                    <span class="mdc-button__label">VER RECURSO</span>
                   </button>
                 </td>
                 <td class="mdc-data-table__cell">
@@ -1301,7 +1391,7 @@
                 <td class="mdc-data-table__cell">
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
-                    Ver recurso
+                    <span class="mdc-button__label">VER RECURSO</span>
                   </button>
                 </td>
                 <td class="mdc-data-table__cell">
@@ -1325,7 +1415,7 @@
                 <td class="mdc-data-table__cell">
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
-                    Ver recurso
+                    <span class="mdc-button__label">VER RECURSO</span>
                   </button>
                 </td>
                 <td class="mdc-data-table__cell">
@@ -1349,7 +1439,7 @@
                 <td class="mdc-data-table__cell">
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
-                    Ver recurso
+                    <span class="mdc-button__label">VER RECURSO</span>
                   </button>
                 </td>
                 <td class="mdc-data-table__cell">
@@ -1400,4 +1490,5 @@
   </body>
 
   <script src="theme.js"></script>
+  <script src="script.js"></script>
 </html>

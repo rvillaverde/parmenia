@@ -42,6 +42,7 @@
 }
 
 .mdc-typography--headline1 {
+  color: var(--mdc-theme-gray__700);
   font-family: var(--mdc-theme-typography), sans-serif;
   font-size: 36px;
   font-weight: bold;
@@ -68,7 +69,7 @@
 }
 
 .mdc-typography--headline4 {
-  color: var(--mdc-theme-gray__600);
+  color: var(--mdc-theme-gray__700);
   font-family: var(--mdc-theme-typography), sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -79,7 +80,7 @@
 }
 
 .mdc-typography--headline5 {
-  color: var(--mdc-theme-gray__600);
+  color: var(--mdc-theme-gray__700);
   font-family: var(--mdc-theme-typography), sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -94,12 +95,13 @@
   font-family: var(--mdc-theme-typography), sans-serif;
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 20px;
   margin: 0;
 }
 
 .mdc-typography--subtitle2 {
+  color: var(--mdc-theme-gray__700);
   color: var(--mdc-theme-gray__700);
   font-family: Lato;
   font-size: 12px;
@@ -150,7 +152,7 @@
   text-transform: none;
 }
 
-.mdc-button {
+.mdc-button__label {
   font-family: var(--mdc-theme-typography);
   font-weight: bold;
   font-size: 14px;
@@ -241,6 +243,10 @@
 }
 
 .mdc-button .mdc-button__icon + .mdc-button__label {
+  margin-left: 8px;
+}
+
+.mdc-button .mdc-button__label + .mdc-button__icon {
   margin-left: 8px;
 }
 
