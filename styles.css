@@ -91,6 +91,10 @@ body.login-container {
   margin-left: 8px;
 }
 
+.header__icon + * {
+  margin-left: 12px;
+}
+
 .upcoming-event {
   padding: 16px;
   border-bottom: 1px solid var(--mdc-theme-gray__300);
