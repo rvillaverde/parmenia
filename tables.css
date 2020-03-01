@@ -1,0 +1,37 @@
+.mdc-data-table__header-cell .mdc-typography--caption {
+  color: var(--mdc-theme-secondary__600);
+}
+
+.table__photo-thumbnail {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  overflow: hidden;
+  width: 40px;
+}
+
+.table__photo-thumbnail img {
+  height: 40px;
+  width: auto;
+}
+
+.mdc-data-table__row:last-child {
+  border-bottom-color: rgba(0,0,0,.12);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.mdc-data-table__pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mdc-data-table__filter-wrapper {
+  align-items: center;
+  display: flex;
+  height: 56px;
+  margin: 20px 0;
+}

@@ -4,8 +4,12 @@
   --app-nav__heigth--desktop: 64px;
   --app-nav__heigth--mobile: 56px;
 
-  --header__height: 240px;
+  --header__height-large: 240px;
+  --header__height-medium: 120px;
   --top-nav-heigth: 48px;
+
+  --footer__height--desktop: 88px;
+  --footer__height--mobile: 80px;
 }
 
 html {
@@ -15,14 +19,24 @@ html {
 
 body {
   background-color: var(--mdc-theme-gray__025);
+  box-sizing: border-box;
   margin: 0;
   margin-top: var(--app-nav__heigth--desktop);
+  min-height: calc(100vh - var(--app-nav__heigth--desktop));
+  padding-bottom: var(--footer__height--desktop);
+  position: relative;
 }
 
 @media (max-width: 599px) {
   body {
     margin-top: var(--app-nav__heigth--mobile);
+    min-height: calc(100vh - var(--app-nav__heigth--mobile));
+    padding-bottom: var(--footer__height--mobile);
   }
+}
+
+body.login-container {
+  min-height: 100vh;
 }
 
 .main-wrapper {
@@ -59,7 +73,7 @@ body {
   margin-right: 0;
 }
 
-.subtitle__icon, .upcoming-event__icon, .collapse-icon {
+.subtitle__icon, .upcoming-event__icon, .collapse-icon, .caption-icon, .caption-icon svg {
   height: 18px;
   width: 18px;
 }
@@ -73,7 +87,7 @@ body {
   width: 34px;
 }
 
-.headline__icon + *, .upcoming-event__icon + * {
+.headline__icon + *, .upcoming-event__icon + *, .caption-icon + * {
   margin-left: 8px;
 }
 

@@ -81,6 +81,39 @@
   position: relative;
 }
 
+.mdc-cursos-card__wrapper > .cursos-card {
+  margin: 12px 0;
+}
+
+.cursos-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 24px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.cursos-card__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cursos-card__info {
+  padding: 12px 0;
+}
+
+.cursos-card__info-caption {
+  align-items: center;
+  display: flex;
+}
+
+.cursos-card__actions {
+  flex-grow: 0;
+    width: 36px;
+}
+
 .mdc-card__status {
   border-radius: 50%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
