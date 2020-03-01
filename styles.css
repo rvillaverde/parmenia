@@ -105,10 +105,11 @@ body {
 }
 
 .notification-icon {
+  align-items: center;
   background-color: var(--mdc-theme-custom__00);
   border-radius: 50%;
   display: flex;
-  align-items: center;
+  flex-shrink: 0;
   justify-content: center;
   height: 40px;
   width: 40px;

@@ -36,7 +36,7 @@
   width: 480px;
 }
 
-@media (max-width: 800) {
+@media (max-width: 800px) {
   .admin-form .mdc-text-field, .admin-form__subsection {
     width: 100%;
   }
