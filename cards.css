@@ -30,6 +30,11 @@
   margin: 24px 0;
 }
 
+.mdc-card__large {
+  max-width: 880px;
+  margin: 24px auto;
+}
+
 .aulas-card__title {
   color: white;
 }

@@ -1,0 +1,65 @@
+.admin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-form__section {
+  border-bottom: 1px solid var(--mdc-theme-gray__300);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.admin-form__subsection {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-form__subsection > * {
+  margin: 12px 0;
+}
+
+.admin-form__section, .admin-form__actions {
+  padding: 36px;
+}
+
+.admin-form__title {
+  width: 100%;
+}
+
+.admin-form__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin-form .mdc-text-field {
+  width: 480px;
+}
+
+@media (max-width: 800) {
+  .admin-form .mdc-text-field, .admin-form__subsection {
+    width: 100%;
+  }
+}
+
+.admin-form__photo-placeholder {
+  align-items: center;
+  background-color: var(--mdc-theme-gray__050);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  height: 180px;
+  justify-content: center;
+  padding: 24px;
+  width: 180px;
+}
+
+.admin-form__photo-placeholder__text {
+  color: var(--mdc-theme-primary__200);
+  text-align: center;
+}
+
+.admin-form__photo-placeholder__actions {
+  display: flex;
+  margin: 0;
+}

@@ -31,6 +31,10 @@
   }
 }
 
+.login-wrapper__heading {
+  color: white;
+}
+
 .password-recovery {
   color: white;
   text-align: left;

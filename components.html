@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="footer.css">
   </head>
 
@@ -605,7 +606,6 @@
       </div>
       </div>
       <!-- } -->
-
 
       <!-- Proyectos { -->
       <div class="headline-wrapper">
@@ -1457,23 +1457,118 @@
       </div>
       <!-- } -->
 
+      <div class="mdc-card mdc-card__large">
+        <form class="admin-form">
+          <div class="admin-form__section">
+            <h4 class="mdc-typography--headline4 admin-form__title">Mis datos</h4>
 
+            <div class="admin-form__subsection">
+              <label class="mdc-text-field mdc-text-field--outlined">
+                <input type="email" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="my-label-id">Email</span>
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </label>
 
+              <label class="mdc-text-field mdc-text-field--outlined">
+                <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="my-label-id">Nombre y apellido</span>
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </label>
 
-      <label class="mdc-text-field mdc-text-field--outlined">
-        <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id">
-        <div class="mdc-notched-outline">
-          <div class="mdc-notched-outline__leading"></div>
-          <div class="mdc-notched-outline__notch">
-            <span class="mdc-floating-label" id="my-label-id">Your Name</span>
+              <label class="mdc-text-field mdc-text-field--outlined">
+                <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="my-label-id">Contraseña</span>
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </label>
+
+              <div class="mdc-card__action-buttons">
+                <button class="mdc-button">
+                  <span class="mdc-button__ripple"></span>
+                  <span class="mdc-button__label">cambiar contraseña</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="admin-form__subsection">
+              <div class="admin-form__photo-placeholder">
+                <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Foto de perfil</span>
+              </div>
+
+              <div class="admin-form__photo-placeholder__actions">
+                <button class="mdc-button">
+                  <span class="mdc-button__ripple"></span>
+                  <i class="mdc-button__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-button__label">SUBIR IMAGEN</span>
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="mdc-notched-outline__trailing"></div>
-        </div>
-      </label>
+          <div class="admin-form__section">
+            <h4 class="mdc-typography--headline4 admin-form__title">Mi institución</h4>
+            <div class="admin-form__subsection">
+              <label class="mdc-text-field mdc-text-field--outlined">
+                <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                <div class="mdc-notched-outline">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="my-label-id">Nombre</span>
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </label>
+            </div>
+            <div class="admin-form__subsection">
+              <div class="admin-form__photo-placeholder">
+                <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Logo de la institución</span>
+              </div>
 
-      <button class="mdc-button mdc-button--raised" href="components.html" disabled>
+              <div class="admin-form__photo-placeholder__actions">
+                <button class="mdc-button">
+                  <span class="mdc-button__ripple"></span>
+                  <i class="mdc-button__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-button__label">SUBIR IMAGEN</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="admin-form__actions">
+            <button type="submit" class="mdc-button mdc-button--raised" href="components.html">
+              <span class="mdc-button__label">Guardar cambios</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <a class="mdc-button mdc-button--raised" href="index.html">
         <span class="mdc-button__label">Volver</span>
-      </button>
+      </a>
     </main>
 
     <footer class="footer">
