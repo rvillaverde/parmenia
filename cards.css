@@ -48,7 +48,7 @@
 }
 
 .aulas-card {
-  background-color: var(--mdc-theme-aulas__blue);
+  background-color: var(--mdc-theme-custom__00);
 }
 
 .projects-card__primary {

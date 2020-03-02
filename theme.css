@@ -270,32 +270,84 @@
   width: 100%;
 }
 
-.mcd-header__welcome {
+.mdc-drawer {
+  background-color: var(--mdc-theme-gray__050);
+  box-sizing: content-box;
+  padding-left: calc((100vw - var(--viewport-width))/2);
+  top: calc(var(--header__height-large));
+  position: absolute;
+  
+  /*box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2), 0px 6px 30px rgba(0, 0, 0, 0.12), 0px 16px 24px rgba(0, 0, 0, 0.14);*/
+  box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.12);
+}
+
+.mdc-drawer.fixed {
+  position: fixed;
+}
+
+.mdc-drawer .mdc-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.mdc-drawer .mdc-list-item .mdc-icon + .mdc-list-item__text {
+  margin-left: 12px;
+}
+
+.mdc-header__welcome {
   height: var(--header__height-large);
   background-color: var(--mdc-theme-primary__500);
   box-shadow: inset 0px -100px 120px rgba(0, 0, 0, 0.3);
 }
 
-.mcd-header__admin {
+.mdc-header__admin {
   height: var(--header__height-medium);
   background-color: var(--mdc-theme-primary__500);
   box-shadow: inset 0px -50px 120px rgba(0, 0, 0, 0.3);
 }
 
-.mdc-header .mdc-typography--headline1 {
+.mdc-header__aula {
+  height: var(--header__height-large);
+}
+
+.mdc-header__section-aula .mdc-chip-set {
+  padding: 0;
+}
+
+.mdc-header__section-aula .mdc-chip:first-child {
+  margin-left: 0;
+}
+
+.mdc-header .mdc-typography--headline1, .mdc-header .mdc-typography--headline5 {
   color: white;
 }
 
 .mdc-header__cover {
   height: 444px;
   width: 444px;
+  border: 1px solid white;
   border-radius: 50%;
-  background-image: url('../img/nature.png');
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
   position: absolute;
-  transform: translateX(-42%) translateY(-62%);
+  transform: translateX(-48%) translateY(-36%);
+}
+
+.mdc-header__cover + .mdc-header__section {
+  z-index: 1;
+}
+
+@media (min-width: 800px) {
+  .mdc-header__cover + .mdc-header__section {
+    margin-left: 260px;
+  }
+}
+
+.mdc-header__cover img {
+  height: 444px;
+  width: 444px;
 }
 
 .mdc-header__row {
@@ -335,6 +387,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   height: 100%;
+  margin: 0 -48px;
   position: absolute;
   top: 0;
   width: 100%;

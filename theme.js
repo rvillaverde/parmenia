@@ -7,3 +7,7 @@ var textFields = document.querySelectorAll('.mdc-text-field');
 for (var i = 0, textField; textField = textFields[i]; i++) {
   mdc.textField.MDCTextField.attachTo(textField);
 }
+
+const list = mdc.list.MDCList.attachTo(document.querySelector('.mdc-list'));
+
+//const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));

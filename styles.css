@@ -1,12 +1,12 @@
 :root {
   --viewport-width: 1280px;
 
-  --app-nav__heigth--desktop: 64px;
-  --app-nav__heigth--mobile: 56px;
+  --app-nav__height--desktop: 64px;
+  --app-nav__height--mobile: 56px;
 
   --header__height-large: 240px;
   --header__height-medium: 120px;
-  --top-nav-heigth: 48px;
+  --top-nav-heigth: 64px;
 
   --footer__height--desktop: 88px;
   --footer__height--mobile: 80px;
@@ -21,16 +21,16 @@ body {
   background-color: var(--mdc-theme-gray__025);
   box-sizing: border-box;
   margin: 0;
-  margin-top: var(--app-nav__heigth--desktop);
-  min-height: calc(100vh - var(--app-nav__heigth--desktop));
+  margin-top: var(--app-nav__height--desktop);
+  min-height: calc(100vh - var(--app-nav__height--desktop));
   padding-bottom: var(--footer__height--desktop);
   position: relative;
 }
 
 @media (max-width: 599px) {
   body {
-    margin-top: var(--app-nav__heigth--mobile);
-    min-height: calc(100vh - var(--app-nav__heigth--mobile));
+    margin-top: var(--app-nav__height--mobile);
+    min-height: calc(100vh - var(--app-nav__height--mobile));
     padding-bottom: var(--footer__height--mobile);
   }
 }
@@ -44,7 +44,7 @@ body.login-container {
   max-width: var(--viewport-width);
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1280px) {
   .main-wrapper {
     padding: 0 8px;
   }
@@ -76,6 +76,11 @@ body.login-container {
 .subtitle__icon, .upcoming-event__icon, .collapse-icon, .caption-icon, .caption-icon svg {
   height: 18px;
   width: 18px;
+}
+
+.mdc-icon {
+  height: 24px;
+  widows: 24px;
 }
 
 .collapse-link {
