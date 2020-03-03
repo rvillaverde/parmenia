@@ -80,7 +80,12 @@ body.login-container {
 
 .mdc-icon {
   height: 24px;
-  widows: 24px;
+  width: 24px;
+}
+
+.mdc-icon svg {
+  display: block;
+  margin: auto;
 }
 
 .collapse-label {
