@@ -81,6 +81,17 @@ body.login-container {
 .mdc-icon {
   height: 24px;
   width: 24px;
+  display: inline-block;
+}
+
+.mdc-icon.small {
+  height: 18px;
+  width: 18px;
+}
+
+.mdc-icon.small svg {
+  height: 18px;
+  width: 18px;
 }
 
 .mdc-icon svg {

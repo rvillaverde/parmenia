@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="colors.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="buttons.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="cards.css">
     <link rel="stylesheet" href="admin.css">
@@ -25,12 +26,15 @@
   <body class="container mdc-typography">
     <nav class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+        <section class="mdc-top-app-bar__section">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button menu-icon">menu</button>
+          <div class="school-logo">
+            <img src="img/placeholder.png">
+          </div>
           <a href="components.html" class="mdc-top-app-bar__title mdc-typography--headline6">Colegio Lasalle</a>
         </section>
 
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__actions" role="toolbar">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__actions" role="toolbar">
           <a class="mdc-top-app-bar__action-item mdc-button mdc-button--app-bar" href="aulas.html" aria-label="Mis aulas">
             <i class="mdc-button__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,6 +49,11 @@
               </svg>
             </i>
             <span class="mdc-button__label">Mis Aulas</span>
+            <i class="mdc-icon small">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
           </a>
 
           <a class="mdc-top-app-bar__action-item mdc-button mdc-button--app-bar" href="docentes.html" aria-label="Docentes">
@@ -106,7 +115,7 @@
           </a>
         </section>
 
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__actions" role="toolbar">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__actions" role="toolbar">
           <button class="mdc-top-app-bar__action-item mdc-button" aria-label="Mochila">
             <i class="mdc-button__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +184,7 @@
                   </div>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__action-buttons">
-                      <button class="mdc-button">
+                      <button class="mdc-button mdc-button--text">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">VER MÁS</span>
                       </button>
@@ -195,7 +204,7 @@
                   </div>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__action-buttons">
-                      <button class="mdc-button">
+                      <button class="mdc-button mdc-button--text">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">VER MÁS</span>
                       </button>
@@ -275,7 +284,7 @@
                 </p>
               </div>
               <div class="upcoming-events__actions">
-                <button class="mdc-button">
+                <button class="mdc-button mdc-button--text">
                   <span class="mdc-button__ripple"></span>
                   <span class="mdc-button__label">VER TODOS</span>
                   <i class="mdc-button__icon">
@@ -340,8 +349,8 @@
             </div>
             <div class="mdc-card__actions aulas-card__actions">
               <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M2 12H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -349,20 +358,18 @@
                     </svg>
                   </i>
                 </button>
-              </div>
-              <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V9L13 2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M13 2V9H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </i>
                 </button>
-              </div>
-              <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M2.84393 18.581V3.7303C2.84393 2.68897 3.75993 1.84497 4.88927 1.84497H18.4439C19.5733 1.84497 20.4893 2.68897 20.4893 3.7303V18.5823C20.4893 19.6236 19.5733 20.4676 18.4439 20.4676H4.88927C3.75993 20.4676 2.84393 19.6223 2.84393 18.581Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
                       <path d="M11.6667 20.468V1.84399" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
@@ -392,7 +399,7 @@
                   </div>
                   <div class="mdc-chip" role="row">
                     <span role="gridcell">
-                      <span tabindex="-1" class="mdc-chip__text">Curso</span>
+                      <span tabindex="-1" class="mdc-chip__text">Docente</span>
                     </span>
                   </div>
                   <div class="mdc-chip" role="row">
@@ -405,8 +412,8 @@
             </div>
             <div class="mdc-card__actions aulas-card__actions">
               <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M2 12H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -414,84 +421,18 @@
                     </svg>
                   </i>
                 </button>
-              </div>
-              <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V9L13 2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M13 2V9H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </i>
                 </button>
-              </div>
-              <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2.84393 18.581V3.7303C2.84393 2.68897 3.75993 1.84497 4.88927 1.84497H18.4439C19.5733 1.84497 20.4893 2.68897 20.4893 3.7303V18.5823C20.4893 19.6236 19.5733 20.4676 18.4439 20.4676H4.88927C3.75993 20.4676 2.84393 19.6223 2.84393 18.581Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-                      <path d="M11.6667 20.468V1.84399" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-                      <path d="M8.34674 12.1813C8.91302 12.1813 9.37208 11.7223 9.37208 11.156C9.37208 10.5897 8.91302 10.1307 8.34674 10.1307C7.78047 10.1307 7.32141 10.5897 7.32141 11.156C7.32141 11.7223 7.78047 12.1813 8.34674 12.1813Z" fill="white"/>
-                      <path d="M14.9869 12.1813C15.5532 12.1813 16.0122 11.7223 16.0122 11.156C16.0122 10.5897 15.5532 10.1307 14.9869 10.1307C14.4206 10.1307 13.9615 10.5897 13.9615 11.156C13.9615 11.7223 14.4206 12.1813 14.9869 12.1813Z" fill="white"/>
-                      <path d="M5 20.8V23.4667" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-                      <path d="M18.3333 20.8V23.4667" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="mdc-card aulas-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
-            <div class="aulas-card__primary-action" tabindex="0">
-              <div class="mdc-card__media aulas-card__media" style="background-image: url('img/placeholder.png');"></div>
-              <div class="mcd-card__primary aulas-card__primary">
-                <h2 class="aulas-card__title mdc-typography--headline3">Título del aula</h2>
-              </div>
-              <div class="mdc-card__secondary projects-card__secondary mdc-typography--body2">
-                <div class="mdc-chip-set" role="grid">
-                  <div class="mdc-chip" role="row">
-                    <span role="gridcell">
-                      <span tabindex="-1" class="mdc-chip__text">Curso</span>
-                    </span>
-                  </div>
-                  <div class="mdc-chip" role="row">
-                    <span role="gridcell">
-                      <span tabindex="-1" class="mdc-chip__text">Curso</span>
-                    </span>
-                  </div>
-                  <div class="mdc-chip" role="row">
-                    <span role="gridcell">
-                      <span tabindex="-1" class="mdc-chip__text">Curso</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mdc-card__actions aulas-card__actions">
-              <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M2 12H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
-                </button>
-              </div>
-              <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M13 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V9L13 2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M13 2V9H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
-                </button>
-              </div>
-              <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M2.84393 18.581V3.7303C2.84393 2.68897 3.75993 1.84497 4.88927 1.84497H18.4439C19.5733 1.84497 20.4893 2.68897 20.4893 3.7303V18.5823C20.4893 19.6236 19.5733 20.4676 18.4439 20.4676H4.88927C3.75993 20.4676 2.84393 19.6223 2.84393 18.581Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
                       <path d="M11.6667 20.468V1.84399" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
@@ -521,7 +462,7 @@
                   </div>
                   <div class="mdc-chip" role="row">
                     <span role="gridcell">
-                      <span tabindex="-1" class="mdc-chip__text">Curso</span>
+                      <span tabindex="-1" class="mdc-chip__text">Docente</span>
                     </span>
                   </div>
                   <div class="mdc-chip" role="row">
@@ -534,8 +475,8 @@
             </div>
             <div class="mdc-card__actions aulas-card__actions">
               <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M2 12H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -543,20 +484,81 @@
                     </svg>
                   </i>
                 </button>
-              </div>
-              <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V9L13 2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M13 2V9H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </i>
                 </button>
+
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2.84393 18.581V3.7303C2.84393 2.68897 3.75993 1.84497 4.88927 1.84497H18.4439C19.5733 1.84497 20.4893 2.68897 20.4893 3.7303V18.5823C20.4893 19.6236 19.5733 20.4676 18.4439 20.4676H4.88927C3.75993 20.4676 2.84393 19.6223 2.84393 18.581Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                      <path d="M11.6667 20.468V1.84399" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                      <path d="M8.34674 12.1813C8.91302 12.1813 9.37208 11.7223 9.37208 11.156C9.37208 10.5897 8.91302 10.1307 8.34674 10.1307C7.78047 10.1307 7.32141 10.5897 7.32141 11.156C7.32141 11.7223 7.78047 12.1813 8.34674 12.1813Z" fill="white"/>
+                      <path d="M14.9869 12.1813C15.5532 12.1813 16.0122 11.7223 16.0122 11.156C16.0122 10.5897 15.5532 10.1307 14.9869 10.1307C14.4206 10.1307 13.9615 10.5897 13.9615 11.156C13.9615 11.7223 14.4206 12.1813 14.9869 12.1813Z" fill="white"/>
+                      <path d="M5 20.8V23.4667" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                      <path d="M18.3333 20.8V23.4667" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </button>
               </div>
+            </div>
+          </div>
+
+          <div class="mdc-card aulas-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+            <div class="aulas-card__primary-action" tabindex="0">
+              <div class="mdc-card__media aulas-card__media" style="background-image: url('img/placeholder.png');"></div>
+              <div class="mcd-card__primary aulas-card__primary">
+                <h2 class="aulas-card__title mdc-typography--headline3">Título del aula</h2>
+              </div>
+              <div class="mdc-card__secondary projects-card__secondary mdc-typography--body2">
+                <div class="mdc-chip-set" role="grid">
+                  <div class="mdc-chip" role="row">
+                    <span role="gridcell">
+                      <span tabindex="-1" class="mdc-chip__text">Curso</span>
+                    </span>
+                  </div>
+                  <div class="mdc-chip" role="row">
+                    <span role="gridcell">
+                      <span tabindex="-1" class="mdc-chip__text">Docente</span>
+                    </span>
+                  </div>
+                  <div class="mdc-chip" role="row">
+                    <span role="gridcell">
+                      <span tabindex="-1" class="mdc-chip__text">Curso</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-card__actions aulas-card__actions">
               <div class="mdc-card__action-icons aulas-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                  <i class="mdc-card__action-icon">
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M2 12H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </button>
+
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V9L13 2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M13 2V9H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </button>
+
+                <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                  <i class="mdc-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M2.84393 18.581V3.7303C2.84393 2.68897 3.75993 1.84497 4.88927 1.84497H18.4439C19.5733 1.84497 20.4893 2.68897 20.4893 3.7303V18.5823C20.4893 19.6236 19.5733 20.4676 18.4439 20.4676H4.88927C3.75993 20.4676 2.84393 19.6223 2.84393 18.581Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
                       <path d="M11.6667 20.468V1.84399" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
@@ -638,7 +640,7 @@
       <!-- } -->
 
       <!-- Proyectos { -->
-      <div class="projects-wrapper">
+      <section id="projects-wrapper" class="projects-wrapper">
         <div class="headline-wrapper">
           <i class="headline__icon">
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -742,15 +744,15 @@
                 </div>
                 <div class="mdc-card__actions">
                   <div class="mdc-card__action-buttons">
-                    <button class="mdc-button">
+                    <button class="mdc-button mdc-button--text">
                       <span class="mdc-button__ripple"></span>
                       <span class="mdc-button__label">VER PROYECTO</span>
                     </button>
                   </div>
 
                   <div class="mdc-card__action-icons">
-                    <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="mdc-card__action-icon">
+                    <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                      <i class="mdc-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
@@ -824,22 +826,21 @@
                 </div>
                 <div class="mdc-card__actions">
                   <div class="mdc-card__action-buttons">
-                    <button class="mdc-button">
+                    <button class="mdc-button mdc-button--text">
                       <span class="mdc-button__ripple"></span>
                       <span class="mdc-button__label">VER PROYECTO</span>
                     </button>
                   </div>
 
                   <div class="mdc-card__action-icons">
-                    <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="mdc-card__action-icon">
+                    <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                      <i class="mdc-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                         </svg>
-
                       </i>
                     </button>
                   </div>
@@ -907,22 +908,21 @@
                 </div>
                 <div class="mdc-card__actions">
                   <div class="mdc-card__action-buttons">
-                    <button class="mdc-button">
+                    <button class="mdc-button mdc-button--text">
                       <span class="mdc-button__ripple"></span>
                       <span class="mdc-button__label">VER PROYECTO</span>
                     </button>
                   </div>
 
                   <div class="mdc-card__action-icons">
-                    <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="mdc-card__action-icon">
+                    <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                      <i class="mdc-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                         </svg>
-
                       </i>
                     </button>
                   </div>
@@ -1022,22 +1022,21 @@
                 </div>
                 <div class="mdc-card__actions">
                   <div class="mdc-card__action-buttons">
-                    <button class="mdc-button">
+                    <button class="mdc-button mdc-button--text">
                       <span class="mdc-button__ripple"></span>
                       <span class="mdc-button__label">VER PROYECTO</span>
                     </button>
                   </div>
 
                   <div class="mdc-card__action-icons">
-                    <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="mdc-card__action-icon">
+                    <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                      <i class="mdc-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                         </svg>
-
                       </i>
                     </button>
                   </div>
@@ -1106,22 +1105,21 @@
                 </div>
                 <div class="mdc-card__actions">
                   <div class="mdc-card__action-buttons">
-                    <button class="mdc-button">
+                    <button class="mdc-button mdc-button--text">
                       <span class="mdc-button__ripple"></span>
                       <span class="mdc-button__label">VER PROYECTO</span>
                     </button>
                   </div>
 
                   <div class="mdc-card__action-icons">
-                    <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="mdc-card__action-icon">
+                    <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                      <i class="mdc-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                         </svg>
-
                       </i>
                     </button>
                   </div>
@@ -1215,22 +1213,21 @@
                 </div>
                 <div class="mdc-card__actions">
                   <div class="mdc-card__action-buttons">
-                    <button class="mdc-button">
+                    <button class="mdc-button mdc-button--text">
                       <span class="mdc-button__ripple"></span>
                       <span class="mdc-button__label">VER PROYECTO</span>
                     </button>
                   </div>
 
                   <div class="mdc-card__action-icons">
-                    <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="mdc-card__action-icon">
+                    <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                      <i class="mdc-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                         </svg>
-
                       </i>
                     </button>
                   </div>
@@ -1293,22 +1290,21 @@
                 </div>
                 <div class="mdc-card__actions">
                   <div class="mdc-card__action-buttons">
-                    <button class="mdc-button">
+                    <button class="mdc-button mdc-button--text">
                       <span class="mdc-button__ripple"></span>
                       <span class="mdc-button__label">VER PROYECTO</span>
                     </button>
                   </div>
 
                   <div class="mdc-card__action-icons">
-                    <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="mdc-card__action-icon">
+                    <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Ver proyecto" title="Ver proyecto">
+                      <i class="mdc-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                           <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
                         </svg>
-
                       </i>
                     </button>
                   </div>
@@ -1318,184 +1314,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <!-- } -->
 
-      <!-- Recursos { -->
-      <div class="mdc-card resources-card">
-        <div class="mdc-data-table">
-          <table class="mdc-data-table__table" aria-label="Dessert calories">
-            <thead>
-              <tr class="mdc-data-table__header-row">
-                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Nombre de la carpeta</th>
-                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col"></th>
-                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col"></th>
-                <th class="mdc-data-table__header-cell" role="columnheader" scope="col"></th>
-              </tr>
-            </thead>
-            <tbody class="mdc-data-table__content">
-              <tr class="mdc-data-table__row">
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                    <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                    <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">Nombre del recurso</td>
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <span class="mdc-button__label">VER RECURSO</span>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">
-                  <td class="mdc-data-table__cell">
-                    <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                      <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                    </button>
-                  </td>
-                </td>
-              </tr>
-
-              <tr class="mdc-data-table__row">
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                    <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                    <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">Nombre del recurso</td>
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <span class="mdc-button__label">VER RECURSO</span>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">
-                  <td class="mdc-data-table__cell">
-                    <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                      <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                    </button>
-                  </td>
-                </td>
-              </tr>
-
-              <tr class="mdc-data-table__row">
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                    <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                    <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">Nombre del recurso</td>
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <span class="mdc-button__label">VER RECURSO</span>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">
-                  <td class="mdc-data-table__cell">
-                    <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                      <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                    </button>
-                  </td>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="mdc-data-table">
-          <table class="mdc-data-table__table" aria-label="Dessert calories">
-            <thead>
-              <tr class="mdc-data-table__header-row">
-                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Nombre de la carpeta</th>
-                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col"></th>
-                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col"></th>
-                <th class="mdc-data-table__header-cell" role="columnheader" scope="col"></th>
-              </tr>
-            </thead>
-            <tbody class="mdc-data-table__content">
-              <tr class="mdc-data-table__row">
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                    <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                    <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">Nombre del recurso</td>
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <span class="mdc-button__label">VER RECURSO</span>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">
-                  <td class="mdc-data-table__cell">
-                    <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                      <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                    </button>
-                  </td>
-                </td>
-              </tr>
-
-              <tr class="mdc-data-table__row">
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                    <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                    <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">Nombre del recurso</td>
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <span class="mdc-button__label">VER RECURSO</span>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">
-                  <td class="mdc-data-table__cell">
-                    <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                      <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                    </button>
-                  </td>
-                </td>
-              </tr>
-
-              <tr class="mdc-data-table__row">
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                    <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                    <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">Nombre del recurso</td>
-                <td class="mdc-data-table__cell">
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <span class="mdc-button__label">VER RECURSO</span>
-                  </button>
-                </td>
-                <td class="mdc-data-table__cell">
-                  <td class="mdc-data-table__cell">
-                    <button class="mdc-icon-button" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                      <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                      <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                    </button>
-                  </td>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <!-- } -->
 
       <div class="mdc-card mdc-card__large">
         <form class="admin-form">
@@ -1538,7 +1359,7 @@
                 </label>
 
                 <div class="admin-form__actions">
-                  <button class="mdc-button">
+                  <button class="mdc-button mdc-button--text">
                     <span class="mdc-button__ripple"></span>
                     <span class="mdc-button__label">cambiar contraseña</span>
                   </button>
@@ -1580,7 +1401,7 @@
                 </div>
 
                 <div class="admin-form__photo-placeholder__actions">
-                  <button class="mdc-button">
+                  <button class="mdc-button mdc-button--text">
                     <span class="mdc-button__ripple"></span>
                     <i class="mdc-button__icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1618,7 +1439,7 @@
                 </div>
 
                 <div class="admin-form__photo-placeholder__actions">
-                  <button class="mdc-button">
+                  <button class="mdc-button mdc-button--text">
                     <span class="mdc-button__ripple"></span>
                     <i class="mdc-button__icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

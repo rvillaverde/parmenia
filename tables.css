@@ -44,3 +44,7 @@
   align-items: center;
   display: flex;
 }
+
+.mdc-data-table__cell .mdc-icon-button {
+  background-color: transparent;
+}

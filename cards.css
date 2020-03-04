@@ -47,6 +47,10 @@
   justify-content: center;
 }
 
+.aulas-card__actions .mdc-icon-button {
+  background-color: transparent;
+}
+
 .aulas-card {
   background-color: var(--mdc-theme-custom__00);
 }
@@ -111,7 +115,11 @@
 
 .cursos-card__actions {
   flex-grow: 0;
-    width: 36px;
+  width: 36px;
+}
+
+.cursos-card__actions > .mdc-icon-button:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 .mdc-card__status {
@@ -205,6 +213,12 @@
   margin: 0 16px;
 }
 
-.group-item:last-child {
+.group-content {
   margin-bottom: 40px;
+}
+
+@media (max-width: 680px) {
+  .group-content {
+    margin-bottom: 20px;
+  }
 }

@@ -2,8 +2,23 @@
   z-index: 8;
 }
 
+.mdc-top-app-bar__row {
+  padding-left: 12px;
+}
+
 .mdc-top-app-bar__section {
   padding: 0;
+}
+
+.mdc-top-app-bar__actions:last-child > .mdc-top-app-bar__action-item {
+  padding: 0;
+  min-width: 48px;
+}
+
+@media (max-width: 999px) {
+  .mdc-top-app-bar__actions {
+    display: none;
+  }
 }
 
 .mdc-top-app-bar__action-item {
@@ -16,4 +31,23 @@
 
 .mdc-top-app-bar__action-item:hover {
   background: var(--mdc-theme-primary__700);
+}
+
+@media (min-width: 1000px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
+.school-logo, .school-logo img {
+  height: 40px;
+  width: 40px;
+}
+
+.school-logo {
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 12px;
+  min-width: 40px;
+  overflow: hidden;
 }

@@ -149,16 +149,6 @@
   text-transform: none;
 }
 
-.mdc-button__label {
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.mdc-button:not(:disabled) {
-  color: var(--mdc-theme-secondary);
-}
-
 .mdc-top-app-bar__section .mdc-button--app-bar:not(:disabled) {
   color: white;
   text-transform: none;
@@ -167,26 +157,6 @@
 .mdc-top-app-bar__section .mdc-button--app-bar .mdc-button__icon {
   height: 24px;
   width: 24px;
-}
-
-.mdc-button--raised {
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 4px 12px;
-  text-transform: none;
-}
-
-.mdc-button--raised:not(:disabled) {
-  background-color: white;
-  border: 2px solid var(--mdc-theme-secondary);
-  color: var(--mdc-theme-secondary);
-}
-
-.mdc-button--raised:disabled {
-  background-color: white;
-  border-color: gray;
-  color: gray;
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) {
@@ -218,7 +188,13 @@
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
-    border-color: rgba(0,0,0,.12);
+  border-color: var(--mdc-theme-gray__700);
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: var(--mdc-theme-gray__700);
 }
 
 .mdc-text-field .mdc-line-ripple::after {
@@ -249,20 +225,6 @@
 
 .mdc-tab--active > .mdc-tab-indicator--active {
   display: flex;
-}
-
-.mdc-button .mdc-button__icon {
-  height: 24px;
-  margin-right: 0;
-  width: 24px;
-}
-
-.mdc-button .mdc-button__icon + .mdc-button__label {
-  margin-left: 8px;
-}
-
-.mdc-button .mdc-button__label + .mdc-button__icon {
-  margin-left: 8px;
 }
 
 .mdc-header {
@@ -396,9 +358,4 @@
 .mdc-chip:hover {
   background-color: var(--mdc-theme-gray__050);
   color: var(--mdc-theme-gray__700);
-}
-
-.mdc-icon.small {
-  height: 18px;
-  width: 18px;
 }

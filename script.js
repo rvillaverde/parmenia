@@ -1,7 +1,11 @@
 function collapse(e) {
   let target = $(e.target);
   let parent = target.closest('.collapsable-wrapper');
-  parent.find('.collapsable').slideToggle();
+  if (target.is(":checked")) {
+    parent.find('.collapsable').slideUp();
+  } else {
+    parent.find('.collapsable').slideDown();
+  }
 }
 
 $(function() {
@@ -56,20 +60,11 @@ $(function() {
       section = $(section);
       if (scrollTop > section.position().top && section.position().top + section.height() - scrollTop >= 0) {
         sectionId = section.attr('id');
-        console.log(section.attr('id'));
       } 
-/*      console.log($(section).height());
-      console.log($(section).offset().top - scrollTop);*/
-      //if ($(section).position().top > 0) activeSection = section;
-/*      if ($(section).offset().top < 0 && $(section).height() + scrollTop > 0) {
-        console.log(section);
-
-      }*/
     });
 
     $('.mdc-list-item').each(function(i, item) {
       if ($(item).attr('data-section') == sectionId) {
-        console.log($(item).attr('data-section'));
         $(item).addClass('mdc-list-item--activated');
       } else {
         $(item).removeClass('mdc-list-item--activated');
