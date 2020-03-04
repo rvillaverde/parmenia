@@ -79,9 +79,11 @@ body.login-container {
 }
 
 .mdc-icon {
+  align-items: center;
+  display: flex;
   height: 24px;
+  justify-content: center;
   width: 24px;
-  display: inline-block;
 }
 
 .mdc-icon.small {
