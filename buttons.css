@@ -71,6 +71,10 @@
   color: var(--mdc-theme-secondary__700);
 }
 
+.mdc-button--text:hover svg > path {
+  stroke: var(--mdc-theme-secondary__700);
+}
+
 .mdc-button--text:active {
   color: var(--mdc-theme-secondary__400);
 }
