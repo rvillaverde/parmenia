@@ -8,6 +8,14 @@ function collapse(e) {
   }
 }
 
+function openNews() {
+  console.log('showing news on pop up');
+}
+
+function addToBag() {
+  console.log('add to bag');
+}
+
 $(function() {
   const drawer = $('.mdc-drawer');
   const header = $('.mdc-header');

@@ -351,7 +351,7 @@
   background-color: var(--mdc-theme-gray__050);
   border-radius: 8px;
   color: var(--mdc-theme-gray__700);
-  cursor: default;
+  cursor: inherit;
   height: 26px;
 }
 
