@@ -19,6 +19,8 @@
 }
 
 .admin-form__subsection-inner {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
