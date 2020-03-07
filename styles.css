@@ -213,6 +213,11 @@ body.login-container {
   display: flex;
 }
 
+.mdc-static-linear__text {
+  min-width: 96px;
+  text-transform: none;
+}
+
 .mdc-linear-progress {
   height: 6px;
 }

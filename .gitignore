@@ -68,3 +68,4 @@ dist
 assets/offline/
 package-lock.json
 /styles/
+/offline/

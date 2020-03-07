@@ -42,6 +42,7 @@
   color: var(--mdc-theme-gray__700);
   font-size: 36px;
   font-weight: bold;
+  letter-spacing: normal;
   line-height: 44px;
   margin: 0;
 }
@@ -50,6 +51,7 @@
   color: var(--mdc-theme-gray__700);
   font-size: 22px;
   font-weight: bold;
+  letter-spacing: normal;
   line-height: 28px;
   margin: 0;
 }
@@ -58,6 +60,7 @@
   color: var(--mdc-theme-gray__700);
   font-size: 22px;
   font-weight: 600;
+  letter-spacing: normal;
   line-height: 28px;
   margin: 0;
 }
@@ -67,6 +70,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
+  letter-spacing: normal;
   line-height: 24px;
   letter-spacing: 0.5px;
   margin: 0;
@@ -77,6 +81,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
+  letter-spacing: normal;
   line-height: 24px;
   letter-spacing: 0.5px;
   margin: 0;
@@ -88,6 +93,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
+  letter-spacing: normal;
   margin: 0;
 }
 
@@ -95,7 +101,8 @@
   color: var(--mdc-theme-gray__700);
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: normal;
   line-height: 20px;
   margin: 0;
 }
@@ -106,6 +113,7 @@
   font-size: 12px;
   font-style: normal;
   font-weight: normal;
+  letter-spacing: normal;
   line-height: 16px;
   margin: 0;
 }
@@ -116,6 +124,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
+  letter-spacing: normal;
   line-height: 22px;
   margin: 0;
 }
@@ -126,6 +135,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
+  letter-spacing: normal;
   line-height: 20px;
   margin: 0;
 }
@@ -135,6 +145,7 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
+  letter-spacing: normal;
   line-height: 16px;
 }
 
@@ -145,8 +156,6 @@
   font-weight: 600;
   letter-spacing: normal;
   line-height: 16px;
-  min-width: 100px;
-  text-transform: none;
 }
 
 .mdc-top-app-bar__section .mdc-button--app-bar:not(:disabled) {
