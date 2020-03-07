@@ -57,6 +57,7 @@
 
 .mdc-button--raised:disabled {
   background-color: var(--mdc-theme-surface);
+  color: var(--mdc-theme-secondary);
   opacity: 0.5;
 }
 
@@ -108,6 +109,8 @@
 
 .mdc-button--outlined:disabled {
   background-color: var(--mdc-theme-surface);
+  border-color: var(--mdc-theme-gray__700);
+  color: var(--mdc-theme-gray__700);
   opacity: 0.5;
 }
 

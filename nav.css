@@ -45,9 +45,27 @@
 }
 
 .school-logo {
-  border-radius: 50%;
-  border: 1px solid white;
   margin: 12px;
   min-width: 40px;
-  overflow: hidden;
+}
+
+.top-nav {
+  background-color: white;
+  margin-top: calc(var(--top-nav-height) * -1);
+  opacity: 0.6;
+  width: 100%;
+}
+
+.mdc-tab-bar {
+/*  margin: 0 auto;
+  max-width: var(--viewport-width);*/
+}
+
+.mdc-tab {
+  flex-basis: 0;
+  height: var(--top-nav-height);
+}
+
+.mdc-tab__content .mdc-icon {
+  margin-right: 8px;
 }

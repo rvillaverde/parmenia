@@ -4,11 +4,10 @@
 
 .table__photo-thumbnail {
   align-items: center;
-  border-radius: 50%;
   display: flex;
+  border: 0;
   height: 40px;
   justify-content: center;
-  overflow: hidden;
   width: 40px;
 }
 

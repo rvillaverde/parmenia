@@ -224,10 +224,6 @@
   flex-grow: 0;
 }
 
-.mdc-tab {
-  flex-basis: 0;
-}
-
 .mdc-tab-indicator--active {
   display: none;
 }
@@ -253,6 +249,10 @@
   box-shadow: inset 0px -50px 120px rgba(0, 0, 0, 0.3);
 }
 
+.mdc-header__project {
+  height: var(--header__height-large);
+}
+
 .mdc-header__admin .mdc-header__row {
   max-width: var(--viewport-width);
   margin: 0 auto;
@@ -262,27 +262,29 @@
   height: var(--header__height-large);
 }
 
-.mdc-header__section-aula .mdc-chip-set {
+.mdc-header__aula .mdc-header__section:first-of-type, .mdc-header__project .mdc-header__section:first-of-type {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.mdc-header__aula .mdc-header__section .mdc-chip-set {
   padding: 0;
 }
 
-.mdc-header__section-aula .mdc-chip:first-child {
+.mdc-header__aula .mdc-header__section .mdc-chip:first-child {
   margin-left: 0;
 }
 
 .mdc-header .mdc-typography--headline1, .mdc-header .mdc-typography--headline5 {
-  color: white;
+  color: var(--mdc-theme-surface);
 }
 
 .mdc-header__cover {
   height: 444px;
   width: 444px;
-  border: 1px solid white;
-  border-radius: 50%;
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
   position: absolute;
   transform: translateX(-48%) translateY(-36%);
 }
@@ -344,6 +346,32 @@
   width: 100%;
 }
 
+.mdc-header__caption-group {
+  margin-top: 12px;
+}
+
+.mdc-header__caption .mdc-typography--caption {
+  color: var(--mdc-theme-surface);
+}
+
+.mdc-header__caption:not(:last-child) {
+  margin-right: 20px;
+}
+
+.mdc-header__caption i {
+  margin-right: 8px;
+}
+
+.mdc-header__caption-group, .mdc-header__caption {
+  align-items: center;
+  display: flex;
+}
+
+.mdc-header__caption-group .vertical-divider {
+  color: var(--mdc-theme-surface);
+  opacity: 0.6;
+}
+
 .mdc-header__actions > .mdc-button {
   margin: 0 6px;
 }
@@ -354,6 +382,12 @@
 
 .mdc-header__actions > .mdc-button:last-child {
   margin-right: 0;
+}
+
+.mdc-header__breadcrumb a:not(:last-child)::after {
+  content: '/';
+  margin-left: 8px;
+  margin-right: 4px;
 }
 
 .mdc-chip {

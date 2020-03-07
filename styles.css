@@ -6,7 +6,7 @@
 
   --header__height-large: 240px;
   --header__height-medium: 120px;
-  --top-nav-heigth: 64px;
+  --top-nav-height: 40px;
 
   --footer__height--desktop: 88px;
   --footer__height--mobile: 80px;
@@ -54,6 +54,14 @@ body.login-container {
   align-items: center;
   display: flex;
   margin: 24px 0;
+}
+
+.headline-wrapper .mdc-typography--headline4 {
+  color: var(--mdc-theme-gray__600);
+}
+
+.headline-wrapper__actions {
+  margin-left: auto;
 }
 
 .subtitle-wrapper {
@@ -141,6 +149,12 @@ body.login-container {
   margin-left: 12px;
 }
 
+.round-photo-wrapper {
+  border-radius: 50%;
+  border: 1px solid var(--mdc-theme-surface);
+  overflow: hidden;
+}
+
 .upcoming-event {
   padding: 16px;
   border-bottom: 1px solid var(--mdc-theme-gray__300);
@@ -156,6 +170,29 @@ body.login-container {
   display: flex;
   justify-content: flex-end;
   padding: 12px 0;
+}
+
+.vertical-divider {
+  height: 100%;
+  border-left-width: 2px;
+  border-left-style: solid;
+  display: inline-block;
+}
+
+.no-content-placeholder {
+  align-items: center;
+  background-color: var(--mdc-theme-gray__050);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  height: 224px;
+  justify-content: center;
+  padding: 24px;
+  width: 100%;
+}
+
+.no-content-placeholder span {
+  color: var(--mdc-theme-primary__200);
 }
 
 /* -- Notifications -- */
