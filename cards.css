@@ -89,6 +89,23 @@
   width: 100%;
 }
 
+.mdc-card--large > .mdc-card__primary {
+  padding: 24px;
+}
+
+.class-card .mdc-card__title {
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.class-card .mdc-card__caption {
+  color: var(--mdc-theme-gray__400);
+}
+
+.class-card .group-content {
+  padding: 0 24px;
+}
+
 .mdc-card--large.mdc-layout-grid__cell {
   margin: 12px 0;
 }
@@ -260,6 +277,10 @@
 .group-title-wrapper, .group-item {
   border-bottom: 1px solid var(--mdc-theme-gray__050);
   height: 56px;
+}
+
+.group-title-wrapper > .mdc-icon ~  * {
+  margin-left: 8px;
 }
 
 .group-title-wrapper .mdc-chip {

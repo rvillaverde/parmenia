@@ -345,3 +345,12 @@ body.login-container {
 .mdc-layout-grid__inner.mdc-layout-grid--no-gap {
   grid-gap: 0;
 }
+
+.activity-status__wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.activity-status__wrapper span {
+  margin-left: 4px;
+}
