@@ -5,6 +5,7 @@
   --app-nav__height--mobile: 56px;
 
   --header__height-large: 240px;
+  --header__height-large--mobile: 320px;
   --header__height-medium: 120px;
   --top-nav-height: 40px;
 
@@ -42,6 +43,11 @@ body.login-container {
 .main-wrapper {
   margin: 36px auto;
   max-width: var(--viewport-width);
+}
+
+.admin-wrapper {
+  margin: 0 auto;
+  max-width: 888px;
 }
 
 @media (max-width: 1280px) {
@@ -150,8 +156,11 @@ body.login-container {
 }
 
 .round-photo-wrapper {
-  border-radius: 50%;
+  align-items: center;
   border: 1px solid var(--mdc-theme-surface);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -290,4 +299,49 @@ body.login-container {
 
 .mdc-linear-progress__bar-inner.finished {
   background-color: var(--mdc-theme-primary);
+}
+
+.round-number__container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.round-number__container:not(:first-of-type)::before, 
+.round-number__container:not(:nth-last-of-type(2))::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 50%;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: var(--mdc-theme-gray__300);
+}
+
+.round-number__container:not(:first-of-type)::before {
+  top: 0;
+}
+
+.round-number__container:not(:nth-last-of-type(2))::after {
+  bottom: 0;
+}
+
+.round-number {
+  background-color: var(--mdc-theme-secondary__100);
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.mdc-layout-grid__inner.mdc-layout-grid--no-gap {
+  grid-gap: 0;
 }

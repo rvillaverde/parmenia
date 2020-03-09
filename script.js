@@ -1,3 +1,5 @@
+let dialog;
+
 function collapse(e) {
   let target = $(e.target);
   let parent = target.closest('.collapsable-wrapper');
@@ -8,12 +10,23 @@ function collapse(e) {
   }
 }
 
-function openNews() {
-  console.log('showing news on pop up');
-}
-
 function addToBag() {
   console.log('add to bag');
+}
+
+function openDialog(dialogId) {
+  console.log(dialogId);
+  if (dialog) {
+    dialog.close();
+  }
+
+  if (dialogId) {
+    dialog = new mdc.dialog.MDCDialog($(`.mdc-dialog#${ dialogId }`)[0]);
+  } else  {
+    dialog = new mdc.dialog.MDCDialog($('.mdc-dialog')[0]);
+  }
+
+  dialog.open();
 }
 
 $(function() {

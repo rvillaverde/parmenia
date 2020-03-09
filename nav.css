@@ -41,12 +41,14 @@
 
 .school-logo, .school-logo img {
   height: 40px;
-  width: 40px;
+  width: auto;
 }
 
 .school-logo {
+  height: 40px;
   margin: 12px;
   min-width: 40px;
+  width: 40px;
 }
 
 .top-nav {

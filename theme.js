@@ -18,3 +18,13 @@ for (var i = 0, textField; textField = textFields[i]; i++) {
   mdc.textField.MDCTextField.attachTo(textField);
 }
 */
+
+var switchControls = $('.mdc-switch');
+for (var i = 0, switchControl; switchControl = switchControls[i]; i++) {
+  mdc.switchControl.MDCSwitch.attachTo(switchControl);
+}
+
+var dataTables = $('.mdc-data-table');
+for (var i = 0, dataTable; dataTable = dataTables[i]; i++) {
+  mdc.dataTable.MDCDataTable.attachTo(dataTable);
+}

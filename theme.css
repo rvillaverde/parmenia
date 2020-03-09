@@ -158,6 +158,10 @@
   line-height: 16px;
 }
 
+.mdc-typography--lighter {
+  font-weight: lighter;
+}
+
 .mdc-top-app-bar__section .mdc-button--app-bar:not(:disabled) {
   color: white;
   text-transform: none;
@@ -166,6 +170,22 @@
 .mdc-top-app-bar__section .mdc-button--app-bar .mdc-button__icon {
   height: 24px;
   width: 24px;
+}
+
+.mdc-top-app-bar__profile-pic {
+  margin-right: 8px;
+  min-width: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+.mdc-top-app-bar__profile-pic img {
+  height: 100%;
+  width: auto;
+}
+
+textarea.mdc-text-field__input {
+  resize: none;
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) {
@@ -220,7 +240,7 @@
   padding-left: 0;
 }
 
-.mdc-top-app-bar__actions {
+.mdc-top-app-bar__actions, .mdc-top-app-bar__profile {
   flex-grow: 0;
 }
 
@@ -251,6 +271,12 @@
 
 .mdc-header__project {
   height: var(--header__height-large);
+}
+
+@media (max-width: 599px) {
+  .mdc-header__project {
+    height: var(--header__height-large--mobile);
+  }
 }
 
 .mdc-header__admin .mdc-header__row {
