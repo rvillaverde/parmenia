@@ -114,14 +114,15 @@
 }
 
 .projects-card .mdc-card__primary {
-  margin-bottom: 4px;
+  padding:0;
 }
 
 .projects-card .mdc-card__secondary {
   display: flex;
+  justify-content: center;
   margin: 48px 0;
   margin-top: 0;
-  justify-content: center;
+  padding: 8px;
 }
 
 .mdc-card__caption {

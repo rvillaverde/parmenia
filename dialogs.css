@@ -6,6 +6,10 @@
   z-index: 30;
 }
 
+.mdc-dialog .mdc-dialog__surface {
+  border-radius: 8px;
+}
+
 .mdc-dialog .mdc-dialog__title {
   color: var(--mdc-theme-gray__700);
   padding-top: 30px;

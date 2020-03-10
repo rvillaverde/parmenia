@@ -19,6 +19,10 @@
   widows: 240px;
 }
 
+.mdc-drawer + .drawer-side-wrapper .main-wrapper {
+  max-width: 888px;
+}
+
 @media (max-width: 999px) {
   .mdc-drawer {
     width: 180px;
