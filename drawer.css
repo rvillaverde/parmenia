@@ -16,7 +16,7 @@
   box-sizing: content-box;
   top: calc(var(--header__height-large));
   position: absolute;
-  widows: 240px;
+  width: 240px;
 }
 
 .mdc-drawer + .drawer-side-wrapper .main-wrapper {

@@ -164,6 +164,7 @@
 
 .mdc-top-app-bar__section .mdc-button--app-bar:not(:disabled) {
   color: white;
+  font-weight: 600;
   text-transform: none;
 }
 
@@ -254,7 +255,9 @@ textarea.mdc-text-field__input {
 
 .mdc-header {
   background-color: var(--mdc-theme-custom__01);
+  position: relative;
   width: 100%;
+  z-index: 8;
 }
 
 .mdc-header__welcome {
