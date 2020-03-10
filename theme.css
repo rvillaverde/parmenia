@@ -343,11 +343,6 @@ textarea.mdc-text-field__input {
   width: 100%;
 }
 
-.mdc-header__section {
-  align-items: center;
-  display: flex;
-}
-
 @media (max-width: 699px) {
   .mdc-header__row {
     flex-direction: column;
@@ -358,6 +353,18 @@ textarea.mdc-text-field__input {
   .mdc-header__actions {
     margin-top: 4px;
   } 
+}
+
+.mdc-header__section {
+  align-items: center;
+  display: flex;
+}
+
+.mdc-header__section--cover {
+  height: 144px;
+  min-width: 144px;
+  width: 144px;
+  position: absolute;
 }
 
 .mdc-header__section-background {

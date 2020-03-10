@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
+    <!-- OFFLINE MODE -->
+<!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
+    <script src="offline/material-components-web.min.js"></script>
+    <script src="offline/jquery-3.4.1.min.js"></script> -->
+
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="drawer.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="tables.css">
+    <link rel="stylesheet" href="footer.css">
+  </head>
+
+  <body class="container mdc-typography">
+    <nav class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button menu-icon">menu</button>
+          <div class="school-logo round-photo-wrapper">
+            <img src="img/placeholder.png">
+          </div>
+          <a href="dashboard.html" class="mdc-top-app-bar__title mdc-typography--headline6">Colegio Lasalle</a>
+        </section>
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__actions" role="toolbar">
+          <a class="mdc-top-app-bar__action-item mdc-button mdc-button--app-bar" href="aulas.html" aria-label="Mis aulas">
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.7717 19.6467L17.6957 22.2027" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M7.22785 19.6467L6.30385 22.2027" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M22.0147 4.67749H1.98541V19.6455H22.0147V4.67749Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M22.6667 3.81336C22.6667 4.2907 22.2773 4.67736 21.796 4.67736H2.20399C1.72266 4.67736 1.33333 4.2907 1.33333 3.81336V2.66136C1.33333 2.18403 1.72266 1.79736 2.20399 1.79736H21.796C22.2773 1.79736 22.6667 2.18403 22.6667 2.66136V3.81336Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M11.668 8.61475H17.3147" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M11.668 12.1641H18.9826" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M11.668 15.7134H17.3147" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M6.87589 12.584C7.90241 12.584 8.73456 11.7519 8.73456 10.7254C8.73456 9.69885 7.90241 8.8667 6.87589 8.8667C5.84938 8.8667 5.01723 9.69885 5.01723 10.7254C5.01723 11.7519 5.84938 12.584 6.87589 12.584Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-button__label">Mis Aulas</span>
+            <i class="mdc-icon small">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+          </a>
+
+          <a class="mdc-top-app-bar__action-item mdc-button mdc-button--app-bar" href="docentes.html" aria-label="Docentes">
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.6989 15.0454C8.68565 15.0454 10.2962 13.4348 10.2962 11.448C10.2962 9.46129 8.68565 7.85071 6.6989 7.85071C4.71214 7.85071 3.10156 9.46129 3.10156 11.448C3.10156 13.4348 4.71214 15.0454 6.6989 15.0454Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M1.55078 22.6667C1.55078 19.816 3.86145 17.5054 6.71211 17.5054C9.56278 17.5054 11.8721 19.816 11.8721 22.6667" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M4.6936 5.85737V3.25604C4.6936 2.19471 5.59894 1.33337 6.71627 1.33337H20.4269C21.5443 1.33337 22.4496 2.19471 22.4496 3.25604V12.4454C22.4496 13.5067 21.5443 14.368 20.4269 14.368H12.9256" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M10.012 5.88538H18.3173" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M13.7642 9.45605H18.3175" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-button__label">Docentes</span>
+          </a>
+
+          <a class="mdc-top-app-bar__action-item mdc-button mdc-button--app-bar" href="alumnos.html" aria-label="Biblioteca">
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.65288 13.3733C8.70591 13.3733 10.3702 11.709 10.3702 9.65593C10.3702 7.60291 8.70591 5.9386 6.65288 5.9386C4.59985 5.9386 2.93555 7.60291 2.93555 9.65593C2.93555 11.709 4.59985 13.3733 6.65288 13.3733Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M1.33325 21.2492C1.33325 18.3039 3.72125 15.9159 6.66659 15.9159C9.61192 15.9159 11.9999 18.3039 11.9999 21.2492" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M17.3204 10.1853C19.3734 10.1853 21.0377 8.52097 21.0377 6.46794C21.0377 4.41492 19.3734 2.75061 17.3204 2.75061C15.2673 2.75061 13.603 4.41492 13.603 6.46794C13.603 8.52097 15.2673 10.1853 17.3204 10.1853Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M12.4187 15.9852C13.2294 14.0719 15.124 12.7279 17.3334 12.7279C20.2787 12.7279 22.6667 15.1159 22.6667 18.0612" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-button__label">Alumnos</span>
+          </a>
+
+          <a class="mdc-top-app-bar__action-item mdc-button mdc-button--app-bar" href="#" aria-label="Biblioteca">
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.33333 2.9812H7.73333C10.0893 2.9812 12 4.90787 12 7.2852V22.3519C12 20.5692 10.5667 19.1239 8.8 19.1239H1.33333V2.9812Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M22.6667 2.9812H16.2667C13.9107 2.9812 12 4.90787 12 7.2852V22.3519C12 20.5692 13.4333 19.1239 15.2 19.1239H22.6667V2.9812Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M14.7717 8.06519H19.8997" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M14.7717 11.2878H19.8997" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M14.7717 14.5117H19.8997" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-button__label">Biblioteca</span>
+          </a>
+
+          <a class="mdc-top-app-bar__action-item mdc-button mdc-button--app-bar" href="#" aria-label="Agenda">
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.02533 4.35474H19.9747C21.0933 4.35474 22 5.27074 22 6.40007V19.9547C22 21.0841 21.0933 22.0001 19.9747 22.0001H4.02533C2.90667 22.0001 2 21.0841 2 19.9547V6.40007C2 5.27074 2.90667 4.35474 4.02533 4.35474Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M17.6879 2V4.572" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M6.31213 2V4.572" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M2 8.90405H22" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M6.06245 14.2028C6.62873 14.2028 7.08778 13.7437 7.08778 13.1774C7.08778 12.6112 6.62873 12.1521 6.06245 12.1521C5.49617 12.1521 5.03712 12.6112 5.03712 13.1774C5.03712 13.7437 5.49617 14.2028 6.06245 14.2028Z" fill="white"/>
+                <path d="M10.0625 14.2028C10.6287 14.2028 11.0878 13.7437 11.0878 13.1774C11.0878 12.6112 10.6287 12.1521 10.0625 12.1521C9.49617 12.1521 9.03712 12.6112 9.03712 13.1774C9.03712 13.7437 9.49617 14.2028 10.0625 14.2028Z" fill="white"/>
+                <path d="M14.0625 14.2028C14.6287 14.2028 15.0878 13.7437 15.0878 13.1774C15.0878 12.6112 14.6287 12.1521 14.0625 12.1521C13.4962 12.1521 13.0371 12.6112 13.0371 13.1774C13.0371 13.7437 13.4962 14.2028 14.0625 14.2028Z" fill="white"/>
+                <path d="M18.0625 14.2028C18.6287 14.2028 19.0878 13.7437 19.0878 13.1774C19.0878 12.6112 18.6287 12.1521 18.0625 12.1521C17.4962 12.1521 17.0371 12.6112 17.0371 13.1774C17.0371 13.7437 17.4962 14.2028 18.0625 14.2028Z" fill="white"/>
+                <path d="M6.06245 18.2028C6.62873 18.2028 7.08778 17.7437 7.08778 17.1774C7.08778 16.6112 6.62873 16.1521 6.06245 16.1521C5.49617 16.1521 5.03712 16.6112 5.03712 17.1774C5.03712 17.7437 5.49617 18.2028 6.06245 18.2028Z" fill="white"/>
+                <path d="M10.0625 18.2028C10.6287 18.2028 11.0878 17.7437 11.0878 17.1774C11.0878 16.6112 10.6287 16.1521 10.0625 16.1521C9.49617 16.1521 9.03712 16.6112 9.03712 17.1774C9.03712 17.7437 9.49617 18.2028 10.0625 18.2028Z" fill="white"/>
+                <path d="M14.0625 18.2028C14.6287 18.2028 15.0878 17.7437 15.0878 17.1774C15.0878 16.6112 14.6287 16.1521 14.0625 16.1521C13.4962 16.1521 13.0371 16.6112 13.0371 17.1774C13.0371 17.7437 13.4962 18.2028 14.0625 18.2028Z" fill="white"/>
+                <path d="M18.0625 18.2028C18.6287 18.2028 19.0878 17.7437 19.0878 17.1774C19.0878 16.6112 18.6287 16.1521 18.0625 16.1521C17.4962 16.1521 17.0371 16.6112 17.0371 17.1774C17.0371 17.7437 17.4962 18.2028 18.0625 18.2028Z" fill="white"/>
+              </svg>
+            </i>
+            <span class="mdc-button__label">Agenda</span>
+          </a>
+        </section>
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__profile">
+          <a class="mdc-top-app-bar__action-item mdc-button mdc-button--app-bar" href="profile.html" aria-label="Fulanito">
+            <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
+              <img src="img/placeholder.png">
+            </div>
+            <span class="mdc-button__label">Fulanito</span>
+            <i class="mdc-icon small">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+          </a>
+        </section>
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__actions" role="toolbar">
+          <button class="mdc-top-app-bar__action-item mdc-button" aria-label="Mochila">
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2292 11.5627H7.77056C5.21589 11.5627 3.69189 9.40666 3.69189 6.74666V22.6667H20.3066V6.20667C20.3066 6.20667 20.2999 6.80266 20.2986 6.82666C20.2572 9.44933 18.7572 11.5627 16.2292 11.5627Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+                <path d="M5.24645 4.58801C4.38778 4.58801 3.69312 5.31201 3.69312 6.20535C3.69312 6.20535 3.69312 6.67868 3.69312 6.74668C3.69312 9.40668 5.21712 11.5627 7.77178 11.5627H16.2304C18.7585 11.5627 20.2584 9.44935 20.3011 6.82668C20.3024 6.80268 20.3091 6.20668 20.3091 6.20668C20.3091 5.31335 19.6131 4.58935 18.7558 4.58935H5.24645V4.58801Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+                <path d="M16.6292 18.9373C16.6292 19.2146 16.4132 19.4386 16.1478 19.4386H7.85316C7.58649 19.4386 7.37183 19.2146 7.37183 18.9373V15.6853C7.37183 15.408 7.58783 15.184 7.85316 15.184H16.1478C16.4145 15.184 16.6292 15.408 16.6292 15.6853V18.9373V18.9373Z" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+                <path d="M8.29858 4.58798C8.29858 2.79065 9.95592 1.33331 11.9999 1.33331C14.0439 1.33331 15.7013 2.79065 15.7013 4.58798" stroke="white" stroke-width="1.25" stroke-miterlimit="10"/>
+              </svg>
+            </i>
+          </button>
+
+          <button class="mdc-top-app-bar__action-item mdc-button" aria-label="Notificaciones">
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+          </button>
+        </section>
+      </div>
+    </nav>
+
+    <header class="mdc-header mdc-header__project" style="background-color: var(--mdc-theme-custom__00);">
+      <div class="mdc-header__row">
+        <div class="mdc-header__cover round-photo-wrapper">
+          <img src="img/placeholder.png">
+        </div>
+<!--         <div class="mdc-header__section--cover round-photo-wrapper">
+          <img src="img/placeholder-parmenia.jpg">
+        </div> -->
+        <section class="mdc-header__section">
+          <div class="mdc-header__breadcrumb mdc-typography--headline5">
+            <a class="mdc-typography--headline5" href="aulas.html">Mis aulas</a>
+            <a class="mdc-typography--headline5" href="aula1.html">Nombre del aula</a>
+          </div>
+          <h1 class="mdc-typography--headline1">Nombre del proyecto</h1>
+          <div class="mdc-header__caption-group">
+            <div class="mdc-header__caption">
+              <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" title="Actividades">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.425 3.18002C7.94125 3.05918 8.4698 2.99877 9 3.00002C14.25 3.00002 17.25 9.00002 17.25 9.00002C16.7947 9.85172 16.2518 10.6536 15.63 11.3925M10.59 10.59C10.384 10.8111 10.1356 10.9884 9.85961 11.1114C9.58362 11.2343 9.28568 11.3005 8.98357 11.3058C8.68146 11.3111 8.38137 11.2556 8.10121 11.1424C7.82104 11.0292 7.56654 10.8608 7.35288 10.6471C7.13923 10.4335 6.97079 10.179 6.85763 9.89881C6.74447 9.61865 6.68889 9.31856 6.69423 9.01645C6.69956 8.71434 6.76568 8.4164 6.88866 8.1404C7.01163 7.86441 7.18894 7.61601 7.41 7.41002M13.455 13.455C12.1729 14.4323 10.6118 14.9737 9 15C3.75 15 0.75 9.00002 0.75 9.00002C1.68292 7.26144 2.97685 5.74247 4.545 4.54502L13.455 13.455Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M0.75 0.75L17.25 17.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+              <span class="mdc-typography--caption">Proyecto no publicado</span>
+            </div>
+
+            <div class="vertical-divider"></div>
+
+            <div class="mdc-header__caption">
+              <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" title="Actividades">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 4.5H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6 9H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6 13.5H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.25 4.5H2.2575" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.25 9H2.2575" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.25 13.5H2.2575" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+              <span class="mdc-typography--caption">02 Actividades</span>
+            </div>
+
+            <div class="mdc-header__caption">
+              <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" title="Clases">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 14.25L14.25 9L16.5 11.25L11.25 16.5L9 14.25Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.5 9.75L12.375 4.125L1.5 1.5L4.125 12.375L9.75 13.5L13.5 9.75Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M1.5 1.5L7.1895 7.1895" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8.25 9.75C9.07843 9.75 9.75 9.07843 9.75 8.25C9.75 7.42157 9.07843 6.75 8.25 6.75C7.42157 6.75 6.75 7.42157 6.75 8.25C6.75 9.07843 7.42157 9.75 8.25 9.75Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+              <span class="mdc-typography--caption">01 Clases</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="mdc-header__section mdc-header__actions">
+          <button class="mdc-button mdc-button--raised" disabled>
+            <span class="mdc-button__ripple"></span>
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 8L16 12L10 16V8Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-button__label">Publicar</span>
+          </button>
+
+          <button class="mdc-button mdc-button--outlined" disabled>
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.0801V12.0001C21.9988 14.1565 21.3005 16.2548 20.0093 17.9819C18.7182 19.7091 16.9033 20.9726 14.8354 21.584C12.7674 22.1954 10.5573 22.122 8.53447 21.3747C6.51168 20.6274 4.78465 19.2462 3.61096 17.4372C2.43727 15.6281 1.87979 13.4882 2.02168 11.3364C2.16356 9.18467 2.99721 7.13644 4.39828 5.49718C5.79935 3.85793 7.69278 2.71549 9.79619 2.24025C11.8996 1.76502 14.1003 1.98245 16.07 2.86011" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 4L12 14.01L9 11.01" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-button__label">Finalizar</span>
+          </button>
+        </section>
+      </div>
+
+      <div class="top-nav">
+        <div class="mdc-tab-bar" role="tablist">
+          <div class="mdc-tab-scroller">
+            <div class="mdc-tab-scroller__scroll-area">
+              <div class="mdc-tab-scroller__scroll-content">
+                <a href="proyecto1_presentacion.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <i class="mdc-icon small">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.1802 5.81998L10.5902 10.59L5.82022 12.18L7.41022 7.40998L12.1802 5.81998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-tab__text-label mdc-typography--caption">Presentación</span>
+                  </span>
+                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </a>
+
+                <a href="proyecto1_clases.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <i class="mdc-icon small">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.1802 5.81998L10.5902 10.59L5.82022 12.18L7.41022 7.40998L12.1802 5.81998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-tab__text-label mdc-typography--caption">Clases</span>
+                  </span>
+                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </a>
+
+                <a href="proyecto1_foro.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <i class="mdc-icon small">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.75 8.37502C15.7526 9.36492 15.5213 10.3414 15.075 11.225C14.5458 12.2838 13.7323 13.1744 12.7256 13.797C11.7189 14.4196 10.5587 14.7496 9.375 14.75C8.3851 14.7526 7.40859 14.5213 6.525 14.075L2.25 15.5L3.675 11.225C3.2287 10.3414 2.99742 9.36492 3 8.37502C3.00046 7.19134 3.33046 6.03116 3.95304 5.02443C4.57562 4.01771 5.46619 3.2042 6.525 2.67502C7.40859 2.22872 8.3851 1.99744 9.375 2.00002H9.75C11.3133 2.08627 12.7898 2.74609 13.8969 3.85317C15.0039 4.96024 15.6638 6.43676 15.75 8.00002V8.37502Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-tab__text-label mdc-typography--caption">Foro</span>
+                  </span>
+                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </a>
+
+                <a href="proyecto1_aprendizaje.html" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <i class="mdc-icon small">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 10.5C6 10.5 7.125 12 9 12C10.875 12 12 10.5 12 10.5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.75 6.75H6.7575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11.25 6.75H11.2575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-tab__text-label mdc-typography--caption">Mi Aprendizaje</span>
+                  </span>
+                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </a>
+
+                <a href="proyecto1_sintesis.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                  <span class="mdc-tab__content">
+                    <i class="mdc-icon small">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 11.25C3 11.25 3.75 10.5 6 10.5C8.25 10.5 9.75 12 12 12C14.25 12 15 11.25 15 11.25V2.25C15 2.25 14.25 3 12 3C9.75 3 8.25 1.5 6 1.5C3.75 1.5 3 2.25 3 2.25V11.25Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 16.5V11.25" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-tab__text-label mdc-typography--caption">Síntesis de Cierre</span>
+                  </span>
+                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="mdc-drawer">
+      <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+          <a class="mdc-list-item mdc-list-item--activated" href="#consigna" aria-current="page" data-section="consigna">
+            <i class="mdc-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.2403 7.75977L14.1203 14.1198L7.76025 16.2398L9.88025 9.87977L16.2403 7.75977Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-list-item__text mdc-typography--headline6">Consigna</span>
+          </a>
+
+          <a class="mdc-list-item" href="#recursos" aria-current="page" data-section="recursos">
+            <i class="mdc-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.84375 18.5812V3.73055C2.84375 2.68922 3.75975 1.84521 4.88908 1.84521H18.4438C19.5731 1.84521 20.4891 2.68922 20.4891 3.73055V18.5825C20.4891 19.6239 19.5731 20.4679 18.4438 20.4679H4.88908C3.75975 20.4679 2.84375 19.6225 2.84375 18.5812Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M11.6665 20.4682V1.84424" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M8.34662 12.1815C8.9129 12.1815 9.37195 11.7225 9.37195 11.1562C9.37195 10.5899 8.9129 10.1309 8.34662 10.1309C7.78035 10.1309 7.32129 10.5899 7.32129 11.1562C7.32129 11.7225 7.78035 12.1815 8.34662 12.1815Z" fill="#757575"/>
+                <path d="M14.9868 12.1815C15.553 12.1815 16.0121 11.7225 16.0121 11.1562C16.0121 10.5899 15.553 10.1309 14.9868 10.1309C14.4205 10.1309 13.9614 10.5899 13.9614 11.1562C13.9614 11.7225 14.4205 12.1815 14.9868 12.1815Z" fill="#757575"/>
+                <path d="M5 20.8003V23.467" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M18.3335 20.8003V23.467" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-list-item__text mdc-typography--headline6">Recursos</span>
+          </a>
+
+          <a class="mdc-list-item" href="#mi-grupo" aria-current="page" data-section="mi-grupo">
+            <i class="mdc-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23 20.9999V18.9999C22.9993 18.1136 22.7044 17.2527 22.1614 16.5522C21.6184 15.8517 20.8581 15.3515 20 15.1299" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-list-item__text mdc-typography--headline6">Mi grupo</span>
+          </a>
+
+          <a class="mdc-list-item" href="#tarea" aria-current="page" data-section="tarea">
+            <i class="mdc-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 19L19 12L22 15L15 22L12 19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 13L16.5 5.5L2 2L5.5 16.5L13 18L18 13Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 2L9.586 9.586" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 13C12.1046 13 13 12.1046 13 11C13 9.89543 12.1046 9 11 9C9.89543 9 9 9.89543 9 11C9 12.1046 9.89543 13 11 13Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-list-item__text mdc-typography--headline6">Tarea</span>
+          </a>
+
+          <a class="mdc-list-item" href="#devolucion" aria-current="page" data-section="devolucion">
+            <i class="mdc-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 11.1665C21.0034 12.4864 20.6951 13.7884 20.1 14.9665C19.3944 16.3783 18.3098 17.5657 16.9674 18.3958C15.6251 19.2259 14.0782 19.6659 12.5 19.6665C11.1801 19.67 9.87812 19.3616 8.7 18.7665L3 20.6665L4.9 14.9665C4.30493 13.7884 3.99656 12.4864 4 11.1665C4.00061 9.58829 4.44061 8.04138 5.27072 6.69908C6.10083 5.35678 7.28825 4.2721 8.7 3.56653C9.87812 2.97146 11.1801 2.66309 12.5 2.66653H13C15.0843 2.78152 17.053 3.66129 18.5291 5.13739C20.0052 6.61349 20.885 8.58218 21 10.6665V11.1665Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-list-item__text mdc-typography--headline6">Devolución</span>
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="drawer-side-wrapper">
+      <main class="main-wrapper">
+        <section id="consigna" class="consigna-wrapper">
+          <div class="headline-wrapper">
+            <i class="headline__icon">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.0002 31.1668C24.8242 31.1668 31.1668 24.8242 31.1668 17.0002C31.1668 9.17613 24.8242 2.8335 17.0002 2.8335C9.17613 2.8335 2.8335 9.17613 2.8335 17.0002C2.8335 24.8242 9.17613 31.1668 17.0002 31.1668Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23.0065 10.9932L20.0032 20.0032L10.9932 23.0065L13.9965 13.9965L23.0065 10.9932Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <h4 class="mdc-typography--headline4">Consigna</h4>
+            <div class="headline-wrapper__actions">
+              <button class="mdc-button mdc-button--raised">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">Editar contenido</span>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-card mdc-card--large">
+            <div class="mdc-card__primary">
+              <h3 class="mdc-card__title mdc-typography--headline3">
+                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
+              </h3>
+              <p class="mdc-typography--body1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+<!--           <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
+          </div> -->
+        </section>
+
+        <!-- Recursos { -->
+        <section id="recursos" class="recursos-wrapper">
+          <div class="headline-wrapper">
+            <i class="headline__icon">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.02881 26.3231V5.28466C4.02881 3.80944 5.32648 2.61377 6.92636 2.61377H26.1288C27.7287 2.61377 29.0264 3.80944 29.0264 5.28466V26.325C29.0264 27.8002 27.7287 28.9959 26.1288 28.9959H6.92636C5.32648 28.9959 4.02881 27.7983 4.02881 26.3231Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M16.5276 28.9963V2.6123" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M11.8241 17.2567C12.6264 17.2567 13.2767 16.6063 13.2767 15.8041C13.2767 15.0019 12.6264 14.3516 11.8241 14.3516C11.0219 14.3516 10.3716 15.0019 10.3716 15.8041C10.3716 16.6063 11.0219 17.2567 11.8241 17.2567Z" fill="#757575"/>
+                <path d="M21.2311 17.2567C22.0333 17.2567 22.6837 16.6063 22.6837 15.8041C22.6837 15.0019 22.0333 14.3516 21.2311 14.3516C20.4289 14.3516 19.7786 15.0019 19.7786 15.8041C19.7786 16.6063 20.4289 17.2567 21.2311 17.2567Z" fill="#757575"/>
+                <path d="M7.08325 29.4668V33.2446" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M25.9724 29.4668V33.2446" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <h4 class="mdc-typography--headline4">Recursos</h4>
+          </div>
+
+          <div class="mdc-card mdc-card--large resources-card">
+            <div class="collapsable-wrapper group">
+              <div class="group-title-wrapper">
+                <h5 class="mdc-typography--headline5">Nombre de la carpeta</h5>
+                <div class="group-icons">
+                  <div class="mdc-chip" role="row">
+                    <span role="gridcell">
+                      <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">4</span>
+                    </span>
+                  </div>
+                  <a class="collapse-link">
+                    <input type="checkbox">
+                    <i class="collapse-icon">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <a href="#" class="view-link">
+                    <button class="mdc-icon-button mdc-icon-button--secondary">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </a>
+                  <a href="#" class="edit-link">
+                    <button class="mdc-icon-button mdc-icon-button--secondary">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M16.5 3.50023C16.8978 3.1024 17.4374 2.87891 18 2.87891C18.2786 2.87891 18.5544 2.93378 18.8118 3.04038C19.0692 3.14699 19.303 3.30324 19.5 3.50023C19.697 3.69721 19.8532 3.93106 19.9598 4.18843C20.0665 4.4458 20.1213 4.72165 20.1213 5.00023C20.1213 5.2788 20.0665 5.55465 19.9598 5.81202C19.8532 6.06939 19.697 6.30324 19.5 6.50023L7 19.0002L3 20.0002L4 16.0002L16.5 3.50023Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </a>
+                </div>
+                <div class="group-actions">
+                  <button class="mdc-button mdc-button--text">
+                    <span class="mdc-button__ripple"></span>
+                    <i class="mdc-button__icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 8V16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-button__label">agregar recurso</span>
+                  </button>
+
+                  <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                    <i class="mdc-icon small">
+                      <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="group-content collapsable">
+                <div class="group-item">
+                  <a href="#" class="drag-link">
+                    <i class="mdc-icon">
+                      <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="1.76724" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="14.3061" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <circle cx="6.1691" cy="14.3061" r="1.1005" fill="#757575"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15.54 8.45996C16.4774 9.3976 17.004 10.6691 17.004 11.995C17.004 13.3208 16.4774 14.5923 15.54 15.53" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Nombre del recurso</span>
+                  <div class="group-item-actions">
+                    <button class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver recurso</span>
+                    </button>
+
+                    <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                      <i class="mdc-icon small">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="group-item">
+                  <a href="#" class="drag-link">
+                    <i class="mdc-icon">
+                      <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="1.76724" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="14.3061" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <circle cx="6.1691" cy="14.3061" r="1.1005" fill="#757575"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23 7L16 12L23 17V7Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Nombre del recurso</span>
+                  <div class="group-item-actions">
+                    <button class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver recurso</span>
+                    </button>
+
+                    <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                      <i class="mdc-icon small">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="group-item">
+                  <a href="#" class="drag-link">
+                    <i class="mdc-icon">
+                      <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="1.76724" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="14.3061" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <circle cx="6.1691" cy="14.3061" r="1.1005" fill="#757575"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 10H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21 6H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21 14H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M17 18H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Nombre del recurso</span>
+                  <div class="group-item-actions">
+                    <button class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver recurso</span>
+                    </button>
+
+                    <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                      <i class="mdc-icon small">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="group-item">
+                  <a href="#" class="drag-link">
+                    <i class="mdc-icon">
+                      <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="1.76724" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="14.3061" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <circle cx="6.1691" cy="14.3061" r="1.1005" fill="#757575"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.46997L11.75 5.17997" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14.0002 11.0002C13.5707 10.4261 13.0228 9.95104 12.3936 9.60729C11.7645 9.26353 11.0687 9.05911 10.3535 9.00789C9.6384 8.95667 8.92061 9.05986 8.24885 9.31044C7.57709 9.56103 6.96708 9.95316 6.4602 10.4602L3.4602 13.4602C2.54941 14.4032 2.04544 15.6662 2.05683 16.9772C2.06822 18.2882 2.59407 19.5423 3.52111 20.4693C4.44815 21.3964 5.70221 21.9222 7.01319 21.9336C8.32418 21.945 9.58719 21.441 10.5302 20.5302L12.2402 18.8202" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Nombre del recurso</span>
+                  <div class="group-item-actions">
+                    <button class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver recurso</span>
+                    </button>
+
+                    <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                      <i class="mdc-icon small">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="collapsable-wrapper group">
+              <div class="group-title-wrapper">
+                <h5 class="mdc-typography--headline5">Nombre de la carpeta</h5>
+                <div class="group-icons">
+                  <div class="mdc-chip" role="row">
+                    <span role="gridcell">
+                      <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">4</span>
+                    </span>
+                  </div>
+                  <a class="collapse-link">
+                    <input type="checkbox">
+                    <i class="collapse-icon">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <a href="#" class="view-link">
+                    <button class="mdc-icon-button mdc-icon-button--secondary">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </a>
+                  <a href="#" class="edit-link">
+                    <button class="mdc-icon-button mdc-icon-button--secondary">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M16.5 3.50023C16.8978 3.1024 17.4374 2.87891 18 2.87891C18.2786 2.87891 18.5544 2.93378 18.8118 3.04038C19.0692 3.14699 19.303 3.30324 19.5 3.50023C19.697 3.69721 19.8532 3.93106 19.9598 4.18843C20.0665 4.4458 20.1213 4.72165 20.1213 5.00023C20.1213 5.2788 20.0665 5.55465 19.9598 5.81202C19.8532 6.06939 19.697 6.30324 19.5 6.50023L7 19.0002L3 20.0002L4 16.0002L16.5 3.50023Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </a>
+                </div>
+                <div class="group-actions">
+                  <button class="mdc-button mdc-button--text">
+                    <span class="mdc-button__ripple"></span>
+                    <i class="mdc-button__icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 8V16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-button__label">agregar recurso</span>
+                  </button>
+
+                  <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                    <i class="mdc-icon small">
+                      <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="group-content collapsable">
+                <div class="group-item">
+                  <a href="#" class="drag-link">
+                    <i class="mdc-icon">
+                      <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="1.76724" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="14.3061" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <circle cx="6.1691" cy="14.3061" r="1.1005" fill="#757575"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15.54 8.45996C16.4774 9.3976 17.004 10.6691 17.004 11.995C17.004 13.3208 16.4774 14.5923 15.54 15.53" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Nombre del recurso</span>
+                  <div class="group-item-actions">
+                    <button class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver recurso</span>
+                    </button>
+
+                    <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                      <i class="mdc-icon small">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="group-item">
+                  <a href="#" class="drag-link">
+                    <i class="mdc-icon">
+                      <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="1.76724" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="14.3061" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <circle cx="6.1691" cy="14.3061" r="1.1005" fill="#757575"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23 7L16 12L23 17V7Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Nombre del recurso</span>
+                  <div class="group-item-actions">
+                    <button class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver recurso</span>
+                    </button>
+
+                    <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                      <i class="mdc-icon small">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="group-item">
+                  <a href="#" class="drag-link">
+                    <i class="mdc-icon">
+                      <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="1.76724" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="14.3061" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <circle cx="6.1691" cy="14.3061" r="1.1005" fill="#757575"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 10H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21 6H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21 14H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M17 18H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Nombre del recurso</span>
+                  <div class="group-item-actions">
+                    <button class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver recurso</span>
+                    </button>
+
+                    <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                      <i class="mdc-icon small">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="group-item">
+                  <a href="#" class="drag-link">
+                    <i class="mdc-icon">
+                      <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="1.76724" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="1.1005" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="5.50284" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="6.1691" cy="9.90421" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <ellipse cx="1.76724" cy="14.3061" rx="1.1005" ry="1.1005" fill="#757575"/>
+                        <circle cx="6.1691" cy="14.3061" r="1.1005" fill="#757575"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.46997L11.75 5.17997" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14.0002 11.0002C13.5707 10.4261 13.0228 9.95104 12.3936 9.60729C11.7645 9.26353 11.0687 9.05911 10.3535 9.00789C9.6384 8.95667 8.92061 9.05986 8.24885 9.31044C7.57709 9.56103 6.96708 9.95316 6.4602 10.4602L3.4602 13.4602C2.54941 14.4032 2.04544 15.6662 2.05683 16.9772C2.06822 18.2882 2.59407 19.5423 3.52111 20.4693C4.44815 21.3964 5.70221 21.9222 7.01319 21.9336C8.32418 21.945 9.58719 21.441 10.5302 20.5302L12.2402 18.8202" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Nombre del recurso</span>
+                  <div class="group-item-actions">
+                    <button class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver recurso</span>
+                    </button>
+
+                    <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                      <i class="mdc-icon small">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- } -->
+
+        <section id="mi-grupo" class="mi-grupo-wrapper">
+          <div class="headline-wrapper">
+            <i class="headline__icon">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24.0832 29.75V26.9167C24.0832 25.4138 23.4861 23.9724 22.4234 22.9097C21.3607 21.847 19.9194 21.25 18.4165 21.25H7.08317C5.58028 21.25 4.13894 21.847 3.07623 22.9097C2.01353 23.9724 1.4165 25.4138 1.4165 26.9167V29.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.7502 15.5833C15.8798 15.5833 18.4168 13.0463 18.4168 9.91667C18.4168 6.78705 15.8798 4.25 12.7502 4.25C9.62055 4.25 7.0835 6.78705 7.0835 9.91667C7.0835 13.0463 9.62055 15.5833 12.7502 15.5833Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M32.5835 29.7499V26.9166C32.5826 25.661 32.1647 24.4413 31.3954 23.449C30.6262 22.4567 29.5492 21.748 28.3335 21.4341" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22.6665 4.43408C23.8854 4.74618 24.9658 5.45507 25.7373 6.44902C26.5088 7.44297 26.9276 8.66542 26.9276 9.92366C26.9276 11.1819 26.5088 12.4044 25.7373 13.3983C24.9658 14.3923 23.8854 15.1012 22.6665 15.4132" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <h4 class="mdc-typography--headline4">Mi grupo</h4>
+            <div class="headline-wrapper__actions">
+              <button class="mdc-button mdc-button--raised">
+                <span class="mdc-button__ripple"></span>
+                <i class="mdc-button__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8V16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+                <span class="mdc-button__label">Crear Grupo</span>
+              </button>
+            </div>
+          </div>
+<!--           <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
+          </div> -->
+          <div class="mdc-card mdc-card--large resources-card">
+            <div class="collapsable-wrapper group">
+              <div class="group-title-wrapper">
+                <h5 class="mdc-typography--headline5">Grupo 1</h5>
+                <div class="group-icons">
+                  <div class="mdc-chip" role="row">
+                    <span role="gridcell">
+                      <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">7</span>
+                    </span>
+                  </div>
+                  <a class="collapse-link">
+                    <input type="checkbox">
+                    <i class="collapse-icon">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <a href="#" class="edit-link">
+                    <button class="mdc-icon-button mdc-icon-button--secondary">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M16.5 3.50023C16.8978 3.1024 17.4374 2.87891 18 2.87891C18.2786 2.87891 18.5544 2.93378 18.8118 3.04038C19.0692 3.14699 19.303 3.30324 19.5 3.50023C19.697 3.69721 19.8532 3.93106 19.9598 4.18843C20.0665 4.4458 20.1213 4.72165 20.1213 5.00023C20.1213 5.2788 20.0665 5.55465 19.9598 5.81202C19.8532 6.06939 19.697 6.30324 19.5 6.50023L7 19.0002L3 20.0002L4 16.0002L16.5 3.50023Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </a>
+                </div>
+                <div class="group-actions">
+                  <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                    <i class="mdc-icon small">
+                      <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="group-content student-group collapsable">
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+              </div>
+            </div>
+            <div class="collapsable-wrapper group">
+              <div class="group-title-wrapper">
+                <h5 class="mdc-typography--headline5">Grupo 2</h5>
+                <div class="group-icons">
+                  <div class="mdc-chip" role="row">
+                    <span role="gridcell">
+                      <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">4</span>
+                    </span>
+                  </div>
+                  <a class="collapse-link">
+                    <input type="checkbox">
+                    <i class="collapse-icon">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </a>
+                  <a href="#" class="edit-link">
+                    <button class="mdc-icon-button mdc-icon-button--secondary">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M16.5 3.50023C16.8978 3.1024 17.4374 2.87891 18 2.87891C18.2786 2.87891 18.5544 2.93378 18.8118 3.04038C19.0692 3.14699 19.303 3.30324 19.5 3.50023C19.697 3.69721 19.8532 3.93106 19.9598 4.18843C20.0665 4.4458 20.1213 4.72165 20.1213 5.00023C20.1213 5.2788 20.0665 5.55465 19.9598 5.81202C19.8532 6.06939 19.697 6.30324 19.5 6.50023L7 19.0002L3 20.0002L4 16.0002L16.5 3.50023Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </button>
+                  </a>
+                </div>
+                <div class="group-actions">
+                  <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                    <i class="mdc-icon small">
+                      <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="group-content student-group collapsable">
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+                <div class="group-item student-item">
+                  <div class="round-photo-wrapper mdc-icon">
+                    <img src="img/placeholder.png">
+                  </div>
+                  <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="tarea" class="tarea-wrapper">
+          <div class="headline-wrapper">
+            <i class="headline__icon">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 26.9167L26.9167 17L31.1667 21.25L21.25 31.1667L17 26.9167Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M25.5002 18.4168L23.3752 7.79183L2.8335 2.8335L7.79183 23.3752L18.4168 25.5002L25.5002 18.4168Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.8335 2.8335L13.5803 13.5803" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.5833 18.4167C17.1481 18.4167 18.4167 17.1481 18.4167 15.5833C18.4167 14.0185 17.1481 12.75 15.5833 12.75C14.0185 12.75 12.75 14.0185 12.75 15.5833C12.75 17.1481 14.0185 18.4167 15.5833 18.4167Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <h4 class="mdc-typography--headline4">Tarea</h4>
+            <div class="headline-wrapper__actions">
+              <button class="mdc-button mdc-button--raised">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">Cambiar tarea</span>
+
+              </button>
+            </div>
+          </div>
+<!--           <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
+          </div> -->
+          <div class="mdc-card mdc-card--large">
+            <div class="mdc-card__primary">
+              <p class="mdc-typography--headline4">Los alumnos tendrán la posibilidad de subir un archivo.</p>
+              <p class="mdc-typography--body1">Explica a los alumnos en la consigna las características del archivo.</p>
+              <p class="mdc-typography--caption">Recuerda que, una vez publicada la actividad, no puedes cambiar el tipo de tarea.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="devolucion" class="devolucion-wrapper">
+          <div class="headline-wrapper">
+            <i class="headline__icon">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.75 15.8195C29.7549 17.6894 29.318 19.5339 28.475 21.2029C27.4754 23.2028 25.9388 24.885 24.0372 26.061C22.1356 27.237 19.9442 27.8603 17.7083 27.8612C15.8385 27.8661 13.994 27.4292 12.325 26.5862L4.25 29.2779L6.94167 21.2029C6.09865 19.5339 5.66179 17.6894 5.66667 15.8195C5.66753 13.5837 6.29087 11.3922 7.46685 9.49065C8.64284 7.58906 10.325 6.05243 12.325 5.05287C13.994 4.20986 15.8385 3.773 17.7083 3.77787H18.4167C21.3695 3.94078 24.1585 5.18712 26.2496 7.27826C28.3408 9.36939 29.5871 12.1584 29.75 15.1112V15.8195Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <h4 class="mdc-typography--headline4">Devolución</h4>
+
+          </div>
+          <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">La actividad aún no ha sido publicada</span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-left-col">
+        <img src="img/parmenia-logo.svg">
+        <span class="mdc-typography--caption">aula virtual</span>
+      </div>
+
+      <div class="footer-right-col mdc-typography--subtitle2">
+        <span class="mdc-typography--subtitle2">2020 ® Todos los derechos reservados.</span>
+        <a href="#">Ver política de privacidad</a>
+      </div>
+    </footer>
+  </body>
+
+  <script src="theme.js"></script>
+  <script src="script.js"></script>
+</html>

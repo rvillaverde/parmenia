@@ -302,3 +302,22 @@
     margin-bottom: 20px;
   }
 }
+
+.student-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.student-item {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: calc(50% - 24px);
+}
+
+.student-item:nth-of-type(2n) {
+  margin-left: 24px;
+}
+
+.student-item:nth-of-type(2n+1) {
+  margin-right: 24px;
+}

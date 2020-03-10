@@ -1,5 +1,6 @@
 /* COMMON STYLES */
 .mdc-button__label {
+  letter-spacing: normal;
   line-height: 24px;
   font-size: 14px;
   font-weight: bold;

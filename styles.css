@@ -67,6 +67,7 @@ body.login-container {
 }
 
 .headline-wrapper__actions {
+  flex-shrink: 0;
   margin-left: auto;
 }
 
@@ -162,6 +163,11 @@ body.login-container {
   display: flex;
   justify-content: center;
   overflow: hidden;
+}
+
+.round-photo-wrapper img {
+  height: 100%;
+  width: auto;
 }
 
 .upcoming-event {
