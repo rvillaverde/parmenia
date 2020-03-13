@@ -375,7 +375,7 @@ textarea.mdc-text-field__input {
 }
 
 .mdc-header__section-background {
-  background-image: url('img/home.png');
+  background-image: url('../img/home.png');
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;

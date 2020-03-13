@@ -230,8 +230,9 @@ body.login-container {
   border-radius: 50%;
   display: flex;
   flex-shrink: 0;
-  justify-content: center;
   height: 40px;
+  justify-content: center;
+  margin-left: 8px;
   width: 40px;
 }
 

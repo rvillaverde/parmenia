@@ -12,7 +12,7 @@
 
 .mdc-dialog .mdc-dialog__title {
   color: var(--mdc-theme-gray__700);
-  padding-top: 30px;
+  padding-top: 16px;
 }
 
 .mdc-dialog .mdc-dialog__title::before {

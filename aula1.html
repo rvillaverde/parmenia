@@ -18,17 +18,18 @@
     <script src="offline/material-components-web.min.js"></script>
     <script src="offline/jquery-3.4.1.min.js"></script> -->
 
-    <link rel="stylesheet" href="colors.css">
-    <link rel="stylesheet" href="theme.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="buttons.css">
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="menus.css">
-    <link rel="stylesheet" href="cards.css">
-    <link rel="stylesheet" href="drawer.css">
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="tables.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/menus.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
+    <link rel="stylesheet" href="styles/cards.css">
+    <link rel="stylesheet" href="styles/drawer.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="styles/tables.css">
+    <link rel="stylesheet" href="styles/footer.css">
   </head>
 
   <body class="container mdc-typography">
@@ -328,6 +329,36 @@
       </div>
     </header>
 
+    <div id="noticia-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__cover">
+            <img src="img/placeholder.png">
+          </div>
+          <h2 class="mdc-dialog__title mdc-typography--headline2">
+            Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor
+          </h2>
+          <div class="mdc-dialog__content">
+            <p class="mdc-typography--body1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
+            </p>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="submit" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="dismiss">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cerrar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
     <aside class="mdc-drawer">
       <div class="mdc-drawer__content">
         <nav class="mdc-list">
@@ -393,7 +424,7 @@
 
           <div class="mdc-layout-grid cards news">
             <div class="mdc-layout-grid__inner">
-              <a class="mdc-card news-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openNews();">
+              <a class="mdc-card news-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('noticia-01');">
                 <div class="mdc-card__primary-action" tabindex="0">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
                   <div class="mdc-card__primary">
@@ -413,7 +444,7 @@
                 </div>
               </a>
 
-              <a class="mdc-card news-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openNews();">
+              <a class="mdc-card news-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('noticia-01');">
                 <div class="mdc-card__primary-action" tabindex="0">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
                   <div class="mdc-card__primary">
@@ -1609,6 +1640,6 @@
     </footer>
   </body>
 
-  <script src="theme.js"></script>
-  <script src="script.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
 </html>
