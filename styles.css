@@ -1,7 +1,7 @@
 :root {
   --viewport-width: 1280px;
 
-  --app-nav__height--desktop: 64px;
+  --app-nav__height--desktop: 56px;
   --app-nav__height--mobile: 56px;
 
   --header__height-large: 240px;
@@ -120,14 +120,21 @@ body.login-container {
   cursor: pointer;
 }
 
-.collapse-link input {
+.collapse-link {
+  height: 18px;
+  position: relative;
+}
+
+.mdc-button--app-bar + input[type="checkbox"],
+.collapse-link > input[type="checkbox"] {
   cursor: pointer;
   height: 18px;
   margin: 0;
   opacity: 0;
   position: absolute;
-  width: 18px;
   z-index: 2;
+  height: 100%;
+  width: 100%;
 }
 
 .collapse-icon svg  {
@@ -137,10 +144,6 @@ body.login-container {
 
 .collapse-link input:checked ~ .collapse-icon svg {
   transform: rotate(-90deg);
-}
-
-.collapse-link {
-  height: 18px;
 }
 
 .headline__icon {
@@ -215,12 +218,13 @@ body.login-container {
   padding: 12px;
 }
 
-.notification-wrapper {
+.notification__wrapper {
   display: flex;
+  min-width: 360px;
   padding: 12px;
 }
 
-.notification-icon {
+.notification__icon {
   align-items: center;
   background-color: var(--mdc-theme-custom__00);
   border-radius: 50%;
@@ -236,28 +240,19 @@ body.login-container {
   display: flex;
   margin-left: 18px;
   border-bottom: 1px solid var(--mdc-theme-gray__300);
-}
-
-@media (max-width: 480px) {
-  .notification {
-    flex-wrap: wrap;
-  }
-}
-
-.notification-inner {
-  flex-grow: 1;
+  flex-wrap: wrap;
+  align-items: center;
   padding-bottom: 24px;
 }
 
-.notification-date {
+.notification__date {
   flex-grow: 0;
   min-width: 80px;
+  margin-left: auto;
 }
 
-@media (max-width: 480px) {
-  .notification-date {
-    width: 100%;
-  }
+.notification__text {
+  width: 100%;
 }
 
 .mdc-linear-progress__wrapper {

@@ -10,7 +10,12 @@ function collapse(e) {
   }
 }
 
-function addToBag() {
+function addToBag(element) {
+  if ($(element).hasClass('mdc-button--active')) {
+    $(element).removeClass('mdc-button--active');
+  } else {
+    $(element).addClass('mdc-button--active');
+  }
   console.log('add to bag');
 }
 
@@ -44,21 +49,27 @@ $(function() {
 
   //smoothscroll
   $('a[href^="#"]').on('click', function (e) {
-      e.preventDefault();
-      $(window).off("scroll");
-      
-      $('.mdc-list-item').removeClass('mdc-list-item--activated');
-      $(this).addClass('mdc-list-item--activated');
+    e.preventDefault();
+    $(window).off("scroll");
     
-      var target = this.hash;
-      $target = $(target);
-      $('html, body').stop().animate({
-          'scrollTop': $target.offset().top-appBar.height() - 12
-      }, 500, 'swing', function () {
-          $(window).scroll("scroll", onScroll);
-          //window.location.hash = target;
-      });
+    $('.mdc-list-item').removeClass('mdc-list-item--activated');
+    $(this).addClass('mdc-list-item--activated');
+  
+    var target = this.hash;
+    $target = $(target);
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top-appBar.height() - 12
+    }, 500, 'swing', function () {
+      $(window).scroll("scroll", onScroll);
+      //window.location.hash = target;
+    });
   });
+
+/*  $('.mdc-menu--click').click(function(e) {
+    console.log($(e.target));
+    console.log($(e.target).closest('.mdc-menu--click'));
+    $(e.target).closest('.mdc-menu--click').find('.mdc-menu').addClass('mdc-menu-surface--open');
+  });*/
 
   function onScroll() {
     fixed();

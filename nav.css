@@ -1,13 +1,41 @@
+.mdc-top-app-bar__navigation-icon {
+  background-color: transparent;
+}
+
 .mdc-top-app-bar {
   z-index: 12;
 }
 
 .mdc-top-app-bar__row {
+  height: var(--app-nav__height--desktop);
   padding-left: 12px;
 }
 
 .mdc-top-app-bar__section {
+  list-style-type: none;
+  margin: 0;
   padding: 0;
+}
+
+.mdc-top-app-bar__section .mdc-top-app-bar__action-item {
+  align-items: center;
+  display: flex;
+  border-radius: 0;
+  height: 100%;
+  padding: 0 12px;
+  position: relative;
+}
+
+.mdc-top-app-bar__profile {
+  padding-right: 24px;
+}
+
+.mdc-top-app-bar__profile::before {
+  content: "";
+  height: 80%;
+  width: 1px;
+  background-color: white;
+  opacity: 0.6;
 }
 
 .mdc-top-app-bar__actions:last-child > .mdc-top-app-bar__action-item {
@@ -15,22 +43,37 @@
   min-width: 48px;
 }
 
+.mdc-top-app-bar__actions:last-child > .mdc-top-app-bar__action-item .mdc-button--app-bar {
+  min-width: unset;
+  padding: 0;
+  width: 100%;
+}
+
 @media (max-width: 999px) {
   .mdc-top-app-bar__actions {
     display: none;
   }
+
+  .mdc-top-app-bar__profile {
+    padding-right: 0;
+  }
 }
 
-.mdc-top-app-bar__action-item {
-  font-weight: 600;
+.mdc-top-app-bar__actions .mdc-button--app-bar,
+.mdc-top-app-bar__profile .mdc-button--app-bar {
   height: 100%;
+}
+
+.mdc-top-app-bar__action-item .mdc-button__label {
+  font-weight: 600;
+  /*height: 100%;*/
   text-transform: none;
-  padding: 0 16px;
+  /*padding: 0 16px;*/
   border-radius: 0;
 }
 
 .mdc-top-app-bar__action-item:hover {
-  background: var(--mdc-theme-primary__700);
+  background: var(--mdc-theme-primary);
 }
 
 @media (min-width: 1000px) {

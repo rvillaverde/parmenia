@@ -144,9 +144,13 @@
 }
 
 .mdc-icon-button.mdc-ripple-upgraded--background-focused::before,
-.mdc-icon-button:not(.mdc-ripple-upgraded):focus::before,
+.mdc-icon-button:not(.mdc-ripple-upgraded):focus::before {
+  opacity: 0;
+}
+
 .mdc-icon-button:active::after,
-.mdc-icon-button:not(.mdc-ripple-upgraded):active::after {
+.mdc-icon-button:not(.mdc-ripple-upgraded):active::after,
+.mdc-icon-button.mdc-button--active::after {
   opacity: 0.28;
   z-index: 0;
 }
@@ -154,14 +158,16 @@
 .mdc-icon-button:disabled {
   opacity: 0.5;
 }
+.mdc-icon-button:not(.mdc-ripple-upgraded):not(.mdc-button--active):focus::before,
+.mdc-icon-button:not(.mdc-ripple-upgraded):not(.mdc-button--active):focus::after {
+  background-color: white;
+}
 
 .mdc-icon-button::before, .mdc-icon-button:hover::before,
 .mdc-icon-button:not(.mdc-ripple-upgraded):active::before,
-.mdc-icon-button:not(.mdc-ripple-upgraded):focus::before,
 .mdc-icon-button::after, .mdc-icon-button:hover::after,
-.mdc-icon-button:not(.mdc-ripple-upgraded):active::after,
-.mdc-icon-button:not(.mdc-ripple-upgraded):focus::after {
-  background-color: var(--mdc-theme-secondary__050);
+.mdc-icon-button:not(.mdc-ripple-upgraded):active::after { 
+  background-color: var(--mdc-theme-secondary);
 }
 
 .mdc-icon-button.mdc-icon-button--outlined, .mdc-icon-button.mdc-icon-button--outlined:not(:disabled) {

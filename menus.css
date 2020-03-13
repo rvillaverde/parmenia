@@ -1,0 +1,94 @@
+.mdc-menu {
+  border-radius: 0 0 4px 4px;
+  margin-top: var(--app-nav__height--desktop);
+}
+
+.mdc-menu .mdc-list {
+}
+
+.mdc-menu .mdc-list .mdc-list-item {
+  height: auto;
+  max-width: 360px;
+  min-width: 280px;
+  padding: 12px 16px;
+}
+
+.mdc-menu .mdc-list .mdc-list-item a {
+  outline: none;
+}
+
+.mdc-menu .mdc-list-divider {
+  margin: 0;
+}
+
+.mdc-menu--click > input[type=checkbox]:checked + .mdc-menu,
+.mdc-top-app-bar__action-item.mdc-menu--hover:hover .mdc-menu {
+  transform-origin: left top;
+  left: 0px;
+  top: 0px;
+  opacity: 1;
+  display: inline-block;
+}
+
+.mdc-menu--click > input[type=checkbox]:checked + .mdc-menu,
+.mdc-top-app-bar__action-item.mdc-menu--hover:hover .mdc-menu.mdc-menu--edge {
+  left: unset;
+  right: 0px;
+}
+
+.mdc-menu .mdc-menu__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 4px;
+}
+
+.mdc-menu .mdc-menu__actions .mdc-button__label {
+  text-transform: uppercase;
+}
+
+:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated::before,
+:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated::after {
+  opacity: 0;
+}
+
+.mdc-top-app-bar__action-item .profile-menu-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  padding: 16px;
+  width: 242px;
+}
+
+.mdc-top-app-bar__action-item .profile-menu-wrapper .mdc-top-app-bar__profile-pic {
+  border-width: 0;
+  flex-shrink: 0;
+}
+
+.mdc-top-app-bar__action-item .profile-menu-wrapper .profile-info {
+  padding-left: 12px;
+}
+
+.mdc-top-app-bar__action-item .profile-menu-wrapper .profile-info a {
+  text-decoration: underline;
+}
+
+.mdc-top-app-bar__action-item .mdc-menu .mdc-menu__action {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  padding: 16px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.mdc-top-app-bar__action-item .mdc-menu .mdc-menu__action:hover {
+  background-color: rgba(98, 116, 229, 0.1);
+}
+
+.mdc-top-app-bar__action-item .mdc-menu .mdc-menu__action:hover path {
+  stroke: var(--mdc-theme-secondary);
+}
+
+.mdc-top-app-bar__action-item .mdc-menu .mdc-menu__action span {
+  margin-left: 36px;
+}

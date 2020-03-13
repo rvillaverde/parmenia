@@ -3,6 +3,16 @@ for (var i = 0, button; button = buttons[i]; i++) {
   mdc.ripple.MDCRipple.attachTo(button);
 }
 */
+function openMenu(menu) {
+  menu.open = true;
+}
+
+var menus = $('.mdc-menu');
+for (var i = 0, menu; menu = menus[i]; i++) {
+  const mdcMenu = mdc.menu.MDCMenu.attachTo(menu);
+  //mdcMenu.open = true;
+}
+
 var textFields = $('.mdc-text-field');
 for (var i = 0, textField; textField = textFields[i]; i++) {
   mdc.textField.MDCTextField.attachTo(textField);

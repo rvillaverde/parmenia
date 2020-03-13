@@ -162,10 +162,14 @@
   font-weight: lighter;
 }
 
-.mdc-top-app-bar__section .mdc-button--app-bar:not(:disabled) {
+.mdc-top-app-bar__section .mdc-button--app-bar.mdc-button .mdc-button__label:not(:disabled) {
   color: white;
   font-weight: 600;
   text-transform: none;
+}
+
+.mdc-top-app-bar__section .mdc-button--app-bar.mdc-button .mdc-icon:last-of-type {
+  margin-left: 8px;
 }
 
 .mdc-top-app-bar__section .mdc-button--app-bar .mdc-button__icon {
