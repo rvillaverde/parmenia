@@ -19,6 +19,10 @@ function addToBag(element) {
   console.log('add to bag');
 }
 
+function setoggleCardSelection(card) {
+  card.toggleClass('mdc-card--selected');
+}
+
 function openDialog(dialogId) {
   console.log(dialogId);
   if (dialog) {
@@ -65,11 +69,12 @@ $(function() {
     });
   });
 
-/*  $('.mdc-menu--click').click(function(e) {
-    console.log($(e.target));
-    console.log($(e.target).closest('.mdc-menu--click'));
-    $(e.target).closest('.mdc-menu--click').find('.mdc-menu').addClass('mdc-menu-surface--open');
-  });*/
+  $('.cards--selectable .mdc-card').click(function(e) {
+    let card = $(e.currentTarget);
+    console.log(card.closest('.cards--selectable'));
+    card.closest('.cards--selectable').find('.mdc-card').removeClass('mdc-card--selected');
+    setoggleCardSelection(card);
+  });
 
   function onScroll() {
     fixed();

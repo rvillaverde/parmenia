@@ -165,7 +165,10 @@ body.login-container {
   border-radius: 50%;
   display: flex;
   justify-content: center;
+  height: 40px;
+  min-width: auto;
   overflow: hidden;
+  width: 40px;
 }
 
 .round-photo-wrapper img {

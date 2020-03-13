@@ -156,6 +156,7 @@
   font-weight: 600;
   letter-spacing: normal;
   line-height: 16px;
+  text-transform: none;
 }
 
 .mdc-typography--lighter {
@@ -223,6 +224,16 @@ textarea.mdc-text-field__input {
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
   border-color: var(--mdc-theme-primary__100);
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading {
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__leading,
@@ -312,7 +323,7 @@ textarea.mdc-text-field__input {
   color: var(--mdc-theme-surface);
 }
 
-.mdc-header__cover {
+.round-photo-wrapper.mdc-header__cover {
   height: 444px;
   width: 444px;
   background-position: bottom;
