@@ -67,5 +67,4 @@ dist
 # files for offline use
 assets/offline/
 package-lock.json
-/styles/
 /offline/
