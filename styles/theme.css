@@ -340,10 +340,6 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   padding: 0;
 }
 
-.mdc-header__aula .mdc-header__section .mdc-chip:first-child {
-  margin-left: 0;
-}
-
 .mdc-header .mdc-typography--headline1, .mdc-header .mdc-typography--headline5 {
   color: var(--mdc-theme-surface);
 }
@@ -448,10 +444,6 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   opacity: 0.6;
 }
 
-.mdc-header__actions > .mdc-button {
-  margin: 0 6px;
-}
-
 .mdc-header__actions > .mdc-button:first-child {
   margin-left: 0;
 }
@@ -464,6 +456,15 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   content: '/';
   margin-left: 8px;
   margin-right: 4px;
+}
+
+.mdc-chip-set .mdc-chip {
+  margin: 4px 0;
+  margin-right: 8px;
+}
+
+.mdc-chip-set .mdc-chip:last-child {
+  margin-right: 0;
 }
 
 .mdc-chip {

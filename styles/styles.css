@@ -368,3 +368,19 @@ body.login-container {
 .activity-status__wrapper span {
   margin-left: 4px;
 }
+
+.mdc-dialog__content .embebed-resource__wrapper {
+  align-items: center;
+  background-color: var(--mdc-theme-primary__900);
+  border-radius: 8px;
+  display: flex;
+  height: 560px;
+  justify-content: center;
+  margin: 32px;
+  margin-top: 0;
+  width: 880px;
+}
+
+.mdc-dialog__content .embebed-resource__wrapper h4 {
+  color: var(--mdc-theme-primary__200);
+}

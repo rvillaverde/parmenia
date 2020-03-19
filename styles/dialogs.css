@@ -1,6 +1,7 @@
 :root {
   --dialog-max-width: 600px;
   --dialog-min-width: 500px;
+  --dialog-xl-width: 960px;
 }
 
 .mdc-dialog {
@@ -15,12 +16,16 @@
   width: var(--dialog-max-width);
 }
 
+.mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--xl {
+  max-width: var(--dialog-xl-width);
+}
+
 .mdc-dialog .mdc-dialog__title-wrapper {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 24px 36px;
+  padding: 24px 32px;
   padding-bottom: 12px;
 }
 

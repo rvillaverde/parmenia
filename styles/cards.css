@@ -492,3 +492,25 @@
   align-items: center;
   justify-content: center;
 }
+
+.mdc-card.resource-card .mdc-card__primary-action {
+  flex-direction: row;
+}
+
+.mdc-card.resource-card .mdc-card__media {
+  border-top-right-radius: 0;
+  min-height: 210px;
+  min-width: 180px;
+}
+
+.mdc-card.resource-card .mdc-card__primary .mdc-card__subtitle {
+  margin-top: 8px;
+}
+
+.mdc-card.resource-card .mdc-card__primary {
+  padding: 30px 24px;
+}
+
+.mdc-card.resource-card .mdc-chip-set {
+  padding: 12px 0;
+}

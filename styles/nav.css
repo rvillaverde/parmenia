@@ -49,6 +49,10 @@
   width: 100%;
 }
 
+.mdc-top-app-bar__actions .mdc-top-app-bar__action-item.mdc-top-app-bar__action-item--active {
+  background-color: var(--mdc-theme-primary__700)
+}
+
 @media (max-width: 999px) {
   .mdc-top-app-bar__actions {
     display: none;
