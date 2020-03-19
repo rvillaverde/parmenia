@@ -7,6 +7,10 @@
   border-bottom: 1px solid var(--mdc-theme-gray__300);
 }
 
+.admin-form__section:last-child {
+  border-bottom: none;
+}
+
 .admin-form__subsection {
   display: flex;
   justify-content: space-between;
@@ -40,35 +44,38 @@
   }
 }
 
-.admin-form__subsection-inner > * {
+.admin-form__subsection-inner > *:not(.admin-form__title):not(.admin-form__photo-placeholder__actions):not(.mdc-text-field__wrapper):not(.mdc-checkbox__wrapper) {
   margin: 12px 0;
+}
+
+.admin-form__subsection-inner > .mdc-text-field__wrapper {
+  margin-bottom: 0;
+}
+
+.admin-form__subsection-inner > .mdc-text-field__wrapper .mdc-text-field.mdc-text-field--outlined {
+  margin-top: 12px;
 }
 
 .admin-form__section, .admin-form__commit-actions {
   padding: 36px;
 }
 
-.admin-form__subsection-inner > .admin-form__title {
-  margin: 0;
-}
-
 .admin-form__title {
+  margin-bottom: 12px;
   width: 100%;
 }
 
 .admin-form__actions {
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .admin-form__commit-actions {
   display: flex;
   justify-content: flex-end;
-}
-
-.admin-form .mdc-text-field {
-  width: 480px;
 }
 
 @media (max-width: 800px) {
@@ -86,6 +93,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin: 12px 0;
+}
+
+.mdc-switch__wrapper:last-child {
+  margin-bottom: 0;
 }
 
 .mdc-switch__label {
@@ -98,13 +110,22 @@
   width: 100%;
 }
 
-.mdc-switch.mdc-switch--checked .mdc-switch__thumb {
+.mdc-switch:not(.mdc-switch--checked) .mdc-switch__thumb {
   background-color: var(--mdc-theme-primary__500);
   border-color: var(--mdc-theme-primary__500);
 }
 
-.mdc-switch.mdc-switch--checked .mdc-switch__track {
+.mdc-switch.mdc-switch--checked .mdc-switch__thumb {
+  background-color: var(--mdc-theme-secondary);
+  border-color: var(--mdc-theme-secondary);
+}
+
+.mdc-switch:not(.mdc-switch--checked) .mdc-switch__track {
   background-color: var(--mdc-theme-primary__100);
+}
+
+.mdc-switch.mdc-switch--checked .mdc-switch__track {
+  background-color: var(--mdc-theme-secondary__100);
 }
 
 .admin-form__photo-placeholder {
@@ -128,6 +149,10 @@
   align-items: flex-start;
   display: flex;
   flex-direction: column;
+  margin: 0;
+}
+
+.admin-form__photo-placeholder__actions .mdc-button {
   margin: 0;
 }
 

@@ -69,6 +69,7 @@
 .mdc-card__actions {
   border-top: 1px solid var(--mdc-theme-gray__050); 
   margin-top: auto;
+  padding: 8px 16px;
 }
 
 .mdc-card__action--icon {
@@ -116,6 +117,10 @@
 
 .aulas-card .mdc-card__title, .projects-card .mdc-card__title {
   text-align: center;
+}
+
+.aulas-card .mdc-chip-set {
+  justify-content: center;
 }
 
 .aulas-card .mdc-card__action-icons {
@@ -479,4 +484,11 @@
 
 .forum-discusion-card.mdc-card--selected .mdc-card__secondary {
   padding-top: 16px;
+}
+
+.mdc-card.preview-card .mdc-card__media {
+  background-color: var(--mdc-theme-primary__050);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

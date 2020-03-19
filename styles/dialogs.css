@@ -1,5 +1,6 @@
 :root {
-  --dialog-max-width: 800px;
+  --dialog-max-width: 600px;
+  --dialog-min-width: 500px;
 }
 
 .mdc-dialog {
@@ -10,9 +11,43 @@
   border-radius: 8px;
 }
 
+.mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--large {
+  width: var(--dialog-max-width);
+}
+
+.mdc-dialog .mdc-dialog__title-wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 24px 36px;
+  padding-bottom: 12px;
+}
+
+.mdc-dialog .mdc-dialog__title-wrapper .mdc-dialog__title-caption {
+  width: 100%;
+}
+
 .mdc-dialog .mdc-dialog__title {
   color: var(--mdc-theme-gray__700);
+}
+
+.mdc-dialog .mdc-dialog__title-wrapper > .mdc-dialog__title {
   padding-top: 16px;
+  padding: 0;
+}
+
+.mdc-dialog .mdc-dialog__title-wrapper .mdc-dialog__title + .mdc-dialog__title-caption {
+  margin-top: 32px;
+}
+
+.mdc-dialog__surface > .mdc-dialog__cover + .mdc-dialog__title {
+  padding: 8px 36px;
+  padding-top: 24px;
+}
+
+.mdc-dialog.mdc-dialog--scrollable .mdc-dialog__title {
+  border: none;
 }
 
 .mdc-dialog .mdc-dialog__title::before {
@@ -30,6 +65,7 @@
 @media (min-width: 592px) {}
   .mdc-dialog .mdc-dialog__surface {
     max-width: var(--dialog-max-width);
+    min-width: var(--dialog-min-width);
 }
 
 .mdc-dialog .mdc-dialog__cover img {
@@ -37,7 +73,6 @@
 }
 
 .mdc-dialog .mdc-dialog__container {
-  max-width: var(--dialog-max-width);
   margin: 0 auto;
 }
 
@@ -47,7 +82,12 @@
 }
 
 .mdc-dialog .mdc-dialog__content {
-  padding-bottom: 36px;
+  padding: 0;
+}
+
+.mdc-dialog .mdc-dialog__content > p:first-child:last-child {
+  padding: 36px;
+  padding-top: 0;
 }
 
 .mdc-dialog .mdc-dialog__content.mdc-dialog__content--large {
@@ -64,15 +104,23 @@
   min-width: 466px;
 }
 
-.mdc-dialog__form .admin-form__section {
-  padding: 24px 0;
-}
-
-.mdc-dialog__form .mdc-text-field {
-  margin-top: 24px;
-}
-
 .mdc-dialog__actions {
   border-top: 1px solid var(--mdc-theme-gray__050); 
   padding: 24px;
+}
+
+.mdc-dialog__content .mdc-data-table,
+.mdc-dialog__content .mdc-dialog__section,
+.mdc-dialog__content .admin-form__section {
+  padding: 30px 36px;
+}
+
+.mdc-dialog__content .mdc-data-table:first-child,
+.mdc-dialog__content .mdc-dialog__section:first-child,
+.mdc-dialog__content .admin-form__section:first-child {
+  padding-top: 0;
+}
+
+.mdc-dialog__content .no-content-placeholder {
+  height: 72px;
 }

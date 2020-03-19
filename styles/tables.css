@@ -22,6 +22,10 @@
   border-bottom-width: 1px;
 }
 
+.mdc-data-table__row--selected {
+  background-color: var(--mdc-theme-surface);
+}
+
 .mdc-data-table__pagination-wrapper {
   display: flex;
   justify-content: space-between;
@@ -46,4 +50,47 @@
 
 .mdc-data-table__cell .mdc-icon-button {
   background-color: transparent;
+}
+
+.mdc-data-table__cell, .mdc-data-table__header-cell {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.mdc-data-table .mdc-data-table__header-cell--actions, .mdc-data-table .mdc-data-table__cell--actions {
+  text-align: right;
+}
+
+.mdc-data-table__header-cell--checkbox, .mdc-data-table__cell--checkbox {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mdc-data-table__counter {
+  margin-top: 40px;
+}
+
+.mdc-dialog__content > .mdc-data-table {
+  width: 100%;
+}
+
+.mdc-select__menu .mdc-data-table {
+  padding: 0;
+  width: 100%;
+}
+
+.mdc-select__menu .mdc-data-table__cell {
+  height: 36px;
+}
+
+.mdc-select__menu .mdc-data-table .mdc-data-table__header {
+  display: none;
+}
+
+.mdc-select__menu .mdc-data-table .mdc-data-table__header-cell--actions {
+  width: 60px;
+}
+
+.mdc-select__menu .mdc-data-table .mdc-data-table__row {
+  border-top: none;
 }

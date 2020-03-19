@@ -101,6 +101,11 @@ body.login-container {
   width: 24px;
 }
 
+.mdc-icon.large {
+  height: 44px;
+  width: 44px;
+}
+
 .mdc-icon.small {
   height: 18px;
   width: 18px;
@@ -114,6 +119,10 @@ body.login-container {
 .mdc-icon svg {
   display: block;
   margin: auto;
+}
+
+.mdc-icon.mdc-text-field__icon:focus {
+  outline: none;
 }
 
 .collapse-label {

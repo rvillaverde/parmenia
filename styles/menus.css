@@ -1,4 +1,4 @@
-.mdc-menu {
+.mdc-menu:not(.mdc-select__menu) {
   border-radius: 0 0 4px 4px;
   margin-top: var(--app-nav__height--desktop);
 }
@@ -6,7 +6,7 @@
 .mdc-menu .mdc-list {
 }
 
-.mdc-menu .mdc-list .mdc-list-item {
+.mdc-menu:not(.mdc-select__menu) .mdc-list .mdc-list-item {
   height: auto;
   max-width: 360px;
   min-width: 280px;
@@ -91,4 +91,55 @@
 
 .mdc-top-app-bar__action-item .mdc-menu .mdc-menu__action span {
   margin-left: 36px;
+}
+
+.mdc-dialog__content .mdc-list:first-child:last-child {
+  padding: 0;
+}
+
+.mdc-select__anchor {
+  width: 100%;
+}
+
+.mdc-select__menu.mdc-menu-surface {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.mdc-menu.mdc-select__menu .mdc-list .mdc-list-item {
+  box-sizing: border-box;
+  height: 32px;
+  max-width: 100%;
+  width: 100%;
+}
+
+:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before,
+:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::after,
+.mdc-select__menu .mdc-list .mdc-list-item--selected::before,
+.mdc-select__menu .mdc-list .mdc-list-item--selected::after {
+  background-color: var(--mdc-theme-secondary);
+}
+
+.mdc-select__menu .round-photo-wrapper {
+  border: none;
+  height: 24px;
+  width: 24px;
+}
+
+.mdc-select__menu .mdc-list-item__graphic {
+  margin-right: 12px;
+}
+
+.mdc-select .mdc-chip-set {
+  align-items: center;
+  padding: 0;
+}
+
+.mdc-select .mdc-chip-set .mdc-chip {
+  margin: 0;
+  margin-right: 4px;
+}
+
+.mdc-select .mdc-chip-set .mdc-chip:last-child {
+  margin-right: 0;
 }

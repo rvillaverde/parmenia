@@ -308,45 +308,65 @@
           aria-labelledby="my-dialog-title"
           aria-describedby="my-dialog-content">
           <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
-          <h2 class="mdc-dialog__title mdc-typography--headline2">
-            Cambiar contraseña
-          </h2>
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Cambiar contraseña
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form" id="change-password">
-              <label class="mdc-text-field mdc-text-field--outlined">
-                <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id">
-                <div class="mdc-notched-outline">
-                  <div class="mdc-notched-outline__leading"></div>
-                  <div class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label" id="my-label-id">Contraseña actual</span>
-                  </div>
-                  <div class="mdc-notched-outline__trailing"></div>
-                </div>
-              </label>
+            <form class="admin-form" id="change-password">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                      <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="my-label-id">Contraseña actual</span>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                      </div>
+                    </label>
 
-              <label class="mdc-text-field mdc-text-field--outlined">
-                <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id">
-                <div class="mdc-notched-outline">
-                  <div class="mdc-notched-outline__leading"></div>
-                  <div class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label" id="my-label-id">Nueva contraseña</span>
-                  </div>
-                  <div class="mdc-notched-outline__trailing"></div>
-                </div>
-              </label>
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                      <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="my-label-id">Nueva contraseña</span>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                      </div>
+                    </label>
 
-              <label class="mdc-text-field mdc-text-field--outlined">
-                <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id">
-                <div class="mdc-notched-outline">
-                  <div class="mdc-notched-outline__leading"></div>
-                  <div class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label" id="my-label-id">Confirmar contraseña</span>
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                      <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="my-label-id">Confirmar contraseña</span>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                      </div>
+                    </label>
                   </div>
-                  <div class="mdc-notched-outline__trailing"></div>
                 </div>
-              </label>
+              </div>
             </form>
           </div>
+
           <footer class="mdc-dialog__actions">
             <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
               <div class="mdc-button__ripple"></div>

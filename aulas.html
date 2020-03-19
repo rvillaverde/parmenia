@@ -14,9 +14,9 @@
       crossorigin="anonymous"></script>
 
     <!-- OFFLINE MODE -->
-<!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
-    <script src="offline/material-components-web.min.js"></script>
-    <script src="offline/jquery-3.4.1.min.js"></script> -->
+<!--     <link href="offline/material-components-web.css" rel="stylesheet">
+    <script src="offline/material-components-web.js"></script> -->
+    <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
 
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/theme.css">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/menus.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
     <link rel="stylesheet" href="styles/cards.css">
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/tables.css">
@@ -303,7 +304,7 @@
           <h1 class="mdc-typography--headline1">Mis Aulas</h1>
         </section>
         <section class="mdc-header__section mdc-header__actions">
-          <button class="mdc-button mdc-button--raised">
+          <button class="mdc-button mdc-button--raised" onclick="openDialog('nueva-aula-01');">
             <span class="mdc-button__ripple"></span>
             <i class="mdc-button__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,6 +318,418 @@
         </section>
       </div>
     </header>
+
+    <div id="nueva-aula-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface mdc-dialog__surface--large"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nueva aula
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="crear-aula-01">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="nombre" class="mdc-text-field__input" aria-labelledby="nombre">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="nombre">Nombre del aula</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 80 caracteres</div>
+                      </div>
+                    </div>
+
+                    <div class="mdc-text-field__wrapper">
+                      <h4 class="mdc-typography--headline4 admin-form__title">Docentes</h4>
+                      
+                      <div class="mdc-select mdc-select--outlined">
+                        <div class="mdc-select__anchor">
+                          <i class="mdc-select__dropdown-icon"></i>
+                          <div class="mdc-select__selected-text mdc-typography--body1" aria-labelledby="outlined-select-label">
+                            <div class="mdc-chip-set" role="grid"></div>
+                          </div>
+                          <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                              <span id="outlined-select-label" class="mdc-floating-label">Seleccionar docentes</span>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                          </div>
+                        </div>
+
+                        <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
+                          <ul class="mdc-list mdc-checkbox-list" role="group" aria-label="Docentes">
+                            <li class="mdc-list-item" role="checkbox" aria-checked="false" data-value="docente-01" role="option" tabindex="1">
+                              <label class="mdc-list-item__text mdc-typography--body2" for="docente-01">Docente 1</label>
+                              <span class="mdc-list-item__meta">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-01" />
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                            </li>
+                            <li class="mdc-list-item" role="checkbox" aria-checked="false" data-value="docente-02" role="option" tabindex="2">
+                              <label class="mdc-list-item__text mdc-typography--body2" for="docente-02">Docente 2</label>
+                              <span class="mdc-list-item__meta">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-02" />
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                            </li>
+                            <li class="mdc-list-item" role="checkbox" aria-checked="false" data-value="docente-03" role="option" tabindex="3">
+                              <label class="mdc-list-item__text mdc-typography--body2" for="docente-03">Docente 3</label>
+                              <span class="mdc-list-item__meta">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-03" />
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                            </li>
+                          </ul>
+<!--             <ul class="mdc-list demo-list" id="trailing-checkbox-list" role="group">
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="custom__02" role="option">
+                <label for="trailing-checkbox-blueberries" class="mdc-typography--body2">Blueberries</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox"
+                           class="mdc-checkbox__native-control"
+                           id="trailing-checkbox-blueberries"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark"
+                           viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path"
+                              fill="none"
+                              stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="custom__02" role="option">
+                <label for="trailing-checkbox-boysenberries" class="mdc-typography--body2">Boysenberries</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox"
+                           class="mdc-checkbox__native-control"
+                           id="trailing-checkbox-boysenberries"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark"
+                           viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path"
+                              fill="none"
+                              stroke="white"
+                              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="custom__02" role="option">
+                <label for="trailing-checkbox-strawberries" class="mdc-typography--body2">Strawberries</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox"
+                           class="mdc-checkbox__native-control"
+                           id="trailing-checkbox-strawberries"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark"
+                           viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path"
+                              fill="none"
+                              stroke="white"
+                              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+            </ul> -->
+<!--                           <div class="mdc-data-table mdc-list" id="docentes-select-table">
+                            <table class="mdc-data-table__table" aria-label="docentes">
+                              <thead class="mdc-data-table__header">
+                                <tr class="mdc-data-table__header-row">
+                                  <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                                    <span class="mdc-typography--caption">Nombre y apellido</span>
+                                  </th>
+                                  <th class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox mdc-data-table__header-cell--actions" role="columnheader" scope="col">
+                                    <div class="mdc-checkbox mdc-data-table__header-row-checkbox mdc-checkbox--selected">
+                                      <input type="checkbox" class="mdc-checkbox__native-control" aria-label="Checkbox for header row selection"/>
+                                      <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                          <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                    </div>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody class="mdc-data-table__content">
+                                <tr class="mdc-data-table__row" data-row-id="docente-01" role="option">
+                                  <td class="mdc-data-table__cell">
+                                    <span class="mdc-typography--body2">Fulanito Perez</span>
+                                  </td>
+                                  <td class="mdc-data-table__cell mdc-data-table__cell--checkbox mdc-data-table__cell--actions">
+                                    <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                                      <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                                      <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                          <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+
+                                <tr class="mdc-data-table__row" data-row-id="docente-02" role="option">
+                                  <td class="mdc-data-table__cell">
+                                    <span class="mdc-typography--body2">Maria la del Barrio</span>
+                                  </td>
+                                  <td class="mdc-data-table__cell mdc-data-table__cell--checkbox mdc-data-table__cell--actions">
+                                    <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                                      <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                                      <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                          <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+
+                                <tr class="mdc-data-table__row" data-row-id="docente-03" role="option">
+                                  <td class="mdc-data-table__cell">
+                                    <span class="mdc-typography--body2">Juanita Gomez</span>
+                                  </td>
+                                  <td class="mdc-data-table__cell mdc-data-table__cell--checkbox mdc-data-table__cell--actions">
+                                    <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                                      <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                                      <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                          <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>     -->                      
+<!--                           <ul class="mdc-list">
+                            <li class="mdc-list-item" data-value="grains" role="option">
+                              <span class="mdc-typography--body2">Fulanito Perez</span>
+                            </li>
+                            <li class="mdc-list-item" data-value="vegetables" aria-disabled="true" role="option">
+                              <span class="mdc-typography--body2">Maria la del Barrio</span>
+                            </li>
+                            <li class="mdc-list-item" data-value="fruit" role="option">
+                              <span class="mdc-typography--body2">Juanita Gomez</span>
+                            </li>
+                          </ul> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Imagen</h4>
+
+                    <div class="admin-form__photo-placeholder">
+                      <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Foto del aula</span>
+                    </div>
+
+                    <div class="admin-form__photo-placeholder__actions">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('galeria-select-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 15L16 10L5 21" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Elegir de la galería</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Color</h4>
+
+                    <div class="mdc-select mdc-select--outlined">
+                      <div class="mdc-select__anchor">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <div class="mdc-select__selected-text mdc-typography--body1" aria-labelledby="color-select-label"></div>
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span id="color-select-label" class="mdc-floating-label">Asignar color</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </div>
+
+                      <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
+                        <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                          <li class="mdc-list-item" data-value="custom__00" role="option">
+                            <span class="mdc-list-item__graphic">
+                              <span class="round-photo-wrapper" style="background-color: var(--mdc-theme-custom__00);"></span>
+                            </span>
+                            <span class="mdc-typography--body2">Color 1</span>
+                          </li>
+                          <li class="mdc-list-item" data-value="custom__01" role="option">
+                            <span class="mdc-list-item__graphic">
+                              <span class="round-photo-wrapper" style="background-color: var(--mdc-theme-custom__01);"></span>
+                            </span>
+                            <span class="mdc-typography--body2">Color 2</span>
+                          </li>
+                          <li class="mdc-list-item" data-value="custom__02" role="option">
+                            <span class="mdc-list-item__graphic">
+                              <span class="round-photo-wrapper" style="background-color: var(--mdc-theme-custom__02);"></span>
+                            </span>
+                            <span class="mdc-typography--body2">Color 3</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-checkbox__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="copy-content"/>
+                          <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                              <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                          </div>
+                          <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        <label for="news-publish-cartelera" class="copy-content">Copiar contenido de otro aula</label>
+                      </div>
+                    </div>
+
+                    <div class="mdc-select mdc-select--outlined">
+                      <div class="mdc-select__anchor">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <div class="mdc-select__selected-text  mdc-typography--body1" aria-labelledby="aula-select-label"></div>
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span id="auala-select-label" class="mdc-floating-label">Seleccionar aula</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </div>
+
+                      <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
+                        <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                          <li class="mdc-list-item" data-value="aula-01" role="option">
+                            <span class="mdc-typography--body2">Ciencias Naturales 6A 2019</span>
+                          </li>
+                          <li class="mdc-list-item" data-value="aula-02" role="option">
+                            <span class="mdc-typography--body2">Ciencias Sociales 6B 2018</span>
+                          </li>
+                          <li class="mdc-list-item" data-value="aula-03" role="option">
+                            <span class="mdc-typography--body2">Lengua 6A 2019</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="selection-wrapper">
+                      <div class="no-content-placeholder">
+                        <span class="mdc-typography--headline4">Aún no hay contenido seleccionado</span>
+                      </div>
+                    </div>
+
+                    <div class="admin-form__actions">
+                      <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('content-select-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">Seleccionar contenido</span>
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear aula</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
 
     <main class="main-wrapper">
       <!-- Aulas alumno view { -->

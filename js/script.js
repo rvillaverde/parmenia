@@ -24,7 +24,6 @@ function setoggleCardSelection(card) {
 }
 
 function openDialog(dialogId) {
-  console.log(dialogId);
   if (dialog) {
     dialog.close();
   }
