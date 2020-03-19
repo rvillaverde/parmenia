@@ -67,9 +67,15 @@
 }
 
 .mdc-card__actions {
-  border-top: 1px solid var(--mdc-theme-gray__050); 
+  border-top: 1px solid var(--mdc-theme-gray__050);
+  flex-wrap: wrap;
   margin-top: auto;
   padding: 8px 16px;
+}
+
+.mdc-card__actions .mdc-card__info {
+  margin-top: 4px;
+  width: 100%;
 }
 
 .mdc-card__action--icon {
@@ -115,7 +121,7 @@
   color: white;
 }
 
-.aulas-card .mdc-card__title, .projects-card .mdc-card__title {
+.aulas-card .mdc-card__title, .projects-card .mdc-card__title, .activity-card .mdc-card__title {
   text-align: center;
 }
 
@@ -131,35 +137,62 @@
   background-color: transparent;
 }
 
-.projects-card .mdc-card__primary {
-  padding:0;
+.projects-card .mdc-card__primary, .activity-card .mdc-card__primary {
+  padding: 0 30px;
 }
 
-.projects-card .mdc-card__secondary {
+.projects-card .mdc-card__secondary, .activity-card .mdc-card__secondary {
   display: flex;
   justify-content: center;
-  margin: 48px 0;
+  margin: 40px 0;
   margin-top: 0;
   padding: 8px;
+}
+
+.activity-card .mdc-card__primary {
+  padding: 24px 30px;
+}
+
+.activity-card .mdc-card__tertiary {
+  padding: 12px 30px;
+}
+
+.activity-card .mdc-card__tertiary, .activity-card .mdc-card__activity-status {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.activity-card .mdc-card__tertiary .mdc-card__activity-status {
+  margin-right: 12px;
+}
+
+.mdc-card__activity-status.pending span {
+  color: var(--mdc-theme-progress__01);
+}
+
+.mdc-card__activity-status.commited span {
+  color: var(--mdc-theme-progress__02);
+}
+
+.mdc-card__activity-status.finished span {
+  color: var(--mdc-theme-progress__03);
 }
 
 .mdc-card__caption {
   align-items: center;
   display: flex;
-  margin: 0 12px;
+  margin: 0;
+  margin-right: 12px;
   text-decoration: none;
 }
 
-.mdc-card__caption:first-of-type {
-  margin-left: 0;
+.projects-card .mdc-card__caption {
+  margin-right: 24px;
 }
 
 .mdc-card__caption:last-of-type {
   margin-right: 0;
-}
-
-.mdc-card__caption > *:last-child {
-  margin-left: 8px;
 }
 
 .projects-card .mdc-card__media, .aulas-card .mdc-card__media {
@@ -236,7 +269,7 @@
   border-bottom: 0;
 }
 
-.mdc-card__status {
+.mdc-card__project-status {
   border-radius: 50%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
   height: 33px;
@@ -250,15 +283,15 @@
   align-items: center;
 }
 
-.mdc-card__status.loading {
+.mdc-card__project-status.loading {
   background-color: var(--mdc-theme-secondary);
 }
 
-.mdc-card__status.unpublished {
+.mdc-card__project-status.unpublished {
   background-color: var(--mdc-theme-gray__400);
 }
 
-.mdc-card__status.finished {
+.mdc-card__project-status.finished {
   background-color: var(--mdc-theme-primary);
 }
 
@@ -493,24 +526,32 @@
   justify-content: center;
 }
 
-.mdc-card.resource-card .mdc-card__primary-action {
+.mdc-card.library-card .mdc-card__primary-action {
   flex-direction: row;
 }
 
-.mdc-card.resource-card .mdc-card__media {
+.mdc-card.library-card .mdc-card__media {
   border-top-right-radius: 0;
   min-height: 210px;
   min-width: 180px;
 }
 
-.mdc-card.resource-card .mdc-card__primary .mdc-card__subtitle {
+.mdc-card.library-card .mdc-card__primary .mdc-card__subtitle {
   margin-top: 8px;
 }
 
-.mdc-card.resource-card .mdc-card__primary {
+.mdc-card.library-card .mdc-card__primary {
   padding: 30px 24px;
 }
 
-.mdc-card.resource-card .mdc-chip-set {
+.mdc-card.library-card .mdc-chip-set {
   padding: 12px 0;
+}
+
+.link-card .mdc-card__primary {
+  display: flex;
+}
+
+.link-card .mdc-card__primary .mdc-card__link-info {
+  margin-left: 12px;
 }

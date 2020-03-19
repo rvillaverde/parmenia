@@ -3,7 +3,7 @@
 }
 
 .drawer-side-wrapper .main-wrapper {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
   padding: 0 24px;
 }
 
@@ -17,6 +17,11 @@
   top: calc(var(--header__height-large));
   position: absolute;
   width: 240px;
+}
+
+.mdc-drawer .mdc-list-divider {
+  border-bottom-color: rgba(33, 33, 33, 0.2);
+  margin: 0;
 }
 
 .mdc-drawer + .drawer-side-wrapper .main-wrapper {
@@ -75,16 +80,16 @@
   margin: 0;
 }
 
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before {
   transition: opacity 100ms ease-in-out;
   -webkit-transition: opacity 100ms ease-out;
 }
 
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::after {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::after {
   content: unset;
 }
 
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before {
   background-color: var(--mdc-theme-primary__200);
   width: 8px;
   position: absolute;
@@ -95,20 +100,20 @@
   opacity: 0;
 }
 
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item:hover::before {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item:hover::before {
   opacity: 0;
 }
 
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item:focus::before {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item:focus::before {
   opacity: 0;
 }
 
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:hover::before {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:hover::before {
   opacity: 1;
 }
 
 /*:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:hover::before,*/
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before,
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated::before {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before,
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated::before {
   opacity: 1;
 }

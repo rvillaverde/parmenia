@@ -11,6 +11,9 @@
 
   --footer__height--desktop: 88px;
   --footer__height--mobile: 80px;
+
+  --mdc-layout-grid-margin-desktop: 20px;
+  --mdc-layout-grid-gutter-desktop: 20px;
 }
 
 html {
@@ -160,7 +163,7 @@ body.login-container {
   width: 34px;
 }
 
-.headline__icon + *, .upcoming-event__icon + *, .caption-icon + * {
+.headline__icon + *, .mdc-icon + * {
   margin-left: 8px;
 }
 
