@@ -291,7 +291,7 @@
         <div class="mdc-header__cover round-photo-wrapper">
           <img src="img/placeholder.png">
         </div>
-        <!--<div class="mdc-header__section--cover round-photo-wrapper">
+<!--         <div class="mdc-header__section--cover round-photo-wrapper">
           <img src="img/placeholder-parmenia.jpg">
         </div> -->
         <section class="mdc-header__section">
@@ -370,7 +370,7 @@
           <div class="mdc-tab-scroller">
             <div class="mdc-tab-scroller__scroll-area">
               <div class="mdc-tab-scroller__scroll-content">
-                <a href="proyecto1_presentacion.html" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_presentacion.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -386,7 +386,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </a>
 
-                <a href="proyecto1_clases.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_clases.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -402,7 +402,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </a>
 
-                <a href="proyecto1_foro.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_foro.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -417,7 +417,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </a>
 
-                <a href="proyecto1_aprendizaje.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_aprendizaje.html" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -435,7 +435,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </a>
 
-                <a href="proyecto1_sintesis.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_sintesis.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -457,104 +457,26 @@
       </div>
     </header>
 
-    <aside class="mdc-drawer">
-      <div class="mdc-drawer__content">
-        <nav class="mdc-list">
-          <a class="mdc-list-item mdc-list-item--activated" href="#presentacion" aria-current="page" data-section="presentacion">
-            <span class="mdc-list-item__text mdc-typography--headline6">Presentación</span>
-          </a>
-          <li role="separator" class="mdc-list-divider"></li>
-          <a class="mdc-list-item" href="#objetivos" aria-current="page" data-section="objetivos">
-            <span class="mdc-list-item__text mdc-typography--headline6">Objetivos</span>
-          </a>
-          <li role="separator" class="mdc-list-divider"></li>
-          <a class="mdc-list-item" href="#hoja-de-ruta" aria-current="page" data-section="hoja-de-ruta">
-            <span class="mdc-list-item__text mdc-typography--headline6">Hoja de ruta</span>
-          </a>
-        </nav>
+    <main class="main-wrapper admin-wrapper">
+      <div class="headline-wrapper headline-wrapper--text">
+        <div class="text-wrapper">
+          <h4 class="mdc-typography--headline4">
+            La sección “Mi Aprendizaje” está destinada a una única actividad de cierre que permita a los alumnos expresar aquellas conclusiones, saberes y enseñanzas adquiridos a lo largo del proyecto. 
+          </h4>
+          <p class="mdc-typography--body1">
+            Las actividades de aprendizaje entregadas por los alumnos se guardan automáticamente en sus Mochilas. De esta manera, son para ellos un registro transversal de toda su cursada.
+            <br><br>
+            La sección sólo será accesible para los alumnos cuando haya una actividad creada. Esta actividad no tiene fecha de vencimiento, sino que está disponible a ser completada todo el tiempo que el proyecte esté activo.
+          </p>
+        </div>
+        <div class="headline-wrapper__actions">
+          <button class="mdc-button mdc-button--raised" onclick="openDialog('nuevo-anuncio-01');">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Crear actividad</span>
+          </button>
+        </div>
       </div>
-    </aside>
-
-    <div class="drawer-side-wrapper">
-      <main class="main-wrapper">
-        <section id="presentacion" class="presentacion-wrapper">
-          <div class="headline-wrapper">
-            <h4 class="mdc-typography--headline4">Presentación</h4>
-            <div class="headline-wrapper__actions">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
-                <span class="mdc-button__label">Editar contenido</span>
-              </button>
-            </div>
-          </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
-            <div class="mdc-card__primary">
-              <h3 class="mdc-card__title mdc-typography--headline3">
-                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
-              </h3>
-            </div>
-            <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-            <div class="mdc-card__secondary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
-                <br><br>
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus. Pellentesque sagittis massa odio, ac viverra justo aliquet in. Sed vel ligula consequat, molestie arcu non, suscipit libero. Phasellus at massa tortor. Vivamus sed nisl vehicula, mattis ipsum vitae, ornare libero. Nullam venenatis tristique mauris, non semper turpis interdum eu. Vivamus nisi massa, aliquam vel ex eget, finibus interdum libero. Donec venenatis tristique urna, nec congue erat interdum eu. Pellentesque semper tellus eget arcu porttitor, nec tempor quam lacinia. Cras tempor consectetur enim quis fringilla. Sed gravida, nisl id euismod ultrices, erat est cursus mi, quis sagittis ipsum diam sed purus. Phasellus enim massa, condimentum vel porta et, ornare eget mi. Curabitur at feugiat dolor, et iaculis turpis.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="objetivos" class="objetivos-wrapper">
-          <div class="headline-wrapper">
-            <h4 class="mdc-typography--headline4">Objetivos</h4>
-            <div class="headline-wrapper__actions">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
-                <span class="mdc-button__label">Editar contenido</span>
-              </button>
-            </div>
-          </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
-            <div class="mdc-card__primary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
-
-                Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
-
-                Morbi a ultrices libero. In hac habitasse platea dictumst.
-
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="hoja-de-ruta" class="hoja-de-ruta-wrapper">
-          <div class="headline-wrapper">
-            <h4 class="mdc-typography--headline4">Hoja de ruta</h4>
-            <div class="headline-wrapper__actions">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
-                <span class="mdc-button__label">Editar contenido</span>
-              </button>
-            </div>
-          </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
-            <div class="mdc-card__primary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
-
-                Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
-
-                Morbi a ultrices libero. In hac habitasse platea dictumst.
-
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+    </main>
 
     <footer class="footer">
       <div class="footer-left-col">

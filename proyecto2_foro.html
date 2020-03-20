@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/menus.css">
-    <link rel="stylesheet" href="styles/drawer.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
     <link rel="stylesheet" href="styles/cards.css">
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/tables.css">
@@ -291,9 +291,6 @@
         <div class="mdc-header__cover round-photo-wrapper">
           <img src="img/placeholder.png">
         </div>
-        <!--<div class="mdc-header__section--cover round-photo-wrapper">
-          <img src="img/placeholder-parmenia.jpg">
-        </div> -->
         <section class="mdc-header__section">
           <div class="mdc-header__breadcrumb mdc-typography--headline5">
             <a class="mdc-typography--headline5" href="aulas.html">Mis aulas</a>
@@ -370,7 +367,7 @@
           <div class="mdc-tab-scroller">
             <div class="mdc-tab-scroller__scroll-area">
               <div class="mdc-tab-scroller__scroll-content">
-                <a href="proyecto1_presentacion.html" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_presentacion.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -386,7 +383,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </a>
 
-                <a href="proyecto1_clases.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_clases.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -402,7 +399,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </a>
 
-                <a href="proyecto1_foro.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_foro.html" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -417,7 +414,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </a>
 
-                <a href="proyecto1_aprendizaje.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_aprendizaje.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -435,7 +432,7 @@
                   <span class="mdc-tab__ripple"></span>
                 </a>
 
-                <a href="proyecto1_sintesis.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <a href="proyecto2_sintesis.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
                   <span class="mdc-tab__content">
                     <i class="mdc-icon small">
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -457,104 +454,116 @@
       </div>
     </header>
 
-    <aside class="mdc-drawer">
-      <div class="mdc-drawer__content">
-        <nav class="mdc-list">
-          <a class="mdc-list-item mdc-list-item--activated" href="#presentacion" aria-current="page" data-section="presentacion">
-            <span class="mdc-list-item__text mdc-typography--headline6">Presentación</span>
-          </a>
-          <li role="separator" class="mdc-list-divider"></li>
-          <a class="mdc-list-item" href="#objetivos" aria-current="page" data-section="objetivos">
-            <span class="mdc-list-item__text mdc-typography--headline6">Objetivos</span>
-          </a>
-          <li role="separator" class="mdc-list-divider"></li>
-          <a class="mdc-list-item" href="#hoja-de-ruta" aria-current="page" data-section="hoja-de-ruta">
-            <span class="mdc-list-item__text mdc-typography--headline6">Hoja de ruta</span>
-          </a>
-        </nav>
+    <div id="nuevo-anuncio-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nueva conversación
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="nuevo-anuncio-01_form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="titulo" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="titulo">Título de la conversación</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 80 caracteres</div>
+                      </div>
+                    </div>
+
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--textarea mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <textarea class="mdc-text-field__input" aria-labelledby="my-label-id" rows="2" cols="40" maxlength="140"></textarea>
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="my-label-id">Descripción</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 140 caracteres</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="nuevo-anuncio-01_form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear</span>
+            </button>
+          </footer>
+        </div>
       </div>
-    </aside>
-
-    <div class="drawer-side-wrapper">
-      <main class="main-wrapper">
-        <section id="presentacion" class="presentacion-wrapper">
-          <div class="headline-wrapper">
-            <h4 class="mdc-typography--headline4">Presentación</h4>
-            <div class="headline-wrapper__actions">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
-                <span class="mdc-button__label">Editar contenido</span>
-              </button>
-            </div>
-          </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
-            <div class="mdc-card__primary">
-              <h3 class="mdc-card__title mdc-typography--headline3">
-                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
-              </h3>
-            </div>
-            <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-            <div class="mdc-card__secondary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
-                <br><br>
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus. Pellentesque sagittis massa odio, ac viverra justo aliquet in. Sed vel ligula consequat, molestie arcu non, suscipit libero. Phasellus at massa tortor. Vivamus sed nisl vehicula, mattis ipsum vitae, ornare libero. Nullam venenatis tristique mauris, non semper turpis interdum eu. Vivamus nisi massa, aliquam vel ex eget, finibus interdum libero. Donec venenatis tristique urna, nec congue erat interdum eu. Pellentesque semper tellus eget arcu porttitor, nec tempor quam lacinia. Cras tempor consectetur enim quis fringilla. Sed gravida, nisl id euismod ultrices, erat est cursus mi, quis sagittis ipsum diam sed purus. Phasellus enim massa, condimentum vel porta et, ornare eget mi. Curabitur at feugiat dolor, et iaculis turpis.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="objetivos" class="objetivos-wrapper">
-          <div class="headline-wrapper">
-            <h4 class="mdc-typography--headline4">Objetivos</h4>
-            <div class="headline-wrapper__actions">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
-                <span class="mdc-button__label">Editar contenido</span>
-              </button>
-            </div>
-          </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
-            <div class="mdc-card__primary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
-
-                Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
-
-                Morbi a ultrices libero. In hac habitasse platea dictumst.
-
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="hoja-de-ruta" class="hoja-de-ruta-wrapper">
-          <div class="headline-wrapper">
-            <h4 class="mdc-typography--headline4">Hoja de ruta</h4>
-            <div class="headline-wrapper__actions">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
-                <span class="mdc-button__label">Editar contenido</span>
-              </button>
-            </div>
-          </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
-            <div class="mdc-card__primary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
-
-                Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
-
-                Morbi a ultrices libero. In hac habitasse platea dictumst.
-
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
+      <div class="mdc-dialog__scrim"></div>
     </div>
+
+    <main class="main-wrapper">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+            <div class="headline-wrapper--text">
+              <div class="text-wrapper">
+                <h4 class="mdc-typography--headline4">
+                  Este es un espacio destinado a compartir con tus alumnos publicaciones que den un cierre al proyecto.
+                </h4>
+                <p class="mdc-typography--body1">
+                  La sección sólo será accesible para los alumnos cuando haya contenido publicado.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop"></div>
+
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+            <button class="mdc-button mdc-button--raised" onclick="openDialog('nuevo-anuncio-01');">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">Crear discusión</span>
+            </button>
+
+            <div class="no-content-placeholder">
+              <span class="mdc-typography--headline4">No hay ninguna conversación</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer class="footer">
       <div class="footer-left-col">

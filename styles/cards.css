@@ -555,3 +555,27 @@
 .link-card .mdc-card__primary .mdc-card__link-info {
   margin-left: 12px;
 }
+
+.mdc-card .mdc-layout-grid {
+  padding: 24px 0;
+}
+
+.mdc-card .mdc-layout-grid .mdc-layout-grid__inner {
+  grid-gap: 12px;
+}
+
+.project-presentation-card .mdc-card__primary,
+.project-presentation-card .mdc-card__media,
+.project-presentation-card .mdc-card__secondary {
+  margin: 12px 48px;
+  padding: 0;
+}
+
+.project-presentation-card .mdc-card__primary {
+  margin-top: 40px;
+}
+
+.project-presentation-card .mdc-card__primary:last-child, 
+.project-presentation-card .mdc-card__secondary {
+  margin-bottom: 40px;
+}

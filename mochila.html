@@ -1178,7 +1178,7 @@
               <h5 class="mdc-typography--headline5">Recursos</h5>
               <div class="mdc-chip" role="row">
                 <span role="gridcell">
-                  <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">1</span>
+                  <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">4</span>
                 </span>
               </div>
               <a class="collapse-link">
@@ -1209,13 +1209,148 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <a class="mdc-card mdc-card--outlined link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
                   <div class="mdc-card__primary">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23 7L16 12L23 17V7Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <div class="mdc-card__link-info">
+                      <p class="mdc-typography--body1">Título del archivo</p>
+                      <p class="mdc-typography--body2">link con elipsis</p>
+                    </div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button class="mdc-card__action--button mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver recurso</span>
+                      </button>
+                    </div>
+
+                    <div class="mdc-card__action-icons">
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                  <div class="mdc-card__primary">
+                    <i class="mdc-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 10H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 6H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 14H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 18H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <div class="mdc-card__link-info">
+                      <p class="mdc-typography--body1">Título del archivo</p>
+                      <p class="mdc-typography--body2">link con elipsis</p>
+                    </div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button class="mdc-card__action--button mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver recurso</span>
+                      </button>
+                    </div>
+
+                    <div class="mdc-card__action-icons">
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                  <div class="mdc-card__primary">
+                    <i class="mdc-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 15L16 10L5 21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <div class="mdc-card__link-info">
+                      <p class="mdc-typography--body1">Título del archivo</p>
+                      <p class="mdc-typography--body2">link con elipsis</p>
+                    </div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button class="mdc-card__action--button mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver recurso</span>
+                      </button>
+                    </div>
+
+                    <div class="mdc-card__action-icons">
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                  <div class="mdc-card__primary">
+                    <i class="mdc-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.46997L11.75 5.17997" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.0002 11C13.5707 10.4259 13.0228 9.9508 12.3936 9.60704C11.7644 9.26328 11.0687 9.05886 10.3535 9.00765C9.63837 8.95643 8.92058 9.05961 8.24882 9.3102C7.57706 9.56079 6.96705 9.95291 6.46017 10.46L3.46017 13.46C2.54938 14.403 2.04541 15.666 2.0568 16.977C2.06819 18.288 2.59404 19.542 3.52108 20.4691C4.44812 21.3961 5.70218 21.922 7.01316 21.9334C8.32415 21.9447 9.58716 21.4408 10.5302 20.53L12.2402 18.82" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                     </i>
                     <div class="mdc-card__link-info">
@@ -1301,7 +1436,7 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <a class="mdc-card mdc-card--outlined forum-discusion-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+                <a class="mdc-card forum-discusion-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
                   <div class="mdc-card__primary">
                     <h4 class="mdc-typography--headline4">Título de la discusión puede tener hasta dos lineas luego elipsis...</h4>
                   </div>
@@ -1672,7 +1807,7 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <a class="mdc-card mdc-card--outlined link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
                   <div class="mdc-card__primary">
                     <i class="mdc-icon">
@@ -1703,12 +1838,12 @@
 
                     <div class="mdc-card__action-icons">
                       <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
-                        <i class="mdc-icon small">
-                          <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6.37695 4.5V3C6.37695 2.60218 6.53499 2.22064 6.81629 1.93934C7.0976 1.65804 7.47913 1.5 7.87695 1.5H10.877C11.2748 1.5 11.6563 1.65804 11.9376 1.93934C12.2189 2.22064 12.377 2.60218 12.377 3V4.5M14.627 4.5V15C14.627 15.3978 14.4689 15.7794 14.1876 16.0607C13.9063 16.342 13.5248 16.5 13.127 16.5H5.62695C5.22913 16.5 4.8476 16.342 4.56629 16.0607C4.28499 15.7794 4.12695 15.3978 4.12695 15V4.5H14.627Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M7.87695 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M10.877 8.25V12.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <i class="mdc-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6H5H21" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 11V17" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 11V17" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                           </svg>
                         </i>
                       </button>

@@ -19,6 +19,16 @@ function addToBag(element) {
   console.log('add to bag');
 }
 
+function toggleView(element) {
+  $(element).closest('.mdc-button--toggle').find('.mdc-button').removeClass('mdc-button--active');
+  $(element).addClass('mdc-button--active');
+  let view = $(element).attr('data-toggle-view');
+  let toggable = $(element).closest('.toggable');
+  toggable.find(`.toggle-target`).hide();
+  toggable.find(`.toggle-target[data-toggle-view='${ view }']`).show();
+  console.log(view);
+}
+
 function setoggleCardSelection(card) {
   card.toggleClass('mdc-card--selected');
 }
@@ -51,7 +61,7 @@ $(function() {
   }
 
   //smoothscroll
-  $('a[href^="#"]').on('click', function (e) {
+  $('.mdc-drawer a[href^="#"]').on('click', function (e) {
     e.preventDefault();
     $(window).off("scroll");
     
