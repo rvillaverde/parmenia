@@ -306,6 +306,28 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   box-shadow: inset 0px -100px 120px rgba(0, 0, 0, 0.3);
 }
 
+.mdc-header__welcome .mdc-header__row {
+  max-width: var(--viewport-width);
+  position: static;
+}
+
+.mdc-header__welcome .mdc-header__section {
+  align-items: baseline;
+  margin-bottom: 40px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.mdc-header__welcome .mdc-header__title {
+  width: 800px;
+  text-align: center;
+}
+
+.mdc-header__welcome .mdc-header__date {
+  color: rgba(255, 255, 255, 0.74);
+  margin-left: auto;
+}
+
 .mdc-header__admin {
   height: var(--header__height-medium);
   background-color: var(--mdc-theme-primary__500);
@@ -314,6 +336,10 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
 
 .mdc-header__project {
   height: var(--header__height-large);
+}
+
+.mdc-header__project .mdc-header__row {
+  padding-bottom: 40px;
 }
 
 @media (max-width: 599px) {
@@ -332,8 +358,7 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
 }
 
 .mdc-header__aula .mdc-header__section:first-of-type, .mdc-header__project .mdc-header__section:first-of-type {
-  align-items: flex-start;
-  flex-direction: column;
+  align-items: flex-end;
 }
 
 .mdc-header__aula .mdc-header__section .mdc-chip-set {
@@ -351,7 +376,7 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
-  transform: translateX(-48%) translateY(-36%);
+  transform: translateX(-48%) translateY(-34%);
 }
 
 .mdc-header__cover + .mdc-header__section {
@@ -359,7 +384,10 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
 }
 
 @media (min-width: 800px) {
-  .mdc-header__cover + .mdc-header__section {
+  .mdc-header__avatar + .mdc-header__title {
+    margin-left: 40px;
+  }
+  .mdc-header__cover + .mdc-header__section > .mdc-header__title:first-child {
     margin-left: 260px;
   }
 }
@@ -399,19 +427,20 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   display: flex;
 }
 
-.mdc-header__section--cover {
-  height: 144px;
-  min-width: 144px;
-  width: 144px;
-  position: absolute;
+.mdc-header__avatar.round-photo-wrapper {
+  height: 146px;
+  margin-left: 48px;
+  min-width: 146px;
+  width: 146px;
 }
 
-.mdc-header__section-background {
+.mdc-header__background {
   background-image: url('../img/home.png');
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
   height: 100%;
+  left: 0;
   margin: 0 -48px;
   position: absolute;
   top: 0;

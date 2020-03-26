@@ -18,10 +18,16 @@
 
 .login-school-info {
   align-items: center;
-  color: white;
+  color: var(--mdc-theme-surface);
   display: flex;
   flex-direction: column;
   margin: 48px;
+  text-align: center;
+}
+
+.login-wrapper p {
+  color: var(--mdc-theme-surface);
+  padding-bottom: 24px;
   text-align: center;
 }
 
@@ -32,23 +38,23 @@
 }
 
 .login-wrapper__heading {
-  color: white;
+  color: var(--mdc-theme-surface);
 }
 
-.password-recovery {
-  color: white;
+.login-wrapper p.password-recovery {
+  color: var(--mdc-theme-surface);
   text-align: left;
   width: 100%;
 }
 
 .password-recovery a {
-  color: white;
+  color: var(--mdc-theme-surface);
 }
 
 .login-controls {
   display: flex;
   justify-content: flex-end;
-  margin: 48px 0;
+  margin: 24px 0;
   width: 100%;
 }
 
