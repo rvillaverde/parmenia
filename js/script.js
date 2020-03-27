@@ -66,6 +66,7 @@ $(function() {
   }
 
   $('.user-roles-wrapper input').change(roleSelection);
+  roleSelection({ currentTarget: $('.user-roles-wrapper input[checked]') });
 
   //smoothscroll
   $('.mdc-drawer a[href^="#"]').on('click', function (e) {
