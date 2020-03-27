@@ -138,7 +138,7 @@
 }
 
 .projects-card .mdc-card__primary, .activity-card .mdc-card__primary {
-  padding: 0 30px;
+  padding: 0 28px;
 }
 
 .projects-card .mdc-card__secondary, .activity-card .mdc-card__secondary {
@@ -150,11 +150,11 @@
 }
 
 .activity-card .mdc-card__primary {
-  padding: 24px 30px;
+  padding: 24px 28px;
 }
 
 .activity-card .mdc-card__tertiary {
-  padding: 12px 30px;
+  padding: 12px 28px;
 }
 
 .activity-card .mdc-card__tertiary, .activity-card .mdc-card__activity-status {
@@ -395,8 +395,30 @@
   margin-bottom: 12px;
 }
 
-.tarea-card > .mdc-card__primary {
-  padding: 40px;
+.tarea-card {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 28px 36px;
+}
+
+.tarea-card > .mdc-card__primary,
+.tarea-card > .mdc-card__secondary {
+  padding: 0;
+}
+
+.tarea-card > .mdc-card__primary:not(:last-child) {
+  margin-right: 24px;
+  max-width: 480px;
+}
+
+.tarea-card > .mdc-card__secondary {
+  min-width: 212px;
+  max-width: 232px;
+}
+
+.tarea-card > .mdc-card__secondary > .no-content-placeholder {
+  height: 142px;
+  width: 212px;
 }
 
 .tarea-card > .mdc-card__primary > .mdc-card__title {
@@ -541,7 +563,7 @@
 }
 
 .mdc-card.library-card .mdc-card__primary {
-  padding: 30px 24px;
+  padding: 28px 24px;
 }
 
 .mdc-card.library-card .mdc-chip-set {
@@ -578,4 +600,29 @@
 .project-presentation-card .mdc-card__primary:last-child, 
 .project-presentation-card .mdc-card__secondary {
   margin-bottom: 40px;
+}
+
+.devolucion-card .mdc-data-table {
+  border-width: 0;
+}
+
+.devolucion-card .mdc-data-table__cell,
+.devolucion-card .mdc-data-table__header-cell {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.devolucion-card .table__photo-thumbnail {
+  height: 18px;
+  width: 18px;
+}
+
+.devolucion-card tr.mdc-data-table__row:last-child {
+  border-bottom-width: 0;
+}
+
+.devolucion-card tfoot.mdc-data-table__footer {
+  border-top-color: rgba(0,0,0,.12);
+  border-top-style: solid;
+  border-top-width: 1px;
 }

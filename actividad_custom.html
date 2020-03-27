@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/menus.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
     <link rel="stylesheet" href="styles/drawer.css">
     <link rel="stylesheet" href="styles/cards.css">
     <link rel="stylesheet" href="styles/admin.css">
@@ -286,7 +287,7 @@
       </div>
     </nav>
 
-    <header class="mdc-header mdc-header__project" style="background-color: var(--mdc-theme-custom__00);">
+    <header class="mdc-header mdc-header__activity" style="background-color: var(--mdc-theme-custom__00);">
       <div class="mdc-header__row">
         <div class="mdc-header__cover">
           <img src="img/project-cover.png">
@@ -299,17 +300,36 @@
             <div class="mdc-header__breadcrumb mdc-typography--headline5">
               <a class="mdc-typography--headline5" href="aulas.html">Mis aulas</a>
               <a class="mdc-typography--headline5" href="aula1.html">Nombre del aula</a>
+              <a class="mdc-typography--headline5" href="proyecto1_presentacion.html">Nombre del proyecto</a>
+              <a class="mdc-typography--headline5" href="#">Clase X</a>
             </div>
-            <h1 class="mdc-typography--headline1">Nombre del proyecto</h1>
-            <div class="mdc-header__caption-group">
-              <div class="mdc-header__caption">
-                <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" title="Actividades">
+            <div class="mdc-header__editable-title">
+              <h1 class="mdc-typography--headline1">Nombre de la actividad</h1>
+
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Editar" title="Editar">
+                <i class="mdc-icon small">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.425 3.18002C7.94125 3.05918 8.4698 2.99877 9 3.00002C14.25 3.00002 17.25 9.00002 17.25 9.00002C16.7947 9.85172 16.2518 10.6536 15.63 11.3925M10.59 10.59C10.384 10.8111 10.1356 10.9884 9.85961 11.1114C9.58362 11.2343 9.28568 11.3005 8.98357 11.3058C8.68146 11.3111 8.38137 11.2556 8.10121 11.1424C7.82104 11.0292 7.56654 10.8608 7.35288 10.6471C7.13923 10.4335 6.97079 10.179 6.85763 9.89881C6.74447 9.61865 6.68889 9.31856 6.69423 9.01645C6.69956 8.71434 6.76568 8.4164 6.88866 8.1404C7.01163 7.86441 7.18894 7.61601 7.41 7.41002M13.455 13.455C12.1729 14.4323 10.6118 14.9737 9 15C3.75 15 0.75 9.00002 0.75 9.00002C1.68292 7.26144 2.97685 5.74247 4.545 4.54502L13.455 13.455Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M0.75 0.75L17.25 17.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 15H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.375 2.62505C12.6734 2.32668 13.078 2.15906 13.5 2.15906C13.7089 2.15906 13.9158 2.20021 14.1088 2.28016C14.3019 2.36012 14.4773 2.47731 14.625 2.62505C14.7727 2.77278 14.8899 2.94817 14.9699 3.1412C15.0498 3.33423 15.091 3.54112 15.091 3.75005C15.091 3.95898 15.0498 4.16587 14.9699 4.35889C14.8899 4.55192 14.7727 4.72731 14.625 4.87505L5.25 14.25L2.25 15L3 12L12.375 2.62505Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </i>
-                <span class="mdc-typography--caption">Proyecto no publicado</span>
+              </button>
+            </div>
+            <div class="mdc-header__caption-group">
+              <div class="mdc-header__caption">
+                <div class="activity-status__wrapper">
+                  <i class="mdc-icon small">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M9 4.5V9L12 10.5" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span tabindex="-1" class="mdc-chip__text mdc-typography--caption" style="color: var(--mdc-theme-progress__01);">Pendiente</span>
+                </div>
+              </div>
+
+              <div class="mdc-header__caption">
+                <span class="mdc-typography--caption">Caption dealine</span>
               </div>
 
               <div class="vertical-divider"></div>
@@ -317,15 +337,13 @@
               <div class="mdc-header__caption">
                 <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" title="Actividades">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 4.5H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6 9H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6 13.5H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2.25 4.5H2.2575" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2.25 9H2.2575" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2.25 13.5H2.2575" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.75 15.75V14.25C12.75 13.4544 12.4339 12.6913 11.8713 12.1287C11.3087 11.5661 10.5456 11.25 9.75 11.25H3.75C2.95435 11.25 2.19129 11.5661 1.62868 12.1287C1.06607 12.6913 0.75 13.4544 0.75 14.25V15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6.75 8.25C8.40685 8.25 9.75 6.90685 9.75 5.25C9.75 3.59315 8.40685 2.25 6.75 2.25C5.09315 2.25 3.75 3.59315 3.75 5.25C3.75 6.90685 5.09315 8.25 6.75 8.25Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17.25 15.75V14.25C17.2495 13.5853 17.0283 12.9396 16.621 12.4143C16.2138 11.8889 15.6436 11.5137 15 11.3475" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 2.34753C12.6453 2.51276 13.2173 2.88806 13.6257 3.41427C14.0342 3.94047 14.2559 4.58766 14.2559 5.25378C14.2559 5.91991 14.0342 6.56709 13.6257 7.0933C13.2173 7.61951 12.6453 7.99481 12 8.16003" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </i>
-                <span class="mdc-typography--caption">02 Actividades</span>
+                <span class="mdc-typography--caption">Actividad grupal</span>
               </div>
 
               <div class="mdc-header__caption">
@@ -334,139 +352,428 @@
                     <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="white"/>
                     <path d="M6 6.75H12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M6 9.75H9.741" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12.4408 15.8275L9.75 16.5L10.4225 13.8092L14.8135 9.41814C15.3711 8.86062 16.2743 8.86062 16.8319 9.41814C17.3894 9.97567 17.3894 10.8789 16.8319 11.4365L12.4408 15.8275Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.4407 15.8275L9.74988 16.5L10.4224 13.8092L14.8134 9.41814C15.3709 8.86062 16.2742 8.86062 16.8317 9.41814C17.3893 9.97567 17.3893 10.8789 16.8317 11.4365L12.4407 15.8275Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </i>
-                <span class="mdc-typography--caption">01 Clases</span>
+                <span class="mdc-typography--caption">Redacción</span>
               </div>
             </div>
           </div>
         </section>
 
         <section class="mdc-header__section mdc-header__actions">
-          <button class="mdc-button mdc-button--raised" disabled>
+          <button class="mdc-button mdc-button--raised">
             <span class="mdc-button__ripple"></span>
             <i class="mdc-button__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 8L16 12L10 16V8Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 15V9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 15V9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
-            <span class="mdc-button__label">Publicar</span>
+            <span class="mdc-button__label">Pausar</span>
           </button>
 
-          <button class="mdc-button mdc-button--outlined" disabled>
-            <i class="mdc-button__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 11.0801V12.0001C21.9988 14.1565 21.3005 16.2548 20.0093 17.9819C18.7182 19.7091 16.9033 20.9726 14.8354 21.584C12.7674 22.1954 10.5573 22.122 8.53447 21.3747C6.51168 20.6274 4.78465 19.2462 3.61096 17.4372C2.43727 15.6281 1.87979 13.4882 2.02168 11.3364C2.16356 9.18467 2.99721 7.13644 4.39828 5.49718C5.79935 3.85793 7.69278 2.71549 9.79619 2.24025C11.8996 1.76502 14.1003 1.98245 16.07 2.86011" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22 4L12 14.01L9 11.01" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+            <i class="mdc-icon small">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.25 4.5H3.75H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7.5 8.25V12.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.5 8.25V12.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
-            <span class="mdc-button__label">Finalizar</span>
           </button>
         </section>
       </div>
+    </header>
 
-      <div class="top-nav">
-        <div class="mdc-tab-bar" role="tablist">
-          <div class="mdc-tab-scroller">
-            <div class="mdc-tab-scroller__scroll-area">
-              <div class="mdc-tab-scroller__scroll-content">
-                <a href="proyecto1_presentacion.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
-                  <span class="mdc-tab__content">
-                    <i class="mdc-icon small">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12.1802 5.81998L10.5902 10.59L5.82022 12.18L7.41022 7.40998L12.1802 5.81998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </i>
-                    <span class="mdc-tab__text-label mdc-typography--caption">Presentación</span>
-                  </span>
-                  <span class="mdc-tab-indicator">
-                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                  </span>
-                  <span class="mdc-tab__ripple"></span>
-                </a>
-
-                <a href="proyecto1_clases.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
-                  <span class="mdc-tab__content">
-                    <i class="mdc-icon small">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12.1802 5.81998L10.5902 10.59L5.82022 12.18L7.41022 7.40998L12.1802 5.81998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </i>
-                    <span class="mdc-tab__text-label mdc-typography--caption">Clases</span>
-                  </span>
-                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                  </span>
-                  <span class="mdc-tab__ripple"></span>
-                </a>
-
-                <a href="proyecto1_foro.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
-                  <span class="mdc-tab__content">
-                    <i class="mdc-icon small">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.75 8.37502C15.7526 9.36492 15.5213 10.3414 15.075 11.225C14.5458 12.2838 13.7323 13.1744 12.7256 13.797C11.7189 14.4196 10.5587 14.7496 9.375 14.75C8.3851 14.7526 7.40859 14.5213 6.525 14.075L2.25 15.5L3.675 11.225C3.2287 10.3414 2.99742 9.36492 3 8.37502C3.00046 7.19134 3.33046 6.03116 3.95304 5.02443C4.57562 4.01771 5.46619 3.2042 6.525 2.67502C7.40859 2.22872 8.3851 1.99744 9.375 2.00002H9.75C11.3133 2.08627 12.7898 2.74609 13.8969 3.85317C15.0039 4.96024 15.6638 6.43676 15.75 8.00002V8.37502Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </i>
-                    <span class="mdc-tab__text-label mdc-typography--caption">Foro</span>
-                  </span>
-                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                  </span>
-                  <span class="mdc-tab__ripple"></span>
-                </a>
-
-                <a href="proyecto1_aprendizaje.html" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-                  <span class="mdc-tab__content">
-                    <i class="mdc-icon small">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6 10.5C6 10.5 7.125 12 9 12C10.875 12 12 10.5 12 10.5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6.75 6.75H6.7575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M11.25 6.75H11.2575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </i>
-                    <span class="mdc-tab__text-label mdc-typography--caption">Mi Aprendizaje</span>
-                  </span>
-                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                  </span>
-                  <span class="mdc-tab__ripple"></span>
-                </a>
-
-                <a href="proyecto1_sintesis.html" class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
-                  <span class="mdc-tab__content">
-                    <i class="mdc-icon small">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 11.25C3 11.25 3.75 10.5 6 10.5C8.25 10.5 9.75 12 12 12C14.25 12 15 11.25 15 11.25V2.25C15 2.25 14.25 3 12 3C9.75 3 8.25 1.5 6 1.5C3.75 1.5 3 2.25 3 2.25V11.25Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M3 16.5V11.25" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </i>
-                    <span class="mdc-tab__text-label mdc-typography--caption">Síntesis de Cierre</span>
-                  </span>
-                  <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                  </span>
-                  <span class="mdc-tab__ripple"></span>
-                </a>
-              </div>
+    <div id="recurso-select-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Seleccionar recursos
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
             </div>
           </div>
+          <div class="mdc-dialog__content">
+            <div class="mdc-data-table">
+              <p class="mdc-data-table__counter mdc-typography--headline4"><span id="quantity">0</span> recursos seleccionadas</p>
+              <table class="mdc-data-table__table" aria-label="alumnos">
+                <thead class="mdc-data-table__header">
+                  <tr class="mdc-data-table__header-row">
+                    <th class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox" role="columnheader" scope="col">
+                      <div class="mdc-checkbox mdc-data-table__header-row-checkbox mdc-checkbox--selected">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-label="Checkbox for header row selection"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Tipo</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Nombre</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Carpeta</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption"></span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="mdc-data-table__content">
+                  <tr class="mdc-data-table__row" data-row-id="recurso-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--icon" id="recurso-01">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M15.54 8.45996C16.4774 9.3976 17.004 10.6691 17.004 11.995C17.004 13.3208 16.4774 14.5923 15.54 15.53" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Lorem ipsum dolor sit amet</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Lorem ipsum</span>
+                    </td>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver recurso</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="recurso-02">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--icon" id="recurso-01">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M23 7L16 12L23 17V7Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Lorem ipsum dolor sit amet</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Lorem ipsum</span>
+                    </td>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver recurso</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="recurso-03">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--icon" id="recurso-01">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 10H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M21 6H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M21 14H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M17 18H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Lorem ipsum dolor sit amet</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Lorem ipsum</span>
+                    </td>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver recurso</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="recurso-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--icon" id="recurso-01">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10 13C10.4295 13.5741 10.9774 14.0492 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9404 15.7513 14.6898C16.4231 14.4392 17.0331 14.0471 17.54 13.54L20.54 10.54C21.4508 9.59699 21.9548 8.33397 21.9434 7.02299C21.932 5.71201 21.4061 4.45794 20.4791 3.5309C19.5521 2.60386 18.298 2.07802 16.987 2.06663C15.676 2.05523 14.413 2.55921 13.47 3.47L11.75 5.18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M14.0002 11C13.5707 10.4259 13.0228 9.95083 12.3936 9.60707C11.7645 9.26331 11.0687 9.05889 10.3535 9.00768C9.6384 8.95646 8.92061 9.05964 8.24885 9.31023C7.57709 9.56082 6.96708 9.95294 6.4602 10.46L3.4602 13.46C2.54941 14.403 2.04544 15.666 2.05683 16.977C2.06822 18.288 2.59407 19.5421 3.52111 20.4691C4.44815 21.3961 5.70221 21.922 7.01319 21.9334C8.32418 21.9448 9.58719 21.4408 10.5302 20.53L12.2402 18.82" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Lorem ipsum dolor sit amet</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Lorem ipsum</span>
+                    </td>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver recurso</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button class="mdc-button mdc-button--outlined" data-mdc-dialog-action="no">
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="button" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <span class="mdc-button__label">Seleccionar</span>
+            </button>
+          </footer>
         </div>
       </div>
-    </header>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="editar-valores" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Editar valores
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+            <p class="mdc-dialog__title-caption mdc-typography--body2">Asigna una cantidad de caracteres (incluye espacios).</p>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <form class="admin-form" id="editar-valores-form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="number" class="mdc-text-field__input" aria-labelledby="min">
+                      <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="min">Extensión mínima</span>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                      </div>
+                    </label>
+
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="number" class="mdc-text-field__input" aria-labelledby="max">
+                      <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                          <span class="mdc-floating-label" id="max">Extensión máxima</span>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="change-password" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Guardar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="cambiar-tarea" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Cambiar tarea
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+            <p class="mdc-dialog__title-caption mdc-typography--body2">Asigna una cantidad de caracteres (incluye espacios).</p>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <form class="admin-form" id="editar-valores-form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-radio-button__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" name="tarea" id="redaccion" value="redaccion">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label for="redaccion">Redacción</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" name="tarea" id="carga-archivo" value="carga-archivo">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label for="carga-archivo">Carga de archivo</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" name="tarea" id="tarea-personalizada" value="tarea-personalizada">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label for="tarea-personalizada">Tarea personalizada</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" name="tarea" id="actividad-parmenia" value="actividad-parmenia">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label for="actividad-parmenia">Actividad Parmenia</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="change-password" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cambiar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
 
     <aside class="mdc-drawer">
       <div class="mdc-drawer__content">
         <nav class="mdc-list">
           <a class="mdc-list-item mdc-list-item--activated" href="#consigna" aria-current="page" data-section="consigna">
-            <i class="mdc-icon" aria-hidden="true">
+            <i class="mdc-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16.2403 7.75977L14.1203 14.1198L7.76025 16.2398L9.88025 9.87977L16.2403 7.75977Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.2402 7.76001L14.1202 14.12L7.76016 16.24L9.88016 9.88001L16.2402 7.76001Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
             <span class="mdc-list-item__text mdc-typography--headline6">Consigna</span>
@@ -490,33 +797,33 @@
           </a>
           <li role="separator" class="mdc-list-divider"></li>
           <a class="mdc-list-item" href="#mi-grupo" aria-current="page" data-section="mi-grupo">
-            <i class="mdc-icon" aria-hidden="true">
+            <i class="mdc-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M23 20.9999V18.9999C22.9993 18.1136 22.7044 17.2527 22.1614 16.5522C21.6184 15.8517 20.8581 15.3515 20 15.1299" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
             <span class="mdc-list-item__text mdc-typography--headline6">Mi grupo</span>
           </a>
           <li role="separator" class="mdc-list-divider"></li>
-          <a class="mdc-list-item" href="#tarea" aria-current="page" data-section="tarea">
-            <i class="mdc-icon" aria-hidden="true">
+          <a class="mdc-list-item" href="#actividad" aria-current="page" data-section="actividad">
+            <i class="mdc-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.5 21.75C8.91421 21.75 9.25 21.4142 9.25 21C9.25 20.5858 8.91421 20.25 8.5 20.25V21.75ZM20.25 8.5C20.25 8.91421 20.5858 9.25 21 9.25C21.4142 9.25 21.75 8.91421 21.75 8.5H20.25ZM8.5 20.25H5V21.75H8.5V20.25ZM3.75 19V5H2.25V19H3.75ZM5 3.75H19V2.25H5V3.75ZM20.25 5V8.5H21.75V5H20.25ZM19 3.75C19.6904 3.75 20.25 4.30964 20.25 5H21.75C21.75 3.48122 20.5188 2.25 19 2.25V3.75ZM3.75 5C3.75 4.30964 4.30964 3.75 5 3.75V2.25C3.48122 2.25 2.25 3.48122 2.25 5H3.75ZM5 20.25C4.30964 20.25 3.75 19.6904 3.75 19H2.25C2.25 20.5188 3.48122 21.75 5 21.75V20.25Z" fill="#757575"/>
                 <path d="M8 9H16" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M8 13H12.988" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16.5877 21.1034L13 22L13.8966 18.4122L19.7514 12.5575C20.4947 11.8142 21.6991 11.8142 22.4425 12.5575C23.1858 13.3009 23.1858 14.5053 22.4425 15.2486L16.5877 21.1034Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.5876 21.1034L12.9998 22L13.8965 18.4122L19.7512 12.5575C20.4946 11.8142 21.699 11.8142 22.4423 12.5575C23.1857 13.3009 23.1857 14.5053 22.4423 15.2486L16.5876 21.1034Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
-            <span class="mdc-list-item__text mdc-typography--headline6">Tarea</span>
+            <span class="mdc-list-item__text mdc-typography--headline6">Actividad</span>
           </a>
           <li role="separator" class="mdc-list-divider"></li>
           <a class="mdc-list-item" href="#devolucion" aria-current="page" data-section="devolucion">
-            <i class="mdc-icon" aria-hidden="true">
+            <i class="mdc-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 11.1665C21.0034 12.4864 20.6951 13.7884 20.1 14.9665C19.3944 16.3783 18.3098 17.5657 16.9674 18.3958C15.6251 19.2259 14.0782 19.6659 12.5 19.6665C11.1801 19.67 9.87812 19.3616 8.7 18.7665L3 20.6665L4.9 14.9665C4.30493 13.7884 3.99656 12.4864 4 11.1665C4.00061 9.58829 4.44061 8.04138 5.27072 6.69908C6.10083 5.35678 7.28825 4.2721 8.7 3.56653C9.87812 2.97146 11.1801 2.66309 12.5 2.66653H13C15.0843 2.78152 17.053 3.66129 18.5291 5.13739C20.0052 6.61349 20.885 8.58218 21 10.6665V11.1665Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 11.1667C21.0034 12.4865 20.6951 13.7885 20.1 14.9667C19.3944 16.3784 18.3098 17.5658 16.9674 18.3959C15.6251 19.226 14.0782 19.666 12.5 19.6667C11.1801 19.6701 9.87812 19.3617 8.7 18.7667L3 20.6667L4.9 14.9667C4.30493 13.7885 3.99656 12.4865 4 11.1667C4.00061 9.58841 4.44061 8.0415 5.27072 6.6992C6.10083 5.3569 7.28825 4.27222 8.7 3.56665C9.87812 2.97159 11.1801 2.66321 12.5 2.66665H13C15.0843 2.78165 17.053 3.66142 18.5291 5.13751C20.0052 6.61361 20.885 8.58231 21 10.6667V11.1667Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
             <span class="mdc-list-item__text mdc-typography--headline6">Devolución</span>
@@ -527,6 +834,7 @@
 
     <div class="drawer-side-wrapper">
       <main class="main-wrapper">
+
         <section id="consigna" class="consigna-wrapper">
           <div class="headline-wrapper">
             <i class="headline__icon">
@@ -604,7 +912,7 @@
                   </i>
                 </button>
               </div>
-              <button class="mdc-button mdc-button--raised">
+              <button class="mdc-button mdc-button--raised" onclick="openDialog('recurso-select-01');">
                 <span class="mdc-button__ripple"></span>
                 <i class="mdc-button__icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -903,7 +1211,7 @@
             </i>
             <h4 class="mdc-typography--headline4">Mi grupo</h4>
             <div class="headline-wrapper__actions">
-              <button class="mdc-button mdc-button--raised">
+              <button class="mdc-button mdc-button--raised" disabled>
                 <span class="mdc-button__ripple"></span>
                 <i class="mdc-button__icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1089,27 +1397,29 @@
             </i>
             <h4 class="mdc-typography--headline4">Tarea</h4>
             <div class="headline-wrapper__actions">
-              <button class="mdc-button mdc-button--raised">
+              <button class="mdc-button mdc-button--raised" onclick="openDialog('cambiar-tarea');" disabled>
                 <span class="mdc-button__ripple"></span>
                 <span class="mdc-button__label">Cambiar tarea</span>
-
               </button>
             </div>
           </div>
-<!--           <div class="no-content-placeholder">
-            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
-          </div> -->
-          <div class="mdc-card mdc-card--large tarea-card">
+
+          <div class="mdc-card mdc-card--large tarea-card" id="tarea-personalizada">
             <div class="mdc-card__primary">
               <h4 class="mdc-card__title mdc-typography--headline4">
-                Los alumnos tendrán la posibilidad de subir un archivo.
+                Genera una tarea personalizada con cuestionarios, verdadero o falso, y multiple choice.
               </h4>
-              <p class="mdc-typography--body1">
-                Explica a los alumnos en la consigna las características del archivo.
-              </p>
               <p class="mdc-typography--caption">
                 Recuerda que, una vez publicada la actividad, no puedes cambiar el tipo de tarea.
               </p>
+            </div>
+            <div class="mdc-card__secondary">
+              <div class="no-content-placeholder">
+                <span class="mdc-typography--headline4">Aún no haz creado la tarea</span>
+              </div>
+              <button class="mdc-card__action--button mdc-button mdc-button--text">
+                <span class="mdc-button__label">crear tarea</span>
+              </button>
             </div>
           </div>
         </section>
@@ -1122,11 +1432,348 @@
               </svg>
             </i>
             <h4 class="mdc-typography--headline4">Devolución</h4>
+          </div>
 
+          <!-- Devolucion - tarea grupal { -->
+          <div class="mdc-card mdc-card--large devolucion-card grupal">
+            <div class="mdc-data-table">
+              <table class="mdc-data-table__table" aria-label="devolucion">
+                <thead class="mdc-data-table__header">
+                  <tr class="mdc-data-table__header-row">
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Nombre</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Estado</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Entregado por</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Última entrega</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Devoluciones</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell mdc-data-table__header-cell--actions" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption"></span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="mdc-data-table__content">
+                  <tr class="mdc-data-table__row">
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Grupo 1</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="activity-status__wrapper">
+                        <i class="mdc-icon small">
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12L12 9L9 6" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 9H12" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__02);">Entregado</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="alumno-wrapper">
+                        <div class="table__photo-thumbnail round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Abril 22, 2019</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">1</span>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver entrega</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row">
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Grupo 2</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="activity-status__wrapper">
+                        <i class="mdc-icon small">
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.5 8.31002V9.00002C16.4991 10.6173 15.9754 12.191 15.007 13.4864C14.0386 14.7818 12.6775 15.7294 11.1265 16.1879C9.57557 16.6465 7.91794 16.5914 6.40085 16.031C4.88376 15.4705 3.58849 14.4346 2.70822 13.0778C1.82795 11.721 1.40984 10.1161 1.51626 8.50226C1.62267 6.88844 2.24791 5.35227 3.29871 4.12283C4.34951 2.89339 5.76959 2.03656 7.34714 1.68013C8.92469 1.3237 10.5752 1.48677 12.0525 2.14502" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.5 3L9 10.5075L6.75 8.2575" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__03);">Finalizado</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="alumno-wrapper">
+                        <div class="table__photo-thumbnail round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Abril 22, 2019</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">2</span>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver entrega</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row">
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Grupo 3</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="activity-status__wrapper">
+                        <i class="mdc-icon small">
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 4.5V9L12 10.5" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__01);">Pendiente</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="alumno-wrapper">
+                        <div class="table__photo-thumbnail round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Abril 22, 2019</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">0</span>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver entrega</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="no-content-placeholder">
-            <span class="mdc-typography--headline4">La actividad aún no ha sido publicada</span>
+          <!-- } -->
+
+          <!-- Devolucion - tarea individual { -->
+          <div class="mdc-card mdc-card--large devolucion-card individual">
+            <div class="mdc-data-table">
+              <table class="mdc-data-table__table" aria-label="devolucion">
+                <thead class="mdc-data-table__header">
+                  <tr class="mdc-data-table__header-row">
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Nombre</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Estado</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Última entrega</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Devoluciones</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell mdc-data-table__header-cell--actions" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption"></span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="mdc-data-table__content">
+                  <tr class="mdc-data-table__row">
+                    <td class="mdc-data-table__cell">
+                      <div class="alumno-wrapper">
+                        <div class="table__photo-thumbnail round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="activity-status__wrapper">
+                        <i class="mdc-icon small">
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12L12 9L9 6" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 9H12" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__02);">Entregado</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Abril 22, 2019</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">0</span>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver entrega</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row">
+                    <td class="mdc-data-table__cell">
+                      <div class="alumno-wrapper">
+                        <div class="table__photo-thumbnail round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="activity-status__wrapper">
+                        <i class="mdc-icon small">
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.5 8.31002V9.00002C16.4991 10.6173 15.9754 12.191 15.007 13.4864C14.0386 14.7818 12.6775 15.7294 11.1265 16.1879C9.57557 16.6465 7.91794 16.5914 6.40085 16.031C4.88376 15.4705 3.58849 14.4346 2.70822 13.0778C1.82795 11.721 1.40984 10.1161 1.51626 8.50226C1.62267 6.88844 2.24791 5.35227 3.29871 4.12283C4.34951 2.89339 5.76959 2.03656 7.34714 1.68013C8.92469 1.3237 10.5752 1.48677 12.0525 2.14502" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.5 3L9 10.5075L6.75 8.2575" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__03);">Finalizado</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Abril 22, 2019</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">1</span>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver entrega</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row">
+                    <td class="mdc-data-table__cell">
+                      <div class="alumno-wrapper">
+                        <div class="table__photo-thumbnail round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="activity-status__wrapper">
+                        <i class="mdc-icon small">
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 4.5V9L12 10.5" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__01);">Pendiente</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Abril 22, 2019</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">2</span>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver entrega</span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row">
+                    <td class="mdc-data-table__cell">
+                      <div class="alumno-wrapper">
+                        <div class="table__photo-thumbnail round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <span class="mdc-typography--subtitle1">Nombre del alumno</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="activity-status__wrapper">
+                        <i class="mdc-icon small">
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12L12 9L9 6" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 9H12" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__02);">Entregado</span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">Abril 22, 2019</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--subtitle1">0</span>
+                    <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver entrega</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot class="mdc-data-table__footer">
+                  <tr class="mdc-data-table__footer-row">
+                    <th class="mdc-data-table__header-cell" role="columnfooter" scope="col" colspan="5">
+                      <div class="mdc-data-table__pagination-wrapper">
+                        <div class="mdc-data-table__pagination">
+                          <span class="mdc-typography--subtitle1">Filas por página: 10</span>
+                          <button class="mdc-button mdc-icon-button">
+                            <i class="mdc-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                          </button>
+                        </div>
+                        <div class="mdc-data-table__pagination">
+                          <span class="mdc-typography--subtitle1">1-10 de 100</span>
+                        </div>
+                        <div class="mdc-data-table__pagination">
+                          <button class="mdc-button mdc-icon-button">
+                            <i class="mdc-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                          </button>
+                          <button class="mdc-button mdc-icon-button">
+                            <i class="mdc-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                          </button>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
+          <!-- } -->
         </section>
       </main>
     </div>

@@ -260,6 +260,7 @@ section .subtitle-wrapper {
 
 .no-content-placeholder span {
   color: var(--mdc-theme-primary__200);
+  text-align: center;
 }
 
 .mdc-button + .no-content-placeholder {
@@ -403,11 +404,23 @@ section .subtitle-wrapper {
 
 .activity-status__wrapper {
   align-items: center;
+  background-color: var(--mdc-theme-surface);
+  border-radius: 8px;
   display: flex;
+  height: 24px;
+  padding: 0 8px;
+}
+
+.mdc-data-table__cell > .activity-status__wrapper {
+  background-color: transparent;
+}
+
+.activity-status__wrapper i {
+  margin-right: 8px;
 }
 
 .activity-status__wrapper span {
-  margin-left: 4px;
+  margin-left: 0;
 }
 
 .mdc-dialog__content .embebed-resource__wrapper {

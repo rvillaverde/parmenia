@@ -25,7 +25,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 24px 32px;
+  padding: 24px 28px;
   padding-bottom: 12px;
 }
 
@@ -42,7 +42,7 @@
   padding: 0;
 }
 
-.mdc-dialog .mdc-dialog__title-wrapper .mdc-dialog__title + .mdc-dialog__title-caption {
+.mdc-dialog .mdc-dialog__title-wrapper .mdc-dialog__title-caption {
   margin-top: 32px;
 }
 
@@ -117,7 +117,7 @@
 .mdc-dialog__content .mdc-data-table,
 .mdc-dialog__content .mdc-dialog__section,
 .mdc-dialog__content .admin-form__section {
-  padding: 30px 36px;
+  padding: 36px 28px;
 }
 
 .mdc-dialog__content .mdc-data-table:first-child,
