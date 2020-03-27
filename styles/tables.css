@@ -64,7 +64,14 @@
   background-color: transparent;
 }
 
-.mdc-data-table__cell, .mdc-data-table__header-cell {
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.mdc-dialog .mdc-data-table__cell,
+.mdc-dialog .mdc-data-table__header-cell {
   padding-right: 8px;
   padding-left: 8px;
 }

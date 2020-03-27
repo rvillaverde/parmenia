@@ -215,7 +215,8 @@
   background-color: var(--mdc-theme-gray__600);
 }
 
-.mdc-icon-button--secondary.mdc-icon-button--outlined, .mdc-icon-button--secondary.mdc-icon-button--outlined:not(:disabled) {
+.mdc-icon-button--secondary.mdc-icon-button--outlined,
+.mdc-icon-button--secondary.mdc-icon-button--outlined:not(.mdc-icon-button--white):not(:disabled) {
   border: 1px solid var(--mdc-theme-gray__600);
 }
 

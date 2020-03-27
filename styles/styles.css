@@ -16,6 +16,31 @@
   --mdc-layout-grid-gutter-desktop: 20px;
 }
 
+.user-roles-wrapper {
+  background-color: rgba(255,255,255,.5);
+  position: fixed;
+  bottom: 0;
+  padding: 24px 48px;
+  right: 0;
+  z-index: 1000;
+}
+
+body[data-role="admin"] *[data-role]:not([data-role*="admin"]) {
+  display: none;
+}
+
+body[data-role="docente"] *[data-role]:not([data-role*="docente"]) {
+  display: none;
+}
+
+body[data-role="alumno"] *[data-role="admin"]  {
+  display: none;
+}
+
+body[data-role="alumno"] *[data-role="docente"]  {
+  display: none;
+}
+
 .initially-hidden {
   display: none;
 }

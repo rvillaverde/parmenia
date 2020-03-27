@@ -47,6 +47,11 @@ function openDialog(dialogId) {
   dialog.open();
 }
 
+function roleSelection(e) {
+  var role = $(e.currentTarget).val();
+  $('body').attr('data-role', role);
+}
+
 $(function() {
   const drawer = $('.mdc-drawer');
   const header = $('.mdc-header');
@@ -59,6 +64,8 @@ $(function() {
 
     onScroll();
   }
+
+  $('.user-roles-wrapper input').change(roleSelection);
 
   //smoothscroll
   $('.mdc-drawer a[href^="#"]').on('click', function (e) {
