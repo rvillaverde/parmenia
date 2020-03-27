@@ -33,6 +33,45 @@
   </head>
 
   <body class="container mdc-typography">
+    <div class="user-roles-wrapper draggable">
+      <h4 class="mdc-typography--headline4">Ver como:</h4>
+      <div class="mdc-radio-button__wrapper">
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="alumno" value="alumno" checked>
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="alumno">Alumno</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="docente" value="docente">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="docente">Docente</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="admin" value="admin">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="admin">Admin</label>
+        </div>
+      </div>
+    </div>
+
     <nav class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section">
@@ -44,7 +83,7 @@
         </section>
 
         <ul class="mdc-top-app-bar__section mdc-top-app-bar__actions" role="toolbar">
-          <li class="mdc-top-app-bar__action-item mdc-menu--hover">
+          <li class="mdc-top-app-bar__action-item mdc-top-app-bar__action-item--active mdc-menu--hover">
             <a class="mdc-button mdc-button--app-bar" href="aulas.html" aria-label="Mis aulas">
               <i class="mdc-button__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +117,7 @@
             </div>
           </li>
 
-          <li class="mdc-top-app-bar__action-item">
+          <li class="mdc-top-app-bar__action-item" data-role="admin">
             <a class="mdc-button mdc-button--app-bar" href="docentes.html" aria-label="Docentes">
               <i class="mdc-button__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +132,7 @@
             </a>
           </li>
 
-          <li class="mdc-top-app-bar__action-item">
+          <li class="mdc-top-app-bar__action-item" data-role="admin">
             <a class="mdc-button mdc-button--app-bar" href="alumnos.html" aria-label="Biblioteca">
               <i class="mdc-button__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -184,7 +223,7 @@
         </ul>
 
         <ul class="mdc-top-app-bar__section mdc-top-app-bar__actions" role="toolbar">
-          <li class="mdc-top-app-bar__action-item">
+          <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
             <a class="mdc-button mdc-button--app-bar" href="mochila.html" aria-label="Mochila">
               <i class="mdc-button__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -306,7 +345,7 @@
             <div class="mdc-header__editable-title">
               <h1 class="mdc-typography--headline1">Nombre de la actividad</h1>
 
-              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Editar" title="Editar">
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Editar" title="Editar" data-role="admin,docente">
                 <i class="mdc-icon small">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 15H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -361,16 +400,17 @@
           </div>
         </section>
 
-        <section class="mdc-header__section mdc-header__actions">
+        <section class="mdc-header__section mdc-header__actions" data-role="admin,docente">
           <button class="mdc-button mdc-button--raised">
             <span class="mdc-button__ripple"></span>
             <i class="mdc-button__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 8L16 12L10 16V8Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 15V9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 15V9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
-            <span class="mdc-button__label">Publicar</span>
+            <span class="mdc-button__label">Pausar</span>
           </button>
 
           <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
@@ -843,7 +883,7 @@
               </svg>
             </i>
             <h4 class="mdc-typography--headline4">Consigna</h4>
-            <div class="headline-wrapper__actions">
+            <div class="headline-wrapper__actions" data-role="admin,docente">
               <button class="mdc-button mdc-button--raised">
                 <span class="mdc-button__ripple"></span>
                 <span class="mdc-button__label">Editar contenido</span>
@@ -878,9 +918,9 @@
               </svg>
             </i>
             <h4 class="mdc-typography--headline4">Recursos</h4>
-            <div class="headline-wrapper__actions">
+            <div class="headline-wrapper__actions" data-role="admin,docente">
               <div class="mdc-button--toggle">
-                <button class="mdc-button mdc-icon-button mdc-icon-button--outlined mdc-button--active" data-toggle-view="list" onclick="toggleView(this);" disabled>
+                <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" data-toggle-view="list" onclick="toggleView(this);" disabled>
                   <i class="mdc-icon small">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6 4.5H15.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -892,7 +932,7 @@
                     </svg>
                   </i>
                 </button>
-                <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" data-toggle-view="cards" onclick="toggleView(this);" disabled>
+                <button class="mdc-button mdc-icon-button mdc-icon-button--outlined mdc-button--active" data-toggle-view="cards" onclick="toggleView(this);" disabled>
                   <i class="mdc-icon small">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7.5 2.25H2.25V7.5H7.5V2.25Z" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -931,7 +971,7 @@
               </svg>
             </i>
             <h4 class="mdc-typography--headline4">Mi grupo</h4>
-            <div class="headline-wrapper__actions">
+            <div class="headline-wrapper__actions" data-role="admin,docente">
               <button class="mdc-button mdc-button--raised">
                 <span class="mdc-button__ripple"></span>
                 <i class="mdc-button__icon">
@@ -961,11 +1001,9 @@
               </svg>
             </i>
             <h4 class="mdc-typography--headline4">Tarea</h4>
-            <div class="headline-wrapper__actions">
+            <div class="headline-wrapper__actions" data-role="admin,docente">
               <button class="mdc-button mdc-button--raised" onclick="openDialog('cambiar-tarea');">
-                <span class="mdc-button__ripple"></span>
                 <span class="mdc-button__label">Cambiar tarea</span>
-
               </button>
             </div>
           </div>

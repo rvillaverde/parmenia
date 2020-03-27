@@ -17,12 +17,23 @@
 }
 
 .user-roles-wrapper {
+  align-items: center;
   background-color: rgba(255,255,255,.5);
-  position: fixed;
   bottom: 0;
-  padding: 24px 48px;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  position: fixed;
   right: 0;
+  user-select: none;
+  width: 180px;
   z-index: 1000;
+}
+
+.user-roles-wrapper.dragging {
+  cursor: grabbing;
 }
 
 body[data-role="admin"] *[data-role]:not([data-role*="admin"]) {
@@ -33,11 +44,7 @@ body[data-role="docente"] *[data-role]:not([data-role*="docente"]) {
   display: none;
 }
 
-body[data-role="alumno"] *[data-role="admin"]  {
-  display: none;
-}
-
-body[data-role="alumno"] *[data-role="docente"]  {
+body[data-role="alumno"] *[data-role]:not([data-role*="alumno"])  {
   display: none;
 }
 

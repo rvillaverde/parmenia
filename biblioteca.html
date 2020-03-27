@@ -32,6 +32,45 @@
   </head>
 
   <body class="container mdc-typography">
+    <div class="user-roles-wrapper draggable">
+      <h4 class="mdc-typography--headline4">Ver como:</h4>
+      <div class="mdc-radio-button__wrapper">
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="alumno" value="alumno" checked>
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="alumno">Alumno</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="docente" value="docente">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="docente">Docente</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="admin" value="admin">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="admin">Admin</label>
+        </div>
+      </div>
+    </div>
+
     <nav class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section">
@@ -77,7 +116,7 @@
             </div>
           </li>
 
-          <li class="mdc-top-app-bar__action-item">
+          <li class="mdc-top-app-bar__action-item" data-role="admin">
             <a class="mdc-button mdc-button--app-bar" href="docentes.html" aria-label="Docentes">
               <i class="mdc-button__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +131,7 @@
             </a>
           </li>
 
-          <li class="mdc-top-app-bar__action-item">
+          <li class="mdc-top-app-bar__action-item" data-role="admin">
             <a class="mdc-button mdc-button--app-bar" href="alumnos.html" aria-label="Biblioteca">
               <i class="mdc-button__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,7 +222,7 @@
         </ul>
 
         <ul class="mdc-top-app-bar__section mdc-top-app-bar__actions" role="toolbar">
-          <li class="mdc-top-app-bar__action-item">
+          <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
             <a class="mdc-button mdc-button--app-bar" href="mochila.html" aria-label="Mochila">
               <i class="mdc-button__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -356,7 +395,7 @@
               </i>
             </a>
           </div>
-          <div class="group-actions">
+          <div class="group-actions" data-role="admin,docente">
             <button class="mdc-icon-button mdc-icon-button--secondary">
               <i class="mdc-icon">
                 <svg width="10" height="24" viewBox="0 0 10 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -377,8 +416,8 @@
         <!-- Carpeta { -->
         <div class="mdc-layout-grid cards collapsable">
           <div class="mdc-layout-grid__inner">
-            <a class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('recurso-01');">
-              <div class="mdc-card__primary-action" tabindex="0">
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                 <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                 <div class="mdc-card__primary">
                   <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
@@ -403,16 +442,16 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
               <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
-                  <button class="mdc-card__action--button mdc-button mdc-button--text">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
                     <span class="mdc-button__ripple"></span>
                     <span class="mdc-button__label">ver recurso</span>
                   </button>
                 </div>
 
-                <div class="mdc-card__action-icons">
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
                   <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -425,9 +464,10 @@
                   </button>
                 </div>
               </div>
-            </a>
-            <a class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('recurso-01');">
-              <div class="mdc-card__primary-action" tabindex="0">
+            </div>
+
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                 <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                 <div class="mdc-card__primary">
                   <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
@@ -452,16 +492,16 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
               <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
-                  <button class="mdc-card__action--button mdc-button mdc-button--text">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
                     <span class="mdc-button__ripple"></span>
                     <span class="mdc-button__label">ver recurso</span>
                   </button>
                 </div>
 
-                <div class="mdc-card__action-icons">
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
                   <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -474,9 +514,10 @@
                   </button>
                 </div>
               </div>
-            </a>
-            <a class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('recurso-01');">
-              <div class="mdc-card__primary-action" tabindex="0">
+            </div>
+
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                 <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                 <div class="mdc-card__primary">
                   <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
@@ -501,16 +542,16 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
               <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
-                  <button class="mdc-card__action--button mdc-button mdc-button--text">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
                     <span class="mdc-button__ripple"></span>
                     <span class="mdc-button__label">ver recurso</span>
                   </button>
                 </div>
 
-                <div class="mdc-card__action-icons">
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
                   <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -523,7 +564,7 @@
                   </button>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
         <!-- } -->
@@ -547,7 +588,7 @@
               </i>
             </a>
           </div>
-          <div class="group-actions">
+          <div class="group-actions" data-role="admin,docente">
             <button class="mdc-icon-button mdc-icon-button--secondary">
               <i class="mdc-icon">
                 <svg width="10" height="24" viewBox="0 0 10 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -568,8 +609,8 @@
         <!-- Carpeta { -->
         <div class="mdc-layout-grid cards collapsable">
           <div class="mdc-layout-grid__inner">
-            <a class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('recurso-01');">
-              <div class="mdc-card__primary-action" tabindex="0">
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                 <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                 <div class="mdc-card__primary">
                   <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
@@ -594,16 +635,16 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
               <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
-                  <button class="mdc-card__action--button mdc-button mdc-button--text">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
                     <span class="mdc-button__ripple"></span>
                     <span class="mdc-button__label">ver recurso</span>
                   </button>
                 </div>
 
-                <div class="mdc-card__action-icons">
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
                   <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -616,9 +657,10 @@
                   </button>
                 </div>
               </div>
-            </a>
-            <a class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('recurso-01');">
-              <div class="mdc-card__primary-action" tabindex="0">
+            </div>
+
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                 <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                 <div class="mdc-card__primary">
                   <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
@@ -643,16 +685,16 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
               <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
-                  <button class="mdc-card__action--button mdc-button mdc-button--text">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
                     <span class="mdc-button__ripple"></span>
                     <span class="mdc-button__label">ver recurso</span>
                   </button>
                 </div>
 
-                <div class="mdc-card__action-icons">
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
                   <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -665,7 +707,7 @@
                   </button>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
         <!-- } -->
