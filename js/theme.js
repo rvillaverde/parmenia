@@ -7,8 +7,7 @@ for (var i = 0, button; button = buttons[i]; i++) {
 const chipHtml = `
   <div id='%id%' data-index='%index%' class='mdc-chip' role='row'>
     <span class='mdc-chip__text mdc-typography--body2'>%name%</span>
-    <i class="mdc-icon small mdc-chip__icon mdc-chip__action--trailing chip_cross-icon"></i>
-  </div>`
+  </div>`;
 
 class CheckBoxMenuSelect {
   constructor(select) {
