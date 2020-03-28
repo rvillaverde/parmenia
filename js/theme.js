@@ -44,14 +44,13 @@ class CheckBoxMenuSelect {
   }
 
   handleSelection(index) {
-    console.log(index);
     let self = this;
-    let selectedText = '';
 
     let selectedIndex = this.select.menu_.list_.selectedIndex;
+    let selectedText = selectedIndex.length > 0 ? `${ selectedIndex.length } selected` : '';
     let selectedItems = selectedIndex.map(function(i) {
       let item = $(self.select.menu_.list_.listElements[i]);
-      selectedText = selectedText + `${ item.attr('data-value') },`;
+      //selectedText = selectedText + `${ item.attr('data-value') },`;
       return { name: item.text().trim(), id: item.attr('data-value'), index: i };
     })
 
@@ -145,7 +144,12 @@ for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
   mdcList.singleSelection = false;
 }
 
-var selects = $('.mdc-select');
+var selects = $('.mdc-select:not(.mdc-select--checkbox)');
+for (var i = 0, select; select = selects[i]; i++) {
+  mdc.select.MDCSelect.attachTo(select);
+}
+
+var selects = $('.mdc-select.mdc-select--checkbox');
 for (var i = 0, select; select = selects[i]; i++) {
   let checkBoxMenuSelect = new CheckBoxMenuSelect(select);
 }
