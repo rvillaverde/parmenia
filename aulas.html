@@ -19,6 +19,7 @@
     <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
 
     <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/buttons.css">
@@ -405,12 +406,11 @@
                     <div class="mdc-text-field__wrapper">
                       <h4 class="mdc-typography--headline4 admin-form__title">Docentes</h4>
                       
-                      <div class="mdc-select mdc-select--outlined">
+                      <div class="mdc-select mdc-select--checkbox mdc-select--outlined">
                         <div class="mdc-select__anchor">
                           <i class="mdc-select__dropdown-icon"></i>
-                          <div class="mdc-select__selected-text mdc-typography--body1" aria-labelledby="outlined-select-label">
-                            <div class="mdc-chip-set" role="grid"></div>
-                          </div>
+                          <div class="mdc-select__selected-text" aria-labelledby="outlined-select-label"></div>
+                          <div class="mdc-chip-set"></div>
                           <div class="mdc-notched-outline">
                             <div class="mdc-notched-outline__leading"></div>
                             <div class="mdc-notched-outline__notch">
@@ -420,44 +420,100 @@
                           </div>
                         </div>
 
-                        <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
-                          <ul class="mdc-list mdc-checkbox-list" role="group" aria-label="Docentes">
-                            <li class="mdc-list-item" role="checkbox" aria-checked="false" data-value="docente-01" role="option" tabindex="1">
-                              <label class="mdc-list-item__text mdc-typography--body2" for="docente-01">Docente 1</label>
+                        <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="list">
+                          <ul class="mdc-list mdc-checkbox-list" role="menu">
+                            <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-01" role="checkbox">
+                              <label for="docente-01" class="mdc-typography--body2">Juanito Perez</label>
                               <span class="mdc-list-item__meta">
                                 <div class="mdc-checkbox">
-                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-01" />
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-01"/>
                                   <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
                                     </svg>
                                     <div class="mdc-checkbox__mixedmark"></div>
                                   </div>
                                 </div>
                               </span>
                             </li>
-                            <li class="mdc-list-item" role="checkbox" aria-checked="false" data-value="docente-02" role="option" tabindex="2">
-                              <label class="mdc-list-item__text mdc-typography--body2" for="docente-02">Docente 2</label>
+                            <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-02" role="checkbox">
+                              <label for="docente-02" class="mdc-typography--body2">Pepita Jimenez</label>
                               <span class="mdc-list-item__meta">
                                 <div class="mdc-checkbox">
-                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-02" />
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-02"/>
                                   <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
                                     </svg>
                                     <div class="mdc-checkbox__mixedmark"></div>
                                   </div>
                                 </div>
                               </span>
                             </li>
-                            <li class="mdc-list-item" role="checkbox" aria-checked="false" data-value="docente-03" role="option" tabindex="3">
-                              <label class="mdc-list-item__text mdc-typography--body2" for="docente-03">Docente 3</label>
+                            <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-03" role="checkbox">
+                              <label for="docente-03" class="mdc-typography--body2">Marita Gonzalez</label>
                               <span class="mdc-list-item__meta">
                                 <div class="mdc-checkbox">
-                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-03" />
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-03"/>
                                   <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                            </li>
+                            <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-04" role="checkbox">
+                              <label for="docente-04" class="mdc-typography--body2">Fulanito Gomez</label>
+                              <span class="mdc-list-item__meta">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-04"/>
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                            </li>
+                            <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-05" role="checkbox">
+                              <label for="docente-05" class="mdc-typography--body2">El profesor Jirafales</label>
+                              <span class="mdc-list-item__meta">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-05"/>
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                            </li>
+                            <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-06" role="checkbox">
+                              <label for="docente-06" class="mdc-typography--body2">Pedro Sanchez</label>
+                              <span class="mdc-list-item__meta">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-06"/>
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                            </li>
+                            <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-07" role="checkbox">
+                              <label for="docente-07" class="mdc-typography--body2">Maria Jose</label>
+                              <span class="mdc-list-item__meta">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="docente-07"/>
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
                                     </svg>
                                     <div class="mdc-checkbox__mixedmark"></div>
                                   </div>
@@ -465,152 +521,6 @@
                               </span>
                             </li>
                           </ul>
-<!--             <ul class="mdc-list demo-list" id="trailing-checkbox-list" role="group">
-              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="custom__02" role="option">
-                <label for="trailing-checkbox-blueberries" class="mdc-typography--body2">Blueberries</label>
-                <span class="mdc-list-item__meta">
-                  <div class="mdc-checkbox">
-                    <input type="checkbox"
-                           class="mdc-checkbox__native-control"
-                           id="trailing-checkbox-blueberries"/>
-                    <div class="mdc-checkbox__background">
-                      <svg class="mdc-checkbox__checkmark"
-                           viewBox="0 0 24 24">
-                        <path class="mdc-checkbox__checkmark-path"
-                              fill="none"
-                              stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                      </svg>
-                      <div class="mdc-checkbox__mixedmark"></div>
-                    </div>
-                  </div>
-                </span>
-              </li>
-              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="custom__02" role="option">
-                <label for="trailing-checkbox-boysenberries" class="mdc-typography--body2">Boysenberries</label>
-                <span class="mdc-list-item__meta">
-                  <div class="mdc-checkbox">
-                    <input type="checkbox"
-                           class="mdc-checkbox__native-control"
-                           id="trailing-checkbox-boysenberries"/>
-                    <div class="mdc-checkbox__background">
-                      <svg class="mdc-checkbox__checkmark"
-                           viewBox="0 0 24 24">
-                        <path class="mdc-checkbox__checkmark-path"
-                              fill="none"
-                              stroke="white"
-                              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                      </svg>
-                      <div class="mdc-checkbox__mixedmark"></div>
-                    </div>
-                  </div>
-                </span>
-              </li>
-              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="custom__02" role="option">
-                <label for="trailing-checkbox-strawberries" class="mdc-typography--body2">Strawberries</label>
-                <span class="mdc-list-item__meta">
-                  <div class="mdc-checkbox">
-                    <input type="checkbox"
-                           class="mdc-checkbox__native-control"
-                           id="trailing-checkbox-strawberries"/>
-                    <div class="mdc-checkbox__background">
-                      <svg class="mdc-checkbox__checkmark"
-                           viewBox="0 0 24 24">
-                        <path class="mdc-checkbox__checkmark-path"
-                              fill="none"
-                              stroke="white"
-                              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                      </svg>
-                      <div class="mdc-checkbox__mixedmark"></div>
-                    </div>
-                  </div>
-                </span>
-              </li>
-            </ul> -->
-<!--                           <div class="mdc-data-table mdc-list" id="docentes-select-table">
-                            <table class="mdc-data-table__table" aria-label="docentes">
-                              <thead class="mdc-data-table__header">
-                                <tr class="mdc-data-table__header-row">
-                                  <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
-                                    <span class="mdc-typography--caption">Nombre y apellido</span>
-                                  </th>
-                                  <th class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox mdc-data-table__header-cell--actions" role="columnheader" scope="col">
-                                    <div class="mdc-checkbox mdc-data-table__header-row-checkbox mdc-checkbox--selected">
-                                      <input type="checkbox" class="mdc-checkbox__native-control" aria-label="Checkbox for header row selection"/>
-                                      <div class="mdc-checkbox__background">
-                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                          <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                        </svg>
-                                        <div class="mdc-checkbox__mixedmark"></div>
-                                      </div>
-                                    </div>
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody class="mdc-data-table__content">
-                                <tr class="mdc-data-table__row" data-row-id="docente-01" role="option">
-                                  <td class="mdc-data-table__cell">
-                                    <span class="mdc-typography--body2">Fulanito Perez</span>
-                                  </td>
-                                  <td class="mdc-data-table__cell mdc-data-table__cell--checkbox mdc-data-table__cell--actions">
-                                    <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                                      <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                                      <div class="mdc-checkbox__background">
-                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                          <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                        </svg>
-                                        <div class="mdc-checkbox__mixedmark"></div>
-                                      </div>
-                                    </div>
-                                  </td>
-                                </tr>
-
-                                <tr class="mdc-data-table__row" data-row-id="docente-02" role="option">
-                                  <td class="mdc-data-table__cell">
-                                    <span class="mdc-typography--body2">Maria la del Barrio</span>
-                                  </td>
-                                  <td class="mdc-data-table__cell mdc-data-table__cell--checkbox mdc-data-table__cell--actions">
-                                    <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                                      <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                                      <div class="mdc-checkbox__background">
-                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                          <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                        </svg>
-                                        <div class="mdc-checkbox__mixedmark"></div>
-                                      </div>
-                                    </div>
-                                  </td>
-                                </tr>
-
-                                <tr class="mdc-data-table__row" data-row-id="docente-03" role="option">
-                                  <td class="mdc-data-table__cell">
-                                    <span class="mdc-typography--body2">Juanita Gomez</span>
-                                  </td>
-                                  <td class="mdc-data-table__cell mdc-data-table__cell--checkbox mdc-data-table__cell--actions">
-                                    <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                                      <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                                      <div class="mdc-checkbox__background">
-                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                          <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                        </svg>
-                                        <div class="mdc-checkbox__mixedmark"></div>
-                                      </div>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>     -->                      
-<!--                           <ul class="mdc-list">
-                            <li class="mdc-list-item" data-value="grains" role="option">
-                              <span class="mdc-typography--body2">Fulanito Perez</span>
-                            </li>
-                            <li class="mdc-list-item" data-value="vegetables" aria-disabled="true" role="option">
-                              <span class="mdc-typography--body2">Maria la del Barrio</span>
-                            </li>
-                            <li class="mdc-list-item" data-value="fruit" role="option">
-                              <span class="mdc-typography--body2">Juanita Gomez</span>
-                            </li>
-                          </ul> -->
                         </div>
                       </div>
                     </div>

@@ -3,18 +3,82 @@ for (var i = 0, button; button = buttons[i]; i++) {
   mdc.ripple.MDCRipple.attachTo(button);
 }
 */
-class SelectTable {
-  constructor(table) {
-    this.table = table;
-    this.table.listen(mdc.dataTable.events.ROW_SELECTION_CHANGED, this.handleRowSelection);
+
+const chipHtml = `
+  <div id='%id%' data-index='%index%' class='mdc-chip' role='row'>
+    <span class='mdc-chip__text mdc-typography--body2'>%name%</span>
+    <i class="mdc-icon small mdc-chip__icon mdc-chip__action--trailing chip_cross-icon"></i>
+  </div>`
+
+class CheckBoxMenuSelect {
+  constructor(select) {
+    let self = this;
+    $(select).find('.mdc-list-item').each(function(i, option) {
+      $(option).click(function(e) {
+        e.stopPropagation();
+        const index = $(e.currentTarget).index();
+        // Mark checkbox as checked if user clicked on li element
+        if (!$(e.target).is('label'))
+          self.select.menu_.list_.foundation_.toggleCheckboxAtIndex_(index, e.target === e.currentTarget);
+
+        // Handle selection
+        self.handleSelection(index);
+      });
+    });
+
+    $(select).find('.mdc-select__menu--search input').keyup(function(e) {
+      self.handleSearch($(this).val().toLowerCase());
+    });
+
+    this.select = mdc.select.MDCSelect.attachTo(select);
   }
 
-  handleRowSelection(e) {
-    console.log(e);
-    let id = e.detail.rowId;
-    let selected = e.detail.selected;
-    let row = $(this.table.root_).find(id);
-    console.log(row); 
+  handleSearch(input) {
+    this.select.menu_.list_.listElements.forEach(function(element) {
+      let name = $(element).text().trim();
+      if (input.length > 0 && name.toLowerCase().indexOf(input) === -1) {
+        $(element).hide();
+      } else {
+        $(element).show();
+      }
+    });
+  }
+
+  handleSelection(index) {
+    console.log(index);
+    let self = this;
+    let selectedText = '';
+
+    let selectedIndex = this.select.menu_.list_.selectedIndex;
+    let selectedItems = selectedIndex.map(function(i) {
+      let item = $(self.select.menu_.list_.listElements[i]);
+      selectedText = selectedText + `${ item.attr('data-value') },`;
+      return { name: item.text().trim(), id: item.attr('data-value'), index: i };
+    })
+
+    this.select.foundation_.adapter_.setSelectedText(selectedText);
+    if (selectedIndex.indexOf(index) > -1) {
+      this.select.foundation_.adapter_.addClassAtIndex(index, 'mdc-list-item--selected');
+      this.select.foundation_.adapter_.setAttributeAtIndex(index, 'aria-selected', 'true');
+    } else {
+      this.select.foundation_.adapter_.removeClassAtIndex(index, 'mdc-list-item--selected');
+      this.select.foundation_.adapter_.removeAttributeAtIndex(index, 'aria-selected');
+    }
+
+    this.updateChipset(selectedItems);
+  }
+
+  updateChipset(items) {
+    let chipSet = $(this.select.root_).find('.mdc-chip-set');
+    chipSet.empty();
+
+    if (!items) return;
+
+    items.forEach(function(item) {
+      let html = chipHtml.replace('%id%', item.id).replace('%name%', item.name).replace('%index%', item.index);
+      //let html = $(`<div id='${ item.id }' class='mdc-chip' role='row'><span class='mdc-chip__text mdc-typography--body2'>${ item.name }</span></div>`);
+      chipSet.append(html);
+    });
   }
 }
 
@@ -24,31 +88,6 @@ function openMenu(menu) {
 
 function updateTableCounter(table, counter) {
   counter.find('#quantity').text(table.getSelectedRowIds().length);
-}
-
-function handleRowSelection(e) {
-  let id = e.detail.rowId;
-  let selected = e.detail.selected;
-  let name = $(e.target).find(`[data-row-id='${ id }'] td:first-child span`).text();
-  let select = $(e.target).closest('.mdc-select');
-  let chipSet = select.find('.mdc-select__selected-text .mdc-chip-set');
-
-  if (selected) {
-    let html = $(`<div id='${ id }' class='mdc-chip' role='row'>${ name }</div>`);
-    chipSet.append(html);
-  } else {
-    chipSet.find(`#${ id }`).remove();
-  }
-
-  console.log(chipSet.children().length);
-
-  if (chipSet.children().length > 0) {
-    console.log(select.find(".mdc-floating-label"));
-    //select.find(".mdc-floating-label").addClass('mdc-floating-label--float-above');
-  } else {
-    //select.find(".mdc-floating-label").removeClass('mdc-floating-label--float-above');
-
-  }
 }
 
 var menus = $('.mdc-menu');
@@ -93,18 +132,6 @@ for (var i = 0, dataTable; dataTable = dataTables[i]; i++) {
       updateTableCounter(table, counter);
     });
   }
-
-  var select = $(dataTable).closest('.mdc-select');
-  if (select.length) {
-    console.log('inside select');
-    //myComponent = new SelectTable(table);
-    table.listen(mdc.dataTable.events.ROW_SELECTION_CHANGED, handleRowSelection);
-  }
-}
-
-var selects = $('.mdc-select');
-for (var i = 0, select; select = selects[i]; i++) {
-  mdc.select.MDCSelect.attachTo(select);
 }
 
 var lists = $('.mdc-list:not(.mdc-checkbox-list)');
@@ -117,13 +144,9 @@ var checkBoxLists = $('.mdc-checkbox-list');
 for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
   var mdcList = mdc.list.MDCList.attachTo(checkBoxList);
   mdcList.singleSelection = false;
-  $(checkBoxList).find('.mdc-list-item').each(function(i, option) {
-    $(option).click(function(e) {
-      console.log(this);
-      console.log(mdcList);
-      console.log(e);
-      e.stopPropagation();
-    })
-  });
-  //mdcList.handleClickEvent_ = function() {console.log('lalala')};
+}
+
+var selects = $('.mdc-select');
+for (var i = 0, select; select = selects[i]; i++) {
+  let checkBoxMenuSelect = new CheckBoxMenuSelect(select);
 }

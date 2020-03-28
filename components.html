@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<!--     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -14,9 +14,9 @@
       crossorigin="anonymous"></script>
 
     <!-- OFFLINE MODE -->
-<!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
-    <script src="offline/material-components-web.min.js"></script>
-    <script src="offline/jquery-3.4.1.min.js"></script> -->
+    <link href="offline/material-components-web.css" rel="stylesheet">
+    <script src="offline/material-components-web.js"></script>
+    <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
 
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/icons.css">
@@ -196,7 +196,7 @@
             </a>
           </li>
 
-          <li class="mdc-top-app-bar__action-item mdc-top-app-bar__action-item--active mdc-menu--click">
+          <li class="mdc-top-app-bar__action-item mdc-menu--click">
             <a class="mdc-button mdc-button--app-bar" aria-label="Notificaciones">
               <i class="mdc-button__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -286,78 +286,150 @@
       </div>
     </nav>
 
-    <header class="mdc-header mdc-header__admin">
+    <header class="mdc-header mdc-header__type-of-header">
       <div class="mdc-header__row">
-        <section class="mdc-header__section">
-          <h1 class="mdc-typography--headline1">Mis notificaciones</h1>
+        <div class="mdc-header__background" data-speed="0.2"></div>
+        <section class="mdc-header__section mdc-header__section--align-start">
         </section>
       </div>
     </header>
 
-    <main class="main-wrapper admin-wrapper">
-
-      <!-- Notificaciones { -->
-      <div class="mdc-card mdc-card--large notifications">
-        <div class="notification__wrapper">
-          <i class="notification__icon">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.0662 12.1782C22.0697 13.5439 21.754 14.8911 21.1449 16.11C20.4226 17.5707 19.3122 18.7994 17.9381 19.6583C16.564 20.5172 14.9804 20.9724 13.3648 20.973C12.0136 20.9766 10.6808 20.6575 9.47472 20.0418L3.63965 22.0077L5.58467 16.11C4.9755 14.8911 4.65982 13.5439 4.66335 12.1782C4.66397 10.5453 5.1144 8.94471 5.96418 7.55586C6.81395 6.167 8.02952 5.0447 9.47472 4.31467C10.6808 3.69896 12.0136 3.37989 13.3648 3.38345H13.8766C16.0104 3.50243 18.0257 4.41271 19.5368 5.94001C21.0479 7.4673 21.9485 9.50427 22.0662 11.6609V12.1782Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </i>
-          <div class="notification">
-            <div class="notification__title mdc-typography--subtitle1">Nuevo mensaje</div>
-            <div class="notification__date mdc-typography--caption">Hace 11 min</div>
-            <div class="notification__text mdc-typography--body2">
-              Profesor X respondió tu mensaje en el foro de Visita al a Reserva Ecológica.
+    <main class="main-wrapper">
+      <div class="mdc-text-field__wrapper">
+        <h4 class="mdc-typography--headline4 admin-form__title">Docentes</h4>
+        
+        <div class="mdc-select mdc-select--checkbox mdc-select--outlined">
+          <div class="mdc-select__anchor">
+            <i class="mdc-select__dropdown-icon"></i>
+            <div class="mdc-select__selected-text" aria-labelledby="outlined-select-label"></div>
+            <div class="mdc-chip-set"></div>
+            <div class="mdc-notched-outline">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+                <span id="outlined-select-label" class="mdc-floating-label">Seleccionar docentes</span>
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
             </div>
           </div>
-        </div>
 
-        <div class="notification__wrapper">
-          <i class="notification__icon">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.7378 20.9523L18.6837 23.5969" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M7.96787 20.9523L7.02197 23.5969" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M23.105 5.46375H2.60107V20.9509H23.105V5.46375Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M23.7725 4.56981C23.7725 5.06369 23.3739 5.46377 22.8812 5.46377H2.82489C2.33215 5.46377 1.93359 5.06369 1.93359 4.56981V3.37785C1.93359 2.88396 2.33215 2.48389 2.82489 2.48389H22.8812C23.3739 2.48389 23.7725 2.88396 23.7725 3.37785V4.56981Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 9.53772H18.2937" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 13.2102H20.0012" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 16.8826H18.2937" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M7.60755 13.6447C8.65838 13.6447 9.51026 12.7837 9.51026 11.7216C9.51026 10.6595 8.65838 9.79846 7.60755 9.79846C6.55671 9.79846 5.70483 10.6595 5.70483 11.7216C5.70483 12.7837 6.55671 13.6447 7.60755 13.6447Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </i>
-          <div class="notification">
-            <div class="notification__title mdc-typography--subtitle1">Nueva actividad</div>
-            <div class="notification__date mdc-typography--caption">Hace 2 días</div>
-            <div class="notification__text mdc-typography--body2">
-              Profesor X publicó una nueva actividad en Visita a la Reserva Ecológica.
-            </div>
-          </div>
-        </div>
-
-        <div class="notification__wrapper">
-          <i class="notification__icon">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.7378 20.9523L18.6837 23.5969" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M7.96787 20.9523L7.02197 23.5969" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M23.105 5.46375H2.60107V20.9509H23.105V5.46375Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M23.7725 4.56981C23.7725 5.06369 23.3739 5.46377 22.8812 5.46377H2.82489C2.33215 5.46377 1.93359 5.06369 1.93359 4.56981V3.37785C1.93359 2.88396 2.33215 2.48389 2.82489 2.48389H22.8812C23.3739 2.48389 23.7725 2.88396 23.7725 3.37785V4.56981Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 9.53772H18.2937" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 13.2102H20.0012" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 16.8826H18.2937" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M7.60755 13.6447C8.65838 13.6447 9.51026 12.7837 9.51026 11.7216C9.51026 10.6595 8.65838 9.79846 7.60755 9.79846C6.55671 9.79846 5.70483 10.6595 5.70483 11.7216C5.70483 12.7837 6.55671 13.6447 7.60755 13.6447Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </i>
-          <div class="notification">
-            <div class="notification__title mdc-typography--subtitle1">Entrega Vencida</div>
-            <div class="notification__date mdc-typography--caption">Hace 3 días</div>
-            <div class="notification__text mdc-typography--body2">
-              Terminó el plazo para entregar la Actividad Clasificamos Especies del proyecto Visita a la Reserva.
-            </div>
+          <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="list">
+            <div class="mdc-select__menu--search">
+              <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--fullwidth">
+                <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
+                <input type="text" class="mdc-text-field__input mdc-typography--body1 mdc-text-field--no-label" aria-labelledby="my-label-id">
+                <!-- <div class="mdc-line-ripple"></div> -->
+                <div class="mdc-notched-outline mdc-notched-outline--no-label">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="my-label-id"></span>
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </label>
+            </div>            
+            <ul class="mdc-list mdc-checkbox-list" role="menu">
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-01" role="checkbox">
+                <label for="docente-01" class="mdc-typography--body2">Juanito Perez</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="docente-01"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-02" role="checkbox">
+                <label for="docente-02" class="mdc-typography--body2">Pepita Jimenez</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="docente-02"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-03" role="checkbox">
+                <label for="docente-03" class="mdc-typography--body2">Marita Gonzalez</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="docente-03"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-04" role="checkbox">
+                <label for="docente-04" class="mdc-typography--body2">Fulanito Gomez</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="docente-04"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-05" role="checkbox">
+                <label for="docente-05" class="mdc-typography--body2">El profesor Jirafales</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="docente-05"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-06" role="checkbox">
+                <label for="docente-06" class="mdc-typography--body2">Pedro Sanchez</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="docente-06"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li class="mdc-list-item checkbox-list-ripple-surface" data-value="docente-07" role="checkbox">
+                <label for="docente-07" class="mdc-typography--body2">Maria Jose</label>
+                <span class="mdc-list-item__meta">
+                  <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="docente-07"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <!-- } -->
     </main>
 
     <footer class="footer">

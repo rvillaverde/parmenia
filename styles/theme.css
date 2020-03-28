@@ -233,6 +233,13 @@ textarea.mdc-text-field__input {
   border-color: var(--mdc-theme-secondary);
 }
 
+.mdc-select--outlined:not(.mdc-select--disabled).mdc-select--focused .mdc-text-field .mdc-notched-outline .mdc-notched-outline__leading,
+.mdc-select--outlined:not(.mdc-select--disabled).mdc-select--focused .mdc-text-field .mdc-notched-outline .mdc-notched-outline__notch,
+.mdc-select--outlined:not(.mdc-select--disabled).mdc-select--focused .mdc-text-field .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-width: 1px;
+  border-color: var(--mdc-theme-primary__100);
+}
+
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing,
@@ -538,4 +545,8 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
 
 .mdc-chip__text {
   outline: none;
+}
+
+.mdc-chip .mdc-chip__action--trailing {
+  margin-left: 8px;
 }
