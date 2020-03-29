@@ -169,12 +169,12 @@ section .subtitle-wrapper {
   width: 100%;
 }
 
-.collapse-icon svg  {
+.collapse-link .mdc-icon svg  {
   transition: transform 0.3s ease-in-out;
   -webkit-transition: transform 0.3s ease-in-out;
 }
 
-.collapse-link input:checked ~ .collapse-icon svg {
+.collapse-link input:checked ~ .mdc-icon svg {
   transform: rotate(-90deg);
 }
 

@@ -80,6 +80,75 @@ class CheckBoxMenuSelect {
   }
 }
 
+class TreeCheckboxList {
+  constructor(list) {
+    var mdcList = mdc.list.MDCList.attachTo(list);
+    mdcList.singleSelection = false;
+
+    var self = this;
+    mdcList.listen('MDCList:action', function(e) {
+      self.handleSelection($(e.currentTarget), e.detail.index);
+    });
+  }
+
+  handleSelection(target, index) {
+    let item = target.find('.mdc-list-item').eq(index);
+    let isChecked = item.find('.mdc-checkbox input').prop('checked');
+    if (item.next('.mdc-list').length > 0) {
+      let input = item.find('.mdc-checkbox input')[0];
+      input.indeterminate = undefined;
+      input.checked = isChecked;
+      this.triggerChangeEvent(input);
+
+      this.toggleChildren(item.next('.mdc-list'), isChecked);
+    }
+    if (item.closest('.mdc-list').hasClass('mdc-list--nested')) {
+      this.toggleParent(item);
+    }
+  }
+
+  toggleChildren(list, isChecked) {
+    let self = this;
+    list.find('.mdc-checkbox input').each(function(i, checkbox) {
+      checkbox.checked = isChecked;
+      self.triggerChangeEvent(checkbox);
+    });
+  }
+
+  toggleParent(item) {
+    let parent = item.closest('.mdc-list--nested').closest('.mdc-nested-list__wrapper').find('> .mdc-list-item').find('.mdc-checkbox input')[0];
+    let list = item.closest('.mdc-list--nested');
+
+    let inputs = list.find('> .mdc-list-item, > .mdc-nested-list__wrapper > .mdc-list-item').find('.mdc-checkbox input').length;
+    let checkedInputs = list.find('> .mdc-list-item, > .mdc-nested-list__wrapper > .mdc-list-item').find('.mdc-checkbox input:checked').length;
+    let mixedInputs = list.find('> .mdc-list-item, > .mdc-nested-list__wrapper > .mdc-list-item').find('.mdc-checkbox input[aria-checked=mixed]').length;
+
+    if (mixedInputs > 0) {
+      parent.indeterminate = 'indeterminate';
+    } else if (checkedInputs === 0) {
+      parent.indeterminate = undefined;
+      parent.checked = false;
+    } else if (checkedInputs === inputs) {
+      parent.indeterminate = undefined;
+      parent.checked = true;
+    } else {
+      parent.indeterminate = 'indeterminate';
+    }
+
+    this.triggerChangeEvent(parent);
+
+    if ($(parent).closest('.mdc-list').hasClass('mdc-list--nested')) {
+      this.toggleParent($(parent));
+    }
+  }
+
+  triggerChangeEvent(element) {
+    var event = document.createEvent('Event');
+    event.initEvent('change', true, true);
+    element.dispatchEvent(event);
+  }
+}
+
 function openMenu(menu) {
   menu.open = true;
 }
@@ -98,16 +167,15 @@ for (var i = 0, textField; textField = textFields[i]; i++) {
   mdc.textField.MDCTextField.attachTo(textField);
 }
 
+var checkboxes = $('.mdc-checkbox');
+for (var i = 0, checkbox; checkbox = checkboxes[i]; i++) {
+  mdc.checkbox.MDCCheckbox.attachTo(checkbox);
+}
+
 var tabScrollers = $('.mdc-tab-scroller');
 for (var i = 0, tabScroller; tabScroller = tabScrollers[i]; i++) {
   mdc.tabScroller.MDCTabScroller.attachTo(tabScroller);
 }
-/*
-const lists = mdc.list.MDCList.attachTo($('.mdc-list'));
-for (var i = 0, textField; textField = textFields[i]; i++) {
-  mdc.textField.MDCTextField.attachTo(textField);
-}
-*/
 
 var switchControls = $('.mdc-switch');
 for (var i = 0, switchControl; switchControl = switchControls[i]; i++) {
@@ -132,16 +200,21 @@ for (var i = 0, dataTable; dataTable = dataTables[i]; i++) {
   }
 }
 
-var lists = $('.mdc-list:not(.mdc-checkbox-list)');
+var lists = $('.mdc-list:not(.mdc-checkbox-list):not(.mdc-list--nested):not(.mdc-list--parent)');
 for (var i = 0, list; list = lists[i]; i++) {
   var list = mdc.list.MDCList.attachTo(list);
   list.singleSelection = true;
 }
 
-var checkBoxLists = $('.mdc-checkbox-list');
+var checkBoxLists = $('.mdc-list.mdc-checkbox-list:not(.mdc-list--nested):not(.mdc-list--parent)');
 for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
   var mdcList = mdc.list.MDCList.attachTo(checkBoxList);
   mdcList.singleSelection = false;
+}
+
+var checkBoxLists = $('.mdc-list.mdc-checkbox-list.mdc-list--parent:not(.mdc-list--nested)');
+for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
+  new TreeCheckboxList(checkBoxList);
 }
 
 var selects = $('.mdc-select:not(.mdc-select--checkbox)');
@@ -151,5 +224,5 @@ for (var i = 0, select; select = selects[i]; i++) {
 
 var selects = $('.mdc-select.mdc-select--checkbox');
 for (var i = 0, select; select = selects[i]; i++) {
-  let checkBoxMenuSelect = new CheckBoxMenuSelect(select);
+  new CheckBoxMenuSelect(select);
 }
