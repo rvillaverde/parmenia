@@ -1,6 +1,7 @@
 .mdc-button {
   height: unset;
   min-height: 36px;
+  min-width: 100px;
 }
 
 /* COMMON STYLES */

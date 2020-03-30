@@ -634,7 +634,7 @@
                           </div>
                           <div class="mdc-checkbox__ripple"></div>
                         </div>
-                        <label for="news-publish-cartelera" class="copy-content">Copiar contenido de otro aula</label>
+                        <label for="news-publish-cartelera" class="mdc-typography--headline4">Copiar contenido de otro aula</label>
                       </div>
                     </div>
 
@@ -669,6 +669,39 @@
                     <div class="selection-wrapper">
                       <div class="no-content-placeholder">
                         <span class="mdc-typography--headline4">Aún no hay contenido seleccionado</span>
+                      </div>
+                    </div>
+
+                    <div class="mdc-chip-set mdc-chip-set--input" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Presentación</span>
+                          </span>
+                        </span>
+                        <span role="gridcell">
+                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Clase 1 / Informe</span>
+                          </span>
+                        </span>
+                        <span role="gridcell">
+                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Mi aprendizaje</span>
+                          </span>
+                        </span>
+                        <span role="gridcell">
+                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                        </span>
                       </div>
                     </div>
 
@@ -794,20 +827,74 @@
                           </span>
                           <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-presentacion">Presentacion</label>
                         </li>
-                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
-                          <span class="mdc-list-item__graphic">
-                            <div class="mdc-checkbox">
-                              <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clases"/>
-                              <div class="mdc-checkbox__background">
-                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                  <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                                </svg>
-                                <div class="mdc-checkbox__mixedmark"></div>
+                        <div class="mdc-nested-list__wrapper collapsable-wrapper">
+                          <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                            <span class="mdc-list-item__graphic">
+                              <div class="mdc-checkbox">
+                                <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clases"/>
+                                <div class="mdc-checkbox__background">
+                                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                  </svg>
+                                  <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
                               </div>
-                            </div>
-                          </span>
-                          <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clases">Clases/Actividades</label>
-                        </li>
+                            </span>
+                            <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clases">Clases/Actividades</label>
+                            <a class="collapse-link">
+                              <input type="checkbox">
+                              <i class="mdc-icon small">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </i>
+                            </a>
+                          </li>
+                          <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                            <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                              <span class="mdc-list-item__graphic">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clase-1"/>
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                              <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clase-1">Clase 1</label>
+                            </li>
+                            <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                              <span class="mdc-list-item__graphic">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clase-2"/>
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                              <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clase-2">Clase 2</label>
+                            </li>
+                            <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                              <span class="mdc-list-item__graphic">
+                                <div class="mdc-checkbox">
+                                  <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clase-3"/>
+                                  <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                  </div>
+                                </div>
+                              </span>
+                              <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clase-3">Clase 3</label>
+                            </li>
+                          </ul>
+                        </div>
                         <li class="mdc-list-item" role="checkbox" aria-checked="false">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
@@ -1030,20 +1117,74 @@
                         </li>
                       </ul>
                     </div>
-                    <li class="mdc-list-item" role="checkbox" aria-checked="false">
-                      <span class="mdc-list-item__graphic">
-                        <div class="mdc-checkbox">
-                          <input type="checkbox" class="mdc-checkbox__native-control" id="carpeta-3"/>
-                          <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                              <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
+                    <div class="mdc-nested-list__wrapper collapsable-wrapper">
+                     <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                        <span class="mdc-list-item__graphic">
+                          <div class="mdc-checkbox">
+                            <input type="checkbox" class="mdc-checkbox__native-control" id="carpeta-2"/>
+                            <div class="mdc-checkbox__background">
+                              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                              </svg>
+                              <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
                           </div>
-                        </div>
-                      </span>
-                      <label class="mdc-list-item__text mdc-typography--body1" for="carpeta-3">Carpeta 3</label>
-                    </li>
+                        </span>
+                        <label class="mdc-list-item__text mdc-typography--body1" for="carpeta-3">Carpeta 3</label>
+                        <a class="collapse-link">
+                          <input type="checkbox">
+                          <i class="mdc-icon small">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </i>
+                        </a>
+                      </li>
+                      <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                          <span class="mdc-list-item__graphic">
+                            <div class="mdc-checkbox">
+                              <input type="checkbox" class="mdc-checkbox__native-control" id="carpeta-3-recurso-1"/>
+                              <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                  <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                              </div>
+                            </div>
+                          </span>
+                          <label class="mdc-list-item__text mdc-typography--body2" for="carpeta-3-recurso-1">Nombre del recurso 1</label>
+                        </li>
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                          <span class="mdc-list-item__graphic">
+                            <div class="mdc-checkbox">
+                              <input type="checkbox" class="mdc-checkbox__native-control" id="carpeta-3-recurso-2"/>
+                              <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                  <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                              </div>
+                            </div>
+                          </span>
+                          <label class="mdc-list-item__text mdc-typography--body2" for="carpeta-3-recurso-2">Nombre del recurso 2</label>
+                        </li>
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                          <span class="mdc-list-item__graphic">
+                            <div class="mdc-checkbox">
+                              <input type="checkbox" class="mdc-checkbox__native-control" id="carpeta-3-recurso-3"/>
+                              <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                  <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                              </div>
+                            </div>
+                          </span>
+                          <label class="mdc-list-item__text mdc-typography--body2" for="carpeta-3-recurso-3">Nombre del recurso 3</label>
+                        </li>
+                      </ul>
+                    </div>
                   </ul>
                 </div>
               </ul>
@@ -1059,7 +1200,6 @@
       </div>
       <div class="mdc-dialog__scrim"></div>
     </div>
-
 
     <main class="main-wrapper">
       <!-- Aulas alumno view { -->

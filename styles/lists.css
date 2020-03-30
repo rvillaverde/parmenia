@@ -3,6 +3,10 @@
   width: 500px;
 }
 
+.mdc-multiselection-list > .mdc-list:not(:first-child) {
+  margin-top: 20px;
+}
+
 .mdc-multiselection-list .mdc-list-item > .mdc-list {
   padding: 0 24px;
   width: 100%;
@@ -21,7 +25,8 @@
 }
 
 .mdc-multiselection-list .mdc-list .mdc-list-item::before,
-.mdc-multiselection-list .mdc-list .mdc-list-item::after {
+.mdc-multiselection-list .mdc-list .mdc-list-item::after,
+.mdc-multiselection-list .mdc-radio__native-control:focus + .mdc-radio__background::before {
   content: none;
 }
 

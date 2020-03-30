@@ -28,7 +28,7 @@ $(function() {
   });
 
   $('.draggable').mousedown(onGrab);
-  $('.collapse-link').click(collapse);
+  $('.collapse-link input').change(collapse);
   $('.mdc-top-app-bar__section#nav-menu-toggle input[type="checkbox"]').click(toggleNavMenu);
 });
 

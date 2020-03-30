@@ -73,6 +73,10 @@
   justify-content: center;
 }
 
+.admin-form__actions .mdc-button {
+  margin: 0;
+}
+
 .admin-form__commit-actions {
   display: flex;
   justify-content: flex-end;

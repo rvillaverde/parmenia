@@ -125,6 +125,22 @@ section .subtitle-wrapper {
   margin-top: 44px;
 }
 
+.section-headline__wrapper {
+  align-items: center;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.2);
+  display: flex;
+  margin-bottom: 48px;
+  min-height: 80px;
+}
+
+.section-headline__wrapper .mdc-button:nth-child(2) {
+  margin-left: 12px;
+}
+
+.section-headline__wrapper-actions {
+  margin-left: auto;
+}
+
 .headline-wrapper .mdc-typography--headline4 {
   color: var(--mdc-theme-gray__600);
 }
@@ -159,6 +175,10 @@ section .subtitle-wrapper {
 
 .subtitle-wrapper > *:last-child {
   margin-right: 0;
+}
+
+input[type=file] {
+  display: none;
 }
 
 .collapse-link .mdc-icon svg  {

@@ -56,8 +56,12 @@
   background-image: url("../icons/search-icon.svg");
 }
 
-.chip_cross-icon {
-  background-image: url("../icons/chip_cross-icon.svg");
+.camera-icon {
+  background-image: url("../icons/camera-icon.svg");
+}
+
+.chip-cross-icon {
+  background-image: url("../icons/chip-cross-icon.svg");
 }
 
 .nav-aulas-icon {

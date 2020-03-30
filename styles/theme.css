@@ -547,6 +547,11 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   color: var(--mdc-theme-gray__700);
 }
 
+.mdc-chip .mdc-chip__icon--trailing {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
 .mdc-chip__text {
   outline: none;
 }

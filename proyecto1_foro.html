@@ -744,10 +744,13 @@
           </div>
 
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
-            <button class="mdc-button mdc-button--raised" onclick="openDialog('nuevo-anuncio-01');" data-role="docente,admin">
-              <span class="mdc-button__ripple"></span>
-              <span class="mdc-button__label">Crear discusión</span>
-            </button>
+            <div class="cards__actions" data-role="docente,admin">
+              <button class="mdc-button mdc-button--raised" onclick="openDialog('nuevo-anuncio-01');">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">Crear discusión</span>
+              </button>
+            </div>
+
             <div class="cards cards--selectable">
               <div class="mdc-card mdc-card--outlined forum-discusion-card">
                 <div class="mdc-card__primary">

@@ -9,6 +9,29 @@ const chipHtml = `
     <span class='mdc-chip__text mdc-typography--body2'>%name%</span>
   </div>`;
 
+class SelectMenuWithSearch {
+  constructor(select) {
+    let self = this;
+
+    $(select).find('.mdc-select__menu--search input').keyup(function(e) {
+      self.handleSearch($(this).val().toLowerCase());
+    });
+
+    this.select = mdc.select.MDCSelect.attachTo(select);
+  }
+
+  handleSearch(input) {
+    this.select.menu_.list_.listElements.forEach(function(element) {
+      let name = $(element).text().trim();
+      if (input.length > 0 && name.toLowerCase().indexOf(input) === -1) {
+        $(element).hide();
+      } else {
+        $(element).show();
+      }
+    });
+  }
+}
+
 class CheckBoxMenuSelect {
   constructor(select) {
     let self = this;
@@ -93,53 +116,82 @@ class TreeCheckboxList {
 
   handleSelection(target, index) {
     let item = target.find('.mdc-list-item').eq(index);
-    let isChecked = item.find('.mdc-checkbox input').prop('checked');
-    if (item.next('.mdc-list').length > 0) {
-      let input = item.find('.mdc-checkbox input')[0];
-      input.indeterminate = undefined;
-      input.checked = isChecked;
-      this.triggerChangeEvent(input);
+    let input = item.find('.mdc-checkbox input')[0];
 
-      this.toggleChildren(item.next('.mdc-list'), isChecked);
+    if (input) {
+      if (item.next('.mdc-list').length > 0) {
+        let isChecked = item.find('.mdc-checkbox input').prop('checked');
+        input.indeterminate = undefined;
+        input.checked = isChecked;
+        this.triggerChangeEvent(input);
+
+        this.toggleChildren(item.next('.mdc-list'), isChecked);
+      }
+    } else {
+      input = item.find('.mdc-radio input');
+      this.uncheckSiblings(input);
     }
+
+    // toggle parent if target item is part of a nested list
     if (item.closest('.mdc-list').hasClass('mdc-list--nested')) {
       this.toggleParent(item);
-    }
+    } 
   }
 
   toggleChildren(list, isChecked) {
     let self = this;
-    list.find('.mdc-checkbox input').each(function(i, checkbox) {
-      checkbox.checked = isChecked;
-      self.triggerChangeEvent(checkbox);
+
+    list.find('.mdc-checkbox input').each(function(i, input) {
+      input.indeterminate = undefined;
+      input.checked = isChecked;
+      self.triggerChangeEvent(input);
     });
   }
 
   toggleParent(item) {
-    let parent = item.closest('.mdc-list--nested').closest('.mdc-nested-list__wrapper').find('> .mdc-list-item').find('.mdc-checkbox input')[0];
+    let parent = item.closest('.mdc-list--nested').closest('.mdc-nested-list__wrapper').find('> .mdc-list-item').find('.mdc-checkbox input, .mdc-radio input')[0];
     let list = item.closest('.mdc-list--nested');
 
     let inputs = list.find('> .mdc-list-item, > .mdc-nested-list__wrapper > .mdc-list-item').find('.mdc-checkbox input').length;
     let checkedInputs = list.find('> .mdc-list-item, > .mdc-nested-list__wrapper > .mdc-list-item').find('.mdc-checkbox input:checked').length;
     let mixedInputs = list.find('> .mdc-list-item, > .mdc-nested-list__wrapper > .mdc-list-item').find('.mdc-checkbox input[aria-checked=mixed]').length;
 
-    if (mixedInputs > 0) {
-      parent.indeterminate = 'indeterminate';
-    } else if (checkedInputs === 0) {
-      parent.indeterminate = undefined;
-      parent.checked = false;
-    } else if (checkedInputs === inputs) {
-      parent.indeterminate = undefined;
-      parent.checked = true;
-    } else {
-      parent.indeterminate = 'indeterminate';
-    }
+    if ($(parent).attr('type') === 'checkbox') {
+      if (mixedInputs > 0) {
+        parent.indeterminate = 'indeterminate';
+      } else if (checkedInputs === 0) {
+        parent.indeterminate = undefined;
+        parent.checked = false;
+      } else if (checkedInputs === inputs) {
+        parent.indeterminate = undefined;
+        parent.checked = true;
+      } else {
+        parent.indeterminate = 'indeterminate';
+      }
 
-    this.triggerChangeEvent(parent);
+      this.triggerChangeEvent(parent);
 
-    if ($(parent).closest('.mdc-list').hasClass('mdc-list--nested')) {
-      this.toggleParent($(parent));
+      if ($(parent).closest('.mdc-list').hasClass('mdc-list--nested')) {
+        this.toggleParent($(parent));
+      }
+    } else if ($(parent).attr('type') === 'radio') {
+      if (checkedInputs + mixedInputs > 0) {
+        parent.checked = true;
+        this.triggerChangeEvent(parent);
+        this.uncheckSiblings($(parent));
+      }
     }
+  }
+
+  uncheckSiblings(element) {
+    let self = this;
+    let siblings = $(element).closest('.mdc-list--parent').siblings();
+
+    siblings.find('.mdc-checkbox input[type=checkbox]:checked, .mdc-checkbox input[type=checkbox][aria-checked=mixed]').each(function(i, input) {
+      input.indeterminate = undefined;
+      input.checked = false;
+      self.triggerChangeEvent(input);
+    });
   }
 
   triggerChangeEvent(element) {
@@ -160,6 +212,14 @@ function updateTableCounter(table, counter) {
 var menus = $('.mdc-menu');
 for (var i = 0, menu; menu = menus[i]; i++) {
   mdc.menu.MDCMenu.attachTo(menu);
+}
+
+var chipsets = $('.mdc-chip-set');
+for (var i = 0, chipset; chipset = chipsets[i]; i++) {
+  let mdcChipset = mdc.chips.MDCChipSet.attachTo(chipset);
+  mdcChipset.listen('MDCChip:removal', function(event) {
+    mdcChipset.removeChild(event.detail.root);
+  });
 }
 
 var textFields = $('.mdc-text-field');
@@ -219,7 +279,8 @@ for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
 
 var selects = $('.mdc-select:not(.mdc-select--checkbox)');
 for (var i = 0, select; select = selects[i]; i++) {
-  mdc.select.MDCSelect.attachTo(select);
+  //mdc.select.MDCSelect.attachTo(select);
+  new SelectMenuWithSearch(select);
 }
 
 var selects = $('.mdc-select.mdc-select--checkbox');

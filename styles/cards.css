@@ -101,6 +101,14 @@
   margin: 24px 0;
 }
 
+.cards__actions {
+  margin-bottom: 24px;
+}
+
+.cards__actions + .cards {
+  margin-top: 0;
+}
+
 @media (min-width: 600px) and (max-width: 840px) {
   .main-wrapper > .cards.mdc-layout-grid .mdc-layout-grid__cell--span-9-desktop,
   .main-wrapper > .cards.mdc-layout-grid .mdc-layout-grid__cell--span-3-desktop {
@@ -656,4 +664,9 @@
   border-top-color: rgba(0,0,0,.12);
   border-top-style: solid;
   border-top-width: 1px;
+}
+
+.preview-card {
+  cursor: default;
+  min-width: 180px;
 }
