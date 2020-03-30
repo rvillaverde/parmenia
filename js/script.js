@@ -106,6 +106,10 @@ function fixed() {
 function collapse(e) {
   let target = $(e.target);
   let parent = target.closest('.collapsable-wrapper');
+
+  if (target.closest('.mdc-top-app-bar').length > 0 && !$('body').hasClass('nav-menu-open'))
+    return;
+
   if (target.is(":checked")) {
     parent.find('.collapsable').slideUp();
   } else {

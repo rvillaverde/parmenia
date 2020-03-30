@@ -130,6 +130,7 @@
   align-items: center;
   border-radius: 50%;
   display: inline-flex;
+  height: 48px;
   justify-content: center;
   min-width: 36px;
   padding: 4px;

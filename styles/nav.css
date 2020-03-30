@@ -31,7 +31,7 @@
   margin-right: auto;
 }
 
-.mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions:nth-of-type(2)::before {
+body:not(.nav-menu-open) .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions:nth-of-type(2)::before {
   content: "";
   height: 80%;
   width: 1px;
@@ -41,6 +41,10 @@
 
 .mdc-top-app-bar__section:nth-child(3) {
   margin-left: auto;
+}
+
+body:not(.nav-menu-open) .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions:nth-of-type(4) {
+  display: none;
 }
 
 .mdc-top-app-bar__actions {
@@ -172,6 +176,16 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
   .mdc-icon.nav-notificaciones-icon + .mdc-button__label {
     display: none;
   }
+
+
+  .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions:nth-of-type(3) > .mdc-top-app-bar__action-item {
+    padding: 0;
+    min-width: 48px;
+  }
+
+  .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions:nth-of-type(4) {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -189,6 +203,15 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
   .mdc-icon.nav-notificaciones-icon + .mdc-button__label {
     display: none;
   }
+
+  .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions:nth-of-type(3) > .mdc-top-app-bar__action-item {
+    padding: 0;
+    min-width: 48px;
+  }
+
+  .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions:nth-of-type(4) {
+    display: none;
+  }
 }
 
 @media (min-width: 760px) and (max-width: 1023px) {
@@ -196,14 +219,17 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
     position: absolute;
     width: 100%;
   }
+
   .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions {
     display: none;
   }
+
   .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__title-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
   }
+
   .mdc-top-app-bar__section:nth-child(3) {
     display: block;
   }
@@ -233,8 +259,8 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
     color: var(--mdc-theme-primary__700);
   }
 
-  body.nav-menu-open .nav-chevron-icon {
-    margin: 16px;
+  body.nav-menu-open .collapse-link {
+    padding: 16px;
     margin-left: auto;
   }
 
@@ -275,18 +301,25 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
     z-index: 4;
   } 
 
-  body.nav-menu-open .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions .mdc-icon:not(.nav-chevron-icon) {
+  body.nav-menu-open .mdc-top-app-bar__section:nth-of-type(2) .mdc-top-app-bar__actions .mdc-icon:not(.nav-chevron-icon) {
     height: 40px;
     margin: auto 12px;
     width: 40px;
   }
 
-  body.nav-menu-open .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions .mdc-top-app-bar__profile-pic {
+  body.nav-menu-open .mdc-top-app-bar__section:nth-of-type(2) .mdc-top-app-bar__actions .mdc-top-app-bar__profile-pic {
     margin: auto 12px;
+  } 
+
+  body.nav-menu-open .mdc-top-app-bar__section:nth-of-type(2) .mdc-top-app-bar__actions:nth-of-type(2) .mdc-button:first-child,
+  body.nav-menu-open .mdc-top-app-bar__section:nth-of-type(2) .mdc-top-app-bar__actions:nth-of-type(2) .profile-menu-wrapper .mdc-list-divider,
+  body.nav-menu-open .mdc-top-app-bar__section:nth-of-type(2) .mdc-top-app-bar__actions:nth-of-type(2) .profile-menu-wrapper .mdc-list-item:last-child {
+    display: none;
   } 
 
   body.nav-menu-open .mdc-top-app-bar__section .mdc-top-app-bar__action-item {
     flex-grow: 1;
+    flex-wrap: wrap;
     height: unset;
     width: 100%;
     min-height: 52px;
@@ -294,13 +327,30 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
   }
 
   body.nav-menu-open .mdc-top-app-bar__section .mdc-top-app-bar__action-item .mdc-button--app-bar {
+    flex-grow: 1;
     justify-content: flex-start;
-    width: 100%;
+    max-width: 100%;
     padding: 0;
   }
 
-  body.nav-menu-open .mdc-top-app-bar__section .mdc-top-app-bar__action-item .mdc-button__label {
-    margin-left: 0;
+  body.nav-menu-open .mdc-top-app-bar__section .mdc-top-app-bar__action-item .mdc-button__label,
+  body.nav-menu-open .mdc-top-app-bar__section .mdc-top-app-bar__action-item .profile-info {
+    margin-left: 24px;
+  }
+
+  body.nav-menu-open .mdc-top-app-bar__section:nth-of-type(2) .mdc-top-app-bar__actions:not(:last-of-type) .mdc-menu.mdc-menu-surface {
+    opacity: 1;
+    position: static;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    max-width: unset;
+    box-shadow: none;
+    max-height: unset;
+  }
+
+  body.nav-menu-open .mdc-top-app-bar__section:nth-of-type(2) .mdc-top-app-bar__actions:not(:nth-of-type(3)) .mdc-menu.mdc-menu-surface:not(.collapsable) {
+    display: block;
   }
 
   body.nav-menu-open .nav-aulas-icon {

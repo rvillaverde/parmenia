@@ -78,7 +78,7 @@
 
     <nav class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section" id="nav-heading">
+        <section class="mdc-top-app-bar__section">
           <div class="mdc-top-app-bar__title-wrapper">
             <div class="mdc-top-app-bar__school-pic round-photo-wrapper">
               <img src="img/placeholder.png">
@@ -87,18 +87,21 @@
           </div>
         </section>
 
-        <section class="mdc-top-app-bar__section" id="nav-sections">
+        <section class="mdc-top-app-bar__section">
           <div class="mdc-top-app-bar__title-wrapper">
-            <h6 class="mdc-top-app-bar__title mdc-typography--headline6">Mis aulas</h6>
+            <h6 class="mdc-top-app-bar__title mdc-typography--headline6">Bienvenido</h6>
           </div>
           <ul class="mdc-top-app-bar__actions" role="toolbar">
-            <li class="mdc-top-app-bar__action-item mdc-menu--hover mdc-top-app-bar__action-item--active">
+            <li class="mdc-top-app-bar__action-item mdc-menu--hover collapsable-wrapper mdc-top-app-bar__action-item--active">
               <a class="mdc-button mdc-button--app-bar" href="aulas.html" aria-label="Mis aulas">
                 <i class="mdc-icon nav-aulas-icon"></i>
                 <span class="mdc-button__label">Mis Aulas</span>
+              </a>
+              <a class="collapse-link">
+                <input type="checkbox" checked>
                 <i class="mdc-icon small nav-chevron-icon"></i>
               </a>
-              <div class="mdc-menu mdc-menu-surface">
+              <div class="mdc-menu mdc-menu-surface collapsable">
                 <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
                   <li class="mdc-list-item mdc-menu__action" role="menuitem">
                     <a href="aula1.html" class="mdc-list-item__text mdc-typography--subtitle1">Nombre del aula</a>
@@ -140,30 +143,34 @@
             </li>
           </ul>
 
-          <ul class="mdc-top-app-bar__actions mdc-top-app-bar__profile">
+          <ul class="mdc-top-app-bar__actions">
             <li class="mdc-top-app-bar__action-item mdc-menu--hover">
-              <a class="mdc-button mdc-button--app-bar" href="profile.html" aria-label="Fulanito">
+              <a class="mdc-button mdc-button--app-bar" href="profile.html" aria-label="Pepito">
                 <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
                   <img src="img/placeholder.png">
                 </div>
-                <span class="mdc-button__label mdc-top-app-bar__profile-name mdc-typography--headline6">Fulanito</span>
+                <span class="mdc-button__label mdc-top-app-bar__profile-name mdc-typography--headline6">Pepito</span>
                 <i class="mdc-icon small nav-chevron-icon"></i>
               </a>
               <div class="mdc-menu mdc-menu-surface">
-                <div class="profile-menu-wrapper">
-                  <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
-                    <img src="img/placeholder.png">
-                  </div>
-                  <div class="profile-info">
-                    <h6 class="mdc-typography--headline6">Pepito Gimenez</h6>
-                    <a href="profile.html" class="mdc-typography--body2">Ver perfil</a>
-                  </div>
-                </div>
-                <div class="mdc-list-divider" role="separator"></div>
-                <a href="login.html" class="mdc-menu__action">
-                  <i class="mdc-icon nav-logout-icon"></i>
-                  <span class="mdc-typography--subtitle1">Cerrar sesión</span>
-                </a>
+                <ul class="mdc-list profile-menu-wrapper" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                    <div class="profile-info">
+                      <h6 class="mdc-typography--headline6">Pepito Gimenez</h6>
+                      <a href="profile.html" class="mdc-typography--body2">Ver perfil</a>
+                    </div>
+                  </li>
+                  <li class="mdc-list-divider" role="separator"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <i class="mdc-icon nav-logout-icon"></i>
+                    <a href="login.html" class="mdc-list-item__text mdc-typography--subtitle1">
+                      <span class="mdc-typography--subtitle1">Cerrar sesión</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </li>
           </ul>
@@ -231,6 +238,15 @@
                   </li>
                 </ul>
               </div>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions">
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="login.html" aria-label="Cerrar sesión">
+                <i class="mdc-icon nav-logout-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Cerrar sesión</span>
+              </a>
             </li>
           </ul>
         </section>

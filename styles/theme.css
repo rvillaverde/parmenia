@@ -372,6 +372,10 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   z-index: 1;
 }
 
+.mdc-header__avatar + .mdc-header__title {
+  margin-left: 40px;
+}
+
 @media (max-width: 760px) {
   .mdc-header__project {
     height: var(--header__height-large--mobile);
@@ -387,10 +391,6 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
 
   .mdc-header__admin .mdc-header__title {
     text-align: center;
-  }
-
-  .mdc-header__avatar + .mdc-header__title {
-    margin-left: 40px;
   }
 }
 
