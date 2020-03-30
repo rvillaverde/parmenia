@@ -1,6 +1,8 @@
 let dialog, drawer, header, appBar;
 
 $(function() {
+  $('.user-roles-wrapper .mdc-icon-button').click(function() { $(this).closest('.user-roles-wrapper').hide(); });
+
   drawer = $('.mdc-drawer');
   header = $('.mdc-header');
   appBar = $('.mdc-top-app-bar');
@@ -26,8 +28,8 @@ $(function() {
   });
 
   $('.draggable').mousedown(onGrab);
-
   $('.collapse-link').click(collapse);
+  $('.mdc-top-app-bar__section#nav-menu-toggle input[type="checkbox"]').click(toggleNavMenu);
 });
 
 function smoothScroll(e) {
@@ -45,6 +47,16 @@ function smoothScroll(e) {
     $(window).scroll("scroll", onScroll);
     //window.location.hash = target;
   });
+}
+
+function toggleNavMenu(e) {
+  let isChecked = $(e.currentTarget).prop('checked');
+  if (isChecked) {
+    $('body').addClass('nav-menu-open');
+  } else {
+    $('body').removeClass('nav-menu-open');
+  }
+
 }
 
 function onScroll() {

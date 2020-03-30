@@ -59,3 +59,39 @@
 .chip_cross-icon {
   background-image: url("../icons/chip_cross-icon.svg");
 }
+
+.nav-aulas-icon {
+  background-image: url("../icons/nav-aulas-icon.svg");
+}
+
+.nav-docentes-icon {
+  background-image: url("../icons/nav-docentes-icon.svg");
+}
+
+.nav-alumnos-icon {
+  background-image: url("../icons/nav-alumnos-icon.svg");
+}
+
+.nav-biblioteca-icon {
+  background-image: url("../icons/nav-biblioteca-icon.svg");
+}
+
+.nav-agenda-icon {
+  background-image: url("../icons/nav-agenda-icon.svg");
+}
+
+.nav-notificaciones-icon {
+  background-image: url("../icons/nav-notificaciones-icon.svg");
+}
+
+.nav-mochila-icon {
+  background-image: url("../icons/nav-mochila-icon.svg");
+}
+
+.nav-logout-icon {
+  background-image: url("../icons/nav-logout-icon.svg");
+}
+
+.nav-chevron-icon {
+  background-image: url("../icons/nav-chevron-icon.svg");
+}

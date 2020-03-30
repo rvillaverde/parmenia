@@ -1,3 +1,8 @@
+.mdc-button {
+  height: unset;
+  min-height: 36px;
+}
+
 /* COMMON STYLES */
 .mdc-button__label {
   letter-spacing: normal;

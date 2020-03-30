@@ -79,6 +79,10 @@ body.login-container {
   min-height: 100vh;
 }
 
+body.nav-menu-open {
+  overflow: hidden;
+}
+
 .main-wrapper {
   margin: 36px auto;
   max-width: var(--viewport-width);
@@ -157,18 +161,6 @@ section .subtitle-wrapper {
   margin-right: 0;
 }
 
-.mdc-button--app-bar + input[type="checkbox"],
-.collapse-link > input[type="checkbox"] {
-  cursor: pointer;
-  height: 18px;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  z-index: 2;
-  height: 100%;
-  width: 100%;
-}
-
 .collapse-link .mdc-icon svg  {
   transition: transform 0.3s ease-in-out;
   -webkit-transition: transform 0.3s ease-in-out;
@@ -176,6 +168,19 @@ section .subtitle-wrapper {
 
 .collapse-link input:checked ~ .mdc-icon svg {
   transform: rotate(-90deg);
+}
+
+.collapse-link input[type="checkbox"] {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 4;
 }
 
 .headline__icon {
@@ -195,12 +200,21 @@ section .subtitle-wrapper {
   align-items: center;
   border: 1px solid var(--mdc-theme-surface);
   border-radius: 50%;
+  box-sizing: border-box;
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   height: 40px;
-  min-width: auto;
   overflow: hidden;
+  position: relative;
   width: 40px;
+}
+
+.round-photo-wrapper::before {
+  content: "";
+  position: absolute;
+  padding-top: 100%;
+  width: 100%;
 }
 
 .round-photo-wrapper img {
