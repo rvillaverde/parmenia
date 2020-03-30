@@ -224,3 +224,14 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
   color: var(--mdc-theme-gray__700);
   padding-left: 40px;
 }
+
+.mdc-select .mdc-checkbox-list .mdc-list-item--disabled::before,
+.mdc-select .mdc-checkbox-list .mdc-list-item--disabled::after {
+  background-color: transparent;
+}
+
+.mdc-select .mdc-checkbox-list .mdc-list-item--disabled label,
+.mdc-select .mdc-checkbox-list .mdc-list-item--disabled label {
+  color: var(--mdc-theme-gray__400);
+  cursor: normal;
+}

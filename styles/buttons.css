@@ -1,7 +1,6 @@
 .mdc-button {
   height: unset;
   min-height: 36px;
-  min-width: 100px;
 }
 
 /* COMMON STYLES */
@@ -38,6 +37,7 @@
 .mdc-button--raised, .mdc-button--outlined {
   border-radius: 8px;
   background-color: var(--mdc-theme-surface);
+  min-width: 100px;
   padding: 4px 12px;
   text-transform: none;
 }

@@ -38,6 +38,9 @@ class CheckBoxMenuSelect {
     $(select).find('.mdc-list-item').each(function(i, option) {
       $(option).click(function(e) {
         e.stopPropagation();
+        if ($(option).hasClass('mdc-list-item--disabled'))
+          return;
+
         const index = $(e.currentTarget).index();
         // Mark checkbox as checked if user clicked on li element
         if (!$(e.target).is('label'))
@@ -217,9 +220,6 @@ for (var i = 0, menu; menu = menus[i]; i++) {
 var chipsets = $('.mdc-chip-set');
 for (var i = 0, chipset; chipset = chipsets[i]; i++) {
   let mdcChipset = mdc.chips.MDCChipSet.attachTo(chipset);
-  mdcChipset.listen('MDCChip:removal', function(event) {
-    mdcChipset.removeChild(event.detail.root);
-  });
 }
 
 var textFields = $('.mdc-text-field');

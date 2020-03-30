@@ -181,6 +181,14 @@ input[type=file] {
   display: none;
 }
 
+.mdc-radio__native-control:disabled+.mdc-radio__background,
+.mdc-radio__native-control+.mdc-radio__background,
+.mdc-checkbox__native-control[disabled]:not(:checked):not(:indeterminate) ~ .mdc-checkbox__background {
+  background-color: transparent;
+  border-color: var(--mdc-theme-primary__100);
+  cursor: defaul;
+}
+
 .collapse-link .mdc-icon svg  {
   transition: transform 0.3s ease-in-out;
   -webkit-transition: transform 0.3s ease-in-out;
