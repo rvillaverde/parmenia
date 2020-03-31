@@ -215,6 +215,11 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
 }
 
 @media (min-width: 760px) and (max-width: 1023px) {
+
+  .mdc-top-app-bar__section:nth-child(1) {
+    position: relative;
+    z-index: 4;
+  }
   .mdc-top-app-bar__section:nth-child(2) {
     position: absolute;
     width: 100%;
@@ -236,6 +241,10 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
 }
 
 @media (max-width: 759px) {
+  .mdc-top-app-bar__section:nth-child(1) {
+    position: relative;
+    z-index: 4;
+  }
   .mdc-top-app-bar__section:nth-child(1) .mdc-top-app-bar__title {
     display: none;
   }

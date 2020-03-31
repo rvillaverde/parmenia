@@ -16,12 +16,6 @@
   justify-content: space-between;
 }
 
-@media (max-width: 599px) {
-  .admin-form__subsection {
-    flex-direction: column;
-  }
-}
-
 .admin-form__subsection-inner {
   display: flex;
   flex-direction: column;
@@ -34,7 +28,13 @@
   min-width: 180px;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 639px) {
+  .admin-form__subsection {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 640px) {
   .admin-form__subsection-inner__photo-uploader:last-child {
     margin-left: 36px;
   }
@@ -46,6 +46,12 @@
 
 .admin-form__subsection-inner > *:not(.admin-form__title):not(.admin-form__photo-placeholder__actions):not(.mdc-text-field__wrapper):not(.mdc-checkbox__wrapper) {
   margin: 12px 0;
+}
+
+@media (min-width: 640px) {
+  .admin-form__subsection-inner + .admin-form__subsection-inner:last-child > .mdc-switch__wrapper:first-child {
+    margin-top: 60px;
+  }
 }
 
 .admin-form__subsection-inner > .mdc-text-field__wrapper {
@@ -82,7 +88,7 @@
   justify-content: flex-end;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 760px) {
   .admin-form .mdc-text-field, .admin-form__subsection {
     width: 100%;
   }
@@ -110,12 +116,12 @@
 }
 
 .mdc-switch__label {
-  padding-left: 12px;
+  padding-left: 24px;
 }
 
 .mdc-switch__caption {
   box-sizing: border-box;
-  padding-left: 44px;
+  padding-left: 56px;
   width: 100%;
 }
 

@@ -1,6 +1,6 @@
 :root {
-  --dialog-max-width: 600px;
-  --dialog-min-width: 500px;
+  --dialog-max-width: 640px;
+  --dialog-min-width: 540px;
   --dialog-xl-width: 960px;
 }
 
@@ -25,7 +25,9 @@
   max-width: var(--dialog-xl-width);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 640px) {
+  .mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--large,
+  .mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--xl,
   .mdc-dialog .mdc-dialog__surface {
     border-radius: 0;
     max-height: 100vh;
@@ -116,9 +118,9 @@
   flex-direction: column;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 640px) {
   .mdc-dialog__form {
-    min-width: 460px;
+    min-width: 640px;
   }
 }
 
@@ -141,4 +143,8 @@
 
 .mdc-dialog__content .no-content-placeholder {
   height: 72px;
+}
+
+.mdc-dialog__section > .admin-form__subsection {
+  margin: 24px 0;
 }

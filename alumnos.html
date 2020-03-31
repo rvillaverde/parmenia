@@ -37,9 +37,9 @@
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section">
           <div class="mdc-top-app-bar__title-wrapper">
-            <div class="mdc-top-app-bar__school-pic round-photo-wrapper">
+            <a href="dashboard.html" class="mdc-top-app-bar__school-pic round-photo-wrapper">
               <img src="img/placeholder.png">
-            </div>
+            </a>
             <a href="dashboard.html" class="mdc-top-app-bar__title mdc-typography--headline6">Colegio Lasalle</a>
           </div>
         </section>
@@ -274,7 +274,7 @@
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
                     <label class="mdc-text-field mdc-text-field--outlined">
-                      <input type="email" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                      <input type="email" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
                       <div class="mdc-notched-outline">
                         <div class="mdc-notched-outline__leading"></div>
                         <div class="mdc-notched-outline__notch">
@@ -285,7 +285,7 @@
                     </label>
 
                     <label class="mdc-text-field mdc-text-field--outlined">
-                      <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                      <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
                       <div class="mdc-notched-outline">
                         <div class="mdc-notched-outline__leading"></div>
                         <div class="mdc-notched-outline__notch">
@@ -296,7 +296,7 @@
                     </label>
 
                     <label class="mdc-text-field mdc-text-field--outlined">
-                      <input type="password" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                      <input type="password" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
                       <div class="mdc-notched-outline">
                         <div class="mdc-notched-outline__leading"></div>
                         <div class="mdc-notched-outline__notch">
@@ -313,8 +313,8 @@
                     </div>
 
                     <div class="admin-form__photo-placeholder__actions">
-                      <button class="mdc-button mdc-button--text">
-                        <span class="mdc-button__ripple"></span>
+                      <input id="file-uploader" type="file" name="file" accept="image/*">
+                      <label for="file-uploader" class="mdc-button mdc-button--text">
                         <i class="mdc-button__icon">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -323,7 +323,7 @@
                           </svg>
                         </i>
                         <span class="mdc-button__label">Subir imagen</span>
-                      </button>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -421,8 +421,10 @@
           </div>
           <div class="mdc-dialog__content">
             <div class="mdc-dialog__section">
-              <div class="mdc-typography--body1">
-                Para importar usuarios masivamente es necesario cargar sus datos en una plantilla .xls siguiendo los lineamientos de la plantilla modelo.
+              <div class="admin-form__subsection">
+                <div class="mdc-typography--body1">
+                  Para importar usuarios masivamente es necesario cargar sus datos en una plantilla .xls siguiendo los lineamientos de la plantilla modelo.
+                </div>
               </div>
               <div class="admin-form__actions">
                 <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('aula-select-01');">
@@ -437,8 +439,8 @@
                   <span class="mdc-button__label">Descargar plantilla modelo</span>
                 </button>
 
-                <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('aula-select-01');">
-                  <span class="mdc-button__ripple"></span>
+                <input id="file-uploader" type="file" name="file" accept=".xls">
+                <label for="file-uploader" class="mdc-button mdc-button--text">
                   <i class="mdc-button__icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -447,7 +449,7 @@
                     </svg>
                   </i>
                   <span class="mdc-button__label">Subir plantilla</span>
-                </button>
+                </label>
               </div>
               <div class="admin-form__subsection">
                 <div class="mdc-card mdc-card--outlined preview-card">
@@ -463,8 +465,10 @@
                     <div class="mdc-card__actions">
                       <div class="mdc-card__action-buttons">
                         <p class="mdc-typography--body2">
-                          Nombre del archivo
+                          Nombre archivo.xls
                         </p>
+                      </div>
+                      <div class="mdc-card__action-icons">
                         <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
                           <i class="mdc-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -526,7 +530,7 @@
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
                     <label class="mdc-text-field mdc-text-field--outlined">
-                      <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id">
+                      <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
                       <div class="mdc-notched-outline">
                         <div class="mdc-notched-outline__leading"></div>
                         <div class="mdc-notched-outline__notch">

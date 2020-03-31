@@ -436,6 +436,10 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   .mdc-header__actions .mdc-button {
     margin-top: 12px;
   } 
+
+  .mdc-header__actions .mdc-button + .mdc-button {
+    margin-left: 0;
+  } 
 }
 
 .mdc-header__section {
@@ -558,4 +562,28 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
 
 .mdc-chip .mdc-chip__action--trailing {
   margin-left: 8px;
+}
+
+@media (max-width: 640px) {
+  .mdc-chip-set {
+    padding: 0;
+  }
+
+  .mdc-chip-set .mdc-chip {
+    max-width: 100%;
+  }
+
+  .mdc-chip-set .mdc-chip > span:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mdc-chip-set .mdc-chip > span:first-child:last-child {
+    max-width: 100%;
+  }
+
+  .mdc-chip-set .mdc-chip > span:first-child:not(:last-child) {
+    max-width: calc(100% - 22px);
+  }
 }

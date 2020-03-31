@@ -1,6 +1,13 @@
 .mdc-dialog .mdc-multiselection-list {
-  padding: 0 20px;
-  width: 500px;
+  box-sizing: border-box;
+  padding: 0 28px;
+  width: 100%;
+}
+
+@media (min-width: 760px) {
+  .mdc-dialog .mdc-multiselection-list {
+    width: 500px;
+  }
 }
 
 .mdc-multiselection-list > .mdc-list:not(:first-child) {
@@ -17,7 +24,7 @@
   flex-wrap: wrap;
   height: unset;
   min-height: 24px;
-  padding: 4px 8px;
+  padding: 4px 0;
 }
 
 .mdc-multiselection-list .mdc-list .mdc-list-item__graphic {
@@ -35,5 +42,5 @@
 }
 
 .mdc-nested-list__wrapper .mdc-list {
-  padding: 0 36px;
+  padding-left: 36px;
 }

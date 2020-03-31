@@ -67,7 +67,7 @@ body {
   position: relative;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 640px) {
   body {
     margin-top: var(--app-nav__height--mobile);
     min-height: calc(100vh - var(--app-nav__height--mobile));
@@ -302,8 +302,14 @@ input[type=file] {
 
 .notification__wrapper {
   display: flex;
-  min-width: 360px;
+  width: 100%;
   padding: 12px;
+}
+
+@media (min-width: 460px) {
+  .notification__wrapper {
+    min-width: 360px;
+  }
 }
 
 .notification__icon {
@@ -319,19 +325,21 @@ input[type=file] {
 }
 
 .notification {
-  flex-grow: 1;
-  display: flex;
-  margin-left: 18px;
-  border-bottom: 1px solid var(--mdc-theme-gray__300);
-  flex-wrap: wrap;
   align-items: center;
+  border-bottom: 1px solid var(--mdc-theme-gray__300);
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  margin-left: 18px;
   padding-bottom: 24px;
+  padding-right: 12px;
 }
 
 .notification__date {
   flex-grow: 0;
   min-width: 80px;
   margin-left: auto;
+  text-align: right;
 }
 
 .notification__text {
