@@ -27,8 +27,8 @@
 .mdc-drawer + .drawer-side-wrapper .main-wrapper {
   max-width: 888px;
 }
-
-@media (max-width: 999px) {
+/*
+@media (max-width: 960px) {
   .mdc-drawer {
     width: 180px;
   }
@@ -37,22 +37,14 @@
     margin-left: 180px;
   }
 }
-
-@media (max-width: 699px) {
+*/
+@media (max-width: 760px) {
   .drawer-side-wrapper {
-    margin-left: 56px;
+    margin-left: 0;
   }
 
   .mdc-drawer {
-    width: 56px;
-  }
-
-  .mdc-drawer .mdc-list-item span {
     display: none;
-  }
-
-  .mdc-drawer .mdc-list-item {
-    padding: 8px 18px
   }
 }
 

@@ -45,6 +45,13 @@
   padding-bottom: 12px;
 }
 
+.mdc-dialog .mdc-dialog__title-wrapper .group-caption {
+  display: flex;
+  justify-content: center;
+  margin-left: 24px;
+  margin-right: auto;
+}
+
 .mdc-dialog .mdc-dialog__title-wrapper .mdc-dialog__title-caption {
   width: 100%;
 }

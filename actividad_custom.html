@@ -12,6 +12,10 @@
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+      integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+      crossorigin="anonymous"></script>
 
     <!-- OFFLINE MODE -->
 <!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
@@ -645,6 +649,239 @@
       <div class="mdc-dialog__scrim"></div>
     </div>
 
+    <div id="crear-tarea" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface mdc-dialog__surface--xl"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Tarea personalizada
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+            <p class="mdc-dialog__title-caption mdc-typography--body2">
+              Arrastra los componentes deseados al área de trabajo para generar la tarea. Utiliza la herramienta de texto enriquecido y los espacios para las consignas, e inserta campos de respuesta para uso de los alumnos.
+            </p>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <div class="activity-devolucion__wrapper">
+              <div class="activity__preview">
+                <div class="subtitle-wrapper">
+                  <h4 class="mdc-typography--headline4">Área de trabajo</h4>
+                </div>
+                <div class="activity-creator droppable">
+                  
+                </div>
+              </div>
+              <div class="devolucion__history">
+                <div class="subtitle-wrapper">
+                  <h4 class="mdc-typography--headline4">Herramientas</h4>
+                </div>
+                <div class="mdc-card mdc-card--outlined">
+                  <ul class="mdc-list">
+                    <li class="mdc-list-item draggable">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4 7V4H20V7" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M9 20H15" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 4V20" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                      <span class="mdc-typography--body1">Texto enriquecido</span>
+                      <div class="activity-component">
+                        <h4 class="mdc-typography--headline4">Texto enriquecido</h4>
+                        <div class="activity-component__actions">
+                          <button class="mdc-icon-button mdc-icon-button--secondary">
+                            <i class="mdc-icon small delete-icon"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mdc-list-divider" role="separator"></li>
+                    <li class="mdc-list-item draggable">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
+                        </svg>
+                      </i>
+                      <span class="mdc-typography--body1">Espacio</span>
+                      <div class="activity-component">
+                        <h4 class="mdc-typography--headline4">Espacio</h4>
+                        <div class="activity-component__actions">
+                          <button class="mdc-icon-button mdc-icon-button--secondary">
+                            <i class="mdc-icon small delete-icon"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="subtitle-wrapper">
+                  <h4 class="mdc-typography--headline4">Campos de respuesta</h4>
+                </div>
+                <div class="mdc-card mdc-card--outlined">
+                  <ul class="mdc-list">
+                    <li class="mdc-list-item draggable">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 10H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M21 6H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M21 14H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M17 18H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                      <span class="mdc-typography--body1">Área de texto</span>
+                      <div class="activity-component">
+                        <div class="mdc-text-field__wrapper">
+                          <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                            <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="nombre">
+                            <div class="mdc-notched-outline">
+                              <div class="mdc-notched-outline__leading"></div>
+                              <div class="mdc-notched-outline__notch">
+                                <span class="mdc-floating-label" id="nombre">Escribe aquí tu respuesta...</span>
+                              </div>
+                              <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="activity-component__actions">
+                          <button class="mdc-icon-button mdc-icon-button--secondary">
+                            <i class="mdc-icon small delete-icon"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mdc-list-divider" role="separator"></li>
+                    <li class="mdc-list-item draggable">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M16 2V6" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M8 2V6" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 10H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                      <span class="mdc-typography--body1">Fecha</span>
+                      <div class="activity-component">
+                        <h4 class="mdc-typography--headline4">Componente fecha</h4>
+                        <div class="activity-component__actions">
+                          <button class="mdc-icon-button mdc-icon-button--secondary">
+                            <i class="mdc-icon small delete-icon"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mdc-list-divider" role="separator"></li>
+                    <li class="mdc-list-item draggable">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M22 11.0801V12.0001C21.9988 14.1565 21.3005 16.2548 20.0093 17.9819C18.7182 19.7091 16.9033 20.9726 14.8354 21.584C12.7674 22.1954 10.5573 22.122 8.53447 21.3747C6.51168 20.6274 4.78465 19.2462 3.61096 17.4372C2.43727 15.6281 1.87979 13.4882 2.02168 11.3364C2.16356 9.18467 2.99721 7.13644 4.39828 5.49718C5.79935 3.85793 7.69278 2.71549 9.79619 2.24025C11.8996 1.76502 14.1003 1.98245 16.07 2.86011" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M22 4L12 14.01L9 11.01" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                      <span class="mdc-typography--body1">Verdadero/falso</span>
+                      <div class="activity-component">
+                        <div class="mdc-radio-button__wrapper">
+                          <div class="mdc-form-field">
+                            <div class="mdc-radio">
+                              <input class="mdc-radio__native-control" type="radio" id="permiso" name="permiso">
+                              <div class="mdc-radio__background">
+                                <div class="mdc-radio__outer-circle"></div>
+                                <div class="mdc-radio__inner-circle"></div>
+                              </div>
+                              <div class="mdc-radio__ripple"></div>
+                            </div>
+                            <label class="mdc-typography--body1" for="permiso">Verdadero</label>
+                          </div>
+                          <div class="mdc-form-field">
+                            <div class="mdc-radio">
+                              <input class="mdc-radio__native-control" type="radio" id="permiso" name="permiso">
+                              <div class="mdc-radio__background">
+                                <div class="mdc-radio__outer-circle"></div>
+                                <div class="mdc-radio__inner-circle"></div>
+                              </div>
+                              <div class="mdc-radio__ripple"></div>
+                            </div>
+                            <label class="mdc-typography--body1" for="permiso">Falso</label>
+                          </div>
+                        </div>
+                        <div class="activity-component__actions">
+                          <button class="mdc-icon-button mdc-icon-button--secondary">
+                            <i class="mdc-icon small delete-icon"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mdc-list-divider" role="separator"></li>
+                    <li class="mdc-list-item draggable">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 6H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M8 12H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M8 18H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 6H3.01" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 12H3.01" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M3 18H3.01" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                      <span class="mdc-typography--body1">Lista de opciones</span>
+                      <div class="activity-component">
+                        <h4 class="mdc-typography--headline4">Lista de opciones</h4>
+                        <div class="activity-component__actions">
+                          <button class="mdc-icon-button mdc-icon-button--secondary">
+                            <i class="mdc-icon small delete-icon"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('aula-select-01');">
+                  <span class="mdc-button__ripple"></span>
+                  <i class="mdc-button__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M7 10L12 15L17 10" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 15V3" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-button__label">Descargar como pdf</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="change-password" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Guardar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+
     <div id="cambiar-tarea" class="mdc-dialog">
       <div class="mdc-dialog__container">
         <div class="mdc-dialog__surface"
@@ -742,6 +979,148 @@
       <div class="mdc-dialog__scrim"></div>
     </div>
 
+    <div id="ver-entrega" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface mdc-dialog__surface--xl"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Devolución
+            </h2>
+           <div class="group-caption">
+              <i class="mdc-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M23 20.9999V18.9999C22.9993 18.1136 22.7044 17.2527 22.1614 16.5522C21.6184 15.8517 20.8581 15.3515 20 15.1299" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+              <span class="mdc-typography--subtitle1">Grupo 4</span>
+            </div>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <div class="activity-devolucion__wrapper">
+              <div class="activity__preview">
+                <div class="subtitle-wrapper">
+                  <h4 class="mdc-typography--headline4">Tarea</h4>
+                </div>
+              </div>
+              <div class="devolucion__history">
+                <div class="subtitle-wrapper">
+                  <h4 class="mdc-typography--headline4">Historial de revisiones</h4>
+                  <div class="mdc-chip" role="row">
+                    <span role="gridcell">
+                      <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">1</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="mdc-layout-grid round-step__grid">
+                  <div class="mdc-layout-grid__inner">
+                    <div class="round-step__container round-step__container--top mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop">
+                      <i class="mdc-icon round-step" style="background-color: var(--mdc-theme-progress__02);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 11.1665C21.0034 12.4864 20.6951 13.7884 20.1 14.9665C19.3944 16.3783 18.3098 17.5657 16.9674 18.3958C15.6251 19.2259 14.0782 19.6659 12.5 19.6665C11.1801 19.67 9.87812 19.3616 8.7 18.7665L3 20.6665L4.9 14.9665C4.30493 13.7884 3.99656 12.4864 4 11.1665C4.00061 9.58829 4.44061 8.04138 5.27072 6.69908C6.10083 5.35678 7.28825 4.2721 8.7 3.56653C9.87812 2.97146 11.1801 2.66309 12.5 2.66653H13C15.0843 2.78152 17.053 3.66129 18.5291 5.13739C20.0052 6.61349 20.885 8.58218 21 10.6665V11.1665Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </div>
+                    
+                    <div class="devolucion-card__reply-wrapper mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop">
+                      <span class="mdc-typography--overline">Overline fecha</span>
+                      <div class="group-title-wrapper">
+                        <div class="round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <h6 class="mdc-typography--subtitle1">Nombre del alumno</h6>
+                      </div>
+                      <p class="mdc-typography--body2">
+                        Actividad entregada: “Clasificamos especies de flores” - Unir con flechas.
+                      </p>
+                    </div>
+
+                    <div class="round-step__container round-step__container--top mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop">
+                      <i class="mdc-icon round-step" style="background-color: var(--mdc-theme-progress__03);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 11.1665C21.0034 12.4864 20.6951 13.7884 20.1 14.9665C19.3944 16.3783 18.3098 17.5657 16.9674 18.3958C15.6251 19.2259 14.0782 19.6659 12.5 19.6665C11.1801 19.67 9.87812 19.3616 8.7 18.7665L3 20.6665L4.9 14.9665C4.30493 13.7884 3.99656 12.4864 4 11.1665C4.00061 9.58829 4.44061 8.04138 5.27072 6.69908C6.10083 5.35678 7.28825 4.2721 8.7 3.56653C9.87812 2.97146 11.1801 2.66309 12.5 2.66653H13C15.0843 2.78152 17.053 3.66129 18.5291 5.13739C20.0052 6.61349 20.885 8.58218 21 10.6665V11.1665Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </div>
+                    
+                    <div class="devolucion-card__reply-wrapper mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop">
+                      <span class="mdc-typography--overline">Overline fecha</span>
+                      <div class="group-title-wrapper">
+                        <div class="round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <h6 class="mdc-typography--subtitle1">Nombre del docente</h6>
+                      </div>
+                      <div class="mdc-card mdc-card--outlined">
+                        <div class="mdc-card__primary">
+                          <p class="mdc-typography--body2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam.
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="round-step__container round-step__container--top mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop">
+                      <i class="mdc-icon round-step" style="background-color: var(--mdc-theme-progress__01);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 11.1665C21.0034 12.4864 20.6951 13.7884 20.1 14.9665C19.3944 16.3783 18.3098 17.5657 16.9674 18.3958C15.6251 19.2259 14.0782 19.6659 12.5 19.6665C11.1801 19.67 9.87812 19.3616 8.7 18.7665L3 20.6665L4.9 14.9665C4.30493 13.7884 3.99656 12.4864 4 11.1665C4.00061 9.58829 4.44061 8.04138 5.27072 6.69908C6.10083 5.35678 7.28825 4.2721 8.7 3.56653C9.87812 2.97146 11.1801 2.66309 12.5 2.66653H13C15.0843 2.78152 17.053 3.66129 18.5291 5.13739C20.0052 6.61349 20.885 8.58218 21 10.6665V11.1665Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </div>
+                    
+                    <div class="devolucion-card__reply-wrapper mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop">
+                      <span class="mdc-typography--overline">Overline fecha</span>
+                      <div class="group-title-wrapper">
+                        <div class="round-photo-wrapper">
+                          <img src="img/placeholder.png">
+                        </div>
+                        <h6 class="mdc-typography--subtitle1">Nombre del alumno</h6>
+                      </div>
+                      <p class="mdc-typography--body2">
+                         Actividad Pendiente: “Clasificamos especies de flores” - Unir con flechas.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Devolver</span>
+            </button>
+            <button type="submit" form="change-password" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Finalizar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
     <aside class="mdc-drawer">
       <div class="mdc-drawer__content">
         <nav class="mdc-list">
@@ -784,7 +1163,7 @@
             <span class="mdc-list-item__text mdc-typography--headline6">Mi grupo</span>
           </a>
           <li role="separator" class="mdc-list-divider"></li>
-          <a class="mdc-list-item" href="#actividad" aria-current="page" data-section="actividad">
+          <a class="mdc-list-item" href="#tarea" aria-current="page" data-section="tarea">
             <i class="mdc-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.5 21.75C8.91421 21.75 9.25 21.4142 9.25 21C9.25 20.5858 8.91421 20.25 8.5 20.25V21.75ZM20.25 8.5C20.25 8.91421 20.5858 9.25 21 9.25C21.4142 9.25 21.75 8.91421 21.75 8.5H20.25ZM8.5 20.25H5V21.75H8.5V20.25ZM3.75 19V5H2.25V19H3.75ZM5 3.75H19V2.25H5V3.75ZM20.25 5V8.5H21.75V5H20.25ZM19 3.75C19.6904 3.75 20.25 4.30964 20.25 5H21.75C21.75 3.48122 20.5188 2.25 19 2.25V3.75ZM3.75 5C3.75 4.30964 4.30964 3.75 5 3.75V2.25C3.48122 2.25 2.25 3.48122 2.25 5H3.75ZM5 20.25C4.30964 20.25 3.75 19.6904 3.75 19H2.25C2.25 20.5188 3.48122 21.75 5 21.75V20.25Z" fill="#757575"/>
@@ -793,7 +1172,7 @@
                 <path d="M16.5876 21.1034L12.9998 22L13.8965 18.4122L19.7512 12.5575C20.4946 11.8142 21.699 11.8142 22.4423 12.5575C23.1857 13.3009 23.1857 14.5053 22.4423 15.2486L16.5876 21.1034Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
-            <span class="mdc-list-item__text mdc-typography--headline6">Actividad</span>
+            <span class="mdc-list-item__text mdc-typography--headline6">Tarea</span>
           </a>
           <li role="separator" class="mdc-list-divider"></li>
           <a class="mdc-list-item" href="#devolucion" aria-current="page" data-section="devolucion">
@@ -1393,7 +1772,7 @@
               <div class="no-content-placeholder">
                 <span class="mdc-typography--headline4">Aún no haz creado la tarea</span>
               </div>
-              <button class="mdc-card__action--button mdc-button mdc-button--text">
+              <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('crear-tarea');">
                 <span class="mdc-button__label">crear tarea</span>
               </button>
             </div>
@@ -1411,7 +1790,7 @@
           </div>
 
           <!-- Devolucion - tarea grupal { -->
-          <div class="mdc-card mdc-card--large devolucion-card grupal">
+          <div class="mdc-card mdc-card--large devolucion-card grupal" data-role="admin,docente">
             <div class="mdc-data-table">
               <table class="mdc-data-table__table" aria-label="devolucion">
                 <thead class="mdc-data-table__header">
@@ -1467,7 +1846,7 @@
                     <td class="mdc-data-table__cell">
                       <span class="mdc-typography--subtitle1">1</span>
                     <td class="mdc-data-table__cell mdc-data-table__cell--actions">
-                      <button class="mdc-button mdc-button--text">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('ver-entrega');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver entrega</span>
                       </button>
@@ -1503,7 +1882,7 @@
                     <td class="mdc-data-table__cell">
                       <span class="mdc-typography--subtitle1">2</span>
                     <td class="mdc-data-table__cell mdc-data-table__cell--actions">
-                      <button class="mdc-button mdc-button--text">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('ver-entrega');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver entrega</span>
                       </button>
@@ -1539,7 +1918,7 @@
                     <td class="mdc-data-table__cell">
                       <span class="mdc-typography--subtitle1">0</span>
                     <td class="mdc-data-table__cell mdc-data-table__cell--actions">
-                      <button class="mdc-button mdc-button--text">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('ver-entrega');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver entrega</span>
                       </button>
@@ -1552,7 +1931,7 @@
           <!-- } -->
 
           <!-- Devolucion - tarea individual { -->
-          <div class="mdc-card mdc-card--large devolucion-card individual">
+          <div class="mdc-card mdc-card--large devolucion-card individual" data-role="admin,docente">
             <div class="mdc-data-table">
               <table class="mdc-data-table__table" aria-label="devolucion">
                 <thead class="mdc-data-table__header">
@@ -1602,7 +1981,7 @@
                     <td class="mdc-data-table__cell">
                       <span class="mdc-typography--subtitle1">0</span>
                     <td class="mdc-data-table__cell mdc-data-table__cell--actions">
-                      <button class="mdc-button mdc-button--text">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('ver-entrega');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver entrega</span>
                       </button>
@@ -1635,7 +2014,7 @@
                     <td class="mdc-data-table__cell">
                       <span class="mdc-typography--subtitle1">1</span>
                     <td class="mdc-data-table__cell mdc-data-table__cell--actions">
-                      <button class="mdc-button mdc-button--text">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('ver-entrega');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver entrega</span>
                       </button>
@@ -1668,7 +2047,7 @@
                     <td class="mdc-data-table__cell">
                       <span class="mdc-typography--subtitle1">2</span>
                     <td class="mdc-data-table__cell mdc-data-table__cell--actions">
-                      <button class="mdc-button mdc-button--text">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('ver-entrega');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver entrega</span>
                       </button>
@@ -1702,7 +2081,7 @@
                     <td class="mdc-data-table__cell">
                       <span class="mdc-typography--subtitle1">0</span>
                     <td class="mdc-data-table__cell mdc-data-table__cell--actions">
-                      <button class="mdc-button mdc-button--text">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('ver-entrega');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver entrega</span>
                       </button>
@@ -1747,6 +2126,92 @@
                   </tr>
                 </tfoot>
               </table>
+            </div>
+          </div>
+          <!-- } -->
+
+          <!-- Devolucion - vista alumno { -->
+          <div class="mdc-card mdc-card--large devolucion-card individual" data-role="alumno">
+            <div class="mdc-layout-grid round-step__grid">
+              <div class="mdc-layout-grid__inner">
+                <div class="round-step__container round-step__container--top mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop">
+                  <i class="mdc-icon round-step" style="background-color: var(--mdc-theme-progress__02);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 11.1665C21.0034 12.4864 20.6951 13.7884 20.1 14.9665C19.3944 16.3783 18.3098 17.5657 16.9674 18.3958C15.6251 19.2259 14.0782 19.6659 12.5 19.6665C11.1801 19.67 9.87812 19.3616 8.7 18.7665L3 20.6665L4.9 14.9665C4.30493 13.7884 3.99656 12.4864 4 11.1665C4.00061 9.58829 4.44061 8.04138 5.27072 6.69908C6.10083 5.35678 7.28825 4.2721 8.7 3.56653C9.87812 2.97146 11.1801 2.66309 12.5 2.66653H13C15.0843 2.78152 17.053 3.66129 18.5291 5.13739C20.0052 6.61349 20.885 8.58218 21 10.6665V11.1665Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </div>
+                
+                <div class="devolucion-card__reply-wrapper mdc-layout-grid__cell mdc-layout-grid__cell--span-11-desktop">
+                  <span class="mdc-typography--overline">Overline fecha</span>
+                  <div class="group-title-wrapper">
+                    <div class="round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                    <h6 class="mdc-typography--subtitle1">Nombre del alumno</h6>
+                    <div class="group-caption">
+                      <i class="mdc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M23 20.9999V18.9999C22.9993 18.1136 22.7044 17.2527 22.1614 16.5522C21.6184 15.8517 20.8581 15.3515 20 15.1299" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                      <span class="mdc-typography--subtitle1">Grupo 4</span>
+                    </div>
+                  </div>
+                  <p class="mdc-typography--body2">
+                    Actividad entregada: “Clasificamos especies de flores” - Unir con flechas.
+                  </p>
+                </div>
+
+                <div class="round-step__container round-step__container--top mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop">
+                  <i class="mdc-icon round-step" style="background-color: var(--mdc-theme-progress__03);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 11.1665C21.0034 12.4864 20.6951 13.7884 20.1 14.9665C19.3944 16.3783 18.3098 17.5657 16.9674 18.3958C15.6251 19.2259 14.0782 19.6659 12.5 19.6665C11.1801 19.67 9.87812 19.3616 8.7 18.7665L3 20.6665L4.9 14.9665C4.30493 13.7884 3.99656 12.4864 4 11.1665C4.00061 9.58829 4.44061 8.04138 5.27072 6.69908C6.10083 5.35678 7.28825 4.2721 8.7 3.56653C9.87812 2.97146 11.1801 2.66309 12.5 2.66653H13C15.0843 2.78152 17.053 3.66129 18.5291 5.13739C20.0052 6.61349 20.885 8.58218 21 10.6665V11.1665Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </div>
+                
+                <div class="devolucion-card__reply-wrapper mdc-layout-grid__cell mdc-layout-grid__cell--span-11-desktop">
+                  <span class="mdc-typography--overline">Overline fecha</span>
+                  <div class="group-title-wrapper">
+                    <div class="round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                    <h6 class="mdc-typography--subtitle1">Nombre del docente</h6>
+                  </div>
+                  <div class="mdc-card mdc-card--outlined">
+                    <div class="mdc-card__primary">
+                      <p class="mdc-typography--body2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="round-step__container round-step__container--top mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop">
+                  <i class="mdc-icon round-step" style="background-color: var(--mdc-theme-progress__01);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 11.1665C21.0034 12.4864 20.6951 13.7884 20.1 14.9665C19.3944 16.3783 18.3098 17.5657 16.9674 18.3958C15.6251 19.2259 14.0782 19.6659 12.5 19.6665C11.1801 19.67 9.87812 19.3616 8.7 18.7665L3 20.6665L4.9 14.9665C4.30493 13.7884 3.99656 12.4864 4 11.1665C4.00061 9.58829 4.44061 8.04138 5.27072 6.69908C6.10083 5.35678 7.28825 4.2721 8.7 3.56653C9.87812 2.97146 11.1801 2.66309 12.5 2.66653H13C15.0843 2.78152 17.053 3.66129 18.5291 5.13739C20.0052 6.61349 20.885 8.58218 21 10.6665V11.1665Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </div>
+                
+                <div class="devolucion-card__reply-wrapper mdc-layout-grid__cell mdc-layout-grid__cell--span-11-desktop">
+                  <span class="mdc-typography--overline">Overline fecha</span>
+                  <div class="group-title-wrapper">
+                    <div class="round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                    <h6 class="mdc-typography--subtitle1">Nombre del alumno</h6>
+                  </div>
+                  <p class="mdc-typography--body2">
+                     Actividad Pendiente: “Clasificamos especies de flores” - Unir con flechas.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <!-- } -->

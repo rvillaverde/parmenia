@@ -301,6 +301,7 @@ input[type=file] {
 }
 
 .notification__wrapper {
+  box-sizing: border-box;
   display: flex;
   width: 100%;
   padding: 12px;
@@ -393,7 +394,7 @@ input[type=file] {
   background-color: var(--mdc-theme-primary);
 }
 
-.round-number__container {
+.round-step__container {
   align-items: center;
   display: flex;
   height: 100%;
@@ -402,8 +403,8 @@ input[type=file] {
   z-index: 2;
 }
 
-.round-number__container:not(:first-of-type)::before, 
-.round-number__container:not(:nth-last-of-type(2))::after {
+.round-step__container:not(:first-of-type)::before, 
+.round-step__container:not(:nth-last-of-type(2))::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -413,15 +414,15 @@ input[type=file] {
   border-left-color: var(--mdc-theme-gray__300);
 }
 
-.round-number__container:not(:first-of-type)::before {
+.round-step__container:not(:first-of-type)::before {
   top: 0;
 }
 
-.round-number__container:not(:nth-last-of-type(2))::after {
+.round-step__container:not(:nth-last-of-type(2))::after {
   bottom: 0;
 }
 
-.round-number {
+.round-step {
   background-color: var(--mdc-theme-secondary__100);
   color: white;
   height: 60px;
@@ -432,6 +433,80 @@ input[type=file] {
   align-items: center;
   z-index: 2;
   position: relative;
+}
+
+.forum-discusion-card.mdc-card--large .round-step__container {
+  align-items: flex-start;
+}
+
+
+
+.forum-discusion-card.mdc-card--large .round-step {
+  background-color: var(--mdc-theme-progress__03);
+  margin: 0;
+  height: 36px;
+  width: 36px;
+}
+
+.mdc-card .mdc-layout-grid.round-step__grid {
+  padding: 24px;
+}
+
+.mdc-layout-grid.round-step__grid .mdc-layout-grid__inner {
+  grid-gap: 0;
+}
+
+.mdc-layout-grid.round-step__grid .group-title-wrapper {
+  border-bottom: 0;
+}
+
+.round-step__grid .devolucion-card__reply-wrapper .round-photo-wrapper,
+.forum-discusion-card__reply-wrapper .round-photo-wrapper {
+  height: 24px;
+  width: 24px;
+}
+
+.mdc-card .mdc-layout-grid:not(.round-step__grid) .mdc-layout-grid__inner {
+  grid-gap: 12px;
+}
+
+.round-step__grid .mdc-card--outlined {
+  margin-bottom: 36px;
+}
+
+.round-step__grid .round-step__container.round-step__container--top {
+  align-items: flex-start;
+  padding: 8px 0;
+} 
+
+.devolucion-card .round-step,
+.activity-devolucion__wrapper .round-step {
+  height: 34px;
+  min-width: 34px;
+  width: 34px;
+}
+
+.round-step__container.round-step__container--top::before {
+  content: none;
+}
+
+.round-step__container.round-step__container--top::after {
+  bottom: -8px;
+  height: 100%;
+}
+
+.round-step__grid .group-title-wrapper {
+  height: 36px;
+}
+
+.forum-discusion-card__reply-wrapper .group-title-wrapper {
+  height: 56px;
+}
+
+.round-step__grid .group-title-wrapper + p {
+  border-top: 1px solid rgba(33, 33, 33, 0.2);
+  padding: 12px;
+  margin-bottom: 24px;
 }
 
 .mdc-layout-grid__inner.mdc-layout-grid--no-gap {
@@ -473,4 +548,67 @@ input[type=file] {
 
 .mdc-dialog__content .embebed-resource__wrapper h4 {
   color: var(--mdc-theme-primary__200);
+}
+
+:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item.draggable.dragging {
+}
+
+.mdc-list-item .activity-component {
+  display: none;
+}
+
+.activity-creator {
+  padding: 24px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.activity-component.dragging {
+  cursor: grabbing;
+}
+
+.activity-component .activity-component__actions {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  align-items: center;
+}
+
+.activity-creator .activity-component:hover {
+  cursor: pointer;
+}
+
+.activity-creator .activity-component:not(.dragging):hover .activity-component__actions {
+  display: flex;
+}
+
+.activity-creator .activity-component {
+  /*width: 100%;*/
+  background-color: white;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-sizing: border-box;
+  min-width: 228px;
+  padding: 20px;
+  padding-right: 48px;
+  position: relative;
+  z-index: 4;
+}
+
+.activity-creator .activity-component:not(:first-child) {
+  margin-top: 12px;
+}
+
+.activity-creator .activity-component .mdc-radio-button__wrapper {
+  flex-direction: row;
+}
+
+.activity-devolucion__wrapper .devolucion__history .mdc-button {
+  margin-top: 20px;
+}
+
+*:focus {
+  -webkit-tap-highlight-color: transparent;
 }

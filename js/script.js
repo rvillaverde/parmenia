@@ -27,10 +27,37 @@ $(function() {
     setoggleCardSelection(card);
   });
 
-  $('.draggable').mousedown(onGrab);
+  activityDragAndDropInit();
+  $('.user-roles-wrapper.draggable').mousedown(onGrab);
   $('.collapse-link input').change(collapse);
   $('.mdc-top-app-bar__section#nav-menu-toggle input[type="checkbox"]').click(toggleNavMenu);
 });
+
+function activityDragAndDropInit() {
+  if (!$('.draggable').length)
+    return;
+
+  $('.draggable').draggable({
+    helper: function() {
+      return $(this).find('.activity-component').clone().addClass('dragging').appendTo('.activity-creator').show();
+    },
+    cursor: 'grabbing',
+    containment: "document"
+  });
+
+  $('.droppable').droppable({
+    accept: '.draggable',
+    drop: function(event, ui) {
+      let item = $(ui.draggable).find('.activity-component').clone();
+      item.find('.activity-component__actions .mdc-icon-button').click(function(e) {
+        $(this).closest('.activity-component').remove();
+      })
+      $(this).append(item);
+    }
+  });
+
+  $('.droppable').sortable({ cursor: "grabbing" });
+}
 
 function smoothScroll(e) {
   e.preventDefault();

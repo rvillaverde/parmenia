@@ -385,6 +385,12 @@
   margin-right: 12px;
 }
 
+.group-title-wrapper .group-caption {
+  display: flex;
+  align-items: center;
+  margin-left: 28px;
+}
+
 .group-actions, .group-item-actions {
   margin-left: auto;
 }
@@ -465,6 +471,27 @@
   margin-top: 24px;
 }
 
+@media (max-width: 640px) {
+  .tarea-card {
+    flex-direction: column;
+  }
+
+  .tarea-card > .mdc-card__primary,
+  .tarea-card > .mdc-card__secondary {
+    margin: 0;
+    width: 100%;
+    max-width: unset;
+  }
+
+  .tarea-card > .mdc-card__secondary {
+    margin-top: 24px;
+  }
+
+  .tarea-card > .mdc-card__secondary > .no-content-placeholder {
+    width: 100%;
+  }
+}
+
 .forum-discusion-card.mdc-card--large {
   margin: 0;
 }
@@ -510,32 +537,7 @@
   border-bottom: 0;
 }
 
-.forum-discusion-card.mdc-card--large .round-number__container {
-  align-items: flex-start;
-}
 
-.forum-discusion-card.mdc-card--large .round-number__container::before {
-  content: none;
-}
-
-.forum-discusion-card.mdc-card--large .round-number__container::after {
-  height: 100%;
-}
-
-.forum-discusion-card.mdc-card--large .round-number {
-  background-color: var(--mdc-theme-progress__03);
-  margin: 0;
-  height: 36px;
-  width: 36px;
-}
-
-.forum-discusion-card.mdc-card--large .mdc-layout-grid {
-  padding: 24px 0;
-}
-
-.mdc-card.forum-discusion-card.mdc-card--large .mdc-layout-grid .mdc-layout-grid__inner {
-  grid-gap: 0;
-}
 
 .forum-discusion-card.mdc-card--large .mdc-card--outlined {
   cursor: default;
@@ -543,11 +545,6 @@
 
 .forum-discusion-card.mdc-card--large .forum-discusion-card__reply-wrapper:not(:last-child) {
   padding-bottom: 24px;
-}
-
-.forum-discusion-card.mdc-card--large .forum-discusion-card__reply-wrapper .round-photo-wrapper {
-  height: 24px;
-  width: 24px;
 }
 
 .forum-discusion-card:not(.mdc-card--large) .mdc-card__secondary {
@@ -658,10 +655,6 @@
   width: 100%;
 }
 
-.mdc-card .mdc-layout-grid .mdc-layout-grid__inner {
-  grid-gap: 12px;
-}
-
 .project-presentation-card .mdc-card__primary,
 .project-presentation-card .mdc-card__media,
 .project-presentation-card .mdc-card__secondary {
@@ -701,4 +694,49 @@
   border-top-color: rgba(0,0,0,.12);
   border-top-style: solid;
   border-top-width: 1px;
+}
+
+.activity-devolucion__wrapper {
+  display: flex;
+}
+
+.activity-devolucion__wrapper > *:nth-child(1) {
+  flex-grow: 1;
+  flex-shrink: 0;
+  min-width: 56%;
+  padding-right: 24px;
+}
+
+.activity-devolucion__wrapper .subtitle-wrapper {
+  border-bottom: 0;
+  margin-bottom: 8px;
+  padding-bottom: 0;
+}
+
+.activity-devolucion__wrapper .subtitle-wrapper > *:first-child {
+  margin-left: 0;
+}
+
+.activity-devolucion__wrapper {
+  padding: 0 24px;
+  padding-bottom: 24px;
+}
+
+.activity-devolucion__wrapper .devolucion__history .round-step__grid {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+.activity-devolucion__wrapper .devolucion__history {
+  min-width: 228px;
+}
+
+.activity-devolucion__wrapper .activity-creator {
+  width: 100%;
+  min-height: 500px;
+  background-color: var(--mdc-theme-primary__050);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-right: 24px;
 }
