@@ -11,7 +11,7 @@
 }
 
 .mdc-multiselection-list > .mdc-list:not(:first-child) {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .mdc-multiselection-list .mdc-list-item > .mdc-list {

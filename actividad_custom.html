@@ -17,6 +17,10 @@
       integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
       crossorigin="anonymous"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
     <!-- OFFLINE MODE -->
 <!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
     <script src="offline/material-components-web.min.js"></script>
@@ -267,7 +271,7 @@
       </div>
     </nav>
 
-    <header class="mdc-header mdc-header__activity" style="background-color: var(--mdc-theme-custom__00);">
+    <header class="mdc-header mdc-header__actividad" style="background-color: var(--mdc-theme-custom__00);">
       <div class="mdc-header__row">
         <div class="mdc-header__cover">
           <img src="img/project-cover.png">
@@ -297,7 +301,7 @@
             </div>
             <div class="mdc-header__caption-group">
               <div class="mdc-header__caption">
-                <div class="activity-status__wrapper">
+                <div class="actividad-status__wrapper">
                   <i class="mdc-icon small">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -677,14 +681,12 @@
           </div>
 
           <div class="mdc-dialog__content">
-            <div class="activity-devolucion__wrapper">
-              <div class="activity__preview">
+            <div class="actividad-devolucion__wrapper">
+              <div class="actividad__preview">
                 <div class="subtitle-wrapper">
                   <h4 class="mdc-typography--headline4">Área de trabajo</h4>
                 </div>
-                <div class="activity-creator droppable">
-                  
-                </div>
+                <div class="actividad-composer droppable"></div>
               </div>
               <div class="devolucion__history">
                 <div class="subtitle-wrapper">
@@ -701,9 +703,12 @@
                         </svg>
                       </i>
                       <span class="mdc-typography--body1">Texto enriquecido</span>
-                      <div class="activity-component">
-                        <h4 class="mdc-typography--headline4">Texto enriquecido</h4>
-                        <div class="activity-component__actions">
+                      <div class="actividad-component">
+                        <div id="editor">
+                          <p>Texto enriquecido</p>
+                        </div>
+                        <!-- <h4 class="mdc-typography--headline4">Texto enriquecido</h4> -->
+                        <div class="actividad-component__actions">
                           <button class="mdc-icon-button mdc-icon-button--secondary">
                             <i class="mdc-icon small delete-icon"></i>
                           </button>
@@ -718,9 +723,9 @@
                         </svg>
                       </i>
                       <span class="mdc-typography--body1">Espacio</span>
-                      <div class="activity-component">
+                      <div class="actividad-component">
                         <h4 class="mdc-typography--headline4">Espacio</h4>
-                        <div class="activity-component__actions">
+                        <div class="actividad-component__actions">
                           <button class="mdc-icon-button mdc-icon-button--secondary">
                             <i class="mdc-icon small delete-icon"></i>
                           </button>
@@ -745,7 +750,7 @@
                         </svg>
                       </i>
                       <span class="mdc-typography--body1">Área de texto</span>
-                      <div class="activity-component">
+                      <div class="actividad-component">
                         <div class="mdc-text-field__wrapper">
                           <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
                             <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="nombre">
@@ -758,7 +763,7 @@
                             </div>
                           </label>
                         </div>
-                        <div class="activity-component__actions">
+                        <div class="actividad-component__actions">
                           <button class="mdc-icon-button mdc-icon-button--secondary">
                             <i class="mdc-icon small delete-icon"></i>
                           </button>
@@ -776,9 +781,9 @@
                         </svg>
                       </i>
                       <span class="mdc-typography--body1">Fecha</span>
-                      <div class="activity-component">
+                      <div class="actividad-component">
                         <h4 class="mdc-typography--headline4">Componente fecha</h4>
-                        <div class="activity-component__actions">
+                        <div class="actividad-component__actions">
                           <button class="mdc-icon-button mdc-icon-button--secondary">
                             <i class="mdc-icon small delete-icon"></i>
                           </button>
@@ -794,7 +799,7 @@
                         </svg>
                       </i>
                       <span class="mdc-typography--body1">Verdadero/falso</span>
-                      <div class="activity-component">
+                      <div class="actividad-component">
                         <div class="mdc-radio-button__wrapper">
                           <div class="mdc-form-field">
                             <div class="mdc-radio">
@@ -819,7 +824,7 @@
                             <label class="mdc-typography--body1" for="permiso">Falso</label>
                           </div>
                         </div>
-                        <div class="activity-component__actions">
+                        <div class="actividad-component__actions">
                           <button class="mdc-icon-button mdc-icon-button--secondary">
                             <i class="mdc-icon small delete-icon"></i>
                           </button>
@@ -839,9 +844,9 @@
                         </svg>
                       </i>
                       <span class="mdc-typography--body1">Lista de opciones</span>
-                      <div class="activity-component">
+                      <div class="actividad-component">
                         <h4 class="mdc-typography--headline4">Lista de opciones</h4>
-                        <div class="activity-component__actions">
+                        <div class="actividad-component__actions">
                           <button class="mdc-icon-button mdc-icon-button--secondary">
                             <i class="mdc-icon small delete-icon"></i>
                           </button>
@@ -1015,8 +1020,8 @@
           </div>
 
           <div class="mdc-dialog__content">
-            <div class="activity-devolucion__wrapper">
-              <div class="activity__preview">
+            <div class="actividad-devolucion__wrapper">
+              <div class="actividad__preview">
                 <div class="subtitle-wrapper">
                   <h4 class="mdc-typography--headline4">Tarea</h4>
                 </div>
@@ -1280,7 +1285,7 @@
             </div>
           </div>
 
-          <div class="mdc-card mdc-card--large resources-card toggle-target initially-hidden" data-toggle-view="list">
+          <div class="mdc-card mdc-card--large recursos-card toggle-target initially-hidden" data-toggle-view="list">
             <div class="group-content">
               <div class="group-item">
                 <i class="mdc-icon">
@@ -1394,7 +1399,7 @@
             </div>
           </div>
 
-          <div class="mdc-card mdc-card--large resources-card toggle-target" data-toggle-view="cards">
+          <div class="mdc-card mdc-card--large recursos-card toggle-target" data-toggle-view="cards">
             <div class="mdc-layout-grid">
               <div class="mdc-layout-grid__inner">
                 <a class="mdc-card mdc-card--outlined link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
@@ -1579,7 +1584,7 @@
             </div>
           </div>
 
-          <div class="mdc-card mdc-card--large resources-card">
+          <div class="mdc-card mdc-card--large recursos-card">
             <div class="collapsable-wrapper group">
               <div class="group-title-wrapper">
                 <h5 class="mdc-typography--headline5">Grupo 1</h5>
@@ -1821,7 +1826,7 @@
                       <span class="mdc-typography--subtitle1">Grupo 1</span>
                     </td>
                     <td class="mdc-data-table__cell">
-                      <div class="activity-status__wrapper">
+                      <div class="actividad-status__wrapper">
                         <i class="mdc-icon small">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1858,7 +1863,7 @@
                       <span class="mdc-typography--subtitle1">Grupo 2</span>
                     </td>
                     <td class="mdc-data-table__cell">
-                      <div class="activity-status__wrapper">
+                      <div class="actividad-status__wrapper">
                         <i class="mdc-icon small">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.5 8.31002V9.00002C16.4991 10.6173 15.9754 12.191 15.007 13.4864C14.0386 14.7818 12.6775 15.7294 11.1265 16.1879C9.57557 16.6465 7.91794 16.5914 6.40085 16.031C4.88376 15.4705 3.58849 14.4346 2.70822 13.0778C1.82795 11.721 1.40984 10.1161 1.51626 8.50226C1.62267 6.88844 2.24791 5.35227 3.29871 4.12283C4.34951 2.89339 5.76959 2.03656 7.34714 1.68013C8.92469 1.3237 10.5752 1.48677 12.0525 2.14502" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1894,7 +1899,7 @@
                       <span class="mdc-typography--subtitle1">Grupo 3</span>
                     </td>
                     <td class="mdc-data-table__cell">
-                      <div class="activity-status__wrapper">
+                      <div class="actividad-status__wrapper">
                         <i class="mdc-icon small">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1964,7 +1969,7 @@
                       </div>
                     </td>
                     <td class="mdc-data-table__cell">
-                      <div class="activity-status__wrapper">
+                      <div class="actividad-status__wrapper">
                         <i class="mdc-icon small">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1998,7 +2003,7 @@
                       </div>
                     </td>
                     <td class="mdc-data-table__cell">
-                      <div class="activity-status__wrapper">
+                      <div class="actividad-status__wrapper">
                         <i class="mdc-icon small">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.5 8.31002V9.00002C16.4991 10.6173 15.9754 12.191 15.007 13.4864C14.0386 14.7818 12.6775 15.7294 11.1265 16.1879C9.57557 16.6465 7.91794 16.5914 6.40085 16.031C4.88376 15.4705 3.58849 14.4346 2.70822 13.0778C1.82795 11.721 1.40984 10.1161 1.51626 8.50226C1.62267 6.88844 2.24791 5.35227 3.29871 4.12283C4.34951 2.89339 5.76959 2.03656 7.34714 1.68013C8.92469 1.3237 10.5752 1.48677 12.0525 2.14502" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2031,7 +2036,7 @@
                       </div>
                     </td>
                     <td class="mdc-data-table__cell">
-                      <div class="activity-status__wrapper">
+                      <div class="actividad-status__wrapper">
                         <i class="mdc-icon small">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2064,7 +2069,7 @@
                       </div>
                     </td>
                     <td class="mdc-data-table__cell">
-                      <div class="activity-status__wrapper">
+                      <div class="actividad-status__wrapper">
                         <i class="mdc-icon small">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

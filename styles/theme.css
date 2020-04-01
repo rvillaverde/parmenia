@@ -328,7 +328,7 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   box-shadow: inset 0px -50px 120px rgba(0, 0, 0, 0.3);
 }
 
-.mdc-header__project, .mdc-header__activity {
+.mdc-header__project, .mdc-header__actividad {
   height: var(--header__height-large);
 }
 
@@ -454,7 +454,7 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   width: 146px;
 }
 
-.mdc-header__activity .mdc-header__avatar.round-photo-wrapper {
+.mdc-header__actividad .mdc-header__avatar.round-photo-wrapper {
   align-self: flex-start;
   height: 108px;
   margin-left: 48px;
@@ -462,16 +462,16 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   width: 108px;
 }
 
-.mdc-header__activity .mdc-header__row {
+.mdc-header__actividad .mdc-header__row {
   height: 100%;
   padding: 20px 48px;
 }
 
-.mdc-header__activity .mdc-header__row .mdc-header__section {
+.mdc-header__actividad .mdc-header__row .mdc-header__section {
   height: 100%;
 }
 
-.mdc-header__activity .mdc-header__cover img {
+.mdc-header__actividad .mdc-header__cover img {
   height: auto;
   width: 220px;
 }

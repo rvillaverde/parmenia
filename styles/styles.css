@@ -435,13 +435,13 @@ input[type=file] {
   position: relative;
 }
 
-.forum-discusion-card.mdc-card--large .round-step__container {
+.foro-discusion-card.mdc-card--large .round-step__container {
   align-items: flex-start;
 }
 
 
 
-.forum-discusion-card.mdc-card--large .round-step {
+.foro-discusion-card.mdc-card--large .round-step {
   background-color: var(--mdc-theme-progress__03);
   margin: 0;
   height: 36px;
@@ -461,7 +461,7 @@ input[type=file] {
 }
 
 .round-step__grid .devolucion-card__reply-wrapper .round-photo-wrapper,
-.forum-discusion-card__reply-wrapper .round-photo-wrapper {
+.foro-discusion-card__reply-wrapper .round-photo-wrapper {
   height: 24px;
   width: 24px;
 }
@@ -480,7 +480,7 @@ input[type=file] {
 } 
 
 .devolucion-card .round-step,
-.activity-devolucion__wrapper .round-step {
+.actividad-devolucion__wrapper .round-step {
   height: 34px;
   min-width: 34px;
   width: 34px;
@@ -499,7 +499,7 @@ input[type=file] {
   height: 36px;
 }
 
-.forum-discusion-card__reply-wrapper .group-title-wrapper {
+.foro-discusion-card__reply-wrapper .group-title-wrapper {
   height: 56px;
 }
 
@@ -513,7 +513,7 @@ input[type=file] {
   grid-gap: 0;
 }
 
-.activity-status__wrapper {
+.actividad-status__wrapper {
   align-items: center;
   background-color: var(--mdc-theme-surface);
   border-radius: 8px;
@@ -522,19 +522,19 @@ input[type=file] {
   padding: 0 8px;
 }
 
-.mdc-data-table__cell > .activity-status__wrapper {
+.mdc-data-table__cell > .actividad-status__wrapper {
   background-color: transparent;
 }
 
-.activity-status__wrapper i {
+.actividad-status__wrapper i {
   margin-right: 8px;
 }
 
-.activity-status__wrapper span {
+.actividad-status__wrapper span {
   margin-left: 0;
 }
 
-.mdc-dialog__content .embebed-resource__wrapper {
+.mdc-dialog__content .embebed-recurso__wrapper {
   align-items: center;
   background-color: var(--mdc-theme-primary__900);
   border-radius: 8px;
@@ -546,28 +546,28 @@ input[type=file] {
   width: 880px;
 }
 
-.mdc-dialog__content .embebed-resource__wrapper h4 {
+.mdc-dialog__content .embebed-recurso__wrapper h4 {
   color: var(--mdc-theme-primary__200);
 }
 
 :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item.draggable.dragging {
 }
 
-.mdc-list-item .activity-component {
+.mdc-list-item .actividad-component {
   display: none;
 }
 
-.activity-creator {
+.actividad-composer {
   padding: 24px;
   position: relative;
   box-sizing: border-box;
 }
 
-.activity-component.dragging {
+.actividad-component.dragging {
   cursor: grabbing;
 }
 
-.activity-component .activity-component__actions {
+.actividad-component .actividad-component__actions {
   display: none;
   position: absolute;
   right: 0;
@@ -576,15 +576,15 @@ input[type=file] {
   align-items: center;
 }
 
-.activity-creator .activity-component:hover {
+.actividad-composer .actividad-component:hover {
   cursor: pointer;
 }
 
-.activity-creator .activity-component:not(.dragging):hover .activity-component__actions {
+.actividad-composer .actividad-component:not(.dragging):hover .actividad-component__actions {
   display: flex;
 }
 
-.activity-creator .activity-component {
+.actividad-composer .actividad-component {
   /*width: 100%;*/
   background-color: white;
   border: 1px dashed rgba(0, 0, 0, 0.12);
@@ -592,23 +592,32 @@ input[type=file] {
   box-sizing: border-box;
   min-width: 228px;
   padding: 20px;
-  padding-right: 48px;
+  /*padding-right: 48px;*/
   position: relative;
   z-index: 4;
 }
 
-.activity-creator .activity-component:not(:first-child) {
+.actividad-composer .actividad-component:not(:first-child) {
   margin-top: 12px;
 }
 
-.activity-creator .activity-component .mdc-radio-button__wrapper {
+.actividad-composer .actividad-component .mdc-radio-button__wrapper {
   flex-direction: row;
 }
 
-.activity-devolucion__wrapper .devolucion__history .mdc-button {
+.actividad-devolucion__wrapper .devolucion__history .mdc-button {
   margin-top: 20px;
 }
 
 *:focus {
   -webkit-tap-highlight-color: transparent;
+}
+
+.ql-snow .ql-editor h1,
+.ql-snow .ql-editor h2 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.ql-snow .ql-editor p {
+  font-family: 'Lato', sans-serif;
 }
