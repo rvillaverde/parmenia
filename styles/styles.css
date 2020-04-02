@@ -567,23 +567,19 @@ input[type=file] {
   cursor: grabbing;
 }
 
-.actividad-component .actividad-component__actions {
+.actividad-composer .actividad-component .actividad-component__actions {
   display: none;
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
   align-items: center;
-}
-
-.actividad-component.editable .actividad-component__actions {
-  /*position: relative;*/
   height: 100%;
   width: 100%;
   justify-content: center;
 }
 
-.actividad-component.editable .actividad-component__actions::before {
+.actividad-composer .actividad-component .actividad-component__actions::before {
   content: "";
   height: 100%;
   width: 100%;
@@ -595,12 +591,24 @@ input[type=file] {
   position: absolute;
 }
 
-.actividad-composer .actividad-component:hover {
+.actividad-composer .actividad-component.edit-mode:hover {
+  cursor: normal;
+}
+
+.actividad-composer .actividad-component.edit-mode {
+  border: 2px solid var(--mdc-theme-secondary__600);
+}
+
+.actividad-composer .actividad-component:not(.edit-mode):hover {
   cursor: pointer;
 }
 
-.actividad-composer .actividad-component:not(.dragging):hover .actividad-component__actions {
+.actividad-composer .actividad-component:not(.edit-mode):not(.dragging):hover .actividad-component__actions {
   display: flex;
+}
+
+.actividad-composer .actividad-component .mdc-text-field {
+  height: 40px;
 }
 
 .actividad-composer .actividad-component {
@@ -618,6 +626,18 @@ input[type=file] {
 
 .actividad-composer .actividad-component:not(:first-child) {
   margin-top: 12px;
+}
+
+.actividad-composer .actividad-component:not(.edit-mode) .ql-toolbar {
+  display: none;
+}
+
+.actividad-composer .actividad-component:not(.edit-mode) .ql-container {
+  border-width: 0;
+}
+
+.actividad-composer .actividad-component:not(.edit-mode) .ql-container .ql-editor {
+  padding: 0;
 }
 
 .actividad-composer .actividad-component .mdc-radio-button__wrapper {
@@ -651,4 +671,26 @@ input[type=file] {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   font-weight: 500;
+}
+
+.actividad-composer .actividad-component:not(.edit-mode) .mdc-inline-editable__wrapper .mdc-form-field .delete-button,
+.mdc-inline-editable__wrapper .mdc-form-field#new-option .delete-button {
+  display: none;
+}
+
+.mdc-inline-editable__wrapper .mdc-inline-editable {
+  border: 0;
+  flex-grow: 1;
+}
+
+.mdc-inline-editable__wrapper .mdc-form-field:hover .mdc-inline-editable {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mdc-inline-editable__wrapper .mdc-inline-editable:focus {
+  outline: none;
+}
+
+.mdc-inline-editable__wrapper .delete-button {
+  margin-left: auto;
 }

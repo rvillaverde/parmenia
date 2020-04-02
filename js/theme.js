@@ -207,6 +207,8 @@ class TreeCheckboxList {
 class ActividadComposer {
   constructor(wrapper) {
     this.wrapper = $(wrapper);
+    let self = this;
+
     var FontAttributor = Quill.import('attributors/class/font');
     FontAttributor.whitelist = [ 'poppins', 'lato' ];
     Quill.register(FontAttributor, true);
@@ -219,12 +221,23 @@ class ActividadComposer {
       containment: "document"
     });
 
+    $(document).mousedown(function(e) {
+      if (self.wrapper.find('.actividad-component.edit-mode').length > 0 &&
+          $(e.target).closest('.actividad-component.edit-mode').length == 0) {
+        self.wrapper.find('.actividad-component.edit-mode').removeClass('edit-mode');
+      }
+    });
+
     this.wrapper.find('.droppable').droppable({
       accept: '.draggable',
       drop: function(event, ui) {
         let item = $(ui.draggable).find('.actividad-component').clone();
-        item.find('.actividad-component__actions .delete-button').click(function(e) {
+        item.find('.actividad-component__actions > .delete-button').click(function(e) {
           $(this).closest('.actividad-component').remove();
+        });
+
+        item.find('.actividad-component__actions > .edit-button').click(function(e) {
+          $(this).closest('.actividad-component').toggleClass('edit-mode');
         });
 
         $(this).append(item).ready(function() {
@@ -246,12 +259,36 @@ class ActividadComposer {
               modules: { toolbar: toolbar },
               theme: 'snow'
             });
+          } else if (item.find('.mdc-checkbox__wrapper').length > 0) {
+            function handleDeleteOption(e) {
+              deleteOption($(e.currentTarget));
+              e.stopPropagation();
+            }
+
+            function deleteOption(option) {
+              option.closest('.mdc-form-field').remove();
+            }
+
+            item.find('.mdc-form-field:not(#new-option) .delete-button').click(handleDeleteOption);
+
+            let newOptionItem = item.find('#new-option');
+            newOptionItem.click(function(e) {
+              let newOption = newOptionItem.clone();
+              newOption.attr('id', '');
+              newOption.addClass('mdc-inline-editable__wrapper');
+              newOption.find('input.mdc-inline-editable').val(`Opción ${ item.find('.mdc-form-field:not(#new-option)').length + 1 }`);
+              newOption.find('.delete-button').click(handleDeleteOption);
+              newOption.insertBefore(newOptionItem);
+            });
           }
         });
       }
     });
 
-  //$('.droppable').sortable({ cursor: "grabbing" });
+    $('.droppable').sortable({
+      cancel: ".edit-mode",
+      cursor: "grabbing"
+    });
   }
 }
 
