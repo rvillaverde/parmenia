@@ -64,6 +64,10 @@
   background-image: url("../icons/delete-icon-small.svg");
 }
 
+.plus-icon-small {
+  background-image: url("../icons/plus-icon-small.svg");
+}
+
 .search-icon {
   background-image: url("../icons/search-icon.svg");
 }

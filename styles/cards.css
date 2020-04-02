@@ -766,6 +766,10 @@
   margin-right: 24px;
 }
 
+.actividad-devolucion__wrapper .actividad-composer.highlight {
+  background-color: var(--mdc-theme-primary__100);
+}
+
 @media (max-width: 640px) {
   .actividad-devolucion__wrapper .actividad-composer {
     margin-right: 0;

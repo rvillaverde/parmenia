@@ -236,6 +236,7 @@ class ActividadComposer {
 
     this.wrapper.find('.droppable').droppable({
       accept: '.draggable',
+      activeClass: 'highlight',
       drop: function(event, ui) {
         let item = $(ui.draggable).find('.actividad-component').clone();
         item.find('.actividad-component__actions > .delete-button').click(function(e) {
@@ -296,6 +297,7 @@ class ActividadComposer {
               newOption.addClass('mdc-inline-editable__wrapper');
               newOption.find('input.mdc-inline-editable').val(`Opción ${ item.find('.mdc-form-field:not(#new-option)').length + 1 }`);
               newOption.find('.delete-button').click(handleDeleteOption);
+              newOption.find('.plus-icon-small').remove();
               newOption.insertBefore(newOptionItem);
             });
           }

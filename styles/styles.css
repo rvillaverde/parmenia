@@ -52,6 +52,10 @@ body[data-role="alumno"] *[data-role]:not([data-role*="alumno"])  {
   display: none;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   height: 100vh;
   width: 100%;
@@ -557,6 +561,11 @@ input[type=file] {
   display: none;
 }
 
+.actividad-composer__wrapper {
+  padding: 40px;
+  padding-top: 0;
+}
+
 .actividad-composer {
   padding: 24px;
   position: relative;
@@ -619,16 +628,19 @@ input[type=file] {
 }
 
 .actividad-composer .actividad-component {
-  /*width: 100%;*/
   background-color: white;
   border: 1px dashed rgba(0, 0, 0, 0.12);
   border-radius: 8px;
   box-sizing: border-box;
   min-width: 228px;
   padding: 20px;
-  /*padding-right: 48px;*/
   position: relative;
   z-index: 4;
+}
+
+.actividad-composer .actividad-component.space {
+  background-color: var(--mdc-theme-gray__050);
+  padding: 12px 20px;
 }
 
 @media (max-width: 640px) {
@@ -661,8 +673,12 @@ input[type=file] {
   margin-top: 20px;
 }
 
-*:focus {
-  -webkit-tap-highlight-color: transparent;
+.actividad-composer .actividad-component .plus-icon-small {
+  padding: 11px;
+}
+
+.actividad-composer .actividad-component .plus-icon-small + input {
+  margin-left: 0;
 }
 
 .ql-snow .ql-editor h1,
@@ -687,7 +703,9 @@ input[type=file] {
 }
 
 .actividad-composer .actividad-component:not(.edit-mode) .mdc-inline-editable__wrapper .mdc-form-field .delete-button,
-.mdc-inline-editable__wrapper .mdc-form-field#new-option .delete-button {
+.mdc-inline-editable__wrapper .mdc-form-field:not(#new-option) .add-button,
+.mdc-inline-editable__wrapper .mdc-form-field#new-option .delete-button,
+.mdc-inline-editable__wrapper .mdc-form-field#new-option .mdc-checkbox {
   display: none;
 }
 
