@@ -61,7 +61,7 @@ body {
   background-color: var(--mdc-theme-gray__025);
   box-sizing: border-box;
   margin: 0;
-  margin-top: var(--app-nav__height--desktop);
+  padding-top: var(--app-nav__height--desktop);
   min-height: calc(100vh - var(--app-nav__height--desktop));
   padding-bottom: var(--footer__height--desktop);
   position: relative;
@@ -69,8 +69,8 @@ body {
 
 @media (max-width: 640px) {
   body {
-    margin-top: var(--app-nav__height--mobile);
     min-height: calc(100vh - var(--app-nav__height--mobile));
+    padding-top: var(--app-nav__height--mobile);
     padding-bottom: var(--footer__height--mobile);
   }
 }
@@ -576,6 +576,25 @@ input[type=file] {
   align-items: center;
 }
 
+.actividad-component.editable .actividad-component__actions {
+  /*position: relative;*/
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.actividad-component.editable .actividad-component__actions::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.75;
+  background-color: var(--mdc-theme-primary);
+  border-radius: 8px;
+  position: absolute;
+}
+
 .actividad-composer .actividad-component:hover {
   cursor: pointer;
 }
@@ -618,6 +637,18 @@ input[type=file] {
   font-family: 'Poppins', sans-serif;
 }
 
+.ql-snow .ql-editor h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.ql-snow .ql-editor h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
 .ql-snow .ql-editor p {
   font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }

@@ -52,8 +52,16 @@
   background-image: url("../icons/dropdown-icon.svg");
 }
 
-.delete-icon {
-  background-image: url("../icons/delete-icon.svg");
+.edit-icon-small-white {
+  background-image: url("../icons/edit-icon-small-white.svg");
+}
+
+.delete-icon-small-white {
+  background-image: url("../icons/delete-icon-small-white.svg");
+}
+
+.delete-icon-small {
+  background-image: url("../icons/delete-icon-small.svg");
 }
 
 .search-icon {

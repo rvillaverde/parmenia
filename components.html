@@ -18,6 +18,10 @@
     <script src="offline/material-components-web.js"></script> -->
     <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
 
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.css">
+    <script type="text/javascript" src="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.js"></script>
+
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/theme.css">
@@ -362,6 +366,19 @@
             </ul>
           </div>
         </div>
+      </div>
+
+      <div class="date-picker__wrapper">
+        <span for="date-picker-01" class="mdc-typography--headline6">Vencimiento</span>
+        <button class="mdc-button date-picker--button" id="date-piker-01">
+          <span class="mdc-button__label mdc-typography--body1">Seleccionar fecha</span>
+          <i class="mdc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9L12 15L18 9" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </i>
+        </button>
+        <span class="picker-output"></span>
       </div>
 
       <div class="mdc-multiselection-list">

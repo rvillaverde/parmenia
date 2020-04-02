@@ -27,63 +27,10 @@ $(function() {
     setoggleCardSelection(card);
   });
 
-  actividadDragAndDropInit();
   $('.user-roles-wrapper.draggable').mousedown(onGrab);
   $('.collapse-link input').change(collapse);
   $('.mdc-top-app-bar__section#nav-menu-toggle input[type="checkbox"]').click(toggleNavMenu);
 });
-
-function actividadDragAndDropInit() {
-  var FontAttributor = Quill.import('attributors/class/font');
-  FontAttributor.whitelist = [ 'poppins', 'lato' ];
-  Quill.register(FontAttributor, true);
-
-  if (!$('.draggable').length)
-    return;
-
-  $('.draggable').draggable({
-    helper: function() {
-      return $(this).find('.actividad-component').clone().addClass('dragging').appendTo('.actividad-composer').show();
-    },
-    cursor: 'grabbing',
-    containment: "document"
-  });
-
-  $('.droppable').droppable({
-    accept: '.draggable',
-    drop: function(event, ui) {
-      let item = $(ui.draggable).find('.actividad-component').clone();
-      item.find('.actividad-component__actions .mdc-icon-button').click(function(e) {
-        $(this).closest('.actividad-component').remove();
-      });
-
-      $(this).append(item).ready(function() {
-        if (item.find('#editor').length) {
-
-          let toolbar = [
-            ['bold', 'italic', 'underline', 'strike'],
-            ['blockquote'],
-            [{ 'header': [1, 2, false] }],
-            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-            [{ 'script': 'sub'}, { 'script': 'super' }],
-            [{ 'indent': '-1'}, { 'indent': '+1' }],
-            [{ 'direction': 'rtl' }],
-            /*[{ 'size': ['small', false, 'large', 'huge'] }],*/
-            [{ 'color': [] }/*, { 'background': [] }*/],
-            [{ 'align': [] }],
-            ['clean'] 
-          ];
-          var editor = new Quill(item.find('#editor')[0], {
-            modules: { toolbar: toolbar },
-            theme: 'snow'
-          });
-        }
-      });
-    }
-  });
-
-  //$('.droppable').sortable({ cursor: "grabbing" });
-}
 
 function smoothScroll(e) {
   e.preventDefault();

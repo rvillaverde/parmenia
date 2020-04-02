@@ -254,3 +254,29 @@
   border-bottom-right-radius: 4px;
   margin-left: 0;
 }
+
+.date-picker__wrapper {
+  position: relative;
+}
+
+.mdc-button:not(:disabled).date-picker--button + .picker-output {
+  display: none;
+}
+
+.mdc-button:not(:disabled).date-picker--button .mdc-button__label {
+  border-bottom: 1px solid rgba(33, 33, 33, 0.2);
+  text-transform: none;
+}
+
+.mdc-button:not(:disabled).date-picker--button .mdc-button__label + .mdc-icon {
+  margin-left: 12px;
+}
+
+.mp-picker {
+  font-family: 'Poppins', sans-serif;
+}
+
+.mp-picker[data-orientation="portrait"] {
+  height: 332px;
+  width: 240px;
+}

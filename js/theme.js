@@ -205,11 +205,13 @@ class TreeCheckboxList {
 }
 
 class ActividadComposer {
-  constructor() {
-    if (!$('.actividad-composer__wrapper .draggable').length)
-      return;
+  constructor(wrapper) {
+    this.wrapper = $(wrapper);
+    var FontAttributor = Quill.import('attributors/class/font');
+    FontAttributor.whitelist = [ 'poppins', 'lato' ];
+    Quill.register(FontAttributor, true);
 
-    $('.draggable').draggable({
+    this.wrapper.find('.draggable').draggable({
       helper: function() {
         return $(this).find('.actividad-component').clone().addClass('dragging').appendTo('.actividad-composer').show();
       },
@@ -217,27 +219,26 @@ class ActividadComposer {
       containment: "document"
     });
 
-    $('.droppable').droppable({
+    this.wrapper.find('.droppable').droppable({
       accept: '.draggable',
       drop: function(event, ui) {
         let item = $(ui.draggable).find('.actividad-component').clone();
-        item.find('.actividad-component__actions .mdc-icon-button').click(function(e) {
+        item.find('.actividad-component__actions .delete-button').click(function(e) {
           $(this).closest('.actividad-component').remove();
         });
 
         $(this).append(item).ready(function() {
-          if (item.find('#editor').length) {
+          if (item.find('#editor').length > 0) {
             let toolbar = [
               ['bold', 'italic', 'underline', 'strike'],
-              ['blockquote', 'code-block'],
-              [{ 'header': 1 }, { 'header': 2 }],
+              ['blockquote'],
+              [{ 'header': [1, 2, false] }],
               [{ 'list': 'ordered'}, { 'list': 'bullet' }],
               [{ 'script': 'sub'}, { 'script': 'super' }],
               [{ 'indent': '-1'}, { 'indent': '+1' }],
               [{ 'direction': 'rtl' }],
-              [{ 'size': ['small', false, 'large', 'huge'] }],
-              [{ 'header': [1, 2, false] }],
-              [{ 'color': [] }, { 'background': [] }],
+              /*[{ 'size': ['small', false, 'large', 'huge'] }],*/
+              [{ 'color': [] }/*, { 'background': [] }*/],
               [{ 'align': [] }],
               ['clean'] 
             ];
@@ -250,7 +251,45 @@ class ActividadComposer {
       }
     });
 
-    //$('.droppable').sortable({ cursor: "grabbing" });
+  //$('.droppable').sortable({ cursor: "grabbing" });
+  }
+}
+
+class DatePicker {
+  constructor(datePicker) {
+    this.datePicker = datePicker;
+    self = this;
+
+    let materialPicker = new MaterialDatepicker('.date-picker--button', {
+      color: '#6274E5',
+      lang: 'es',
+      orientation: 'portrait',
+      outputElement: '.picker-output',
+      outputFormat: 'DD/MM/YYYY',
+      zIndex: 200,
+      onNewDate: function(date) {
+        self.updateButtonLabel(date);
+      }
+    });
+  }
+
+  updateButtonLabel(date) {
+    $(this.datePicker).find('.mdc-button__label').text(this.formatDate(date));
+
+  }
+
+  formatDate(date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) 
+      month = '0' + month;
+    if (day.length < 2) 
+      day = '0' + day;
+
+    return [month, day, year].join('/');
   }
 }
 
@@ -336,4 +375,14 @@ for (var i = 0, select; select = selects[i]; i++) {
 var selects = $('.mdc-select.mdc-select--checkbox');
 for (var i = 0, select; select = selects[i]; i++) {
   new CheckBoxMenuSelect(select);
+}
+
+var datePickers = $('.date-picker--button');
+for (var i = 0, datePicker; datePicker = datePickers[i]; i++) {
+  new DatePicker(datePicker);
+}
+
+var actividadComposers = $('.actividad-composer__wrapper');
+for (var i = 0, actividadComposer; actividadComposer = actividadComposers[i]; i++) {
+  new ActividadComposer(actividadComposer);
 }
