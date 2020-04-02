@@ -66,7 +66,7 @@
 }
 
 .mdc-dialog .mdc-dialog__title-wrapper .mdc-dialog__title-caption {
-  margin-top: 32px;
+  margin-top: 18px;
 }
 
 .mdc-dialog__surface > .mdc-dialog__cover + .mdc-dialog__title {
@@ -125,15 +125,25 @@
   flex-direction: column;
 }
 
+.mdc-dialog__actions {
+  border-top: 1px solid var(--mdc-theme-gray__050); 
+  padding: 24px;
+}
+
 @media (min-width: 640px) {
   .mdc-dialog__form {
     min-width: 640px;
   }
 }
 
-.mdc-dialog__actions {
-  border-top: 1px solid var(--mdc-theme-gray__050); 
-  padding: 24px;
+@media (max-width: 640px) {
+  .mdc-dialog__actions {
+    padding: 12px;
+  }
+
+  .mdc-dialog .mdc-dialog__title-wrapper {
+    padding: 12px;
+  }
 }
 
 .mdc-dialog__content .mdc-data-table,

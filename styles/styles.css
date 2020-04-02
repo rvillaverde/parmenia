@@ -563,6 +563,12 @@ input[type=file] {
   box-sizing: border-box;
 }
 
+@media (max-width: 640px) {
+  .actividad-composer {
+    padding: 12px;
+  }
+}
+
 .actividad-component.dragging {
   cursor: grabbing;
 }
@@ -603,7 +609,8 @@ input[type=file] {
   cursor: pointer;
 }
 
-.actividad-composer .actividad-component:not(.edit-mode):not(.dragging):hover .actividad-component__actions {
+.actividad-composer .actividad-component:not(.edit-mode):not(.dragging):hover .actividad-component__actions,
+.actividad-composer .actividad-component:not(.edit-mode):not(.dragging) .actividad-component__actions.visible {
   display: flex;
 }
 
@@ -622,6 +629,12 @@ input[type=file] {
   /*padding-right: 48px;*/
   position: relative;
   z-index: 4;
+}
+
+@media (max-width: 640px) {
+  .actividad-composer .actividad-component {
+    padding: 12px;
+  }
 }
 
 .actividad-composer .actividad-component:not(:first-child) {
@@ -683,12 +696,16 @@ input[type=file] {
   flex-grow: 1;
 }
 
-.mdc-inline-editable__wrapper .mdc-form-field:hover .mdc-inline-editable {
+.mdc-inline-editable__wrapper .mdc-form-field:hover .mdc-inline-editable:not(:disabled) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .mdc-inline-editable__wrapper .mdc-inline-editable:focus {
   outline: none;
+}
+
+.mdc-inline-editable__wrapper .mdc-inline-editable:disabled {
+  background-color: transparent;
 }
 
 .mdc-inline-editable__wrapper .delete-button {

@@ -222,9 +222,15 @@ class ActividadComposer {
     });
 
     $(document).mousedown(function(e) {
-      if (self.wrapper.find('.actividad-component.edit-mode').length > 0 &&
-          $(e.target).closest('.actividad-component.edit-mode').length == 0) {
-        self.wrapper.find('.actividad-component.edit-mode').removeClass('edit-mode');
+      if ($(e.target).closest('.actividad-component.edit-mode').length == 0) {
+        if (self.wrapper.find('.actividad-component.edit-mode').length > 0) {
+          self.wrapper.find('.actividad-component.edit-mode').removeClass('edit-mode');
+          self.wrapper.find('.droppable').sortable("enable");
+        }
+        if ($(e.target).closest('.actividad-component').length == 0) {
+          let activeItem = $('.actividad-composer .actividad-component:has(.actividad-component__actions.visible)');
+          activeItem.find('.actividad-component__actions').removeClass('visible');
+        }
       }
     });
 
@@ -237,10 +243,18 @@ class ActividadComposer {
         });
 
         item.find('.actividad-component__actions > .edit-button').click(function(e) {
+          self.wrapper.find('.droppable').sortable("disable");
           $(this).closest('.actividad-component').toggleClass('edit-mode');
         });
 
         $(this).append(item).ready(function() {
+          item.on('touchstart', function(e) {
+            let activeItem = item.closest('.actividad-composer').find('.actividad-component:has(.actividad-component__actions.visible)');
+            activeItem.find('.actividad-component__actions').removeClass('visible');
+            if (activeItem != item)
+              item.find('.actividad-component__actions').toggleClass('visible');
+          });
+
           if (item.find('#editor').length > 0) {
             let toolbar = [
               ['bold', 'italic', 'underline', 'strike'],
@@ -273,8 +287,12 @@ class ActividadComposer {
 
             let newOptionItem = item.find('#new-option');
             newOptionItem.click(function(e) {
+              if (newOptionItem.closest('.edit-mode').length == 0)
+                return;
+
               let newOption = newOptionItem.clone();
               newOption.attr('id', '');
+              newOption.find('input.mdc-inline-editable').prop('disabled', false);
               newOption.addClass('mdc-inline-editable__wrapper');
               newOption.find('input.mdc-inline-editable').val(`Opción ${ item.find('.mdc-form-field:not(#new-option)').length + 1 }`);
               newOption.find('.delete-button').click(handleDeleteOption);
@@ -285,8 +303,9 @@ class ActividadComposer {
       }
     });
 
-    $('.droppable').sortable({
-      cancel: ".edit-mode",
+    this.wrapper.find('.droppable').sortable({
+      //cancel: ".edit-mode",
+      items: '.actividad-component:not(.edit-mode)',
       cursor: "grabbing"
     });
   }

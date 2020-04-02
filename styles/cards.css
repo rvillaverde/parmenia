@@ -702,6 +702,12 @@
   display: flex;
 }
 
+@media (max-width: 640px) {
+  .actividad-devolucion__wrapper {
+    flex-direction: column;
+  }
+}
+
 .actividad-devolucion__wrapper > *:nth-child(1) {
   box-sizing: border-box;
   flex-grow: 1;
@@ -709,6 +715,14 @@
   min-width: 56%;
   max-width: calc(100% - 228px);
   padding-right: 24px;
+}
+
+@media (max-width: 640px) {
+  .actividad-devolucion__wrapper > *:nth-child(1) {
+    max-width: 100%;
+    width: 100;
+    padding: 0;
+  }
 }
 
 .actividad-devolucion__wrapper .subtitle-wrapper {
@@ -724,6 +738,13 @@
 .actividad-devolucion__wrapper {
   padding: 0 24px;
   padding-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .actividad-devolucion__wrapper {
+    padding: 0 12px;
+    padding-bottom: 12px;
+  }
 }
 
 .actividad-devolucion__wrapper .devolucion__history .round-step__grid {
@@ -743,4 +764,11 @@
   box-sizing: border-box;
   border-radius: 8px;
   margin-right: 24px;
+}
+
+@media (max-width: 640px) {
+  .actividad-devolucion__wrapper .actividad-composer {
+    margin-right: 0;
+    min-height: 56px
+  }
 }
