@@ -113,6 +113,14 @@ body.nav-menu-open {
   margin: 24px 0;
 }
 
+.headline-wrapper .mdc-button:first-child + .mdc-button {
+  margin-left: 0;
+}
+
+.headline-wrapper .mdc-button + h4 {
+  margin-left: 12px;
+}
+
 .headline-wrapper--text {
   align-items: flex-start;
 }

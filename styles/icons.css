@@ -127,3 +127,11 @@
 .nav-chevron-icon {
   background-image: url("../icons/nav-chevron-icon.svg");
 }
+
+.chevron-left-icon {
+  background-image: url("../icons/chevron-left-icon.svg");
+}
+
+.chevron-right-icon {
+  background-image: url("../icons/chevron-right-icon.svg");
+}
