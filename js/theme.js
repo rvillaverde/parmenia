@@ -371,6 +371,42 @@ class InlineAppend {
   }
 }
 
+class MDCTooltip {
+  constructor(tooltip) {
+    this.tooltip = $(tooltip);
+    let self = this;
+
+    $(tooltip).mouseenter(function(e) {
+        self.handleMouseEnter();
+      $(window).scroll(function() {
+        self.handleScroll();
+      });
+    });
+    $(tooltip).mouseleave(function(e) {
+      self.handleMouseLeave();
+    });
+  }
+
+  handleMouseEnter() {
+    let text = this.tooltip.attr('data-mdc-tooltip');
+    let mdcTooltip = $(`<div class='mdc-typography--caption tooltip'>${ text }</div>`);
+    let coords = this.tooltip[0].getBoundingClientRect();
+    this.tooltip.append(mdcTooltip);
+    let left = coords.x - (mdcTooltip.outerWidth() - coords.width)/2;
+    let top = coords.bottom + 8;
+    mdcTooltip.css({top: top,left: left}).show();
+    mdcTooltip.addClass('visible');
+  }
+
+  handleMouseLeave() {
+    this.tooltip.find('.tooltip').remove();
+  }
+
+  handleScroll() {
+    this.tooltip.find('.tooltip').remove();
+  }
+}
+
 function openMenu(menu) {
   menu.open = true;
 }
@@ -479,4 +515,9 @@ for (var i = 0, eyeToggleButton; eyeToggleButton = eyeToggleButtons[i]; i++) {
 var inlineAppendButtons = $('.inline-append__button');
 for (var i = 0, inlineAppendButton; inlineAppendButton = inlineAppendButtons[i]; i++) {
   new InlineAppend($(inlineAppendButton));
+}
+
+var tooltips = $('.mdc-tooltip');
+for (var i = 0, tooltip; tooltip = tooltips[i]; i++) {
+  new MDCTooltip(tooltip);
 }

@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/tables.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
   </head>
 
   <body class="container mdc-typography">
@@ -387,15 +388,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -476,16 +470,11 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
-                      </button>
+                      <div class="mdc-tooltip mdc-tooltip--bottom" data-mdc-tooltip="Quitar de la mochila">
+                        <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Quitar de la mochila" onclick="addToBag(this);">
+                          <i class="mdc-icon mochila-icon-secondary"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -565,15 +554,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -654,15 +636,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -744,15 +719,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -827,15 +795,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -910,15 +871,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -999,15 +953,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1038,15 +985,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1077,15 +1017,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1174,15 +1107,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1220,15 +1146,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1265,15 +1184,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1309,15 +1221,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1404,15 +1309,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1528,15 +1426,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1604,15 +1495,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1679,15 +1563,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
                       </button>
                     </div>
                   </div>
@@ -1772,15 +1649,8 @@
                     </div>
 
                     <div class="mdc-card__action-icons">
-                      <button class="mdc-button mdc-icon-button" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 6H5H21" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M10 11V17" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M14 11V17" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-tooltip" aria-pressed="false" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon delete-icon-secondary"></i>
                       </button>
                     </div>
                   </div>

@@ -32,13 +32,16 @@
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/tables.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
   </head>
 
   <body class="container mdc-typography">
     <div class="user-roles-wrapper">
-      <button class="mdc-icon-button mdc-icon-button--secondary" title="Cerrar">
-        <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
-      </button>
+      <div class="mdc-tooltip mdc-tooltip--bottom" data-mdc-tooltip="Cerrar">
+        <button class="mdc-icon-button mdc-icon-button--secondary">
+          <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+        </button>
+      </div>
       <h4 class="mdc-typography--headline4">Ver como:</h4>
       <div class="mdc-radio-button__wrapper">
         <div class="mdc-form-field">
@@ -1840,7 +1843,7 @@
                     <span class="mdc-button__label">agregar recurso</span>
                   </button>
 
-                  <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+                  <button class="mdc-button mdc-icon-button mdc-icon-button--outlined mdc-tooltip" aria-pressed="false"  data-mdc-tooltip="Eliminar">
                     <i class="mdc-icon small">
                       <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.62695 4.5H4.12695H16.127" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

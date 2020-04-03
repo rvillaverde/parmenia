@@ -597,6 +597,7 @@ input[type=file] {
 }
 
 .actividad-composer .actividad-component .actividad-component__actions {
+  box-sizing: border-box;
   display: none;
   position: absolute;
   right: 0;
@@ -605,7 +606,14 @@ input[type=file] {
   align-items: center;
   height: 100%;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.actividad-composer .actividad-component .actividad-component__actions span {
+  margin-right: auto;
+  color: white;
+  position: relative;
 }
 
 .actividad-composer .actividad-component .actividad-component__actions::before {

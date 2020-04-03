@@ -1,0 +1,24 @@
+.tooltip {
+  background-color: var(--mdc-theme-gray__600);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--mdc-theme-surface);
+  margin: 0;
+  opacity: 0;
+  padding: 8px;
+  position: fixed;
+  text-transform: none;
+  transform-origin: top center;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transition-delay: .3s;
+  z-index: 2000;
+}
+
+.tooltip.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mdc-tooltip {
+  position: relative;
+}

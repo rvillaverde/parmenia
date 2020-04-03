@@ -68,6 +68,10 @@
   background-image: url("../icons/delete-icon-small.svg");
 }
 
+.delete-icon-secondary {
+  background-image: url("../icons/delete-icon-secondary.svg");
+}
+
 .eye-on-icon {
   background-image: url("../icons/eye-on-icon.svg");
 }
@@ -134,4 +138,8 @@
 
 .chevron-right-icon {
   background-image: url("../icons/chevron-right-icon.svg");
+}
+
+.mochila-icon-secondary {
+  background-image: url("../icons/mochila-icon-secondary.svg");
 }
