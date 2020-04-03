@@ -16,6 +16,10 @@
   justify-content: space-between;
 }
 
+.admin-form__subsection.center-align {
+  justify-content: center;
+}
+
 .admin-form__subsection-inner {
   display: flex;
   flex-direction: column;
@@ -146,6 +150,9 @@
 .admin-form__photo-placeholder {
   align-items: center;
   background-color: var(--mdc-theme-gray__050);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 8px;
   box-sizing: border-box;
   display: flex;

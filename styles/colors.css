@@ -43,5 +43,7 @@
   --mdc-theme-progress__02: #67C98E;
   --mdc-theme-progress__03: var(--mdc-theme-secondary__300);
 
+  --mdc-theme-error: #EC485E;
+
   --mdc-theme-typography: 'Poppins';
 }

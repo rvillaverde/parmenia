@@ -27,7 +27,7 @@ $(function() {
     setoggleCardSelection(card);
   });
 
-  $('.user-roles-wrapper.draggable').mousedown(onGrab);
+  $('.user-roles-wrapper').mousedown(onGrab);
   $('.collapse-link input').change(collapse);
   $('.mdc-top-app-bar__section#nav-menu-toggle input[type="checkbox"]').click(toggleNavMenu);
 });
@@ -45,6 +45,7 @@ function smoothScroll(e) {
     'scrollTop': $target.offset().top-appBar.height() - 12
   }, 500, 'swing', function () {
     $(window).scroll("scroll", onScroll);
+    onScroll();
     //window.location.hash = target;
   });
 }
@@ -96,7 +97,7 @@ function fixed() {
   const scrollTop = $(this).scrollTop();
   if (header.height() > scrollTop) {
     drawer.removeClass('fixed');
-    drawer.css('top', `${ header.height() }px`);
+    drawer.css('top', `${ header.height() + appBar.height() }px`);
   } else {
     drawer.addClass('fixed');
     drawer.css('top', `${ appBar.height() }px`);
@@ -182,4 +183,47 @@ function onGrab(e) {
   dragTarget.addClass('dragging');
   $(document).on('mousemove', onDrag);
   $(document).on('mouseup', onLetGo);
+}
+
+function newDrawerSectionHandler(element) {
+  function updateSectionName(e) {
+    let listItem = $(e.currentTarget).closest('.mdc-list-item');
+
+    let oldValue = listItem.attr('data-section');
+    let oldId = listItem.attr('data-section').split('-').pop();
+
+    let newName = listItem.find('.mdc-inline-editable').val();
+    let newId = `${ newName.toLowerCase().split(' ').join('-') }-${ oldId }`;
+
+    listItem.find('a .mdc-list-item__text').text(newName);
+    listItem.attr('data-section', newId);
+    listItem.find('a').attr('href', `#${ newId }`);
+    $(`#${ oldValue }`).find('.headline-wrapper :header').text(newName);
+    $(`#${ oldValue }`).attr('id', newId);
+  }
+
+  function toggleEditMode(e) {
+    let listItem = $(e.currentTarget).closest('.mdc-list-item');
+    listItem.find('.mdc-inline-editable__toggle').toggleClass('mdc-button--active');
+    listItem.find('a, .mdc-inline-editable').toggle();
+    updateSectionName(e);
+  }
+
+  let id = `nueva-seccion-${ $('.mdc-drawer .mdc-drawer__content .mdc-list-item').length + 1 }`;
+  element.find('.mdc-list-item').attr('data-section', id);
+  element.find('.mdc-list-item a').attr('href', `#${ id }`);
+  element.find('.mdc-list-item a').on('click', smoothScroll);
+  element.find('section').attr('id', id);
+  element.find('.mdc-button--eye-toggle').click(function(e) {
+    $(this).find('.mdc-icon').toggle();
+    $(this).closest('.mdc-list-item').toggleClass('disabled-section');
+  });
+  element.find('.mdc-inline-editable').hide();
+  element.find('.mdc-inline-editable__toggle').click(toggleEditMode);
+  element.find('.mdc-inline-editable').keypress(function(e) {
+    let keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode == '13'){
+      toggleEditMode(e);
+    }
+  });
 }

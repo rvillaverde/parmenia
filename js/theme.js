@@ -297,7 +297,7 @@ class ActividadComposer {
               newOption.addClass('mdc-inline-editable__wrapper');
               newOption.find('input.mdc-inline-editable').val(`Opción ${ item.find('.mdc-form-field:not(#new-option)').length + 1 }`);
               newOption.find('.delete-button').click(handleDeleteOption);
-              newOption.find('.plus-icon-small').remove();
+              newOption.find('.plus-icon').remove();
               newOption.insertBefore(newOptionItem);
             });
           }
@@ -324,6 +324,7 @@ class DatePicker {
       orientation: 'portrait',
       outputElement: '.picker-output',
       outputFormat: 'DD/MM/YYYY',
+      position: 'fixed',
       zIndex: 200,
       onNewDate: function(date) {
         self.updateButtonLabel(date);
@@ -351,6 +352,25 @@ class DatePicker {
   }
 }
 
+class InlineAppend {
+  constructor(button) {
+    this.button = button;
+    let self = this;
+
+    button.click(function(e) {
+      let cloneSelector = self.button.attr('data-clone-element');
+      let handlerFn = self.button.attr('data-clone-handler');
+      let cloneElement = $(cloneSelector).clone();
+      window[handlerFn](cloneElement);
+
+      cloneElement.children().each(function(i, element) {
+        let targetSelector = $(element).attr('data-clone-target');
+        $(targetSelector).append($(element));
+      });
+    });
+  }
+}
+
 function openMenu(menu) {
   menu.open = true;
 }
@@ -358,6 +378,11 @@ function openMenu(menu) {
 function updateTableCounter(table, counter) {
   counter.find('#quantity').text(table.getSelectedRowIds().length);
 }
+
+var mdcDrawer = $('.mdc-drawer');
+mdcDrawer.find('.mdc-button--eye-toggle').click(function(e) {
+  $(this).closest('.mdc-list-item').toggleClass('disabled-section');
+});
 
 var menus = $('.mdc-menu');
 for (var i = 0, menu; menu = menus[i]; i++) {
@@ -426,7 +451,6 @@ for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
 
 var selects = $('.mdc-select:not(.mdc-select--checkbox)');
 for (var i = 0, select; select = selects[i]; i++) {
-  //mdc.select.MDCSelect.attachTo(select);
   new SelectMenuWithSearch(select);
 }
 
@@ -443,4 +467,16 @@ for (var i = 0, datePicker; datePicker = datePickers[i]; i++) {
 var actividadComposers = $('.actividad-composer__wrapper');
 for (var i = 0, actividadComposer; actividadComposer = actividadComposers[i]; i++) {
   new ActividadComposer(actividadComposer);
+}
+
+var eyeToggleButtons = $('.mdc-button--eye-toggle');
+for (var i = 0, eyeToggleButton; eyeToggleButton = eyeToggleButtons[i]; i++) {
+  $(eyeToggleButton).click(function(e) {
+    $(this).find('.mdc-icon').toggle();
+  });
+}
+
+var inlineAppendButtons = $('.inline-append__button');
+for (var i = 0, inlineAppendButton; inlineAppendButton = inlineAppendButtons[i]; i++) {
+  new InlineAppend($(inlineAppendButton));
 }

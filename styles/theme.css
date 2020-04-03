@@ -454,6 +454,31 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   width: 146px;
 }
 
+body:not([data-role="alumno"]) .mdc-header__project .mdc-header__avatar:hover .mdc-header__avatar--actions {
+  display: flex;
+}
+
+.mdc-header__project .mdc-header__avatar .mdc-header__avatar--actions::before,
+.mdc-header__project .mdc-header__avatar .mdc-header__avatar--actions {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.mdc-header__project .mdc-header__avatar .mdc-header__avatar--actions {
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.mdc-header__project .mdc-header__avatar .mdc-header__avatar--actions::before {
+  background-color: var(--mdc-theme-primary__700);
+  content: "";
+  opacity: 0.5;
+}
+
 .mdc-header__actividad .mdc-header__avatar.round-photo-wrapper {
   align-self: flex-start;
   height: 108px;

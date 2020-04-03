@@ -13,6 +13,10 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
 
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.css">
+    <script type="text/javascript" src="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.js"></script>
+
     <!-- OFFLINE MODE -->
 <!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
     <script src="offline/material-components-web.min.js"></script>
@@ -270,6 +274,11 @@
         <section class="mdc-header__section">
           <div class="mdc-header__avatar round-photo-wrapper">
             <img src="img/placeholder-parmenia.jpg">
+            <div class="mdc-header__avatar--actions" data-role="admin,docente">
+              <button class="mdc-button mdc-icon-button mdc-icon-button--outlined mdc-icon-button--white" onclick="openDialog('change-photo');">
+                <i class="mdc-icon edit-icon-small-white"></i>
+              </button>
+            </div>
           </div>
           <div class="mdc-header__title">
             <div class="mdc-header__breadcrumb mdc-typography--headline5">
@@ -341,7 +350,7 @@
             <span class="mdc-button__label">Finalizar</span>
           </button>
 
-          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar">
+          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar" onclick="openDialog('proyecto-delete');">
             <i class="mdc-icon small">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.25 4.5H3.75H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -456,7 +465,7 @@
           <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
           <div class="mdc-dialog__title-wrapper">
             <h2 class="mdc-dialog__title mdc-typography--headline2">
-              Nuevo anuncio
+              Nueva clase
             </h2>
             <div class="mdc-dialog__title-actions">
               <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
@@ -527,6 +536,275 @@
               <span class="mdc-button__label">Cancelar</span>
             </button>
             <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div class="mdc-dialog" id="change-photo">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Foto de proyecto
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <form class="admin-form" id="change-photo__form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection center-align">
+                  <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
+                    <div class="admin-form__photo-placeholder" style="background-image: url('img/placeholder-parmenia.jpg')">
+                    </div>
+
+                    <div class="admin-form__photo-placeholder__actions">
+                      <input id="file-uploader" type="file" name="file" accept="image/*">
+                      <label for="file-uploader" class="mdc-button mdc-button--text">
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Subir imagen</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="change-photo__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Guardar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div class="mdc-dialog" id="proyecto-delete">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Eliminar proyecto
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <p class="mdc-typography--body1">
+              ¿Está seguro que quiere eliminar este proyecto? Esta acción no puede ser deshecha y no ya no podrá volver a acceder al proyecto ni a nada de su contenido.
+            </p>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="change-photo__form" class="mdc-button mdc-button--raised mdc-button--alert mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Eliminar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="crear-actividad" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nueva actividad
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="crear-actividad__form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="titulo" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="titulo">Nombre de la actividad</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 80 caracteres</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Tipo de tarea</h4>
+                    <div class="mdc-radio-button__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-parmenia" name="tipo" value="parmenia">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-parmenia">Actividad Parmenia</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-archivo" name="tipo" value="archivo">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-archivo">Carga de archivo</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-customizada" name="tipo" value="customizada">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-customizada">Actividad customizada</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-redaccion" name="tipo" value="redaccion">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-redaccion">Redacción</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Formato</h4>
+                    <div class="mdc-radio-button__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="formato-individual" name="formato" value="individual">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="formato-individual">Individual</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="formato-grupal" name="formato" value="grupal">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="formato-grupal">Grupal</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="date-picker__wrapper">
+                      <span for="date-picker-01" class="mdc-typography--headline6">Fecha de entrega</span>
+                      <button type="button" class="mdc-button date-picker--button" id="date-piker-01">
+                        <span class="mdc-button__label mdc-typography--body1">Seleccionar fecha</span>
+                        <i class="mdc-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                      </button>
+                      <span class="picker-output"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-actividad__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear</span>
             </button>
@@ -838,7 +1116,7 @@
             </div>
             <div class="mdc-card__actions" data-role="docente,admin">
               <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-button--text">
+                <button class="mdc-button mdc-button--text" onclick="openDialog('crear-actividad');">
                   <span class="mdc-button__ripple"></span>
                   <i class="mdc-button__icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

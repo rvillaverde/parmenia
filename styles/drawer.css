@@ -8,15 +8,14 @@
 }
 
 .mdc-drawer {
-/*  transition: width 0.3s ease-in-out;
-  -webkit-transition: width 0.3s ease-in-out;*/
-
   background-color: var(--mdc-theme-gray__050);
+  bottom: 0;
   box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.12);
   box-sizing: content-box;
-  top: calc(var(--header__height-large));
+  height: unset;
+  top: calc(var(--header__height-large) + var(--app-nav__height--desktop));
   position: absolute;
-  width: 240px;
+  width: 252px;
 }
 
 .mdc-drawer .mdc-list-divider {
@@ -27,17 +26,7 @@
 .mdc-drawer + .drawer-side-wrapper .main-wrapper {
   max-width: 888px;
 }
-/*
-@media (max-width: 960px) {
-  .mdc-drawer {
-    width: 180px;
-  }
 
-  .drawer-side-wrapper {
-    margin-left: 180px;
-  }
-}
-*/
 @media (max-width: 760px) {
   .drawer-side-wrapper {
     margin-left: 0;
@@ -52,12 +41,43 @@
   position: fixed;
 }
 
+.mdc-drawer .mdc-drawer__content {
+  height: unset;
+}
+
+.mdc-drawer .mdc-drawer__actions {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .mdc-drawer .mdc-list-item {
   display: flex;
   align-items: center;
   margin: 0;
   padding: 8px 24px;
+  padding-right: 8px;
   border-radius: 0;
+}
+
+.mdc-drawer .mdc-list-item.disabled-section {
+  opacity: 0.6;
+}
+
+.mdc-drawer .mdc-list-item a {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  max-width: 120px;
+  text-decoration: none;
+}
+
+.mdc-drawer .mdc-list-item .mdc-inline-editable {
+  border-bottom: 1px solid var(--mdc-theme-primary__200);
+  margin-right: 0;
+  min-width: 60px;
 }
 
 .mdc-drawer .mdc-list-item .mdc-icon + .mdc-list-item__text {
@@ -70,6 +90,14 @@
 
 .mdc-drawer .mdc-list-item:nth-child(1) {
   margin: 0;
+}
+
+.mdc-drawer .mdc-list-item .mdc-button:not(:first-child) {
+  margin-left: auto;
+}
+
+.mdc-drawer .mdc-list-item .mdc-button:not(:first-child) + .mdc-button {
+  margin-left: 0;
 }
 
 .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before {
@@ -100,7 +128,7 @@
   opacity: 0;
 }
 
-.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:hover::before {
+body:not(.nav-menu-open) .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:hover::before {
   opacity: 1;
 }
 

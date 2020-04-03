@@ -56,6 +56,10 @@ body[data-role="alumno"] *[data-role]:not([data-role*="alumno"])  {
   -webkit-tap-highlight-color: transparent;
 }
 
+a:focus {
+  outline: none;
+}
+
 html {
   height: 100vh;
   width: 100%;
@@ -66,7 +70,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding-top: var(--app-nav__height--desktop);
-  min-height: calc(100vh - var(--app-nav__height--desktop));
+  min-height: 100vh;
   padding-bottom: var(--footer__height--desktop);
   position: relative;
 }
@@ -187,7 +191,9 @@ input[type=file] {
 
 .mdc-radio__native-control:disabled+.mdc-radio__background,
 .mdc-radio__native-control+.mdc-radio__background,
-.mdc-checkbox__native-control[disabled]:not(:checked):not(:indeterminate) ~ .mdc-checkbox__background {
+.mdc-checkbox__native-control[disabled]:not(:checked):not(:indeterminate) ~ .mdc-checkbox__background,
+.mdc-radio [aria-disabled=true] .mdc-radio__native-control:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle,
+.mdc-radio .mdc-radio__native-control:disabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle {
   background-color: transparent;
   border-color: var(--mdc-theme-primary__100);
   cursor: defaul;
@@ -665,19 +671,26 @@ input[type=file] {
   padding: 0;
 }
 
-.actividad-composer .actividad-component .mdc-radio-button__wrapper {
-  flex-direction: row;
+
+@media (min-width: 640px) {
+  .actividad-composer .actividad-component .mdc-radio-button__wrapper {
+    flex-direction: row;
+  }
+
+  .actividad-composer .actividad-component .mdc-radio-button__wrapper .mdc-form-field:not(:first-child) {
+    margin-left: 24px;
+  }
 }
 
 .actividad-devolucion__wrapper .devolucion__history .mdc-button {
   margin-top: 20px;
 }
 
-.actividad-composer .actividad-component .plus-icon-small {
-  padding: 11px;
+.actividad-composer .actividad-component .plus-icon {
+  padding: 8px;
 }
 
-.actividad-composer .actividad-component .plus-icon-small + input {
+.actividad-composer .actividad-component .plus-icon + input {
   margin-left: 0;
 }
 
@@ -709,9 +722,15 @@ input[type=file] {
   display: none;
 }
 
+.mdc-inline-editable__wrapper .mdc-form-field#new-option .mdc-inline-editable {
+  cursor: pointer;
+}
+
 .mdc-inline-editable__wrapper .mdc-inline-editable {
+  background-color: transparent;
   border: 0;
   flex-grow: 1;
+  margin-right: 8px;
 }
 
 .mdc-inline-editable__wrapper .mdc-form-field:hover .mdc-inline-editable:not(:disabled) {
@@ -728,4 +747,8 @@ input[type=file] {
 
 .mdc-inline-editable__wrapper .delete-button {
   margin-left: auto;
+}
+
+.inline-append__clone-element {
+  display: none;
 }
