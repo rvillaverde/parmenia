@@ -222,6 +222,9 @@ class ActividadComposer {
     });
 
     $(document).mousedown(function(e) {
+      if (!self.wrapper.is(':visible'))
+        return;
+
       if ($(e.target).closest('.actividad-component.edit-mode').length == 0) {
         if (self.wrapper.find('.actividad-component.edit-mode').length > 0) {
           self.wrapper.find('.actividad-component.edit-mode').removeClass('edit-mode');
@@ -318,7 +321,7 @@ class DatePicker {
     this.datePicker = datePicker;
     let self = this;
 
-    let materialPicker = new MaterialDatepicker('.date-picker--button', {
+    this.materialPicker = new MaterialDatepicker(this.datePicker, {
       color: '#6274E5',
       lang: 'es',
       orientation: 'portrait',
@@ -328,13 +331,34 @@ class DatePicker {
       zIndex: 200,
       onNewDate: function(date) {
         self.updateButtonLabel(date);
+      },
+      onOpen: function(date) {
+        self.rectifyPosition();
       }
     });
   }
 
+  rectifyPosition() {
+    let inputPadding = Number($(this.datePicker).css('padding-left').split('px')[0]);
+    let inputPosition = this.datePicker.getBoundingClientRect();
+
+    $(this.materialPicker.picker).css('left', inputPosition.left + inputPadding);
+
+    if (this.spaceBelow() >= $(this.materialPicker.picker).outerHeight()) {
+      $(this.materialPicker.picker).css('top', inputPosition.top + inputPosition.height + inputPadding);
+    } else {
+      let position = inputPosition.top - $(this.materialPicker.picker).outerHeight();
+      $(this.materialPicker.picker).css('top', position - inputPadding);
+    }
+  }
+
+  spaceBelow() {
+    let inputPosition = this.datePicker.getBoundingClientRect();
+    return $(window).height() - inputPosition.top - inputPosition.height;
+  }
+
   updateButtonLabel(date) {
     $(this.datePicker).find('.mdc-button__label').text(this.formatDate(date));
-
   }
 
   formatDate(date) {
@@ -444,9 +468,18 @@ class MDCInlineEdit {
     }
 
     if (this.editing) {
+      $(document).on('mouseup', self, MDCInlineEdit.handleDocumentMouseup);
       this.editor.enable();
     } else {
+      $(document).off('mouseup', MDCInlineEdit.handleDocumentMouseup);
       this.editor.disable();
+    }
+  }
+
+  static handleDocumentMouseup(e) {
+    let self = e.data;
+    if ($(e.target).closest('.mdc-inline-editable__wrapper').length === 0) {
+      self.toggleMode();
     }
   }
 }

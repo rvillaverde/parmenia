@@ -18,6 +18,10 @@
     <script src="offline/material-components-web.min.js"></script>
     <script src="offline/jquery-3.4.1.min.js"></script> -->
 
+    <script src="lib/quill.min.js"></script>
+    <script src="lib/quill-image-resize.min.js"></script>
+    <link href="lib/quill.snow.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/theme.css">
@@ -515,33 +519,34 @@
 
     <div class="drawer-side-wrapper">
       <main class="main-wrapper">
-        <section id="consigna" class="consigna-wrapper">
-          <div class="section-headline__wrapper">
-            <h3 class="mdc-typography--headline3">Mi aprendizaje</h3>
-            <button class="mdc-button mdc-icon-button mdc-icon-button--secondary mdc-icon-button--outlined" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar" data-role="admin,docente">
-              <i class="mdc-icon small">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 15H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12.375 2.62517C12.6734 2.3268 13.078 2.15918 13.5 2.15918C13.7089 2.15918 13.9158 2.20033 14.1088 2.28029C14.3019 2.36024 14.4773 2.47743 14.625 2.62517C14.7727 2.77291 14.8899 2.9483 14.9699 3.14132C15.0498 3.33435 15.091 3.54124 15.091 3.75017C15.091 3.9591 15.0498 4.16599 14.9699 4.35902C14.8899 4.55204 14.7727 4.72743 14.625 4.87517L5.25 14.2502L2.25 15.0002L3 12.0002L12.375 2.62517Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="section-headline__wrapper">
+          <h3 class="mdc-typography--headline3">Mi aprendizaje</h3>
+          <button class="mdc-button mdc-icon-button mdc-icon-button--secondary mdc-icon-button--outlined" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar" data-role="admin,docente">
+            <i class="mdc-icon small">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 15H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.375 2.62517C12.6734 2.3268 13.078 2.15918 13.5 2.15918C13.7089 2.15918 13.9158 2.20033 14.1088 2.28029C14.3019 2.36024 14.4773 2.47743 14.625 2.62517C14.7727 2.77291 14.8899 2.9483 14.9699 3.14132C15.0498 3.33435 15.091 3.54124 15.091 3.75017C15.091 3.9591 15.0498 4.16599 14.9699 4.35902C14.8899 4.55204 14.7727 4.72743 14.625 4.87517L5.25 14.2502L2.25 15.0002L3 12.0002L12.375 2.62517Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+          </button>
+          <div class="section-headline__wrapper-actions" data-role="admin,docente">
+            <button class="mdc-button mdc-button--raised">
+              <span class="mdc-button__ripple"></span>
+              <i class="mdc-button__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M10 8L16 12L10 16V8Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </i>
+              <span class="mdc-button__label">Publicar</span>
             </button>
-            <div class="section-headline__wrapper-actions" data-role="admin,docente">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
-                <i class="mdc-button__icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M10 8L16 12L10 16V8Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
-                <span class="mdc-button__label">Publicar</span>
-              </button>
-              <button class="mdc-button mdc-icon-button mdc-icon-button--secondary mdc-icon-button--outlined" aria-pressed="false"  data-mdc-tooltip="Eliminar">
-                <i class="mdc-icon small delete-icon-small"></i>
-              </button>
-            </div>
+            <button class="mdc-button mdc-icon-button mdc-icon-button--secondary mdc-icon-button--outlined" aria-pressed="false"  data-mdc-tooltip="Eliminar">
+              <i class="mdc-icon small delete-icon-small"></i>
+            </button>
           </div>
+        </div>
+
+        <section id="consigna" class="mdc-inline-editable__wrapper" data-editable-target=".section-content">
           <div class="headline-wrapper">
             <i class="headline__icon">
               <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -550,22 +555,42 @@
               </svg>
             </i>
             <h4 class="mdc-typography--headline4">Consigna</h4>
-            <div class="headline-wrapper__actions" data-role="docente,admin">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
+            <div class="headline-wrapper__actions" data-role="admin,docente">
+              <button class="mdc-button mdc-button--raised mdc-inline-editable__toggle">
                 <span class="mdc-button__label">Editar contenido</span>
+              </button>
+              <button class="mdc-button mdc-icon-button mdc-icon-button--secondary mdc-icon-button--outlined" aria-pressed="false"  data-mdc-tooltip="Eliminar">
+                <i class="mdc-icon small delete-icon-small"></i>
               </button>
             </div>
           </div>
-          <div class="mdc-card mdc-card--large consigna-card">
+          <div class="mdc-card mdc-card--large project-presentation-card mdc-inline-editable__target section-content">
             <div class="mdc-card__primary">
-              <h3 class="mdc-card__title mdc-typography--headline3">
-                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
-              </h3>
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+              <div class="mdc-inline-editable__input">
+                <div class="mdc-rich-text-editor">
+                  <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
+                  </h1>
+                  <p><br></p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus. Pellentesque sagittis massa odio, ac viverra justo aliquet in. Sed vel ligula consequat, molestie arcu non, suscipit libero. Phasellus at massa tortor. Vivamus sed nisl vehicula, mattis ipsum vitae, ornare libero. Nullam venenatis tristique mauris, non semper turpis interdum eu. Vivamus nisi massa, aliquam vel ex eget, finibus interdum libero. Donec venenatis tristique urna, nec congue erat interdum eu. Pellentesque semper tellus eget arcu porttitor, nec tempor quam lacinia. Cras tempor consectetur enim quis fringilla. Sed gravida, nisl id euismod ultrices, erat est cursus mi, quis sagittis ipsum diam sed purus. Phasellus enim massa, condimentum vel porta et, ornare eget mi. Curabitur at feugiat dolor, et iaculis turpis.
+                  </p>
+                </div>
+              </div>
             </div>
+            <div class="mdc-inline-editable__actions" data-role="admin,docente">
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined edit-button" data-mdc-tooltip="Editar">
+                <i class="mdc-icon small edit-icon-small-white"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
           </div>
         </section>
 

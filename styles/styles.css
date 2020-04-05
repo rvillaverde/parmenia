@@ -689,12 +689,12 @@ input[type=file] {
 
 
 @media (min-width: 640px) {
-  .actividad-composer .actividad-component .mdc-radio-button__wrapper {
+  .actividad-component .mdc-radio-button__wrapper {
     flex-direction: row;
   }
 
-  .actividad-composer .actividad-component .mdc-radio-button__wrapper .mdc-form-field:not(:first-child) {
-    margin-left: 24px;
+  .actividad-component .mdc-radio-button__wrapper .mdc-form-field:not(:first-child) {
+    margin-left: 30px;
   }
 }
 
@@ -811,7 +811,11 @@ input[type=file] {
   margin: 0;
 }
 
-.mdc-inline-editable__wrapper:not(.mdc-inline-editable__wrapper--edit-mode) .mdc-inline-editable__target:hover .mdc-inline-editable__actions {
+body:not([data-role*="alumno"]) .mdc-inline-editable__wrapper:not(.mdc-inline-editable__wrapper--edit-mode) .mdc-inline-editable__target:hover .mdc-inline-editable__actions {
+  display: flex;
+}
+
+body[data-role*="alumno"] .mdc-inline-editable__wrapper:not(.mdc-inline-editable__wrapper--edit-mode) .mdc-inline-editable__target:hover .mdc-inline-editable__actions[data-role*="alumno"] {
   display: flex;
 }
 
@@ -832,7 +836,11 @@ input[type=file] {
   overflow: hidden;
 }
 
-.mdc-inline-editable__actions::before {
+.mdc-inline-editable__actions[data-role*="alumno"] {
+  cursor: pointer;
+}
+
+.mdc-inline-editable__actions:not([data-role*="alumno"])::before {
   content: "";
   background: var(--mdc-theme-primary);
   opacity: 0.75;

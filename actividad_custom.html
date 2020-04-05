@@ -18,7 +18,12 @@
       crossorigin="anonymous"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
 
+    <script type="text/javascript" src="lib/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/material-datepicker.css">
+    <script type="text/javascript" src="lib/material-datepicker.js"></script>
+
     <script src="lib/quill.min.js"></script>
+    <script src="lib/quill-image-resize.min.js"></script>
     <link href="lib/quill.snow.css" rel="stylesheet">
 
 <!--     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.css">
@@ -298,13 +303,12 @@
             <div class="mdc-header__editable-title">
               <h1 class="mdc-typography--headline1">Nombre de la actividad</h1>
 
-              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar" data-role="admin,docente">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 15H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12.375 2.62505C12.6734 2.32668 13.078 2.15906 13.5 2.15906C13.7089 2.15906 13.9158 2.20021 14.1088 2.28016C14.3019 2.36012 14.4773 2.47731 14.625 2.62505C14.7727 2.77278 14.8899 2.94817 14.9699 3.1412C15.0498 3.33423 15.091 3.54112 15.091 3.75005C15.091 3.95898 15.0498 4.16587 14.9699 4.35889C14.8899 4.55192 14.7727 4.72731 14.625 4.87505L5.25 14.25L2.25 15L3 12L12.375 2.62505Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" data-mdc-tooltip="Editar" data-role="admin,docente">
+                <i class="mdc-icon small edit-icon-small-white"></i>
+              </button>
+
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" data-mdc-tooltip="Agregar a la mochila" data-role="alumno" onclick="addToBag(this);">
+                <i class="mdc-icon small mochila-icon-small-white"></i>
               </button>
             </div>
             <div class="mdc-header__caption-group">
@@ -353,8 +357,8 @@
           </div>
         </section>
 
-        <section class="mdc-header__section mdc-header__actions" data-role="admin,docente">
-          <button class="mdc-button mdc-button--raised">
+        <section class="mdc-header__section mdc-header__actions">
+          <button class="mdc-button mdc-button--raised" data-role="admin,docente">
             <span class="mdc-button__ripple"></span>
             <i class="mdc-button__icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -366,15 +370,32 @@
             <span class="mdc-button__label">Pausar</span>
           </button>
 
-          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-            <i class="mdc-icon small">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.25 4.5H3.75H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7.5 8.25V12.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10.5 8.25V12.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" data-mdc-tooltip="Eliminar" data-role="admin,docente">
+            <i class="mdc-icon small delete-icon-small-white"></i>
+          </button>
+
+          <button class="mdc-button mdc-button--outlined" data-role="alumno">
+            <span class="mdc-button__ripple"></span>
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16L21 8V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 21V13H7V21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 3V8H15" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </i>
+            <span class="mdc-button__label">Guardar</span>
+          </button>
+
+          <button class="mdc-button mdc-button--raised" data-role="alumno">
+            <span class="mdc-button__ripple"></span>
+            <i class="mdc-button__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 16L16 12L12 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+            <span class="mdc-button__label">Entregar</span>
           </button>
         </section>
       </div>
@@ -769,7 +790,7 @@
                             <div class="mdc-notched-outline">
                               <div class="mdc-notched-outline__leading"></div>
                               <div class="mdc-notched-outline__notch">
-                                <span class="mdc-floating-label mdc-typography--body1" id="nombre">Escribe aquí tu respuesta...</span>
+                                <span class="mdc-floating-label mdc-typography--body1" id="nombre">Escribe aquí tu respuesta</span>
                               </div>
                               <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -826,25 +847,25 @@
                         <div class="mdc-radio-button__wrapper">
                           <div class="mdc-form-field">
                             <div class="mdc-radio">
-                              <input class="mdc-radio__native-control" type="radio" disabled>
+                              <input class="mdc-radio__native-control" id="radio-1-option-1" name="radio-1" type="radio" disabled>
                               <div class="mdc-radio__background">
                                 <div class="mdc-radio__outer-circle"></div>
                                 <div class="mdc-radio__inner-circle"></div>
                               </div>
                               <div class="mdc-radio__ripple"></div>
                             </div>
-                            <label class="mdc-typography--body1" for="permiso">Verdadero</label>
+                            <label class="mdc-typography--body1" for="radio-1-option-1">Verdadero</label>
                           </div>
                           <div class="mdc-form-field">
                             <div class="mdc-radio">
-                              <input class="mdc-radio__native-control" type="radio" disabled>
+                              <input class="mdc-radio__native-control" id="radio-1-option-2" name="radio-1" type="radio" disabled>
                               <div class="mdc-radio__background">
                                 <div class="mdc-radio__outer-circle"></div>
                                 <div class="mdc-radio__inner-circle"></div>
                               </div>
                               <div class="mdc-radio__ripple"></div>
                             </div>
-                            <label class="mdc-typography--body1" for="permiso">Falso</label>
+                            <label class="mdc-typography--body1" for="radio-1-option-2">Falso</label>
                           </div>
                         </div>
                         <div class="actividad-component__actions">
@@ -935,7 +956,6 @@
       </div>
       <div class="mdc-dialog__scrim"></div>
     </div>
-
 
     <div id="cambiar-tarea" class="mdc-dialog">
       <div class="mdc-dialog__container">
@@ -1243,7 +1263,8 @@
 
     <div class="drawer-side-wrapper">
       <main class="main-wrapper">
-        <section id="consigna" class="consigna-wrapper">
+        <!-- Consigna { -->
+        <section id="consigna" class="mdc-inline-editable__wrapper" data-editable-target=".section-content">
           <div class="headline-wrapper">
             <i class="headline__icon">
               <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1253,23 +1274,44 @@
             </i>
             <h4 class="mdc-typography--headline4">Consigna</h4>
             <div class="headline-wrapper__actions" data-role="admin,docente">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
+              <button class="mdc-button mdc-button--raised mdc-inline-editable__toggle">
                 <span class="mdc-button__label">Editar contenido</span>
+              </button>
+              <button class="mdc-button mdc-icon-button mdc-icon-button--secondary mdc-icon-button--outlined" aria-pressed="false"  data-mdc-tooltip="Eliminar">
+                <i class="mdc-icon small delete-icon-small"></i>
               </button>
             </div>
           </div>
-          <div class="mdc-card mdc-card--large consigna-card">
+          <div class="mdc-card mdc-card--large project-presentation-card mdc-inline-editable__target section-content">
             <div class="mdc-card__primary">
-              <h3 class="mdc-card__title mdc-typography--headline3">
-                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
-              </h3>
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+              <div class="mdc-inline-editable__input">
+                <div class="mdc-rich-text-editor">
+                  <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
+                  </h1>
+                  <p><br></p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus. Pellentesque sagittis massa odio, ac viverra justo aliquet in. Sed vel ligula consequat, molestie arcu non, suscipit libero. Phasellus at massa tortor. Vivamus sed nisl vehicula, mattis ipsum vitae, ornare libero. Nullam venenatis tristique mauris, non semper turpis interdum eu. Vivamus nisi massa, aliquam vel ex eget, finibus interdum libero. Donec venenatis tristique urna, nec congue erat interdum eu. Pellentesque semper tellus eget arcu porttitor, nec tempor quam lacinia. Cras tempor consectetur enim quis fringilla. Sed gravida, nisl id euismod ultrices, erat est cursus mi, quis sagittis ipsum diam sed purus. Phasellus enim massa, condimentum vel porta et, ornare eget mi. Curabitur at feugiat dolor, et iaculis turpis.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-inline-editable__actions" data-role="admin,docente">
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined edit-button" data-mdc-tooltip="Editar">
+                <i class="mdc-icon small edit-icon-small-white"></i>
+              </button>
             </div>
           </div>
+
+          <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
+          </div>
         </section>
+        <!-- } -->
 
         <!-- Recursos { -->
         <section id="recursos" class="recursos-wrapper toggable">
@@ -1579,6 +1621,7 @@
         </section>
         <!-- } -->
 
+        <!-- Grupo { -->
         <section id="mi-grupo" class="mi-grupo-wrapper">
           <div class="headline-wrapper">
             <i class="headline__icon">
@@ -1755,7 +1798,9 @@
             </div>
           </div>
         </section>
+        <!-- } -->
 
+        <!-- Tarea { -->
         <section id="tarea" class="tarea-wrapper">
           <div class="headline-wrapper">
             <i class="headline__icon">
@@ -1775,7 +1820,7 @@
             </div>
           </div>
 
-          <div class="mdc-card mdc-card--large tarea-card" id="tarea-personalizada">
+          <div class="mdc-card mdc-card--large tarea-card" id="tarea-personalizada" data-role="admin,docente">
             <div class="mdc-card__primary">
               <h4 class="mdc-card__title mdc-typography--headline4">
                 Genera una tarea personalizada con cuestionarios, verdadero o falso, y multiple choice.
@@ -1793,8 +1838,140 @@
               </button>
             </div>
           </div>
-        </section>
 
+          <div class="mdc-card mdc-card--large tarea-card" id="tarea-personalizada", data-role="alumno">
+            <div class="mdc-card__primary">
+              <form class="admin-form actividad-custom__form">
+                <div class="admin-form__section">
+                  <div class="admin-form__section-inner">
+                    <div class="actividad-component herramienta">
+                      <h2 class="mdc-typography--headline2">
+                        Completar el siguiente cuestionario
+                      </h2>
+                    </div>
+                    <div class="actividad-component herramienta">
+                      <h4 class="mdc-typography--headline4">
+                        Responder verdadero o falso
+                      </h4>
+                    </div>
+                    <div class="actividad-component herramienta">
+                      <p class="mdc-typography--body1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                      </p>
+                    </div>
+                    <div class="actividad-component respuesta">
+                      <div class="mdc-radio-button__wrapper">
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control" id="radio-1-option-1" name="radio-1" type="radio">
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                            <div class="mdc-radio__ripple"></div>
+                          </div>
+                          <label class="mdc-typography--body1" for="radio-1-option-1">Verdadero</label>
+                        </div>
+                        <div class="mdc-form-field">
+                          <div class="mdc-radio">
+                            <input class="mdc-radio__native-control" id="radio-1-option-2" name="radio-1" type="radio">
+                            <div class="mdc-radio__background">
+                              <div class="mdc-radio__outer-circle"></div>
+                              <div class="mdc-radio__inner-circle"></div>
+                            </div>
+                            <div class="mdc-radio__ripple"></div>
+                          </div>
+                          <label class="mdc-typography--body1" for="radio-1-option-2">Falso</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="actividad-component herramienta espacio"></div>
+                    <div class="actividad-component herramienta">
+                      <h4 class="mdc-typography--headline4">
+                        Responder las siguientes preguntas
+                      </h4>
+                    </div>
+                    <div class="actividad-component herramienta">
+                      <p class="mdc-typography--body1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                      </p>
+                    </div>
+                    <div class="actividad-component respuesta">
+                      <div class="mdc-text-field__wrapper">
+                        <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                          <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="nombre">
+                          <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                              <span class="mdc-floating-label mdc-typography--body1" id="nombre">Escribe aquí tu respuesta</span>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="actividad-component herramienta">
+                      <p class="mdc-typography--body1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                      </p>
+                    </div>
+                    <div class="actividad-component respuesta">
+                      <div class="date-picker__wrapper">
+                        <button type="button" class="mdc-button date-picker--button" id="date-picker-2">
+                          <span class="mdc-button__label mdc-typography--body1">Seleccionar fecha</span>
+                          <i class="mdc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6 9L12 15L18 9" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </i>
+                        </button>
+                        <span class="picker-output"></span>
+                      </div>
+                    </div>
+                    <div class="actividad-component herramienta">
+                      <p class="mdc-typography--body1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                      </p>
+                    </div>
+                    <div class="actividad-component respuesta">
+                      <div class="mdc-checkbox__wrapper mdc-inline-editable__wrapper">
+                        <div class="mdc-form-field">
+                          <div class="mdc-checkbox">
+                            <input type="checkbox" class="mdc-checkbox__native-control" name="actividad-custom_1-checkbox_1" id="actividad-custom_1-checkbox_1-option_1"/>
+                            <div class="mdc-checkbox__background">
+                              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                              </svg>
+                              <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                          </div>
+                          <label for="actividad-custom_1-checkbox_1-option_1">Opción 1</label>
+                        </div>
+                        <div class="mdc-form-field">
+                          <div class="mdc-checkbox">
+                            <input type="checkbox" class="mdc-checkbox__native-control" name="actividad-custom_1-checkbox_1" id="actividad-custom_1-checkbox_1-option_2"/>
+                            <div class="mdc-checkbox__background">
+                              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                              </svg>
+                              <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                          </div>
+                          <label for="actividad-custom_1-checkbox_1-option_2">Opción 2</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- } -->
+
+        <!-- Devolucion { -->
         <section id="devolucion" class="devolucion-wrapper">
           <div class="headline-wrapper">
             <i class="headline__icon">
@@ -2232,6 +2409,7 @@
           </div>
           <!-- } -->
         </section>
+        <!-- } -->
       </main>
     </div>
 

@@ -52,6 +52,10 @@
   background-image: url("../icons/dropdown-icon.svg");
 }
 
+.drag-icon-small {
+  background-image: url("../icons/drag-icon-small.svg");
+}
+
 .edit-icon {
   background-image: url("../icons/edit-icon.svg");
 }
@@ -140,6 +144,42 @@
   background-image: url("../icons/chevron-right-icon.svg");
 }
 
+.mochila-icon-small-white {
+  background-image: url("../icons/mochila-icon-small-white.svg");
+}
+
 .mochila-icon-secondary {
   background-image: url("../icons/mochila-icon-secondary.svg");
+}
+
+.noticias-icon-small-white {
+  background-image: url("../icons/noticias-icon-small-white.svg");
+}
+
+.proyectos-icon-small-white {
+  background-image: url("../icons/proyectos-icon-small-white.svg");
+}
+
+.recursos-icon-small-white {
+  background-image: url("../icons/recursos-icon-small-white.svg");
+}
+
+.formato-grupal-icon-small {
+  background-image: url("../icons/formato-grupal-icon-small.svg");
+}
+
+.actividad-personalizada-icon-small {
+  background-image: url("../icons/actividad-personalizada-icon-small.svg");
+}
+
+.actividad-subir-archivo-icon-small {
+  background-image: url("../icons/actividad-subir-archivo-icon-small.svg");
+}
+
+.actividad-parmenia-icon-small {
+  background-image: url("../icons/actividad-parmenia-icon-small.svg");
+}
+
+.actividad-redaccion-icon-small {
+  background-image: url("../icons/actividad-redaccion-icon-small.svg");
 }

@@ -5,10 +5,10 @@
 
 /* COMMON STYLES */
 .mdc-button__label {
-  letter-spacing: normal;
-  line-height: 24px;
   font-size: 14px;
   font-weight: bold;
+  letter-spacing: normal;
+  line-height: 24px;
 }
 
 .mdc-button:not(:disabled) {
@@ -101,8 +101,8 @@
 /* OUTLINED BUTTONS */
 .mdc-button--outlined, .mdc-button--outlined:not(:disabled) {
   background-color: var(--mdc-theme-surface);
-  border: 2px solid var(--mdc-theme-gray__700);
-  color: var(--mdc-theme-gray__700);
+  border: 2px solid var(--mdc-theme-gray__600);
+  color: var(--mdc-theme-gray__600);
 }
 
 /*.mdc-button--outlined:not(:disabled) {

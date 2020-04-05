@@ -207,3 +207,16 @@
   background-color: var(--mdc-theme-secondary);
   border-color: var(--mdc-theme-secondary);
 }
+
+.admin-form.actividad-custom__form .actividad-component:not(:first-child) {
+  margin-top: 24px;
+}
+
+.admin-form.actividad-custom__form .actividad-component.herramienta + .actividad-component.respuesta {
+  margin-top: 16px;
+}
+
+.admin-form.actividad-custom__form .actividad-component.espacio {
+  height: 36px;
+  margin-top: 0;
+}
