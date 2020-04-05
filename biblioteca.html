@@ -30,11 +30,12 @@
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/tables.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
   </head>
 
   <body class="container mdc-typography">
     <div class="user-roles-wrapper">
-      <button class="mdc-icon-button mdc-icon-button--secondary" title="Cerrar">
+      <button class="mdc-icon-button mdc-icon-button--secondary" data-mdc-tooltip="Cerrar">
         <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
       </button>
       <h4 class="mdc-typography--headline4">Ver como:</h4>
@@ -120,14 +121,14 @@
               </a>
             </li>
 
-            <li class="mdc-top-app-bar__action-item mdc-top-app-bar__action-item--active" data-role="admin,docente">
+            <li class="mdc-top-app-bar__action-item" data-role="admin,docente">
               <a class="mdc-button mdc-button--app-bar" href="alumnos.html" aria-label="Biblioteca">
                 <i class="mdc-icon nav-alumnos-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Alumnos</span>
               </a>
             </li>
 
-            <li class="mdc-top-app-bar__action-item">
+            <li class="mdc-top-app-bar__action-item mdc-top-app-bar__action-item--active">
               <a class="mdc-button mdc-button--app-bar" href="biblioteca.html" aria-label="Biblioteca">
                 <i class="mdc-icon nav-biblioteca-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Biblioteca</span>
@@ -292,7 +293,7 @@
               Nombre del recurso
             </h2>
             <div class="mdc-dialog__title-actions">
-              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
                 <i class="mdc-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -389,7 +390,7 @@
                 </div>
 
                 <div class="mdc-card__action-icons" data-role="alumno,docente">
-                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
@@ -439,7 +440,7 @@
                 </div>
 
                 <div class="mdc-card__action-icons" data-role="alumno,docente">
-                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
@@ -489,7 +490,7 @@
                 </div>
 
                 <div class="mdc-card__action-icons" data-role="alumno,docente">
-                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
@@ -582,7 +583,7 @@
                 </div>
 
                 <div class="mdc-card__action-icons" data-role="alumno,docente">
-                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
@@ -632,7 +633,7 @@
                 </div>
 
                 <div class="mdc-card__action-icons" data-role="alumno,docente">
-                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" title="Agregar a la mochila" onclick="addToBag(this);">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
