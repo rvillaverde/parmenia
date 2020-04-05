@@ -78,9 +78,9 @@
   text-decoration: none;
 }
 
-.mdc-drawer .mdc-list-item .mdc-inline-editable {
+.mdc-drawer .mdc-list-item .mdc-inline-editable__input {
   border-bottom: 1px solid var(--mdc-theme-primary__200);
-  margin-right: 0;
+  margin-right: 8px;
   min-width: 60px;
 }
 

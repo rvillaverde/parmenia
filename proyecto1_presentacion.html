@@ -18,6 +18,10 @@
     <script src="offline/material-components-web.min.js"></script>
     <script src="offline/jquery-3.4.1.min.js"></script> -->
 
+    <script src="lib/quill.min.js"></script>
+    <script src="lib/quill-image-resize.min.js"></script>
+    <link href="lib/quill.snow.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/theme.css">
@@ -31,11 +35,12 @@
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/tables.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
   </head>
 
   <body class="container mdc-typography">
     <div class="user-roles-wrapper">
-      <button class="mdc-icon-button mdc-icon-button--secondary" title="Cerrar">
+      <button class="mdc-icon-button mdc-icon-button--secondary" data-mdc-tooltip="Cerrar">
         <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
       </button>
       <h4 class="mdc-typography--headline4">Ver como:</h4>
@@ -285,7 +290,7 @@
             <h1 class="mdc-typography--headline1">Nombre del proyecto</h1>
             <div class="mdc-header__caption-group">
               <div class="mdc-header__caption">
-                <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" title="Actividades">
+                <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.425 3.18002C7.94125 3.05918 8.4698 2.99877 9 3.00002C14.25 3.00002 17.25 9.00002 17.25 9.00002C16.7947 9.85172 16.2518 10.6536 15.63 11.3925M10.59 10.59C10.384 10.8111 10.1356 10.9884 9.85961 11.1114C9.58362 11.2343 9.28568 11.3005 8.98357 11.3058C8.68146 11.3111 8.38137 11.2556 8.10121 11.1424C7.82104 11.0292 7.56654 10.8608 7.35288 10.6471C7.13923 10.4335 6.97079 10.179 6.85763 9.89881C6.74447 9.61865 6.68889 9.31856 6.69423 9.01645C6.69956 8.71434 6.76568 8.4164 6.88866 8.1404C7.01163 7.86441 7.18894 7.61601 7.41 7.41002M13.455 13.455C12.1729 14.4323 10.6118 14.9737 9 15C3.75 15 0.75 9.00002 0.75 9.00002C1.68292 7.26144 2.97685 5.74247 4.545 4.54502L13.455 13.455Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M0.75 0.75L17.25 17.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -297,7 +302,7 @@
               <div class="vertical-divider"></div>
 
               <div class="mdc-header__caption">
-                <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" title="Actividades">
+                <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 4.5H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M6 9H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -311,7 +316,7 @@
               </div>
 
               <div class="mdc-header__caption">
-                <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" title="Clases">
+                <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="white"/>
                     <path d="M6 6.75H12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -347,7 +352,7 @@
             <span class="mdc-button__label">Finalizar</span>
           </button>
 
-          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" title="Eliminar" onclick="openDialog('proyecto-delete');">
+          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar" onclick="openDialog('proyecto-delete');">
             <i class="mdc-icon small">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.25 4.5H3.75H15.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -465,7 +470,7 @@
               Foto de proyecto
             </h2>
             <div class="mdc-dialog__title-actions">
-              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
                 <i class="mdc-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -531,7 +536,7 @@
               Eliminar proyecto
             </h2>
             <div class="mdc-dialog__title-actions">
-              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" title="Cerrar" data-mdc-dialog-action="no">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
                 <i class="mdc-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -570,7 +575,7 @@
             <a href="#presentacion" aria-current="page">
               <span class="mdc-list-item__text mdc-typography--headline6">Presentación</span>
             </a>
-            <button class="mdc-button mdc-icon-button mdc-button--eye-toggle" data-role="admin,docente">
+            <button class="mdc-button mdc-icon-button mdc-button--eye-toggle" data-role="admin,docente" data-mdc-tooltip="Ocultar">
               <i class="mdc-icon eye-on-icon"></i>
               <i class="mdc-icon eye-off-icon"></i>
             </button>
@@ -580,7 +585,7 @@
             <a href="#objetivos" aria-current="page">
               <span class="mdc-list-item__text mdc-typography--headline6">Objetivos</span>
             </a>
-            <button class="mdc-button mdc-icon-button mdc-button--eye-toggle" data-role="admin,docente">
+            <button class="mdc-button mdc-icon-button mdc-button--eye-toggle" data-role="admin,docente" data-mdc-tooltip="Ocultar">
               <i class="mdc-icon eye-on-icon"></i>
               <i class="mdc-icon eye-off-icon"></i>
             </button>
@@ -590,7 +595,7 @@
             <a href="#hoja-de-ruta" aria-current="page">
               <span class="mdc-list-item__text mdc-typography--headline6">Hoja de ruta</span>
             </a>
-            <button class="mdc-button mdc-icon-button mdc-button--eye-toggle" data-role="admin,docente">
+            <button class="mdc-button mdc-icon-button mdc-button--eye-toggle" data-role="admin,docente" data-mdc-tooltip="Ocultar">
               <i class="mdc-icon eye-on-icon"></i>
               <i class="mdc-icon eye-off-icon"></i>
             </button>
@@ -605,26 +610,42 @@
             <a href="#nueva-seccion" aria-current="page">
               <span class="mdc-list-item__text mdc-typography--headline6">Nueva sección</span>
             </a>
-            <input type="text" class="mdc-inline-editable mdc-typography--headline6" value="Nueva sección">
-            <button class="mdc-button mdc-icon-button mdc-inline-editable__toggle" data-role="admin,docente">
+            <input type="text" class="mdc-inline-editable__input mdc-typography--headline6" value="Nueva sección">
+            <button class="mdc-button mdc-icon-button mdc-inline-editable__toggle" data-mdc-tooltip="Editar" data-role="admin,docente">
               <i class="mdc-icon edit-icon"></i>
             </button>
-            <button class="mdc-button mdc-icon-button mdc-button--eye-toggle" data-role="admin,docente">
+            <button class="mdc-button mdc-icon-button mdc-button--eye-toggle" data-mdc-tooltip="Ocultar" data-role="admin,docente">
               <i class="mdc-icon eye-on-icon"></i>
               <i class="mdc-icon eye-off-icon"></i>
             </button>
           </li>
           <li role="separator" class="mdc-list-divider" data-clone-target=".mdc-drawer .mdc-drawer__content .mdc-list"></li>
-          <section id="nueva-seccion" data-clone-target=".main-wrapper">
+          <section id="nueva-seccion" class="mdc-inline-editable__wrapper" data-clone-target=".main-wrapper" data-editable-target=".section-content">
             <div class="headline-wrapper">
               <h4 class="mdc-typography--headline4">Nueva sección</h4>
               <div class="headline-wrapper__actions">
-                <button class="mdc-button mdc-button--raised">
-                  <span class="mdc-button__ripple"></span>
+                <button class="mdc-button mdc-button--raised mdc-inline-editable__toggle">
                   <span class="mdc-button__label">Editar contenido</span>
+                </button>
+                <button class="mdc-button mdc-icon-button mdc-icon-button--secondary mdc-icon-button--outlined" aria-pressed="false"  data-mdc-tooltip="Eliminar">
+                  <i class="mdc-icon small delete-icon-small"></i>
                 </button>
               </div>
             </div>
+
+            <div class="mdc-card mdc-card--large project-presentation-card mdc-inline-editable__target no-content section-content">
+              <div class="mdc-card__primary">
+                <div class="mdc-inline-editable__input">
+                  <div class="mdc-rich-text-editor"></div>
+                </div>
+              </div>
+              <div class="mdc-inline-editable__actions">
+                <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined edit-button">
+                  <i class="mdc-icon small edit-icon-small-white"></i>
+                </button>
+              </div>
+            </div>
+
             <div class="no-content-placeholder">
               <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
             </div>
@@ -647,80 +668,131 @@
 
     <div class="drawer-side-wrapper">
       <main class="main-wrapper">
-        <section id="presentacion" class="presentacion-wrapper">
+        <section id="presentacion" class="mdc-inline-editable__wrapper" data-editable-target=".section-content">
           <div class="headline-wrapper">
             <h4 class="mdc-typography--headline4">Presentación</h4>
-            <div class="headline-wrapper__actions" data-role="admin,docente">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
+            <div class="headline-wrapper__actions">
+              <button class="mdc-button mdc-button--raised mdc-inline-editable__toggle">
                 <span class="mdc-button__label">Editar contenido</span>
               </button>
             </div>
           </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
+
+          <div class="mdc-card mdc-card--large project-presentation-card mdc-inline-editable__target section-content">
             <div class="mdc-card__primary">
-              <h3 class="mdc-card__title mdc-typography--headline3">
-                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
-              </h3>
+              <div class="mdc-inline-editable__input">
+                <div class="mdc-rich-text-editor">
+                  <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
+                  </h1>
+                  <p><br></p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus. Pellentesque sagittis massa odio, ac viverra justo aliquet in. Sed vel ligula consequat, molestie arcu non, suscipit libero. Phasellus at massa tortor. Vivamus sed nisl vehicula, mattis ipsum vitae, ornare libero. Nullam venenatis tristique mauris, non semper turpis interdum eu. Vivamus nisi massa, aliquam vel ex eget, finibus interdum libero. Donec venenatis tristique urna, nec congue erat interdum eu. Pellentesque semper tellus eget arcu porttitor, nec tempor quam lacinia. Cras tempor consectetur enim quis fringilla. Sed gravida, nisl id euismod ultrices, erat est cursus mi, quis sagittis ipsum diam sed purus. Phasellus enim massa, condimentum vel porta et, ornare eget mi. Curabitur at feugiat dolor, et iaculis turpis.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-            <div class="mdc-card__secondary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
-                <br><br>
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus. Pellentesque sagittis massa odio, ac viverra justo aliquet in. Sed vel ligula consequat, molestie arcu non, suscipit libero. Phasellus at massa tortor. Vivamus sed nisl vehicula, mattis ipsum vitae, ornare libero. Nullam venenatis tristique mauris, non semper turpis interdum eu. Vivamus nisi massa, aliquam vel ex eget, finibus interdum libero. Donec venenatis tristique urna, nec congue erat interdum eu. Pellentesque semper tellus eget arcu porttitor, nec tempor quam lacinia. Cras tempor consectetur enim quis fringilla. Sed gravida, nisl id euismod ultrices, erat est cursus mi, quis sagittis ipsum diam sed purus. Phasellus enim massa, condimentum vel porta et, ornare eget mi. Curabitur at feugiat dolor, et iaculis turpis.
-              </p>
+            <div class="mdc-inline-editable__actions">
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined edit-button">
+                <i class="mdc-icon small edit-icon-small-white"></i>
+              </button>
             </div>
+          </div>
+
+          <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
           </div>
         </section>
 
-        <section id="objetivos" class="objetivos-wrapper">
+        <section id="objetivos" class="mdc-inline-editable__wrapper" data-editable-target=".section-content">
           <div class="headline-wrapper">
             <h4 class="mdc-typography--headline4">Objetivos</h4>
-            <div class="headline-wrapper__actions" data-role="admin,docente">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
+            <div class="headline-wrapper__actions">
+              <button class="mdc-button mdc-button--raised mdc-inline-editable__toggle">
                 <span class="mdc-button__label">Editar contenido</span>
               </button>
             </div>
           </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
+
+          <div class="mdc-card mdc-card--large project-presentation-card mdc-inline-editable__target section-content">
             <div class="mdc-card__primary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
-                <br><br>
-                Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
-                <br><br>
-                Morbi a ultrices libero. In hac habitasse platea dictumst.
-                <br><br>
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
-              </p>
+              <div class="mdc-inline-editable__input">
+                <div class="mdc-rich-text-editor">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Morbi a ultrices libero. In hac habitasse platea dictumst.
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
+                  </p>
+                </div>
+              </div>
             </div>
+            <div class="mdc-inline-editable__actions">
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined edit-button">
+                <i class="mdc-icon small edit-icon-small-white"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
           </div>
         </section>
 
-        <section id="hoja-de-ruta" class="hoja-de-ruta-wrapper">
+        <section id="hoja-de-ruta" class="mdc-inline-editable__wrapper" data-editable-target=".section-content">
           <div class="headline-wrapper">
             <h4 class="mdc-typography--headline4">Hoja de ruta</h4>
-            <div class="headline-wrapper__actions" data-role="admin,docente">
-              <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__ripple"></span>
+            <div class="headline-wrapper__actions">
+              <button class="mdc-button mdc-button--raised mdc-inline-editable__toggle">
                 <span class="mdc-button__label">Editar contenido</span>
               </button>
             </div>
           </div>
-          <div class="mdc-card mdc-card--large project-presentation-card">
+
+          <div class="mdc-card mdc-card--large project-presentation-card mdc-inline-editable__target section-content">
             <div class="mdc-card__primary">
-              <p class="mdc-typography--body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
-                <br><br>
-                Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
-                <br><br>
-                Morbi a ultrices libero. In hac habitasse platea dictumst.
-                <br><br>
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
-              </p>
+              <div class="mdc-inline-editable__input">
+                <div class="mdc-rich-text-editor">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Morbi a ultrices libero. In hac habitasse platea dictumst.
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
+                  </p>
+                </div>
+              </div>
             </div>
+            <div class="mdc-inline-editable__actions">
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined edit-button">
+                <i class="mdc-icon small edit-icon-small-white"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4">Aún no hay contenido en la sección</span>
           </div>
         </section>
       </main>

@@ -111,7 +111,7 @@ class TreeCheckboxList {
     var mdcList = mdc.list.MDCList.attachTo(list);
     mdcList.singleSelection = false;
 
-    var self = this;
+    let self = this;
     mdcList.listen('MDCList:action', function(e) {
       self.handleSelection($(e.currentTarget), e.detail.index);
     });
@@ -293,9 +293,9 @@ class ActividadComposer {
 
               let newOption = newOptionItem.clone();
               newOption.attr('id', '');
-              newOption.find('input.mdc-inline-editable').prop('disabled', false);
+              newOption.find('input.mdc-inline-editable__input').prop('disabled', false);
               newOption.addClass('mdc-inline-editable__wrapper');
-              newOption.find('input.mdc-inline-editable').val(`Opción ${ item.find('.mdc-form-field:not(#new-option)').length + 1 }`);
+              newOption.find('input.mdc-inline-editable__input').val(`Opción ${ item.find('.mdc-form-field:not(#new-option)').length + 1 }`);
               newOption.find('.delete-button').click(handleDeleteOption);
               newOption.find('.plus-icon').remove();
               newOption.insertBefore(newOptionItem);
@@ -316,7 +316,7 @@ class ActividadComposer {
 class DatePicker {
   constructor(datePicker) {
     this.datePicker = datePicker;
-    self = this;
+    let self = this;
 
     let materialPicker = new MaterialDatepicker('.date-picker--button', {
       color: '#6274E5',
@@ -363,9 +363,12 @@ class InlineAppend {
       let cloneElement = $(cloneSelector).clone();
       window[handlerFn](cloneElement);
 
+
       cloneElement.children().each(function(i, element) {
         let targetSelector = $(element).attr('data-clone-target');
         $(targetSelector).append($(element));
+        initTooltips($(element));
+        initInlineEdits($(element));
       });
     });
   }
@@ -377,7 +380,7 @@ class MDCTooltip {
     let self = this;
 
     $(tooltip).mouseenter(function(e) {
-        self.handleMouseEnter();
+      self.handleMouseEnter();
       $(window).scroll(function() {
         self.handleScroll();
       });
@@ -391,7 +394,7 @@ class MDCTooltip {
     let text = this.tooltip.attr('data-mdc-tooltip');
     let mdcTooltip = $(`<div class='mdc-typography--caption tooltip'>${ text }</div>`);
     let coords = this.tooltip[0].getBoundingClientRect();
-    this.tooltip.append(mdcTooltip);
+    $('body').append(mdcTooltip);
     let left = coords.x - (mdcTooltip.outerWidth() - coords.width)/2;
     let top = coords.bottom + 8;
     mdcTooltip.css({top: top,left: left}).show();
@@ -399,11 +402,96 @@ class MDCTooltip {
   }
 
   handleMouseLeave() {
-    this.tooltip.find('.tooltip').remove();
+    $('.tooltip').remove();
   }
 
   handleScroll() {
-    this.tooltip.find('.tooltip').remove();
+    $('.tooltip').remove();
+  }
+}
+
+class MDCInlineEdit {
+  constructor(wrapper) {
+    this.wrapper = wrapper;
+    this.target = this.wrapper.find(this.wrapper.attr('data-editable-target'));
+    this.editing = false;
+
+    if (this.wrapper.find('.mdc-rich-text-editor').length)
+      this.editor = new MDCRichTextEditor(this.wrapper.find('.mdc-rich-text-editor')[0]);
+
+    let self = this;
+
+    this.wrapper.find('.mdc-inline-editable__toggle, .mdc-inline-editable__actions .edit-button').click(function(e) {
+      self.toggleMode();
+    });
+  }
+
+  toggleMode() {
+    this.editing = !this.editing;
+    this.wrapper.toggleClass('mdc-inline-editable__wrapper--edit-mode');
+    this.wrapper.find('.mdc-inline-editable__toggle').toggleClass('mdc-button--active');
+    let self = this;
+
+    let isEmpty = $(this.target)
+                  .find('.mdc-inline-editable__input .mdc-rich-text-editor .ql-editor')
+                  .hasClass('ql-blank');
+
+    if (isEmpty) {
+      $(this.target).addClass('no-content');
+      $(this.target).toggle();
+    } else {
+      $(this.target).removeClass('no-content');
+    }
+
+    if (this.editing) {
+      this.editor.enable();
+    } else {
+      this.editor.disable();
+    }
+  }
+}
+
+class MDCRichTextEditor {
+  constructor(editor) {
+    this.editor = $(editor);
+
+    let toolbar = [
+      ['bold', 'italic', 'underline', 'strike'],
+      ['blockquote'],
+      [{ 'header': [1, 2, false] }],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'script': 'sub'}, { 'script': 'super' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
+      [{ 'direction': 'rtl' }],
+      /*[{ 'size': ['small', false, 'large', 'huge'] }],*/
+      [{ 'color': [] }/*, { 'background': [] }*/],
+      [{ 'align': [] }],
+      ['link', 'image', 'video'],
+      ['clean'] 
+    ];
+    this.mdcEditor = new Quill(editor, {
+      modules: { 
+        toolbar: toolbar,
+        imageResize: {
+          displaySize: true
+        }
+      },
+      theme: 'snow'
+    });
+  }
+
+  enable() {
+    this.editor.find('.overlay').show();
+    this.editor.find('img').off('click');
+    this.mdcEditor.enable();
+  }
+
+  disable() {
+    this.editor.find('.overlay').hide();
+    this.editor.find('img').click(function(e) {
+      e.stopPropagation();
+    });
+    this.mdcEditor.disable();
   }
 }
 
@@ -517,7 +605,41 @@ for (var i = 0, inlineAppendButton; inlineAppendButton = inlineAppendButtons[i];
   new InlineAppend($(inlineAppendButton));
 }
 
-var tooltips = $('.mdc-tooltip');
-for (var i = 0, tooltip; tooltip = tooltips[i]; i++) {
-  new MDCTooltip(tooltip);
+function initTooltips(wrapper = undefined) {
+  var tooltips;
+  if (wrapper) {
+    tooltips = $(wrapper).find('[data-mdc-tooltip]');
+  } else {
+    tooltips = $('[data-mdc-tooltip]');
+  }
+
+  for (var i = 0, tooltip; tooltip = tooltips[i]; i++) {
+    new MDCTooltip(tooltip);
+  }
 }
+
+function initInlineEdits(wrapper = undefined) {
+  var inlineEdits;
+  if (wrapper) {
+    inlineEdits = $(wrapper).find('.mdc-inline-editable__wrapper');
+  } else {
+    inlineEdits = $('.mdc-inline-editable__wrapper:visible');
+  }
+
+  for (var i = 0, inlineEdit; inlineEdit = inlineEdits[i]; i++) {
+    new MDCInlineEdit($(inlineEdit));
+  }
+/*
+  if (wrapper && $(wrapper).hasClass('.mdc-inline-editable__wrapper')) {
+    new MDCInlineEdit($(wrapper));
+  }*/
+}
+
+initTooltips();
+initInlineEdits();
+
+/*var editors = $('.mdc-rich-text-editor');
+for (var i = 0, editor; editor = editors[i]; i++) {
+  new MDCRichTextEditor(editor);
+}*/
+

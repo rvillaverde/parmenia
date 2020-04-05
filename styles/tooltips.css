@@ -11,7 +11,7 @@
   transform-origin: top center;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   transition-delay: .3s;
-  z-index: 2000;
+  z-index: 60;
 }
 
 .tooltip.visible {

@@ -113,7 +113,7 @@ body.nav-menu-open {
   margin: 24px 0;
 }
 
-.headline-wrapper .mdc-button:first-child + .mdc-button {
+.headline-wrapper :not(.headline-wrapper__actions) .mdc-button:first-child + .mdc-button {
   margin-left: 0;
 }
 
@@ -712,12 +712,15 @@ input[type=file] {
 
 .ql-snow .ql-editor h1,
 .ql-snow .ql-editor h2 {
+  color: var(--mdc-theme-gray__700);
   font-family: 'Poppins', sans-serif;
 }
 
 .ql-snow .ql-editor h1 {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 28px;
 }
 
 .ql-snow .ql-editor h2 {
@@ -725,10 +728,20 @@ input[type=file] {
   font-weight: 600;
 }
 
+.ql-snow .ql-editor blockquote,
 .ql-snow .ql-editor p {
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  color: var(--mdc-theme-gray__700);
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 22px;
+  margin: 0;
+}
+
+.mdc-inline-editable__wrapper {
+  position: relative;
 }
 
 .actividad-composer .actividad-component:not(.edit-mode) .mdc-inline-editable__wrapper .mdc-form-field .delete-button,
@@ -738,33 +751,89 @@ input[type=file] {
   display: none;
 }
 
-.mdc-inline-editable__wrapper .mdc-form-field#new-option .mdc-inline-editable {
+.mdc-inline-editable__wrapper .mdc-form-field#new-option .mdc-inline-editable__input {
   cursor: pointer;
 }
 
-.mdc-inline-editable__wrapper .mdc-inline-editable {
+.mdc-inline-editable__wrapper input.mdc-inline-editable__input {
   background-color: transparent;
   border: 0;
   flex-grow: 1;
   margin-right: 8px;
 }
 
-.mdc-inline-editable__wrapper .mdc-form-field:hover .mdc-inline-editable:not(:disabled) {
+.mdc-inline-editable__wrapper .mdc-form-field:hover .mdc-inline-editable__input:not(:disabled) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.mdc-inline-editable__wrapper .mdc-inline-editable:focus {
+.mdc-inline-editable__wrapper .mdc-inline-editable__input:focus {
   outline: none;
 }
 
-.mdc-inline-editable__wrapper .mdc-inline-editable:disabled {
+.mdc-inline-editable__wrapper .mdc-inline-editable__input:disabled {
   background-color: transparent;
-}
-
-.mdc-inline-editable__wrapper .delete-button {
-  margin-left: auto;
 }
 
 .inline-append__clone-element {
   display: none;
+}
+
+.no-content {
+  display: none;
+}
+
+.mdc-inline-editable__wrapper--edit-mode .no-content-placeholder,
+:not(.no-content) + .no-content-placeholder {
+  display: none;
+}
+
+.mdc-inline-editable__wrapper:not(.mdc-inline-editable__wrapper--edit-mode) .mdc-inline-editable__target:not(.no-content) .ql-toolbar {
+  display: none;
+}
+
+.mdc-inline-editable__wrapper:not(.mdc-inline-editable__wrapper--edit-mode) .mdc-inline-editable__target:not(.no-content) .mdc-rich-text-editor {
+  border-width: 0;
+} 
+
+.mdc-inline-editable__wrapper:not(.mdc-inline-editable__wrapper--edit-mode) .mdc-inline-editable__target:not(.no-content) .mdc-rich-text-editor .ql-editor {
+  padding: 0;
+} 
+
+.mdc-inline-editable__wrapper--edit-mode .mdc-inline-editable__target .mdc-rich-text-editor .ql-editor {
+  min-height: 256px;
+} 
+
+.mdc-card .mdc-card__primary > .mdc-inline-editable__input {
+  padding: 40px 48px;
+}
+
+.mdc-inline-editable__wrapper .mdc-card .mdc-card__primary {
+  margin: 0;
+}
+
+.mdc-inline-editable__wrapper:not(.mdc-inline-editable__wrapper--edit-mode) .mdc-inline-editable__target:hover .mdc-inline-editable__actions {
+  display: flex;
+}
+
+.mdc-inline-editable__actions,
+.mdc-inline-editable__actions::before {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.mdc-inline-editable__actions {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mdc-inline-editable__actions::before {
+  content: "";
+  background: var(--mdc-theme-primary);
+  opacity: 0.75;
 }

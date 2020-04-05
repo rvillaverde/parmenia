@@ -816,19 +816,19 @@
 }
 .ql-snow .ql-picker.ql-size .ql-picker-label::before,
 .ql-snow .ql-picker.ql-size .ql-picker-item::before {
-  content: 'Normal';
+  content: 'Normla';
 }
 .ql-snow .ql-picker.ql-size .ql-picker-label[data-value=small]::before,
 .ql-snow .ql-picker.ql-size .ql-picker-item[data-value=small]::before {
-  content: 'Small';
+  content: 'Pequeño';
 }
 .ql-snow .ql-picker.ql-size .ql-picker-label[data-value=large]::before,
 .ql-snow .ql-picker.ql-size .ql-picker-item[data-value=large]::before {
-  content: 'Large';
+  content: 'Grande';
 }
 .ql-snow .ql-picker.ql-size .ql-picker-label[data-value=huge]::before,
 .ql-snow .ql-picker.ql-size .ql-picker-item[data-value=huge]::before {
-  content: 'Huge';
+  content: 'Enorme';
 }
 .ql-snow .ql-picker.ql-size .ql-picker-item[data-value=small]::before {
   font-size: 10px;
@@ -881,9 +881,10 @@
   color: #444;
   padding: 5px 12px;
   white-space: nowrap;
+  z-index: 60;
 }
 .ql-snow .ql-tooltip::before {
-  content: "Visit URL:";
+  content: "Visitar enlace:";
   line-height: 26px;
   margin-right: 8px;
 }
@@ -905,12 +906,12 @@
 }
 .ql-snow .ql-tooltip a.ql-action::after {
   border-right: 1px solid #ccc;
-  content: 'Edit';
+  content: 'Editar';
   margin-left: 16px;
   padding-right: 8px;
 }
 .ql-snow .ql-tooltip a.ql-remove::before {
-  content: 'Remove';
+  content: 'Eliminar';
   margin-left: 8px;
 }
 .ql-snow .ql-tooltip a {
@@ -925,17 +926,17 @@
 }
 .ql-snow .ql-tooltip.ql-editing a.ql-action::after {
   border-right: 0px;
-  content: 'Save';
+  content: 'Guardar';
   padding-right: 0px;
 }
 .ql-snow .ql-tooltip[data-mode=link]::before {
-  content: "Enter link:";
+  content: "Ingresá el enlace:";
 }
 .ql-snow .ql-tooltip[data-mode=formula]::before {
-  content: "Enter formula:";
+  content: "Ingresá la fórmula:";
 }
 .ql-snow .ql-tooltip[data-mode=video]::before {
-  content: "Enter video:";
+  content: "Ingresá el video:";
 }
 .ql-snow a {
   color: #06c;

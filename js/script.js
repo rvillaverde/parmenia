@@ -119,7 +119,7 @@ function collapse(e) {
 }
 
 function addToBag(element) {
-  $(element).find('.tooltip').remove();
+  $('.tooltip').remove();
   if ($(element).hasClass('mdc-button--active')) {
     $(element).removeClass('mdc-button--active');
     $(element).attr('data-mdc-tooltip', 'Agregar a la mochila');
@@ -136,7 +136,6 @@ function toggleView(element) {
   let toggable = $(element).closest('.toggable');
   toggable.find(`.toggle-target`).hide();
   toggable.find(`.toggle-target[data-toggle-view='${ view }']`).show();
-  console.log(view);
 }
 
 function setoggleCardSelection(card) {
@@ -187,14 +186,18 @@ function onGrab(e) {
 }
 
 function newDrawerSectionHandler(element) {
+  /* aca estaria bueno que desde el backend venga un numero para usar como id y asegurarse que sea unico */
   function updateSectionName(e) {
     let listItem = $(e.currentTarget).closest('.mdc-list-item');
 
     let oldValue = listItem.attr('data-section');
-    let oldId = listItem.attr('data-section').split('-').pop();
+    let index = listItem.attr('data-section').split('-').pop();
 
-    let newName = listItem.find('.mdc-inline-editable').val();
-    let newId = `${ newName.toLowerCase().split(' ').join('-') }-${ oldId }`;
+    let newName = listItem.find('.mdc-inline-editable__input').val();
+    let normalizedName = newName.toLowerCase().split(' ').join('-')
+                        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                        .replace("'", "").replace('"', '');
+    let newId = `${ encodeURI(normalizedName) }-${ index }`;
 
     listItem.find('a .mdc-list-item__text').text(newName);
     listItem.attr('data-section', newId);
@@ -206,7 +209,7 @@ function newDrawerSectionHandler(element) {
   function toggleEditMode(e) {
     let listItem = $(e.currentTarget).closest('.mdc-list-item');
     listItem.find('.mdc-inline-editable__toggle').toggleClass('mdc-button--active');
-    listItem.find('a, .mdc-inline-editable').toggle();
+    listItem.find('a, .mdc-inline-editable__input').toggle();
     updateSectionName(e);
   }
 
@@ -219,9 +222,9 @@ function newDrawerSectionHandler(element) {
     $(this).find('.mdc-icon').toggle();
     $(this).closest('.mdc-list-item').toggleClass('disabled-section');
   });
-  element.find('.mdc-inline-editable').hide();
+  element.find('.mdc-inline-editable__input').hide();
   element.find('.mdc-inline-editable__toggle').click(toggleEditMode);
-  element.find('.mdc-inline-editable').keypress(function(e) {
+  element.find('.mdc-inline-editable__input').keypress(function(e) {
     let keycode = (event.keyCode ? event.keyCode : event.which);
     if (keycode == '13'){
       toggleEditMode(e);
