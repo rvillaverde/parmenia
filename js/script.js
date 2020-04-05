@@ -118,8 +118,12 @@ function collapse(e) {
   }
 }
 
+function removeTooltip() {
+  $('.mdc-tooltip').remove();
+}
+
 function addToBag(element) {
-  $('.tooltip').remove();
+  removeTooltip();
   if ($(element).hasClass('mdc-button--active')) {
     $(element).removeClass('mdc-button--active');
     $(element).attr('data-mdc-tooltip', 'Agregar a la mochila');

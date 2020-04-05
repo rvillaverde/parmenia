@@ -1,4 +1,4 @@
-.tooltip {
+.mdc-tooltip {
   background-color: var(--mdc-theme-gray__600);
   border-radius: 4px;
   box-sizing: border-box;
@@ -14,11 +14,12 @@
   z-index: 60;
 }
 
-.tooltip.visible {
+.mdc-tooltip.visible {
   opacity: 1;
   transform: scale(1);
 }
 
-.mdc-tooltip {
+/*.mdc-tooltip {
   position: relative;
 }
+*/

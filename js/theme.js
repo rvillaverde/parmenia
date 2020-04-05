@@ -392,7 +392,7 @@ class MDCTooltip {
 
   handleMouseEnter() {
     let text = this.tooltip.attr('data-mdc-tooltip');
-    let mdcTooltip = $(`<div class='mdc-typography--caption tooltip'>${ text }</div>`);
+    let mdcTooltip = $(`<div class='mdc-typography--caption mdc-tooltip'>${ text }</div>`);
     let coords = this.tooltip[0].getBoundingClientRect();
     $('body').append(mdcTooltip);
     let left = coords.x - (mdcTooltip.outerWidth() - coords.width)/2;
@@ -402,11 +402,11 @@ class MDCTooltip {
   }
 
   handleMouseLeave() {
-    $('.tooltip').remove();
+    $('.mdc-tooltip').remove();
   }
 
   handleScroll() {
-    $('.tooltip').remove();
+    $('.mdc-tooltip').remove();
   }
 }
 
