@@ -105,6 +105,10 @@
               </a>
               <div class="mdc-menu mdc-menu-surface collapsable">
                 <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item mdc-list-item--highlight mdc-menu__action" role="menuitem" data-role="admin">
+                    <a href="aulas.html" class="mdc-list-item__text mdc-typography--subtitle1">Administrar aulas</a>
+                  </li>
+                  <li class="mdc-list-divider" role="separator" data-role="admin"></li>
                   <li class="mdc-list-item mdc-menu__action" role="menuitem">
                     <a href="aula1.html" class="mdc-list-item__text mdc-typography--subtitle1">Nombre del aula</a>
                   </li>
@@ -1761,8 +1765,8 @@
                 <span class="mdc-button__label" onclick="openDialog('nuevo-alumno-01');">Crear carpeta</span>
               </button>
             </div>
-            <div class="headline-wrapper__actions" data-role="docente,admin" data-mdc-tooltip="Cambiar vista">
-              <div class="mdc-button--toggle">
+            <div class="headline-wrapper__actions" data-role="docente,admin">
+              <div class="mdc-button--toggle" data-mdc-tooltip="Cambiar vista">
                 <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" data-toggle-view="list" onclick="toggleView(this);">
                   <i class="mdc-icon small">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -142,6 +142,10 @@ body:not(.nav-menu-open) .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-
   opacity: 1;
 }
 
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded) .mdc-list-item__text {
+  font-weight: bold;
+}
+
 .mdc-drawer__content-item {
   padding: 24px;
 }

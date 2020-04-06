@@ -2,6 +2,10 @@
   background-color: transparent;
 }
 
+.mdc-card--large .mdc-data-table {
+  width: 100%;
+}
+
 .mdc-data-table__table {
   table-layout: auto;
   width: 100%;
@@ -19,6 +23,12 @@
   height: 40px;
   justify-content: center;
   width: 40px;
+}
+
+.table__photo-thumbnail.small {
+  height: 24px;
+  width: 24px;
+  min-width: 24px;
 }
 
 .mdc-data-table__row:last-child {
@@ -86,6 +96,10 @@
 
 .mdc-data-table__cell.mdc-data-table__cell--small-icon i {
   margin: auto;
+}
+
+.mdc-data-table__header-cell.span-10 {
+  width: 10%;
 }
 
 .mdc-data-table__header-cell.span-20 {

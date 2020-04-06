@@ -160,7 +160,7 @@
   text-align: center;
 }
 
-.aulas-card .mdc-chip-set {
+.aulas-card:not(.mdc-card--large) .mdc-chip-set {
   justify-content: center;
 }
 

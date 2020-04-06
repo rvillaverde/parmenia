@@ -152,12 +152,24 @@
   background-image: url("../icons/mochila-icon-secondary.svg");
 }
 
+.noticias-icon {
+  background-image: url("../icons/noticias-icon.svg");
+}
+
 .noticias-icon-small-white {
   background-image: url("../icons/noticias-icon-small-white.svg");
 }
 
+.proyectos-icon {
+  background-image: url("../icons/proyectos-icon.svg");
+}
+
 .proyectos-icon-small-white {
   background-image: url("../icons/proyectos-icon-small-white.svg");
+}
+
+.recursos-icon {
+  background-image: url("../icons/recursos-icon.svg");
 }
 
 .recursos-icon-small-white {
