@@ -430,7 +430,7 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   }
 
   .mdc-header__actions {
-    flex-direction: column;
+    /*flex-direction: column;*/
   }
 
   .mdc-header__actions .mdc-button {
@@ -438,7 +438,7 @@ input.mdc-text-field__input.mdc-text-field--no-label::placeholder {
   } 
 
   .mdc-header__actions .mdc-button + .mdc-button {
-    margin-left: 0;
+    /*margin-left: 0;*/
   } 
 }
 

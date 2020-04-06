@@ -403,18 +403,14 @@ class MDCTooltip {
     this.tooltip = $(tooltip);
     let self = this;
 
-    $(tooltip).mouseenter(function(e) {
-      self.handleMouseEnter();
-      $(window).scroll(function() {
-        self.handleScroll();
-      });
+    this.tooltip.on('touchstart', function(e) {
+      self.tooltip.off('mouseenter', self.handleMouseEnter);
     });
-    $(tooltip).mouseleave(function(e) {
-      self.handleMouseLeave();
-    });
+    this.tooltip.mouseenter(this, self.handleMouseEnter);
+    this.tooltip.mouseleave(self.handleMouseLeave);
   }
 
-  handleMouseEnter() {
+  showTooltip() {
     let text = this.tooltip.attr('data-mdc-tooltip');
     let mdcTooltip = $(`<div class='mdc-typography--caption mdc-tooltip'>${ text }</div>`);
     let coords = this.tooltip[0].getBoundingClientRect();
@@ -423,6 +419,14 @@ class MDCTooltip {
     let top = coords.bottom + 8;
     mdcTooltip.css({top: top,left: left}).show();
     mdcTooltip.addClass('visible');
+  }
+
+  handleMouseEnter(e) {
+    let self = e.data;
+    self.showTooltip();
+    $(window).scroll(function() {
+      self.handleScroll();
+    });
   }
 
   handleMouseLeave() {

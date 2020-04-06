@@ -2,6 +2,7 @@ let dialog, drawer, header, appBar;
 
 $(function() {
   $('.user-roles-wrapper .mdc-icon-button').click(function() { $(this).closest('.user-roles-wrapper').hide(); });
+  $('.mdc-top-app-bar #nav-menu-toggle input[type=checkbox]').prop('checked', false);
 
   drawer = $('.mdc-drawer');
   header = $('.mdc-header');

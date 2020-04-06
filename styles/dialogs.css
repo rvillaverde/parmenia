@@ -25,6 +25,13 @@
   max-width: var(--dialog-xl-width);
 }
 
+@media (max-width: 960px) {
+  .mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--xl {
+    max-height: 100vh;
+    max-width: calc(100vw - 48px);
+  }
+}
+
 @media (max-width: 640px) {
   .mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--large,
   .mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--xl,
