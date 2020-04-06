@@ -31,16 +31,6 @@
   max-width: var(--viewport-width);
 }
 
-@media (max-width: 760px) {
-  .drawer-side-wrapper {
-    margin-left: 0;
-  }
-
-  .mdc-drawer {
-    display: none;
-  }
-}
-
 .mdc-drawer.fixed {
   position: fixed;
 }
@@ -93,6 +83,16 @@ body:not([data-role="alumno"]) .mdc-drawer .mdc-list-item a {
 
   body:not([data-role="alumno"]) .mdc-drawer .mdc-list-item a {
     max-width: 92px;
+  }
+}
+
+@media (max-width: 760px) {
+  .drawer-side-wrapper {
+    margin-left: 0;
+  }
+
+  .mdc-drawer {
+    display: none;
   }
 }
 
