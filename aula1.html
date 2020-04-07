@@ -151,7 +151,7 @@
 
           <ul class="mdc-top-app-bar__actions" role="toolbar">
             <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
-              <a class="mdc-button mdc-button--app-bar" href="mochila.html" aria-label="Mochila">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
                 <i class="mdc-icon nav-mochila-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
               </a>
@@ -312,7 +312,7 @@
             <span class="mdc-button__label">Editar aula</span>
           </button>
 
-          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Editar tema" data-mdc-tooltip="Editar tema" data-role="docente">
+          <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" aria-label="Editar tema" data-mdc-tooltip="Editar tema" data-role="docente" onclick="openDialog('cambiar-tema');">
             <i class="mdc-icon small camera-icon"></i>
           </button>
         </section>
@@ -570,12 +570,8 @@
                     </span>
                     <label class="mdc-list-item__text mdc-typography--body1" for="proyecto-1">Proyecto 1</label>
                     <a class="collapse-link">
-                      <input type="checkbox">
-                      <i class="mdc-icon small">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </i>
+                      <input type="checkbox" checked>
+                      <i class="mdc-icon small chevron-right-icon-secondary"></i>
                     </a>
                   </li>
                   <ul class="mdc-list mdc-list--nested collapsable" role="group">
@@ -609,14 +605,10 @@
                         <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clases">Clases/Actividades</label>
                         <a class="collapse-link">
                           <input type="checkbox">
-                          <i class="mdc-icon small">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
+                          <i class="mdc-icon small chevron-right-icon-secondary"></i>
                         </a>
                       </li>
-                      <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                      <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
                         <li class="mdc-list-item" role="checkbox" aria-checked="false">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
@@ -706,12 +698,8 @@
                     </span>
                     <label class="mdc-list-item__text mdc-typography--body1" for="proyecto-2">Proyecto 2</label>
                     <a class="collapse-link">
-                      <input type="checkbox">
-                      <i class="mdc-icon small">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </i>
+                      <input type="checkbox" checked>
+                      <i class="mdc-icon small chevron-right-icon-secondary"></i>
                     </a>
                   </li>
                   <ul class="mdc-list mdc-list--nested collapsable" role="group">
@@ -745,14 +733,10 @@
                         <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-clases">Clases/Actividades</label>
                         <a class="collapse-link">
                           <input type="checkbox">
-                          <i class="mdc-icon small">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
+                          <i class="mdc-icon small chevron-right-icon-secondary"></i>
                         </a>
                       </li>
-                      <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                      <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
                         <li class="mdc-list-item" role="checkbox" aria-checked="false">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
@@ -932,6 +916,365 @@
       <div class="mdc-dialog__scrim"></div>
     </div>
 
+    <div id="cambiar-tema" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface mdc-dialog__surface--large"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Cambiar tema del aula
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="crear-aula-01">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Imagen</h4>
+
+                    <div class="mdc-card mdc-card--outlined preview-card">
+                      <div class="mdc-card__primary-action" tabindex="0">
+                        <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                        <div class="mdc-card__actions">
+                          <div class="mdc-card__action-buttons">
+                            <p class="mdc-typography--body2">
+                              Nombre imagen.jpg
+                            </p>
+                          </div>
+                          <div class="mdc-card__action-icons">
+                            <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                              <i class="mdc-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M3 6H5H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M10 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M14 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="admin-form__photo-placeholder__actions">
+                      <button class="mdc-button mdc-button--text" onclick="openDialog('galeria-select-01');" disabled>
+                        <span class="mdc-button__ripple"></span>
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 15L16 10L5 21" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Elegir de la galería</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Color</h4>
+
+                    <div class="mdc-select mdc-select--outlined">
+                      <div class="mdc-select__anchor">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <div class="mdc-select__selected-text mdc-typography--body1" aria-labelledby="color-select-label">
+                          Color 1
+                        </div>
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span id="color-select-label" class="mdc-floating-label">Asignar color</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </div>
+
+                      <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
+                        <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                          <li class="mdc-list-item mdc-list-item--selected" data-value="custom__00" role="option">
+                            <span class="mdc-list-item__graphic">
+                              <span class="round-photo-wrapper" style="background-color: var(--mdc-theme-custom__00);"></span>
+                            </span>
+                            <span class="mdc-typography--body2">Color 1</span>
+                          </li>
+                          <li class="mdc-list-item" data-value="custom__01" role="option">
+                            <span class="mdc-list-item__graphic">
+                              <span class="round-photo-wrapper" style="background-color: var(--mdc-theme-custom__01);"></span>
+                            </span>
+                            <span class="mdc-typography--body2">Color 2</span>
+                          </li>
+                          <li class="mdc-list-item" data-value="custom__02" role="option">
+                            <span class="mdc-list-item__graphic">
+                              <span class="round-photo-wrapper" style="background-color: var(--mdc-theme-custom__02);"></span>
+                            </span>
+                            <span class="mdc-typography--body2">Color 3</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear aula</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="nueva-carpeta" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface mdc-dialog__surface--large"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nueva carpeta de recursos
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="docente-form-01">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="nombre">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="nombre">Nombre de la carpeta</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 80 caracteres</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-switch__wrapper">
+                      <div class="mdc-switch">
+                        <div class="mdc-switch__track"></div>
+                        <div class="mdc-switch__thumb-underlay">
+                          <div class="mdc-switch__thumb"></div>
+                          <input type="checkbox" id="carpeta-visible-alumnos" class="mdc-switch__native-control" role="switch" aria-checked="false" name="carpeta-visible-alumnos">
+                        </div>
+                      </div>
+                      <label class="mdc-switch__label mdc-typography--headline5" for="carpeta-visible-alumnos">
+                        Carpeta visible para los alumnos
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear carpeta</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="nuevo-recurso" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface mdc-dialog__surface--large"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nuevo recurso
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="docente-form-01">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="nombre">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="nombre">Nombre del recurso</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 80 caracteres</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Tipo de recurso</h4>
+                    <div class="mdc-radio-button__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-recurso-imagen" name="tipo-recurso" value="tipo-recurso-imagen">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-recurso-imagen">Imagen</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-recurso-video" name="tipo-recurso" value="tipo-recurso-video">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-recurso-video">Video</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-recurso-audio" name="tipo-recurso" value="tipo-recurso-audio">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-recurso-audio">Audio</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-recurso-texto" name="tipo-recurso" value="tipo-recurso-texto">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-recurso-texto">Texto</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-recurso-enlace" name="tipo-recurso" value="tipo-recurso-enlace">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-recurso-enlace">Enlace externo</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
+                    <div class="admin-form__photo-placeholder">
+                      <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Foto de perfil</span>
+                    </div>
+
+                    <div class="admin-form__photo-placeholder__actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Subir archivo</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear recurso</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
     <aside class="mdc-drawer">
       <div class="mdc-drawer__content">
         <nav class="mdc-list">
@@ -1096,12 +1439,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
             </div>
 
@@ -1372,12 +1711,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
             </div>
 
@@ -1567,12 +1902,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
             </div>
 
@@ -1762,7 +2093,7 @@
                     <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </i>
-                <span class="mdc-button__label" onclick="openDialog('nuevo-alumno-01');">Crear carpeta</span>
+                <span class="mdc-button__label" onclick="openDialog('nueva-carpeta');">Crear carpeta</span>
               </button>
             </div>
             <div class="headline-wrapper__actions" data-role="docente,admin">
@@ -1833,7 +2164,7 @@
                   </a>
                 </div>
                 <div class="group-actions" data-role="admin,docente">
-                  <button class="mdc-button mdc-button--text">
+                  <button class="mdc-button mdc-button--text" onclick="openDialog('nuevo-recurso');">
                     <span class="mdc-button__ripple"></span>
                     <i class="mdc-button__icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2065,7 +2396,7 @@
                   </a>
                 </div>
                 <div class="group-actions" data-role="admin,docente">
-                  <button class="mdc-button mdc-button--text">
+                  <button class="mdc-button mdc-button--text" onclick="openDialog('nuevo-recurso');">
                     <span class="mdc-button__ripple"></span>
                     <i class="mdc-button__icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2300,7 +2631,7 @@
                   </a>
                 </div>
                 <div class="group-actions" data-role="docente,admin">
-                  <button class="mdc-button mdc-button--text">
+                  <button class="mdc-button mdc-button--text" onclick="openDialog('nuevo-recurso');">
                     <span class="mdc-button__ripple"></span>
                     <i class="mdc-button__icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2518,7 +2849,7 @@
                     </button>
                   </a>
                 </div>
-                <div class="group-actions"  data-role="docente,admin">
+                <div class="group-actions" data-role="docente,admin" onclick="openDialog('nuevo-recurso');">
                   <button class="mdc-button mdc-button--text">
                     <span class="mdc-button__ripple"></span>
                     <i class="mdc-button__icon">

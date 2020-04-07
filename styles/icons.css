@@ -52,8 +52,17 @@
   background-image: url("../icons/dropdown-icon.svg");
 }
 
+.info-icon-small {
+  background-image: url("../icons/info-icon-small.svg");
+  margin-left: 8px;
+}
+
 .drag-icon-small {
   background-image: url("../icons/drag-icon-small.svg");
+}
+
+.selected-icon {
+  background-image: url("../icons/selected-icon.svg");
 }
 
 .edit-icon {
@@ -144,6 +153,10 @@
   background-image: url("../icons/chevron-right-icon.svg");
 }
 
+.chevron-right-icon-secondary {
+  background-image: url("../icons/chevron-right-icon-secondary.svg");
+}
+
 .mochila-icon-small-white {
   background-image: url("../icons/mochila-icon-small-white.svg");
 }
@@ -178,6 +191,10 @@
 
 .formato-grupal-icon-small {
   background-image: url("../icons/formato-grupal-icon-small.svg");
+}
+
+.formato-individual-icon-small {
+  background-image: url("../icons/formato-individual-icon-small.svg");
 }
 
 .actividad-personalizada-icon-small {

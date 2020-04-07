@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<!--     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -14,8 +14,8 @@
       crossorigin="anonymous"></script>
 
     <!-- OFFLINE MODE -->
-<!--     <link href="offline/material-components-web.css" rel="stylesheet">
-    <script src="offline/material-components-web.js"></script> -->
+    <link href="offline/material-components-web.css" rel="stylesheet">
+    <script src="offline/material-components-web.js"></script>
     <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
 
     <link rel="stylesheet" href="styles/icons.css">
@@ -107,7 +107,7 @@
 
           <ul class="mdc-top-app-bar__actions" role="toolbar">
             <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
-              <a class="mdc-button mdc-button--app-bar" href="mochila.html" aria-label="Mochila">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
                 <i class="mdc-icon nav-mochila-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
               </a>
@@ -593,14 +593,14 @@
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop">
             <h2 class="mdc-typography--headline2">Alumnos</h2>
 
-            <div class="mdc-data-table__filter-wrapper">
-              <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined">
+            <div class="mdc-data-filter__wrapper">
+              <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--search">
                 <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
-                <input type="text" class="mdc-text-field__input mdc-text-field--no-label" aria-labelledby="my-label-id">
+                <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
                 <div class="mdc-notched-outline mdc-notched-outline--no-label">
                   <div class="mdc-notched-outline__leading"></div>
                   <div class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label" id="my-label-id">Buscar alumno</span>
+                    <span class="mdc-floating-label mdc-typography--subtitle1" id="my-label-id">Buscar alumno</span>
                   </div>
                   <div class="mdc-notched-outline__trailing"></div>
                 </div>
@@ -1151,7 +1151,7 @@
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
             <h2 class="mdc-typography--headline2">Cursos</h2>
 
-            <div class="mdc-data-table__filter-wrapper">
+            <div class="mdc-data-filter__wrapper">
               <button class="mdc-button mdc-button--text" onclick="openDialog('nuevo-curso-01');">
                 <span class="mdc-button__ripple"></span>
                 <i class="mdc-button__icon">

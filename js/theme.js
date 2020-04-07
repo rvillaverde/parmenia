@@ -9,6 +9,26 @@ const chipHtml = `
     <span class='mdc-chip__text mdc-typography--body2'>%name%</span>
   </div>`;
 
+class MDCSearchTextField {
+  constructor(textField) {
+    this.textField = $(textField);
+    let self = this;
+    this.textField.find('input').focus(function(e) {
+      e.stopImmediatePropagation();
+      self.textField.find('.mdc-floating-label').hide();
+    });
+
+    this.textField.find('input').blur(function(e) {
+      e.stopImmediatePropagation();
+      if ($(this).val().length === 0) {
+        self.textField.find('.mdc-floating-label').show();
+      } 
+    });
+
+    this.mdcTextField = mdc.textField.MDCTextField.attachTo(textField);
+  }
+}
+
 class SelectMenuWithSearch {
   constructor(select) {
     let self = this;
@@ -555,9 +575,14 @@ for (var i = 0, chipset; chipset = chipsets[i]; i++) {
   let mdcChipset = mdc.chips.MDCChipSet.attachTo(chipset);
 }
 
-var textFields = $('.mdc-text-field');
+var textFields = $('.mdc-text-field:not(.mdc-text-field--search)');
 for (var i = 0, textField; textField = textFields[i]; i++) {
   mdc.textField.MDCTextField.attachTo(textField);
+}
+
+var searchTextFields = $('.mdc-text-field.mdc-text-field--search');
+for (var i = 0, searchTextField; searchTextField = searchTextFields[i]; i++) {
+  new MDCSearchTextField(searchTextField);
 }
 
 var checkboxes = $('.mdc-checkbox');

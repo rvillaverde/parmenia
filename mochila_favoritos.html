@@ -108,7 +108,7 @@
 
           <ul class="mdc-top-app-bar__actions" role="toolbar">
             <li class="mdc-top-app-bar__action-item mdc-top-app-bar__action-item--active" data-role="alumno,docente">
-              <a class="mdc-button mdc-button--app-bar" href="mochila.html" aria-label="Mochila">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
                 <i class="mdc-icon nav-mochila-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
               </a>
@@ -242,6 +242,77 @@
       </div>
     </header>
 
+    <div id="nuevo-favorito" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nuevo favorito
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="nueva-clase__form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="fecha" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="titulo">Nombre</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Máx. 80 caracteres</div>
+                      </div>
+                    </div>
+
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="titulo">Copiar y pegar aquí el enlace externo</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear favorito</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
     <aside class="mdc-drawer">
       <div class="mdc-drawer__content">
         <nav class="mdc-list">
@@ -273,6 +344,90 @@
       <main class="main-wrapper">
         <h2 class="mdc-typography--headline2">Mis Favoritos</h2>
 
+        <div class="mdc-data-filter__wrapper">
+          <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--search">
+            <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
+            <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+            <div class="mdc-notched-outline mdc-notched-outline--no-label">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+                <span class="mdc-floating-label mdc-typography--subtitle1" id="my-label-id">Buscar en mi mochila</span>
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </label>
+          <div class="mdc-data-filter__chips">
+            <span class="mdc-data-filter__title mdc-typography--subtitle1">Filtros</span>
+            <div class="mdc-chip-set mdc-chip-set--filter" role="grid">
+              <div class="mdc-chip" role="row">
+                <div class="mdc-chip__ripple"></div>
+                <span class="mdc-chip__checkmark" >
+                  <svg class="mdc-chip__checkmark-svg" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.50016 13.5L4.00016 10L2.8335 11.1667L7.50016 15.8333L17.5002 5.83334L16.3335 4.66667L7.50016 13.5Z" fill="#757575"/>
+                  </svg>
+                </span>
+                <span role="gridcell">
+                  <span role="checkbox" tabindex="0" aria-checked="false" class="mdc-chip__primary-action">
+                    <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
+                  </span>
+                </span>
+              </div>
+              <div class="mdc-chip" role="row">
+                <div class="mdc-chip__ripple"></div>
+                <span class="mdc-chip__checkmark" >
+                  <svg class="mdc-chip__checkmark-svg" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.50016 13.5L4.00016 10L2.8335 11.1667L7.50016 15.8333L17.5002 5.83334L16.3335 4.66667L7.50016 13.5Z" fill="#757575"/>
+                  </svg>
+                </span>
+                <span role="gridcell">
+                  <span role="checkbox" tabindex="0" aria-checked="false" class="mdc-chip__primary-action">
+                    <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
+                  </span>
+                </span>
+              </div>
+              <div class="mdc-chip" role="row">
+                <div class="mdc-chip__ripple"></div>
+                <span class="mdc-chip__checkmark" >
+                  <svg class="mdc-chip__checkmark-svg" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.50016 13.5L4.00016 10L2.8335 11.1667L7.50016 15.8333L17.5002 5.83334L16.3335 4.66667L7.50016 13.5Z" fill="#757575"/>
+                  </svg>
+                </span>
+                <span role="gridcell">
+                  <span role="checkbox" tabindex="0" aria-checked="false" class="mdc-chip__primary-action">
+                    <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
+                  </span>
+                </span>
+              </div>
+              <div class="mdc-chip" role="row">
+                <div class="mdc-chip__ripple"></div>
+                <span class="mdc-chip__checkmark" >
+                  <svg class="mdc-chip__checkmark-svg" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.50016 13.5L4.00016 10L2.8335 11.1667L7.50016 15.8333L17.5002 5.83334L16.3335 4.66667L7.50016 13.5Z" fill="#757575"/>
+                  </svg>
+                </span>
+                <span role="gridcell">
+                  <span role="checkbox" tabindex="0" aria-checked="false" class="mdc-chip__primary-action">
+                    <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 4</span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="mdc-data-filter__actions">
+            <button class="mdc-button mdc-button--raised">
+              <span class="mdc-button__ripple"></span>
+              <i class="mdc-button__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 8V16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+              <span class="mdc-button__label" onclick="openDialog('nuevo-favorito');">Nuevo favorito</span>
+            </button>
+          </div>
+        </div>
+
         <!-- Proyectos { -->
         <section id="proyectos">
           <div class="collapsable-wrapper">
@@ -290,12 +445,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
               <div class="group-actions">
                 <button class="mdc-icon-button mdc-icon-button--secondary">
@@ -340,7 +491,7 @@
                     </div>
                     <div class="mdc-card__secondary mdc-typography--body2">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 4.5H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 9H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -354,7 +505,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="#757575"/>
                             <path d="M6 6.75H12" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -422,7 +573,7 @@
                     </div>
                     <div class="mdc-card__secondary mdc-typography--body2">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 4.5H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 9H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -436,7 +587,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="#757575"/>
                             <path d="M6 6.75H12" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -504,7 +655,7 @@
                     </div>
                     <div class="mdc-card__secondary mdc-typography--body2">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 4.5H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 9H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -518,7 +669,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="#757575"/>
                             <path d="M6 6.75H12" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -586,7 +737,7 @@
                     </div>
                     <div class="mdc-card__secondary mdc-typography--body2">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 4.5H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 9H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -600,7 +751,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="#757575"/>
                             <path d="M6 6.75H12" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -669,7 +820,7 @@
                     </div>
                     <div class="mdc-card__secondary mdc-typography--body2">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 4.5H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 9H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -683,7 +834,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="#757575"/>
                             <path d="M6 6.75H12" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -745,7 +896,7 @@
                     </div>
                     <div class="mdc-card__secondary mdc-typography--body2">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 4.5H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 9H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -759,7 +910,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="#757575"/>
                             <path d="M6 6.75H12" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -821,7 +972,7 @@
                     </div>
                     <div class="mdc-card__secondary mdc-typography--body2">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Actividades" data-mdc-tooltip="Actividades">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 4.5H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 9H15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -835,7 +986,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.375 16.5C6.78921 16.5 7.125 16.1642 7.125 15.75C7.125 15.3358 6.78921 15 6.375 15V16.5ZM15 6.375C15 6.78921 15.3358 7.125 15.75 7.125C16.1642 7.125 16.5 6.78921 16.5 6.375H15ZM6.375 15H4.25V16.5H6.375V15ZM3 13.75V4.25H1.5V13.75H3ZM4.25 3H13.75V1.5H4.25V3ZM15 4.25V6.375H16.5V4.25H15ZM13.75 3C14.4404 3 15 3.55964 15 4.25H16.5C16.5 2.73122 15.2688 1.5 13.75 1.5V3ZM3 4.25C3 3.55964 3.55964 3 4.25 3V1.5C2.73122 1.5 1.5 2.73122 1.5 4.25H3ZM4.25 15C3.55964 15 3 14.4404 3 13.75H1.5C1.5 15.2688 2.73122 16.5 4.25 16.5V15Z" fill="#757575"/>
                             <path d="M6 6.75H12" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -902,12 +1053,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
               <div class="group-actions">
                 <button class="mdc-icon-button mdc-icon-button--secondary">
@@ -1052,12 +1199,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
               <div class="group-actions">
                 <button class="mdc-icon-button mdc-icon-button--secondary">
@@ -1251,12 +1394,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
               <div class="group-actions">
                 <button class="mdc-icon-button mdc-icon-button--secondary">
@@ -1340,12 +1479,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
               <div class="group-actions">
                 <button class="mdc-icon-button mdc-icon-button--secondary">
@@ -1385,7 +1520,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.75832 8.771C7.98132 7.286 8.45832 3.121 8.54532 2.339C8.54532 2.336 8.54632 2.333 8.54632 2.33C8.54732 2.325 8.54932 2.323 8.55032 2.318C8.55032 2.316 8.54932 2.314 8.54932 2.312C8.56032 2.242 8.53132 2.164 8.46832 2.099C8.40232 2.03 8.30532 1.983 8.19632 1.968C3.87632 1.361 2.12532 1.111 1.41632 1.008C1.38032 1.003 1.34632 1 1.31632 1C1.18632 1 1.12932 1.049 1.10332 1.09C1.05032 1.179 1.10932 1.285 1.13432 1.315C1.55532 1.825 2.18532 2.59 2.91532 3.476C4.65232 5.586 6.81532 8.213 7.38832 8.883C7.44432 8.949 7.50632 8.983 7.57232 8.983C7.62132 8.983 7.73632 8.963 7.75732 8.77C7.75832 8.772 7.75832 8.771 7.75832 8.771Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
                             <path d="M7.75315 9.33711C7.74515 9.33111 7.73815 9.32111 7.72915 9.31611C7.69615 9.29711 7.65815 9.28711 7.61715 9.28711C7.51215 9.28711 7.40515 9.35811 7.39615 9.43111C7.33615 9.95811 7.23015 10.8491 7.10615 11.8821C6.86315 13.9171 6.82315 15.9081 6.71915 16.9711L6.90115 17.0001C7.09015 16.4481 7.02315 16.5141 7.23615 16.0881C7.48815 15.5851 7.77015 15.1441 8.07615 14.7771C8.42115 14.3621 8.81115 14.0231 9.23415 13.7701C9.70015 13.4911 10.2241 13.3071 10.7901 13.2221C10.8291 13.2161 10.8631 13.1931 10.8781 13.1621C10.8851 13.1471 10.8981 13.1051 10.8581 13.0591C10.8421 13.0401 7.75315 9.33711 7.75315 9.33711Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
@@ -1453,7 +1588,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.75832 8.771C7.98132 7.286 8.45832 3.121 8.54532 2.339C8.54532 2.336 8.54632 2.333 8.54632 2.33C8.54732 2.325 8.54932 2.323 8.55032 2.318C8.55032 2.316 8.54932 2.314 8.54932 2.312C8.56032 2.242 8.53132 2.164 8.46832 2.099C8.40232 2.03 8.30532 1.983 8.19632 1.968C3.87632 1.361 2.12532 1.111 1.41632 1.008C1.38032 1.003 1.34632 1 1.31632 1C1.18632 1 1.12932 1.049 1.10332 1.09C1.05032 1.179 1.10932 1.285 1.13432 1.315C1.55532 1.825 2.18532 2.59 2.91532 3.476C4.65232 5.586 6.81532 8.213 7.38832 8.883C7.44432 8.949 7.50632 8.983 7.57232 8.983C7.62132 8.983 7.73632 8.963 7.75732 8.77C7.75832 8.772 7.75832 8.771 7.75832 8.771Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
                             <path d="M7.75315 9.33711C7.74515 9.33111 7.73815 9.32111 7.72915 9.31611C7.69615 9.29711 7.65815 9.28711 7.61715 9.28711C7.51215 9.28711 7.40515 9.35811 7.39615 9.43111C7.33615 9.95811 7.23015 10.8491 7.10615 11.8821C6.86315 13.9171 6.82315 15.9081 6.71915 16.9711L6.90115 17.0001C7.09015 16.4481 7.02315 16.5141 7.23615 16.0881C7.48815 15.5851 7.77015 15.1441 8.07615 14.7771C8.42115 14.3621 8.81115 14.0231 9.23415 13.7701C9.70015 13.4911 10.2241 13.3071 10.7901 13.2221C10.8291 13.2161 10.8631 13.1931 10.8781 13.1621C10.8851 13.1471 10.8981 13.1051 10.8581 13.0591C10.8421 13.0401 7.75315 9.33711 7.75315 9.33711Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
@@ -1522,7 +1657,7 @@
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Clases" data-mdc-tooltip="Clases">
+                        <i class="mdc-icon small" aria-pressed="false">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.75832 8.771C7.98132 7.286 8.45832 3.121 8.54532 2.339C8.54532 2.336 8.54632 2.333 8.54632 2.33C8.54732 2.325 8.54932 2.323 8.55032 2.318C8.55032 2.316 8.54932 2.314 8.54932 2.312C8.56032 2.242 8.53132 2.164 8.46832 2.099C8.40232 2.03 8.30532 1.983 8.19632 1.968C3.87632 1.361 2.12532 1.111 1.41632 1.008C1.38032 1.003 1.34632 1 1.31632 1C1.18632 1 1.12932 1.049 1.10332 1.09C1.05032 1.179 1.10932 1.285 1.13432 1.315C1.55532 1.825 2.18532 2.59 2.91532 3.476C4.65232 5.586 6.81532 8.213 7.38832 8.883C7.44432 8.949 7.50632 8.983 7.57232 8.983C7.62132 8.983 7.73632 8.963 7.75732 8.77C7.75832 8.772 7.75832 8.771 7.75832 8.771Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
                             <path d="M7.75315 9.33711C7.74515 9.33111 7.73815 9.32111 7.72915 9.31611C7.69615 9.29711 7.65815 9.28711 7.61715 9.28711C7.51215 9.28711 7.40515 9.35811 7.39615 9.43111C7.33615 9.95811 7.23015 10.8491 7.10615 11.8821C6.86315 13.9171 6.82315 15.9081 6.71915 16.9711L6.90115 17.0001C7.09015 16.4481 7.02315 16.5141 7.23615 16.0881C7.48815 15.5851 7.77015 15.1441 8.07615 14.7771C8.42115 14.3621 8.81115 14.0231 9.23415 13.7701C9.70015 13.4911 10.2241 13.3071 10.7901 13.2221C10.8291 13.2161 10.8631 13.1931 10.8781 13.1621C10.8851 13.1471 10.8981 13.1051 10.8581 13.0591C10.8421 13.0401 7.75315 9.33711 7.75315 9.33711Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
@@ -1594,12 +1729,8 @@
                 </span>
               </div>
               <a class="collapse-link">
-                <input type="checkbox">
-                <i class="mdc-icon small">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </i>
+                <input type="checkbox" checked>
+                <i class="mdc-icon small chevron-right-icon"></i>
               </a>
               <div class="group-actions">
                 <button class="mdc-icon-button mdc-icon-button--secondary">

@@ -5,6 +5,7 @@
 
 .admin-form__section {
   border-bottom: 1px solid var(--mdc-theme-gray__300);
+  box-sizing: border-box;
 }
 
 .admin-form__section:last-child {
@@ -12,6 +13,7 @@
 }
 
 .admin-form__subsection {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
 }
@@ -21,6 +23,7 @@
 }
 
 .admin-form__subsection-inner {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -73,6 +76,10 @@
 .admin-form__title {
   /*margin-bottom: 12px;*/
   width: 100%;
+}
+
+.mdc-form-field {
+  box-sizing: border-box;
 }
 
 .admin-form__actions {

@@ -58,7 +58,6 @@ function toggleNavMenu(e) {
   } else {
     $('body').removeClass('nav-menu-open');
   }
-
 }
 
 function onScroll() {
@@ -106,6 +105,7 @@ function fixed() {
 };
 
 function collapse(e) {
+  e.stopPropagation();
   let target = $(e.target);
   let parent = target.closest('.collapsable-wrapper');
 
@@ -113,9 +113,9 @@ function collapse(e) {
     return;
 
   if (target.is(":checked")) {
-    parent.find('.collapsable').slideUp();
+    parent.find('> .collapsable').slideDown();
   } else {
-    parent.find('.collapsable').slideDown();
+    parent.find('> .collapsable').slideUp();
   }
 }
 

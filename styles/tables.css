@@ -53,13 +53,6 @@
   color: var(--mdc-theme-primary__300);
 }
 
-.mdc-data-table__filter-wrapper {
-  align-items: center;
-  display: flex;
-  height: 56px;
-  margin: 20px 0;
-}
-
 .mdc-data-table__actions {
   align-items: center;
   display: flex;

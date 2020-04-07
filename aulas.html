@@ -150,7 +150,7 @@
 
           <ul class="mdc-top-app-bar__actions" role="toolbar">
             <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
-              <a class="mdc-button mdc-button--app-bar" href="mochila.html" aria-label="Mochila">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
                 <i class="mdc-icon nav-mochila-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
               </a>
@@ -170,7 +170,7 @@
                       <div class="notification__title mdc-typography--subtitle1">Nuevo mensaje</div>
                       <div class="notification__date mdc-typography--caption">Hace 11 min</div>
                       <div class="notification__text mdc-typography--body2">
-                        Profesor X respondió tu mensaje en el foro de Visita al a Reserva Ecológica.
+                        Profesor X respondió tu mensaje en el foro de Visita a la Reserva Ecológica.
                       </div>
                     </div>
                   </li>
@@ -361,14 +361,14 @@
 
                       <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="list">
                         <div class="mdc-select__menu--search">
-                          <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--fullwidth">
+                          <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--fullwidth mdc-text-field--search">
                             <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
                             <input type="text" class="mdc-text-field__input mdc-typography--body1 mdc-text-field--no-label" aria-labelledby="my-label-id">
                             <!-- <div class="mdc-line-ripple"></div> -->
                             <div class="mdc-notched-outline mdc-notched-outline--no-label">
                               <div class="mdc-notched-outline__leading"></div>
                               <div class="mdc-notched-outline__notch">
-                                <span class="mdc-floating-label" id="my-label-id"></span>
+                                <span class="mdc-floating-label mdc-typography--subtitle1" id="my-label-id">Buscar docente</span>
                               </div>
                               <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -493,19 +493,19 @@
 
                       <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="list">
                         <div class="mdc-select__menu--search">
-                          <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--fullwidth">
+                          <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--fullwidth mdc-text-field--search">
                             <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
                             <input type="text" class="mdc-text-field__input mdc-typography--body1 mdc-text-field--no-label" aria-labelledby="my-label-id">
                             <!-- <div class="mdc-line-ripple"></div> -->
                             <div class="mdc-notched-outline mdc-notched-outline--no-label">
                               <div class="mdc-notched-outline__leading"></div>
                               <div class="mdc-notched-outline__notch">
-                                <span class="mdc-floating-label" id="my-label-id"></span>
+                                <span class="mdc-floating-label mdc-typography--subtitle1" id="my-label-id">Buscar aulas</span>
                               </div>
                               <div class="mdc-notched-outline__trailing"></div>
                             </div>
                           </label>
-                        </div>            
+                        </div>   
                         <ul class="mdc-list mdc-checkbox-list" role="menu">
                           <li class="mdc-list-item checkbox-list-ripple-surface" data-value="curso-01" role="checkbox">
                             <label for="curso-01" class="mdc-typography--body2">5to A</label>
@@ -671,41 +671,41 @@
                     </div>
 
                     <div class="selection-wrapper">
+                      <div class="mdc-chip-set mdc-chip-set--input no-content" role="grid">
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Presentación</span>
+                            </span>
+                          </span>
+                          <span role="gridcell">
+                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                          </span>
+                        </div>
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Clase 1 / Informe</span>
+                            </span>
+                          </span>
+                          <span role="gridcell">
+                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                          </span>
+                        </div>
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Mi aprendizaje</span>
+                            </span>
+                          </span>
+                          <span role="gridcell">
+                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                          </span>
+                        </div>
+                      </div>
+
                       <div class="no-content-placeholder">
                         <span class="mdc-typography--headline4">Aún no hay contenido seleccionado</span>
-                      </div>
-                    </div>
-
-                    <div class="mdc-chip-set mdc-chip-set--input" role="grid">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Presentación</span>
-                          </span>
-                        </span>
-                        <span role="gridcell">
-                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Clase 1 / Informe</span>
-                          </span>
-                        </span>
-                        <span role="gridcell">
-                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Mi aprendizaje</span>
-                          </span>
-                        </span>
-                        <span role="gridcell">
-                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                        </span>
                       </div>
                     </div>
 
@@ -784,12 +784,8 @@
                     </span>
                     <label class="mdc-list-item__text mdc-typography--headline5" for="proyectos">Proyectos</label>
                     <a class="collapse-link">
-                      <input type="checkbox">
-                      <i class="mdc-icon small">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </i>
+                      <input type="checkbox" checked>
+                      <i class="mdc-icon small chevron-right-icon-secondary"></i>
                     </a>
                   </li>
                   <ul class="mdc-list mdc-list--nested collapsable" role="group">
@@ -809,14 +805,10 @@
                         <label class="mdc-list-item__text mdc-typography--body1" for="proyecto-1">Proyecto 1</label>
                         <a class="collapse-link">
                           <input type="checkbox">
-                          <i class="mdc-icon small">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
+                          <i class="mdc-icon small chevron-right-icon-secondary"></i>
                         </a>
                       </li>
-                      <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                      <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
                         <li class="mdc-list-item" role="checkbox" aria-checked="false">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
@@ -847,14 +839,10 @@
                             <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clases">Clases/Actividades</label>
                             <a class="collapse-link">
                               <input type="checkbox">
-                              <i class="mdc-icon small">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                              </i>
+                              <i class="mdc-icon small chevron-right-icon-secondary"></i>
                             </a>
                           </li>
-                          <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                          <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
                             <li class="mdc-list-item" role="checkbox" aria-checked="false">
                               <span class="mdc-list-item__graphic">
                                 <div class="mdc-checkbox">
@@ -976,12 +964,8 @@
                     </span>
                     <label class="mdc-list-item__text mdc-typography--headline5" for="recursos">Recursos</label>
                     <a class="collapse-link">
-                      <input type="checkbox">
-                      <i class="mdc-icon small">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </i>
+                      <input type="checkbox" checked>
+                      <i class="mdc-icon small chevron-right-icon-secondary"></i>
                     </a>
                   </li>
                   <ul class="mdc-list mdc-checkbox-list mdc-list--nested collapsable" role="group">
@@ -1001,14 +985,10 @@
                         <label class="mdc-list-item__text mdc-typography--body1" for="carpeta-1">Carpeta 1</label>
                         <a class="collapse-link">
                           <input type="checkbox">
-                          <i class="mdc-icon small">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
+                          <i class="mdc-icon small chevron-right-icon-secondary"></i>
                         </a>
                       </li>
-                      <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                      <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
                         <li class="mdc-list-item" role="checkbox" aria-checked="false">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
@@ -1069,14 +1049,10 @@
                         <label class="mdc-list-item__text mdc-typography--body1" for="carpeta-2">Carpeta 2</label>
                         <a class="collapse-link">
                           <input type="checkbox">
-                          <i class="mdc-icon small">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
+                          <i class="mdc-icon small chevron-right-icon-secondary"></i>
                         </a>
                       </li>
-                      <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                      <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
                         <li class="mdc-list-item" role="checkbox" aria-checked="false">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
@@ -1137,14 +1113,10 @@
                         <label class="mdc-list-item__text mdc-typography--body1" for="carpeta-3">Carpeta 3</label>
                         <a class="collapse-link">
                           <input type="checkbox">
-                          <i class="mdc-icon small">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6 9L12 15L18 9" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
+                          <i class="mdc-icon small chevron-right-icon-secondary"></i>
                         </a>
                       </li>
-                      <ul class="mdc-list mdc-list--nested collapsable" role="group">
+                      <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
                         <li class="mdc-list-item" role="checkbox" aria-checked="false">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
@@ -1213,7 +1185,7 @@
             <a href="aula1.html" class="mdc-card__primary-action" tabindex="0">
               <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
               <div class="mcd-card__primary">
-                <h3 class="mdc-card__title mdc-typography--headline3">Título del aula</h3>
+                <h2 class="mdc-card__title mdc-typography--headline2">Título del aula</h2>
               </div>
               <div class="mdc-card__secondary proyecto-card__secondary mdc-typography--body2">
                 <div class="mdc-chip-set" role="grid">
@@ -1256,7 +1228,7 @@
             <a href="aula1.html" class="mdc-card__primary-action" tabindex="0">
               <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
               <div class="mcd-card__primary">
-                <h3 class="mdc-card__title mdc-typography--headline3">Título del aula</h3>
+                <h2 class="mdc-card__title mdc-typography--headline2">Título del aula</h2>
               </div>
               <div class="mdc-card__secondary proyecto-card__secondary mdc-typography--body2">
                 <div class="mdc-chip-set" role="grid">
@@ -1299,7 +1271,7 @@
             <a href="aula1.html" class="mdc-card__primary-action" tabindex="0">
               <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
               <div class="mcd-card__primary">
-                <h3 class="mdc-card__title mdc-typography--headline3">Título del aula</h3>
+                <h2 class="mdc-card__title mdc-typography--headline2">Título del aula</h2>
               </div>
               <div class="mdc-card__secondary proyecto-card__secondary mdc-typography--body2">
                 <div class="mdc-chip-set" role="grid">
@@ -1342,7 +1314,7 @@
             <a href="aula1.html" class="mdc-card__primary-action" tabindex="0">
               <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
               <div class="mcd-card__primary">
-                <h3 class="mdc-card__title mdc-typography--headline3">Título del aula</h3>
+                <h2 class="mdc-card__title mdc-typography--headline2">Título del aula</h2>
               </div>
               <div class="mdc-card__secondary proyecto-card__secondary mdc-typography--body2">
                 <div class="mdc-chip-set" role="grid">
@@ -1384,19 +1356,14 @@
       </div>
       <!-- } -->
 
-      <div class="mdc-data-table__filter-wrapper" data-role="admin">
-        <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined">
-          <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M20.9999 21L16.6499 16.65" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </i>
+      <div class="mdc-data-filter__wrapper" data-role="admin">
+        <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--search">
+          <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
           <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
-          <div class="mdc-notched-outline">
+          <div class="mdc-notched-outline mdc-notched-outline--no-label">
             <div class="mdc-notched-outline__leading"></div>
             <div class="mdc-notched-outline__notch">
-              <span class="mdc-floating-label" id="my-label-id">Buscar un aula</span>
+              <span class="mdc-floating-label mdc-typography--subtitle1" id="my-label-id">Buscar un aula</span>
             </div>
             <div class="mdc-notched-outline__trailing"></div>
           </div>

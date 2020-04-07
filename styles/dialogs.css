@@ -1,7 +1,7 @@
 :root {
   --dialog-max-width: 640px;
   --dialog-min-width: 540px;
-  --dialog-xl-width: 960px;
+  --dialog-xl-width: 1024px;
 }
 
 .mdc-dialog {
@@ -25,7 +25,7 @@
   max-width: var(--dialog-xl-width);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   .mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--xl {
     max-height: 100vh;
     max-width: calc(100vw - 48px);
@@ -74,6 +74,7 @@
 
 .mdc-dialog .mdc-dialog__title-wrapper .mdc-dialog__title-caption {
   margin-top: 18px;
+  max-width: 720px;
 }
 
 .mdc-dialog__surface > .mdc-dialog__cover + .mdc-dialog__title {
@@ -111,6 +112,7 @@
 }
 
 .mdc-dialog .mdc-dialog__content {
+  overflow-x: hidden;
   padding: 0;
 }
 

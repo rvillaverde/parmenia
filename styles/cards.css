@@ -179,7 +179,7 @@
 .proyecto-card .mdc-card__secondary, .actividad-card .mdc-card__secondary {
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin: 30px 0;
   margin-top: 0;
   padding: 8px;
 }
@@ -304,6 +304,10 @@
   border-bottom: 0;
 }
 
+.round-step__grid .mdc-card.clase-card .group-title-wrapper {
+  height: 56px;
+}
+
 .mdc-card__project-status {
   border-radius: 50%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
@@ -339,7 +343,7 @@
 }
 
 .mdc-card__linear-progress-wrapper {
-  margin: 4px 16px;
+  margin: 12px 16px;
   margin-top: auto;
 }
 

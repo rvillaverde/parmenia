@@ -217,7 +217,7 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
 
 .mdc-select .mdc-select__menu--search {
   border-bottom: 1px solid var(--mdc-theme-primary__100);
-  padding: 8px 20px;
+  padding: 8px 16px;
 }
 
 .mdc-select .mdc-select__menu--search .mdc-text-field {
