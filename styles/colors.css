@@ -35,9 +35,26 @@
   --mdc-theme-gray__800: #424242;
   --mdc-theme-gray__900: #212121;
 
-  --mdc-theme-custom__00: #7ABDEB;
+/*  --mdc-theme-custom__00: #7ABDEB;
   --mdc-theme-custom__01: #67C98E;
-  --mdc-theme-custom__02: #F5B651;
+  --mdc-theme-custom__02: #F5B651;*/
+
+  --mdc-theme-custom__00: #AB968C;
+  --mdc-theme-custom__01: #D45A53;
+  --mdc-theme-custom__02: #ED6D4E;
+  --mdc-theme-custom__03: #FF917A;
+  --mdc-theme-custom__04: #F5AE58;
+  --mdc-theme-custom__05: #D6C292;
+  --mdc-theme-custom__06: #CCCC41;
+  --mdc-theme-custom__07: #A1BA6C;
+  --mdc-theme-custom__08: #5FBC8E;
+  --mdc-theme-custom__09: #7CBFBF;
+  --mdc-theme-custom__10: #81B9EB;
+  --mdc-theme-custom__11: #579BBD;
+  --mdc-theme-custom__12: #C291E8;
+  --mdc-theme-custom__13: #8D64AD;
+  --mdc-theme-custom__14: #8D64AD;
+  --mdc-theme-custom__15: #D44691;
 
   --mdc-theme-progress__01: #F5B651;
   --mdc-theme-progress__02: #67C98E;
