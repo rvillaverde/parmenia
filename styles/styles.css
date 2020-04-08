@@ -252,7 +252,7 @@ input[type=file] {
 }
 
 .headline__icon + *, .mdc-icon + * {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 .header__icon + * {
@@ -868,7 +868,6 @@ body[data-role*="alumno"] .mdc-inline-editable__wrapper:not(.mdc-inline-editable
 .mdc-data-filter__wrapper {
   align-items: flex-start;
   display: flex;
-  min-height: 56px;
   margin: 20px 0;
 }
 

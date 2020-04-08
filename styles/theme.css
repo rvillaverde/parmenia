@@ -554,7 +554,7 @@ body:not([data-role="alumno"]) .mdc-header__project .mdc-header__avatar:hover .m
 }
 
 .mdc-header__caption i {
-  margin-right: 8px;
+  margin-right: 4px;
 }
 
 .mdc-header__caption-group, .mdc-header__caption {
