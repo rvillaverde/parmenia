@@ -13,7 +13,8 @@
 
 .mdc-button:not(:disabled) {
   color: var(--mdc-theme-secondary);
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .mdc-button + .mdc-button {
@@ -135,11 +136,17 @@
 
 /* ICON BUTTONS */
 .mdc-icon-button {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   height: 48px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   /*min-width: 36px;*/
   min-width: 48px;
   padding: 4px;
@@ -237,7 +244,11 @@
 
 /* TOGGLE BUTTON */
 .mdc-button--toggle {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 

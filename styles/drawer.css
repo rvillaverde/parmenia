@@ -10,8 +10,10 @@
 .mdc-drawer {
   background-color: var(--mdc-theme-gray__050);
   bottom: 0;
-  box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.12);
-  box-sizing: content-box;
+  -webkit-box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.12);
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: unset;
   top: calc(var(--header__height-large) + var(--app-nav__height--desktop));
   position: absolute;
@@ -41,14 +43,25 @@
 
 .mdc-drawer .mdc-drawer__actions {
   margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mdc-drawer .mdc-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0;
   padding: 8px 24px;
   padding-right: 8px;
@@ -60,9 +73,15 @@
 }
 
 .mdc-drawer .mdc-list-item a {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   height: 100%;
   max-width: 180px;
   text-decoration: none;
@@ -123,6 +142,8 @@ body:not([data-role="alumno"]) .mdc-drawer .mdc-list-item a {
 }
 
 .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before {
+  -webkit-transition: opacity 100ms ease-in-out;
+  -o-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
   -webkit-transition: opacity 100ms ease-out;
 }
@@ -195,7 +216,8 @@ body:not(.nav-menu-open) .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-
 }
 
 .mdc-drawer__content-item .mdc-list-item__text {
-  flex-shrink: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
   max-width: 120px;
 }
 

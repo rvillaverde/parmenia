@@ -1,5 +1,6 @@
 .mdc-dialog .mdc-multiselection-list {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0 28px;
   width: 100%;
 }
@@ -20,8 +21,11 @@
 }
 
 .mdc-multiselection-list .mdc-list .mdc-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   height: unset;
   min-height: 24px;
   padding: 4px 0;
