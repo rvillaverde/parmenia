@@ -80,10 +80,14 @@
 }
 
 .mdc-data-table__cell.mdc-data-table__cell--icon {
+  padding-left: 4px;
+  padding-right: 4px;
   width: 48px;
 }
 
 .mdc-data-table__cell.mdc-data-table__cell--small-icon {
+  padding-left: 4px;
+  padding-right: 4px;
   width: 36px;
 }
 

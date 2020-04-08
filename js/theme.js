@@ -336,6 +336,20 @@ class ActividadComposer {
   }
 }
 
+class MDCSortable {
+  constructor(wrapper) {
+    $(wrapper).sortable({
+      items: '> .sortable',
+      handle: '.drag-button',
+      connectWith: '.sortable-wrapper',
+      cursor: 'grabbing',
+      start: function() {
+        $('.mdc-tooltip').remove();
+      }
+    });
+  }
+}
+
 class DatePicker {
   constructor(datePicker) {
     this.datePicker = datePicker;
@@ -568,6 +582,11 @@ mdcDrawer.find('.mdc-button--eye-toggle').click(function(e) {
 var menus = $('.mdc-menu');
 for (var i = 0, menu; menu = menus[i]; i++) {
   mdc.menu.MDCMenu.attachTo(menu);
+}
+
+var sortableWrappers = $('.sortable-wrapper');
+for (var i = 0, sortableWrapper; sortableWrapper = sortableWrappers[i]; i++) {
+  new MDCSortable(sortableWrapper);
 }
 
 var chipsets = $('.mdc-chip-set');

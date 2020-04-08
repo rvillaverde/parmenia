@@ -146,7 +146,7 @@ section:not(:first-child) .headline-wrapper {
 }
 
 section .subtitle-wrapper {
-  margin-top: 44px;
+  padding-top: 44px;
 }
 
 .section-headline__wrapper {
@@ -898,4 +898,16 @@ body[data-role*="alumno"] .mdc-inline-editable__wrapper:not(.mdc-inline-editable
 .mdc-data-filter__wrapper .mdc-data-filter__actions {
   flex-shrink: 0;
   margin-left: auto;
+}
+
+.sortable-wrapper {
+  overflow-x: hidden;
+}
+
+section.sortable {
+  background-color: var(--mdc-theme-gray__025);
+}
+
+.group .group-content.sortable-wrapper .group-item {
+  background-color: var(--mdc-theme-surface);
 }

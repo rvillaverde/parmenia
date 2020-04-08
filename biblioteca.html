@@ -18,6 +18,12 @@
     <script src="offline/material-components-web.min.js"></script>
     <script src="offline/jquery-3.4.1.min.js"></script> -->
 
+    <script
+      src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+      integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+      crossorigin="anonymous"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/theme.css">
@@ -318,8 +324,8 @@
       <div class="mdc-dialog__scrim"></div>
     </div>
 
-    <main class="main-wrapper">
-      <div class="collapsable-wrapper">
+    <main class="main-wrapper sortable-wrapper">
+      <section class="collapsable-wrapper sortable">
         <div class="group-title-wrapper">
           <h5 class="mdc-typography--headline5">Nombre de la carpeta</h5>
           <div class="group-icons">
@@ -334,20 +340,9 @@
             </a>
           </div>
           <div class="group-actions" data-role="admin,docente">
-            <button class="mdc-icon-button mdc-icon-button--secondary">
-              <i class="mdc-icon">
-                <svg width="10" height="24" viewBox="0 0 10 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="1.65074" cy="1.65074" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="8.25377" cy="1.65074" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="1.65074" cy="8.254" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="8.25377" cy="8.254" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="1.65074" cy="14.856" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="8.25377" cy="14.856" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="1.65074" cy="21.4593" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="8.25377" cy="21.4593" rx="1.65074" ry="1.65074" fill="#757575"/>
-                </svg>
-              </i>
-            </button>
+            <a class="mdc-icon-button mdc-icon-button--secondary drag-button">
+              <i class="mdc-icon drag-icon"></i>
+            </a>
           </div>
         </div>
 
@@ -506,9 +501,9 @@
           </div>
         </div>
         <!-- } -->
-      </div>
+      </section>
 
-      <div class="collapsable-wrapper">
+      <section class="collapsable-wrapper sortable">
         <div class="group-title-wrapper">
           <h5 class="mdc-typography--headline5">Nombre de la carpeta</h5>
           <div class="group-icons">
@@ -523,20 +518,9 @@
             </a>
           </div>
           <div class="group-actions" data-role="admin,docente">
-            <button class="mdc-icon-button mdc-icon-button--secondary">
-              <i class="mdc-icon">
-                <svg width="10" height="24" viewBox="0 0 10 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="1.65074" cy="1.65074" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="8.25377" cy="1.65074" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="1.65074" cy="8.254" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="8.25377" cy="8.254" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="1.65074" cy="14.856" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="8.25377" cy="14.856" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="1.65074" cy="21.4593" rx="1.65074" ry="1.65074" fill="#757575"/>
-                  <ellipse cx="8.25377" cy="21.4593" rx="1.65074" ry="1.65074" fill="#757575"/>
-                </svg>
-              </i>
-            </button>
+            <a class="mdc-icon-button mdc-icon-button--secondary drag-button">
+              <i class="mdc-icon drag-icon"></i>
+            </a>
           </div>
         </div>
 
@@ -645,7 +629,7 @@
           </div>
         </div>
         <!-- } -->
-      </div>
+      </section>
     </main>
 
     <footer class="footer">

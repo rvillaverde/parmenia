@@ -616,181 +616,141 @@
       <!-- Noticias { -->
       <div class="mdc-layout-grid cards news">
         <div class="mdc-layout-grid__inner">
-          <a class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('noticia-01');">
-            <div class="mdc-card__primary-action" tabindex="0">
+          <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+            <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
               <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
               <div class="mdc-card__primary">
-                <h2 class="mdc-card__title mdc-typography--headline3">Título noticia</h2>
+                <h3 class="mdc-card__title mdc-typography--headline3">Título noticia</h3>
               </div>
               <div class="mdc-card__secondary">
                 <p class="mdc-typography--body1">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>
-            </div>
+            </a>
             <div class="mdc-card__actions">
+              <div class="mdc-card__info" data-role="admin,docente">
+                <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+              </div>
               <div class="mdc-card__action-buttons">
-                <button class="mdc-card__action--button mdc-button mdc-button--text">
+                <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
                   <span class="mdc-button__ripple"></span>
                   <span class="mdc-button__label">VER MÁS</span>
-                </button>
+                </a>
               </div>
-
-              <div class="mdc-card__action-icons" data-role="docente,admin">
+              <div class="mdc-card__action-icons" data-role="admin,docente">
                 <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
-                  <i class="mdc-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M16.5 3.49998C16.8978 3.10216 17.4374 2.87866 18 2.87866C18.2786 2.87866 18.5544 2.93353 18.8118 3.04014C19.0692 3.14674 19.303 3.303 19.5 3.49998C19.697 3.69697 19.8532 3.93082 19.9598 4.18819C20.0665 4.44556 20.1213 4.72141 20.1213 4.99998C20.1213 5.27856 20.0665 5.55441 19.9598 5.81178C19.8532 6.06915 19.697 6.303 19.5 6.49998L7 19L3 20L4 16L16.5 3.49998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
+                  <i class="mdc-icon edit-icon"></i>
                 </button>
 
                 <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                  <i class="mdc-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 6H5H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M10 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M14 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
+                  <i class="mdc-icon delete-icon"></i>
                 </button>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('noticia-01');">
-            <div class="mdc-card__primary-action" tabindex="0">
+          <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+            <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
               <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
               <div class="mdc-card__primary">
-                <h2 class="mdc-card__title mdc-typography--headline3">Título noticia</h2>
+                <h3 class="mdc-card__title mdc-typography--headline3">Título noticia</h3>
               </div>
               <div class="mdc-card__secondary">
                 <p class="mdc-typography--body1">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>
-            </div>
+            </a>
             <div class="mdc-card__actions">
+              <div class="mdc-card__info" data-role="admin,docente">
+                <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+              </div>
               <div class="mdc-card__action-buttons">
-                <button class="mdc-card__action--button mdc-button mdc-button--text">
+                <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
                   <span class="mdc-button__ripple"></span>
                   <span class="mdc-button__label">VER MÁS</span>
-                </button>
+                </a>
               </div>
-
-              <div class="mdc-card__action-icons" data-role="docente,admin">
+              <div class="mdc-card__action-icons" data-role="admin,docente">
                 <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
-                  <i class="mdc-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M16.5 3.49998C16.8978 3.10216 17.4374 2.87866 18 2.87866C18.2786 2.87866 18.5544 2.93353 18.8118 3.04014C19.0692 3.14674 19.303 3.303 19.5 3.49998C19.697 3.69697 19.8532 3.93082 19.9598 4.18819C20.0665 4.44556 20.1213 4.72141 20.1213 4.99998C20.1213 5.27856 20.0665 5.55441 19.9598 5.81178C19.8532 6.06915 19.697 6.303 19.5 6.49998L7 19L3 20L4 16L16.5 3.49998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
+                  <i class="mdc-icon edit-icon"></i>
                 </button>
 
                 <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                  <i class="mdc-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 6H5H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M10 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M14 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
+                  <i class="mdc-icon delete-icon"></i>
                 </button>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('noticia-01');">
-            <div class="mdc-card__primary-action" tabindex="0">
+          <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+            <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
               <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
               <div class="mdc-card__primary">
-                <h2 class="mdc-card__title mdc-typography--headline3">Título noticia</h2>
+                <h3 class="mdc-card__title mdc-typography--headline3">Título noticia</h3>
               </div>
               <div class="mdc-card__secondary">
                 <p class="mdc-typography--body1">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>
-            </div>
+            </a>
             <div class="mdc-card__actions">
+              <div class="mdc-card__info" data-role="admin,docente">
+                <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+              </div>
               <div class="mdc-card__action-buttons">
-                <button class="mdc-card__action--button mdc-button mdc-button--text">
+                <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
                   <span class="mdc-button__ripple"></span>
                   <span class="mdc-button__label">VER MÁS</span>
-                </button>
+                </a>
               </div>
-
-              <div class="mdc-card__action-icons" data-role="docente,admin">
+              <div class="mdc-card__action-icons" data-role="admin,docente">
                 <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
-                  <i class="mdc-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M16.5 3.49998C16.8978 3.10216 17.4374 2.87866 18 2.87866C18.2786 2.87866 18.5544 2.93353 18.8118 3.04014C19.0692 3.14674 19.303 3.303 19.5 3.49998C19.697 3.69697 19.8532 3.93082 19.9598 4.18819C20.0665 4.44556 20.1213 4.72141 20.1213 4.99998C20.1213 5.27856 20.0665 5.55441 19.9598 5.81178C19.8532 6.06915 19.697 6.303 19.5 6.49998L7 19L3 20L4 16L16.5 3.49998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
+                  <i class="mdc-icon edit-icon"></i>
                 </button>
 
                 <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                  <i class="mdc-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 6H5H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M10 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M14 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
+                  <i class="mdc-icon delete-icon"></i>
                 </button>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('noticia-01');">
-            <div class="mdc-card__primary-action" tabindex="0">
+          <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+            <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
               <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
               <div class="mdc-card__primary">
-                <h2 class="mdc-card__title mdc-typography--headline3">Título noticia</h2>
+                <h3 class="mdc-card__title mdc-typography--headline3">Título noticia</h3>
               </div>
               <div class="mdc-card__secondary">
                 <p class="mdc-typography--body1">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>
-            </div>
+            </a>
             <div class="mdc-card__actions">
+              <div class="mdc-card__info" data-role="admin,docente">
+                <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+              </div>
               <div class="mdc-card__action-buttons">
-                <button class="mdc-card__action--button mdc-button mdc-button--text">
+                <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
                   <span class="mdc-button__ripple"></span>
                   <span class="mdc-button__label">VER MÁS</span>
-                </button>
+                </a>
               </div>
-
-              <div class="mdc-card__action-icons" data-role="docente,admin">
+              <div class="mdc-card__action-icons" data-role="admin,docente">
                 <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
-                  <i class="mdc-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M16.5 3.49998C16.8978 3.10216 17.4374 2.87866 18 2.87866C18.2786 2.87866 18.5544 2.93353 18.8118 3.04014C19.0692 3.14674 19.303 3.303 19.5 3.49998C19.697 3.69697 19.8532 3.93082 19.9598 4.18819C20.0665 4.44556 20.1213 4.72141 20.1213 4.99998C20.1213 5.27856 20.0665 5.55441 19.9598 5.81178C19.8532 6.06915 19.697 6.303 19.5 6.49998L7 19L3 20L4 16L16.5 3.49998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
+                  <i class="mdc-icon edit-icon"></i>
                 </button>
 
                 <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                  <i class="mdc-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 6H5H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M10 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M14 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
+                  <i class="mdc-icon delete-icon"></i>
                 </button>
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
       <!-- } -->

@@ -603,9 +603,8 @@ body:not([data-role="alumno"]) .mdc-header__project .mdc-header__avatar:hover .m
   height: 26px;
 }
 
-.mdc-chip:hover {
+.mdc-chip-set--filter .mdc-chip:hover {
   background-color: var(--mdc-theme-primary__100);
-  color: var(--mdc-theme-gray__700);
 }
 
 .mdc-chip .mdc-chip__ripple {

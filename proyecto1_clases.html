@@ -24,6 +24,12 @@
     <script src="offline/material-components-web.min.js"></script>
     <script src="offline/jquery-3.4.1.min.js"></script> -->
 
+    <script
+      src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+      integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+      crossorigin="anonymous"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/theme.css">
@@ -873,12 +879,10 @@
 
                 <div class="group-content collapsable">
                   <table class="mdc-data-table__table" aria-label="alumnos">
-                    <tbody class="mdc-data-table__content">
-                      <tr class="mdc-data-table__row">
+                    <tbody class="mdc-data-table__content sortable-wrapper">
+                      <tr class="mdc-data-table__row sortable">
                         <td class="mdc-data-table__cell mdc-data-table__cell--small-icon" data-mdc-tooltip="Arrastrar" data-role="admin,docente">
-                          <a href="#" class="drag-link">
-                            <i class="mdc-icon small drag-icon-small"></i>
-                          </a>
+                          <a href="#" class="mdc-button mdc-icon-button drag-button"><i class="mdc-icon drag-icon-small"></i></a>
                         </td>
                         <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
                           <i class="mdc-icon small actividad-personalizada-icon-small"></i>
@@ -912,11 +916,9 @@
                         </td>
                       </tr>
 
-                      <tr class="mdc-data-table__row">
+                      <tr class="mdc-data-table__row sortable">
                         <td class="mdc-data-table__cell mdc-data-table__cell--small-icon" data-mdc-tooltip="Arrastrar" data-role="admin,docente">
-                          <a href="#" class="drag-link">
-                            <i class="mdc-icon small drag-icon-small"></i>
-                          </a>
+                          <a href="#" class="mdc-button mdc-icon-button drag-button"><i class="mdc-icon drag-icon-small"></i></a>
                         </td>
                         <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
                           <i class="mdc-icon small actividad-subir-archivo-icon-small"></i>
@@ -949,11 +951,9 @@
                         </td>
                       </tr>
 
-                      <tr class="mdc-data-table__row">
+                      <tr class="mdc-data-table__row sortable">
                         <td class="mdc-data-table__cell mdc-data-table__cell--small-icon" data-mdc-tooltip="Arrastrar" data-role="admin,docente">
-                          <a href="#" class="drag-link">
-                            <i class="mdc-icon small drag-icon-small"></i>
-                          </a>
+                          <a href="#" class="mdc-button mdc-icon-button drag-button"><i class="mdc-icon drag-icon-small"></i></a>
                         </td>
                         <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
                           <i class="mdc-icon small actividad-parmenia-icon-small"></i>
@@ -986,11 +986,233 @@
                         </td>
                       </tr>
 
-                      <tr class="mdc-data-table__row">
+                      <tr class="mdc-data-table__row sortable">
                         <td class="mdc-data-table__cell mdc-data-table__cell--small-icon" data-mdc-tooltip="Arrastrar" data-role="admin,docente">
-                          <a href="#" class="drag-link">
-                            <i class="mdc-icon small drag-icon-small"></i>
+                          <a href="#" class="mdc-button mdc-icon-button drag-button"><i class="mdc-icon drag-icon-small"></i></a>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
+                          <i class="mdc-icon small actividad-redaccion-icon-small"></i>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <span class="mdc-typography--subtitle1">Redacción</span>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
+                          <i class="mdc-icon small formato-grupal-icon-small"></i>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <div class="actividad-status__wrapper">
+                            <i class="mdc-icon small">
+                              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.5 8.31002V9.00002C16.4991 10.6173 15.9754 12.191 15.007 13.4864C14.0386 14.7818 12.6775 15.7294 11.1265 16.1879C9.57557 16.6465 7.91794 16.5914 6.40085 16.031C4.88376 15.4705 3.58849 14.4346 2.70822 13.0778C1.82795 11.721 1.40984 10.1161 1.51626 8.50226C1.62267 6.88844 2.24791 5.35227 3.29871 4.12283C4.34951 2.89339 5.76959 2.03656 7.34714 1.68013C8.92469 1.3237 10.5752 1.48677 12.0525 2.14502" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5 3L9 10.5075L6.75 8.2575" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__03);">Finalizado</span>
+                          </div>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <span class="mdc-typography--subtitle1">Entrega: 00/00</span>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                          <a class="mdc-button mdc-button--text" href="actividad_redaccion.html">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">ver actividad</span>
                           </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-card__actions" data-role="docente,admin">
+              <div class="mdc-card__action-buttons">
+                <button class="mdc-button mdc-button--text" onclick="openDialog('crear-actividad');">
+                  <span class="mdc-button__ripple"></span>
+                  <i class="mdc-button__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 8V16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-button__label">nueva actividad</span>
+                </button>
+              </div>
+
+              <div class="mdc-card__action-icons">
+                <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 20H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M16.5 3.49998C16.8978 3.10216 17.4374 2.87866 18 2.87866C18.2786 2.87866 18.5544 2.93353 18.8118 3.04014C19.0692 3.14674 19.303 3.303 19.5 3.49998C19.697 3.69697 19.8532 3.93082 19.9598 4.18819C20.0665 4.44556 20.1213 4.72141 20.1213 4.99998C20.1213 5.27856 20.0665 5.55441 19.9598 5.81178C19.8532 6.06915 19.697 6.303 19.5 6.49998L7 19L3 20L4 16L16.5 3.49998Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </button>
+
+                <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                  <i class="mdc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 6H5H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M10 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="round-step__container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+            <span class="round-step mdc-typography--headline2">2</span>
+          </div>
+
+          <div class="mdc-card clase-card mdc-card--large mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop">
+            <div class="mdc-card__primary">
+              <div class="mdc-card__caption mdc-typography--caption">Martes 10 de diciembre</div>
+              <h3 class="mdc-card__title mdc-typography--headline3">Nombre de la clase</h3>
+              <p class="mdc-typography--body1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
+              </p>
+            </div>
+            <div class="mdc-card__secondary">
+              <div class="collapsable-wrapper group">
+                <div class="group-title-wrapper">
+                  <i class="mdc-icon small">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 14.25L14.25 9L16.5 11.25L11.25 16.5L9 14.25Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M13.5 9.75L12.375 4.125L1.5 1.5L4.125 12.375L9.75 13.5L13.5 9.75Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M1.5 1.5L7.1895 7.1895" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M8.25 9.75C9.07843 9.75 9.75 9.07843 9.75 8.25C9.75 7.42157 9.07843 6.75 8.25 6.75C7.42157 6.75 6.75 7.42157 6.75 8.25C6.75 9.07843 7.42157 9.75 8.25 9.75Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <h5 class="mdc-typography--headline5">Actividades</h5>
+                  <div class="group-icons">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">4</span>
+                      </span>
+                    </div>
+                    <a class="collapse-link">
+                      <input type="checkbox" checked>
+                      <i class="mdc-icon small chevron-right-icon"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="group-content collapsable">
+                  <table class="mdc-data-table__table" aria-label="alumnos">
+                    <tbody class="mdc-data-table__content sortable-wrapper">
+                      <tr class="mdc-data-table__row sortable">
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon" data-mdc-tooltip="Arrastrar" data-role="admin,docente">
+                          <a href="#" class="mdc-button mdc-icon-button drag-button"><i class="mdc-icon drag-icon-small"></i></a>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
+                          <i class="mdc-icon small actividad-personalizada-icon-small"></i>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <span class="mdc-typography--subtitle1">Actividad personalizada</span>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
+                          <i class="mdc-icon small formato-grupal-icon-small"></i>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <div class="actividad-status__wrapper">
+                            <i class="mdc-icon small">
+                              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12L12 9L9 6" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 9H12" stroke="#67C98E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__02);">Entregado</span>
+                          </div>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <span class="mdc-typography--subtitle1">Entrega: 00/00</span>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                          <a class="mdc-button mdc-button--text" href="actividad_custom.html">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">ver actividad</span>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr class="mdc-data-table__row sortable">
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon" data-mdc-tooltip="Arrastrar" data-role="admin,docente">
+                          <a href="#" class="mdc-button mdc-icon-button drag-button"><i class="mdc-icon drag-icon-small"></i></a>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
+                          <i class="mdc-icon small actividad-subir-archivo-icon-small"></i>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <span class="mdc-typography--subtitle1">Subir archivo</span>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
+                          <i class="mdc-icon small formato-grupal-icon-small"></i>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <div class="actividad-status__wrapper">
+                            <i class="mdc-icon small">
+                              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.5 8.31002V9.00002C16.4991 10.6173 15.9754 12.191 15.007 13.4864C14.0386 14.7818 12.6775 15.7294 11.1265 16.1879C9.57557 16.6465 7.91794 16.5914 6.40085 16.031C4.88376 15.4705 3.58849 14.4346 2.70822 13.0778C1.82795 11.721 1.40984 10.1161 1.51626 8.50226C1.62267 6.88844 2.24791 5.35227 3.29871 4.12283C4.34951 2.89339 5.76959 2.03656 7.34714 1.68013C8.92469 1.3237 10.5752 1.48677 12.0525 2.14502" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5 3L9 10.5075L6.75 8.2575" stroke="#8E9AF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__03);">Finalizado</span>
+                          </div>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <span class="mdc-typography--subtitle1">Entrega: 00/00</span>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                          <a class="mdc-button mdc-button--text" href="actividad_subir_archivo.html">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">ver actividad</span>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr class="mdc-data-table__row sortable">
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon" data-mdc-tooltip="Arrastrar" data-role="admin,docente">
+                          <a href="#" class="mdc-button mdc-icon-button drag-button"><i class="mdc-icon drag-icon-small"></i></a>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
+                          <i class="mdc-icon small actividad-parmenia-icon-small"></i>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <span class="mdc-typography--subtitle1">Actividad parmenia - empty</span>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
+                          <i class="mdc-icon small formato-grupal-icon-small"></i>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <div class="actividad-status__wrapper">
+                            <i class="mdc-icon small">
+                              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 4.5V9L12 10.5" stroke="#F5B651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <span class="mdc-typography--caption" style="color: var(--mdc-theme-progress__01);">Pendiente</span>
+                          </div>
+                        </td>
+                        <td class="mdc-data-table__cell">
+                          <span class="mdc-typography--subtitle1"></span>
+                        </td>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--actions">
+                          <a class="mdc-button mdc-button--text" href="actividad_empty.html">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">ver actividad</span>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr class="mdc-data-table__row sortable">
+                        <td class="mdc-data-table__cell mdc-data-table__cell--small-icon" data-mdc-tooltip="Arrastrar" data-role="admin,docente">
+                          <a href="#" class="mdc-button mdc-icon-button drag-button"><i class="mdc-icon drag-icon-small"></i></a>
                         </td>
                         <td class="mdc-data-table__cell mdc-data-table__cell--small-icon">
                           <i class="mdc-icon small actividad-redaccion-icon-small"></i>
@@ -1067,7 +1289,7 @@
           </div>
 
           <div class="round-step__container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop" data-role="admin,docente">
-            <span class="round-step mdc-typography--headline2">2</span>
+            <span class="round-step mdc-typography--headline2">3</span>
           </div>
 
           <div class="mdc-card clase-card mdc-card--large mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop" data-role="admin,docente">
