@@ -286,8 +286,8 @@
           </label>
           <div class="mdc-data-filter__chips">
             <span class="mdc-data-filter__title mdc-typography--subtitle1">Filtros</span>
-            <div class="mdc-chip-set mdc-chip-set--filter" role="grid">
-              <div class="mdc-chip" role="row">
+            <div class="mdc-chip-set mdc-chip-set--filter" role="grid" data-filter-target=".chip-filter__target">
+              <div class="mdc-chip" role="row" id="aula-01">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
                   <svg class="mdc-chip__checkmark-svg" fill="none">
@@ -300,7 +300,7 @@
                   </span>
                 </span>
               </div>
-              <div class="mdc-chip" role="row">
+              <div class="mdc-chip" role="row" id="aula-02">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
                   <svg class="mdc-chip__checkmark-svg" fill="none">
@@ -313,7 +313,7 @@
                   </span>
                 </span>
               </div>
-              <div class="mdc-chip" role="row">
+              <div class="mdc-chip" role="row" id="aula-03">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
                   <svg class="mdc-chip__checkmark-svg" fill="none">
@@ -326,7 +326,7 @@
                   </span>
                 </span>
               </div>
-              <div class="mdc-chip" role="row">
+              <div class="mdc-chip" role="row" id="aula-04">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
                   <svg class="mdc-chip__checkmark-svg" fill="none">
@@ -347,7 +347,7 @@
         <section id="activides">
           <div class="mdc-layout-grid cards projects collapsable">
             <div class="mdc-layout-grid__inner">
-              <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+              <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
                 <a href="proyecto1_aprendizaje.html" class="mdc-card__primary-action" tabindex="0">
                   <div class="mdc-card__primary">
                     <h2 class="mdc-card__title mdc-typography--headline2">Nombre del proyecto</h2>
@@ -369,7 +369,7 @@
                   <div class="mdc-card__info">
                     <div class="mdc-chip" role="row">
                       <span role="gridcell">
-                        <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                       </span>
                     </div>
                   </div>
@@ -387,7 +387,7 @@
                   </div>
                 </div>
               </div>
-              <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+              <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-02">
                 <a href="proyecto1_aprendizaje.html" class="mdc-card__primary-action" tabindex="0">
                   <div class="mdc-card__primary">
                     <h2 class="mdc-card__title mdc-typography--headline2">Nombre del proyecto</h2>
@@ -409,7 +409,7 @@
                   <div class="mdc-card__info">
                     <div class="mdc-chip" role="row">
                       <span role="gridcell">
-                        <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                       </span>
                     </div>
                   </div>
@@ -427,7 +427,7 @@
                   </div>
                 </div>
               </div>
-              <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+              <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-03">
                 <a href="proyecto1_aprendizaje.html" class="mdc-card__primary-action" tabindex="0">
                   <div class="mdc-card__primary">
                     <h2 class="mdc-card__title mdc-typography--headline2">Nombre del proyecto</h2>
@@ -449,7 +449,7 @@
                   <div class="mdc-card__info">
                     <div class="mdc-chip" role="row">
                       <span role="gridcell">
-                        <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                       </span>
                     </div>
                   </div>
@@ -467,7 +467,7 @@
                   </div>
                 </div>
               </div>
-              <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+              <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-04">
                 <a href="proyecto1_aprendizaje.html" class="mdc-card__primary-action" tabindex="0">
                   <div class="mdc-card__primary">
                     <h2 class="mdc-card__title mdc-typography--headline2">Nombre del proyecto</h2>
@@ -489,7 +489,7 @@
                   <div class="mdc-card__info">
                     <div class="mdc-chip" role="row">
                       <span role="gridcell">
-                        <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 4</span>
                       </span>
                     </div>
                   </div>

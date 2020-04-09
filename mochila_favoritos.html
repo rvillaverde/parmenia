@@ -364,8 +364,8 @@
           </label>
           <div class="mdc-data-filter__chips">
             <span class="mdc-data-filter__title mdc-typography--subtitle1">Filtros</span>
-            <div class="mdc-chip-set mdc-chip-set--filter" role="grid">
-              <div class="mdc-chip" role="row">
+            <div class="mdc-chip-set mdc-chip-set--filter" role="grid" data-filter-target=".chip-filter__target">
+              <div class="mdc-chip" role="row" id="aula-01">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
                   <svg class="mdc-chip__checkmark-svg" fill="none">
@@ -378,7 +378,7 @@
                   </span>
                 </span>
               </div>
-              <div class="mdc-chip" role="row">
+              <div class="mdc-chip" role="row" id="aula-02">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
                   <svg class="mdc-chip__checkmark-svg" fill="none">
@@ -391,7 +391,7 @@
                   </span>
                 </span>
               </div>
-              <div class="mdc-chip" role="row">
+              <div class="mdc-chip" role="row" id="aula-03">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
                   <svg class="mdc-chip__checkmark-svg" fill="none">
@@ -404,7 +404,7 @@
                   </span>
                 </span>
               </div>
-              <div class="mdc-chip" role="row">
+              <div class="mdc-chip" role="row" id="aula-04">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
                   <svg class="mdc-chip__checkmark-svg" fill="none">
@@ -463,7 +463,7 @@
 
             <div class="mdc-layout-grid cards projects collapsable">
               <div class="mdc-layout-grid__inner">
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/placeholder.png');">
                       <span class="mdc-card__project-status loading">
@@ -526,7 +526,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
                       </div>
                     </div>
@@ -545,7 +545,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-02">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/placeholder.png');">
                       <span class="mdc-card__project-status loading">
@@ -608,7 +608,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
                       </div>
                     </div>
@@ -627,7 +627,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/placeholder.png');">
                       <span class="mdc-card__project-status loading">
@@ -690,7 +690,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
                       </div>
                     </div>
@@ -708,7 +708,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-04">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/placeholder.png');">
                       <span class="mdc-card__project-status unpublished">
@@ -772,7 +772,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 4</span>
                         </span>
                       </div>
                     </div>
@@ -791,7 +791,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-02">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/placeholder.png');">
                       <span class="mdc-card__project-status unpublished">
@@ -855,7 +855,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
                       </div>
                     </div>
@@ -874,7 +874,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-03">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/placeholder.png');">
                       <span class="mdc-card__project-status finished">
@@ -931,7 +931,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                         </span>
                       </div>
                     </div>
@@ -950,7 +950,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/placeholder.png');">
                       <span class="mdc-card__project-status finished">
@@ -1007,7 +1007,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
                       </div>
                     </div>
@@ -1060,8 +1060,8 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <a class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('recurso-01');">
-                  <div class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-01">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                     <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
@@ -1069,17 +1069,17 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
                       </p>
                     </div>
-                  </div>
+                  </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
                       </div>
                     </div>
                     <div class="mdc-card__action-buttons">
-                      <button class="mdc-card__action--button mdc-button mdc-button--text">
+                      <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver recurso</span>
                       </button>
@@ -1091,9 +1091,10 @@
                       </button>
                     </div>
                   </div>
-                </a>
-                <a class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('recurso-01');">
-                  <div class="mdc-card__primary-action" tabindex="0">
+                </div>
+
+                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-02">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                     <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
@@ -1101,17 +1102,17 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
                       </p>
                     </div>
-                  </div>
+                  </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
                       </div>
                     </div>
                     <div class="mdc-card__action-buttons">
-                      <button class="mdc-card__action--button mdc-button mdc-button--text">
+                      <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver recurso</span>
                       </button>
@@ -1123,9 +1124,10 @@
                       </button>
                     </div>
                   </div>
-                </a>
-                <a class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop" onclick="openDialog('recurso-01');">
-                  <div class="mdc-card__primary-action" tabindex="0">
+                </div>
+
+                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-03">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                     <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
@@ -1133,17 +1135,17 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
                       </p>
                     </div>
-                  </div>
+                  </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                         </span>
                       </div>
                     </div>
                     <div class="mdc-card__action-buttons">
-                      <button class="mdc-card__action--button mdc-button mdc-button--text">
+                      <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ver recurso</span>
                       </button>
@@ -1155,7 +1157,40 @@
                       </button>
                     </div>
                   </div>
-                </a>
+                </div>
+
+                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-04">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
+                    <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary">
+                      <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
+                      <p class="mdc-card__subtitle mdc-typography--body1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                      </p>
+                    </div>
+                  </a>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 4</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">ver recurso</span>
+                      </button>
+                    </div>
+
+                    <div class="mdc-card__action-icons">
+                      <button class="mdc-card__action--icon mdc-button mdc-icon-button mdc-button--active" aria-pressed="false" data-mdc-tooltip="Quitar de la mochila" onclick="addToBag(this);">
+                        <i class="mdc-icon mochila-icon-secondary"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1198,9 +1233,9 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop chip-filter__target" data-filter-value="aula-01">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                  <div class="mdc-card__primary">
+                  <a class="mdc-card__primary">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23 7L16 12L23 17V7Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1211,12 +1246,12 @@
                       <p class="mdc-typography--body2">Título del archivo</p>
                       <p class="mdc-typography--subtitle2">link con elipsis</p>
                     </div>
-                  </div>
+                  </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
                       </div>
                     </div>
@@ -1233,11 +1268,11 @@
                       </button>
                     </div>
                   </div>
-                </a>
+                </div>
 
-                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop chip-filter__target" data-filter-value="aula-02">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                  <div class="mdc-card__primary">
+                  <a class="mdc-card__primary">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17 10H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1250,12 +1285,12 @@
                       <p class="mdc-typography--body2">Título del archivo</p>
                       <p class="mdc-typography--subtitle2">link con elipsis</p>
                     </div>
-                  </div>
+                  </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
                       </div>
                     </div>
@@ -1272,11 +1307,11 @@
                       </button>
                     </div>
                   </div>
-                </a>
+                </div>
 
-                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop chip-filter__target" data-filter-value="aula-03">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                  <div class="mdc-card__primary">
+                  <a class="mdc-card__primary">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1288,12 +1323,12 @@
                       <p class="mdc-typography--body2">Título del archivo</p>
                       <p class="mdc-typography--subtitle2">link con elipsis</p>
                     </div>
-                  </div>
+                  </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                         </span>
                       </div>
                     </div>
@@ -1310,11 +1345,11 @@
                       </button>
                     </div>
                   </div>
-                </a>
+                </div>
 
-                <a class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop chip-filter__target" data-filter-value="aula-04">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                  <div class="mdc-card__primary">
+                  <a class="mdc-card__primary">
                     <i class="mdc-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.46997L11.75 5.17997" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1325,12 +1360,12 @@
                       <p class="mdc-typography--body2">Título del archivo</p>
                       <p class="mdc-typography--subtitle2">link con elipsis</p>
                     </div>
-                  </div>
+                  </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 4</span>
                         </span>
                       </div>
                     </div>
@@ -1347,7 +1382,7 @@
                       </button>
                     </div>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -1382,12 +1417,12 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <a class="mdc-card foro-discusion-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
-                  <div class="mdc-card__primary">
+                <div class="mdc-card foro-discusion-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-01">
+                  <a class="mdc-card__primary" href="proyecto1_foro.html">
                     <h4 class="mdc-typography--headline4">Título de la discusión puede tener hasta dos lineas luego elipsis...</h4>
-                  </div>
+                  </a>
                   <div class="mdc-card__divider"></div>
-                  <div class="mdc-card__secondary">
+                  <a class="mdc-card__secondary" href="proyecto1_foro.html">
                     <div class="foro-discusion-card__info">
                       <span class="mdc-typography--caption">Creada: 23/4/2020</span>
                       <span class="mdc-typography--caption">Último comentario: 3/5/2020</span>
@@ -1398,20 +1433,20 @@
                       </svg>
                     </i>
                     <span class="foro-discusion-card__count mdc-typography--headline5">122</span>
-                  </div>
+                  </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
                       </div>
                     </div>
                     <div class="mdc-card__action-buttons">
-                      <button class="mdc-card__action--button mdc-button mdc-button--text">
+                      <a class="mdc-card__action--button mdc-button mdc-button--text" href="proyecto1_foro.html">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">ir a la conversación</span>
-                      </button>
+                      </a>
                     </div>
 
                     <div class="mdc-card__action-icons">
@@ -1420,7 +1455,7 @@
                       </button>
                     </div>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -1456,7 +1491,7 @@
 
             <div class="mdc-layout-grid cards projects collapsable">
               <div class="mdc-layout-grid__inner">
-                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
                   <a href="actividad1.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline2">Nombre de la actividad</h2>
@@ -1464,27 +1499,13 @@
 
                     <div class="mdc-card__secondary">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Individual" data-mdc-tooltip="Individual">
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 15.75V14.25C15 13.4544 14.6839 12.6913 14.1213 12.1287C13.5587 11.5661 12.7956 11.25 12 11.25H6C5.20435 11.25 4.44129 11.5661 3.87868 12.1287C3.31607 12.6913 3 13.4544 3 14.25V15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 8.25C10.6569 8.25 12 6.90685 12 5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25C6 6.90685 7.34315 8.25 9 8.25Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
-                        <span class="mdc-typography--caption">Individual</span>
+                        <i class="mdc-icon small formato-grupal-icon-small"></i>
+                        <span class="mdc-typography--caption">Grupal</span>
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false">
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.75832 8.771C7.98132 7.286 8.45832 3.121 8.54532 2.339C8.54532 2.336 8.54632 2.333 8.54632 2.33C8.54732 2.325 8.54932 2.323 8.55032 2.318C8.55032 2.316 8.54932 2.314 8.54932 2.312C8.56032 2.242 8.53132 2.164 8.46832 2.099C8.40232 2.03 8.30532 1.983 8.19632 1.968C3.87632 1.361 2.12532 1.111 1.41632 1.008C1.38032 1.003 1.34632 1 1.31632 1C1.18632 1 1.12932 1.049 1.10332 1.09C1.05032 1.179 1.10932 1.285 1.13432 1.315C1.55532 1.825 2.18532 2.59 2.91532 3.476C4.65232 5.586 6.81532 8.213 7.38832 8.883C7.44432 8.949 7.50632 8.983 7.57232 8.983C7.62132 8.983 7.73632 8.963 7.75732 8.77C7.75832 8.772 7.75832 8.771 7.75832 8.771Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M7.75315 9.33711C7.74515 9.33111 7.73815 9.32111 7.72915 9.31611C7.69615 9.29711 7.65815 9.28711 7.61715 9.28711C7.51215 9.28711 7.40515 9.35811 7.39615 9.43111C7.33615 9.95811 7.23015 10.8491 7.10615 11.8821C6.86315 13.9171 6.82315 15.9081 6.71915 16.9711L6.90115 17.0001C7.09015 16.4481 7.02315 16.5141 7.23615 16.0881C7.48815 15.5851 7.77015 15.1441 8.07615 14.7771C8.42115 14.3621 8.81115 14.0231 9.23415 13.7701C9.70015 13.4911 10.2241 13.3071 10.7901 13.2221C10.8291 13.2161 10.8631 13.1931 10.8781 13.1621C10.8851 13.1471 10.8981 13.1051 10.8581 13.0591C10.8421 13.0401 7.75315 9.33711 7.75315 9.33711Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M10.7733 12.96C10.8303 13.022 10.8953 13.056 10.9663 13.056C11.0623 13.056 11.1353 12.998 11.1893 12.956C11.2023 12.945 11.2153 12.935 11.2263 12.928C11.7303 12.588 12.7393 11.898 13.6293 11.288C14.2673 10.852 14.8183 10.474 15.0323 10.33C15.0953 10.287 15.5323 9.91497 15.5183 9.86797C15.5093 9.83597 15.0663 10.122 14.9733 10.109C14.6903 10.07 13.9093 9.95797 12.9223 9.81597C11.5263 9.61597 9.78832 9.36697 8.63732 9.20497C8.61032 9.20097 8.00032 9.10997 7.89432 9.09697C7.88432 9.09597 7.87432 9.09497 7.86332 9.09497C7.80132 9.09497 7.74832 9.12097 7.72232 9.16297C7.69432 9.20797 7.70332 9.27497 7.74332 9.32497L10.7733 12.96Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M15.1613 9.78812C14.5243 9.02412 13.3663 7.61512 12.2473 6.25312C10.8323 4.53012 9.36832 2.74912 8.91532 2.22012C8.85832 2.15412 8.79632 2.12012 8.73132 2.12012C8.68332 2.12012 8.56832 2.14112 8.54632 2.33112C8.54632 2.33412 8.54532 2.33712 8.54532 2.34012C8.45732 3.12412 7.97732 7.32412 7.75532 8.79212C7.74432 8.86312 7.77432 8.94112 7.83632 9.00612C7.89532 9.06812 7.98432 9.10312 8.08032 9.12312C8.29832 9.15512 8.61732 9.20212 8.63532 9.20512C9.78632 9.36712 11.5243 9.61612 12.9203 9.81612C13.8463 9.94912 14.5743 10.0531 14.8963 10.0981C14.8963 10.0981 14.8973 10.0981 14.8983 10.0981C14.9343 10.1031 14.9683 10.1061 14.9983 10.1061C15.1233 10.1061 15.1773 10.0581 15.2013 10.0191C15.2543 9.93212 15.1903 9.82312 15.1613 9.78812Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.5701 5.7061L16.5703 5.70601L17.2962 6.6107C17.2978 6.61274 17.2994 6.61479 17.301 6.61687C17.2988 6.61408 17.2966 6.61136 17.2944 6.6087L16.5701 5.7061ZM17.4192 6.95402C17.4192 6.94958 17.4191 6.94516 17.419 6.94078C17.4192 6.94614 17.4192 6.95144 17.4192 6.95669L17.4192 6.95751C17.4192 6.96009 17.4191 6.96266 17.4191 6.96523C17.4191 6.96151 17.4192 6.95778 17.4192 6.95402ZM15.8274 7.303C15.8655 7.32856 15.9062 7.34923 15.9477 7.36474C15.9048 7.34908 15.8645 7.32833 15.8274 7.303ZM15.8751 5.56335C15.8544 5.57433 15.834 5.58682 15.8141 5.6008C15.8334 5.58713 15.8538 5.57461 15.8751 5.56335ZM16.5695 5.70502L16.5619 5.69605C16.5597 5.69353 16.5576 5.69103 16.5554 5.68856C16.5603 5.69398 16.565 5.69947 16.5695 5.70502Z" fill="black" stroke="#757575"/>
-                            <path d="M15.4885 7.65906C15.4885 7.41006 15.4835 6.91706 15.4785 6.48206C15.4745 6.12306 15.4715 5.78306 15.4715 5.64306V5.53306L15.4365 5.50906C15.4345 5.50806 15.4115 5.49206 15.3695 5.47006C15.3105 5.44006 14.9895 5.28906 14.4315 5.28906C14.1765 5.28906 13.9115 5.32106 13.6435 5.38606C13.1305 5.50906 12.8205 5.77206 12.6525 5.97006C12.4685 6.18606 12.3635 6.38206 12.3605 6.39006C13.4435 7.70906 14.5455 9.04906 15.1615 9.78806C15.1655 9.79206 15.1815 9.81406 15.1815 9.81406C15.2165 9.84706 15.2695 9.86706 15.3265 9.86706C15.4275 9.86706 15.5075 9.81006 15.5165 9.73106C15.5175 9.72606 15.5175 9.69206 15.5165 9.63506C15.5145 9.32006 15.4985 8.30306 15.4885 7.65906Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
-                        <span class="mdc-typography--caption">Tipo de actividad</span>
+                        <i class="mdc-icon small actividad-personalizada-icon-small"></i>
+                        <span class="mdc-typography--caption">Personalizada</span>
                       </div>
                     </div>
 
@@ -1505,7 +1526,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
                       </div>
                     </div>
@@ -1524,7 +1545,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-02">
                   <a href="actividad1.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline2">Nombre de la actividad</h2>
@@ -1532,27 +1553,13 @@
 
                     <div class="mdc-card__secondary">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Individual" data-mdc-tooltip="Individual">
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 15.75V14.25C15 13.4544 14.6839 12.6913 14.1213 12.1287C13.5587 11.5661 12.7956 11.25 12 11.25H6C5.20435 11.25 4.44129 11.5661 3.87868 12.1287C3.31607 12.6913 3 13.4544 3 14.25V15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 8.25C10.6569 8.25 12 6.90685 12 5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25C6 6.90685 7.34315 8.25 9 8.25Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                        <i class="mdc-icon small formato-individual-icon-small"></i>
                         <span class="mdc-typography--caption">Individual</span>
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false">
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.75832 8.771C7.98132 7.286 8.45832 3.121 8.54532 2.339C8.54532 2.336 8.54632 2.333 8.54632 2.33C8.54732 2.325 8.54932 2.323 8.55032 2.318C8.55032 2.316 8.54932 2.314 8.54932 2.312C8.56032 2.242 8.53132 2.164 8.46832 2.099C8.40232 2.03 8.30532 1.983 8.19632 1.968C3.87632 1.361 2.12532 1.111 1.41632 1.008C1.38032 1.003 1.34632 1 1.31632 1C1.18632 1 1.12932 1.049 1.10332 1.09C1.05032 1.179 1.10932 1.285 1.13432 1.315C1.55532 1.825 2.18532 2.59 2.91532 3.476C4.65232 5.586 6.81532 8.213 7.38832 8.883C7.44432 8.949 7.50632 8.983 7.57232 8.983C7.62132 8.983 7.73632 8.963 7.75732 8.77C7.75832 8.772 7.75832 8.771 7.75832 8.771Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M7.75315 9.33711C7.74515 9.33111 7.73815 9.32111 7.72915 9.31611C7.69615 9.29711 7.65815 9.28711 7.61715 9.28711C7.51215 9.28711 7.40515 9.35811 7.39615 9.43111C7.33615 9.95811 7.23015 10.8491 7.10615 11.8821C6.86315 13.9171 6.82315 15.9081 6.71915 16.9711L6.90115 17.0001C7.09015 16.4481 7.02315 16.5141 7.23615 16.0881C7.48815 15.5851 7.77015 15.1441 8.07615 14.7771C8.42115 14.3621 8.81115 14.0231 9.23415 13.7701C9.70015 13.4911 10.2241 13.3071 10.7901 13.2221C10.8291 13.2161 10.8631 13.1931 10.8781 13.1621C10.8851 13.1471 10.8981 13.1051 10.8581 13.0591C10.8421 13.0401 7.75315 9.33711 7.75315 9.33711Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M10.7733 12.96C10.8303 13.022 10.8953 13.056 10.9663 13.056C11.0623 13.056 11.1353 12.998 11.1893 12.956C11.2023 12.945 11.2153 12.935 11.2263 12.928C11.7303 12.588 12.7393 11.898 13.6293 11.288C14.2673 10.852 14.8183 10.474 15.0323 10.33C15.0953 10.287 15.5323 9.91497 15.5183 9.86797C15.5093 9.83597 15.0663 10.122 14.9733 10.109C14.6903 10.07 13.9093 9.95797 12.9223 9.81597C11.5263 9.61597 9.78832 9.36697 8.63732 9.20497C8.61032 9.20097 8.00032 9.10997 7.89432 9.09697C7.88432 9.09597 7.87432 9.09497 7.86332 9.09497C7.80132 9.09497 7.74832 9.12097 7.72232 9.16297C7.69432 9.20797 7.70332 9.27497 7.74332 9.32497L10.7733 12.96Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M15.1613 9.78812C14.5243 9.02412 13.3663 7.61512 12.2473 6.25312C10.8323 4.53012 9.36832 2.74912 8.91532 2.22012C8.85832 2.15412 8.79632 2.12012 8.73132 2.12012C8.68332 2.12012 8.56832 2.14112 8.54632 2.33112C8.54632 2.33412 8.54532 2.33712 8.54532 2.34012C8.45732 3.12412 7.97732 7.32412 7.75532 8.79212C7.74432 8.86312 7.77432 8.94112 7.83632 9.00612C7.89532 9.06812 7.98432 9.10312 8.08032 9.12312C8.29832 9.15512 8.61732 9.20212 8.63532 9.20512C9.78632 9.36712 11.5243 9.61612 12.9203 9.81612C13.8463 9.94912 14.5743 10.0531 14.8963 10.0981C14.8963 10.0981 14.8973 10.0981 14.8983 10.0981C14.9343 10.1031 14.9683 10.1061 14.9983 10.1061C15.1233 10.1061 15.1773 10.0581 15.2013 10.0191C15.2543 9.93212 15.1903 9.82312 15.1613 9.78812Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.5701 5.7061L16.5703 5.70601L17.2962 6.6107C17.2978 6.61274 17.2994 6.61479 17.301 6.61687C17.2988 6.61408 17.2966 6.61136 17.2944 6.6087L16.5701 5.7061ZM17.4192 6.95402C17.4192 6.94958 17.4191 6.94516 17.419 6.94078C17.4192 6.94614 17.4192 6.95144 17.4192 6.95669L17.4192 6.95751C17.4192 6.96009 17.4191 6.96266 17.4191 6.96523C17.4191 6.96151 17.4192 6.95778 17.4192 6.95402ZM15.8274 7.303C15.8655 7.32856 15.9062 7.34923 15.9477 7.36474C15.9048 7.34908 15.8645 7.32833 15.8274 7.303ZM15.8751 5.56335C15.8544 5.57433 15.834 5.58682 15.8141 5.6008C15.8334 5.58713 15.8538 5.57461 15.8751 5.56335ZM16.5695 5.70502L16.5619 5.69605C16.5597 5.69353 16.5576 5.69103 16.5554 5.68856C16.5603 5.69398 16.565 5.69947 16.5695 5.70502Z" fill="black" stroke="#757575"/>
-                            <path d="M15.4885 7.65906C15.4885 7.41006 15.4835 6.91706 15.4785 6.48206C15.4745 6.12306 15.4715 5.78306 15.4715 5.64306V5.53306L15.4365 5.50906C15.4345 5.50806 15.4115 5.49206 15.3695 5.47006C15.3105 5.44006 14.9895 5.28906 14.4315 5.28906C14.1765 5.28906 13.9115 5.32106 13.6435 5.38606C13.1305 5.50906 12.8205 5.77206 12.6525 5.97006C12.4685 6.18606 12.3635 6.38206 12.3605 6.39006C13.4435 7.70906 14.5455 9.04906 15.1615 9.78806C15.1655 9.79206 15.1815 9.81406 15.1815 9.81406C15.2165 9.84706 15.2695 9.86706 15.3265 9.86706C15.4275 9.86706 15.5075 9.81006 15.5165 9.73106C15.5175 9.72606 15.5175 9.69206 15.5165 9.63506C15.5145 9.32006 15.4985 8.30306 15.4885 7.65906Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
-                        <span class="mdc-typography--caption">Tipo de actividad</span>
+                        <i class="mdc-icon small actividad-parmenia-icon-small"></i>
+                        <span class="mdc-typography--caption">Actividad parmenia</span>
                       </div>
                     </div>
 
@@ -1574,7 +1581,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
                       </div>
                     </div>
@@ -1593,7 +1600,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-043">
                   <a href="actividad1.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline2">Nombre de la actividad</h2>
@@ -1601,27 +1608,13 @@
 
                     <div class="mdc-card__secondary">
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false" aria-label="Individual" data-mdc-tooltip="Individual">
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 15.75V14.25C15 13.4544 14.6839 12.6913 14.1213 12.1287C13.5587 11.5661 12.7956 11.25 12 11.25H6C5.20435 11.25 4.44129 11.5661 3.87868 12.1287C3.31607 12.6913 3 13.4544 3 14.25V15.75" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 8.25C10.6569 8.25 12 6.90685 12 5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25C6 6.90685 7.34315 8.25 9 8.25Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                        <i class="mdc-icon small formato-individual-icon-small"></i>
                         <span class="mdc-typography--caption">Individual</span>
                       </div>
 
                       <div class="mdc-card__caption">
-                        <i class="mdc-icon small" aria-pressed="false">
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.75832 8.771C7.98132 7.286 8.45832 3.121 8.54532 2.339C8.54532 2.336 8.54632 2.333 8.54632 2.33C8.54732 2.325 8.54932 2.323 8.55032 2.318C8.55032 2.316 8.54932 2.314 8.54932 2.312C8.56032 2.242 8.53132 2.164 8.46832 2.099C8.40232 2.03 8.30532 1.983 8.19632 1.968C3.87632 1.361 2.12532 1.111 1.41632 1.008C1.38032 1.003 1.34632 1 1.31632 1C1.18632 1 1.12932 1.049 1.10332 1.09C1.05032 1.179 1.10932 1.285 1.13432 1.315C1.55532 1.825 2.18532 2.59 2.91532 3.476C4.65232 5.586 6.81532 8.213 7.38832 8.883C7.44432 8.949 7.50632 8.983 7.57232 8.983C7.62132 8.983 7.73632 8.963 7.75732 8.77C7.75832 8.772 7.75832 8.771 7.75832 8.771Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M7.75315 9.33711C7.74515 9.33111 7.73815 9.32111 7.72915 9.31611C7.69615 9.29711 7.65815 9.28711 7.61715 9.28711C7.51215 9.28711 7.40515 9.35811 7.39615 9.43111C7.33615 9.95811 7.23015 10.8491 7.10615 11.8821C6.86315 13.9171 6.82315 15.9081 6.71915 16.9711L6.90115 17.0001C7.09015 16.4481 7.02315 16.5141 7.23615 16.0881C7.48815 15.5851 7.77015 15.1441 8.07615 14.7771C8.42115 14.3621 8.81115 14.0231 9.23415 13.7701C9.70015 13.4911 10.2241 13.3071 10.7901 13.2221C10.8291 13.2161 10.8631 13.1931 10.8781 13.1621C10.8851 13.1471 10.8981 13.1051 10.8581 13.0591C10.8421 13.0401 7.75315 9.33711 7.75315 9.33711Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M10.7733 12.96C10.8303 13.022 10.8953 13.056 10.9663 13.056C11.0623 13.056 11.1353 12.998 11.1893 12.956C11.2023 12.945 11.2153 12.935 11.2263 12.928C11.7303 12.588 12.7393 11.898 13.6293 11.288C14.2673 10.852 14.8183 10.474 15.0323 10.33C15.0953 10.287 15.5323 9.91497 15.5183 9.86797C15.5093 9.83597 15.0663 10.122 14.9733 10.109C14.6903 10.07 13.9093 9.95797 12.9223 9.81597C11.5263 9.61597 9.78832 9.36697 8.63732 9.20497C8.61032 9.20097 8.00032 9.10997 7.89432 9.09697C7.88432 9.09597 7.87432 9.09497 7.86332 9.09497C7.80132 9.09497 7.74832 9.12097 7.72232 9.16297C7.69432 9.20797 7.70332 9.27497 7.74332 9.32497L10.7733 12.96Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M15.1613 9.78812C14.5243 9.02412 13.3663 7.61512 12.2473 6.25312C10.8323 4.53012 9.36832 2.74912 8.91532 2.22012C8.85832 2.15412 8.79632 2.12012 8.73132 2.12012C8.68332 2.12012 8.56832 2.14112 8.54632 2.33112C8.54632 2.33412 8.54532 2.33712 8.54532 2.34012C8.45732 3.12412 7.97732 7.32412 7.75532 8.79212C7.74432 8.86312 7.77432 8.94112 7.83632 9.00612C7.89532 9.06812 7.98432 9.10312 8.08032 9.12312C8.29832 9.15512 8.61732 9.20212 8.63532 9.20512C9.78632 9.36712 11.5243 9.61612 12.9203 9.81612C13.8463 9.94912 14.5743 10.0531 14.8963 10.0981C14.8963 10.0981 14.8973 10.0981 14.8983 10.0981C14.9343 10.1031 14.9683 10.1061 14.9983 10.1061C15.1233 10.1061 15.1773 10.0581 15.2013 10.0191C15.2543 9.93212 15.1903 9.82312 15.1613 9.78812Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M16.5701 5.7061L16.5703 5.70601L17.2962 6.6107C17.2978 6.61274 17.2994 6.61479 17.301 6.61687C17.2988 6.61408 17.2966 6.61136 17.2944 6.6087L16.5701 5.7061ZM17.4192 6.95402C17.4192 6.94958 17.4191 6.94516 17.419 6.94078C17.4192 6.94614 17.4192 6.95144 17.4192 6.95669L17.4192 6.95751C17.4192 6.96009 17.4191 6.96266 17.4191 6.96523C17.4191 6.96151 17.4192 6.95778 17.4192 6.95402ZM15.8274 7.303C15.8655 7.32856 15.9062 7.34923 15.9477 7.36474C15.9048 7.34908 15.8645 7.32833 15.8274 7.303ZM15.8751 5.56335C15.8544 5.57433 15.834 5.58682 15.8141 5.6008C15.8334 5.58713 15.8538 5.57461 15.8751 5.56335ZM16.5695 5.70502L16.5619 5.69605C16.5597 5.69353 16.5576 5.69103 16.5554 5.68856C16.5603 5.69398 16.565 5.69947 16.5695 5.70502Z" fill="black" stroke="#757575"/>
-                            <path d="M15.4885 7.65906C15.4885 7.41006 15.4835 6.91706 15.4785 6.48206C15.4745 6.12306 15.4715 5.78306 15.4715 5.64306V5.53306L15.4365 5.50906C15.4345 5.50806 15.4115 5.49206 15.3695 5.47006C15.3105 5.44006 14.9895 5.28906 14.4315 5.28906C14.1765 5.28906 13.9115 5.32106 13.6435 5.38606C13.1305 5.50906 12.8205 5.77206 12.6525 5.97006C12.4685 6.18606 12.3635 6.38206 12.3605 6.39006C13.4435 7.70906 14.5455 9.04906 15.1615 9.78806C15.1655 9.79206 15.1815 9.81406 15.1815 9.81406C15.2165 9.84706 15.2695 9.86706 15.3265 9.86706C15.4275 9.86706 15.5075 9.81006 15.5165 9.73106C15.5175 9.72606 15.5175 9.69206 15.5165 9.63506C15.5145 9.32006 15.4985 8.30306 15.4885 7.65906Z" stroke="#757575" stroke-width="1.5" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
-                        <span class="mdc-typography--caption">Tipo de actividad</span>
+                        <i class="mdc-icon small actividad-subir-archivo-icon-small"></i>
+                        <span class="mdc-typography--caption">Subir archivo</span>
                       </div>
                     </div>
 
@@ -1642,7 +1635,7 @@
                     <div class="mdc-card__info">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                         </span>
                       </div>
                     </div>
@@ -1666,7 +1659,7 @@
         </section>
         <!-- } -->
 
-        <!-- Foro { -->
+        <!-- Enlaces { -->
         <section id="enlaces" class="sortable">
           <div class="collapsable-wrapper">
             <div class="subtitle-wrapper">

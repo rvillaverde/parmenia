@@ -4,10 +4,6 @@ for (var i = 0, button; button = buttons[i]; i++) {
 }
 */
 
-const chipHtml = `
-  <div id='%id%' data-index='%index%' class='mdc-chip' role='row'>
-    <span class='mdc-chip__text mdc-typography--body2'>%name%</span>
-  </div>`;
 
 class MDCSearchTextField {
   constructor(textField) {
@@ -119,12 +115,16 @@ class CheckBoxMenuSelect {
     if (!items) return;
 
     items.forEach(function(item) {
-      let html = chipHtml.replace('%id%', item.id).replace('%name%', item.name).replace('%index%', item.index);
-      //let html = $(`<div id='${ item.id }' class='mdc-chip' role='row'><span class='mdc-chip__text mdc-typography--body2'>${ item.name }</span></div>`);
+      let html = CheckBoxMenuSelect.chipHtml.replace('%id%', item.id).replace('%name%', item.name).replace('%index%', item.index);
       chipSet.append(html);
     });
   }
 }
+
+CheckBoxMenuSelect.chipHtml = `
+  <div id='%id%' data-index='%index%' class='mdc-chip' role='row'>
+    <span class='mdc-chip__text mdc-typography--body2'>%name%</span>
+  </div>`;
 
 class TreeCheckboxList {
   constructor(list) {
@@ -606,6 +606,36 @@ class MDCRichTextEditor {
   }
 }
 
+class MDCFilterChipset {
+  constructor(chipset) {
+    this.chipset = $(chipset);
+    this.mdcChipset = mdc.chips.MDCChipSet.attachTo(chipset);
+    let self = this;
+
+    this.mdcChipset.listen('MDCChip:selection', function(e) {
+      self.handleSelection();
+    });
+  }
+
+  handleSelection() {
+    let selectedChipIds = this.mdcChipset.selectedChipIds.join(',');
+    let targetSelector = this.chipset.attr('data-filter-target');
+
+    if (!selectedChipIds.length) {
+      $(targetSelector).show();
+      return;
+    }
+
+    $(targetSelector).each(function(i, target) {
+      if (selectedChipIds.indexOf($(target).attr('data-filter-value')) > -1) {
+        $(target).show();
+      } else {
+        $(target).hide();
+      }
+    })
+  }
+}
+
 function openMenu(menu) {
   menu.open = true;
 }
@@ -632,9 +662,14 @@ for (var i = 0, sortableWrapper; sortableWrapper = sortableWrappers[i]; i++) {
   new MDCSortable(sortableWrapper);
 }
 
-var chipsets = $('.mdc-chip-set');
+var chipsets = $('.mdc-chip-set:not(.mdc-chip-set--filter)');
 for (var i = 0, chipset; chipset = chipsets[i]; i++) {
-  let mdcChipset = mdc.chips.MDCChipSet.attachTo(chipset);
+  mdc.chips.MDCChipSet.attachTo(chipset);
+}
+
+var chipsets = $('.mdc-chip-set.mdc-chip-set--filter');
+for (var i = 0, chipset; chipset = chipsets[i]; i++) {
+  new MDCFilterChipset(chipset);
 }
 
 var textFields = $('.mdc-text-field:not(.mdc-text-field--search)');

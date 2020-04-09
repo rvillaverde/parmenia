@@ -208,10 +208,6 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
   cursor: pointer;
 }
 
-.mdc-select.mdc-select--checkbox .mdc-select__selected-text {
-  color: transparent;
-}
-
 .mdc-select.mdc-select--checkbox .mdc-chip-set {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -266,6 +262,10 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
 .mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {
   color: var(--mdc-theme-gray__700);
   padding-right: 40px;
+}
+
+.mdc-select:not(.mdc-select--disabled).mdc-select--checkbox .mdc-select__selected-text {
+  color: transparent;
 }
 
 .mdc-drawer .mdc-select {
