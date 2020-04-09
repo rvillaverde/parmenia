@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
+    <!-- OFFLINE MODE -->
+<!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
+    <script src="offline/material-components-web.min.js"></script>
+    <script src="offline/jquery-3.4.1.min.js"></script> -->
+
+    <script
+      src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+      integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+      crossorigin="anonymous"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+    <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/menus.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
+    <link rel="stylesheet" href="styles/cards.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="styles/tables.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
+  </head>
+
+  <body class="container mdc-typography">
+    <div class="user-roles-wrapper">
+      <button class="mdc-icon-button mdc-icon-button--secondary" data-mdc-tooltip="Cerrar">
+        <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+      </button>
+      <h4 class="mdc-typography--headline4">Ver como:</h4>
+      <div class="mdc-radio-button__wrapper">
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="alumno" value="alumno" checked>
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="alumno">Alumno</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="docente" value="docente">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="docente">Docente</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="admin" value="admin">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="admin">Admin</label>
+        </div>
+      </div>
+    </div>
+
+    <nav class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section">
+          <div class="mdc-top-app-bar__title-wrapper">
+            <a href="dashboard.html" class="mdc-top-app-bar__school-pic round-photo-wrapper">
+              <img src="img/placeholder.png">
+            </a>
+            <a href="dashboard.html" class="mdc-top-app-bar__title mdc-typography--headline6">Colegio Lasalle</a>
+          </div>
+        </section>
+
+        <section class="mdc-top-app-bar__section">
+          <div class="mdc-top-app-bar__title-wrapper">
+            <h6 class="mdc-top-app-bar__title mdc-typography--headline6">Biblioteca</h6>
+          </div>
+          <ul class="mdc-top-app-bar__actions" role="toolbar">
+            <li class="mdc-top-app-bar__action-item mdc-menu--hover collapsable-wrapper">
+              <a class="mdc-button mdc-button--app-bar" href="aulas.html" aria-label="Mis aulas">
+                <i class="mdc-icon nav-aulas-icon"></i>
+                <span class="mdc-button__label">Mis Aulas</span>
+              </a>
+              <a class="collapse-link">
+                <input type="checkbox" checked>
+                <i class="mdc-icon small nav-chevron-icon"></i>
+              </a>
+              <div class="mdc-menu mdc-menu-surface collapsable">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item mdc-list-item--highlight mdc-menu__action" role="menuitem" data-role="admin">
+                    <a href="aulas.html" class="mdc-list-item__text mdc-typography--subtitle1">Administrar aulas</a>
+                  </li>
+                  <li class="mdc-list-divider" role="separator" data-role="admin"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <a href="aula1.html" class="mdc-list-item__text mdc-typography--subtitle1">Nombre del aula</a>
+                  </li>
+                  <li class="mdc-list-divider" role="separator"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <a href="aula1.html" class="mdc-list-item__text mdc-typography--subtitle1">Nombre del aula</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item" data-role="admin">
+              <a class="mdc-button mdc-button--app-bar" href="docentes.html" aria-label="Docentes">
+                <i class="mdc-icon nav-docentes-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Docentes</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item" data-role="admin,docente">
+              <a class="mdc-button mdc-button--app-bar" href="alumnos.html" aria-label="Biblioteca">
+                <i class="mdc-icon nav-alumnos-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Alumnos</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item mdc-top-app-bar__action-item--active">
+              <a class="mdc-button mdc-button--app-bar" href="biblioteca.html" aria-label="Biblioteca">
+                <i class="mdc-icon nav-biblioteca-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Biblioteca</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="agenda.html" aria-label="Agenda">
+                <i class="mdc-icon nav-agenda-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Agenda</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions" role="toolbar">
+            <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
+                <i class="mdc-icon nav-mochila-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item mdc-menu--click">
+              <a class="mdc-button mdc-button--app-bar" aria-label="Notificaciones">
+                <i class="mdc-icon nav-notificaciones-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Notificaciones</span>
+              </a>
+              <input type="checkbox">
+              <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
+                <ul class="mdc-list notifications" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-foro-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Nuevo mensaje</div>
+                      <div class="notification__date mdc-typography--caption">Hace 11 min</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Profesor X respondió tu mensaje en el foro de Visita al a Reserva Ecológica.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-aula-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Nueva actividad</div>
+                      <div class="notification__date mdc-typography--caption">Hace 2 días</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Profesor X publicó una nueva actividad en Visita a la Reserva Ecológica.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-aula-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Entrega Vencida</div>
+                      <div class="notification__date mdc-typography--caption">Hace 3 días</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Terminó el plazo para entregar la Actividad Clasificamos Especies del proyecto Visita a la Reserva.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="mdc-menu__actions">
+                    <a href="notifications.html" class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver todas</span>
+                      <i class="mdc-button__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions">
+            <li class="mdc-top-app-bar__action-item mdc-menu--hover">
+              <a class="mdc-button mdc-button--app-bar" href="profile.html" aria-label="Pepito">
+                <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
+                  <img src="img/placeholder.png">
+                </div>
+                <span class="mdc-button__label mdc-top-app-bar__profile-name mdc-typography--headline6">Pepito</span>
+                <i class="mdc-icon small nav-chevron-icon"></i>
+              </a>
+              <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
+                <ul class="mdc-list profile-menu-wrapper" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                    <div class="profile-info">
+                      <h6 class="mdc-typography--headline6">Pepito Gimenez</h6>
+                      <a href="profile.html" class="mdc-typography--body2">Ver perfil</a>
+                    </div>
+                  </li>
+                  <li class="mdc-list-divider" role="separator"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <i class="mdc-icon nav-logout-icon"></i>
+                    <a href="login.html" class="mdc-list-item__text mdc-typography--subtitle1">
+                      <span class="mdc-typography--subtitle1">Cerrar sesión</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions">
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="login.html" aria-label="Cerrar sesión">
+                <i class="mdc-icon nav-logout-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Cerrar sesión</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mdc-top-app-bar__section" id="nav-menu-toggle">
+          <div class="mdc-top-app-bar__actions">
+            <button class="mdc-button mdc-button--app-bar" aria-label="Menu">
+              <input type="checkbox">
+              <i class="mdc-icon nav-menu-icon"></i>
+            </button>
+          </div>
+        </section>
+        </div>
+      </div>
+    </nav>
+
+    <header class="mdc-header mdc-header__admin">
+      <div class="mdc-header__row">
+        <section class="mdc-header__section">
+          <i class="header__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.00024 4.47198H11.6002C15.1342 4.47198 18.0002 7.36199 18.0002 10.928V33.528C18.0002 30.854 15.8502 28.686 13.2002 28.686H2.00024V4.47198Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M34 4.47198H24.4C20.866 4.47198 18 7.36199 18 10.928V33.528C18 30.854 20.15 28.686 22.8 28.686H34V4.47198Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M22.1575 12.098H29.8495" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M22.1575 16.9319H29.8495" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M22.1575 21.7679H29.8495" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </i>
+          <h1 class="mdc-typography--headline1">Biblioteca</h1>
+        </section>
+      </div>
+    </header>
+
+    <div class="mdc-dialog" id="recurso-01">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface mdc-dialog__surface--xl"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nombre del recurso
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <div class="embebed-recurso__wrapper">
+              <h4 class="mdc-typography--headline4">Acá va el recurso incrustado/embebido</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <main class="main-wrapper sortable-wrapper">
+      <section class="collapsable-wrapper sortable">
+        <div class="group-title-wrapper">
+          <h5 class="mdc-typography--headline5">Nombre de la carpeta</h5>
+          <div class="group-icons">
+            <div class="mdc-chip" role="row">
+              <span role="gridcell">
+                <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">3</span>
+              </span>
+            </div>
+            <a class="collapse-link">
+              <input type="checkbox" checked>
+              <i class="mdc-icon small chevron-right-icon"></i>
+            </a>
+          </div>
+          <div class="group-actions" data-role="admin,docente">
+            <a class="mdc-icon-button mdc-icon-button--secondary drag-button">
+              <i class="mdc-icon drag-icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Carpeta { -->
+        <div class="mdc-layout-grid cards collapsable">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mdc-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
+                  <p class="mdc-card__subtitle mdc-typography--body1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                  </p>
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 1</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 2</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 3</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">ver recurso</span>
+                  </button>
+                </div>
+
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
+                    <i class="mdc-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mdc-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
+                  <p class="mdc-card__subtitle mdc-typography--body1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                  </p>
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 1</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 2</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 3</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">ver recurso</span>
+                  </button>
+                </div>
+
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
+                    <i class="mdc-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mdc-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
+                  <p class="mdc-card__subtitle mdc-typography--body1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                  </p>
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 1</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 2</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 3</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">ver recurso</span>
+                  </button>
+                </div>
+
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
+                    <i class="mdc-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- } -->
+      </section>
+
+      <section class="collapsable-wrapper sortable">
+        <div class="group-title-wrapper">
+          <h5 class="mdc-typography--headline5">Nombre de la carpeta</h5>
+          <div class="group-icons">
+            <div class="mdc-chip" role="row">
+              <span role="gridcell">
+                <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">2</span>
+              </span>
+            </div>
+            <a class="collapse-link">
+              <input type="checkbox" checked>
+              <i class="mdc-icon small chevron-right-icon"></i>
+            </a>
+          </div>
+          <div class="group-actions" data-role="admin,docente">
+            <a class="mdc-icon-button mdc-icon-button--secondary drag-button">
+              <i class="mdc-icon drag-icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Carpeta { -->
+        <div class="mdc-layout-grid cards collapsable">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mdc-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
+                  <p class="mdc-card__subtitle mdc-typography--body1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                  </p>
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 1</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 2</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 3</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">ver recurso</span>
+                  </button>
+                </div>
+
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
+                    <i class="mdc-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop">
+              <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mdc-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline3">Nombre del recurso</h2>
+                  <p class="mdc-card__subtitle mdc-typography--body1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat.
+                  </p>
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 1</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 2</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Curso 3</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                  <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">ver recurso</span>
+                  </button>
+                </div>
+
+                <div class="mdc-card__action-icons" data-role="alumno,docente">
+                  <button class="mdc-card__action--icon mdc-button mdc-icon-button" aria-pressed="false" aria-label="Agregar a la mochila" data-mdc-tooltip="Agregar a la mochila" onclick="addToBag(this);">
+                    <i class="mdc-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.2292 11.563H7.77056C5.21589 11.563 3.69189 9.40703 3.69189 6.74703V22.667H20.3066V6.20703C20.3066 6.20703 20.2999 6.80303 20.2986 6.82703C20.2572 9.4497 18.7572 11.563 16.2292 11.563Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M5.24645 4.58838C4.38778 4.58838 3.69312 5.31238 3.69312 6.20571C3.69312 6.20571 3.69312 6.67905 3.69312 6.74705C3.69312 9.40705 5.21712 11.563 7.77178 11.563H16.2304C18.7585 11.563 20.2584 9.44971 20.3011 6.82705C20.3024 6.80305 20.3091 6.20705 20.3091 6.20705C20.3091 5.31371 19.6131 4.58971 18.7558 4.58971H5.24645V4.58838Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M16.6292 18.9374C16.6292 19.2147 16.4132 19.4388 16.1478 19.4388H7.85316C7.58649 19.4388 7.37183 19.2147 7.37183 18.9374V15.6854C7.37183 15.4081 7.58783 15.1841 7.85316 15.1841H16.1478C16.4145 15.1841 16.6292 15.4081 16.6292 15.6854V18.9374V18.9374Z" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M8.29858 4.58816C8.29858 2.79083 9.95592 1.3335 11.9999 1.3335C14.0439 1.3335 15.7013 2.79083 15.7013 4.58816" stroke="#6274E5" stroke-width="1.5" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- } -->
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left-col">
+        <img src="img/parmenia-logo.svg">
+        <span class="mdc-typography--caption">aula virtual</span>
+      </div>
+
+      <div class="footer-right-col mdc-typography--subtitle2">
+        <span class="mdc-typography--subtitle2">2020 ® Todos los derechos reservados.</span>
+        <a href="#">Ver política de privacidad</a>
+      </div>
+    </footer>
+  </body>
+
+  <script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+</html>

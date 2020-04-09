@@ -1,0 +1,208 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+.mdc-card .mdc-data-table {
+  background-color: transparent;
+}
+
+.mdc-card--large .mdc-data-table {
+  width: 100%;
+}
+
+.mdc-data-table__table {
+  table-layout: auto;
+  width: 100%;
+  white-space: normal;
+}
+
+.mdc-data-table__header-cell .mdc-typography--caption {
+  color: var(--mdc-theme-secondary__600);
+}
+
+.table__photo-thumbnail {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 0;
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+}
+
+.table__photo-thumbnail.small {
+  height: 24px;
+  width: 24px;
+  min-width: 24px;
+}
+
+.mdc-data-table__row:last-child {
+  border-bottom-color: rgba(0,0,0,.12);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.mdc-data-table__row--selected {
+  background-color: var(--mdc-theme-surface);
+}
+
+.mdc-data-table__pagination-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: auto;
+  max-width: 440px;
+}
+
+.mdc-data-table__pagination .mdc-typography--subtitle1 {
+  color: var(--mdc-theme-primary__300);
+}
+
+.mdc-data-table__actions {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.mdc-data-table__actions > *:not(:first-child) {
+  margin-left: 16px;
+}
+
+.mdc-data-table__cell .mdc-icon-button {
+  background-color: transparent;
+}
+
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.mdc-dialog .mdc-data-table__cell,
+.mdc-dialog .mdc-data-table__header-cell {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.mdc-data-table__cell.mdc-data-table__cell--icon {
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 48px;
+}
+
+.mdc-data-table__cell.mdc-data-table__cell--small-icon {
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 36px;
+}
+
+.mdc-data-table__cell.mdc-data-table__cell--small-icon i {
+  margin: auto;
+}
+
+.mdc-data-table__header-cell.span-10 {
+  width: 10%;
+}
+
+.mdc-data-table__header-cell.span-20 {
+  width: 20%;
+}
+
+.mdc-data-table__header-cell.span-25 {
+  width: 25%;
+}
+
+.mdc-data-table__header-cell.span-30 {
+  width: 30%;
+}
+
+.mdc-data-table__cell .mdc-chip-set {
+  padding: 0;
+}
+
+.mdc-data-table__table .mdc-data-table__header-cell--actions,
+.mdc-data-table__table .mdc-data-table__cell.mdc-data-table__cell--actions {
+  text-align: right;
+}
+
+.mdc-data-table__header-cell--checkbox, .mdc-data-table__cell--checkbox {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mdc-data-table__counter {
+  margin-top: 40px;
+}
+
+.mdc-dialog__content > .mdc-data-table {
+  width: 100%;
+}
+
+.mdc-select__menu .mdc-data-table {
+  padding: 0;
+  width: 100%;
+}
+
+.mdc-select__menu .mdc-data-table__cell {
+  height: 36px;
+}
+
+.mdc-select__menu .mdc-data-table .mdc-data-table__header {
+  display: none;
+}
+
+.mdc-select__menu .mdc-data-table .mdc-data-table__header-cell--actions {
+  width: 60px;
+}
+
+.mdc-select__menu .mdc-data-table .mdc-data-table__row {
+  border-top: none;
+}
+
+.mdc-data-table__cell .alumno-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mdc-data-table__cell .alumno-wrapper *:not(:first-child) {
+  margin-left: 8px;
+}
+
+.aula-select__table td:nth-child(1) {
+  width: 10%;
+}
+
+.aula-select__table td:nth-child(2) {
+  width: 25%;
+}
+
+.aula-select__table td:nth-child(3) {
+  width: 25%;
+}
+
+.aula-select__table td:nth-child(4) {
+  width: 20%;
+}
+
+.aula-select__table td:nth-child(5) {
+  width: 20%;
+}

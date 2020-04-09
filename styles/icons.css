@@ -1,0 +1,230 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+.mdc-icon {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 24px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.mdc-icon.large {
+  height: 44px;
+  width: 44px;
+}
+
+.mdc-icon.small {
+  height: 18px;
+  width: 18px;
+}
+
+.mdc-icon.small svg {
+  height: 18px;
+  width: 18px;
+}
+
+.mdc-icon svg {
+  display: block;
+  margin: auto;
+}
+
+.mdc-icon.mdc-text-field__icon:focus {
+  outline: none;
+}
+
+.collapse-label {
+  cursor: pointer;
+}
+
+.collapse-link {
+  height: 18px;
+  position: relative;
+}
+
+.collapse-icon {
+  height: 18px;
+  width: 18px;
+}
+
+.mdc-select--focused .mdc-select__dropdown-icon,
+.mdc-select .mdc-select__dropdown-icon {
+  background-image: url("../icons/dropdown-icon.svg");
+}
+
+.info-icon-small {
+  background-image: url("../icons/info-icon-small.svg");
+  margin-left: 8px;
+}
+
+.drag-icon-small {
+  background-image: url("../icons/drag-icon-small.svg");
+}
+
+.drag-icon {
+  background-image: url("../icons/drag-icon.svg");
+}
+
+.selected-icon {
+  background-image: url("../icons/selected-icon.svg");
+}
+
+.edit-icon {
+  background-image: url("../icons/edit-icon.svg");
+}
+
+.edit-icon-small-white {
+  background-image: url("../icons/edit-icon-small-white.svg");
+}
+
+.delete-icon-small-white {
+  background-image: url("../icons/delete-icon-small-white.svg");
+}
+
+.delete-icon {
+  background-image: url("../icons/delete-icon.svg");
+}
+
+.delete-icon-small {
+  background-image: url("../icons/delete-icon-small.svg");
+}
+
+.delete-icon-secondary {
+  background-image: url("../icons/delete-icon-secondary.svg");
+}
+
+.eye-on-icon {
+  background-image: url("../icons/eye-on-icon.svg");
+}
+
+.eye-off-icon {
+  background-image: url("../icons/eye-off-icon.svg");
+}
+
+.plus-icon {
+  background-image: url("../icons/plus-icon.svg");
+}
+
+.search-icon {
+  background-image: url("../icons/search-icon.svg");
+}
+
+.camera-icon {
+  background-image: url("../icons/camera-icon.svg");
+}
+
+.chip-cross-icon {
+  background-image: url("../icons/chip-cross-icon.svg");
+}
+
+.nav-aulas-icon {
+  background-image: url("../icons/nav-aulas-icon.svg");
+}
+
+.nav-docentes-icon {
+  background-image: url("../icons/nav-docentes-icon.svg");
+}
+
+.nav-alumnos-icon {
+  background-image: url("../icons/nav-alumnos-icon.svg");
+}
+
+.nav-biblioteca-icon {
+  background-image: url("../icons/nav-biblioteca-icon.svg");
+}
+
+.nav-agenda-icon {
+  background-image: url("../icons/nav-agenda-icon.svg");
+}
+
+.nav-notificaciones-icon {
+  background-image: url("../icons/nav-notificaciones-icon.svg");
+}
+
+.nav-mochila-icon {
+  background-image: url("../icons/nav-mochila-icon.svg");
+}
+
+.nav-logout-icon {
+  background-image: url("../icons/nav-logout-icon.svg");
+}
+
+.nav-chevron-icon {
+  background-image: url("../icons/nav-chevron-icon.svg");
+}
+
+.chevron-left-icon {
+  background-image: url("../icons/chevron-left-icon.svg");
+}
+
+.chevron-right-icon {
+  background-image: url("../icons/chevron-right-icon.svg");
+}
+
+.chevron-right-icon-secondary {
+  background-image: url("../icons/chevron-right-icon-secondary.svg");
+}
+
+.mochila-icon-small-white {
+  background-image: url("../icons/mochila-icon-small-white.svg");
+}
+
+.mochila-icon-secondary {
+  background-image: url("../icons/mochila-icon-secondary.svg");
+}
+
+.noticias-icon {
+  background-image: url("../icons/noticias-icon.svg");
+}
+
+.noticias-icon-small-white {
+  background-image: url("../icons/noticias-icon-small-white.svg");
+}
+
+.proyectos-icon {
+  background-image: url("../icons/proyectos-icon.svg");
+}
+
+.proyectos-icon-small-white {
+  background-image: url("../icons/proyectos-icon-small-white.svg");
+}
+
+.recursos-icon {
+  background-image: url("../icons/recursos-icon.svg");
+}
+
+.recursos-icon-small-white {
+  background-image: url("../icons/recursos-icon-small-white.svg");
+}
+
+.formato-grupal-icon-small {
+  background-image: url("../icons/formato-grupal-icon-small.svg");
+}
+
+.formato-individual-icon-small {
+  background-image: url("../icons/formato-individual-icon-small.svg");
+}
+
+.actividad-personalizada-icon-small {
+  background-image: url("../icons/actividad-personalizada-icon-small.svg");
+}
+
+.actividad-subir-archivo-icon-small {
+  background-image: url("../icons/actividad-subir-archivo-icon-small.svg");
+}
+
+.actividad-parmenia-icon-small {
+  background-image: url("../icons/actividad-parmenia-icon-small.svg");
+}
+
+.actividad-redaccion-icon-small {
+  background-image: url("../icons/actividad-redaccion-icon-small.svg");
+}

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
+    <!-- OFFLINE MODE -->
+<!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
+    <script src="offline/material-components-web.min.js"></script>
+    <script src="offline/jquery-3.4.1.min.js"></script> -->
+
+    <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/menus.css">
+    <link rel="stylesheet" href="styles/cards.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="styles/tables.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
+  </head>
+
+  <body class="container mdc-typography">
+    <div class="user-roles-wrapper">
+      <button class="mdc-icon-button mdc-icon-button--secondary" data-mdc-tooltip="Cerrar">
+        <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+      </button>
+      <h4 class="mdc-typography--headline4">Ver como:</h4>
+      <div class="mdc-radio-button__wrapper">
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="alumno" value="alumno" checked>
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="alumno">Alumno</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="docente" value="docente">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="docente">Docente</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="admin" value="admin">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="admin">Admin</label>
+        </div>
+      </div>
+    </div>
+
+    <nav class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section">
+          <div class="mdc-top-app-bar__title-wrapper">
+            <a href="dashboard.html" class="mdc-top-app-bar__school-pic round-photo-wrapper">
+              <img src="img/placeholder.png">
+            </a>
+            <a href="dashboard.html" class="mdc-top-app-bar__title mdc-typography--headline6">Colegio Lasalle</a>
+          </div>
+        </section>
+
+        <section class="mdc-top-app-bar__section">
+          <div class="mdc-top-app-bar__title-wrapper">
+            <h6 class="mdc-top-app-bar__title mdc-typography--headline6">Mi perfil</h6>
+          </div>
+          <ul class="mdc-top-app-bar__actions" role="toolbar">
+            <li class="mdc-top-app-bar__action-item mdc-menu--hover collapsable-wrapper">
+              <a class="mdc-button mdc-button--app-bar" href="aulas.html" aria-label="Mis aulas">
+                <i class="mdc-icon nav-aulas-icon"></i>
+                <span class="mdc-button__label">Mis Aulas</span>
+              </a>
+              <a class="collapse-link">
+                <input type="checkbox" checked>
+                <i class="mdc-icon small nav-chevron-icon"></i>
+              </a>
+              <div class="mdc-menu mdc-menu-surface collapsable">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item mdc-list-item--highlight mdc-menu__action" role="menuitem" data-role="admin">
+                    <a href="aulas.html" class="mdc-list-item__text mdc-typography--subtitle1">Administrar aulas</a>
+                  </li>
+                  <li class="mdc-list-divider" role="separator" data-role="admin"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <a href="aula1.html" class="mdc-list-item__text mdc-typography--subtitle1">Nombre del aula</a>
+                  </li>
+                  <li class="mdc-list-divider" role="separator"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <a href="aula1.html" class="mdc-list-item__text mdc-typography--subtitle1">Nombre del aula</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item" data-role="admin">
+              <a class="mdc-button mdc-button--app-bar" href="docentes.html" aria-label="Docentes">
+                <i class="mdc-icon nav-docentes-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Docentes</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item" data-role="admin,docente">
+              <a class="mdc-button mdc-button--app-bar" href="alumnos.html" aria-label="Biblioteca">
+                <i class="mdc-icon nav-alumnos-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Alumnos</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="biblioteca.html" aria-label="Biblioteca">
+                <i class="mdc-icon nav-biblioteca-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Biblioteca</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="agenda.html" aria-label="Agenda">
+                <i class="mdc-icon nav-agenda-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Agenda</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions" role="toolbar">
+            <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
+                <i class="mdc-icon nav-mochila-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item mdc-menu--click">
+              <a class="mdc-button mdc-button--app-bar" aria-label="Notificaciones">
+                <i class="mdc-icon nav-notificaciones-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Notificaciones</span>
+              </a>
+              <input type="checkbox">
+              <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
+                <ul class="mdc-list notifications" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-foro-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Nuevo mensaje</div>
+                      <div class="notification__date mdc-typography--caption">Hace 11 min</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Profesor X respondió tu mensaje en el foro de Visita al a Reserva Ecológica.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-aula-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Nueva actividad</div>
+                      <div class="notification__date mdc-typography--caption">Hace 2 días</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Profesor X publicó una nueva actividad en Visita a la Reserva Ecológica.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-aula-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Entrega Vencida</div>
+                      <div class="notification__date mdc-typography--caption">Hace 3 días</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Terminó el plazo para entregar la Actividad Clasificamos Especies del proyecto Visita a la Reserva.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="mdc-menu__actions">
+                    <a href="notifications.html" class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver todas</span>
+                      <i class="mdc-button__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions">
+            <li class="mdc-top-app-bar__action-item mdc-menu--hover mdc-top-app-bar__action-item--active">
+              <a class="mdc-button mdc-button--app-bar" href="profile.html" aria-label="Pepito">
+                <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
+                  <img src="img/placeholder.png">
+                </div>
+                <span class="mdc-button__label mdc-top-app-bar__profile-name mdc-typography--headline6">Pepito</span>
+                <i class="mdc-icon small nav-chevron-icon"></i>
+              </a>
+              <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
+                <ul class="mdc-list profile-menu-wrapper" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                    <div class="profile-info">
+                      <h6 class="mdc-typography--headline6">Pepito Gimenez</h6>
+                      <a href="profile.html" class="mdc-typography--body2">Ver perfil</a>
+                    </div>
+                  </li>
+                  <li class="mdc-list-divider" role="separator"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <i class="mdc-icon nav-logout-icon"></i>
+                    <a href="login.html" class="mdc-list-item__text mdc-typography--subtitle1">
+                      <span class="mdc-typography--subtitle1">Cerrar sesión</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions">
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="login.html" aria-label="Cerrar sesión">
+                <i class="mdc-icon nav-logout-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Cerrar sesión</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mdc-top-app-bar__section" id="nav-menu-toggle">
+          <div class="mdc-top-app-bar__actions">
+            <button class="mdc-button mdc-button--app-bar" aria-label="Menu">
+              <input type="checkbox">
+              <i class="mdc-icon nav-menu-icon"></i>
+            </button>
+          </div>
+        </section>
+        </div>
+      </div>
+    </nav>
+
+    <header class="mdc-header mdc-header__admin">
+      <div class="mdc-header__row">
+        <section class="mdc-header__section">
+          <h1 class="mdc-typography--headline1 mdc-header__title">
+            Mi Perfil - 
+            <span class="mdc-typography--lighter" data-role="alumno">Alumno</span>
+            <span class="mdc-typography--lighter" data-role="docente">Docente</span>
+            <span class="mdc-typography--lighter" data-role="admin">Admin</span>
+          </h1>
+        </section>
+        <section class="mdc-header__section mdc-header__actions">
+          <button class="mdc-button mdc-button--raised">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Cerrar Sesión</span>
+          </button>
+        </section>
+      </div>
+    </header>
+
+    <div class="mdc-dialog" id="password-change">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Cambiar contraseña
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <form class="admin-form" id="change-password">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="password" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="my-label-id">Contraseña actual</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <p class="mdc-typography--subtitle2 field-legend">
+                        ¿Olvidaste tu contraseña?
+                        <a href="#" onclick="openDialog('password-reset');">Hacé click aquí</a>
+                      </p>
+                    </div>
+
+
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="password" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="my-label-id">Nueva contraseña</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                    </div>
+
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="password" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="my-label-id">Confirmar contraseña</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="change-password" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Guardar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div class="mdc-dialog" id="password-reset">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Restablecer contraseña
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <p class="mdc-typography--body2">
+              Hemos enviado un enlace para reestablecer tu contraseña a tu dircción de correo electrónico.
+            </p>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="change-password" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Guardar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <main class="main-wrapper admin-wrapper">
+      <div class="mdc-card mdc-card--large">
+        <form class="admin-form">
+          <div class="admin-form__section">
+            <h4 class="mdc-typography--headline4 admin-form__title">Mis datos</h4>
+
+            <div class="admin-form__subsection">
+              <div class="admin-form__subsection-inner">
+                <label class="mdc-text-field mdc-text-field--outlined">
+                  <input type="email" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                  <div class="mdc-notched-outline">
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__notch">
+                      <span class="mdc-floating-label" id="my-label-id">Email</span>
+                    </div>
+                    <div class="mdc-notched-outline__trailing"></div>
+                  </div>
+                </label>
+
+                <label class="mdc-text-field mdc-text-field--outlined">
+                  <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                  <div class="mdc-notched-outline">
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__notch">
+                      <span class="mdc-floating-label" id="my-label-id">Nombre y apellido</span>
+                    </div>
+                    <div class="mdc-notched-outline__trailing"></div>
+                  </div>
+                </label>
+
+                <label class="mdc-text-field mdc-text-field--outlined">
+                  <input type="password" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                  <div class="mdc-notched-outline">
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__notch">
+                      <span class="mdc-floating-label" id="my-label-id">Contraseña</span>
+                    </div>
+                    <div class="mdc-notched-outline__trailing"></div>
+                  </div>
+                </label>
+
+                <div class="admin-form__actions" data-role="admin,docente">
+                  <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('password-change');">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">cambiar contraseña</span>
+                  </button>
+                </div>
+
+                <div class="admin-form__content-wrapper" data-role="alumno">
+                  <h4 class="mdc-typography--headline4 admin-form__title">Cursos asignados</h4>
+                  <div class="mdc-chip-set admin-form__chipset mdc-typography--body2" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">5to A</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 5to Avanzados</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Catequesis 5to</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Taller de teatro</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 6to Principiantes</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="admin-form__content-wrapper" data-role="docente">
+                  <h4 class="mdc-typography--headline4 admin-form__title">Aulas asignadas</h4>
+                  <div class="mdc-chip-set admin-form__chipset mdc-typography--body2" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 4to Avanzados</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 4to Principiantes</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 4to Intermedio</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 5to Principiantes</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 5to Intermedio</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 6to Avanzados</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 6to Principiantes</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text">Inglés 6to Intermedio</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
+                <div class="admin-form__photo-placeholder">
+                  <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Foto de perfil</span>
+                </div>
+
+                <div class="admin-form__photo-placeholder__actions">
+                  <input id="file-uploader" type="file" name="file" accept="image/*">
+                  <label for="file-uploader" class="mdc-button mdc-button--text">
+                    <i class="mdc-button__icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-button__label">Subir imagen</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<!--           <div class="admin-form__section">
+            <h4 class="mdc-typography--headline4 admin-form__title">Mi institución</h4>
+            <div class="admin-form__subsection">
+              <div class="admin-form__subsection-inner">
+                <label class="mdc-text-field mdc-text-field--outlined">
+                  <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                  <div class="mdc-notched-outline">
+                    <div class="mdc-notched-outline__leading"></div>
+                    <div class="mdc-notched-outline__notch">
+                      <span class="mdc-floating-label" id="my-label-id">Nombre</span>
+                    </div>
+                    <div class="mdc-notched-outline__trailing"></div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
+                <div class="admin-form__photo-placeholder">
+                  <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Logo de la institución</span>
+                </div>
+
+                <div class="admin-form__photo-placeholder__actions">
+                  <button class="mdc-button mdc-button--text">
+                    <span class="mdc-button__ripple"></span>
+                    <i class="mdc-button__icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                    <span class="mdc-button__label">SUBIR IMAGEN</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="admin-form__commit-actions" data-role="admin,docente">
+            <button type="submit" class="mdc-button mdc-button--raised" href="dashboard.html">
+              <span class="mdc-button__label">Guardar cambios</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left-col">
+        <img src="img/parmenia-logo.svg">
+        <span class="mdc-typography--caption">aula virtual</span>
+      </div>
+
+      <div class="footer-right-col mdc-typography--subtitle2">
+        <span class="mdc-typography--subtitle2">2020 ® Todos los derechos reservados.</span>
+        <a href="#">Ver política de privacidad</a>
+      </div>
+    </footer>
+  </body>
+
+  <script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+</html>

@@ -1,0 +1,97 @@
+.login-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  width: 328px;
+}
+
+.login-container {
+  background: var(--mdc-theme-primary__500);
+  background-image: url('../img/login-background.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 0;
+}
+
+.login-school-info {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--mdc-theme-surface);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 48px;
+  text-align: center;
+}
+
+.login-wrapper p {
+  color: var(--mdc-theme-surface);
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+@media (max-width: 599px) {
+  .login-school-info {
+    margin: 24px;
+  }
+}
+
+.login-wrapper__heading {
+  color: var(--mdc-theme-surface);
+}
+
+.login-wrapper p.password-recovery {
+  color: var(--mdc-theme-surface);
+  text-align: left;
+  width: 100%;
+}
+
+.password-recovery a {
+  color: var(--mdc-theme-surface);
+}
+
+.login-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 24px 0;
+  width: 100%;
+}
+
+.login-text-field {
+  width: 328px;
+  margin: 12px 0;
+}
+
+.school-avatar {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.school-avatar.login {
+  height: 80px;
+  margin: 24px;
+  width: 80px;
+}

@@ -1,0 +1,62 @@
+:root {
+  --mdc-theme-primary: #54637A;
+  --mdc-theme-secondary: #6274E5;
+
+  --mdc-theme-primary__050: #ECEEF1;
+  --mdc-theme-primary__100: #CFD5DC;
+  --mdc-theme-primary__200: #B0B7C5;
+  --mdc-theme-primary__300: #909CAE;
+  --mdc-theme-primary__400: #78869C;
+  --mdc-theme-primary__500: #60718B;
+  --mdc-theme-primary__700: #455564;
+  --mdc-theme-primary__800: #37424F;
+  --mdc-theme-primary__900: #262E38;
+
+  --mdc-theme-secondary__050: #D2D8FF;
+  --mdc-theme-secondary__075: #E0E3FA;
+  --mdc-theme-secondary__100: #BCC4FF;
+  --mdc-theme-secondary__200: #A5AFFE;
+  --mdc-theme-secondary__300: #8E9AF6;
+  --mdc-theme-secondary__400: #6F81F5;
+  --mdc-theme-secondary__600: #4A5CC9;
+  --mdc-theme-secondary__700: #3D4EB1;
+  --mdc-theme-secondary__800: #3747A1;
+  --mdc-theme-secondary__900: #303C84;
+
+  --mdc-theme-gray__025: #F9F9F9;
+  --mdc-theme-gray__050: #ECEEF1;
+  --mdc-theme-gray__100: #F5F5F5;
+  --mdc-theme-gray__200: #EEEEEE;
+  --mdc-theme-gray__300: #E0E0E0;
+  --mdc-theme-gray__400: #BDBDBD;
+  --mdc-theme-gray__500: #9E9E9E;
+  --mdc-theme-gray__600: #757575;
+  --mdc-theme-gray__700: #616161;
+  --mdc-theme-gray__800: #424242;
+  --mdc-theme-gray__900: #212121;
+
+  --mdc-theme-custom__00: #AB968C;
+  --mdc-theme-custom__01: #D45A53;
+  --mdc-theme-custom__02: #ED6D4E;
+  --mdc-theme-custom__03: #FF917A;
+  --mdc-theme-custom__04: #F5AE58;
+  --mdc-theme-custom__05: #D6C292;
+  --mdc-theme-custom__06: #CCCC41;
+  --mdc-theme-custom__07: #A1BA6C;
+  --mdc-theme-custom__08: #5FBC8E;
+  --mdc-theme-custom__09: #7CBFBF;
+  --mdc-theme-custom__10: #81B9EB;
+  --mdc-theme-custom__11: #579BBD;
+  --mdc-theme-custom__12: #C291E8;
+  --mdc-theme-custom__13: #8D64AD;
+  --mdc-theme-custom__14: #8D64AD;
+  --mdc-theme-custom__15: #D44691;
+
+  --mdc-theme-progress__01: #F5B651;
+  --mdc-theme-progress__02: #67C98E;
+  --mdc-theme-progress__03: var(--mdc-theme-secondary__300);
+
+  --mdc-theme-error: #EC485E;
+
+  --mdc-theme-typography: 'Poppins';
+}

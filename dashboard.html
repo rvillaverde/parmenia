@@ -1,0 +1,2710 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
+    <!-- OFFLINE MODE -->
+<!--     <link href="offline/material-components-web.css" rel="stylesheet">
+    <script src="offline/material-components-web.js"></script> -->
+    <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
+
+    <script type="text/javascript" src="lib/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/material-datepicker.css">
+    <script type="text/javascript" src="lib/material-datepicker.js"></script>
+
+    <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/menus.css">
+    <link rel="stylesheet" href="styles/tables.css">
+    <link rel="stylesheet" href="styles/cards.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
+  </head>
+
+  <body class="container mdc-typography">
+    <div class="user-roles-wrapper">
+      <button class="mdc-icon-button mdc-icon-button--secondary" data-mdc-tooltip="Cerrar">
+        <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+      </button>
+      <h4 class="mdc-typography--headline4">Ver como:</h4>
+      <div class="mdc-radio-button__wrapper">
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="alumno" value="alumno" checked>
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="alumno">Alumno</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="docente" value="docente">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="docente">Docente</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" name="role" id="admin" value="admin">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="admin">Admin</label>
+        </div>
+      </div>
+    </div>
+
+    <nav class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section">
+          <div class="mdc-top-app-bar__title-wrapper">
+            <a href="dashboard.html" class="mdc-top-app-bar__school-pic round-photo-wrapper">
+              <img src="img/placeholder.png">
+            </a>
+            <a href="dashboard.html" class="mdc-top-app-bar__title mdc-typography--headline6">Colegio Lasalle</a>
+          </div>
+        </section>
+
+        <section class="mdc-top-app-bar__section">
+          <div class="mdc-top-app-bar__title-wrapper">
+            <h6 class="mdc-top-app-bar__title mdc-typography--headline6">Bienvenido</h6>
+          </div>
+          <ul class="mdc-top-app-bar__actions" role="toolbar">
+            <li class="mdc-top-app-bar__action-item mdc-menu--hover collapsable-wrapper">
+              <a class="mdc-button mdc-button--app-bar" href="aulas.html" aria-label="Mis aulas">
+                <i class="mdc-icon nav-aulas-icon"></i>
+                <span class="mdc-button__label">Mis Aulas</span>
+              </a>
+              <a class="collapse-link">
+                <input type="checkbox" checked>
+                <i class="mdc-icon small nav-chevron-icon"></i>
+              </a>
+              <div class="mdc-menu mdc-menu-surface collapsable">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item mdc-list-item--highlight mdc-menu__action" role="menuitem" data-role="admin">
+                    <a href="aulas.html" class="mdc-list-item__text mdc-typography--subtitle1">Administrar aulas</a>
+                  </li>
+                  <li class="mdc-list-divider" role="separator" data-role="admin"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <a href="aula1.html" class="mdc-list-item__text mdc-typography--subtitle1">Nombre del aula</a>
+                  </li>
+                  <li class="mdc-list-divider" role="separator"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <a href="aula1.html" class="mdc-list-item__text mdc-typography--subtitle1">Nombre del aula</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item" data-role="admin">
+              <a class="mdc-button mdc-button--app-bar" href="docentes.html" aria-label="Docentes">
+                <i class="mdc-icon nav-docentes-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Docentes</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item" data-role="admin,docente">
+              <a class="mdc-button mdc-button--app-bar" href="alumnos.html" aria-label="Biblioteca">
+                <i class="mdc-icon nav-alumnos-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Alumnos</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="biblioteca.html" aria-label="Biblioteca">
+                <i class="mdc-icon nav-biblioteca-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Biblioteca</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="agenda.html" aria-label="Agenda">
+                <i class="mdc-icon nav-agenda-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Agenda</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions" role="toolbar">
+            <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
+                <i class="mdc-icon nav-mochila-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
+              </a>
+            </li>
+
+            <li class="mdc-top-app-bar__action-item mdc-menu--click">
+              <a class="mdc-button mdc-button--app-bar" aria-label="Notificaciones">
+                <i class="mdc-icon nav-notificaciones-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Notificaciones</span>
+              </a>
+              <input type="checkbox">
+              <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
+                <ul class="mdc-list notifications" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-foro-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Nuevo mensaje</div>
+                      <div class="notification__date mdc-typography--caption">Hace 11 min</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Profesor X respondió tu mensaje en el foro de Visita al a Reserva Ecológica.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-aula-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Nueva actividad</div>
+                      <div class="notification__date mdc-typography--caption">Hace 2 días</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Profesor X publicó una nueva actividad en Visita a la Reserva Ecológica.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="notification__wrapper">
+                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-aula-icon.svg');"></i>
+                    <div class="notification">
+                      <div class="notification__title mdc-typography--subtitle1">Entrega Vencida</div>
+                      <div class="notification__date mdc-typography--caption">Hace 3 días</div>
+                      <div class="notification__text mdc-typography--body2">
+                        Terminó el plazo para entregar la Actividad Clasificamos Especies del proyecto Visita a la Reserva.
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="mdc-menu__actions">
+                    <a href="notifications.html" class="mdc-button mdc-button--text">
+                      <span class="mdc-button__ripple"></span>
+                      <span class="mdc-button__label">ver todas</span>
+                      <i class="mdc-button__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions">
+            <li class="mdc-top-app-bar__action-item mdc-menu--hover">
+              <a class="mdc-button mdc-button--app-bar" href="profile.html" aria-label="Pepito">
+                <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
+                  <img src="img/placeholder.png">
+                </div>
+                <span class="mdc-button__label mdc-top-app-bar__profile-name mdc-typography--headline6">Pepito</span>
+                <i class="mdc-icon small nav-chevron-icon"></i>
+              </a>
+              <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
+                <ul class="mdc-list profile-menu-wrapper" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                    <div class="profile-info">
+                      <h6 class="mdc-typography--headline6">Pepito Gimenez</h6>
+                      <a href="profile.html" class="mdc-typography--body2">Ver perfil</a>
+                    </div>
+                  </li>
+                  <li class="mdc-list-divider" role="separator"></li>
+                  <li class="mdc-list-item mdc-menu__action" role="menuitem">
+                    <i class="mdc-icon nav-logout-icon"></i>
+                    <a href="login.html" class="mdc-list-item__text mdc-typography--subtitle1">
+                      <span class="mdc-typography--subtitle1">Cerrar sesión</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="mdc-top-app-bar__actions">
+            <li class="mdc-top-app-bar__action-item">
+              <a class="mdc-button mdc-button--app-bar" href="login.html" aria-label="Cerrar sesión">
+                <i class="mdc-icon nav-logout-icon"></i>
+                <span class="mdc-button__label mdc-typography--headline6">Cerrar sesión</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mdc-top-app-bar__section" id="nav-menu-toggle">
+          <div class="mdc-top-app-bar__actions">
+            <button class="mdc-button mdc-button--app-bar" aria-label="Menu">
+              <input type="checkbox">
+              <i class="mdc-icon nav-menu-icon"></i>
+            </button>
+          </div>
+        </section>
+        </div>
+      </div>
+    </nav>
+
+    <header class="mdc-header mdc-header__welcome">
+      <div class="mdc-header__row">
+        <div class="mdc-header__background"></div>
+        <section class="mdc-header__section">
+          <h1 class="mdc-typography--headline1 mdc-header__title">Bienvenidos/as a Parmenia!</h1>
+          <span class="mdc-typography--subtitle1 mdc-header__date">Martes 24 de Marzo de 2020</span>
+        </section>
+      </div>
+    </header>
+
+    <div id="noticia-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__cover">
+            <img src="img/placeholder.png">
+          </div>
+          <h2 class="mdc-dialog__title mdc-typography--headline2">
+            Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor
+          </h2>
+          <div class="mdc-dialog__content">
+            <p class="mdc-typography--body1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
+            </p>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="submit" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="dismiss">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cerrar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="crear-anuncio-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nuevo anuncio
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="crear-anuncio-01">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="titulo" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="titulo">Titulo</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 80 caracteres</div>
+                      </div>
+                    </div>
+
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--textarea mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <textarea class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id" rows="2" cols="40" maxlength="140"></textarea>
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="my-label-id">Cuerpo</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 140 caracteres</div>
+                      </div>
+                    </div>
+
+                    <div class="date-picker__wrapper">
+                      <span for="date-picker-01" class="mdc-typography--headline6">Vencimiento</span>
+                      <button type="button" class="mdc-button date-picker--button" id="date-piker-01">
+                        <span class="mdc-button__label mdc-typography--body1">Seleccionar fecha</span>
+                        <i class="mdc-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                      </button>
+                      <span class="picker-output"></span>
+                    </div>
+
+                    <div class="mdc-switch__wrapper">
+                      <div class="mdc-switch">
+                        <div class="mdc-switch__track"></div>
+                        <div class="mdc-switch__thumb-underlay">
+                          <div class="mdc-switch__thumb"></div>
+                          <input type="checkbox" id="destacar-noticia" class="mdc-switch__native-control" role="switch" aria-checked="false">
+                        </div>
+                      </div>
+                      <label class="mdc-switch__label" for="destacar-noticia">Destacar noticia*</label>
+                      <span class="mdc-switch__caption mdc-typography--subtitle2">*Sólo puede haber dos noticias destacadas por cartelera.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <h4 class="mdc-typography--headline4 admin-form__title">Multimedia</h4>
+
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="admin-form__photo-placeholder news-media__placeholder">
+                      <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Aún no hay elemento multimedia</span>
+                    </div>
+                  </div>
+                  <div class="admin-form__subsection-inner">
+                    <div class="admin-form__photo-placeholder__actions news-media__placeholder-actions">
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Subir imagen</span>
+                      </button>
+
+                      <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('galeria-select-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 15L16 10L5 21" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Elegir de la galería</span>
+                      </button>
+
+                      <button class="mdc-button mdc-button--text">
+                        <span class="mdc-button__ripple"></span>
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.46997L11.75 5.17997" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.0002 11C13.5707 10.4259 13.0228 9.95086 12.3936 9.6071C11.7645 9.26334 11.0687 9.05893 10.3535 9.00771C9.6384 8.95649 8.92061 9.05967 8.24885 9.31026C7.57709 9.56085 6.96708 9.95297 6.4602 10.46L3.4602 13.46C2.54941 14.4031 2.04544 15.6661 2.05683 16.977C2.06822 18.288 2.59407 19.5421 3.52111 20.4691C4.44815 21.3962 5.70221 21.922 7.01319 21.9334C8.32418 21.9448 9.58719 21.4408 10.5302 20.53L12.2402 18.82" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Enlazar video</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Publicar en</h4>
+                    <div class="mdc-checkbox__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="news-publish-cartelera"/>
+                          <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                              <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                          </div>
+                          <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        <label for="news-publish-cartelera">Cartelera general</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="news-publish-aulas"/>
+                          <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                              <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                          </div>
+                          <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        <label for="news-publish-aulas">Aulas</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Visible para</h4>
+                    <div class="mdc-checkbox__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="news-visibility-alumnos"/>
+                          <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                              <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                          </div>
+                          <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        <label for="news-visibility-alumnos">Alumnos</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="news-visibility-docentes"/>
+                          <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                              <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                          </div>
+                          <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        <label for="news-visibility-docentes">Docentes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="selection-wrapper">
+                  <div class="mdc-chip-set mdc-chip-set--input" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        </span>
+                      </span>
+                      <span role="gridcell">
+                        <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        </span>
+                      </span>
+                      <span role="gridcell">
+                        <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
+                        </span>
+                      </span>
+                      <span role="gridcell">
+                        <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="no-content-placeholder">
+                    <span class="mdc-typography--headline4">Aún no hay aulas seleccionadas</span>
+                  </div>
+                </div>
+
+                <div class="admin-form__actions">
+                  <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('aula-select-01');">
+                    <span class="mdc-button__ripple"></span>
+                    <span class="mdc-button__label">Seleccionar aulas</span>
+                    <i class="mdc-button__icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Publicar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="aula-select-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <div class="mdc-dialog__title">
+              <button class="mdc-button mdc-button--text" onclick="openDialog('crear-anuncio-01');">
+                <span class="mdc-button__ripple"></span>
+                <i class="mdc-button__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 12H5" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+                <span class="mdc-button__label">Volver a anuncio</span>
+              </button>
+            </div>
+            <p class="mdc-dialog__title-caption mdc-typography--body2">Seleccionar en qué aulas será posteado el anuncio</p>
+          </div>
+          <div class="mdc-dialog__content">
+            <div class="mdc-data-table">
+              <p class="mdc-data-table__counter mdc-typography--headline4"><span id="quantity">0</span> aulas seleccionadas</p>
+              <table class="mdc-data-table__table aula-select__table" aria-label="alumnos">
+                <thead class="mdc-data-table__header">
+                  <tr class="mdc-data-table__header-row">
+                    <th class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox" role="columnheader" scope="col">
+                      <div class="mdc-checkbox mdc-data-table__header-row-checkbox mdc-checkbox--selected">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-label="Checkbox for header row selection"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Nombre</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Docentes</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Cursos</span>
+                    </th>
+                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                      <span class="mdc-typography--caption">Fecha de creación</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="mdc-data-table__content">
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula mas largo</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip-set" role="grid">
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip-set" role="grid">
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                          </span>
+                        </div>
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+
+                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell" id="aula-01">
+                      <span class="mdc-typography--caption">Nombre del aula</span>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="mdc-data-table__cell">
+                      <span class="mdc-typography--caption">Abril 22, 2019</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Seleccionar aulas</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="galeria-select-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <div class="mdc-dialog__title">
+              <button class="mdc-button mdc-button--text" onclick="openDialog('crear-anuncio-01');">
+                <span class="mdc-button__ripple"></span>
+                <i class="mdc-button__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 12H5" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+                <span class="mdc-button__label">Volver a anuncio</span>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <div class="mdc-layout-grid">
+              <div class="mdc-layout-grid__inner cards--selectable">
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/placeholder.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="submit" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Seleccionar imagen</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <main class="main-wrapper">
+      <div class="mdc-layout-grid cards">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop">
+            <!-- Noticias { -->
+            <div class="headline-wrapper">
+              <i class="headline__icon">
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.53509 23.7548C9.96437 23.7548 10.3124 23.4068 10.3124 22.9775C10.3124 22.5482 9.96437 22.2002 9.53509 22.2002C9.10581 22.2002 8.75781 22.5482 8.75781 22.9775C8.75781 23.4068 9.10581 23.7548 9.53509 23.7548Z" fill="#757575"/>
+                  <path d="M9.53509 26.4709C9.96437 26.4709 10.3124 26.1229 10.3124 25.6937C10.3124 25.2644 9.96437 24.9164 9.53509 24.9164C9.10581 24.9164 8.75781 25.2644 8.75781 25.6937C8.75781 26.1229 9.10581 26.4709 9.53509 26.4709Z" fill="#757575"/>
+                  <path d="M12.3996 18.6094H5.6884C3.06851 18.6094 0.944458 16.4777 0.944458 13.8579C0.944458 11.238 3.06851 9.1073 5.6884 9.1073H12.3996V18.6094Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M21.2028 22.576L13.4272 18.9503C12.8133 18.7463 12.3997 18.173 12.3997 17.5261V10.1906C12.3997 9.54364 12.8133 8.97036 13.4272 8.76636L21.2028 5.14064C22.1747 4.81764 23.1767 5.54108 23.1767 6.56486V21.1527C23.1767 22.1756 22.1737 22.899 21.2028 22.576Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M26.2632 15.8658L23.1768 16.8565V11.459L26.2632 12.4497V15.8658Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M12.02 18.6056V26.4539C12.02 27.8262 10.9074 28.9378 9.53607 28.9378C8.1638 28.9378 7.05219 27.8253 7.05219 26.4539V18.6056" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M29.3279 14.1582H33.0556" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M28.2512 9.75143L31.1374 7.39221" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M28.2512 18.5641L31.1374 20.9243" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M9.53516 9.75146V18.6094" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                </svg>
+              </i>
+              <h4 class="mdc-typography--headline4">Cartelera de noticias</h4>
+              <div class="headline-wrapper__buttons" data-role="admin,docente">
+                <button class="mdc-button mdc-button--raised" onclick="openDialog('crear-anuncio-01');">
+                  <span class="mdc-button__ripple"></span>
+                  <span class="mdc-button__label">Crear anuncio</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- IMPORTANTE! PONER SIEMPRE LAS NOTICIAS NO-DESTACADAS PRIMERO Y LAS DESTACADAS AL FINAL -->
+            <div class="mdc-layout-grid cards noticias-layout">
+              <div class="mdc-layout-grid__inner">
+<!--                 <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
+                    <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary">
+                      <h6 class="mdc-card__title mdc-typography--headline6">Título noticia</h6>
+                    </div>
+                  </a>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info" data-role="admin">
+                      <p class="mdc-typography--caption">Vencimiento: 00/00/000</p>
+                      <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </a>
+                    </div>
+                    <div class="mdc-card__action-icons" data-role="admin">
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+                        <i class="mdc-icon edit-icon"></i>
+                      </button>
+
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon delete-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
+                    <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary">
+                      <h6 class="mdc-card__title mdc-typography--headline6">Título noticia</h6>
+                    </div>
+                  </a>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info" data-role="admin">
+                      <p class="mdc-typography--caption">Vencimiento: 00/00/000</p>
+                      <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </a>
+                    </div>
+                    <div class="mdc-card__action-icons" data-role="admin">
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+                        <i class="mdc-icon edit-icon"></i>
+                      </button>
+
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon delete-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
+                    <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary">
+                      <h6 class="mdc-card__title mdc-typography--headline6">Título noticia</h6>
+                    </div>
+                  </a>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info" data-role="admin">
+                      <p class="mdc-typography--caption">Vencimiento: 00/00/000</p>
+                      <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </a>
+                    </div>
+                    <div class="mdc-card__action-icons" data-role="admin">
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+                        <i class="mdc-icon edit-icon"></i>
+                      </button>
+
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon delete-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
+                    <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary">
+                      <h6 class="mdc-card__title mdc-typography--headline6">Título noticia</h6>
+                    </div>
+                  </a>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info" data-role="admin">
+                      <p class="mdc-typography--caption">Vencimiento: 00/00/000</p>
+                      <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </a>
+                    </div>
+                    <div class="mdc-card__action-icons" data-role="admin">
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+                        <i class="mdc-icon edit-icon"></i>
+                      </button>
+
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon delete-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mdc-card noticia-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
+                    <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary">
+                      <h6 class="mdc-card__title mdc-typography--headline6">Título noticia</h6>
+                    </div>
+                  </a>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info" data-role="admin">
+                      <p class="mdc-typography--caption">Vencimiento: 00/00/000</p>
+                      <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </a>
+                    </div>
+                    <div class="mdc-card__action-icons" data-role="admin">
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+                        <i class="mdc-icon edit-icon"></i>
+                      </button>
+
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon delete-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mdc-card noticia-card noticia-card--highlight mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
+                    <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary">
+                      <h3 class="mdc-card__title mdc-typography--headline3">Título noticia</h3>
+                    </div>
+                    <div class="mdc-card__secondary">
+                      <p class="mdc-typography--body1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                      </p>
+                    </div>
+                  </a>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info" data-role="admin">
+                      <p class="mdc-typography--caption">Vencimiento: 00/00/000</p>
+                      <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </a>
+                    </div>
+                    <div class="mdc-card__action-icons" data-role="admin">
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+                        <i class="mdc-icon edit-icon"></i>
+                      </button>
+
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon delete-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mdc-card noticia-card noticia-card--highlight mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                  <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('noticia-01');">
+                    <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                    <div class="mdc-card__primary">
+                      <h3 class="mdc-card__title mdc-typography--headline3">Título noticia</h3>
+                    </div>
+                    <div class="mdc-card__secondary">
+                      <p class="mdc-typography--body1">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                      </p>
+                    </div>
+                  </a>
+                  <div class="mdc-card__actions">
+                    <div class="mdc-card__info" data-role="admin">
+                      <p class="mdc-typography--caption">Vencimiento: 00/00/000</p>
+                      <p class="mdc-typography--caption">Creado por: Lorem ipsum dolor</p>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('noticia-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <span class="mdc-button__label">VER MÁS</span>
+                      </a>
+                    </div>
+                    <div class="mdc-card__action-icons" data-role="admin">
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+                        <i class="mdc-icon edit-icon"></i>
+                      </button>
+
+                      <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon delete-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="no-content-placeholder">
+                <span class="mdc-typography--headline4">No hay ningún anuncio en la cartelera general</span>
+              </div>
+            </div>
+            <!-- } -->
+          </div>
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+            <!-- Eventos { -->
+            <div class="headline-wrapper">
+              <i class="headline__icon">
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.45533 6.8916H27.5438C29.0238 6.8916 30.2223 8.10238 30.2223 9.59555V27.5183C30.2223 29.0114 29.0238 30.2222 27.5448 30.2222H6.45533C4.97633 30.2222 3.77783 29.0114 3.77783 27.5183V9.59555C3.77783 8.10238 4.97633 6.8916 6.45533 6.8916Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M24.5205 3.77777V6.45244" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M9.47949 3.77777V6.45244" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M3.77783 12.9068H30.2223" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                  <path d="M15.3484 19.7455C15.5741 19.7115 15.7649 19.5613 15.8508 19.3507L17.0002 17.0529L18.1496 19.3507C18.2355 19.5622 18.4263 19.7115 18.652 19.7455L21.2011 20.1044L19.3698 21.8639C19.1989 22.0329 19.1195 22.2728 19.1545 22.5099L19.5851 25.0589L17.3232 23.8377L17.0002 23.7669L16.6772 23.8387L14.4153 25.0599L14.8459 22.5108C14.8809 22.2737 14.8006 22.0329 14.6306 21.8648L12.7993 20.1053L15.3484 19.7455Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+              <h4 class="mdc-typography--headline4">Próximos eventos</h4>
+            </div>
+
+            <div class="upcoming-events-wrapper">
+              <div class="upcoming-event">
+                <div class="upcoming-event__title">
+                  <i class="mdc-icon small">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#757575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Fecha</span>
+                </div>
+                <p class="upcoming-event__text mdc-typography--body2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+              </div>
+              <div class="upcoming-event">
+                <div class="upcoming-event__title">
+                  <i class="mdc-icon small">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#757575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Fecha</span>
+                </div>
+                <p class="upcoming-event__text mdc-typography--body2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+              </div>
+              <div class="upcoming-event">
+                <div class="upcoming-event__title">
+                  <i class="mdc-icon small">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#757575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">Fecha</span>
+                </div>
+                <p class="upcoming-event__text mdc-typography--body2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+              </div>
+              <div class="upcoming-event">
+                <div class="upcoming-event__title">
+                  <i class="mdc-icon small">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 1.5L11.3175 6.195L16.5 6.9525L12.75 10.605L13.635 15.765L9 13.3275L4.365 15.765L5.25 10.605L1.5 6.9525L6.6825 6.195L9 1.5Z" fill="#757575" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                  <span class="mdc-typography--subtitle1">10 de Marzo de 2020</span>
+                </div>
+                <p class="upcoming-event__text mdc-typography--body2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+              </div>
+              <div class="upcoming-events__actions">
+                <a href="agenda.html" class="mdc-button mdc-button--text">
+                  <span class="mdc-button__ripple"></span>
+                  <span class="mdc-button__label">ver todos</span>
+                  <i class="mdc-button__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </i>
+                </a>
+              </div>
+            </div>
+            <!-- } -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Aulas { -->
+      <section class="toggable">
+        <div class="headline-wrapper">
+          <i class="headline__icon">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.0151 25.9442L22.1796 29.1667" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M8.98481 25.9442L7.82031 29.1667" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M27.6234 7.078H2.3775V25.9442H27.6234V7.078Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M28.4441 5.98819C28.4441 6.5898 27.953 7.07713 27.3467 7.07713H2.65323C2.0469 7.07713 1.55579 6.5898 1.55579 5.98819V4.53658C1.55579 3.93497 2.0469 3.44763 2.65323 3.44763H27.3467C27.953 3.44763 28.4441 3.93497 28.4441 4.53658V5.98819Z" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M9.51178 14.6827C10.0887 14.6827 10.5563 14.2151 10.5563 13.6382C10.5563 13.0613 10.0887 12.5936 9.51178 12.5936C8.93489 12.5936 8.46722 13.0613 8.46722 13.6382C8.46722 14.2151 8.93489 14.6827 9.51178 14.6827Z" fill="#757575"/>
+              <path d="M20.4882 14.6827C21.0651 14.6827 21.5327 14.2151 21.5327 13.6382C21.5327 13.0613 21.0651 12.5936 20.4882 12.5936C19.9113 12.5936 19.4436 13.0613 19.4436 13.6382C19.4436 14.2151 19.9113 14.6827 20.4882 14.6827Z" fill="#757575"/>
+              <path d="M15 0.833374V2.91115" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M11.633 18.5898C12.2488 19.6863 13.5228 20.441 14.9999 20.441C16.478 20.441 17.7511 19.6863 18.3669 18.5898" stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+            </svg>
+          </i>
+          <h4 class="mdc-typography--headline4">Mis aulas</h4>
+          <div class="headline-wrapper__buttons" data-role="admin">
+            <a href="aulas.html" class="mdc-button mdc-button--raised" onclick="openDialog('crear-anuncio-01');">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">Administrar aulas</span>
+            </a>
+          </div>
+          <div class="headline-wrapper__actions" data-role="admin">
+            <div class="mdc-button--toggle" data-mdc-tooltip="Cambiar vista">
+              <button class="mdc-button mdc-icon-button mdc-icon-button--outlined" data-toggle-view="list" onclick="toggleView(this);">
+                <i class="mdc-icon small">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4.5H15.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 9H15.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 13.5H15.75" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.25 4.5H2.2575" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.25 9H2.2575" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.25 13.5H2.2575" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+              <button class="mdc-button mdc-icon-button mdc-icon-button--outlined mdc-button--active" data-toggle-view="cards" onclick="toggleView(this);">
+                <i class="mdc-icon small">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 2.25H2.25V7.5H7.5V2.25Z" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.75 2.25H10.5V7.5H15.75V2.25Z" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.75 10.5H10.5V15.75H15.75V10.5Z" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.5 10.5H2.25V15.75H7.5V10.5Z" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aulas cards view { -->
+        <div class="mdc-layout-grid cards aulas toggle-target" data-toggle-view="cards">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-card aulas-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop" style="background-color: var(--mdc-theme-custom__01);">
+              <a href="aula1.html" class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mcd-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline2">Título del aula</h2>
+                </div>
+                <div class="mdc-card__secondary proyecto-card__secondary mdc-typography--body2">
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Docente</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-icons">
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#noticias" aria-pressed="false" aria-label="Noticias" data-mdc-tooltip="Noticias">
+                    <i class="mdc-icon noticias-icon-small-white"></i>
+                  </a>
+
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#proyectos" aria-pressed="false" aria-label="Proyectos" data-mdc-tooltip="Proyectos">
+                    <i class="mdc-icon proyectos-icon-small-white"></i>
+                  </a>
+
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#recursos" aria-pressed="false" aria-label="Recursos" data-mdc-tooltip="Recursos">
+                    <i class="mdc-icon recursos-icon-small-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdc-card aulas-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop" style="background-color: var(--mdc-theme-custom__04);">
+              <a href="aula1.html" class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mcd-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline2">Título del aula</h2>
+                </div>
+                <div class="mdc-card__secondary proyecto-card__secondary mdc-typography--body2">
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Docente</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-icons">
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#noticias" aria-pressed="false" aria-label="Noticias" data-mdc-tooltip="Noticias">
+                    <i class="mdc-icon noticias-icon-small-white"></i>
+                  </a>
+
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#proyectos" aria-pressed="false" aria-label="Proyectos" data-mdc-tooltip="Proyectos">
+                    <i class="mdc-icon proyectos-icon-small-white"></i>
+                  </a>
+
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#recursos" aria-pressed="false" aria-label="Recursos" data-mdc-tooltip="Recursos">
+                    <i class="mdc-icon recursos-icon-small-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdc-card aulas-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop" style="background-color: var(--mdc-theme-custom__08);">
+              <a href="aula1.html" class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mcd-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline2">Título del aula</h2>
+                </div>
+                <div class="mdc-card__secondary proyecto-card__secondary mdc-typography--body2">
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Docente</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-icons">
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#noticias" aria-pressed="false" aria-label="Noticias" data-mdc-tooltip="Noticias">
+                    <i class="mdc-icon noticias-icon-small-white"></i>
+                  </a>
+
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#proyectos" aria-pressed="false" aria-label="Proyectos" data-mdc-tooltip="Proyectos">
+                    <i class="mdc-icon proyectos-icon-small-white"></i>
+                  </a>
+
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#recursos" aria-pressed="false" aria-label="Recursos" data-mdc-tooltip="Recursos">
+                    <i class="mdc-icon recursos-icon-small-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdc-card aulas-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop" style="background-color: var(--mdc-theme-custom__12);">
+              <a href="aula1.html" class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
+                <div class="mcd-card__primary">
+                  <h2 class="mdc-card__title mdc-typography--headline2">Título del aula</h2>
+                </div>
+                <div class="mdc-card__secondary proyecto-card__secondary mdc-typography--body2">
+                  <div class="mdc-chip-set" role="grid">
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Docente</span>
+                      </span>
+                    </div>
+                    <div class="mdc-chip" role="row">
+                      <span role="gridcell">
+                        <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-icons">
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#noticias" aria-pressed="false" aria-label="Noticias" data-mdc-tooltip="Noticias">
+                    <i class="mdc-icon noticias-icon-small-white"></i>
+                  </a>
+
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#proyectos" aria-pressed="false" aria-label="Proyectos" data-mdc-tooltip="Proyectos">
+                    <i class="mdc-icon proyectos-icon-small-white"></i>
+                  </a>
+
+                  <a class="mdc-button mdc-icon-button mdc-icon-button--white" href="aula1.html#recursos" aria-pressed="false" aria-label="Recursos" data-mdc-tooltip="Recursos">
+                    <i class="mdc-icon recursos-icon-small-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="no-content-placeholder">
+            <span class="mdc-typography--headline4" data-role="admin">Aún no hay aulas disponibles</span>
+            <span class="mdc-typography--headline4" data-role="alumno,docente">Aún no tenés aulas asignadas</span>
+          </div>
+        </div>
+        <!-- } -->
+
+        <!-- Aulas table view { -->
+        <div class="mdc-card mdc-card--large aulas-card toggle-target initially-hidden" data-role="admin" data-toggle-view="list">
+          <div class="mdc-data-table">
+            <table class="mdc-data-table__table" aria-label="Dessert calories">
+              <thead class="mdc-data-table__header">
+                <tr class="mdc-data-table__header-row">
+                  <th class="mdc-data-table__header-cell mdc-data-table__cell--icon" role="columnheader" scope="col">
+                  </th>
+                  <th class="mdc-data-table__header-cell span-20" role="columnheader" scope="col">
+                    <span class="mdc-typography--caption">Nombre</span>
+                  </th>
+                  <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                    <span class="mdc-typography--caption">Docentes</span>
+                  </th>
+                  <th class="mdc-data-table__header-cell span-25" role="columnheader" scope="col">
+                    <span class="mdc-typography--caption">Cursos</span>
+                  </th>
+                  <th class="mdc-data-table__header-cell span-20" role="columnheader" scope="col">
+                    <span class="mdc-typography--caption">Fecha de creación</span>
+                  </th>
+                  <th class="mdc-data-table__header-cell span-10" role="columnheader" scope="col">
+                    <span class="mdc-typography--caption">Secciones</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="mdc-data-table__content">
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="mdc-data-table__row">
+                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
+                    <div class="table__photo-thumbnail small round-photo-wrapper">
+                      <img src="img/placeholder.png">
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-chip-set" role="grid">
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
+                        </span>
+                      </div>
+                      <div class="mdc-chip" role="row">
+                        <span role="gridcell">
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                  </td>
+                  <td class="mdc-data-table__cell">
+                    <div class="mdc-data-table__actions">
+                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                        <i class="mdc-icon noticias-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                        <i class="mdc-icon proyectos-icon"></i>
+                      </a>
+
+                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                        <i class="mdc-icon recursos-icon"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot class="mdc-data-table__footer">
+                <tr class="mdc-data-table__footer-row">
+                  <th class="mdc-data-table__header-cell" role="columnfooter" scope="col" colspan="6">
+                    <div class="mdc-data-table__pagination-wrapper">
+                      <div class="mdc-data-table__pagination">
+                        <span class="mdc-typography--subtitle1">Filas por página: 10</span>
+                        <button class="mdc-button">
+                          <i>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6 9L12 15L18 9" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </i>
+                        </button>
+                      </div>
+                      <div class="mdc-data-table__pagination">
+                        <span class="mdc-typography--subtitle1">1-10 de 100</span>
+                      </div>
+                      <div class="mdc-data-table__pagination">
+                        <button class="mdc-button">
+                          <i>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15 18L9 12L15 6" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </i>
+                        </button>
+                        <button class="mdc-button">
+                          <i>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M9 18L15 12L9 6" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- } -->
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left-col">
+        <img src="img/parmenia-logo.svg">
+        <span class="mdc-typography--caption">aula virtual</span>
+      </div>
+
+      <div class="footer-right-col mdc-typography--subtitle2">
+        <span class="mdc-typography--subtitle2">2020 ® Todos los derechos reservados.</span>
+        <a href="#">Ver política de privacidad</a>
+      </div>
+    </footer>
+  </body>
+
+  <script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+</html>

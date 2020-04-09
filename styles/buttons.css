@@ -1,0 +1,309 @@
+.mdc-button {
+  height: unset;
+  min-height: 36px;
+}
+
+/* COMMON STYLES */
+.mdc-button__label {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: 24px;
+}
+
+.mdc-button:not(:disabled) {
+  color: var(--mdc-theme-secondary);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.mdc-button + .mdc-button {
+  margin-left: 12px;
+}
+
+.mdc-button .mdc-button__icon {
+  height: 24px;
+  margin-right: 0;
+  width: 24px;
+}
+
+.mdc-button .mdc-button__icon + .mdc-button__label {
+  margin-left: 8px;
+}
+
+.mdc-button .mdc-button__label + .mdc-button__icon {
+  margin-left: 8px;
+}
+
+.mdc-button--raised, .mdc-button--outlined {
+  border-radius: 8px;
+  background-color: var(--mdc-theme-surface);
+  min-width: 100px;
+  padding: 4px 12px;
+  text-transform: none;
+}
+
+.mdc-button--outlined:not(:disabled), .mdc-button--raised:not(:disabled) {
+  background-color: var(--mdc-theme-surface);
+}
+
+.mdc-button .mdc-button__ripple {
+  display: none;
+}
+
+/* RAISED BUTTONS */
+.mdc-button--raised, .mdc-button--raised:not(:disabled) {
+  background-color: var(--mdc-theme-surface);
+  border: 2px solid var(--mdc-theme-secondary);
+  color: var(--mdc-theme-secondary);
+}
+
+.mdc-button--raised:hover {
+  background-color: var(--mdc-theme-secondary__050);
+}
+
+.mdc-button--raised:active {
+  background-color: var(--mdc-theme-secondary__100);
+  color: var(--mdc-theme-secondary);
+}
+
+.mdc-button--raised:disabled {
+  background-color: var(--mdc-theme-surface);
+  color: var(--mdc-theme-secondary);
+  opacity: 0.5;
+}
+
+/* TEXT BUTTONS */
+.mdc-button--text, .mdc-button--text:not(:disabled) {
+  color: var(--mdc-theme-secondary);
+  background-color: transparent;
+  padding: 0;
+}
+
+.mdc-button--text:hover {
+  background-color: transparent;
+  color: var(--mdc-theme-secondary__700);
+}
+
+.mdc-button--text:hover svg > path {
+  stroke: var(--mdc-theme-secondary__700);
+}
+
+.mdc-button--text:active {
+  color: var(--mdc-theme-secondary__400);
+}
+
+.mdc-button--text:disabled {
+  background-color: transparent;
+  color: var(--mdc-theme-secondary);
+  opacity: 0.5;
+}
+
+/* OUTLINED BUTTONS */
+.mdc-button--outlined, .mdc-button--outlined:not(:disabled) {
+  background-color: var(--mdc-theme-surface);
+  border: 2px solid var(--mdc-theme-gray__600);
+  color: var(--mdc-theme-gray__600);
+}
+
+/*.mdc-button--outlined:not(:disabled) {
+  border: 2px solid var(--mdc-theme-gray__700);
+  color: var(--mdc-theme-gray__600);
+}
+*/
+.mdc-button--outlined:hover {
+  background-color: var(--mdc-theme-gray__025);
+}
+
+.mdc-button--outlined:active {
+  background-color: var(--mdc-theme-gray__300);
+  color: var(--mdc-theme-gray__700);
+}
+
+.mdc-button--outlined:disabled {
+  background-color: var(--mdc-theme-surface);
+  border-color: var(--mdc-theme-gray__700);
+  color: var(--mdc-theme-gray__700);
+  opacity: 0.5;
+}
+
+/* ALERT BUTTONS */
+.mdc-button--raised.mdc-button--alert, .mdc-button--raised.mdc-button--alert:not(:disabled),
+.mdc-button--outlined.mdc-button--alert, .mdc-button--outlined.mdc-button--alert:not(:disabled) {
+  border-color: var(--mdc-theme-error);
+  color: var(--mdc-theme-error);
+}
+
+/* ICON BUTTONS */
+.mdc-icon-button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 48px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*min-width: 36px;*/
+  min-width: 48px;
+  padding: 4px;
+}
+
+.mdc-icon-button.mdc-icon-button--outlined {
+  min-width: 36px;
+  min-height: 36px;
+  height: 36px;
+  width: 36px;
+}
+
+.mdc-icon-button > .mdc-icon {
+  position: relative;
+  z-index: 2;
+}
+
+.mdc-icon-button:not(.mdc-icon-button--white):hover::before {
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.mdc-icon-button.mdc-icon-button--white:hover::before {
+  opacity: 0.16;
+  z-index: 0;
+}
+
+.mdc-icon-button.mdc-ripple-upgraded--background-focused::before,
+.mdc-icon-button:not(.mdc-ripple-upgraded):focus::before {
+  opacity: 0;
+}
+
+.mdc-icon-button:not(.mdc-icon-button--white):active::after,
+.mdc-icon-button:not(.mdc-icon-button--white):not(.mdc-ripple-upgraded):active::after,
+.mdc-icon-button:not(.mdc-icon-button--white).mdc-button--active::after {
+  opacity: 0.28;
+  z-index: 0;
+}
+
+.mdc-icon-button.mdc-icon-button--white:active::after,
+.mdc-icon-button.mdc-icon-button--white:not(.mdc-ripple-upgraded):active::after,
+.mdc-icon-button.mdc-icon-button--white.mdc-button--active::after {
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.mdc-icon-button:disabled {
+  opacity: 0.5;
+}
+.mdc-icon-button:not(.mdc-ripple-upgraded):not(.mdc-button--active):focus::before,
+.mdc-icon-button:not(.mdc-ripple-upgraded):not(.mdc-button--active):focus::after {
+  background-color: var(--mdc-theme-surface);
+}
+
+.mdc-icon-button::before, .mdc-icon-button:hover::before,
+.mdc-icon-button:not(.mdc-ripple-upgraded):active::before,
+.mdc-icon-button::after, .mdc-icon-button:hover::after,
+.mdc-icon-button:not(.mdc-ripple-upgraded):active::after { 
+  background-color: var(--mdc-theme-secondary);
+}
+
+.mdc-icon-button.mdc-icon-button--white::before,
+.mdc-icon-button.mdc-icon-button--white:hover::before,
+.mdc-icon-button.mdc-icon-button--white:not(.mdc-ripple-upgraded):active::before,
+.mdc-icon-button.mdc-icon-button--white::after,
+.mdc-icon-button.mdc-icon-button--white:hover::after,
+.mdc-icon-button.mdc-icon-button--white:not(.mdc-ripple-upgraded):active::after { 
+  background-color: var(--mdc-theme-surface);
+}
+
+.mdc-icon-button.mdc-icon-button--outlined,
+.mdc-icon-button.mdc-icon-button--outlined:not(.mdc-icon-button--white):not(:disabled) {
+  border: 1px solid var(--mdc-theme-secondary);
+}
+
+.mdc-icon-button.mdc-icon-button--white.mdc-icon-button--outlined {
+  border-color: var(--mdc-theme-surface);
+}
+
+.mdc-icon-button.mdc-icon-button--secondary::before,
+.mdc-icon-button.mdc-icon-button--secondary:hover::before,
+.mdc-icon-button.mdc-icon-button--secondary:not(.mdc-ripple-upgraded):active::before,
+.mdc-icon-button.mdc-icon-button--secondary:not(.mdc-ripple-upgraded):focus::before,
+.mdc-icon-button.mdc-icon-button--secondary::after,
+.mdc-icon-button.mdc-icon-button--secondary:hover::after,
+.mdc-icon-button.mdc-icon-button--secondary:not(.mdc-ripple-upgraded):active::after,
+.mdc-icon-button.mdc-icon-button--secondary:not(.mdc-ripple-upgraded):focus::after {
+  background-color: var(--mdc-theme-gray__600);
+}
+
+.mdc-icon-button--secondary.mdc-icon-button--outlined,
+.mdc-icon-button--secondary.mdc-icon-button--outlined:not(.mdc-icon-button--white):not(:disabled) {
+  border: 1px solid var(--mdc-theme-gray__600);
+}
+
+/* TOGGLE BUTTON */
+.mdc-button--toggle {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mdc-button--toggle .mdc-icon-button,
+.mdc-button--toggle .mdc-icon-button::before,
+.mdc-button--toggle .mdc-icon-button::after {
+  border-radius: 0;
+}
+
+.mdc-button--toggle .mdc-icon-button:first-child,
+.mdc-button--toggle .mdc-icon-button:first-child::before,
+.mdc-button--toggle .mdc-icon-button:first-child::after {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.mdc-button--toggle .mdc-icon-button.mdc-icon-button--outlined:last-child,
+.mdc-button--toggle .mdc-icon-button.mdc-icon-button--outlined:last-child::before,
+.mdc-button--toggle .mdc-icon-button.mdc-icon-button--outlined:last-child::after {
+  border-left: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-left: 0;
+}
+
+.date-picker__wrapper {
+  position: relative;
+}
+
+.mdc-button:not(:disabled).date-picker--button + .picker-output {
+  display: none;
+}
+
+.mdc-button:not(:disabled).date-picker--button .mdc-button__label {
+  border-bottom: 1px solid rgba(33, 33, 33, 0.2);
+  text-transform: none;
+}
+
+.mdc-button:not(:disabled).date-picker--button .mdc-button__label + .mdc-icon {
+  margin-left: 12px;
+}
+
+.mp-picker {
+  font-family: 'Poppins', sans-serif;
+}
+
+.mp-picker[data-orientation="portrait"] {
+  height: 332px;
+  width: 240px;
+}
+
+.mdc-button--eye-toggle .mdc-icon {
+  margin-left: 0;
+}
+
+.mdc-button--eye-toggle .eye-off-icon {
+  display: none;
+}
