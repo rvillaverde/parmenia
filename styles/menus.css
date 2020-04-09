@@ -263,9 +263,18 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
   cursor: normal;
 }
 
+.mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {
+  color: var(--mdc-theme-gray__700);
+  padding-right: 40px;
+}
+
 .mdc-drawer .mdc-select {
   background: white;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 8px;
   margin-bottom: 36px;
+}
+
+.mdc-drawer.agenda .mdc-select--outlined .mdc-select__selected-text {
+  min-width: unset;
 }

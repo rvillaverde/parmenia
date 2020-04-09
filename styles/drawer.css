@@ -229,6 +229,16 @@ body[data-role="admin"] .mdc-drawer.agenda .mdc-drawer__content-item .mdc-list-i
   max-width: 120px;
 }
 
+@media (max-width: 860px) {
+  .mdc-drawer.agenda .mdc-drawer__content-item .mdc-list-item__text {
+    max-width: 60px;
+  }
+
+  body[data-role="admin"] .mdc-drawer.agenda .mdc-drawer__content-item .mdc-list-item__text {
+    max-width: 80px;
+  }
+}
+
 .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded) .mdc-list-item__text {
   font-weight: normal;
 }
