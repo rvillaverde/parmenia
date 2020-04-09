@@ -230,9 +230,11 @@ textarea.mdc-text-field__input {
 
 .mdc-text-field.mdc-text-field--with-leading-icon.mdc-text-field--search {
   height: 36px;
+  padding-right: 0;
 }
 
 .mdc-text-field.mdc-text-field--with-leading-icon.mdc-text-field--search .mdc-text-field__input {
+  box-sizing: border-box;
   padding: 12px 16px;
   padding-left: 48px;
   margin-left: 0;
@@ -240,6 +242,8 @@ textarea.mdc-text-field__input {
 
 .mdc-text-field.mdc-text-field--with-leading-icon.mdc-text-field--search .mdc-text-field__icon--leading {
   left: 12px;
+  margin: 0;
+  position: absolute;
 }
 
 .mdc-top-app-bar {

@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<!--     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
 
-    <script
+<!--     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script> -->
 
     <!-- OFFLINE MODE -->
-<!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
-    <script src="offline/material-components-web.min.js"></script>
-    <script src="offline/jquery-3.4.1.min.js"></script> -->
+    <link href="lib/material-components-web.css" rel="stylesheet">
+    <script src="lib/material-components-web.js"></script>
+    <script src="lib/jquery-3.4.1.js"></script>
+    <script src="lib/jquery-ui.js"></script>
 
-    <script
+<!--     <script
       src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
       integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script> -->
     <script src="js/jquery.ui.touch-punch.min.js"></script>
 
     <link rel="stylesheet" href="styles/colors.css">
@@ -406,7 +407,7 @@
                     <div class="mdc-checkbox__wrapper">
                       <div class="mdc-form-field">
                         <div class="mdc-checkbox">
-                          <input type="checkbox" class="mdc-checkbox__native-control" id="copy-content"/>
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="copy-content" data-dynamic-cta-target="#aula-select"/>
                           <div class="mdc-checkbox__background">
                             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                               <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -415,11 +416,11 @@
                           </div>
                           <div class="mdc-checkbox__ripple"></div>
                         </div>
-                        <label for="news-publish-cartelera" class="mdc-typography--headline4">Copiar contenido de otro aula</label>
+                        <label for="copy-content" class="mdc-typography--headline4">Copiar contenido de otro aula</label>
                       </div>
                     </div>
 
-                    <div class="mdc-select mdc-select--outlined">
+                    <div class="mdc-select mdc-select--outlined initially-hidden" id="aula-select" data-dynamic-cta-target="#aula-content-selection">
                       <div class="mdc-select__anchor">
                         <i class="mdc-select__dropdown-icon"></i>
                         <div class="mdc-select__selected-text  mdc-typography--body1" aria-labelledby="aula-select-label"></div>
@@ -434,19 +435,19 @@
 
                       <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
                         <div class="mdc-select__menu--search">
-                          <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--fullwidth">
+                          <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--fullwidth mdc-text-field--search">
                             <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
                             <input type="text" class="mdc-text-field__input mdc-typography--body1 mdc-text-field--no-label" aria-labelledby="my-label-id">
                             <!-- <div class="mdc-line-ripple"></div> -->
                             <div class="mdc-notched-outline mdc-notched-outline--no-label">
                               <div class="mdc-notched-outline__leading"></div>
                               <div class="mdc-notched-outline__notch">
-                                <span class="mdc-floating-label" id="my-label-id"></span>
+                                <span class="mdc-floating-label mdc-typography--subtitle1" id="my-label-id">Buscar aulas</span>
                               </div>
                               <div class="mdc-notched-outline__trailing"></div>
                             </div>
                           </label>
-                        </div>
+                        </div>   
                         <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
                           <li class="mdc-list-item" data-value="aula-01" role="option">
                             <span class="mdc-typography--body2">Ciencias Naturales 6A 2019</span>
@@ -461,56 +462,55 @@
                       </div>
                     </div>
 
-                    <div class="selection-wrapper">
+                    <div class="selection-wrapper initially-hidden" id="aula-content-selection">
+                      <div class="mdc-chip-set mdc-chip-set--input" role="grid">
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Presentación</span>
+                            </span>
+                          </span>
+                          <span role="gridcell">
+                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                          </span>
+                        </div>
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Clase 1 / Informe</span>
+                            </span>
+                          </span>
+                          <span role="gridcell">
+                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                          </span>
+                        </div>
+                        <div class="mdc-chip" role="row">
+                          <span role="gridcell">
+                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
+                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Mi aprendizaje</span>
+                            </span>
+                          </span>
+                          <span role="gridcell">
+                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
+                          </span>
+                        </div>
+                      </div>
                       <div class="no-content-placeholder">
                         <span class="mdc-typography--headline4">Aún no hay contenido seleccionado</span>
                       </div>
-                    </div>
 
-                    <div class="mdc-chip-set mdc-chip-set--input" role="grid">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Presentación</span>
-                          </span>
-                        </span>
-                        <span role="gridcell">
-                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                        </span>
+                      <div class="admin-form__actions">
+                        <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('content-select-01');">
+                          <span class="mdc-button__ripple"></span>
+                          <span class="mdc-button__label">Seleccionar contenido</span>
+                          <i class="mdc-button__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </i>
+                        </button>
                       </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Clase 1 / Informe</span>
-                          </span>
-                        </span>
-                        <span role="gridcell">
-                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                            <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Mi aprendizaje</span>
-                          </span>
-                        </span>
-                        <span role="gridcell">
-                          <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="admin-form__actions">
-                      <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('content-select-01');">
-                        <span class="mdc-button__ripple"></span>
-                        <span class="mdc-button__label">Seleccionar contenido</span>
-                        <i class="mdc-button__icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 5L19 12L12 19" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
-                      </button>
                     </div>
                   </div>
                 </div>

@@ -4,6 +4,11 @@ for (var i = 0, button; button = buttons[i]; i++) {
 }
 */
 
+function listenToMDCMenuEvents(mdcMenu) {
+    mdcMenu.listen('MDCMenuSurface:opened', function(e) {
+    $(this).css('max-height', 192);
+  });
+}
 
 class MDCSearchTextField {
   constructor(textField) {
@@ -27,17 +32,24 @@ class MDCSearchTextField {
 
 class SelectMenuWithSearch {
   constructor(select) {
+    this.select = select;
     let self = this;
 
     $(select).find('.mdc-select__menu--search input').keyup(function(e) {
       self.handleSearch($(this).val().toLowerCase());
     });
 
-    this.select = mdc.select.MDCSelect.attachTo(select);
+    this.mdcSelect = mdc.select.MDCSelect.attachTo(this.select);
+
+    this.mdcSelect.listen('MDCSelect:change', function(e) {
+      $(self.select).trigger('change', [{ show: true }]);
+    });
+
+    listenToMDCMenuEvents(this.mdcSelect.menu_);
   }
 
   handleSearch(input) {
-    this.select.menu_.list_.listElements.forEach(function(element) {
+    this.mdcSelect.menu_.list_.listElements.forEach(function(element) {
       let name = $(element).text().trim();
       if (input.length > 0 && name.toLowerCase().indexOf(input) === -1) {
         $(element).hide();
@@ -50,8 +62,10 @@ class SelectMenuWithSearch {
 
 class CheckBoxMenuSelect {
   constructor(select) {
+    this.select = select;
     let self = this;
-    $(select).find('.mdc-list-item').each(function(i, option) {
+
+    $(this.select).find('.mdc-list-item').each(function(i, option) {
       $(option).click(function(e) {
         e.stopPropagation();
         if ($(option).hasClass('mdc-list-item--disabled'))
@@ -60,22 +74,26 @@ class CheckBoxMenuSelect {
         const index = $(e.currentTarget).index();
         // Mark checkbox as checked if user clicked on li element
         if (!$(e.target).is('label'))
-          self.select.menu_.list_.foundation_.toggleCheckboxAtIndex_(index, e.target === e.currentTarget);
+          self.mdcSelect.menu_.list_.foundation_.toggleCheckboxAtIndex_(index, e.target === e.currentTarget);
 
         // Handle selection
         self.handleSelection(index);
       });
     });
 
-    $(select).find('.mdc-select__menu--search input').keyup(function(e) {
+    $(this.select).find('.mdc-select__menu--search input').keyup(function(e) {
       self.handleSearch($(this).val().toLowerCase());
     });
 
-    this.select = mdc.select.MDCSelect.attachTo(select);
+    this.mdcSelect = mdc.select.MDCSelect.attachTo(select);
+
+    this.mdcSelect.menu_.listen('MDCMenuSurface:opened', function(e) {
+      $(this).css('max-height', 192);
+    });
   }
 
   handleSearch(input) {
-    this.select.menu_.list_.listElements.forEach(function(element) {
+    this.mdcSelect.menu_.list_.listElements.forEach(function(element) {
       let name = $(element).text().trim();
       if (input.length > 0 && name.toLowerCase().indexOf(input) === -1) {
         $(element).hide();
@@ -88,28 +106,31 @@ class CheckBoxMenuSelect {
   handleSelection(index) {
     let self = this;
 
-    let selectedIndex = this.select.menu_.list_.selectedIndex;
+    let selectedIndex = this.mdcSelect.menu_.list_.selectedIndex;
     let selectedText = selectedIndex.length > 0 ? `${ selectedIndex.length } selected` : '';
     let selectedItems = selectedIndex.map(function(i) {
-      let item = $(self.select.menu_.list_.listElements[i]);
+      let item = $(self.mdcSelect.menu_.list_.listElements[i]);
       //selectedText = selectedText + `${ item.attr('data-value') },`;
       return { name: item.text().trim(), id: item.attr('data-value'), index: i };
     })
 
-    this.select.foundation_.adapter_.setSelectedText(selectedText);
+    this.mdcSelect.foundation_.adapter_.setSelectedText(selectedText);
     if (selectedIndex.indexOf(index) > -1) {
-      this.select.foundation_.adapter_.addClassAtIndex(index, 'mdc-list-item--selected');
-      this.select.foundation_.adapter_.setAttributeAtIndex(index, 'aria-selected', 'true');
+      this.mdcSelect.foundation_.adapter_.addClassAtIndex(index, 'mdc-list-item--selected');
+      this.mdcSelect.foundation_.adapter_.setAttributeAtIndex(index, 'aria-selected', 'true');
     } else {
-      this.select.foundation_.adapter_.removeClassAtIndex(index, 'mdc-list-item--selected');
-      this.select.foundation_.adapter_.removeAttributeAtIndex(index, 'aria-selected');
+      this.mdcSelect.foundation_.adapter_.removeClassAtIndex(index, 'mdc-list-item--selected');
+      this.mdcSelect.foundation_.adapter_.removeAttributeAtIndex(index, 'aria-selected');
     }
 
     this.updateChipset(selectedItems);
+
+/*    console.log(this.select)
+    $(this.select).trigger('change');*/
   }
 
   updateChipset(items) {
-    let chipSet = $(this.select.root_).find('.mdc-chip-set');
+    let chipSet = $(this.mdcSelect.root_).find('.mdc-chip-set');
     chipSet.empty();
 
     if (!items) return;
@@ -649,14 +670,6 @@ mdcDrawer.find('.mdc-button--eye-toggle').click(function(e) {
   $(this).closest('.mdc-list-item').toggleClass('disabled-section');
 });
 
-var menus = $('.mdc-menu');
-for (var i = 0, menu; menu = menus[i]; i++) {
-  var mdcMenu = mdc.menu.MDCMenu.attachTo(menu)
-  mdcMenu.listen('MDCMenuSurface:opened', function(e) {
-    $(this).css('max-height', 192);
-  });
-}
-
 var sortableWrappers = $('.sortable-wrapper');
 for (var i = 0, sortableWrapper; sortableWrapper = sortableWrappers[i]; i++) {
   new MDCSortable(sortableWrapper);
@@ -715,23 +728,6 @@ for (var i = 0, dataTable; dataTable = dataTables[i]; i++) {
   }
 }
 
-var lists = $('.mdc-list:not(.mdc-checkbox-list):not(.mdc-list--nested):not(.mdc-list--parent)');
-for (var i = 0, list; list = lists[i]; i++) {
-  var list = mdc.list.MDCList.attachTo(list);
-  list.singleSelection = true;
-}
-
-var checkBoxLists = $('.mdc-list.mdc-checkbox-list:not(.mdc-list--nested):not(.mdc-list--parent)');
-for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
-  var mdcList = mdc.list.MDCList.attachTo(checkBoxList);
-  mdcList.singleSelection = false;
-}
-
-var checkBoxLists = $('.mdc-list.mdc-checkbox-list.mdc-list--parent:not(.mdc-list--nested)');
-for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
-  new TreeCheckboxList(checkBoxList);
-}
-
 var selects = $('.mdc-select:not(.mdc-select--checkbox)');
 for (var i = 0, select; select = selects[i]; i++) {
   new SelectMenuWithSearch(select);
@@ -740,6 +736,29 @@ for (var i = 0, select; select = selects[i]; i++) {
 var selects = $('.mdc-select.mdc-select--checkbox');
 for (var i = 0, select; select = selects[i]; i++) {
   new CheckBoxMenuSelect(select);
+}
+
+var menus = $('.mdc-menu').not('.mdc-select .mdc-menu');
+for (var i = 0, menu; menu = menus[i]; i++) {
+  var mdcMenu = mdc.menu.MDCMenu.attachTo(menu);
+  listenToMDCMenuEvents(mdcMenu);
+}
+
+var checkBoxLists = $('.mdc-list.mdc-checkbox-list.mdc-list--parent:not(.mdc-list--nested)').not('.mdc-menu .mdc-list');
+for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
+  new TreeCheckboxList(checkBoxList);
+}
+
+var lists = $('.mdc-list:not(.mdc-checkbox-list):not(.mdc-list--nested):not(.mdc-list--parent)').not('.mdc-menu .mdc-list');
+for (var i = 0, list; list = lists[i]; i++) {
+  var mdcList = mdc.list.MDCList.attachTo(list);
+  mdcList.singleSelection = true;
+}
+
+var checkBoxLists = $('.mdc-list.mdc-checkbox-list:not(.mdc-list--nested):not(.mdc-list--parent)').not('.mdc-menu .mdc-list');
+for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
+  var mdcList = mdc.list.MDCList.attachTo(checkBoxList);
+  mdcList.singleSelection = false;
 }
 
 var datePickers = $('.date-picker--button');

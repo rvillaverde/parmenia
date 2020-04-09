@@ -16,6 +16,8 @@ $(function() {
     onScroll();
   }
 
+  initDynamicCTAs();
+
   $('.user-roles-wrapper input').change(roleSelection);
   roleSelection({ currentTarget: $('.user-roles-wrapper input[checked]') });
 
@@ -32,6 +34,16 @@ $(function() {
   $('.collapse-link input').change(collapse);
   $('.mdc-top-app-bar__section#nav-menu-toggle input[type="checkbox"]').click(toggleNavMenu);
 });
+
+function initDynamicCTAs() {
+  $('[data-dynamic-cta-target]').change(function(e, detail) {
+    if (detail) {
+      let target = $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden', !detail.show);
+    } else {
+      let target = $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden');
+    }
+  });
+}
 
 function smoothScroll(e) {
   e.preventDefault();
