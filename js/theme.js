@@ -400,8 +400,11 @@ class DatePicker {
   }
 
   formatDate(date) {
-    var d = new Date(date),
-      month = '' + (d.getMonth() + 1),
+    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    var d = new Date(date);
+    return `${ d.getDate() } de ${ months[d.getMonth()] } de ${ d.getFullYear() }`;
+
+    var month = '' + (d.getMonth() + 1),
       day = '' + d.getDate(),
       year = d.getFullYear();
 
@@ -410,7 +413,37 @@ class DatePicker {
     if (day.length < 2) 
       day = '0' + day;
 
-    return [month, day, year].join('/');
+    return [day, month, year].join('/');
+  }
+}
+
+class MDCCalendarPreview {
+  constructor(calendarPreview) {
+    $('body').mouseup(this.handleMouseEvent);
+    $('body').mousedown(this.handleMouseEvent);
+    this.calendarPreview = calendarPreview;
+    let self = this;
+
+    this.materialPicker = new MaterialDatepicker(this.calendarPreview, {
+      color: '#6274E5',
+      lang: 'es',
+      outputFormat: 'DD/MM/YYYY',
+      position: 'static',
+      openOn: 'direct',
+      zIndex: 200,
+      onNewDate: function(date) {
+        //self.updateButtonLabel(date);
+      },
+      onOpen: function(date) {
+        self.handleOpen();
+      }
+    });
+    //this.materialPicker.open();
+  }
+
+  handleOpen() {
+    console.log($(this.materialPicker));
+    //$(this.calendarPreview).append($(this.materialPicker.picker));
   }
 }
 
@@ -677,6 +710,11 @@ for (var i = 0, select; select = selects[i]; i++) {
 var datePickers = $('.date-picker--button');
 for (var i = 0, datePicker; datePicker = datePickers[i]; i++) {
   new DatePicker(datePicker);
+}
+
+var calendarPreviews = $('.calendar-preview');
+for (var i = 0, calendarPreview; calendarPreview = calendarPreviews[i]; i++) {
+  new MDCCalendarPreview(calendarPreview);
 }
 
 var actividadComposers = $('.actividad-composer__wrapper');

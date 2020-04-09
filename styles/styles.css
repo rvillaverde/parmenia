@@ -1059,3 +1059,50 @@ section.sortable {
 tr.sortable-placeholder:last-child {
   height: 40px;
 }
+
+.calendar-preview .mp-picker {
+  box-shadow: none;
+  width: 100%;
+}
+
+.calendar-preview .mp-picker .mp-picker-info {
+  display: none;
+}
+
+.calendar-preview .mp-picker .mp-picker-picker {
+  background: transparent;
+  padding: 0;
+  width: 100%;
+}
+
+.mp-picker .mp-picker-choose [class*="mp-picker-click"] {
+  border-radius: 50%;
+}
+
+.mp-picker .mp-picker-picker .mp-picker-site .mp-picker-site-this {
+  text-transform: capitalize;
+  color: var(--mdc-theme-primary__800);
+}
+
+.mp-picker .mp-picker-picker .mp-picker-site .mp-picker-site-button {
+  background-image: url("../icons/chevron-left-icon.svg");
+  background-size: cover;
+}
+
+.mp-picker[data-orientation="portrait"] .mp-picker-info .mp-info-second,
+.mp-picker .mp-picker-choose .mp-picker-header[class*="mp-picker-header-day"] {
+  text-transform: capitalize;
+}
+
+.mp-picker .mp-picker-choose [class*="mp-picker-click"].mp-picker-choose-day {
+  color: var(--mdc-theme-gray__700);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0.5em 0;
+}
+
+.mp-picker .mp-picker-choose [class*="mp-picker-click"].active {
+  color: var(--mdc-theme-surface);
+}

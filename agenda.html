@@ -514,10 +514,30 @@
     <aside class="mdc-drawer agenda">
       <div class="mdc-drawer__content">
         <div class="mdc-drawer__content-item">
-          
+          <div class="mdc-select mdc-select--outlined mdc-select--no-label">
+            <div class="mdc-select__anchor">
+              <i class="mdc-select__dropdown-icon"></i>
+              <div id="demo-selected-text" class="mdc-select__selected-text" aria-labelledby="outlined-select-label">
+                Semana
+              </div>
+            </div>
+
+            <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
+              <ul class="mdc-list">
+                <li class="mdc-list-item mdc-list-item--selected" data-value="grains" role="option">
+                  <span class="mdc-typography--body2">Semana</span>
+                </li>
+                <li class="mdc-list-item" data-value="vegetables" aria-disabled="true" role="option">
+                  <span class="mdc-typography--body2">Mes</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="calendar-preview"></div>
         </div>
         <div class="mdc-drawer__content-item">
-          <h4 class="mdc-typography--headline4">Agendas</h4>
+          <h4 class="mdc-typography--headline4 mdc-drawer__title">Agendas</h4>
           <div class="mdc-multiselection-list">
             <ul class="mdc-list mdc-checkbox-list mdc-list--parent" role="group">
               <li class="mdc-list-item" role="checkbox" aria-checked="false">
@@ -656,27 +676,29 @@
 
     <div class="drawer-side-wrapper">
       <main class="main-wrapper full-width">
-      <div class="headline-wrapper">
-        <button class="mdc-button mdc-icon-button" onclick="changeMonth(-1);">
-          <i class="mdc-icon chevron-left-icon"></i>
-        </button>
-        <button class="mdc-button mdc-icon-button" onclick="changeMonth(1);">
-          <i class="mdc-icon chevron-right-icon"></i>
-        </button>
-        <h4 class="mdc-typography--headline3">Diciembre 2019</h4>
-          <div class="headline-wrapper__actions" data-role="admin,docente">
-            <button class="mdc-button mdc-button--raised" onclick="openDialog('crear-evento');">
-              <i class="mdc-button__icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 8V16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </i>
-              <span class="mdc-button__label">Crear evento</span>
-            </button>
-          </div>
-      </div>
+        <div class="headline-wrapper">
+          <button class="mdc-button mdc-icon-button" onclick="changeMonth(-1);">
+            <i class="mdc-icon chevron-left-icon"></i>
+          </button>
+          <button class="mdc-button mdc-icon-button" onclick="changeMonth(1);">
+            <i class="mdc-icon chevron-right-icon"></i>
+          </button>
+          <h4 class="mdc-typography--headline3">Diciembre 2019</h4>
+            <div class="headline-wrapper__actions" data-role="admin,docente">
+              <button class="mdc-button mdc-button--raised" onclick="openDialog('crear-evento');">
+                <i class="mdc-button__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8V16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 12H16" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+                <span class="mdc-button__label">Crear evento</span>
+              </button>
+            </div>
+        </div>
+
+        <div class="mdc-card mdc-card--large agenda-card"></div>
       </main>
     </div>
 

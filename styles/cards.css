@@ -1071,3 +1071,8 @@
     grid-row-end: 4;
   }
 }
+
+.agenda-card {
+  min-height: 680px;
+  width: 100%;
+}

@@ -1,0 +1,65 @@
+:root {
+  --mdc-theme-primary: #54637A;
+  --mdc-theme-secondary: #6274E5;
+
+  --mdc-theme-primary__050: #ECEEF1;
+  --mdc-theme-primary__100: #CFD5DC;
+  --mdc-theme-gray__400: #BDBDBD;
+  --mdc-theme-primary__500: #60718B;
+
+  --mdc-theme-secondary__500: var(--mdc-theme-primary);
+
+  --mdc-theme-gray__600: #757575;
+  --mdc-theme-gray__700: #616161;
+
+  --mdc-theme-custom__00: #AB968C;
+  --mdc-theme-custom__01: #D45A53;
+  --mdc-theme-custom__02: #ED6D4E;
+  --mdc-theme-custom__03: #FF917A;
+  --mdc-theme-custom__04: #F5AE58;
+  --mdc-theme-custom__05: #D6C292;
+  --mdc-theme-custom__06: #CCCC41;
+  --mdc-theme-custom__07: #A1BA6C;
+  --mdc-theme-custom__08: #5FBC8E;
+  --mdc-theme-custom__09: #7CBFBF;
+  --mdc-theme-custom__10: #81B9EB;
+  --mdc-theme-custom__11: #579BBD;
+  --mdc-theme-custom__12: #C291E8;
+  --mdc-theme-custom__13: #8D64AD;
+  --mdc-theme-custom__14: #8D64AD;
+  --mdc-theme-custom__15: #D44691;
+
+  --mdc-theme-typography: 'Poppins';
+}
+
+.mdc-typography--headline6 {
+  color: var(--mdc-theme-gray__700);
+  line-height: 20px;
+  font-family: var(--mdc-theme-typography);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  margin: 0;
+}
+
+.mdc-typography--body2 {
+  color: var(--mdc-theme-gray__700);
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 20px;
+  margin: 0;
+}
+
+.mdc-typography--overline {
+  color: var(--mdc-theme-gray__700);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 16px;
+  text-transform: none;
+}

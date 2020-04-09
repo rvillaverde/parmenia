@@ -225,6 +225,28 @@ body:not(.nav-menu-open) .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-
   max-width: 96px;
 }
 
+body[data-role="admin"] .mdc-drawer.agenda .mdc-drawer__content-item .mdc-list-item__text {
+  max-width: 120px;
+}
+
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded) .mdc-list-item__text {
+  font-weight: normal;
+}
+
 .mdc-drawer__content-item .mdc-multiselection-list .mdc-list .mdc-list-item {
   padding: 8px 0;
+}
+
+.mdc-drawer .mdc-drawer__title {
+  margin-bottom: 12px;
+}
+
+.mdc-drawer .mdc-drawer__title::before,
+.mdc-drawer .mdc-drawer__title::after {
+  content: none;
+}
+
+.mdc-drawer.agenda .mdc-select .mdc-list-item::before,
+.mdc-drawer.agenda .mdc-select .mdc-list-item::after {
+  content: none;
 }
