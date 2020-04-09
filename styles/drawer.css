@@ -221,6 +221,10 @@ body:not(.nav-menu-open) .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-
   max-width: 120px;
 }
 
+.mdc-drawer.agenda .mdc-drawer__content-item .mdc-list-item__text {
+  max-width: 96px;
+}
+
 .mdc-drawer__content-item .mdc-multiselection-list .mdc-list .mdc-list-item {
   padding: 8px 0;
 }

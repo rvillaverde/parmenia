@@ -161,6 +161,7 @@ body.nav-menu-open .mdc-top-app-bar__action-item .mdc-menu .mdc-list:not(.profil
 
 .mdc-select__menu.mdc-menu-surface {
   margin-bottom: 20px;
+  max-height: 156px;
   width: 100%;
 }
 

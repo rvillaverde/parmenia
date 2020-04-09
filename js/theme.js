@@ -581,7 +581,10 @@ mdcDrawer.find('.mdc-button--eye-toggle').click(function(e) {
 
 var menus = $('.mdc-menu');
 for (var i = 0, menu; menu = menus[i]; i++) {
-  mdc.menu.MDCMenu.attachTo(menu);
+  var mdcMenu = mdc.menu.MDCMenu.attachTo(menu)
+  mdcMenu.listen('MDCMenuSurface:opened', function(e) {
+    $(this).css('max-height', 192);
+  });
 }
 
 var sortableWrappers = $('.sortable-wrapper');
