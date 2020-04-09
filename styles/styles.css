@@ -1055,3 +1055,7 @@ section.sortable {
 .group .group-content.sortable-wrapper .group-item {
   background-color: var(--mdc-theme-surface);
 }
+
+tr.sortable-placeholder:last-child {
+  height: 40px;
+}

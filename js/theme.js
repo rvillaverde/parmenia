@@ -344,7 +344,11 @@ class MDCSortable {
       connectWith: '.sortable-wrapper',
       cursor: 'grabbing',
       start: function() {
+        $('body').addClass('dragging');
         $('.mdc-tooltip').remove();
+      },
+      stop: function() {
+        $('body').removeClass('dragging');
       }
     });
   }
@@ -445,6 +449,9 @@ class MDCTooltip {
   }
 
   showTooltip() {
+    if ($('body').hasClass('dragging'))
+      return;
+
     let text = this.tooltip.attr('data-mdc-tooltip');
     let mdcTooltip = $(`<div class='mdc-typography--caption mdc-tooltip'>${ text }</div>`);
     let coords = this.tooltip[0].getBoundingClientRect();
