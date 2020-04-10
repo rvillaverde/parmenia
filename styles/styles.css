@@ -871,6 +871,7 @@ input[type=file] {
   font-weight: 600;
 }
 
+.ql-container,
 .ql-snow .ql-editor blockquote,
 .ql-snow .ql-editor p {
   color: var(--mdc-theme-gray__700);

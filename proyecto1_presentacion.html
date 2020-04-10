@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<!--     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -14,9 +14,9 @@
       crossorigin="anonymous"></script>
 
     <!-- OFFLINE MODE -->
-<!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
-    <script src="offline/material-components-web.min.js"></script>
-    <script src="offline/jquery-3.4.1.min.js"></script> -->
+    <link href="lib/material-components-web.css" rel="stylesheet">
+    <script src="lib/material-components-web.js"></script>
+    <script src="lib/jquery-3.4.1.js"></script>
 
     <script src="lib/quill.min.js"></script>
     <script src="lib/quill-image-resize.min.js"></script>
@@ -694,11 +694,18 @@
 
           <div class="mdc-card mdc-card--large project-presentation-card mdc-inline-editable__target section-content">
             <div class="mdc-card__primary">
-              <div class="mdc-inline-editable__input">
+              <div class="mdc-inline-editable__input mdc-inline-editable__preview">
                 <div class="mdc-rich-text-editor">
                   <h1>
-                    Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
+                    Lorem ipsum
                   </h1>
+                  <h2>
+                    Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
+                  </h2>
+                  <p><br></p>
+                  <p>
+                    <img src="img/placeholder.png" width="600px" style="display: block; margin: auto;">
+                  </p>
                   <p><br></p>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. Morbi a ultrices libero. In hac habitasse platea dictumst.
@@ -706,6 +713,10 @@
                   <p><br></p>
                   <p>
                     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus. Pellentesque sagittis massa odio, ac viverra justo aliquet in. Sed vel ligula consequat, molestie arcu non, suscipit libero. Phasellus at massa tortor. Vivamus sed nisl vehicula, mattis ipsum vitae, ornare libero. Nullam venenatis tristique mauris, non semper turpis interdum eu. Vivamus nisi massa, aliquam vel ex eget, finibus interdum libero. Donec venenatis tristique urna, nec congue erat interdum eu. Pellentesque semper tellus eget arcu porttitor, nec tempor quam lacinia. Cras tempor consectetur enim quis fringilla. Sed gravida, nisl id euismod ultrices, erat est cursus mi, quis sagittis ipsum diam sed purus. Phasellus enim massa, condimentum vel porta et, ornare eget mi. Curabitur at feugiat dolor, et iaculis turpis.
+                  </p>
+                  <p><br></p>
+                  <p>
+                    Entra aca para ver mas: <a href="https://www.google.com">link de prueba</a>
                   </p>
                 </div>
               </div>
@@ -736,6 +747,13 @@
             <div class="mdc-card__primary">
               <div class="mdc-inline-editable__input">
                 <div class="mdc-rich-text-editor">
+                  <h1 class="ql-align-center">
+                    Lorem ipsum
+                  </h1>
+                  <p><br></p>
+                  <h2>
+                    Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor Donec elementum ipsum
+                  </h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
                   </p>
@@ -745,7 +763,7 @@
                   </p>
                   <p><br></p>
                   <p>
-                    Morbi a ultrices libero. In hac habitasse platea dictumst.
+                    <strong style="color: rgb(107, 36, 178);">Morbi a ultrices libero. In hac habitasse platea dictumst.</strong>
                   </p>
                   <p><br></p>
                   <p>
@@ -784,17 +802,18 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui. Praesent eleifend aliquam dapibus. 
                   </p>
                   <p><br></p>
-                  <p>
+                  <ol>
+                    <li>
                     Ut libero leo, egestas id ipsum ac, imperdiet venenatis massa. Nunc in rutrum diam. Cras rutrum laoreet dolor, sed luctus neque. Integer lacinia, nisi et dictum vulputate, ligula nulla fermentum urna, eu facilisis nibh eros et ligula. 
-                  </p>
-                  <p><br></p>
-                  <p>
+                    </li>
+                    <li>
                     Morbi a ultrices libero. In hac habitasse platea dictumst.
-                  </p>
+                    </li>
+                  </ol>
                   <p><br></p>
-                  <p>
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.
-                  </p>
+                  <blockquote>
+                    <em>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum tempus, lectus in porttitor hendrerit, turpis sem iaculis nibh, ac cursus dui nisl in sapien. Nulla interdum, enim eget vestibulum mollis, metus ipsum placerat ligula, at tincidunt massa odio ut dui. Duis eget commodo metus.</em>
+                  </blockquote>
                 </div>
               </div>
             </div>

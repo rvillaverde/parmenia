@@ -440,8 +440,6 @@ class DatePicker {
 
 class MDCCalendarPreview {
   constructor(calendarPreview) {
-    $('body').mouseup(this.handleMouseEvent);
-    $('body').mousedown(this.handleMouseEvent);
     this.calendarPreview = calendarPreview;
     let self = this;
 
@@ -453,18 +451,9 @@ class MDCCalendarPreview {
       openOn: 'direct',
       zIndex: 200,
       onNewDate: function(date) {
-        //self.updateButtonLabel(date);
-      },
-      onOpen: function(date) {
-        self.handleOpen();
+        // change calendar
       }
     });
-    //this.materialPicker.open();
-  }
-
-  handleOpen() {
-    console.log($(this.materialPicker));
-    //$(this.calendarPreview).append($(this.materialPicker.picker));
   }
 }
 
@@ -540,7 +529,7 @@ class MDCInlineEdit {
     this.editing = false;
 
     if (this.wrapper.find('.mdc-rich-text-editor').length)
-      this.editor = new MDCRichTextEditor(this.wrapper.find('.mdc-rich-text-editor')[0]);
+      this.editor = new MDCRichTextEditor(this.wrapper.find('.mdc-rich-text-editor')[0], this.wrapper.find('.mdc-inline-editable__preview'));
 
     let self = this;
 
@@ -567,10 +556,10 @@ class MDCInlineEdit {
     }
 
     if (this.editing) {
-      $(document).on('mouseup', self, MDCInlineEdit.handleDocumentMouseup);
+      $(document).on('mousedown', self, MDCInlineEdit.handleDocumentMouseup);
       this.editor.enable();
     } else {
-      $(document).off('mouseup', MDCInlineEdit.handleDocumentMouseup);
+      $(document).off('mousedown', MDCInlineEdit.handleDocumentMouseup);
       this.editor.disable();
     }
   }
@@ -584,8 +573,19 @@ class MDCInlineEdit {
 }
 
 class MDCRichTextEditor {
-  constructor(editor) {
+  constructor(editor, content) {
     this.editor = $(editor);
+    this.content = content;
+
+    var LinkBlot = Quill.import('formats/link');
+    LinkBlot.sanitize = function(url) {
+      return url;
+    };
+
+    var ImageBlot = Quill.import('formats/image');
+    ImageBlot.sanitize = function(url) {
+      return url;
+    };
 
     let toolbar = [
       ['bold', 'italic', 'underline', 'strike'],
@@ -601,6 +601,7 @@ class MDCRichTextEditor {
       ['link', 'image', 'video'],
       ['clean'] 
     ];
+
     this.mdcEditor = new Quill(editor, {
       modules: { 
         toolbar: toolbar,
@@ -610,6 +611,8 @@ class MDCRichTextEditor {
       },
       theme: 'snow'
     });
+
+    this.disable();
   }
 
   enable() {
@@ -624,6 +627,7 @@ class MDCRichTextEditor {
       e.stopPropagation();
     });
     this.mdcEditor.disable();
+    // aca habria que llamar al server para guardar la info
   }
 }
 
