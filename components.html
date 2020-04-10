@@ -18,10 +18,6 @@
     <script src="offline/material-components-web.js"></script> -->
     <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
 
-<!--     <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.css">
-    <script type="text/javascript" src="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.js"></script> -->
-
     <script type="text/javascript" src="lib/moment-with-locales.min.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/material-datepicker.css">
     <script type="text/javascript" src="lib/material-datepicker.js"></script>
@@ -115,18 +111,18 @@
 
           <ul class="mdc-top-app-bar__actions" role="toolbar">
             <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
-              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" data-mdc-tooltip="Mochila">
                 <i class="mdc-icon nav-mochila-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
               </a>
             </li>
 
             <li class="mdc-top-app-bar__action-item mdc-menu--click" id="notificaciones-menu-toggle">
-              <a class="mdc-button mdc-button--app-bar" aria-label="Notificaciones">
+              <a class="mdc-button mdc-button--app-bar">
                 <i class="mdc-icon nav-notificaciones-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Notificaciones</span>
               </a>
-              <input type="checkbox">
+              <input type="checkbox" data-mdc-tooltip="Notificaciones">
               <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
                 <ul class="mdc-list notifications" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
                   <li class="notification__wrapper">

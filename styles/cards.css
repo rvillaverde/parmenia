@@ -162,7 +162,7 @@
 }
 
 @media (min-width: 600px) and (max-width: 840px) {
-  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-0-tablet {
+  .mdc-layout-grid__cell--span-0-tablet {
     display: none;
   }
   .main-wrapper > .cards.mdc-layout-grid:not(.noticias-layout) .mdc-layout-grid__cell--span-9-desktop:not(.noticia-card),
@@ -173,6 +173,38 @@
   .main-wrapper > .cards.mdc-layout-grid:not(.noticias-layout) .mdc-layout-grid__inner {
     -ms-grid-columns: (minmax(0, 1fr))[8];
     grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 840px) and (max-width: 1024px) {
+  .cards.mdc-layout-grid:not(.noticias-layout) > .mdc-layout-grid__inner,
+  .mdc-card .mdc-layout-grid__inner {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  .cards.mdc-layout-grid:not(.noticias-layout) > .mdc-layout-grid__inner > .mdc-layout-grid__cell--span-3,
+  .cards.mdc-layout-grid:not(.noticias-layout) > .mdc-layout-grid__inner > .mdc-layout-grid__cell--span-3-desktop,
+  .mdc-card .mdc-layout-grid__cell--span-3,
+  .mdc-card .mdc-layout-grid__cell--span-3-desktop {
+    grid-column-end: span 4;
+  }
+  .cards.mdc-layout-grid:not(.noticias-layout) > .mdc-layout-grid__inner > .mdc-layout-grid__cell--span-6,
+  .cards.mdc-layout-grid:not(.noticias-layout) > .mdc-layout-grid__inner > .mdc-layout-grid__cell--span-6-desktop,
+  .mdc-card .mdc-layout-grid__cell--span-6,
+  .mdc-card .mdc-layout-grid__cell--span-6-desktop {
+    grid-column-end: span 4;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .cards.mdc-layout-grid:not(.noticias-layout) > .mdc-layout-grid__inner,
+  .mdc-card .mdc-layout-grid__inner {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .cards.mdc-layout-grid:not(.noticias-layout) > .mdc-layout-grid__inner > .mdc-layout-grid__cell--span-6,
+  .cards.mdc-layout-grid:not(.noticias-layout) > .mdc-layout-grid__inner > .mdc-layout-grid__cell--span-6-desktop,
+  .mdc-card .mdc-layout-grid__cell--span-6,
+  .mdc-card .mdc-layout-grid__cell--span-6-desktop {
+    grid-column-end: span 6;
   }
 }
 

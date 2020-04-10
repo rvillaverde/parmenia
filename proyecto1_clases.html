@@ -13,9 +13,9 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.css">
-    <script type="text/javascript" src="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.js"></script>
+    <script type="text/javascript" src="lib/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/material-datepicker.css">
+    <script type="text/javascript" src="lib/material-datepicker.js"></script>
 
     <!-- OFFLINE MODE -->
 <!--     <link href="offline/material-components-web.min.css" rel="stylesheet">
@@ -159,18 +159,18 @@
 
           <ul class="mdc-top-app-bar__actions" role="toolbar">
             <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
-              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" data-mdc-tooltip="Mochila">
                 <i class="mdc-icon nav-mochila-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
               </a>
             </li>
 
             <li class="mdc-top-app-bar__action-item mdc-menu--click" id="notificaciones-menu-toggle">
-              <a class="mdc-button mdc-button--app-bar" aria-label="Notificaciones">
+              <a class="mdc-button mdc-button--app-bar">
                 <i class="mdc-icon nav-notificaciones-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Notificaciones</span>
               </a>
-              <input type="checkbox">
+              <input type="checkbox" data-mdc-tooltip="Notificaciones">
               <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
                 <ul class="mdc-list notifications" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
                   <li class="notification__wrapper">
@@ -844,11 +844,11 @@
     <main class="main-wrapper">
       <div class="mdc-layout-grid round-step__grid">
         <div class="mdc-layout-grid__inner mdc-layout-grid--no-gap">
-          <div class="round-step__container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+          <div class="round-step__container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet">
             <span class="round-step mdc-typography--headline2">1</span>
           </div>
 
-          <div class="mdc-card clase-card mdc-card--large mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop">
+          <div class="mdc-card clase-card mdc-card--large mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-6-tablet">
             <div class="mdc-card__primary">
               <div class="mdc-card__caption mdc-typography--caption">Martes 10 de diciembre</div>
               <h3 class="mdc-card__title mdc-typography--headline3">Nombre de la clase</h3>
@@ -1069,11 +1069,11 @@
             </div>
           </div>
 
-          <div class="round-step__container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop">
+          <div class="round-step__container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet">
             <span class="round-step mdc-typography--headline2">2</span>
           </div>
 
-          <div class="mdc-card clase-card mdc-card--large mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop">
+          <div class="mdc-card clase-card mdc-card--large mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-6-tablet">
             <div class="mdc-card__primary">
               <div class="mdc-card__caption mdc-typography--caption">Martes 10 de diciembre</div>
               <h3 class="mdc-card__title mdc-typography--headline3">Nombre de la clase</h3>
@@ -1294,11 +1294,11 @@
             </div>
           </div>
 
-          <div class="round-step__container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop" data-role="admin,docente">
+          <div class="round-step__container mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-2-tablet" data-role="admin,docente">
             <span class="round-step mdc-typography--headline2">3</span>
           </div>
 
-          <div class="mdc-card clase-card mdc-card--large mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop" data-role="admin,docente">
+          <div class="mdc-card clase-card mdc-card--large mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-6-tablet" data-role="admin,docente">
             <div class="mdc-card__empty-with-cta">
               <button class="mdc-button mdc-button--text" onclick="openDialog('nueva-clase');">
                 <span class="mdc-button__ripple"></span>

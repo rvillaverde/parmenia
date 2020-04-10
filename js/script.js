@@ -90,7 +90,7 @@ function smoothScroll(e) {
   $(window).off("scroll");
   
   $('.mdc-list-item').removeClass('mdc-list-item--current');
-  $(this).addClass('mdc-list-item--current');
+  $(this).closest('.mdc-list-item').addClass('mdc-list-item--current');
 
   var target = this.hash;
   $target = $(target);
@@ -246,6 +246,7 @@ function newDrawerSectionHandler(element) {
   /* aca estaria bueno que desde el backend venga un numero para usar como id y asegurarse que sea unico */
   let id = `nueva-seccion-${ $('.mdc-drawer .mdc-drawer__content .mdc-list-item').length + 1 }`;
   element.find('.mdc-list-item').attr('data-section', id);
+  element.find('.mdc-list-item').removeClass('mdc-list-item--current');
   element.find('.mdc-list-item a').attr('href', `#${ id }`);
   element.find('.mdc-list-item a').on('click', smoothScroll);
   element.find('section').attr('id', id);

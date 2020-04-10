@@ -157,18 +157,18 @@
 
           <ul class="mdc-top-app-bar__actions" role="toolbar">
             <li class="mdc-top-app-bar__action-item" data-role="alumno,docente">
-              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" aria-label="Mochila">
+              <a class="mdc-button mdc-button--app-bar" href="mochila_favoritos.html" data-mdc-tooltip="Mochila">
                 <i class="mdc-icon nav-mochila-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Mochila</span>
               </a>
             </li>
 
             <li class="mdc-top-app-bar__action-item mdc-menu--click" id="notificaciones-menu-toggle">
-              <a class="mdc-button mdc-button--app-bar" aria-label="Notificaciones">
+              <a class="mdc-button mdc-button--app-bar">
                 <i class="mdc-icon nav-notificaciones-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Notificaciones</span>
               </a>
-              <input type="checkbox">
+              <input type="checkbox" data-mdc-tooltip="Notificaciones">
               <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
                 <ul class="mdc-list notifications" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
                   <li class="notification__wrapper">
@@ -1173,13 +1173,81 @@
           </div>
 
           <footer class="mdc-dialog__actions">
-            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" onclick="openDialog('devolver-tarea');">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Devolver</span>
             </button>
             <button type="submit" form="change-password" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Aprobar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="devolver-tarea" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <div class="mdc-dialog__title-wrapper">
+            <div class="mdc-dialog__title">
+              <button class="mdc-button mdc-button--text" onclick="openDialog('ver-entrega');">
+                <span class="mdc-button__ripple"></span>
+                <i class="mdc-button__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 12H5" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+                <span class="mdc-button__label">Volver a devolución</span>
+              </button>
+              <h2 class="mdc-dialog__title-caption mdc-typography--headline2">Devolver tarea</h2>
+            </div>
+            <p class="mdc-dialog__title-caption mdc-typography--body2">Esta acción no puede ser deshecha, y devolverá la actividad al estado de Pendiente.</p>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <form class="admin-form" id="devolver-tarea-form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--textarea mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <textarea class="mdc-text-field__input mdc-typography--body1" name="descripcion" aria-labelledby="my-label-id" rows="2" cols="40" maxlength="140"></textarea>
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label">Escribir un mensaje para el grupo</span>
+                            <!-- <span class="mdc-floating-label">Escribir un mensaje para el alumno</span> (si la tarea es individual) -->
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" aria-hidden="true">Máx. 140 caracteres</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="devolver-tarea-form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Devolver</span>
             </button>
           </footer>
         </div>

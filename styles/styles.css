@@ -1065,6 +1065,21 @@ body[data-role*="alumno"] .mdc-inline-editable__wrapper:not(.mdc-inline-editable
   overflow-x: hidden;
 }
 
+@media (max-width: 960px) {
+  .mdc-data-filter__wrapper {
+    flex-direction: column;
+  }
+
+  .mdc-data-filter__wrapper .mdc-data-filter__chips {
+    padding: 12px 0;
+    padding-bottom: 4px;
+  }
+
+  .mdc-data-filter__wrapper .mdc-data-filter__actions {
+    margin-left: 0;
+  }
+}
+
 section.sortable {
   background-color: var(--mdc-theme-gray__025);
 }
