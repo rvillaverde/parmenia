@@ -528,10 +528,21 @@ class MDCInlineEdit {
     this.target = this.wrapper.find(this.wrapper.attr('data-editable-target'));
     this.editing = false;
 
-    if (this.wrapper.find('.mdc-rich-text-editor').length)
-      this.editor = new MDCRichTextEditor(this.wrapper.find('.mdc-rich-text-editor')[0], this.wrapper.find('.mdc-inline-editable__preview'));
+    if (this.wrapper.find('.mdc-rich-text-editor').length) {
+      this.editor = new MDCRichTextEditor(this.wrapper.find('.mdc-rich-text-editor')[0]);
+    }
 
     let self = this;
+
+    if (!this.editor) {
+      this.wrapper.find('.mdc-inline-editable__input').hide();
+      this.wrapper.find('.mdc-inline-editable__input').keypress(function(e) {
+        let keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+          self.toggleMode(e);
+        }
+      });
+    }
 
     this.wrapper.find('.mdc-inline-editable__toggle, .mdc-inline-editable__actions .edit-button').click(function(e) {
       self.toggleMode();
@@ -544,38 +555,62 @@ class MDCInlineEdit {
     this.wrapper.find('.mdc-inline-editable__toggle').toggleClass('mdc-button--active');
     let self = this;
 
-    let isEmpty = $(this.target)
-                  .find('.mdc-inline-editable__input .mdc-rich-text-editor .ql-editor')
-                  .hasClass('ql-blank');
+    if (this.editor) {
+      let isEmpty = $(this.target)
+                    .find('.mdc-inline-editable__input .mdc-rich-text-editor .ql-editor')
+                    .hasClass('ql-blank');
 
-    if (isEmpty) {
-      $(this.target).addClass('no-content');
-      $(this.target).toggle();
+      if (isEmpty) {
+        $(this.target).addClass('no-content');
+        $(this.target).toggle();
+      } else {
+        $(this.target).removeClass('no-content');
+      }
+
+      if (this.editing) {
+        this.editor.enable();
+      } else {
+        this.editor.disable();
+      }
     } else {
-      $(this.target).removeClass('no-content');
+      this.wrapper.find('.mdc-inline-editable__preview, .mdc-inline-editable__input').toggle();
+
+      if (this.editing) {
+        let value = this.wrapper.find('.mdc-inline-editable__preview').text();
+        this.wrapper.find('.mdc-inline-editable__input').val(value);
+        this.wrapper.find('.mdc-inline-editable__input').focus();
+      } else {
+        let newValue = this.wrapper.find('.mdc-inline-editable__input').val();
+        this.wrapper.find('.mdc-inline-editable__preview').text(newValue);
+      }
     }
 
     if (this.editing) {
       $(document).on('mousedown', self, MDCInlineEdit.handleDocumentMouseup);
-      this.editor.enable();
     } else {
       $(document).off('mousedown', MDCInlineEdit.handleDocumentMouseup);
-      this.editor.disable();
+      if (this.wrapper.attr('data-edit-callback')) {
+        let handlerFn = this.wrapper.attr('data-edit-callback');
+        window[handlerFn](this.wrapper);
+      }
     }
+
   }
 
   static handleDocumentMouseup(e) {
     let self = e.data;
-    if ($(e.target).closest('.mdc-inline-editable__wrapper').length === 0) {
+    if ($(e.target).closest('.mdc-inline-editable__wrapper--edit-mode').length === 0) {
       self.toggleMode();
     }
+/*    if (!$('.mdc-inline-editable__wrapper--edit-mode').has($(e.target))) {
+      self.toggleMode();
+    }*/
   }
 }
 
 class MDCRichTextEditor {
-  constructor(editor, content) {
+  constructor(editor) {
     this.editor = $(editor);
-    this.content = content;
 
     var LinkBlot = Quill.import('formats/link');
     LinkBlot.sanitize = function(url) {

@@ -418,6 +418,10 @@ textarea.mdc-text-field__input {
           align-items: center;
 }
 
+.mdc-header__editable-title.mdc-inline-editable__wrapper input.mdc-inline-editable__input {
+  border-color: var(--mdc-theme-surface);
+}
+
 .mdc-header__editable-title .mdc-button:not(:first-child) {
   margin-left: 12px;
 }

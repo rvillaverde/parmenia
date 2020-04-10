@@ -76,6 +76,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: var(--mdc-theme-gray__700);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,12 +114,6 @@ body:not([data-role="alumno"]) .mdc-drawer .mdc-list-item a {
   .mdc-drawer {
     display: none;
   }
-}
-
-.mdc-drawer .mdc-list-item .mdc-inline-editable__input {
-  border-bottom: 1px solid var(--mdc-theme-primary__200);
-  margin-right: 8px;
-  min-width: 60px;
 }
 
 .mdc-drawer .mdc-list-item .mdc-icon + .mdc-list-item__text {
@@ -239,7 +234,7 @@ body[data-role="admin"] .mdc-drawer.agenda .mdc-drawer__content-item .mdc-list-i
   }
 }
 
-.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded) .mdc-list-item__text {
+.mdc-drawer.agenda :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded) .mdc-list-item__text {
   font-weight: normal;
 }
 

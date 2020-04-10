@@ -204,32 +204,6 @@ function onGrab(e) {
 
 function newDrawerSectionHandler(element) {
   /* aca estaria bueno que desde el backend venga un numero para usar como id y asegurarse que sea unico */
-  function updateSectionName(e) {
-    let listItem = $(e.currentTarget).closest('.mdc-list-item');
-
-    let oldValue = listItem.attr('data-section');
-    let index = listItem.attr('data-section').split('-').pop();
-
-    let newName = listItem.find('.mdc-inline-editable__input').val();
-    let normalizedName = newName.toLowerCase().split(' ').join('-')
-                        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-                        .replace("'", "").replace('"', '');
-    let newId = `${ encodeURI(normalizedName) }-${ index }`;
-
-    listItem.find('a .mdc-list-item__text').text(newName);
-    listItem.attr('data-section', newId);
-    listItem.find('a').attr('href', `#${ newId }`);
-    $(`#${ oldValue }`).find('.headline-wrapper :header').text(newName);
-    $(`#${ oldValue }`).attr('id', newId);
-  }
-
-  function toggleEditMode(e) {
-    let listItem = $(e.currentTarget).closest('.mdc-list-item');
-    listItem.find('.mdc-inline-editable__toggle').toggleClass('mdc-button--active');
-    listItem.find('a, .mdc-inline-editable__input').toggle();
-    updateSectionName(e);
-  }
-
   let id = `nueva-seccion-${ $('.mdc-drawer .mdc-drawer__content .mdc-list-item').length + 1 }`;
   element.find('.mdc-list-item').attr('data-section', id);
   element.find('.mdc-list-item a').attr('href', `#${ id }`);
@@ -239,12 +213,27 @@ function newDrawerSectionHandler(element) {
     $(this).find('.mdc-icon').toggle();
     $(this).closest('.mdc-list-item').toggleClass('disabled-section');
   });
-  element.find('.mdc-inline-editable__input').hide();
-  element.find('.mdc-inline-editable__toggle').click(toggleEditMode);
-  element.find('.mdc-inline-editable__input').keypress(function(e) {
-    let keycode = (event.keyCode ? event.keyCode : event.which);
-    if (keycode == '13'){
-      toggleEditMode(e);
-    }
+
+  element.find('.mdc-inline-editable__wrapper').each(function(i, wrapper) {
+    new MDCInlineEdit($(wrapper));
   });
+}
+
+function updateSectionName(wrapper) {
+  let listItem = wrapper.closest('.mdc-list-item');
+
+  let oldValue = listItem.attr('data-section');
+  let index = listItem.attr('data-section').split('-').pop();
+
+  let newName = listItem.find('.mdc-inline-editable__input').val();
+  let normalizedName = newName.toLowerCase().split(' ').join('-')
+                      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                      .replace("'", "").replace('"', '');
+  let newId = `${ encodeURI(normalizedName) }-${ index }`;
+
+  listItem.find('a .mdc-list-item__text').text(newName);
+  listItem.attr('data-section', newId);
+  listItem.find('a').attr('href', `#${ newId }`);
+  $(`#${ oldValue }`).find('.headline-wrapper :header').text(newName);
+  $(`#${ oldValue }`).attr('id', newId);
 }
