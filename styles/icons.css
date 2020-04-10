@@ -64,6 +64,10 @@
   background-image: url("../icons/dropdown-icon.svg");
 }
 
+.dropdown-icon {
+  background-image: url("../icons/dropdown-icon.svg");
+}
+
 .info-icon-small {
   background-image: url("../icons/info-icon-small.svg");
   margin-left: 8px;

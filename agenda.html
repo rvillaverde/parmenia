@@ -322,13 +322,9 @@
 
                     <div class="date-picker__wrapper">
                       <span for="date-picker-01" class="mdc-typography--headline6">Fecha</span>
-                      <button type="button" class="mdc-button date-picker--button" id="date-piker-01">
+                      <button type="button" class="mdc-button date-picker--button" id="date-picker-01">
                         <span class="mdc-button__label mdc-typography--body1">Seleccionar fecha</span>
-                        <i class="mdc-icon">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </i>
+                        <i class="mdc-icon dropdown-icon"></i>
                       </button>
                       <span class="picker-output"></span>
                     </div>
@@ -347,7 +343,7 @@
                       </div>
                       <div class="mdc-form-field">
                         <div class="mdc-radio">
-                          <input class="mdc-radio__native-control" type="radio" id="horario-definido" name="horario" value="definido">
+                          <input class="mdc-radio__native-control" type="radio" id="horario-definido" name="horario" value="definido" data-dynamic-cta-target="#time-pickers">
                           <div class="mdc-radio__background">
                             <div class="mdc-radio__outer-circle"></div>
                             <div class="mdc-radio__inner-circle"></div>
@@ -355,6 +351,36 @@
                           <div class="mdc-radio__ripple"></div>
                         </div>
                         <label class="mdc-typography--body1" for="horario-definido">Horario definido</label>
+
+                        <div class="time-pickers initially-hidden" id="time-pickers">
+                          <div class="time-picker__wrapper from">
+                            <input type="hidden" name="horario-desde">
+                            <span for="time-picker-01" class="mdc-typography--headline6">De</span>
+                            <button type="button" class="mdc-button time-picker--button" id="time-picker-01">
+                              <span class="mdc-button__label mdc-typography--body1">Seleccionar horario</span>
+                              <i class="mdc-icon dropdown-icon"></i>
+                            </button>
+                            <span class="picker-output"></span>
+
+                            <div class="mdc-menu mdc-menu-surface" role="listbox">
+                              <ul class="mdc-list" role="menu"></ul>
+                            </div>
+                          </div>
+
+                          <div class="time-picker__wrapper to">
+                            <input type="hidden" name="horario-hasta">
+                            <span for="time-picker-02" class="mdc-typography--headline6">a</span>
+                            <button type="button" class="mdc-button time-picker--button" id="time-picker-02">
+                              <span class="mdc-button__label mdc-typography--body1">Seleccionar horario</span>
+                              <i class="mdc-icon dropdown-icon"></i>
+                            </button>
+                            <span class="picker-output"></span>
+
+                            <div class="mdc-menu mdc-menu-surface" role="listbox">
+                              <ul class="mdc-list" role="menu"></ul>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -380,7 +406,7 @@
 
                       <div class="mdc-form-field">
                         <div class="mdc-radio">
-                          <input class="mdc-radio__native-control" type="radio" id="agendas-aulas" name="agendas" value="aulas">
+                          <input class="mdc-radio__native-control" type="radio" id="agendas-aulas" name="agendas" value="aulas" data-dynamic-cta-target="#aula-selection">
                           <div class="mdc-radio__background">
                             <div class="mdc-radio__outer-circle"></div>
                             <div class="mdc-radio__inner-circle"></div>
@@ -388,6 +414,11 @@
                           <div class="mdc-radio__ripple"></div>
                         </div>
                         <label class="mdc-typography--body1" for="agendas-aulas">Aulas</label>
+                      </div>
+                    </div>
+
+                    <div class="selection__wrapper initially-hidden" id="aula-selection">
+                      <div class="mdc-chip-set mdc-chip-set--input no-content" role="grid">
                       </div>
 
                       <div class="no-content-placeholder">

@@ -278,3 +278,11 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
 .mdc-drawer.agenda .mdc-select--outlined .mdc-select__selected-text {
   min-width: unset;
 }
+
+.time-picker__wrapper .mdc-menu {
+  margin-top: 36px;
+}
+
+body:not(.nav-menu-open) .time-picker__wrapper .mdc-menu .mdc-list .mdc-list-item {
+  min-width: unset;
+}

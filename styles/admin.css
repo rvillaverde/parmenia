@@ -108,6 +108,7 @@
 .mdc-form-field {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .admin-form__actions {

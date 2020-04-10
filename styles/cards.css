@@ -704,8 +704,9 @@
   border-bottom: 0;
 }
 
+.devolucion-card__reply-wrapper .mdc-card__primary,
 .foro-discusion-card.mdc-card--large .mdc-card--outlined {
-  cursor: default;
+  cursor: auto;
 }
 
 .foro-discusion-card.mdc-card--large .foro-discusion-card__reply-wrapper:not(:last-child) {

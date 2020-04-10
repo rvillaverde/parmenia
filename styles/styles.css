@@ -50,6 +50,22 @@
   cursor: grabbing;
 }
 
+::-webkit-scrollbar {
+  background: transparent;
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: var(--mdc-theme-primary__100);
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  min-height: 40px;
+}
+
 body[data-role="admin"] *[data-role]:not([data-role*="admin"]) {
   display: none;
 }
@@ -1137,4 +1153,23 @@ tr.sortable-placeholder:last-child {
 
 .mp-picker .mp-picker-choose [class*="mp-picker-click"].active {
   color: var(--mdc-theme-surface);
+}
+
+.time-picker__wrapper {
+  position: relative;
+}
+
+.time-pickers:not(.initially-hidden) {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 540px) {
+  .time-pickers {
+    padding-left: 44px;
+  }
+}
+
+.time-pickers .time-picker__wrapper:not(:first-child) {
+  margin-left: 12px;
 }

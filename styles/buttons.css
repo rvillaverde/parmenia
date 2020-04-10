@@ -284,11 +284,17 @@
   display: none;
 }
 
-.mdc-button:not(:disabled).date-picker--button .mdc-button__label {
+.mdc-button:not(:disabled).time-picker--button,
+.mdc-button:not(:disabled).date-picker--button {
   border-bottom: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 0;
+  margin: 0 8px;
+  min-height: 28px;
+  padding: 0;
   text-transform: none;
 }
 
+.mdc-button:not(:disabled).time-picker--button .mdc-button__label + .mdc-icon,
 .mdc-button:not(:disabled).date-picker--button .mdc-button__label + .mdc-icon {
   margin-left: 12px;
 }
@@ -308,4 +314,9 @@
 
 .mdc-button--eye-toggle .eye-off-icon {
   display: none;
+}
+
+.date-picker--button .mdc-button__label,
+.time-picker--button .mdc-button__label {
+  font-weight: 500;
 }

@@ -375,6 +375,64 @@ class MDCSortable {
   }
 }
 
+class TimePicker {
+  constructor(wrapper) {
+    this.wrapper = $(wrapper);
+    this.generateHours();
+    this.handleSelection(this.wrapper.find('.mdc-list-item--selected'));
+    this.initMenu();
+  }
+
+  initMenu() {
+    let self = this;
+
+    this.mdcMenu = mdc.menu.MDCMenu.attachTo(this.wrapper.find('.mdc-menu')[0]);
+    listenToMDCMenuEvents(this.mdcMenu);
+    this.mdcMenu.listen('MDCMenu:selected', function(e) {
+      self.handleSelection($(e.detail.item));
+    });
+    this.wrapper.find('.time-picker--button').click(function(e) {
+      self.handleClick();
+    });
+  }
+
+  generateHours(from = 0, to = 24) {
+    let self = this;
+    let nextTime = this.getNextTime();
+    for (var hour = from; hour < to; hour++) {
+      [0, 15, 30, 45].forEach(function(minute) {
+        let id = `${ ('0' + hour).slice(-2) }${ ('0' + minute).slice(-2) }`;
+        let label = `${ ('0' + hour).slice(-2) }:${ ('0' + minute).slice(-2) }`;
+        let item = $(TimePicker.itemHTML.replace('%id%', id).replace('%label%', label));
+        if (id == nextTime) {
+          item.addClass('mdc-list-item--selected');
+          item.attr('aria-selected', true);
+        }
+        self.wrapper.find('.mdc-list').append(item);
+      });
+    }
+  }
+
+  getNextTime() {
+    let delta = this.wrapper.hasClass('from') ? 1 : 2;
+    let hours = new Date().getHours() + delta;
+    return `${ ('0' + (hours % 24)).slice(-2) }00`; 
+  }
+
+  handleClick() {
+    this.mdcMenu.open = true;
+  }
+
+  handleSelection(selected) {
+    this.wrapper.find('.time-picker--button .mdc-button__label').text(selected.find('span').text().trim());
+    this.wrapper.find('input[type=hidden]').val(selected.attr('data-value'));
+  }
+}
+
+TimePicker.itemHTML = `<li class="mdc-list-item" data-value="%id%" role="option">
+                        <span class="mdc-typography--body2">%label%</span>
+                      </li>`;
+
 class DatePicker {
   constructor(datePicker) {
     this.datePicker = datePicker;
@@ -691,14 +749,11 @@ class MDCFilterChipset {
     })
   }
 }
-
+/*
 function openMenu(menu) {
   menu.open = true;
-}
+}*/
 
-function updateTableCounter(table, counter) {
-  counter.find('#quantity').text(table.getSelectedRowIds().length);
-}
 
 var mdcDrawer = $('.mdc-drawer');
 mdcDrawer.find('.mdc-button--eye-toggle').click(function(e) {
@@ -745,6 +800,10 @@ for (var i = 0, switchControl; switchControl = switchControls[i]; i++) {
   mdc.switchControl.MDCSwitch.attachTo(switchControl);
 }
 
+function updateTableCounter(table, counter) {
+  counter.find('#quantity').text(table.getSelectedRowIds().length);
+}
+
 var dataTables = $('.mdc-data-table');
 for (var i = 0, dataTable; dataTable = dataTables[i]; i++) {
   var table = mdc.dataTable.MDCDataTable.attachTo(dataTable);
@@ -773,7 +832,7 @@ for (var i = 0, select; select = selects[i]; i++) {
   new CheckBoxMenuSelect(select);
 }
 
-var menus = $('.mdc-menu').not('.mdc-select .mdc-menu');
+var menus = $('.mdc-menu').not('.mdc-select .mdc-menu').not('.time-picker__wrapper .mdc-menu');
 for (var i = 0, menu; menu = menus[i]; i++) {
   var mdcMenu = mdc.menu.MDCMenu.attachTo(menu);
   listenToMDCMenuEvents(mdcMenu);
@@ -794,6 +853,11 @@ var checkBoxLists = $('.mdc-list.mdc-checkbox-list:not(.mdc-list--nested):not(.m
 for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
   var mdcList = mdc.list.MDCList.attachTo(checkBoxList);
   mdcList.singleSelection = false;
+}
+
+var timePickers = $('.time-picker__wrapper');
+for (var i = 0, timePicker; timePicker = timePickers[i]; i++) {
+  new TimePicker(timePicker);
 }
 
 var datePickers = $('.date-picker--button');
