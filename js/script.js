@@ -40,10 +40,21 @@ $(function() {
     $(this).closest(`.global-notification__wrapper`).removeClass('visible');
   });
 
-  $('#notificaciones-menu-toggle input').change(hanldeNotificationsToggle);
+  $('#notificaciones-menu-toggle input').change(handleNotificationsToggle);
+  $('.toggle-password-visibility').click(togglePasswordVisibility)
 });
 
-function hanldeNotificationsToggle(e) {
+function togglePasswordVisibility(e) {
+  let input = $(e.currentTarget).closest('.mdc-text-field').find('input');
+  $(this).toggleClass('eye-off-icon eye-on-icon');
+  if (input.attr('type') === 'text') {
+    input.attr('type', 'password');
+  } else {
+    input.attr('type', 'text');
+  }
+}
+
+function handleNotificationsToggle(e) {
   if ($(this).prop('checked')) {
     $(document).on('click', handleDocumentClick);
   } else {
@@ -108,7 +119,6 @@ function onScroll() {
 }
 
 function updateDrawer() {
-  console.log($('.mdc-drawer .mdc-list-item a[href^="#"]'));
   if ($('.mdc-drawer a[href^="#"]').length === 0) {
     return;
   }

@@ -17,6 +17,10 @@
   background-size: auto;
 }
 
+.mdc-icon:focus {
+  outline: none;
+}
+
 .mdc-icon.large {
   height: 44px;
   width: 44px;

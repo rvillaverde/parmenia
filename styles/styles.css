@@ -940,7 +940,7 @@ input[type=file] {
   display: none;
 }
 
-.no-content {
+.no-content:not(.headline-wrapper--text) {
   display: none;
 }
 

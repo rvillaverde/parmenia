@@ -441,6 +441,14 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
   }
 }
 
+.mdc-top-app-bar__section .mdc-top-app-bar__action-item .mdc-menu {
+  max-height: 244px
+}
+
+.mdc-top-app-bar__section .mdc-top-app-bar__action-item#notificaciones-menu-toggle .mdc-menu {
+  max-height: 400px
+}
+
 .top-nav {
   background-color: white;
   margin-top: calc(var(--top-nav-height) * -1);

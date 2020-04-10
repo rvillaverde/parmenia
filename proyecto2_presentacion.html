@@ -230,7 +230,7 @@
       </div>
     </nav>
 
-    <header class="mdc-header mdc-header__project" style="background-color: var(--mdc-theme-custom__01);">
+    <header class="mdc-header mdc-header__project" style="background-color: var(--mdc-theme-custom__08);">
       <div class="mdc-header__row">
         <div class="mdc-header__cover">
           <img src="img/project-cover.png">
@@ -574,11 +574,11 @@
 
       <div class="mdc-drawer__actions" data-role="admin,docente">
         <div class="inline-append__clone-element" id="new-section">
-          <li class="mdc-list-item mdc-inline-editable__wrapper" data-section="nueva-seccion" data-clone-target=".mdc-drawer .mdc-drawer__content .mdc-list">
+          <li class="mdc-list-item mdc-inline-editable__wrapper" data-section="nueva-seccion" data-clone-target=".mdc-drawer .mdc-drawer__content .mdc-list" data-edit-callback="updateSectionName">
             <a href="#nueva-seccion" aria-current="page">
-              <span class="mdc-list-item__text mdc-typography--headline6">Nueva sección</span>
+              <span class="mdc-list-item__text mdc-typography--headline6 mdc-inline-editable__preview">Nueva sección</span>
             </a>
-            <input type="text" class="mdc-inline-editable__input mdc-typography--headline6" value="Nueva sección">
+            <input type="text" class="mdc-inline-editable__input mdc-typography--headline6">
             <button class="mdc-button mdc-icon-button mdc-inline-editable__toggle" data-mdc-tooltip="Editar" data-role="admin,docente">
               <i class="mdc-icon edit-icon"></i>
             </button>
@@ -591,7 +591,7 @@
           <section id="nueva-seccion" class="mdc-inline-editable__wrapper" data-clone-target=".main-wrapper" data-editable-target=".section-content">
             <div class="headline-wrapper">
               <h4 class="mdc-typography--headline4">Nueva sección</h4>
-              <div class="headline-wrapper__actions">
+              <div class="headline-wrapper__actions" data-role="admin,docente">
                 <button class="mdc-button mdc-button--raised mdc-inline-editable__toggle">
                   <span class="mdc-button__label">Editar contenido</span>
                 </button>
@@ -607,8 +607,8 @@
                   <div class="mdc-rich-text-editor"></div>
                 </div>
               </div>
-              <div class="mdc-inline-editable__actions">
-                <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined edit-button">
+              <div class="mdc-inline-editable__actions" data-role="admin,docente">
+                <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined edit-button" data-mdc-tooltip="Editar">
                   <i class="mdc-icon small edit-icon-small-white"></i>
                 </button>
               </div>

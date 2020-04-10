@@ -162,6 +162,9 @@
 }
 
 @media (min-width: 600px) and (max-width: 840px) {
+  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-0-tablet {
+    display: none;
+  }
   .main-wrapper > .cards.mdc-layout-grid:not(.noticias-layout) .mdc-layout-grid__cell--span-9-desktop:not(.noticia-card),
   .main-wrapper > .cards.mdc-layout-grid:not(.noticias-layout) .mdc-layout-grid__cell--span-3-desktop:not(.noticia-card) {
     -ms-grid-column-span: 8;

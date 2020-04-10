@@ -5,7 +5,7 @@ for (var i = 0, button; button = buttons[i]; i++) {
 */
 
 function listenToMDCMenuEvents(mdcMenu) {
-    mdcMenu.listen('MDCMenuSurface:opened', function(e) {
+  mdcMenu.listen('MDCMenuSurface:opened', function(e) {
     $(this).css('max-height', 192);
   });
 }

@@ -18,6 +18,10 @@
     <script src="offline/material-components-web.min.js"></script>
     <script src="offline/jquery-3.4.1.min.js"></script> -->
 
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.css">
+    <script type="text/javascript" src="https://cdn.rawgit.com/FreddyFY/material-datepicker/1.0.9/dist/material-datepicker.js"></script>
+
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link rel="stylesheet" href="styles/theme.css">
@@ -226,7 +230,7 @@
       </div>
     </nav>
 
-    <header class="mdc-header mdc-header__project" style="background-color: var(--mdc-theme-custom__01);">
+    <header class="mdc-header mdc-header__project" style="background-color: var(--mdc-theme-custom__08);">
       <div class="mdc-header__row">
         <div class="mdc-header__cover">
           <img src="img/project-cover.png">
@@ -536,8 +540,125 @@
       <div class="mdc-dialog__scrim"></div>
     </div>
 
+    <div id="crear-actividad" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Nueva actividad
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="crear-actividad__form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Tipo de tarea</h4>
+                    <div class="mdc-radio-button__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-parmenia" name="tipo" value="parmenia">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-parmenia">Actividad Parmenia</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-archivo" name="tipo" value="archivo">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-archivo">Carga de archivo</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-customizada" name="tipo" value="customizada">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-customizada">Actividad customizada</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-redaccion" name="tipo" value="redaccion">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-redaccion">Redacción</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Formato</h4>
+                    <div class="mdc-radio-button__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="formato-individual" name="formato" value="individual">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="formato-individual">Individual</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="formato-grupal" name="formato" value="grupal">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="formato-grupal">Grupal</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-actividad__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
     <main class="main-wrapper admin-wrapper">
-      <div class="headline-wrapper headline-wrapper--text">
+      <div class="headline-wrapper headline-wrapper--text no-content">
         <div class="text-wrapper">
           <h4 class="mdc-typography--headline4">
             La sección “Mi Aprendizaje” está destinada a una única actividad de cierre que permita a los alumnos expresar aquellas conclusiones, saberes y enseñanzas adquiridos a lo largo del proyecto. 
@@ -549,7 +670,7 @@
           </p>
         </div>
         <div class="headline-wrapper__actions">
-          <button class="mdc-button mdc-button--raised" onclick="openDialog('nuevo-anuncio-01');">
+          <button class="mdc-button mdc-button--raised" onclick="openDialog('crear-actividad');">
             <span class="mdc-button__ripple"></span>
             <span class="mdc-button__label">Crear actividad</span>
           </button>
