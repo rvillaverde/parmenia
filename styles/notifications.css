@@ -1,0 +1,51 @@
+.global-notification__wrapper {
+  transition: top .3s cubic-bezier(.46,.31,.12,.87);
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  min-height: 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 18px;
+  top: -96px;
+  width: 100%;
+}
+
+.global-notification__wrapper.visible {
+  top: 0;
+}
+
+.global-notification__wrapper > .mdc-icon:first-child {
+  margin-right: 18px;
+}
+
+.global-notification__wrapper.success {
+  background-color: var(--mdc-theme-progress__02);
+}
+
+.global-notification__wrapper.info {
+  background-color: var(--mdc-theme-secondary);
+}
+
+.global-notification__wrapper.warning {
+  background-color: var(--mdc-theme-progress__01);
+}
+
+.global-notification__wrapper.error {
+  background-color: var(--mdc-theme-error);
+}
+
+.global-notification__message {
+  color: var(--mdc-theme-surface);
+  flex-grow: 1;
+}
+
+.global-notification__wrapper .mdc-icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.global-notification__wrapper .dismiss-button {
+  margin-left: auto;
+}

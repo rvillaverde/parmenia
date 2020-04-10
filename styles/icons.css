@@ -65,6 +65,14 @@
   margin-left: 8px;
 }
 
+.info-icon-white {
+  background-image: url("../icons/info-icon-white.svg");
+}
+
+.check-circle-icon-white {
+  background-image: url("../icons/info-icon-white.svg");
+}
+
 .drag-icon-small {
   background-image: url("../icons/drag-icon-small.svg");
 }
@@ -123,6 +131,10 @@
 
 .chip-cross-icon {
   background-image: url("../icons/chip-cross-icon.svg");
+}
+
+.cross-icon-white {
+  background-image: url("../icons/cross-icon-white.svg");
 }
 
 .nav-aulas-icon {

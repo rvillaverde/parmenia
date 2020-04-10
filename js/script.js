@@ -33,7 +33,16 @@ $(function() {
   $('.user-roles-wrapper').mousedown(onGrab);
   $('.collapse-link input').change(collapse);
   $('.mdc-top-app-bar__section#nav-menu-toggle input[type="checkbox"]').click(toggleNavMenu);
+
+  $(`.global-notification__wrapper`).find('.dismiss-button').click(function() {
+    $(this).closest(`.global-notification__wrapper`).removeClass('visible');
+  });
 });
+
+function showGlobalNotification(type) {
+  $(`.global-notification__wrapper.${ type }`).addClass('visible');
+  setTimeout(function(){ $(`.global-notification__wrapper.${ type }`).removeClass('visible') }, 3000);
+}
 
 function initDynamicCTAs() {
   $('[data-dynamic-cta-target]').change(function(e, detail) {

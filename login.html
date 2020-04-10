@@ -25,9 +25,47 @@
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/notifications.css">
   </head>
 
   <body class="login-container mdc-typography">
+    <div class="global-notification__wrapper success">
+      <i class="mdc-icon check-circle-icon-white"></i>
+      <h4 class="global-notification__message mdc-typography--headline4">
+        Excelente. ¡Tu actividad ha sido entregada con éxito!
+      </h4>
+      <button class="mdc-button mdc-icon-button dismiss-button">
+        <i class="mdc-icon cross-icon-white"></i>
+      </button>
+    </div>
+    <div class="global-notification__wrapper info">
+      <i class="mdc-icon info-icon-white"></i>
+      <h4 class="global-notification__message mdc-typography--headline4">
+        La conexión a internet ya funciona normalmente
+      </h4>
+      <button class="mdc-button mdc-icon-button dismiss-button">
+        <i class="mdc-icon cross-icon-white"></i>
+      </button>
+    </div>
+    <div class="global-notification__wrapper warning">
+      <i class="mdc-icon info-icon-white"></i>
+      <h4 class="global-notification__message mdc-typography--headline4">
+        Advertencia. Registramos problemas de conexión a internet
+      </h4>
+      <button class="mdc-button mdc-icon-button dismiss-button">
+        <i class="mdc-icon cross-icon-white"></i>
+      </button>
+    </div>
+    <div class="global-notification__wrapper error">
+      <i class="mdc-icon info-icon-white"></i>
+      <h4 class="global-notification__message mdc-typography--headline4">
+        Error. Hubo un problema en la carga de datos. Probá nuevamente en un momento
+      </h4>
+      <button class="mdc-button mdc-icon-button dismiss-button">
+        <i class="mdc-icon cross-icon-white"></i>
+      </button>
+    </div>
+
     <main class="login-wrapper">
       <div class="login-school-info">
         <div class="school-avatar login" style="background-image:url('img/placeholder.png')"></div>
@@ -91,4 +129,5 @@
   </body>
 
   <script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
 </html>
