@@ -594,17 +594,13 @@ class MDCInlineEdit {
         window[handlerFn](this.wrapper);
       }
     }
-
   }
 
   static handleDocumentMouseup(e) {
     let self = e.data;
-    if ($(e.target).closest('.mdc-inline-editable__wrapper--edit-mode').length === 0) {
+    if (self.wrapper.find($(e.target)).length === 0) {
       self.toggleMode();
     }
-/*    if (!$('.mdc-inline-editable__wrapper--edit-mode').has($(e.target))) {
-      self.toggleMode();
-    }*/
   }
 }
 

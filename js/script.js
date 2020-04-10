@@ -37,7 +37,23 @@ $(function() {
   $(`.global-notification__wrapper`).find('.dismiss-button').click(function() {
     $(this).closest(`.global-notification__wrapper`).removeClass('visible');
   });
+
+  $('#notificaciones-menu-toggle input').change(function(e) {
+    if ($(this).prop('checked')) {
+      $(document).on('click', handleDocumentClick);
+    } else {
+      $(document).off('click', handleDocumentClick);
+    }
+  });
 });
+
+function handleDocumentClick(e) {
+  if ($('#notificaciones-menu-toggle').find($(e.target)).length === 0) {
+    let input = $('#notificaciones-menu-toggle input');
+    input.prop('checked', !input.prop('checked'));
+    input.trigger('change');
+  }
+}
 
 function showGlobalNotification(type) {
   $(`.global-notification__wrapper.${ type }`).addClass('visible');

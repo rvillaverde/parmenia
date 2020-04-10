@@ -173,6 +173,14 @@
   background-image: url("../icons/nav-chevron-icon.svg");
 }
 
+.nav-notificacion-foro-icon {
+  background-image: url("../icons/nav-notificacion-foro-icon.svg");
+}
+
+.nav-notificacion-aula-icon {
+  background-image: url("../icons/nav-notificacion-aula-icon.svg");
+}
+
 .chevron-left-icon {
   background-image: url("../icons/chevron-left-icon.svg");
 }

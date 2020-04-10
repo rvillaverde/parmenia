@@ -112,7 +112,7 @@
               </a>
             </li>
 
-            <li class="mdc-top-app-bar__action-item mdc-menu--click mdc-top-app-bar__action-item--active">
+            <li class="mdc-top-app-bar__action-item mdc-menu--click" id="notificaciones-menu-toggle">
               <a class="mdc-button mdc-button--app-bar" aria-label="Notificaciones">
                 <i class="mdc-icon nav-notificaciones-icon"></i>
                 <span class="mdc-button__label mdc-typography--headline6">Notificaciones</span>
@@ -121,7 +121,7 @@
               <div class="mdc-menu mdc-menu-surface mdc-menu--edge">
                 <ul class="mdc-list notifications" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
                   <li class="notification__wrapper">
-                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-foro-icon.svg');"></i>
+                    <i class="mdc-icon notification__icon nav-notificacion-foro-icon" style="background-color: var(--mdc-theme-custom__03);"></i>
                     <div class="notification">
                       <div class="notification__title mdc-typography--subtitle1">Nuevo mensaje</div>
                       <div class="notification__date mdc-typography--caption">Hace 11 min</div>
@@ -132,7 +132,7 @@
                   </li>
 
                   <li class="notification__wrapper">
-                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-aula-icon.svg');"></i>
+                    <i class="mdc-icon notification__icon nav-notificacion-aula-icon" style="background-color: var(--mdc-theme-custom__12);"></i>
                     <div class="notification">
                       <div class="notification__title mdc-typography--subtitle1">Nueva actividad</div>
                       <div class="notification__date mdc-typography--caption">Hace 2 días</div>
@@ -143,7 +143,7 @@
                   </li>
 
                   <li class="notification__wrapper">
-                    <i class="mdc-icon notification__icon" style="background-image: url('icons/nav-notificacion-aula-icon.svg');"></i>
+                    <i class="mdc-icon notification__icon nav-notificacion-aula-icon" style="background-color: var(--mdc-theme-custom__08);"></i>
                     <div class="notification">
                       <div class="notification__title mdc-typography--subtitle1">Entrega Vencida</div>
                       <div class="notification__date mdc-typography--caption">Hace 3 días</div>
@@ -237,11 +237,7 @@
       <!-- Notificaciones { -->
       <div class="mdc-card mdc-card--large notifications">
         <div class="notification__wrapper">
-          <i class="notification__icon">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.0662 12.1782C22.0697 13.5439 21.754 14.8911 21.1449 16.11C20.4226 17.5707 19.3122 18.7994 17.9381 19.6583C16.564 20.5172 14.9804 20.9724 13.3648 20.973C12.0136 20.9766 10.6808 20.6575 9.47472 20.0418L3.63965 22.0077L5.58467 16.11C4.9755 14.8911 4.65982 13.5439 4.66335 12.1782C4.66397 10.5453 5.1144 8.94471 5.96418 7.55586C6.81395 6.167 8.02952 5.0447 9.47472 4.31467C10.6808 3.69896 12.0136 3.37989 13.3648 3.38345H13.8766C16.0104 3.50243 18.0257 4.41271 19.5368 5.94001C21.0479 7.4673 21.9485 9.50427 22.0662 11.6609V12.1782Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </i>
+          <i class="mdc-icon notification__icon nav-notificacion-foro-icon" style="background-color: var(--mdc-theme-custom__03);"></i>
           <div class="notification">
             <div class="notification__title mdc-typography--subtitle1">Nuevo mensaje</div>
             <div class="notification__date mdc-typography--caption">Hace 11 min</div>
@@ -252,18 +248,7 @@
         </div>
 
         <div class="notification__wrapper">
-          <i class="notification__icon">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.7378 20.9523L18.6837 23.5969" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M7.96787 20.9523L7.02197 23.5969" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M23.105 5.46375H2.60107V20.9509H23.105V5.46375Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M23.7725 4.56981C23.7725 5.06369 23.3739 5.46377 22.8812 5.46377H2.82489C2.33215 5.46377 1.93359 5.06369 1.93359 4.56981V3.37785C1.93359 2.88396 2.33215 2.48389 2.82489 2.48389H22.8812C23.3739 2.48389 23.7725 2.88396 23.7725 3.37785V4.56981Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 9.53772H18.2937" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 13.2102H20.0012" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 16.8826H18.2937" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M7.60755 13.6447C8.65838 13.6447 9.51026 12.7837 9.51026 11.7216C9.51026 10.6595 8.65838 9.79846 7.60755 9.79846C6.55671 9.79846 5.70483 10.6595 5.70483 11.7216C5.70483 12.7837 6.55671 13.6447 7.60755 13.6447Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </i>
+          <i class="mdc-icon notification__icon nav-notificacion-aula-icon" style="background-color: var(--mdc-theme-custom__12);"></i>
           <div class="notification">
             <div class="notification__title mdc-typography--subtitle1">Nueva actividad</div>
             <div class="notification__date mdc-typography--caption">Hace 2 días</div>
@@ -274,18 +259,40 @@
         </div>
 
         <div class="notification__wrapper">
-          <i class="notification__icon">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.7378 20.9523L18.6837 23.5969" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M7.96787 20.9523L7.02197 23.5969" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M23.105 5.46375H2.60107V20.9509H23.105V5.46375Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M23.7725 4.56981C23.7725 5.06369 23.3739 5.46377 22.8812 5.46377H2.82489C2.33215 5.46377 1.93359 5.06369 1.93359 4.56981V3.37785C1.93359 2.88396 2.33215 2.48389 2.82489 2.48389H22.8812C23.3739 2.48389 23.7725 2.88396 23.7725 3.37785V4.56981Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 9.53772H18.2937" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 13.2102H20.0012" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M12.5132 16.8826H18.2937" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M7.60755 13.6447C8.65838 13.6447 9.51026 12.7837 9.51026 11.7216C9.51026 10.6595 8.65838 9.79846 7.60755 9.79846C6.55671 9.79846 5.70483 10.6595 5.70483 11.7216C5.70483 12.7837 6.55671 13.6447 7.60755 13.6447Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </i>
+          <i class="mdc-icon notification__icon nav-notificacion-aula-icon" style="background-color: var(--mdc-theme-custom__08);"></i>
+          <div class="notification">
+            <div class="notification__title mdc-typography--subtitle1">Entrega Vencida</div>
+            <div class="notification__date mdc-typography--caption">Hace 3 días</div>
+            <div class="notification__text mdc-typography--body2">
+              Terminó el plazo para entregar la Actividad Clasificamos Especies del proyecto Visita a la Reserva.
+            </div>
+          </div>
+        </div>
+
+        <div class="notification__wrapper">
+          <i class="mdc-icon notification__icon nav-notificacion-foro-icon" style="background-color: var(--mdc-theme-custom__07);"></i>
+          <div class="notification">
+            <div class="notification__title mdc-typography--subtitle1">Nuevo mensaje</div>
+            <div class="notification__date mdc-typography--caption">Hace 11 min</div>
+            <div class="notification__text mdc-typography--body2">
+              Profesor X respondió tu mensaje en el foro de Visita al a Reserva Ecológica.
+            </div>
+          </div>
+        </div>
+
+        <div class="notification__wrapper">
+          <i class="mdc-icon notification__icon nav-notificacion-aula-icon" style="background-color: var(--mdc-theme-custom__15);"></i>
+          <div class="notification">
+            <div class="notification__title mdc-typography--subtitle1">Nueva actividad</div>
+            <div class="notification__date mdc-typography--caption">Hace 2 días</div>
+            <div class="notification__text mdc-typography--body2">
+              Profesor X publicó una nueva actividad en Visita a la Reserva Ecológica.
+            </div>
+          </div>
+        </div>
+
+        <div class="notification__wrapper">
+          <i class="mdc-icon notification__icon nav-notificacion-aula-icon" style="background-color: var(--mdc-theme-custom__04);"></i>
           <div class="notification">
             <div class="notification__title mdc-typography--subtitle1">Entrega Vencida</div>
             <div class="notification__date mdc-typography--caption">Hace 3 días</div>
