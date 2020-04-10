@@ -22,6 +22,7 @@
 }
 
 .mdc-dialog .mdc-dialog__surface.mdc-dialog__surface--xl {
+  min-width: var(--dialog-xl-width);
   max-width: var(--dialog-xl-width);
 }
 

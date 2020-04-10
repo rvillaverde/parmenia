@@ -166,17 +166,17 @@ body:not([data-role="alumno"]) .mdc-drawer .mdc-list-item a {
   opacity: 0;
 }
 
-body:not(.nav-menu-open) .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:hover::before {
+body:not(.nav-menu-open) .mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--current:hover::before {
   opacity: 1;
 }
 
 /*:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:hover::before,*/
-.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before,
-.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated::before {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--current:not(.mdc-ripple-upgraded):focus::before,
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--current::before {
   opacity: 1;
 }
 
-.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded) .mdc-list-item__text {
+.mdc-drawer :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--current:not(.mdc-ripple-upgraded) .mdc-list-item__text {
   font-weight: bold;
 }
 

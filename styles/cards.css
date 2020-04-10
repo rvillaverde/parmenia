@@ -860,6 +860,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 @media (max-width: 640px) {
@@ -882,6 +883,30 @@
   min-width: 56%;
   max-width: calc(100% - 228px);
   padding-right: 24px;
+}
+
+.actividad-devolucion__wrapper > .fixed {
+  position: fixed;
+  margin: 0 20px;
+
+}
+
+.actividad-devolucion__wrapper > *:first-child.fixed {
+  left: 24px;
+  min-width: 510px;
+  max-width: calc(100% - 372px);
+}
+
+.actividad-devolucion__wrapper > *:first-child.fixed + *:not(.fixed) {
+  max-width: 372px;
+  min-width: 372px;
+  flex-grow: 1;
+  margin-left: auto;
+}
+
+.actividad-devolucion__wrapper > *:last-child.fixed {
+  right: 18px;
+  min-width: 218px;
 }
 
 @media (max-width: 640px) {
