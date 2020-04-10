@@ -108,23 +108,20 @@ function onScroll() {
 }
 
 function updateDrawer() {
-  if ($('.mdc-drawer .mdc-list-item.a[href^="#"]').length === 0) {
+  if ($('.mdc-drawer .mdc-list-item a[href^="#"]').length === 0) {
     return;
   }
 
   const scrollTop = $(this).scrollTop();
-  
-  let sections = $('.main-wrapper section');
+  const threshold = header.height();
   let sectionId;
-
-  let threshold = header.height();
 
   if (scrollTop < threshold) {
     $('.mdc-drawer .mdc-list-item').removeClass('mdc-list-item--current');
     $('.mdc-drawer .mdc-list-item:first-child').addClass('mdc-list-item--current');
   }
 
-  sections.each(function(i, section) {
+  $('.main-wrapper section').each(function(i, section) {
     let position = section.getBoundingClientRect();
     if (position.top < threshold && (position.top + position.height) >= threshold) {
       sectionId = $(section).attr('id');
