@@ -108,7 +108,8 @@ function onScroll() {
 }
 
 function updateDrawer() {
-  if ($('.mdc-drawer .mdc-list-item a[href^="#"]').length === 0) {
+  console.log($('.mdc-drawer .mdc-list-item a[href^="#"]'));
+  if ($('.mdc-drawer a[href^="#"]').length === 0) {
     return;
   }
 
