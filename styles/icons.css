@@ -201,6 +201,14 @@
   background-image: url("../icons/chevron-right-icon-secondary.svg");
 }
 
+.sort-up-icon {
+  background-image: url("../icons/sort-up-icon.svg");
+}
+
+.sort-down-icon {
+  background-image: url("../icons/sort-down-icon.svg");
+}
+
 .mochila-icon-small-white {
   background-image: url("../icons/mochila-icon-small-white.svg");
 }

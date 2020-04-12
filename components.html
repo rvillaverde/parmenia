@@ -1053,24 +1053,70 @@
         </button>
         <span class="picker-output"></span>
       </div>
-
-      <div class="mdc-chip-set mdc-chip-set--filter" role="grid">
-        <div class="mdc-chip" role="row">
-          <div class="mdc-chip__ripple"></div>
-          <i class="material-icons mdc-chip__icon mdc-chip__icon--leading">face</i>
-          <span class="mdc-chip__checkmark" >
-            <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
-              <path class="mdc-chip__checkmark-path" fill="none" stroke="black"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-            </svg>
-          </span>
-          <span role="gridcell">
-            <span role="checkbox" tabindex="0" aria-checked="false" class="mdc-chip__primary-action">
-              <span class="mdc-chip__text">Filterable content</span>
-            </span>
-          </span>
-        </div>
-      </div>
+<div class="mdc-data-table">
+  <table class="mdc-data-table__table" aria-label="Dessert calories">
+    <thead>
+      <tr>
+        <th
+          class="mdc-data-table__header-cell mdc-data-table__header-cell--with-sort"
+          role="columnheader"
+          scope="col"
+        >
+          <div class="mdc-data-table__header-cell-wrapper">
+            <div class="mdc-data-table__header-cell-label">
+              Dessert
+            </div>
+            <button class="mdc-icon-button material-icons mdc-data-table__sort-icon-button">arrow_upward</button>
+          </div>
+        </th>
+        <th
+          class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric mdc-data-table__header-cell--with-sort mdc-data-table__header-cell--sorted"
+          role="columnheader"
+          scope="col"
+          aria-sort="ascending"
+        >
+          <div class="mdc-data-table__header-cell-wrapper">
+            <button class="mdc-icon-button material-icons mdc-data-table__sort-icon-button">arrow_upward</button>
+            <div class="mdc-data-table__header-cell-label">
+              Carbs (g)
+            </div>
+          </div>
+        </th>
+        <th
+          class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric mdc-data-table__header-cell--with-sort"
+          role="columnheader"
+          scope="col"
+        >
+          <div class="mdc-data-table__header-cell-wrapper">
+            <button class="mdc-icon-button material-icons mdc-data-table__sort-icon-button">arrow_upward</button>
+            <div class="mdc-data-table__header-cell-label">
+              Protein (g)
+            </div>
+          </div>
+        </th>
+        <th
+          class="mdc-data-table__header-cell"
+          role="columnheader"
+          scope="col"
+        >
+          Comments
+        </th>
+      </tr>
+    </thead>
+    <tbody class="mdc-data-table__content">
+      <tr class="mdc-data-table__row">
+        <td class="mdc-data-table__cell">Frozen yogurt</td>
+        <td class="mdc-data-table__cell mdc-data-table__cell--numeric">
+          24
+        </td>
+        <td class="mdc-data-table__cell mdc-data-table__cell--numeric">
+          4.0
+        </td>
+        <td class="mdc-data-table__cell">Super tasty</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
     </main>
 
     <footer class="footer">

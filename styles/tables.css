@@ -18,6 +18,15 @@
   color: var(--mdc-theme-secondary__600);
 }
 
+.mdc-data-table__header-cell .sort-icon {
+  display: none;
+  margin-left: 12px;
+}
+
+.mdc-data-table__header-cell:hover .sort-icon {
+  display: block;
+}
+
 .table__photo-thumbnail {
   -webkit-box-align: center;
       -ms-flex-align: center;

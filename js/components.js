@@ -904,6 +904,17 @@ class MDCDataTable {
         self.handleSearch(self);
       });
     }
+
+    $(this.table).find('table').tablesorter({ 
+      selectorSort: '.mdc-data-table__header-cell--with-sort',
+    });
+    $(this.table).find('.mdc-data-table__header-cell--with-sort').click(function(e) {
+      self.handleSort(e.currentTarget);
+    });
+  }
+
+  handleSort(button) {
+    $(button).find('.mdc-icon').toggleClass('sort-up-icon sort-down-icon');
   }
 
   handleSearch(self) {
