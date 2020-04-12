@@ -226,6 +226,14 @@ function submitTreeSelection(treeSelection, dialogId, includeParent) {
   openDialog(dialogId, data);
 }
 
+function aulaEdit() {
+  let data = {
+    nombre: 'Ciencias Sociales 5B',
+    docentes: 'docente-01'
+  };
+  openDialog('editar-aula', data);
+}
+
 function openDialog(dialogId, data) {
   closeDialog();
 
@@ -238,7 +246,11 @@ function openDialog(dialogId, data) {
 
   if (data) {
     Object.keys(data).forEach(function(key) {
-      dialogEl.find(`[data-name=${ key }]`)[0].component.update(data[key]);
+      if (dialogEl.find(`[data-name=${ key }]`).length > 0) {
+        dialogEl.find(`[data-name=${ key }]`)[0].component.update(data[key]);
+      } else {
+        dialogEl.find(`input[name=${ key }]`).val(data[key]);
+      }
     });
   }
 

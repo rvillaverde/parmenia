@@ -247,6 +247,10 @@ textarea.mdc-text-field__input {
   position: absolute;
 }
 
+.mdc-select:not(.mdc-select--disabled) .mdc-floating-label {
+  color: var(--mdc-theme-gray__400);
+}
+
 .mdc-top-app-bar {
   background-color: var(--mdc-theme-primary__500);
   top: 0;
@@ -543,7 +547,6 @@ body:not([data-role="alumno"]) .mdc-header__project .mdc-header__avatar:hover .m
 }
 
 .mdc-header__background {
-  background-image: url('../img/home.png');
   background-position: bottom left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -553,6 +556,16 @@ body:not([data-role="alumno"]) .mdc-header__project .mdc-header__avatar:hover .m
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+body[data-role="admin"] .mdc-header__background {
+  background-image: url('../img/home/Parmenia_Home_Admin.png');
+}
+body[data-role="docente"] .mdc-header__background {
+  background-image: url('../img/home/Parmenia_Home_Docente.png');
+}
+body[data-role="alumno"] .mdc-header__background {
+  background-image: url('../img/home/Parmenia_Home_Alumno.png');
 }
 
 .mdc-header__caption-group {

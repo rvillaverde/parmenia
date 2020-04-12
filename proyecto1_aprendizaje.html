@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/menus.css">
+    <link rel="stylesheet" href="styles/dialogs.css">
     <link rel="stylesheet" href="styles/drawer.css">
     <link rel="stylesheet" href="styles/cards.css">
     <link rel="stylesheet" href="styles/admin.css">
@@ -84,7 +85,7 @@
         <section class="mdc-top-app-bar__section">
           <div class="mdc-top-app-bar__title-wrapper">
             <a href="dashboard.html" class="mdc-top-app-bar__school-pic round-photo-wrapper">
-              <img src="img/placeholder.png">
+              <img src="img/institucionales/Parmenia_Institucional_Generica.png">
             </a>
             <a href="dashboard.html" class="mdc-top-app-bar__title mdc-typography--headline6">Colegio Lasalle</a>
           </div>
@@ -220,7 +221,7 @@
             <li class="mdc-top-app-bar__action-item mdc-menu--hover">
               <a class="mdc-button mdc-button--app-bar" href="profile.html" aria-label="Pepito">
                 <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
-                  <img src="img/placeholder.png">
+                  <img src="img/institucionales/Parmenia_Institucional_Perfil.png">
                 </div>
                 <span class="mdc-button__label mdc-top-app-bar__profile-name mdc-typography--headline6">Pepito</span>
                 <i class="mdc-icon small nav-chevron-icon"></i>
@@ -229,7 +230,7 @@
                 <ul class="mdc-list profile-menu-wrapper" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
                   <li class="mdc-list-item mdc-menu__action" role="menuitem">
                     <div class="mdc-top-app-bar__profile-pic round-photo-wrapper">
-                      <img src="img/placeholder.png">
+                      <img src="img/institucionales/Parmenia_Institucional_Perfil.png">
                     </div>
                     <div class="profile-info">
                       <h6 class="mdc-typography--headline6">Pepito Gimenez</h6>
@@ -270,10 +271,10 @@
       </div>
     </nav>
 
-    <header class="mdc-header mdc-header__project" style="background-color: var(--mdc-theme-custom__08);">
+    <header class="mdc-header mdc-header__project" style="background-color: var(--mdc-theme-custom__09);">
       <div class="mdc-header__row">
         <div class="mdc-header__cover">
-          <img src="img/project-cover.png">
+          <img src="img/aulas/Parmenia_sociales 1B.png">
         </div>
         <section class="mdc-header__section">
           <div class="mdc-header__avatar round-photo-wrapper">
@@ -474,6 +475,72 @@
         </div>
       </div>
     </header>
+
+    <div class="mdc-dialog" id="change-photo">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Foto de proyecto
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mdc-dialog__content">
+            <form class="admin-form" id="change-photo__form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection center-align">
+                  <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
+                    <div class="admin-form__photo-placeholder" style="background-image: url('img/placeholder-parmenia.jpg')">
+                    </div>
+
+                    <div class="admin-form__photo-placeholder__actions">
+                      <input id="file-uploader" type="file" name="file" accept="image/*">
+                      <label for="file-uploader" class="mdc-button mdc-button--text">
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Subir imagen</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="change-photo__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Guardar</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
 
     <aside class="mdc-drawer">
       <div class="mdc-drawer__content">

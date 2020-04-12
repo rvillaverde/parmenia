@@ -27,6 +27,7 @@ class MDCSearchTextField {
 class SelectMenuWithSearch {
   constructor(select) {
     this.select = select;
+    this.select.component = this;
     this.hiddenInput = $("<input type='hidden' name='%id%'>".replace('%id%', $(this.select).attr('data-name')));
     $(this.select).append(this.hiddenInput);
 
@@ -44,6 +45,10 @@ class SelectMenuWithSearch {
     });
 
     listenToMDCMenuEvents(this.select.mdc.menu_);
+  }
+
+  update(data) {
+    console.log('select update');
   }
 
   handleSearch(input) {
@@ -65,6 +70,7 @@ class SelectMenuWithSearch {
 class CheckBoxMenuSelect {
   constructor(select) {
     this.select = select;
+    this.select.component = this;
     this.hiddenInput = $("<input type='hidden' name='%id%'>".replace('%id%', $(this.select).attr('data-name')));
     $(this.select).append(this.hiddenInput);
 
@@ -95,6 +101,10 @@ class CheckBoxMenuSelect {
     this.mdcSelect.menu_.listen('MDCMenuSurface:opened', function(e) {
       $(this).css('max-height', 192);
     });
+  }
+
+  update(data) {
+    console.log('checkbox select update');
   }
 
   handleSearch(input) {

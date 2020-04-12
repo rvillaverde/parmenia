@@ -1141,3 +1141,12 @@
   min-height: 680px;
   width: 100%;
 }
+
+.gallery-cards .mdc-card {
+  border-radius: 24px;
+}
+
+.gallery-cards .mdc-card .mdc-card--square__content img {
+  height: 104%;
+  width: auto;
+}
