@@ -881,6 +881,8 @@ class MDCDataTable {
   constructor(table) {
     this.table = table;
     this.counter = $(this.table).find('.mdc-data-table__counter');
+
+    this.searchInput = $(`input[data-table=${ $(this.table).attr('data-table') }]`);
     this.table.component = this;
     this.table.mdc = mdc.dataTable.MDCDataTable.attachTo(this.table);
     let self = this;
@@ -895,6 +897,28 @@ class MDCDataTable {
       this.table.mdc.listen(mdc.dataTable.events.UNSELECTED_ALL, function(e) { 
         self.updateTableCounter();
       });
+    }
+
+    if (this.searchInput.length) {
+      this.searchInput.keyup(function(e) {
+        self.handleSearch(self);
+      });
+    }
+  }
+
+  handleSearch(self) {
+    let search = self.searchInput.val().toLowerCase().trim();
+    if (search.length > 0) {
+      $(self.table).find('.mdc-data-table__content tr').each(function(i, row) {
+        let content = $.trim($(row).text()).toLowerCase();
+        if (content.indexOf(search) > -1) {
+          $(row).show();
+        } else {
+          $(row).hide();
+        }
+      });
+    } else {
+      $(self.table).find('.mdc-data-table__content tr').show();
     }
   }
 
