@@ -331,7 +331,7 @@ input[type=file] {
           box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: inline-flex;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   -webkit-box-pack: center;
@@ -1172,4 +1172,16 @@ tr.sortable-placeholder:last-child {
 
 .time-pickers .time-picker__wrapper:not(:first-child) {
   margin-left: 12px;
+}
+
+.selection-wrapper {
+  margin: 0;
+}
+
+.selection-wrapper .mdc-chip-set {
+  padding: 4px 0;
+}
+
+.selection-wrapper .no-content-placeholder {
+  margin: 12px 0;
 }

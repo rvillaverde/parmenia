@@ -199,18 +199,87 @@ function setoggleCardSelection(card) {
   card.toggleClass('mdc-card--selected');
 }
 
-function openDialog(dialogId) {
+function selectItems(wrapperId, dialogId) {
+  let selectableId = wrapperId.split('#').join('');
+  let ids = $(`.selection-wrapper__target[data-name=${ wrapperId }]`).find(`input[name=${ selectableId }]`).val();
+
+  let data = {};
+  data[wrapperId] = ids ? ids.split(',') : [];
+
+  openDialog(dialogId, data);
+}
+
+function submitTable(table, dialogId) {
+  let selectedRows = $(`.mdc-data-table[data-name=${ table }]`)[0].component.selectedRows();
+  let data = {};
+  data[table] = selectedRows;
+
+  openDialog(dialogId, data);
+}
+
+function submitTreeSelection(treeSelection, dialogId, includeParent) {
+  let multiSelectionList = $(`.mdc-multiselection-list[data-name=${ treeSelection }]`)[0];
+
+  let data = {};
+  data[treeSelection] = multiSelectionList.component.selectedItems(includeParent);
+
+  openDialog(dialogId, data);
+}
+
+function openDialog(dialogId, data) {
+  closeDialog();
+
+  let dialogEl;
+  if (dialogId) {
+    dialogEl = $(`.mdc-dialog#${ dialogId }`);
+  } else  {
+    dialogEl = $('.mdc-dialog')[0];
+  }
+
+  if (data) {
+    Object.keys(data).forEach(function(key) {
+      dialogEl.find(`[data-name=${ key }]`)[0].component.update(data[key]);
+    });
+  }
+
+  dialog = new mdc.dialog.MDCDialog(dialogEl[0]);
+  dialog.open();
+}
+
+function getSelectedRows(table) {
+  let chips = [];
+  let selectedRows = table.find('.mdc-data-table__row.mdc-data-table__row--selected');
+  selectedRows.each(function(i, row) {
+    let chip = $(chipHTML.replace('%ID%', $(row).attr('data-row-id')).replace('%LABEL%', $(row).attr('data-chip-label')));
+    chips.push(chip);
+  });
+  return chips;
+}
+
+function closeDialog() {
   if (dialog) {
     dialog.close();
   }
+}
 
-  if (dialogId) {
-    dialog = new mdc.dialog.MDCDialog($(`.mdc-dialog#${ dialogId }`)[0]);
-  } else  {
-    dialog = new mdc.dialog.MDCDialog($('.mdc-dialog')[0]);
-  }
+function clearForm(form) {
+  $(form).find("input[name][type=checkbox]").prop('checked', false);
+  $(form).find("input[name][type=radio]").prop('checked', false);
+  $(form).find("input[name][type=hidden]").val('');
+  $(form).find("input[name][type=text]").val('');
+  $(form).find("input[name]").trigger('change');
+}
 
-  dialog.open();
+function getFormFields(form) {
+  var fields = {};
+  $(form).serializeArray().forEach(function(field) {
+    if (fields[field.name]) {
+      fields[field.name] = `${ fields[field.name] },${ field.value }`;
+    } else {
+      fields[field.name] = field.value;
+    }
+  });
+  return fields;
 }
 
 function roleSelection(e) {

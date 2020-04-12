@@ -4,18 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
 
     <!-- OFFLINE MODE -->
-<!--     <link href="offline/material-components-web.css" rel="stylesheet">
-    <script src="offline/material-components-web.js"></script> -->
-    <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
+    <link href="lib/material-components-web.css" rel="stylesheet">
+    <script src="lib/material-components-web.js"></script>
+    <script src="lib/jquery-3.4.1.js"></script>
 
     <script type="text/javascript" src="lib/moment-with-locales.min.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/material-datepicker.css">
@@ -329,7 +322,7 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form admin-form" id="crear-anuncio-01">
+            <form class="mdc-dialog__form admin-form" id="crear-anuncio__form">
               <div class="admin-form__section">
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
@@ -351,7 +344,7 @@
 
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--textarea mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <textarea class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id" rows="2" cols="40" maxlength="140"></textarea>
+                        <textarea class="mdc-text-field__input mdc-typography--body1" name="cuerpo" rows="2" cols="40" maxlength="140"></textarea>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -365,7 +358,7 @@
                       </div>
                     </div>
 
-                    <div class="date-picker__wrapper">
+                    <div class="date-picker__wrapper" data-name="vencimiento">
                       <span for="date-picker-01" class="mdc-typography--headline6">Vencimiento</span>
                       <button type="button" class="mdc-button date-picker--button" id="date-piker-01">
                         <span class="mdc-button__label mdc-typography--body1">Seleccionar fecha</span>
@@ -383,7 +376,7 @@
                         <div class="mdc-switch__track"></div>
                         <div class="mdc-switch__thumb-underlay">
                           <div class="mdc-switch__thumb"></div>
-                          <input type="checkbox" id="destacar-noticia" class="mdc-switch__native-control" role="switch" aria-checked="false">
+                          <input type="checkbox" id="destacar-noticia" name="destacar-noticia" class="mdc-switch__native-control" role="switch" aria-checked="false">
                         </div>
                       </div>
                       <label class="mdc-switch__label" for="destacar-noticia">Destacar noticia*</label>
@@ -450,7 +443,7 @@
                     <div class="mdc-checkbox__wrapper">
                       <div class="mdc-form-field">
                         <div class="mdc-checkbox">
-                          <input type="checkbox" class="mdc-checkbox__native-control" id="news-publish-cartelera"/>
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="noticia-publicar-cartelera" name="publicar" value="cartelera"/>
                           <div class="mdc-checkbox__background">
                             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                               <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -459,11 +452,11 @@
                           </div>
                           <div class="mdc-checkbox__ripple"></div>
                         </div>
-                        <label for="news-publish-cartelera">Cartelera general</label>
+                        <label for="noticia-publicar-cartelera">Cartelera general</label>
                       </div>
                       <div class="mdc-form-field">
                         <div class="mdc-checkbox">
-                          <input type="checkbox" class="mdc-checkbox__native-control" id="news-publish-aulas" data-dynamic-cta-target="#aula-select"/>
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="noticia-publicar-aulas" name="publicar" value="aulas" data-dynamic-cta-target="#aula-select"/>
                           <div class="mdc-checkbox__background">
                             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                               <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -472,7 +465,7 @@
                           </div>
                           <div class="mdc-checkbox__ripple"></div>
                         </div>
-                        <label for="news-publish-aulas">Aulas</label>
+                        <label for="noticia-publicar-aulas">Aulas</label>
                       </div>
                     </div>
                   </div>
@@ -481,7 +474,7 @@
                     <div class="mdc-checkbox__wrapper">
                       <div class="mdc-form-field">
                         <div class="mdc-checkbox">
-                          <input type="checkbox" class="mdc-checkbox__native-control" id="news-visibility-alumnos"/>
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="noticia-visibilidad-alumnos" name="visible" value="alumnos"/>
                           <div class="mdc-checkbox__background">
                             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                               <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -490,11 +483,11 @@
                           </div>
                           <div class="mdc-checkbox__ripple"></div>
                         </div>
-                        <label for="news-visibility-alumnos">Alumnos</label>
+                        <label for="noticia-visibilidad-alumnos">Alumnos</label>
                       </div>
                       <div class="mdc-form-field">
                         <div class="mdc-checkbox">
-                          <input type="checkbox" class="mdc-checkbox__native-control" id="news-visibility-docentes"/>
+                          <input type="checkbox" class="mdc-checkbox__native-control" id="noticia-visibilidad-docentes" name="visible" value="docentes"/>
                           <div class="mdc-checkbox__background">
                             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                               <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -503,52 +496,21 @@
                           </div>
                           <div class="mdc-checkbox__ripple"></div>
                         </div>
-                        <label for="news-visibility-docentes">Docentes</label>
+                        <label for="noticia-visibilidad-docentes">Docentes</label>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="selection-wrapper initially-hidden" id="aula-select">
-                  <div class="mdc-chip-set mdc-chip-set--input no-content" role="grid">
-                    <div class="mdc-chip" role="row">
-                      <span role="gridcell">
-                        <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
-                        </span>
-                      </span>
-                      <span role="gridcell">
-                        <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                      </span>
-                    </div>
-                    <div class="mdc-chip" role="row">
-                      <span role="gridcell">
-                        <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
-                        </span>
-                      </span>
-                      <span role="gridcell">
-                        <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                      </span>
-                    </div>
-                    <div class="mdc-chip" role="row">
-                      <span role="gridcell">
-                        <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                          <span class="mdc-chip__text mdc-typography--body2">Nombre del aula</span>
-                        </span>
-                      </span>
-                      <span role="gridcell">
-                        <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                      </span>
-                    </div>
-                  </div>
+                  <div class="mdc-chip-set mdc-chip-set--input selection-wrapper__target no-content" data-name="aulas" role="grid"></div>
 
                   <div class="no-content-placeholder">
                     <span class="mdc-typography--headline4">Aún no hay aulas seleccionadas</span>
                   </div>
 
                   <div class="admin-form__actions">
-                    <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('aula-select-01');">
+                    <button type="button" class="mdc-button mdc-button--text" onclick="selectItems('aulas', 'aula-select-01');">
                       <span class="mdc-button__ripple"></span>
                       <span class="mdc-button__label">Seleccionar aulas</span>
                       <i class="mdc-button__icon">
@@ -568,7 +530,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="crear-anuncio__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Publicar</span>
             </button>
@@ -604,14 +566,15 @@
             <p class="mdc-dialog__title-caption mdc-typography--body2">Seleccionar en qué aulas será posteado el anuncio</p>
           </div>
           <div class="mdc-dialog__content">
-            <div class="mdc-data-table">
+            <div class="mdc-data-table" data-name="aulas">
               <p class="mdc-data-table__counter mdc-typography--headline4"><span id="quantity">0</span> aulas seleccionadas</p>
-              <table class="mdc-data-table__table aula-select__table" aria-label="alumnos">
+
+              <table class="mdc-data-table__table aula-select__table">
                 <thead class="mdc-data-table__header">
                   <tr class="mdc-data-table__header-row">
                     <th class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox" role="columnheader" scope="col">
                       <div class="mdc-checkbox mdc-data-table__header-row-checkbox mdc-checkbox--selected">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-label="Checkbox for header row selection"/>
+                        <input type="checkbox" class="mdc-checkbox__native-control"/>
                         <div class="mdc-checkbox__background">
                           <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                             <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
@@ -635,10 +598,10 @@
                   </tr>
                 </thead>
                 <tbody class="mdc-data-table__content">
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                  <tr class="mdc-data-table__row" data-row-id="aula-01" data-label="Nombre del aula 1">
                     <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
                       <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <input type="checkbox" class="mdc-checkbox__native-control"/>
                         <div class="mdc-checkbox__background">
                           <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                             <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
@@ -647,7 +610,7 @@
                         </div>
                       </div>
                     </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
+                    <td class="mdc-data-table__cell">
                       <span class="mdc-typography--caption">Nombre del aula mas largo</span>
                     </td>
                     <td class="mdc-data-table__cell">
@@ -678,10 +641,10 @@
                     </td>
                   </tr>
 
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                  <tr class="mdc-data-table__row" data-row-id="aula-02" data-label="Nombre del aula 2">
                     <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
                       <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <input type="checkbox" class="mdc-checkbox__native-control"/>
                         <div class="mdc-checkbox__background">
                           <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                             <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
@@ -690,7 +653,7 @@
                         </div>
                       </div>
                     </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
+                    <td class="mdc-data-table__cell">
                       <span class="mdc-typography--caption">Nombre del aula</span>
                     </td>
                     <td class="mdc-data-table__cell">
@@ -712,10 +675,10 @@
                     </td>
                   </tr>
 
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                  <tr class="mdc-data-table__row" data-row-id="aula-03" data-label="Nombre del aula 3">
                     <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
                       <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
+                        <input type="checkbox" class="mdc-checkbox__native-control"/>
                         <div class="mdc-checkbox__background">
                           <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                             <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
@@ -724,7 +687,7 @@
                         </div>
                       </div>
                     </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
+                    <td class="mdc-data-table__cell">
                       <span class="mdc-typography--caption">Nombre del aula</span>
                     </td>
                     <td class="mdc-data-table__cell">
@@ -746,7 +709,7 @@
                     </td>
                   </tr>
 
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
+                  <tr class="mdc-data-table__row" data-row-id="aula-04" data-label="Nombre del aula 4">
                     <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
                       <div class="mdc-checkbox mdc-data-table__row-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
@@ -758,551 +721,7 @@
                         </div>
                       </div>
                     </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
                     <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
-                      <span class="mdc-typography--caption">Nombre del aula</span>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Nombre del docente</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso</span>
-                        </span>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell">
-                      <span class="mdc-typography--caption">Abril 22, 2019</span>
-                    </td>
-                  </tr>
-
-                  <tr class="mdc-data-table__row" data-row-id="aula-01">
-                    <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
-                      <div class="mdc-checkbox mdc-data-table__row-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="aula-01"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="mdc-data-table__cell" id="aula-01">
                       <span class="mdc-typography--caption">Nombre del aula</span>
                     </td>
                     <td class="mdc-data-table__cell">
@@ -1328,7 +747,7 @@
             </div>
           </div>
           <footer class="mdc-dialog__actions">
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+            <button type="submit" class="mdc-button mdc-button--raised mdc-dialog__button" onclick="submitTable('aulas', 'crear-anuncio-01');">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Seleccionar aulas</span>
             </button>
@@ -2705,6 +2124,7 @@
     </footer>
   </body>
 
+  <script src="js/components.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/script.js"></script>
 </html>

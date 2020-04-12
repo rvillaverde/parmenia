@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -14,9 +11,9 @@
       crossorigin="anonymous"></script>
 
     <!-- OFFLINE MODE -->
-<!--     <link href="offline/material-components-web.css" rel="stylesheet">
-    <script src="offline/material-components-web.js"></script> -->
-    <!-- <script src="offline/jquery-3.4.1.min.js"></script> -->
+    <link href="lib/material-components-web.css" rel="stylesheet">
+    <script src="lib/material-components-web.js"></script>
+    <script src="lib/jquery-3.4.1.js"></script>
 
     <script type="text/javascript" src="lib/moment-with-locales.min.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/material-datepicker.css">
@@ -805,7 +802,7 @@
               </a>
             </li>
             <ul class="mdc-list mdc-list--nested collapsable" role="group">
-              <li class="mdc-list-item" role="checkbox" aria-checked="false">
+              <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-presentacion">
                 <span class="mdc-list-item__graphic">
                   <div class="mdc-checkbox">
                     <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-presentacion"/>
@@ -820,7 +817,7 @@
                 <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-presentacion">Presentacion</label>
               </li>
               <div class="mdc-nested-list__wrapper collapsable-wrapper">
-                <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-actividades">
                   <span class="mdc-list-item__graphic">
                     <div class="mdc-checkbox">
                       <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clases"/>
@@ -838,7 +835,7 @@
                     <i class="mdc-icon small chevron-right-icon-secondary"></i>
                   </a>
                 </li>
-                <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
+                <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group" data-item-id="proyecto-1-actividades-clase-1">
                   <li class="mdc-list-item" role="checkbox" aria-checked="false">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
@@ -853,7 +850,7 @@
                     </span>
                     <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clase-1">Clase 1</label>
                   </li>
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-actividades-clase-2">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clase-2"/>
@@ -867,7 +864,7 @@
                     </span>
                     <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clase-2">Clase 2</label>
                   </li>
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-actividades-clase-3">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clase-3"/>
@@ -883,7 +880,7 @@
                   </li>
                 </ul>
               </div>
-              <li class="mdc-list-item" role="checkbox" aria-checked="false">
+              <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-foro">
                 <span class="mdc-list-item__graphic">
                   <div class="mdc-checkbox">
                     <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-foro"/>
@@ -897,7 +894,7 @@
                 </span>
                 <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-foro">Foro</label>
               </li>
-              <li class="mdc-list-item" role="checkbox" aria-checked="false">
+              <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-aprendizaje">
                 <span class="mdc-list-item__graphic">
                   <div class="mdc-checkbox">
                     <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-aprendizaje"/>
@@ -914,7 +911,7 @@
             </ul>
           </div>
         </ul>
-        <ul class="mdc-list mdc-checkbox-list mdc-list--parent" role="group">
+        <ul class="mdc-list mdc-checkbox-list mdc-list--parent" role="group" data-item-id="proyecto-2">
           <div class="mdc-nested-list__wrapper collapsable-wrapper">
             <li class="mdc-list-item" role="checkbox" aria-checked="false">
               <span class="mdc-list-item__graphic">
@@ -933,7 +930,7 @@
               </a>
             </li>
             <ul class="mdc-list mdc-list--nested collapsable" role="group">
-              <li class="mdc-list-item" role="checkbox" aria-checked="false">
+              <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-presentacion">
                 <span class="mdc-list-item__graphic">
                   <div class="mdc-checkbox">
                     <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-presentacion"/>
@@ -948,7 +945,7 @@
                 <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-presentacion">Presentacion</label>
               </li>
               <div class="mdc-nested-list__wrapper collapsable-wrapper">
-                <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-clases">
                   <span class="mdc-list-item__graphic">
                     <div class="mdc-checkbox">
                       <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-clases"/>
@@ -967,7 +964,7 @@
                   </a>
                 </li>
                 <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-clase-1">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-clase-1"/>
@@ -981,7 +978,7 @@
                     </span>
                     <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-clase-1">Clase 1</label>
                   </li>
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-clase-2">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-clase-2"/>
@@ -995,7 +992,7 @@
                     </span>
                     <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-clase-2">Clase 2</label>
                   </li>
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-clase-3">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-clase-3"/>
@@ -1011,7 +1008,7 @@
                   </li>
                 </ul>
               </div>
-              <li class="mdc-list-item" role="checkbox" aria-checked="false">
+              <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-foro">
                 <span class="mdc-list-item__graphic">
                   <div class="mdc-checkbox">
                     <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-foro"/>
@@ -1025,7 +1022,7 @@
                 </span>
                 <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-foro">Foro</label>
               </li>
-              <li class="mdc-list-item" role="checkbox" aria-checked="false">
+              <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-aprendizaje">
                 <span class="mdc-list-item__graphic">
                   <div class="mdc-checkbox">
                     <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-aprendizaje"/>
@@ -1056,6 +1053,24 @@
         </button>
         <span class="picker-output"></span>
       </div>
+
+      <div class="mdc-chip-set mdc-chip-set--filter" role="grid">
+        <div class="mdc-chip" role="row">
+          <div class="mdc-chip__ripple"></div>
+          <i class="material-icons mdc-chip__icon mdc-chip__icon--leading">face</i>
+          <span class="mdc-chip__checkmark" >
+            <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+              <path class="mdc-chip__checkmark-path" fill="none" stroke="black"
+                    d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+            </svg>
+          </span>
+          <span role="gridcell">
+            <span role="checkbox" tabindex="0" aria-checked="false" class="mdc-chip__primary-action">
+              <span class="mdc-chip__text">Filterable content</span>
+            </span>
+          </span>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
@@ -1071,6 +1086,7 @@
     </footer>
   </body>
 
+  <script src="js/components.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/script.js"></script>
 </html>

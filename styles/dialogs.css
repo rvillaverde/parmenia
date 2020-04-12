@@ -45,9 +45,9 @@
 }
 
 .mdc-dialog .mdc-dialog__title-wrapper {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+          align-items: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,8 +80,9 @@
 }
 
 .mdc-dialog .mdc-dialog__title-wrapper > .mdc-dialog__title {
-  padding-top: 16px;
+  max-width: calc(100% - 48px);
   padding: 0;
+  padding-top: 8px;
 }
 
 .mdc-dialog .mdc-dialog__title-wrapper .mdc-dialog__title-caption {
@@ -196,4 +197,64 @@
 
 .mdc-dialog__section > .admin-form__subsection {
   margin: 24px 0;
+}
+
+.mdc-dialog.event .mdc-dialog__actions {
+  padding: 12px 24px;
+}
+
+.mdc-dialog.event.editable-event .mdc-dialog__actions #event-edit-button {
+  display: flex;
+}
+
+.mdc-dialog.event.editable-event .mdc-dialog__actions #event-delete-button {
+  display: flex;
+}
+
+.mdc-dialog.event.editable-event .mdc-dialog__actions #event-view-button {
+  display: none;
+}
+
+.mdc-dialog.event:not(.editable-event) .mdc-dialog__actions #event-edit-button {
+  display: none;
+}
+
+.mdc-dialog.event:not(.editable-event) .mdc-dialog__actions #event-delete-button {
+  display: none;
+}
+
+.mdc-dialog.event:not(.editable-event) .mdc-dialog__actions #event-view-button {
+  display: flex;
+}
+
+.event-date-time {
+  margin-top: 0;
+}
+
+.event-date-time span:first-child {
+  margin-right: 8px;
+}
+
+.event-date-time span:last-child {
+  margin-left: 8px;
+}
+
+.event-agenda__wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.event-agenda__wrapper .round-photo-wrapper {
+  height: 12px;
+  width: 12px;
+  min-height: 12px;
+  margin-right: 4px;
+}
+
+.event-info {
+  margin-right: auto;
+}
+
+.event-info p {
+  margin: 0;
 }

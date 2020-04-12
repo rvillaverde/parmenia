@@ -21,6 +21,10 @@
   margin-left: 12px;
 }
 
+.headline-wrapper .mdc-button + .mdc-button {
+  margin: 0;
+}
+
 .mdc-button .mdc-button__icon {
   height: 24px;
   margin-right: 0;
