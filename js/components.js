@@ -905,12 +905,14 @@ class MDCDataTable {
       });
     }
 
-    $(this.table).find('table').tablesorter({ 
-      selectorSort: '.mdc-data-table__header-cell--with-sort',
-    });
-    $(this.table).find('.mdc-data-table__header-cell--with-sort').click(function(e) {
-      self.handleSort(e.currentTarget);
-    });
+    if ($(this.table).find('.mdc-data-table__header-cell--with-sort').length > 0) {
+      $(this.table).find('table').tablesorter({ 
+        selectorSort: '.mdc-data-table__header-cell--with-sort',
+      });
+      $(this.table).find('.mdc-data-table__header-cell--with-sort').click(function(e) {
+        self.handleSort(e.currentTarget);
+      });
+    }
   }
 
   handleSort(button) {
