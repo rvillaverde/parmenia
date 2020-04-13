@@ -69,26 +69,23 @@ document.addEventListener("DOMContentLoaded", function () {
           agendas: [{
             id: "aula-01",
             label: "Nombre del aula 1"
-          }, {
-            id: "aula-02",
-            label: "Nombre del aula 2"
           }],
           author: "El Profesor",
-          color: "var(--mdc-theme-primary)"
+          color: "var(--mdc-theme-custom__05)"
         },
       },
       {
         id: "2",
-        title: "my event",
-        start: "2020-03-31T10:30:00",
-        end: "2020-03-31T11:30:00",
+        title: "Entrega TP",
+        start: "2020-04-13T10:30:00",
+        end: "2020-04-13T11:30:00",
         extendedProps: {
           agendas: [{
-            id: "institucional",
+            id: "aula-virtual",
             label: "Aula Virtual" 
           }],
           author: "El Profesor",
-          color: "var(--mdc-theme-primary__050)"
+          color: "var(--mdc-theme-primary__100)"
         },
       },
       {
@@ -162,10 +159,10 @@ document.addEventListener("DOMContentLoaded", function () {
       end: `${ form.fecha }T${ form['horario-hasta'] }`,
       allDay: form.horario === 'todo-el-dia',
       extendedProps: {
-        agendas: {
+        agendas: [{
           id: "institucional",
           label: "Institucional" 
-        },
+        }],
         author: "Mi usuario",
         color: "var(--mdc-theme-secondary)"
       }

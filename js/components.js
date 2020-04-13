@@ -473,7 +473,7 @@ class MDCSortable {
 class TimePicker {
   constructor(wrapper) {
     this.wrapper = $(wrapper);
-    this.generateHours(6,20);
+    this.generateHours(0,24);
     this.handleSelection(this.wrapper.find('.mdc-list-item--selected'));
     this.initMenu();
   }

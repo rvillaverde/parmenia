@@ -15,6 +15,7 @@
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   height: unset;
+  padding-bottom: calc(var(--footer__height--desktop));
   top: calc(var(--header__height-large) + var(--app-nav__height--desktop));
   position: absolute;
   width: 252px;
@@ -255,3 +256,9 @@ body[data-role="admin"] .mdc-drawer.agenda .mdc-drawer__content-item .mdc-list-i
 .mdc-drawer.agenda .mdc-select .mdc-list-item::after {
   content: none;
 }
+
+.mdc-drawer.agenda .mdc-drawer__content-item .round-photo-wrapper,
+.mdc-drawer.agenda .mdc-multiselection-list .mdc-list .mdc-list-item__graphic {
+  margin-right: 8px;
+}
+
