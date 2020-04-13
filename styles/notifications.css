@@ -10,6 +10,7 @@
   padding: 0 18px;
   top: -96px;
   width: 100%;
+  z-index: 30;
 }
 
 .global-notification__wrapper.visible {

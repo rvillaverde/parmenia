@@ -29,7 +29,7 @@ $(function() {
   $('.cards--selectable .mdc-card').click(function(e) {
     let card = $(e.currentTarget);
     card.closest('.cards--selectable').find('.mdc-card').removeClass('mdc-card--selected');
-    setoggleCardSelection(card);
+    setToggleCardSelection(card);
   });
 
   $('.user-roles-wrapper').mousedown(onGrab);
@@ -195,8 +195,12 @@ function toggleView(element) {
   toggable.find(`.toggle-target[data-toggle-view='${ view }']`).show();
 }
 
-function setoggleCardSelection(card) {
+function setToggleCardSelection(card) {
   card.toggleClass('mdc-card--selected');
+}
+
+function deleteItem() {
+  showGlobalNotification('success');
 }
 
 function selectItems(wrapperId, dialogId) {
