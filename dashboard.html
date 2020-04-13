@@ -9,6 +9,7 @@
     <link href="lib/material-components-web.css" rel="stylesheet">
     <script src="lib/material-components-web.js"></script>
     <script src="lib/jquery-3.4.1.js"></script>
+    <script src="lib/tablesorter.js"></script>
 
     <script type="text/javascript" src="lib/moment-with-locales.min.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/material-datepicker.css">
@@ -733,14 +734,23 @@
                         </div>
                       </div>
                     </th>
-                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
-                      <span class="mdc-typography--caption">Nombre</span>
+                    <th class="mdc-data-table__header-cell mdc-data-table__header-cell--with-sort" role="columnheader" scope="col">
+                      <div class="mdc-data-table__header-cell-wrapper">
+                        <span class="mdc-typography--caption">Nombre</span>
+                        <i class="mdc-icon small sort-icon sort-down-icon"></i>
+                      </div>
                     </th>
-                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
-                      <span class="mdc-typography--caption">Docentes</span>
+                    <th class="mdc-data-table__header-cell mdc-data-table__header-cell--with-sort" role="columnheader" scope="col">
+                      <div class="mdc-data-table__header-cell-wrapper">
+                        <span class="mdc-typography--caption">Docentes</span>
+                        <i class="mdc-icon small sort-icon sort-down-icon"></i>
+                      </div>
                     </th>
-                    <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
-                      <span class="mdc-typography--caption">Cursos</span>
+                    <th class="mdc-data-table__header-cell mdc-data-table__header-cell--with-sort" role="columnheader" scope="col">
+                      <div class="mdc-data-table__header-cell-wrapper">
+                        <span class="mdc-typography--caption">Cursos</span>
+                        <i class="mdc-icon small sort-icon sort-down-icon"></i>
+                      </div>
                     </th>
                     <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
                       <span class="mdc-typography--caption">Fecha de creación</span>
@@ -1699,18 +1709,25 @@
             <table class="mdc-data-table__table" aria-label="Dessert calories">
               <thead class="mdc-data-table__header">
                 <tr class="mdc-data-table__header-row">
-                  <th class="mdc-data-table__header-cell mdc-data-table__cell--icon" role="columnheader" scope="col">
+                  <th class="mdc-data-table__header-cell span-20 mdc-data-table__header-cell--with-sort" role="columnheader" scope="col">
+                    <div class="mdc-data-table__header-cell-wrapper">
+                      <span class="mdc-typography--caption">Nombre</span>
+                      <i class="mdc-icon small sort-icon sort-down-icon"></i>
+                    </div>
                   </th>
-                  <th class="mdc-data-table__header-cell span-20" role="columnheader" scope="col">
-                    <span class="mdc-typography--caption">Nombre</span>
+                  <th class="mdc-data-table__header-cell span-25 mdc-data-table__header-cell--with-sort" role="columnheader" scope="col">
+                    <div class="mdc-data-table__header-cell-wrapper">
+                      <span class="mdc-typography--caption">Docentes</span>
+                      <i class="mdc-icon small sort-icon sort-down-icon"></i>
+                    </div>
                   </th>
-                  <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
-                    <span class="mdc-typography--caption">Docentes</span>
+                  <th class="mdc-data-table__header-cell span-25 mdc-data-table__header-cell--with-sort" role="columnheader" scope="col">
+                    <div class="mdc-data-table__header-cell-wrapper">
+                      <span class="mdc-typography--caption">Cursos</span>
+                      <i class="mdc-icon small sort-icon sort-down-icon"></i>
+                    </div>
                   </th>
-                  <th class="mdc-data-table__header-cell span-25" role="columnheader" scope="col">
-                    <span class="mdc-typography--caption">Cursos</span>
-                  </th>
-                  <th class="mdc-data-table__header-cell span-20" role="columnheader" scope="col">
+                  <th class="mdc-data-table__header-cell span-15" role="columnheader" scope="col">
                     <span class="mdc-typography--caption">Fecha de creación</span>
                   </th>
                   <th class="mdc-data-table__header-cell span-10" role="columnheader" scope="col">
@@ -1720,24 +1737,14 @@
               </thead>
               <tbody class="mdc-data-table__content">
                 <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                    <span class="mdc-typography--subtitle1">Ciencias Sociales 5B</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Mirtha Gatti</span>
                         </span>
                       </div>
                     </div>
@@ -1746,23 +1753,13 @@
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">5B</span>
                         </span>
                       </div>
                     </div>
                   </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                    <span class="mdc-typography--subtitle1">12/11/2018</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-data-table__actions">
@@ -1782,24 +1779,14 @@
                 </tr>
 
                 <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                    <span class="mdc-typography--subtitle1">Ciencias Naturales 3A</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Susana Fernandez</span>
                         </span>
                       </div>
                     </div>
@@ -1808,35 +1795,25 @@
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">3A</span>
                         </span>
                       </div>
                     </div>
                   </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                    <span class="mdc-typography--subtitle1">23/05/2019</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                      <a href="aula2.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
                         <i class="mdc-icon noticias-icon"></i>
                       </a>
 
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                      <a href="aula2.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
                         <i class="mdc-icon proyectos-icon"></i>
                       </a>
 
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                      <a href="aula2.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
                         <i class="mdc-icon recursos-icon"></i>
                       </a>
                     </div>
@@ -1844,24 +1821,14 @@
                 </tr>
 
                 <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                    <span class="mdc-typography--subtitle1">Matemática 7A</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Mariana López</span>
                         </span>
                       </div>
                     </div>
@@ -1870,35 +1837,25 @@
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">7A</span>
                         </span>
                       </div>
                     </div>
                   </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                    <span class="mdc-typography--subtitle1">15/04/2018</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                      <a href="aula3.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
                         <i class="mdc-icon noticias-icon"></i>
                       </a>
 
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                      <a href="aula3.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
                         <i class="mdc-icon proyectos-icon"></i>
                       </a>
 
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                      <a href="aula3.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
                         <i class="mdc-icon recursos-icon"></i>
                       </a>
                     </div>
@@ -1906,24 +1863,14 @@
                 </tr>
 
                 <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                    <span class="mdc-typography--subtitle1">Lengua 6A</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Antonio Quintana</span>
                         </span>
                       </div>
                     </div>
@@ -1932,35 +1879,25 @@
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">6A</span>
                         </span>
                       </div>
                     </div>
                   </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                    <span class="mdc-typography--subtitle1">  12/02/2020</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                      <a href="aula4.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
                         <i class="mdc-icon noticias-icon"></i>
                       </a>
 
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                      <a href="aula4.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
                         <i class="mdc-icon proyectos-icon"></i>
                       </a>
 
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                      <a href="aula4.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
                         <i class="mdc-icon recursos-icon"></i>
                       </a>
                     </div>
@@ -1968,24 +1905,14 @@
                 </tr>
 
                 <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                    <span class="mdc-typography--subtitle1">Catequesis 4B</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Ernesto Quiroga</span>
                         </span>
                       </div>
                     </div>
@@ -1994,35 +1921,25 @@
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">4B</span>
                         </span>
                       </div>
                     </div>
                   </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                    <span class="mdc-typography--subtitle1">20/12/2018</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                      <a href="aula5.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
                         <i class="mdc-icon noticias-icon"></i>
                       </a>
 
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                      <a href="aula5.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
                         <i class="mdc-icon proyectos-icon"></i>
                       </a>
 
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                      <a href="aula5.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
                         <i class="mdc-icon recursos-icon"></i>
                       </a>
                     </div>
@@ -2030,24 +1947,14 @@
                 </tr>
 
                 <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                    <span class="mdc-typography--subtitle1">Música 3A</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Andrea Fumagalli</span>
                         </span>
                       </div>
                     </div>
@@ -2056,35 +1963,25 @@
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">3A</span>
                         </span>
                       </div>
                     </div>
                   </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                    <span class="mdc-typography--subtitle1">16/03/2020</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                      <a href="aula6.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
                         <i class="mdc-icon noticias-icon"></i>
                       </a>
 
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                      <a href="aula6.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
                         <i class="mdc-icon proyectos-icon"></i>
                       </a>
 
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                      <a href="aula6.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
                         <i class="mdc-icon recursos-icon"></i>
                       </a>
                     </div>
@@ -2092,24 +1989,14 @@
                 </tr>
 
                 <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                    <span class="mdc-typography--subtitle1">Taller 1ro</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juan Carlos Perez</span>
                         </span>
                       </div>
                     </div>
@@ -2118,35 +2005,30 @@
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">1A</span>
                         </span>
                       </div>
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">1B</span>
                         </span>
                       </div>
                     </div>
                   </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                    <span class="mdc-typography--subtitle1">13/03/1019</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                      <a href="aula7.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
                         <i class="mdc-icon noticias-icon"></i>
                       </a>
 
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                      <a href="aula7.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
                         <i class="mdc-icon proyectos-icon"></i>
                       </a>
 
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                      <a href="aula7.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
                         <i class="mdc-icon recursos-icon"></i>
                       </a>
                     </div>
@@ -2154,24 +2036,14 @@
                 </tr>
 
                 <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
+                    <span class="mdc-typography--subtitle1">Tecnología 7B</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Francisco Chamorro</span>
                         </span>
                       </div>
                     </div>
@@ -2180,159 +2052,25 @@
                     <div class="mdc-chip-set" role="grid">
                       <div class="mdc-chip" role="row">
                         <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
+                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">7B</span>
                         </span>
                       </div>
                     </div>
                   </td>
                   <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
+                    <span class="mdc-typography--subtitle1">12/03/2020</span>
                   </td>
                   <td class="mdc-data-table__cell">
                     <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
+                      <a href="aula8.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
                         <i class="mdc-icon noticias-icon"></i>
                       </a>
 
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
+                      <a href="aula8.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
                         <i class="mdc-icon proyectos-icon"></i>
                       </a>
 
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
-                        <i class="mdc-icon recursos-icon"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <div class="mdc-chip-set" role="grid">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <div class="mdc-chip-set" role="grid">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
-                        <i class="mdc-icon noticias-icon"></i>
-                      </a>
-
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
-                        <i class="mdc-icon proyectos-icon"></i>
-                      </a>
-
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
-                        <i class="mdc-icon recursos-icon"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr class="mdc-data-table__row">
-                  <td class="mdc-data-table__cell mdc-data-table__cell--icon">
-                    <div class="table__photo-thumbnail small round-photo-wrapper">
-                      <img src="img/placeholder.png">
-                    </div>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Nombre del aula</span>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <div class="mdc-chip-set" role="grid">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Juanita Perez</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">El profesor Jirafales</span>
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <div class="mdc-chip-set" role="grid">
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 1</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 2</span>
-                        </span>
-                      </div>
-                      <div class="mdc-chip" role="row">
-                        <span role="gridcell">
-                          <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">Curso 3</span>
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <span class="mdc-typography--subtitle1">Fecha de creación</span>
-                  </td>
-                  <td class="mdc-data-table__cell">
-                    <div class="mdc-data-table__actions">
-                      <a href="aula1.html#noticias" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Noticias">
-                        <i class="mdc-icon noticias-icon"></i>
-                      </a>
-
-                      <a href="aula1.html#proyectos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" data-mdc-tooltip="Proyectos">
-                        <i class="mdc-icon proyectos-icon"></i>
-                      </a>
-
-                      <a href="aula1.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
+                      <a href="aula8.html#recursos" class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false"data-mdc-tooltip="Recursos">
                         <i class="mdc-icon recursos-icon"></i>
                       </a>
                     </div>
@@ -2341,12 +2079,12 @@
               </tbody>
               <tfoot class="mdc-data-table__footer">
                 <tr class="mdc-data-table__footer-row">
-                  <th class="mdc-data-table__header-cell" role="columnfooter" scope="col" colspan="6">
+                  <th class="mdc-data-table__header-cell" role="columnfooter" scope="col" colspan="5">
                     <div class="mdc-data-table__pagination-wrapper">
                       <div class="mdc-data-table__pagination">
                         <span class="mdc-typography--subtitle1">Filas por página: 10</span>
                         <button class="mdc-button">
-                          <i>
+                          <i class="mdc-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M6 9L12 15L18 9" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -2357,19 +2095,11 @@
                         <span class="mdc-typography--subtitle1">1-10 de 100</span>
                       </div>
                       <div class="mdc-data-table__pagination">
-                        <button class="mdc-button">
-                          <i>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M15 18L9 12L15 6" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
+                        <button class="mdc-button mdc-icon-button" data-mdc-tooltip="Anterior">
+                          <i class="mdc-icon chevron-left-icon"></i>
                         </button>
-                        <button class="mdc-button">
-                          <i>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M9 18L15 12L9 6" stroke="#909CAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
+                        <button class="mdc-button mdc-icon-button" data-mdc-tooltip="Siguiente">
+                          <i class="mdc-icon chevron-right-icon"></i>
                         </button>
                       </div>
                     </div>

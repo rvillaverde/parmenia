@@ -19,12 +19,12 @@
 }
 
 .mdc-data-table__header-cell .sort-icon {
-  display: none;
+  opacity: 0;
   margin-left: 12px;
 }
 
 .mdc-data-table__header-cell:hover .sort-icon {
-  display: block;
+  opacity: 1;
 }
 
 .table__photo-thumbnail {
@@ -126,6 +126,10 @@
 
 .mdc-data-table__header-cell.span-10 {
   width: 10%;
+}
+
+.mdc-data-table__header-cell.span-15 {
+  width: 15%;
 }
 
 .mdc-data-table__header-cell.span-20 {
