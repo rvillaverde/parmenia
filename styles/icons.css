@@ -113,6 +113,10 @@
   background-image: url("../icons/delete-icon-small.svg");
 }
 
+.delete-icon-secondary-small {
+  background-image: url("../icons/delete-icon-secondary-small.svg");
+}
+
 .delete-icon-secondary {
   background-image: url("../icons/delete-icon-secondary.svg");
 }

@@ -567,7 +567,7 @@
                     </div>
 
                     <div class="admin-form__photo-placeholder__actions">
-                      <button class="mdc-button mdc-button--text" onclick="openDialog('galeria-select-01');">
+                      <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('galeria-select-01');">
                         <span class="mdc-button__ripple"></span>
                         <i class="mdc-button__icon">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1218,6 +1218,227 @@
             <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" onclick="submitTreeSelection('aula-content', 'nueva-aula-01', false)">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Seleccionar contenido</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div id="galeria-select-01" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <div class="mdc-dialog__title">
+              <button class="mdc-button mdc-button--text" onclick="openDialog('nueva-aula-01');">
+                <span class="mdc-button__ripple"></span>
+                <i class="mdc-button__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 12H5" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </i>
+                <span class="mdc-button__label">Volver a nueva aula</span>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <div class="mdc-layout-grid gallery-cards">
+              <div class="mdc-layout-grid__inner cards--selectable">
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_edFisica 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_edFisica 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_edFisica 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_generica 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_generica 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_generica 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_lengua 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_lengua 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_lengua 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_lenguasextranjeras 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_lenguasextranjeras 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_lenguasextranjeras 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_matematica 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_matematica 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_matematica 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_musica 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_musica 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_musica 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_naturales 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_naturales 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_naturales 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_plastica 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_plastica 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_plastica 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_sociales 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_sociales 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_sociales 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_taller 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_taller 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_taller 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_teatro 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_teatro 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_teatro 3C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_plastica 1C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_tecnologia 2C.png">
+                  </div>
+                </div>
+                <div class="mdc-card mdc-card--outlined mdc-card--square mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop">
+                  <div class="mdc-card--square__content">
+                    <img src="img/aulas/Parmenia_tecnologia 3C.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="submit" class="mdc-button mdc-button--raised mdc-dialog__button" onclick="openDialog('nueva-aula-01')">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Seleccionar imagen</span>
             </button>
           </footer>
         </div>

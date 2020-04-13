@@ -192,7 +192,22 @@ function initEyeToggleButtons() {
   var eyeToggleButtons = $('.mdc-button--eye-toggle');
   for (var i = 0, eyeToggleButton; eyeToggleButton = eyeToggleButtons[i]; i++) {
     $(eyeToggleButton).click(function(e) {
+      removeTooltip();
       $(this).find('.mdc-icon').toggle();
+      switch ($(this).attr('data-mdc-tooltip')) {
+        case 'Mostrar':
+          $(this).attr('data-mdc-tooltip', 'Ocultar');
+          break;
+        case 'Ocultar': 
+          $(this).attr('data-mdc-tooltip', 'Mostrar');
+          break;
+        case 'Esconder para los alumnos':
+          $(this).attr('data-mdc-tooltip', 'Hacer visible para los alumnos');
+          break;
+        case 'Hacer visible para los alumnos': 
+          $(this).attr('data-mdc-tooltip', 'Esconder para los alumnos');
+          break;
+      }
     });
   }
 }
