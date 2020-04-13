@@ -228,16 +228,26 @@
   display: -ms-flexbox;
   display: flex;
   height: 180px;
+  overflow: hidden;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 24px;
   width: 180px;
 }
 
-.admin-form__photo-placeholder__text {
+.admin-form__photo-placeholder img {
+  height: 100%;
+  width: auto;
+}
+
+.admin-form__photo-placeholder .admin-form__photo-placeholder__text {
   color: var(--mdc-theme-primary__200);
+  margin: 24px;
   text-align: center;
+}
+
+.admin-form__photo-placeholder img + .admin-form__photo-placeholder__text {
+  display: none;
 }
 
 .admin-form__photo-placeholder__actions {
