@@ -375,13 +375,13 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form admin-form" id="crear-aula-01">
+            <form class="mdc-dialog__form admin-form" id="crear-proyecto__form">
               <div class="admin-form__section">
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="nombre">
+                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" name="nombre">
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -402,7 +402,7 @@
                     <div class="mdc-checkbox__wrapper">
                       <div class="mdc-form-field">
                         <div class="mdc-checkbox">
-                          <input type="checkbox" class="mdc-checkbox__native-control" id="copy-content" data-dynamic-cta-target="#aula-select"/>
+                          <input type="checkbox" class="mdc-checkbox__native-control" name="copiar-contenido" id="copy-content" data-dynamic-cta-target="#aula-select-2"/>
                           <div class="mdc-checkbox__background">
                             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                               <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -415,7 +415,7 @@
                       </div>
                     </div>
 
-                    <div class="mdc-select mdc-select--outlined initially-hidden" id="aula-select" data-dynamic-cta-target="#aula-content-selection">
+                    <div class="mdc-select mdc-select--outlined initially-hidden" id="aula-select-2" data-dynamic-cta-target="#aula-content-selection-2" data-name="aulas">
                       <div class="mdc-select__anchor">
                         <i class="mdc-select__dropdown-icon"></i>
                         <div class="mdc-select__selected-text  mdc-typography--body1" aria-labelledby="aula-select-label"></div>
@@ -457,45 +457,15 @@
                       </div>
                     </div>
 
-                    <div class="selection-wrapper initially-hidden" id="aula-content-selection">
-                      <div class="mdc-chip-set mdc-chip-set--input" role="grid">
-                        <div class="mdc-chip" role="row">
-                          <span role="gridcell">
-                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Presentación</span>
-                            </span>
-                          </span>
-                          <span role="gridcell">
-                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                          </span>
-                        </div>
-                        <div class="mdc-chip" role="row">
-                          <span role="gridcell">
-                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Clase 1 / Informe</span>
-                            </span>
-                          </span>
-                          <span role="gridcell">
-                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                          </span>
-                        </div>
-                        <div class="mdc-chip" role="row">
-                          <span role="gridcell">
-                            <span role="button" tabindex="0" class="mdc-chip__primary-action">
-                              <span class="mdc-chip__text mdc-typography--body2">Visita a la Reserva Ecológica / Mi aprendizaje</span>
-                            </span>
-                          </span>
-                          <span role="gridcell">
-                            <i class="mdc-icon small mdc-chip__icon mdc-chip__icon--trailing chip-cross-icon" tabindex="-1" role="button"></i>
-                          </span>
-                        </div>
-                      </div>
+                    <div class="selection-wrapper initially-hidden" id="aula-content-selection-2">
+                      <div class="mdc-chip-set mdc-chip-set--input selection-wrapper__target no-content" role="grid" data-name="aula-content-2"></div>
+
                       <div class="no-content-placeholder">
                         <span class="mdc-typography--headline4">Aún no hay contenido seleccionado</span>
                       </div>
 
                       <div class="admin-form__actions">
-                        <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('content-select-01');">
+                        <button type="button" class="mdc-button mdc-button--text" onclick="selectItems('aula-content-2', 'content-select');">
                           <span class="mdc-button__ripple"></span>
                           <span class="mdc-button__label">Seleccionar contenido</span>
                           <i class="mdc-button__icon">
@@ -517,7 +487,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Importar contenido</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="crear-proyecto__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear proyecto</span>
             </button>
@@ -527,7 +497,7 @@
       <div class="mdc-dialog__scrim"></div>
     </div>
 
-    <div id="content-select-01" class="mdc-dialog">
+    <div id="content-select" class="mdc-dialog">
       <div class="mdc-dialog__container">
         <div class="mdc-dialog__surface dialog__surface--large"
           role="alertdialog"
@@ -556,10 +526,10 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <div class="mdc-multiselection-list">
+            <div class="mdc-multiselection-list" data-name="aula-content-2">
               <ul class="mdc-list mdc-checkbox-list mdc-list--parent" role="group">
                 <div class="mdc-nested-list__wrapper collapsable-wrapper">
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-radio">
                         <input class="mdc-radio__native-control" type="radio" id="proyecto-1" name="proyecto">
@@ -576,7 +546,7 @@
                     </a>
                   </li>
                   <ul class="mdc-list mdc-list--nested collapsable" role="group">
-                    <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                    <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-presentacion">
                       <span class="mdc-list-item__graphic">
                         <div class="mdc-checkbox">
                           <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-presentacion"/>
@@ -591,7 +561,7 @@
                       <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-presentacion">Presentacion</label>
                     </li>
                     <div class="mdc-nested-list__wrapper collapsable-wrapper">
-                      <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                      <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-clases">
                         <span class="mdc-list-item__graphic">
                           <div class="mdc-checkbox">
                             <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clases"/>
@@ -610,7 +580,7 @@
                         </a>
                       </li>
                       <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
-                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-clase-1">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
                               <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clase-1"/>
@@ -624,7 +594,7 @@
                           </span>
                           <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clase-1">Clase 1</label>
                         </li>
-                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-clase-2">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
                               <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clase-2"/>
@@ -638,7 +608,7 @@
                           </span>
                           <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-clase-2">Clase 2</label>
                         </li>
-                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-clase-3">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
                               <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-clase-3"/>
@@ -654,7 +624,7 @@
                         </li>
                       </ul>
                     </div>
-                    <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                    <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-foro">
                       <span class="mdc-list-item__graphic">
                         <div class="mdc-checkbox">
                           <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-foro"/>
@@ -668,7 +638,7 @@
                       </span>
                       <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-1-foro">Foro</label>
                     </li>
-                    <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                    <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-1-aprendizaje">
                       <span class="mdc-list-item__graphic">
                         <div class="mdc-checkbox">
                           <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-1-aprendizaje"/>
@@ -687,7 +657,7 @@
               </ul>
               <ul class="mdc-list mdc-checkbox-list mdc-list--parent" role="group">
                 <div class="mdc-nested-list__wrapper collapsable-wrapper">
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-radio">
                         <input class="mdc-radio__native-control" type="radio" id="proyecto-2" name="proyecto">
@@ -704,7 +674,7 @@
                     </a>
                   </li>
                   <ul class="mdc-list mdc-list--nested collapsable" role="group">
-                    <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                    <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-presnetacion">
                       <span class="mdc-list-item__graphic">
                         <div class="mdc-checkbox">
                           <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-presentacion"/>
@@ -719,7 +689,7 @@
                       <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-presentacion">Presentacion</label>
                     </li>
                     <div class="mdc-nested-list__wrapper collapsable-wrapper">
-                      <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                      <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-clases">
                         <span class="mdc-list-item__graphic">
                           <div class="mdc-checkbox">
                             <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-clases"/>
@@ -738,7 +708,7 @@
                         </a>
                       </li>
                       <ul class="mdc-list mdc-list--nested collapsable initially-hidden" role="group">
-                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-clase-1">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
                               <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-clase-1"/>
@@ -752,7 +722,7 @@
                           </span>
                           <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-clase-1">Clase 1</label>
                         </li>
-                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-clase-2">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
                               <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-clase-2"/>
@@ -766,7 +736,7 @@
                           </span>
                           <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-clase-2">Clase 2</label>
                         </li>
-                        <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                        <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-clase-3">
                           <span class="mdc-list-item__graphic">
                             <div class="mdc-checkbox">
                               <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-clase-3"/>
@@ -782,7 +752,7 @@
                         </li>
                       </ul>
                     </div>
-                    <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                    <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-foro">
                       <span class="mdc-list-item__graphic">
                         <div class="mdc-checkbox">
                           <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-foro"/>
@@ -796,7 +766,7 @@
                       </span>
                       <label class="mdc-list-item__text mdc-typography--body2" for="proyecto-2-foro">Foro</label>
                     </li>
-                    <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                    <li class="mdc-list-item" role="checkbox" aria-checked="false" data-item-id="proyecto-2-aprendizaje">
                       <span class="mdc-list-item__graphic">
                         <div class="mdc-checkbox">
                           <input type="checkbox" class="mdc-checkbox__native-control" id="proyecto-2-aprendizaje"/>
@@ -816,7 +786,7 @@
             </div>
           </div>
           <footer class="mdc-dialog__actions">
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+            <button type="button" class="mdc-button mdc-button--raised mdc-dialog__button" onclick="submitTreeSelection('aula-content-2', 'nuevo-proyecto', true)">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Seleccionar contenido</span>
             </button>
@@ -907,7 +877,7 @@
             </div>
           </div>
           <footer class="mdc-dialog__actions">
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" onclick="openDialog('content-select-01');">
+            <button type="submit" form="content-import__form" class="mdc-button mdc-button--raised mdc-dialog__button" onclick="openDialog('content-select-01');">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Importar</span>
             </button>
@@ -941,7 +911,7 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form admin-form" id="crear-aula-01">
+            <form class="mdc-dialog__form admin-form" id="cambiar-tema__form">
               <div class="admin-form__section">
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
@@ -1116,7 +1086,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="cambiar-tema__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear aula</span>
             </button>
@@ -1150,7 +1120,7 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form admin-form" id="docente-form-01">
+            <form class="mdc-dialog__form admin-form" id="crear-carpeta__form">
               <div class="admin-form__section">
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
@@ -1196,7 +1166,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="crear-carpeta__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear carpeta</span>
             </button>
@@ -1230,7 +1200,7 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form admin-form" id="docente-form-01">
+            <form class="mdc-dialog__form admin-form" id="crear-recurso__form">
               <div class="admin-form__section">
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
@@ -1344,7 +1314,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="crear-recurso__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear recurso</span>
             </button>

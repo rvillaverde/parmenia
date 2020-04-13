@@ -254,7 +254,7 @@ section .subtitle-wrapper {
   }
 }
 
-.headline-wrapper__actions > *:not(:first-child) {
+.headline-wrapper .headline-wrapper__actions > .mdc-button + .mdc-button {
   margin-left: 16px;
 }
 
