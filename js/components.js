@@ -168,17 +168,21 @@ class MultiSelectionList {
   constructor(multiSelectionList) {
     this.multiSelectionList = multiSelectionList;
     this.multiSelectionList.component = this;
-    this.parents = [];
+    this.parentLists = [];
     let self = this;
 
-    $(this.multiSelectionList).find('> .mdc-list--parent').each(function(i, treeCheckboxList) {
-      self.parents.push(new TreeCheckboxList(treeCheckboxList));
+    $(this.multiSelectionList).find('> .mdc-list--parent').each(function(i, parentList) {
+      let treeCheckboxList = new TreeCheckboxList(parentList);
+      $(treeCheckboxList).change(function(e) {
+        $(self.multiSelectionList).trigger('MultiSelectionList:change');
+      });
+      self.parentLists.push(treeCheckboxList);
     });
   }
 
   selectedItems(includeParent = false) {
     let selectedItems = [];
-    this.parents.forEach(function(parent) {
+    this.parentLists.forEach(function(parent) {
       selectedItems = selectedItems.concat(parent.selectedItems(includeParent));
     });
 
@@ -186,7 +190,7 @@ class MultiSelectionList {
   }
 
   update(data) {
-    this.parents.forEach(function(parent) {
+    this.parentLists.forEach(function(parent) {
       parent.update(data);
     });
   }
@@ -268,7 +272,7 @@ class TreeCheckboxList {
       this.toggleParent(item);
     }
 
-    $(this.list.mdc).trigger('change');
+    $(this).trigger('change');
   }
 
   toggleItem(input, isChecked) {

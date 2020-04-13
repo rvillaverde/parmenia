@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
         dot.style.backgroundColor = info.event.extendedProps.color;
         info.el.firstChild.prepend(dot);
         info.el.firstChild.classList.add("mdc-typography--body2");
-        info.el.firstChild.setAttribute("data-agenda", info.event.extendedProps.agendas.map((agenda) => agenda.id).join(','));
+        info.el.firstChild.setAttribute("data-agendas", info.event.extendedProps.agendas.map((agenda) => agenda.id).join(','));
       } else {
         info.el.style.backgroundColor = info.event.extendedProps.color;
-        info.el.setAttribute("data-agenda", info.event.extendedProps.agendas.map((agenda) => agenda.id).join(','));
+        info.el.setAttribute("data-agendas", info.event.extendedProps.agendas.map((agenda) => agenda.id).join(','));
         info.el.classList.add("mdc-typography--body2");
         const content = info.el.querySelector(".fc-content");
         const title = info.el.querySelector(".fc-title");
@@ -62,16 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "1",
         title: "Prueba Lengua 5toB",
-        start: "2020-04-08T10:30:00",
-        end: "2020-04-08T11:30:00",
+        start: "2020-04-16T10:40:00",
+        end: "2020-04-16T11:20:00",
         editable: true,
         extendedProps: {
           agendas: [{
             id: "aula-01",
-            label: "Nombre del aula 1"
+            label: "Lengua 6A"
           }],
           author: "El Profesor",
-          color: "var(--mdc-theme-custom__05)"
+          color: "var(--mdc-theme-custom__02)"
         },
       },
       {
@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Entrega TP",
         start: "2020-04-13T10:30:00",
         end: "2020-04-13T11:30:00",
+        allDay: true,
         extendedProps: {
           agendas: [{
             id: "aula-virtual",
@@ -90,17 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         id: "3",
-        title: "Evento institucional",
-        start: "2020-04-11T10:30:00",
-        end: "2020-04-11T12:30:00",
-        allDay: true,
+        title: "Visita al museo",
+        start: "2020-04-14T08:30:00",
+        end: "2020-04-14T11:30:00",
         extendedProps: {
           agendas: [{
-            id: "institucional",
-            label: "Institucional" 
+            id: "aula-02",
+            label: "Ciencias Naturales 3A" 
           }],
           author: "El Rector",
-          color: "var(--mdc-theme-primary)"
+          color: "var(--mdc-theme-custom__08)"
         },
       },
       {
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             label: "Institucional" 
           }],
           author: "El Rector",
-          color: "var(--mdc-theme-secondary)"
+          color: "var(--mdc-theme-primary)"
         },
       }
     ]
@@ -132,8 +132,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     updateTitle();
   });
-  $(document.querySelectorAll('.mdc-multiselection-list > .mdc-list')[0].mdc).change(function(e) {
-    console.log('lalalal');
+  $(document.querySelectorAll('.mdc-multiselection-list')).on('MultiSelectionList:change', function(e) {
+    let selectedIds = this.component.selectedItems().map((item) => item.id);
+    console.log(selectedIds);
+    $(calendar.el).find('.fc-event').each(function(i, event) {
+      let agendas = $(event).attr('data-agendas').split(',');
+      let show = false;
+      agendas.forEach(function(agenda) {
+        show = show || selectedIds.indexOf(agenda) > -1;
+      })
+      $(event).toggle(show);
+    });
   });
   $("#calendar-preview").on("CalendarPreview:newDate", (e, detail) => {
     calendar.gotoDate(detail.date);
@@ -178,9 +187,8 @@ function updateTitle() {
 }
 
 function viewEvent(event) {
-  console.log(event);
   let eventDialog = $('.mdc-dialog#ver-evento');
-  eventDialog.toggleClass('editable-event', event.editable);
+  eventDialog.toggleClass('automatic-event', event.extendedProps.agendas[0].id === "aula-virtual");
   eventDialog.find('.mdc-dialog__title').text(event.title);
   eventDialog.find('.event-date-time span:first-child').text(formatDate(event.start));
   if (event.allDay) {
@@ -200,7 +208,6 @@ function viewEvent(event) {
 }
 
 function createChip(agenda) {
-  console.log('createChip');
   let chipStr = `<div class="mdc-chip" role="row" id="%id%">
                   <span role="gridcell">
                     <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">%label%</span>

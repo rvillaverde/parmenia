@@ -612,6 +612,10 @@ body[data-role="alumno"] .mdc-header__background {
   margin-right: 4px;
 }
 
+.mdc-chip-set {
+  padding: 4px 0;
+}
+
 .mdc-chip-set .mdc-chip {
   margin: 4px 0;
   margin-right: 8px;

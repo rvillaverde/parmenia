@@ -600,11 +600,11 @@
               </div>
               <p class="mdc-typography--caption">Creado por: <span class="author-name">Profesor Gómez</span></p>
             </div>
-            <button class="mdc-icon-button mdc-icon-button--secondary" id="event-edit-button" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar">
+            <button class="mdc-icon-button mdc-icon-button--secondary" id="event-edit-button" aria-pressed="false" aria-label="Editar" data-mdc-tooltip="Editar" data-role="admin,docente">
               <i class="mdc-icon edit-icon"></i>
             </button>
 
-            <button class="mdc-icon-button mdc-icon-button--secondary" id="event-delete-button" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+            <button class="mdc-icon-button mdc-icon-button--secondary" id="event-delete-button" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar" data-role="admin,docente">
               <i class="mdc-icon delete-icon"></i>
             </button>
             <button type="button" class="mdc-button mdc-button--text mdc-dialog__button" id="event-view-button" data-mdc-dialog-action="yes">
@@ -645,7 +645,7 @@
           <h4 class="mdc-typography--headline4 mdc-drawer__title">Agendas</h4>
           <div class="mdc-multiselection-list">
             <ul class="mdc-list mdc-checkbox-list mdc-list--parent" role="group">
-              <li class="mdc-list-item" role="checkbox" aria-checked="false">
+              <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-virtual">
                 <span class="mdc-list-item__graphic">
                   <div class="mdc-checkbox">
                     <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aula-virtual"/>
@@ -660,7 +660,7 @@
                 <div class="round-photo-wrapper"></div>
                 <label class="mdc-list-item__text mdc-typography--body1" for="agenda-aula-virtual">Aula Virtual</label>
               </li>
-              <li class="mdc-list-item" role="checkbox" aria-checked="false">
+              <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="institucional">
                 <span class="mdc-list-item__graphic">
                   <div class="mdc-checkbox">
                     <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-institucional"/>
@@ -676,7 +676,7 @@
                 <label class="mdc-list-item__text mdc-typography--body1" for="agenda-institucional">Institucional</label>
               </li>
               <div class="mdc-nested-list__wrapper collapsable-wrapper">
-                <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="institucional">
                   <span class="mdc-list-item__graphic">
                     <div class="mdc-checkbox">
                       <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas"/>
@@ -696,7 +696,7 @@
                   </a>
                 </li>
                 <ul class="mdc-list mdc-list--nested collapsable" role="group">
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-01">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula1"/>
@@ -708,10 +708,10 @@
                         </div>
                       </div>
                     </span>
-                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__01);"></div>
-                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula1">Matemática 5A</label>
+                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__09);"></div>
+                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula1">Ciencias Sociales 5B</label>
                   </li>
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-02">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula2"/>
@@ -723,40 +723,10 @@
                         </div>
                       </div>
                     </span>
-                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__06);"></div>
-                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula2">Matemática 5B</label>
+                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__08);"></div>
+                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula2">Ciencias Naturales 3A</label>
                   </li>
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
-                    <span class="mdc-list-item__graphic">
-                      <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula3"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </span>
-                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__02);"></div>
-                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Lorem ipsum dolor sit...</label>
-                  </li>
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
-                    <span class="mdc-list-item__graphic">
-                      <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula3"/>
-                        <div class="mdc-checkbox__background">
-                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                          </svg>
-                          <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                      </div>
-                    </span>
-                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__05);"></div>
-                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Lorem ipsum dolor sit...</label>
-                  </li>
-                  <li class="mdc-list-item" role="checkbox" aria-checked="false">
+                  <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-03">
                     <span class="mdc-list-item__graphic">
                       <div class="mdc-checkbox">
                         <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula3"/>
@@ -769,7 +739,82 @@
                       </div>
                     </span>
                     <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__12);"></div>
-                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Lorem ipsum dolor sit...</label>
+                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Matemática 7A</label>
+                  </li>
+                  <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-04">
+                    <span class="mdc-list-item__graphic">
+                      <div class="mdc-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula3"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </span>
+                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__02);"></div>
+                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Lengua 6A</label>
+                  </li>
+                  <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-05">
+                    <span class="mdc-list-item__graphic">
+                      <div class="mdc-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula3"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </span>
+                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__05);"></div>
+                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Catequesis 4B</label>
+                  </li>
+                  <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-06">
+                    <span class="mdc-list-item__graphic">
+                      <div class="mdc-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula3"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </span>
+                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__15);"></div>
+                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Música 3A</label>
+                  </li>
+                  <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-07">
+                    <span class="mdc-list-item__graphic">
+                      <div class="mdc-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula3"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </span>
+                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__13);"></div>
+                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Taller 1ro</label>
+                  </li>
+                  <li class="mdc-list-item" role="checkbox" aria-checked="true" data-item-id="aula-08">
+                    <span class="mdc-list-item__graphic">
+                      <div class="mdc-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" id="agenda-aulas-aula3"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </span>
+                    <div class="round-photo-wrapper" data-role="alumno,docente" style="background-color: var(--mdc-theme-custom__04);"></div>
+                    <label class="mdc-list-item__text mdc-typography--body2" for="agenda-aulas-aula3">Tecnología 7B</label>
                   </li>
                 </ul>
               </div>

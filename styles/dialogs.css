@@ -204,28 +204,28 @@
   padding: 12px 24px;
 }
 
-.mdc-dialog.event.editable-event .mdc-dialog__actions #event-edit-button {
-  display: flex;
-}
-
-.mdc-dialog.event.editable-event .mdc-dialog__actions #event-delete-button {
-  display: flex;
-}
-
-.mdc-dialog.event.editable-event .mdc-dialog__actions #event-view-button {
+.mdc-dialog.event.automatic-event .mdc-dialog__actions #event-edit-button {
   display: none;
 }
 
-.mdc-dialog.event:not(.editable-event) .mdc-dialog__actions #event-edit-button {
+.mdc-dialog.event.automatic-event .mdc-dialog__actions #event-delete-button {
   display: none;
 }
 
-.mdc-dialog.event:not(.editable-event) .mdc-dialog__actions #event-delete-button {
-  display: none;
-}
-
-.mdc-dialog.event:not(.editable-event) .mdc-dialog__actions #event-view-button {
+.mdc-dialog.event.automatic-event .mdc-dialog__actions #event-view-button {
   display: flex;
+}
+
+body:not([data-role*="alumno"]) .mdc-dialog.event:not(.automatic-event) .mdc-dialog__actions #event-edit-button {
+  display: flex;
+}
+
+body:not([data-role*="alumno"]) .mdc-dialog.event:not(.automatic-event) .mdc-dialog__actions #event-delete-button {
+  display: flex;
+}
+
+.mdc-dialog.event:not(.automatic-event) .mdc-dialog__actions #event-view-button {
+  display: none;
 }
 
 .event-date-time {
