@@ -28,6 +28,29 @@
   </head>
 
   <body class="login-container mdc-typography">
+    <div class="alerts-wrapper">
+      <button class="mdc-icon-button mdc-icon-button--secondary" data-mdc-tooltip="Cerrar">
+        <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+      </button>
+      <h4 class="mdc-typography--headline4">Mostrar alertas:</h4>
+      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="showGlobalNotification('success');">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">éxito</span>
+      </a>
+      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="showGlobalNotification('info');">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">info</span>
+      </a>
+      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="showGlobalNotification('warning');">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">alerta</span>
+      </a>
+      <a class="mdc-card__action--button mdc-button mdc-button--text" onclick="showGlobalNotification('error');">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">error</span>
+      </a>
+    </div>
+
     <div class="global-notification__wrapper success">
       <i class="mdc-icon check-circle-icon-white"></i>
       <h4 class="global-notification__message mdc-typography--headline4">
