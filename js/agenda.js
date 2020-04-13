@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dot.style.backgroundColor = info.event.extendedProps.color;
         info.el.firstChild.prepend(dot);
         info.el.firstChild.classList.add("mdc-typography--body2");
-        info.el.firstChild.setAttribute("data-agenda", info.event.extendedProps.agenda.id);
+        info.el.firstChild.setAttribute("data-agenda", info.event.extendedProps.agendas.map((agenda) => agenda.id).join(','));
       } else {
         info.el.style.backgroundColor = info.event.extendedProps.color;
         info.el.setAttribute("data-agenda", info.event.extendedProps.agendas.map((agenda) => agenda.id).join(','));
