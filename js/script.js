@@ -32,7 +32,7 @@ $(function() {
     setToggleCardSelection(card);
   });
 
-  $('.user-roles-wrapper').mousedown(onGrab);
+  $('.user-roles-wrapper, .alerts-wrapper').mousedown(onGrab);
   $('.collapse-link input').change(collapse);
   $('.mdc-top-app-bar__section#nav-menu-toggle input[type="checkbox"]').click(toggleNavMenu);
 
