@@ -2146,24 +2146,26 @@
 
                   <div class="admin-form__subsection-inner admin-form__subsection-inner__photo-uploader">
                     <div class="admin-form__uploader-wrapper initially-hidden" id="imagen-recurso">
-                      <div class="mdc-card link-card mdc-card--outlined">
-                        <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                        <div class="mdc-card__primary">
-                          <i class="mdc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M21 15L16 10L5 21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
-                          <div class="mdc-card__link-info">
-                            <p class="mdc-typography--body2">Título del archivo</p>
-                            <p class="mdc-typography--subtitle2">link con elipsis</p>
-                          </div>
-                          <div class="mdc-card__action-icons">
-                            <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                              <i class="mdc-icon delete-icon"></i>
-                            </button>
+                      <div class="link-card__wrapper">
+                        <div class="mdc-card link-card mdc-card--outlined">
+                          <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                          <div class="mdc-card__primary">
+                            <i class="mdc-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 15L16 10L5 21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <div class="mdc-card__link-info">
+                              <p class="mdc-typography--body2">Título del archivo</p>
+                              <p class="mdc-typography--subtitle2">link con elipsis</p>
+                            </div>
+                            <div class="mdc-card__action-icons">
+                              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                                <i class="mdc-icon delete-icon"></i>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2171,7 +2173,7 @@
                         <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Aún no hay elemento multimedia</span>
                       </div>
                       <div class="admin-form__photo-placeholder__actions">
-                        <button class="mdc-button mdc-button--text">
+                        <button class="mdc-button mdc-button--text" disabled>
                           <span class="mdc-button__ripple"></span>
                           <i class="mdc-button__icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2186,32 +2188,33 @@
                     </div>
 
                     <div class="admin-form__uploader-wrapper initially-hidden" id="video-recurso">
-                      <div class="mdc-card link-card mdc-card--outlined">
-                        <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                        <div class="mdc-card__primary">
-                          <i class="mdc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M23 7L16 12L23 17V7Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
-                          <div class="mdc-card__link-info">
-                            <p class="mdc-typography--body2">Título del archivo</p>
-                            <p class="mdc-typography--subtitle2">link con elipsis</p>
-                          </div>
-                          <div class="mdc-card__action-icons">
-                            <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                              <i class="mdc-icon delete-icon"></i>
-                            </button>
+                      <div class="link-card__wrapper">
+                        <div class="mdc-card link-card mdc-card--outlined">
+                          <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                          <div class="mdc-card__primary">
+                            <i class="mdc-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 7L16 12L23 17V7Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <div class="mdc-card__link-info">
+                              <p class="mdc-typography--body2">Título del archivo</p>
+                              <p class="mdc-typography--subtitle2">link con elipsis</p>
+                            </div>
+                            <div class="mdc-card__action-icons">
+                              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                                <i class="mdc-icon delete-icon"></i>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="no-content-placeholder admin-form__photo-placeholder">
                         <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Aún no hay elemento multimedia</span>
                       </div>
-
                       <div class="admin-form__photo-placeholder__actions">
-                        <button class="mdc-button mdc-button--text">
+                        <button class="mdc-button mdc-button--text" disabled>
                           <span class="mdc-button__ripple"></span>
                           <i class="mdc-button__icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2225,32 +2228,33 @@
                     </div>
 
                     <div class="admin-form__uploader-wrapper initially-hidden" id="audio-recurso">
-                      <div class="mdc-card link-card mdc-card--outlined">
-                        <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                        <div class="mdc-card__primary">
-                          <i class="mdc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M15.5401 8.45996C16.4774 9.3976 17.004 10.6691 17.004 11.995C17.004 13.3208 16.4774 14.5923 15.5401 15.53" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
-                          <div class="mdc-card__link-info">
-                            <p class="mdc-typography--body2">Título del archivo</p>
-                            <p class="mdc-typography--subtitle2">link con elipsis</p>
-                          </div>
-                          <div class="mdc-card__action-icons">
-                            <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                              <i class="mdc-icon delete-icon"></i>
-                            </button>
+                      <div class="link-card__wrapper">
+                        <div class="mdc-card link-card mdc-card--outlined">
+                          <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                          <div class="mdc-card__primary">
+                            <i class="mdc-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.5401 8.45996C16.4774 9.3976 17.004 10.6691 17.004 11.995C17.004 13.3208 16.4774 14.5923 15.5401 15.53" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <div class="mdc-card__link-info">
+                              <p class="mdc-typography--body2">Título del archivo</p>
+                              <p class="mdc-typography--subtitle2">link con elipsis</p>
+                            </div>
+                            <div class="mdc-card__action-icons">
+                              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                                <i class="mdc-icon delete-icon"></i>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="no-content-placeholder admin-form__photo-placeholder">
                         <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Aún no hay elemento multimedia</span>
                       </div>
-
                       <div class="admin-form__photo-placeholder__actions">
-                        <button class="mdc-button mdc-button--text">
+                        <button class="mdc-button mdc-button--text" disabled>
                           <span class="mdc-button__ripple"></span>
                           <i class="mdc-button__icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2264,34 +2268,35 @@
                     </div>
 
                     <div class="admin-form__uploader-wrapper initially-hidden" id="texto-recurso">
-                      <div class="mdc-card link-card mdc-card--outlined">
-                        <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                        <div class="mdc-card__primary">
-                          <i class="mdc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M17 10H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M21 6H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M21 14H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M17 18H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
-                          <div class="mdc-card__link-info">
-                            <p class="mdc-typography--body2">Título del archivo</p>
-                            <p class="mdc-typography--subtitle2">link con elipsis</p>
-                          </div>
-                          <div class="mdc-card__action-icons">
-                            <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                              <i class="mdc-icon delete-icon"></i>
-                            </button>
+                      <div class="link-card__wrapper">
+                        <div class="mdc-card link-card mdc-card--outlined">
+                          <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                          <div class="mdc-card__primary">
+                            <i class="mdc-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 10H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 6H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 14H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 18H3" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <div class="mdc-card__link-info">
+                              <p class="mdc-typography--body2">Título del archivo</p>
+                              <p class="mdc-typography--subtitle2">link con elipsis</p>
+                            </div>
+                            <div class="mdc-card__action-icons">
+                              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                                <i class="mdc-icon delete-icon"></i>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="no-content-placeholder admin-form__photo-placeholder">
                         <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Aún no hay elemento multimedia</span>
                       </div>
-
                       <div class="admin-form__photo-placeholder__actions">
-                        <button class="mdc-button mdc-button--text">
+                        <button class="mdc-button mdc-button--text" disabled>
                           <span class="mdc-button__ripple"></span>
                           <i class="mdc-button__icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2306,32 +2311,33 @@
                     </div>
 
                     <div class="admin-form__uploader-wrapper initially-hidden" id="enlace-recurso">
-                      <div class="mdc-card link-card mdc-card--outlined">
-                        <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
-                        <div class="mdc-card__primary">
-                          <i class="mdc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.46997L11.75 5.17997" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M14.0002 11C13.5707 10.4259 13.0228 9.9508 12.3936 9.60704C11.7644 9.26328 11.0687 9.05886 10.3535 9.00765C9.63837 8.95643 8.92058 9.05961 8.24882 9.3102C7.57706 9.56079 6.96705 9.95291 6.46017 10.46L3.46017 13.46C2.54938 14.403 2.04541 15.666 2.0568 16.977C2.06819 18.288 2.59404 19.542 3.52108 20.4691C4.44812 21.3961 5.70218 21.922 7.01316 21.9334C8.32415 21.9447 9.58716 21.4408 10.5302 20.53L12.2402 18.82" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </i>
-                          <div class="mdc-card__link-info">
-                            <p class="mdc-typography--body2">Título del archivo</p>
-                            <p class="mdc-typography--subtitle2">link con elipsis</p>
-                          </div>
-                          <div class="mdc-card__action-icons">
-                            <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                              <i class="mdc-icon delete-icon"></i>
-                            </button>
+                      <div class="link-card__wrapper">
+                        <div class="mdc-card link-card mdc-card--outlined">
+                          <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
+                          <div class="mdc-card__primary">
+                            <i class="mdc-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.46997L11.75 5.17997" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14.0002 11C13.5707 10.4259 13.0228 9.9508 12.3936 9.60704C11.7644 9.26328 11.0687 9.05886 10.3535 9.00765C9.63837 8.95643 8.92058 9.05961 8.24882 9.3102C7.57706 9.56079 6.96705 9.95291 6.46017 10.46L3.46017 13.46C2.54938 14.403 2.04541 15.666 2.0568 16.977C2.06819 18.288 2.59404 19.542 3.52108 20.4691C4.44812 21.3961 5.70218 21.922 7.01316 21.9334C8.32415 21.9447 9.58716 21.4408 10.5302 20.53L12.2402 18.82" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </i>
+                            <div class="mdc-card__link-info">
+                              <p class="mdc-typography--body2">Título del archivo</p>
+                              <p class="mdc-typography--subtitle2">link con elipsis</p>
+                            </div>
+                            <div class="mdc-card__action-icons">
+                              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                                <i class="mdc-icon delete-icon"></i>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="no-content-placeholder admin-form__photo-placeholder">
                         <span class="mdc-typography--headline4 admin-form__photo-placeholder__text">Aún no hay elemento multimedia</span>
                       </div>
-
                       <div class="admin-form__photo-placeholder__actions">
-                        <button class="mdc-button mdc-button--text">
+                        <button class="mdc-button mdc-button--text" disabled>
                           <span class="mdc-button__ripple"></span>
                           <i class="mdc-button__icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
