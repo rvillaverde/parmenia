@@ -204,6 +204,11 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
   margin-right: 12px;
 }
 
+.mdc-select.mdc-select--checkbox:not(.mdc-select--disabled) .mdc-select__anchor {
+  min-height: 56px;
+  height: unset;
+}
+
 .mdc-select.mdc-select--checkbox .mdc-select__menu label {
   cursor: pointer;
 }
@@ -212,15 +217,15 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  width: 100%;
   height: 100%;
-  padding: 0 16px;
+  min-height: 56px;
+  padding: 8px 16px;
   padding-right: 40px;
+  width: 100%;
 }
 
 .mdc-select.mdc-select--checkbox .mdc-chip-set .mdc-chip {
-  margin: 0;
+  margin: 4px 0;
   margin-right: 12px;
 }
 
@@ -265,7 +270,13 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
 }
 
 .mdc-select:not(.mdc-select--disabled).mdc-select--checkbox .mdc-select__selected-text {
-  color: transparent;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: unset;
 }
 
 .mdc-drawer .mdc-select {

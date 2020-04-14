@@ -24,6 +24,35 @@ class MDCSearchTextField {
   }
 }
 
+class MDCRadioButtonWrapper {
+  constructor(wrapper) {
+    this.wrapper = wrapper;
+    this.hiddenInput = $("<input type='hidden' name='%id%'>".replace('%id%', $(this.wrapper).attr('data-name')));
+    $(this.wrapper).append(this.hiddenInput);
+    this.wrapper.component = this;
+    let self = this;
+
+    $(this.wrapper).find('.mdc-radio').each(function(i, radio) {
+      const formField = mdc.formField.MDCFormField.attachTo(document.querySelector('.mdc-form-field'));
+      formField.input = radio;
+      $(radio).change(function() {
+        self.handleChange(this);
+      });
+    });
+  }
+
+  update(data) {
+
+  }
+
+  handleChange(radio) {
+    this.hiddenInput.val($(radio).find('input').val());
+    $(this.wrapper).find('.mdc-radio input:not(:checked)[data-dynamic-cta-target]').each(function(i, input) {
+      $($(input).attr('data-dynamic-cta-target')).addClass('initially-hidden');
+    });
+  }
+}
+
 class SelectMenuWithSearch {
   constructor(select) {
     this.select = select;
@@ -48,7 +77,7 @@ class SelectMenuWithSearch {
   }
 
   update(data) {
-    console.log('select update');
+    this.select.mdc.value = data;
   }
 
   handleSearch(input) {
@@ -85,7 +114,7 @@ class CheckBoxMenuSelect {
         const index = $(e.currentTarget).index();
         // Mark checkbox as checked if user clicked on li element
         if (!$(e.target).is('label'))
-          self.mdcSelect.menu_.list_.foundation_.toggleCheckboxAtIndex_(index, e.target === e.currentTarget);
+          self.select.mdc.menu_.list_.foundation_.toggleCheckboxAtIndex_(index, e.target === e.currentTarget);
 
         // Handle selection
         self.handleSelection(index);
@@ -96,19 +125,28 @@ class CheckBoxMenuSelect {
       self.handleSearch($(this).val().toLowerCase());
     });
 
-    this.mdcSelect = mdc.select.MDCSelect.attachTo(select);
+    this.select.mdc = mdc.select.MDCSelect.attachTo(select);
 
-    this.mdcSelect.menu_.listen('MDCMenuSurface:opened', function(e) {
+    this.select.mdc.menu_.listen('MDCMenuSurface:opened', function(e) {
       $(this).css('max-height', 192);
     });
   }
 
   update(data) {
-    console.log('checkbox select update');
+    let self = this;
+    let ids = data.split(',');
+    ids.forEach(function(id) {
+      let index = $(self.select).find(`.mdc-list-item[data-value=${ id }]`).index();
+      if (index > -1) {
+        self.select.mdc.menu_.list_.foundation_.toggleCheckboxAtIndex_(index, true);
+        self.handleSelection(index);
+        self.select.mdc.selectedIndex = index;
+      }
+    });
   }
 
   handleSearch(input) {
-    this.mdcSelect.menu_.list_.listElements.forEach(function(element) {
+    this.select.mdc.menu_.list_.listElements.forEach(function(element) {
       let name = $(element).text().trim();
       if (input.length > 0 && name.toLowerCase().indexOf(input) === -1) {
         $(element).hide();
@@ -121,21 +159,21 @@ class CheckBoxMenuSelect {
   handleSelection(index) {
     let self = this;
 
-    let selectedIndex = this.mdcSelect.menu_.list_.selectedIndex;
+    let selectedIndex = this.select.mdc.menu_.list_.selectedIndex;
     let selectedText = selectedIndex.length > 0 ? `${ selectedIndex.length } selected` : '';
     let selectedItems = selectedIndex.map(function(i) {
-      let item = $(self.mdcSelect.menu_.list_.listElements[i]);
+      let item = $(self.select.mdc.menu_.list_.listElements[i]);
       //selectedText = selectedText + `${ item.attr('data-value') },`;
       return { name: item.text().trim(), id: item.attr('data-value'), index: i };
     })
 
-    this.mdcSelect.foundation_.adapter_.setSelectedText(selectedText);
+    this.select.mdc.foundation_.adapter_.setSelectedText(selectedText);
     if (selectedIndex.indexOf(index) > -1) {
-      this.mdcSelect.foundation_.adapter_.addClassAtIndex(index, 'mdc-list-item--selected');
-      this.mdcSelect.foundation_.adapter_.setAttributeAtIndex(index, 'aria-selected', 'true');
+      this.select.mdc.foundation_.adapter_.addClassAtIndex(index, 'mdc-list-item--selected');
+      this.select.mdc.foundation_.adapter_.setAttributeAtIndex(index, 'aria-selected', 'true');
     } else {
-      this.mdcSelect.foundation_.adapter_.removeClassAtIndex(index, 'mdc-list-item--selected');
-      this.mdcSelect.foundation_.adapter_.removeAttributeAtIndex(index, 'aria-selected');
+      this.select.mdc.foundation_.adapter_.removeClassAtIndex(index, 'mdc-list-item--selected');
+      this.select.mdc.foundation_.adapter_.removeAttributeAtIndex(index, 'aria-selected');
     }
 
     this.updateChipset(selectedItems);
@@ -143,7 +181,7 @@ class CheckBoxMenuSelect {
   }
 
   updateChipset(items) {
-    let chipSet = $(this.mdcSelect.root_).find('.mdc-chip-set');
+    let chipSet = $(this.select.mdc.root_).find('.mdc-chip-set');
     chipSet.empty();
 
     if (!items) return;

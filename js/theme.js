@@ -69,7 +69,7 @@ function initFilterChipsets() {
 function initTextFields() {
   var textFields = $('.mdc-text-field:not(.mdc-text-field--search)');
   for (var i = 0, textField; textField = textFields[i]; i++) {
-    mdc.textField.MDCTextField.attachTo(textField);
+    textField.mdc = mdc.textField.MDCTextField.attachTo(textField);
   }
 }
 
@@ -84,6 +84,13 @@ function initCheckboxes() {
   var checkboxes = $('.mdc-checkbox');
   for (var i = 0, checkbox; checkbox = checkboxes[i]; i++) {
     mdc.checkbox.MDCCheckbox.attachTo(checkbox);
+  }
+}
+
+function initRadioWrappers() {
+  var radioWrappers = $('.mdc-radio-button__wrapper');
+  for (var i = 0, radioWrapper; radioWrapper = radioWrappers[i]; i++) {
+    new MDCRadioButtonWrapper(radioWrapper);
   }
 }
 
@@ -252,6 +259,7 @@ initFilterChipsets();
 initTextFields();
 initSearchTextFields();
 initCheckboxes();
+initRadioWrappers()
 initTabScrollers();
 initSwitchControls();
 initDataTables();

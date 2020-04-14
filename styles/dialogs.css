@@ -192,7 +192,7 @@
   padding-top: 0;
 }
 
-.mdc-dialog__content .no-content-placeholder {
+.mdc-dialog__content .no-content-placeholder:not(.admin-form__photo-placeholder) {
   height: 72px;
 }
 

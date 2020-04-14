@@ -78,9 +78,9 @@ function showGlobalNotification(type) {
 function initDynamicCTAs() {
   $('[data-dynamic-cta-target]').change(function(e, detail) {
     if (detail) {
-      let target = $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden', !detail.show);
+      $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden', !detail.show);
     } else {
-      let target = $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden');
+      $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden');
     }
   });
 }
@@ -233,7 +233,9 @@ function submitTreeSelection(treeSelection, dialogId, includeParent) {
 function aulaEdit() {
   let data = {
     nombre: 'Ciencias Sociales 5B',
-    docentes: 'docente-01'
+    docentes: 'docente-01',
+    cursos: 'curso-01,curso-02',
+    color: 'custom__09'
   };
   openDialog('editar-aula', data);
 }
@@ -253,7 +255,7 @@ function openDialog(dialogId, data) {
       if (dialogEl.find(`[data-name=${ key }]`).length > 0) {
         dialogEl.find(`[data-name=${ key }]`)[0].component.update(data[key]);
       } else {
-        dialogEl.find(`input[name=${ key }]`).val(data[key]);
+        dialogEl.find(`input[name=${ key }]`).closest('.mdc-text-field')[0].mdc.value = data[key];
       }
     });
   }
