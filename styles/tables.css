@@ -151,7 +151,7 @@
 }
 
 .mdc-data-table__cell .mdc-chip-set {
-  padding: 0;
+  padding: 4px 0;
 }
 
 .mdc-data-table__table .mdc-data-table__header-cell--actions,
