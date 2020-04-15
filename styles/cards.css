@@ -36,7 +36,7 @@
 }
 
 .mdc-card--outlined.mdc-card--interactive:not(.menu-card):not(.actividad-component):hover {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .mdc-card__empty-with-cta {
@@ -713,6 +713,10 @@
   padding-bottom: 24px;
 }
 
+.foro-discusion-card.mdc-card--large .foro-discusion-card__reply-wrapper .foro-discusion-card__reply-date {
+  color: var(--mdc-theme-gray__400);
+}
+
 .foro-discusion-card:not(.mdc-card--large) .mdc-card__secondary {
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -741,6 +745,10 @@
           flex-grow: 0;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+.foro-discusion-card:not(.mdc-card--large) .mdc-card__secondary .mdc-icon:last-of-type {
+  margin-left: 12px;
 }
 
 .foro-discusion-card:not(.mdc-card--large):not(:last-child) {

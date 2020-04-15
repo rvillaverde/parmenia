@@ -45,7 +45,14 @@ $(function() {
   $('input[type=file]').change(fileSelected);
   $('.admin-form').submit(function(e) { e.preventDefault(); });
   $('.mdc-text-field--search input[type=text][data-filter-target]').keyup(handleSearchField);
+  $('.cards--selectable .mdc-card.foro-discusion-card').click(toggleDiscusion);
 });
+
+function toggleDiscusion() {
+  let target = $(this).attr('data-name');
+  $('.foro-discusion-card.mdc-card--large').hide();
+  $(`.foro-discusion-card.mdc-card--large[data-name=${ target }]`).show();
+}
 
 function handleSearchField() {
   let target = $(this).attr('data-filter-target');

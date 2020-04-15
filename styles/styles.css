@@ -636,6 +636,10 @@ input[type=file] {
   width: 36px;
 }
 
+.foro-discusion-card.mdc-card--large .round-step.closed-discusion {
+  background-color: var(--mdc-theme-primary);
+}
+
 .mdc-card .mdc-layout-grid.round-step__grid {
   padding: 24px;
 }
