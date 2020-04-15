@@ -213,7 +213,7 @@ function createChip(agenda) {
                   <span role="gridcell">
                     <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">%label%</span>
                   </span>
-                </div>`
+                </div>`;
 
   let chipEl = chipStr.split('%id%').join(agenda.id).split('%label%').join(agenda.label);
   return $(chipEl);

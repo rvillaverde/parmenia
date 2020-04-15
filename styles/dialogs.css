@@ -204,6 +204,10 @@
   padding: 12px 24px;
 }
 
+.mdc-dialog.event .mdc-dialog__scrim {
+  background-color: transparent;
+}
+
 .mdc-dialog.event.automatic-event .mdc-dialog__actions #event-edit-button {
   display: none;
 }
