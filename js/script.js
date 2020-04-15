@@ -44,7 +44,20 @@ $(function() {
   $('.toggle-password-visibility').click(togglePasswordVisibility)
   $('input[type=file]').change(fileSelected);
   $('.admin-form').submit(function(e) { e.preventDefault(); });
+  $('.mdc-text-field--search input[type=text][data-filter-target]').keyup(handleSearchField);
 });
+
+function handleSearchField() {
+  let target = $(this).attr('data-filter-target');
+  let input = $(this).val().toLowerCase().trim();
+  $(target).each(function(i, item) {
+    if ($(item).text().toLowerCase().trim().indexOf(input) > -1) {
+      $(item).show();
+    } else {
+      $(item).hide();
+    }
+  });
+}
 
 function togglePasswordVisibility(e) {
   let input = $(e.currentTarget).closest('.mdc-text-field').find('input');

@@ -357,7 +357,7 @@
         <div class="mdc-data-filter__wrapper">
           <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--search">
             <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
-            <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+            <input type="text" class="mdc-text-field__input mdc-typography--body1" data-filter-target=".fav-filter__target">
             <div class="mdc-notched-outline mdc-notched-outline--no-label">
               <div class="mdc-notched-outline__leading"></div>
               <div class="mdc-notched-outline__notch">
@@ -368,7 +368,7 @@
           </label>
           <div class="mdc-data-filter__chips">
             <span class="mdc-data-filter__title mdc-typography--subtitle1">Filtros</span>
-            <div class="mdc-chip-set mdc-chip-set--filter" role="grid" data-filter-target=".chip-filter__target">
+            <div class="mdc-chip-set mdc-chip-set--filter" role="grid" data-filter-target=".fav-filter__target">
               <div class="mdc-chip" role="row" id="aula-01">
                 <div class="mdc-chip__ripple"></div>
                 <span class="mdc-chip__checkmark" >
@@ -467,7 +467,7 @@
 
             <div class="mdc-layout-grid cards projects collapsable">
               <div class="mdc-layout-grid__inner">
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop fav-filter__target" data-filter-value="aula-01">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/institucionales/Parmenia_Institucional_Generica.png');">
                       <span class="mdc-card__project-status loading">
@@ -528,11 +528,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-01.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a href="proyecto1_presentacion.html" class="mdc-card__action--button mdc-button mdc-button--text">
@@ -549,7 +549,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-02">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop fav-filter__target" data-filter-value="aula-02">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/institucionales/Parmenia_Institucional_Generica.png');">
                       <span class="mdc-card__project-status loading">
@@ -610,11 +610,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-02.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a href="proyecto1_presentacion.html" class="mdc-card__action--button mdc-button mdc-button--text">
@@ -631,7 +631,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop fav-filter__target" data-filter-value="aula-01">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/institucionales/Parmenia_Institucional_Generica.png');">
                       <span class="mdc-card__project-status loading">
@@ -692,11 +692,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-01.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a href="proyecto1_presentacion.html" class="mdc-card__action--button mdc-button mdc-button--text">
@@ -713,7 +713,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-03">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop fav-filter__target" data-filter-value="aula-03">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/institucionales/Parmenia_Institucional_Generica.png');">
                       <span class="mdc-card__project-status finished">
@@ -768,11 +768,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-03.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a href="proyecto1_presentacion.html" class="mdc-card__action--button mdc-button mdc-button--text">
@@ -789,7 +789,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
+                <div class="mdc-card proyecto-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop fav-filter__target" data-filter-value="aula-01">
                   <a href="proyecto1_presentacion.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__media mdc-card__media--square" style="background-image: url('img/institucionales/Parmenia_Institucional_Generica.png');">
                       <span class="mdc-card__project-status finished">
@@ -844,11 +844,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-01.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a href="proyecto1_presentacion.html" class="mdc-card__action--button mdc-button mdc-button--text">
@@ -899,7 +899,7 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-01">
+                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop fav-filter__target" data-filter-value="aula-01">
                   <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                     <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                     <div class="mdc-card__primary">
@@ -911,11 +911,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-01.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
@@ -932,7 +932,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-02">
+                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop fav-filter__target" data-filter-value="aula-02">
                   <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                     <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                     <div class="mdc-card__primary">
@@ -944,11 +944,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-01.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
@@ -965,7 +965,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-03">
+                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop fav-filter__target" data-filter-value="aula-03">
                   <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                     <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                     <div class="mdc-card__primary">
@@ -977,11 +977,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-03.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
@@ -998,7 +998,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-04">
+                <div class="mdc-card library-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop fav-filter__target" data-filter-value="aula-04">
                   <a class="mdc-card__primary-action" tabindex="0" onclick="openDialog('recurso-01');">
                     <div class="mdc-card__media" style="background-image: url('img/placeholder.png');"></div>
                     <div class="mdc-card__primary">
@@ -1010,11 +1010,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-04.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 4</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <button class="mdc-card__action--button mdc-button mdc-button--text" onclick="openDialog('recurso-01');">
@@ -1072,7 +1072,7 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop chip-filter__target" data-filter-value="aula-01">
+                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop fav-filter__target" data-filter-value="aula-01">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
                   <a class="mdc-card__primary">
                     <i class="mdc-icon">
@@ -1088,11 +1088,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-01.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <button class="mdc-card__action--button mdc-button mdc-button--text">
@@ -1109,7 +1109,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop chip-filter__target" data-filter-value="aula-02">
+                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop fav-filter__target" data-filter-value="aula-02">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
                   <a class="mdc-card__primary">
                     <i class="mdc-icon">
@@ -1127,11 +1127,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-02.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <button class="mdc-card__action--button mdc-button mdc-button--text">
@@ -1148,7 +1148,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop chip-filter__target" data-filter-value="aula-03">
+                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop fav-filter__target" data-filter-value="aula-03">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
                   <a class="mdc-card__primary">
                     <i class="mdc-icon">
@@ -1165,11 +1165,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-03.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <button class="mdc-card__action--button mdc-button mdc-button--text">
@@ -1186,7 +1186,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop chip-filter__target" data-filter-value="aula-04">
+                <div class="mdc-card link-card mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop fav-filter__target" data-filter-value="aula-04">
                   <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('img/placeholder.png');"></div>
                   <a class="mdc-card__primary">
                     <i class="mdc-icon">
@@ -1202,11 +1202,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-04.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 4</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <button class="mdc-card__action--button mdc-button mdc-button--text">
@@ -1256,7 +1256,7 @@
 
             <div class="mdc-layout-grid cards collapsable">
               <div class="mdc-layout-grid__inner">
-                <div class="mdc-card foro-discusion-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop chip-filter__target" data-filter-value="aula-01">
+                <div class="mdc-card foro-discusion-card mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop fav-filter__target" data-filter-value="aula-01">
                   <a class="mdc-card__primary" href="proyecto1_foro.html">
                     <h4 class="mdc-typography--headline4">Título de la discusión puede tener hasta dos lineas luego elipsis...</h4>
                   </a>
@@ -1275,11 +1275,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-01.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a class="mdc-card__action--button mdc-button mdc-button--text" href="proyecto1_foro.html">
@@ -1330,7 +1330,7 @@
 
             <div class="mdc-layout-grid cards projects collapsable">
               <div class="mdc-layout-grid__inner">
-                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-01">
+                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop fav-filter__target" data-filter-value="aula-01">
                   <a href="actividad1.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline2">Nombre de la actividad</h2>
@@ -1363,11 +1363,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-01.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 1</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a href="actividad1.html" class="mdc-card__action--button mdc-button mdc-button--text">
@@ -1384,7 +1384,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-02">
+                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop fav-filter__target" data-filter-value="aula-02">
                   <a href="actividad1.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline2">Nombre de la actividad</h2>
@@ -1418,11 +1418,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-02.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 2</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a href="actividad1.html" class="mdc-card__action--button mdc-button mdc-button--text">
@@ -1439,7 +1439,7 @@
                   </div>
                 </div>
 
-                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop chip-filter__target" data-filter-value="aula-043">
+                <div class="mdc-card actividad-card mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop fav-filter__target" data-filter-value="aula-03">
                   <a href="actividad1.html" class="mdc-card__primary-action" tabindex="0">
                     <div class="mdc-card__primary">
                       <h2 class="mdc-card__title mdc-typography--headline2">Nombre de la actividad</h2>
@@ -1472,11 +1472,11 @@
                   </a>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__info">
-                      <div class="mdc-chip" role="row">
+                      <a href="aula-03.html" class="mdc-chip" role="row">
                         <span role="gridcell">
                           <span class="mdc-chip__text mdc-typography--body2">Nombre del aula 3</span>
                         </span>
-                      </div>
+                      </a>
                     </div>
                     <div class="mdc-card__action-buttons">
                       <a href="actividad1.html" class="mdc-card__action--button mdc-button mdc-button--text">
