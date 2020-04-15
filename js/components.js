@@ -585,6 +585,7 @@ class DatePicker {
     this.materialPicker = new MaterialDatepicker(this.button, {
       color: '#6274E5',
       lang: 'es',
+      minDate: new Date().setHours(0,0,0,0),
       orientation: 'portrait',
       outputElement: '.picker-output',
       outputFormat: 'YYYY-MM-DD',

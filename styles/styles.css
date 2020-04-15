@@ -1135,6 +1135,10 @@ tr.sortable-placeholder:last-child {
 
 .mp-picker .mp-picker-choose [class*="mp-picker-click"] {
   border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
 }
 
 .mp-picker .mp-picker-picker .mp-picker-site .mp-picker-site-this {
@@ -1152,14 +1156,16 @@ tr.sortable-placeholder:last-child {
   text-transform: capitalize;
 }
 
-.mp-picker .mp-picker-choose [class*="mp-picker-click"].mp-picker-choose-day {
-  color: var(--mdc-theme-gray__700);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  padding: 0.5em 0;
+.mp-picker .mp-picker-choose .mp-picker-choose-day.mp-picker-choose-day--disabled {
+  cursor: default;
+  opacity: 0.6;
 }
+
+.mp-picker .mp-picker-choose .mp-picker-choose-day.mp-picker-choose-day--disabled:hover {
+  background-color: transparent;
+}
+
+.mp-picker .mp-picker-choose [class*="mp-picker-click"]:hover
 
 .mp-picker .mp-picker-choose [class*="mp-picker-click"].active {
   color: var(--mdc-theme-surface);
