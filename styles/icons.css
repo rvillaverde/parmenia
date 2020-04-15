@@ -125,8 +125,15 @@
   background-image: url("../icons/eye-on-icon.svg");
 }
 
+.eye-on-icon-small {
+  background-image: url("../icons/eye-on-icon-small.svg");
+}
+
 .eye-off-icon {
   background-image: url("../icons/eye-off-icon.svg");
+}
+.eye-off-icon-small {
+  background-image: url("../icons/eye-off-icon-small.svg");
 }
 
 .plus-icon {
