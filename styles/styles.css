@@ -366,8 +366,14 @@ input[type=file] {
 }
 
 .upcoming-event {
+  display: block;
   padding: 16px;
   border-bottom: 1px solid var(--mdc-theme-gray__300);
+  text-decoration: none;
+}
+
+.upcoming-event:hover .upcoming-event__title {
+  text-decoration: underline;
 }
 
 .upcoming-event__title {

@@ -116,12 +116,33 @@ document.addEventListener("DOMContentLoaded", function () {
           author: "El Rector",
           color: "var(--mdc-theme-primary)"
         },
+      },
+      {
+        id: "6",
+        title: "Evento institucional",
+        start: "2020-04-24T10:30:00",
+        end: "2020-04-24T12:30:00",
+        extendedProps: {
+          agendas: [{
+            id: "institucional",
+            label: "Institucional" 
+          }],
+          author: "El Rector",
+          color: "var(--mdc-theme-primary)"
+        },
       }
     ]
   });
 
   window.calendar = calendar;
   calendar.render();
+
+  let urlSearchParams = new URLSearchParams(window.location.search);
+  if (urlSearchParams.has('fecha')) {
+    let date = moment(urlSearchParams.get('fecha'))._d;
+    calendar.gotoDate(date);
+  }
+
   updateTitle();
 
   document.getElementById("calendar-view-toggle").mdc.listen('MDCSelect:change', function(e) {
@@ -145,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   $("#calendar-preview").on("CalendarPreview:newDate", (e, detail) => {
+    console.log(detail.date);
     calendar.gotoDate(detail.date);
     updateTitle();
   });
