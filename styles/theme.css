@@ -643,6 +643,14 @@ body[data-role="alumno"] .mdc-header__background {
   color: var(--mdc-theme-gray__700);
 }
 
+a.mdc-chip {
+  cursor: pointer;
+}
+
+a.mdc-chip:hover {
+  background-color: var(--mdc-theme-primary__100);
+}
+
 .mdc-chip-set--filter .mdc-chip:hover {
   background-color: var(--mdc-theme-primary__100);
 }

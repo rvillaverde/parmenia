@@ -231,12 +231,29 @@ function viewEvent(event) {
 }
 
 function createChip(agenda) {
-  let chipStr = `<div class="mdc-chip" role="row" id="%id%">
-                  <span role="gridcell">
-                    <span tabindex="-1" class="mdc-chip__text mdc-typography--body2">%label%</span>
-                  </span>
-                </div>`;
+  var chip;
+  if (agenda.id === 'institucional' || agenda.id === 'aula-virtual') {
+    chip = document.createElement("div");
+  } else {
+    chip = document.createElement('a');
+    chip.setAttribute('href', `${ agenda.id }.html`);
+  }
 
-  let chipEl = chipStr.split('%id%').join(agenda.id).split('%label%').join(agenda.label);
-  return $(chipEl);
+  chip.setAttribute('class', 'mdc-chip');
+  chip.setAttribute('id', agenda.id);
+  chip.setAttribute('role', 'row');
+
+  var chipTextWrapper = document.createElement('span');
+  chipTextWrapper.setAttribute('role', 'gridcell');
+
+  var chipText = document.createElement('span');
+  chipTextWrapper.setAttribute('tabindex', '-1');
+  chipTextWrapper.classList.add('mdc-chip__text');
+  chipTextWrapper.classList.add('mdc-typography--body2');
+  chipTextWrapper.textContent = agenda.label;
+
+  chipTextWrapper.appendChild(chipText);
+  chip.appendChild(chipTextWrapper);
+
+  return $(chip);
 }
