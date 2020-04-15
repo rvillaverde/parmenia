@@ -160,6 +160,10 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     let form = getFormFields(this);
 
+    let agendas = (form.agendas === 'institucional')
+                  ? [{ id: 'institucional', label: 'Institucional' }]
+                  : form.aulas.split(',').map(function(aula) { return { id: aula, label: aula } });
+
     let event = {
       // obtener desde el backend un id y los datos de las aulas
       id: "5",
@@ -168,10 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
       end: `${ form.fecha }T${ form['horario-hasta'] }`,
       allDay: form.horario === 'todo-el-dia',
       extendedProps: {
-        agendas: [{
-          id: "institucional",
-          label: "Institucional" 
-        }],
+        agendas: agendas,
         author: "Mi usuario",
         color: "var(--mdc-theme-secondary)"
       }

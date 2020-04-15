@@ -140,6 +140,7 @@
 }
 /* Event */
 .fc-event {
+  border: 0;
   cursor: pointer;
   padding: 4px;
 }

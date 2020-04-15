@@ -724,7 +724,7 @@
                       <span class="picker-output"></span>
                     </div>
 
-                    <div class="mdc-radio-button__wrapper">
+                    <div class="mdc-radio-button__wrapper" data-name="horario">
                       <div class="mdc-form-field">
                         <div class="mdc-radio">
                           <input class="mdc-radio__native-control" type="radio" id="horario-todo-el-dia" name="horario" value="todo-el-dia">
@@ -786,7 +786,7 @@
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
                     <h4 class="mdc-typography--headline4 admin-form__title">Agendas</h4>
-                    <div class="mdc-radio-button__wrapper">
+                    <div class="mdc-radio-button__wrapper" data-name="agendas">
                       <div class="mdc-form-field">
                         <div class="mdc-radio">
                           <input class="mdc-radio__native-control" type="radio" id="agendas-institucional" name="agendas" value="institucional">
@@ -841,20 +841,21 @@
                   <div class="admin-form__subsection-inner">
                     <h4 class="mdc-typography--headline4 admin-form__title">Agendas</h4>
 
-                    <div class="mdc-select mdc-select--outlined" data-name="aulas">
+                    <div class="mdc-select mdc-select--checkbox mdc-select--outlined" data-name="aulas">
                       <div class="mdc-select__anchor">
                         <i class="mdc-select__dropdown-icon"></i>
-                        <div class="mdc-select__selected-text  mdc-typography--body1" aria-labelledby="aula-select-label"></div>
+                        <div class="mdc-select__selected-text" aria-labelledby="outlined-select-label"></div>
+                        <div class="mdc-chip-set"></div>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
-                            <span id="auala-select-label" class="mdc-floating-label">Seleccionar aula</span>
+                            <span id="outlined-select-label" class="mdc-floating-label">Seleccionar aula</span>
                           </div>
                           <div class="mdc-notched-outline__trailing"></div>
                         </div>
                       </div>
 
-                      <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
+                      <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="list">
                         <div class="mdc-select__menu--search">
                           <label class="mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--fullwidth mdc-text-field--search">
                             <i class="mdc-icon mdc-text-field__icon mdc-text-field__icon--leading search-icon" tabindex="0" role="button"></i>
@@ -869,15 +870,48 @@
                             </div>
                           </label>
                         </div>   
-                        <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                          <li class="mdc-list-item" data-value="aula-01" role="option">
-                            <span class="mdc-typography--body2">Ciencias Naturales 6A 2019</span>
+                        <ul class="mdc-list mdc-checkbox-list" role="menu">
+                          <li class="mdc-list-item checkbox-list-ripple-surface" data-value="aula-01" role="checkbox">
+                            <label for="aula-01" class="mdc-typography--body2">Ciencias Sociales 5B</label>
+                            <span class="mdc-list-item__meta">
+                              <div class="mdc-checkbox">
+                                <input type="checkbox" class="mdc-checkbox__native-control" id="aula-01"/>
+                                <div class="mdc-checkbox__background">
+                                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                  </svg>
+                                  <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                              </div>
+                            </span>
                           </li>
-                          <li class="mdc-list-item" data-value="aula-02" role="option">
-                            <span class="mdc-typography--body2">Ciencias Sociales 6B 2018</span>
+                          <li class="mdc-list-item checkbox-list-ripple-surface" data-value="aula-02" role="checkbox">
+                            <label for="aula-02" class="mdc-typography--body2">Ciencias Naturales 3A</label>
+                            <span class="mdc-list-item__meta">
+                              <div class="mdc-checkbox">
+                                <input type="checkbox" class="mdc-checkbox__native-control" id="aula-02"/>
+                                <div class="mdc-checkbox__background">
+                                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                  </svg>
+                                  <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                              </div>
+                            </span>
                           </li>
-                          <li class="mdc-list-item" data-value="aula-03" role="option">
-                            <span class="mdc-typography--body2">Lengua 6A 2019</span>
+                          <li class="mdc-list-item checkbox-list-ripple-surface" data-value="aula-03" role="checkbox">
+                            <label for="aula-03" class="mdc-typography--body2">5to C</label>
+                            <span class="mdc-list-item__meta">
+                              <div class="mdc-checkbox">
+                                <input type="checkbox" class="mdc-checkbox__native-control" id="aula-03"/>
+                                <div class="mdc-checkbox__background">
+                                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                  </svg>
+                                  <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                              </div>
+                            </span>
                           </li>
                         </ul>
                       </div>

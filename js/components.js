@@ -35,6 +35,7 @@ class MDCRadioButtonWrapper {
     $(this.wrapper).find('.mdc-radio').each(function(i, radio) {
       const formField = mdc.formField.MDCFormField.attachTo(document.querySelector('.mdc-form-field'));
       formField.input = radio;
+      $(radio).find('input').attr('name', `${ $(radio).find('input').attr('name') }-radio`);
       $(radio).change(function() {
         self.handleChange(this);
       });
@@ -515,7 +516,7 @@ class MDCSortable {
 class TimePicker {
   constructor(wrapper) {
     this.wrapper = $(wrapper);
-    this.generateHours(0,24);
+    this.generateHours(6,20);
     this.handleSelection(this.wrapper.find('.mdc-list-item--selected'));
     this.initMenu();
   }
@@ -552,7 +553,7 @@ class TimePicker {
   getNextTime(from, to) {
     let delta = this.wrapper.hasClass('from') ? 1 : 2;
     let hours = new Date().getHours() + delta;
-    if (hours < from || hours > to) {
+    if (hours < from || hours >= to) {
       hours = from + delta - 1;
     }
     return `${ ('0' + (hours % 24)).slice(-2) }:00`; 
