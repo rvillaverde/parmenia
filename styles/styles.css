@@ -427,10 +427,11 @@ input[type=file] {
 
 /* -- Notifications -- */
 .mdc-card.notifications {
-  padding: 12px;
+  padding: 0;
 }
 
 .notification__wrapper {
+  border-bottom: 1px solid var(--mdc-theme-gray__300);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -438,6 +439,18 @@ input[type=file] {
   display: flex;
   width: 100%;
   padding: 12px;
+  position: relative;
+}
+
+.notification__wrapper:hover::before {
+  content: "";
+  background-color: var(--mdc-theme-secondary);
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 @media (min-width: 460px) {
@@ -462,6 +475,7 @@ input[type=file] {
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: 8px;
+  margin-top: 12px;
   width: 40px;
 }
 
@@ -469,7 +483,6 @@ input[type=file] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid var(--mdc-theme-gray__300);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -479,7 +492,7 @@ input[type=file] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-left: 18px;
-  padding-bottom: 24px;
+  padding: 12px 0;
   padding-right: 12px;
 }
 

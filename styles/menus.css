@@ -63,12 +63,17 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item.mdc-menu--hover:hover .md
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 12px;
-  padding-top: 0;
 }
 
-.mdc-menu .notification__wrapper {
-  padding: 12px 0;
+body:not(.nav-menu-open) .mdc-menu:not(.mdc-select__menu) .mdc-list .mdc-list-item.notification__wrapper {
+  align-items: flex-start;
+  min-width: 360px;
+  padding: 0;
   padding-left: 12px;
+}
+
+.mdc-menu .mdc-list .mdc-list-item.notification__wrapper .notification__icon {
+  margin-top: 16px;
 }
 
 .mdc-menu .notification__wrapper .notification {
