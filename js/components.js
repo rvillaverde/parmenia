@@ -941,6 +941,13 @@ class MDCDataTable {
     this.table.mdc = mdc.dataTable.MDCDataTable.attachTo(this.table);
     let self = this;
 
+    this.hiddenFilters = $('input.table-filter[type=hidden]');
+    this.hiddenFilters.each(function(i, filter) {
+      $(filter).change(function(e) {
+        self.handleSearch(self);
+      });
+    });
+
     if (this.counter.length) {
       this.table.mdc.listen(mdc.dataTable.events.ROW_SELECTION_CHANGED, function(e) {
         self.updateTableCounter();
@@ -975,18 +982,23 @@ class MDCDataTable {
 
   handleSearch(self) {
     let search = self.searchInput.val().toLowerCase().trim();
-    if (search.length > 0) {
-      $(self.table).find('.mdc-data-table__content tr').each(function(i, row) {
-        let content = $.trim($(row).text()).toLowerCase();
-        if (content.indexOf(search) > -1) {
+
+    $(self.table).find('.mdc-data-table__content tr').each(function(i, row) {
+      let content = $.trim($(row).text()).toLowerCase();
+      if (content.indexOf(search) > -1) {
+        let show = false;
+        self.hiddenFilters.each(function(i, filter) {
+          show = show || $(row).find(`td:nth-of-type(${ $(filter).attr('data-col-index') })`).text().trim().indexOf($(filter).val()) > -1;
+        });
+        if (show) {
           $(row).show();
         } else {
           $(row).hide();
         }
-      });
-    } else {
-      $(self.table).find('.mdc-data-table__content tr').show();
-    }
+      } else {
+        $(row).hide();
+      }
+    });
   }
 
   selectedRows() {

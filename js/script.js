@@ -46,7 +46,13 @@ $(function() {
   $('.admin-form').submit(function(e) { e.preventDefault(); });
   $('.mdc-text-field--search input[type=text][data-filter-target]').keyup(handleSearchField);
   $('.cards--selectable .mdc-card.foro-discusion-card').click(toggleDiscusion);
+  $('.cards--selectable .mdc-card.cursos-card').click(filterCursos);
 });
+
+function filterCursos() {
+  $('input.table-filter[type=hidden][name=curso]').val($(this).find('.mdc-typography--headline3').text());
+  $('input.table-filter[type=hidden][name=curso]').trigger('change');
+}
 
 function toggleDiscusion() {
   let target = $(this).attr('data-name');
