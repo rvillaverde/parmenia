@@ -42,6 +42,8 @@ $(function() {
 
   $('#notificaciones-menu-toggle input').change(handleNotificationsToggle);
   $('.toggle-password-visibility').click(togglePasswordVisibility)
+  $('input[type=file]').change(fileSelected);
+  $('.admin-form').submit(function(e) { e.preventDefault(); });
 });
 
 function togglePasswordVisibility(e) {
@@ -364,4 +366,12 @@ function updateSectionName(wrapper) {
   listItem.find('a').attr('href', `#${ newId }`);
   $(`#${ oldValue }`).find('.headline-wrapper :header').text(newName);
   $(`#${ oldValue }`).attr('id', newId);
+}
+
+function fileSelected() {
+  let previewSelector = $(this).attr('data-file-preview');
+  $(previewSelector).removeClass('initially-hidden');
+  $(this).next().attr('disabled', true);
+  $(`button[type=submit][form=${ $(this).closest('.admin-form').attr('id') }]`).attr('disabled', false);
+  console.log(this);
 }

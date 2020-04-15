@@ -421,69 +421,76 @@
           </div>
           <div class="mdc-dialog__content">
             <div class="mdc-dialog__section">
-              <div class="admin-form__subsection">
-                <div class="mdc-typography--body1">
-                  Para importar usuarios masivamente es necesario cargar sus datos en una plantilla .xls siguiendo los lineamientos de la plantilla modelo.
+              <form class="mdc-dialog__form admin-form" id="importar-alumnos__form">
+                <div class="admin-form__subsection">
+                  <div class="mdc-typography--body1">
+                    Para importar usuarios masivamente es necesario cargar sus datos en una plantilla .xls siguiendo los lineamientos de la plantilla modelo.
+                  </div>
                 </div>
-              </div>
-              <div class="admin-form__actions">
-                <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('aula-select-01');">
-                  <span class="mdc-button__ripple"></span>
-                  <i class="mdc-button__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M7 10L12 15L17 10" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M12 15V3" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
-                  <span class="mdc-button__label">Descargar plantilla modelo</span>
-                </button>
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="admin-form__actions">
+                      <button type="button" class="mdc-button mdc-button--text" onclick="openDialog('aula-select-01');">
+                        <span class="mdc-button__ripple"></span>
+                        <i class="mdc-button__icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 10L12 15L17 10" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 15V3" stroke="#6F81F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                        <span class="mdc-button__label">Descargar plantilla modelo</span>
+                      </button>
 
-                <input id="spreadsheet-file-uploader" type="file" name="spreadsheet-file" accept=".xlsx, .xls">
-                <label for="spreadsheet-file-uploader" class="mdc-button mdc-button--text">
-                  <i class="mdc-button__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </i>
-                  <span class="mdc-button__label">Subir plantilla</span>
-                </label>
-              </div>
-              <div class="admin-form__subsection">
-                <div class="mdc-card mdc-card--outlined preview-card">
-                  <div class="mdc-card__primary-action" tabindex="0">
-                    <div class="mdc-card__media mdc-card__media--16-9">
-                      <i class="mdc-icon large">
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M23.8335 3.66663H11.0002C10.0277 3.66663 9.09507 4.05293 8.40744 4.74057C7.7198 5.4282 7.3335 6.36083 7.3335 7.33329V36.6666C7.3335 37.6391 7.7198 38.5717 8.40744 39.2594C9.09507 39.947 10.0277 40.3333 11.0002 40.3333H33.0002C33.9726 40.3333 34.9053 39.947 35.5929 39.2594C36.2805 38.5717 36.6668 37.6391 36.6668 36.6666V16.5L23.8335 3.66663Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M23.8335 3.66663V16.5H36.6668" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </i>
-                    </div>
-                    <div class="mdc-card__actions">
-                      <div class="mdc-card__action-buttons">
-                        <p class="mdc-typography--body2">
-                          Nombre archivo.xls
-                        </p>
-                      </div>
-                      <div class="mdc-card__action-icons">
-                        <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
-                          <i class="mdc-icon">
+                      <input id="spreadsheet-file-uploader" type="file" name="spreadsheet-file" accept=".xlsx, .xls" data-file-preview="#template-file-preview">
+                      <button type="button" class="mdc-button mdc-button--text">
+                        <label for="spreadsheet-file-uploader">
+                          <i class="mdc-button__icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M3 6H5H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M10 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M14 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M17 8L12 3L7 8" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M12 3V15" stroke="#6274E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                           </i>
-                        </button>
+                          <span class="mdc-button__label">Subir plantilla</span>
+                        </label>
+                      </button>
+                    </div>
+                    
+                    <div class="mdc-card mdc-card--outlined preview-card initially-hidden" id="template-file-preview">
+                      <div class="mdc-card__primary-action" tabindex="0">
+                        <div class="mdc-card__media mdc-card__media--16-9">
+                          <i class="mdc-icon large">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M23.8335 3.66663H11.0002C10.0277 3.66663 9.09507 4.05293 8.40744 4.74057C7.7198 5.4282 7.3335 6.36083 7.3335 7.33329V36.6666C7.3335 37.6391 7.7198 38.5717 8.40744 39.2594C9.09507 39.947 10.0277 40.3333 11.0002 40.3333H33.0002C33.9726 40.3333 34.9053 39.947 35.5929 39.2594C36.2805 38.5717 36.6668 37.6391 36.6668 36.6666V16.5L23.8335 3.66663Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M23.8335 3.66663V16.5H36.6668" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </i>
+                        </div>
+                        <div class="mdc-card__actions">
+                          <div class="mdc-card__action-buttons">
+                            <p class="mdc-typography--body2">
+                              Nombre archivo.xls
+                            </p>
+                          </div>
+                          <div class="mdc-card__action-icons">
+                            <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                              <i class="mdc-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M3 6H5H21" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M10 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M14 11V17" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </i>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
           <footer class="mdc-dialog__actions">
@@ -491,7 +498,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="change-password" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
+            <button type="submit" form="importar-alumnos__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Importar</span>
             </button>
