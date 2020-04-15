@@ -606,10 +606,8 @@ body[data-role="alumno"] .mdc-header__background {
   margin-right: 0;
 }
 
-.mdc-header__breadcrumb a:not(:last-child)::after {
-  content: '/';
-  margin-left: 8px;
-  margin-right: 4px;
+.mdc-header__breadcrumb a:hover {
+  text-decoration: underline;
 }
 
 .mdc-chip-set {
