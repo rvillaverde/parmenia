@@ -140,6 +140,7 @@ class CheckBoxMenuSelect {
   }
 
   update(data) {
+    console.log(data);
     let self = this;
     let ids = data.split(',');
     ids.forEach(function(id) {
