@@ -33,6 +33,7 @@ class MDCRadioButtonWrapper {
     let self = this;
 
     $(this.wrapper).find('.mdc-radio').each(function(i, radio) {
+      radio.querySelector('input').mdc = mdc.radio.MDCRadio.attachTo(radio);
       const formField = mdc.formField.MDCFormField.attachTo(document.querySelector('.mdc-form-field'));
       formField.input = radio;
       $(radio).find('input').attr('name', `${ $(radio).find('input').attr('name') }-radio`);
@@ -43,7 +44,13 @@ class MDCRadioButtonWrapper {
   }
 
   update(data) {
-
+    $(this.wrapper).find('.mdc-radio').each(function(i, radio) {
+      if ($(radio).find('input').val() === data) {
+        radio.querySelector('input').mdc.checked = true;
+        radio.dispatchEvent(new CustomEvent('change'));
+        radio.querySelector('input').dispatchEvent(new CustomEvent('change', { detail: { show: true } }));
+      }
+    });
   }
 
   handleChange(radio) {
@@ -70,8 +77,7 @@ class SelectMenuWithSearch {
     this.select.mdc = mdc.select.MDCSelect.attachTo(this.select);
 
     this.select.mdc.listen('MDCSelect:change', function(e) {
-      $(self.select).trigger('change', [{ show: true }]);
-      self.updateHiddenInput(e.detail.value);
+      self.select.dispatchEvent(new CustomEvent('change', { detail: { show: true } }));
     });
 
     listenToMDCMenuEvents(this.select.mdc.menu_);
@@ -315,11 +321,12 @@ class TreeCheckboxList {
   }
 
   toggleItem(input, isChecked) {
-    input.indeterminate = undefined;
-    input.checked = isChecked;
+/*    input.indeterminate = undefined;
+    input.checked = isChecked;*/
+    input.mdc.checked = isChecked;
     $(input).closest('.mdc-list-item').attr('aria-checked', isChecked);
     //item.toggleClass('mdc-list--selected', isChecked);
-    this.triggerChangeEvent(input);
+    //this.triggerChangeEvent(input);
   }
 
   toggleChildren(list, isChecked) {
@@ -340,18 +347,18 @@ class TreeCheckboxList {
 
     if ($(parent).attr('type') === 'checkbox') {
       if (mixedInputs > 0) {
-        parent.indeterminate = 'indeterminate';
+        parent.mdc.indeterminate = 'indeterminate';
       } else if (checkedInputs === 0) {
-        parent.indeterminate = undefined;
-        parent.checked = false;
+        parent.mdc.indeterminate = undefined;
+        parent.mdc.checked = false;
       } else if (checkedInputs === inputs) {
-        parent.indeterminate = undefined;
-        parent.checked = true;
+        parent.mdc.indeterminate = undefined;
+        parent.mdc.checked = true;
       } else {
-        parent.indeterminate = 'indeterminate';
+        parent.mdc.indeterminate = 'indeterminate';
       }
 
-      this.triggerChangeEvent(parent);
+      //this.triggerChangeEvent(parent);
 
       if ($(parent).closest('.mdc-list').hasClass('mdc-list--nested')) {
         this.toggleParent($(parent));
@@ -515,21 +522,24 @@ class MDCSortable {
 
 class TimePicker {
   constructor(wrapper) {
-    this.wrapper = $(wrapper);
+    this.wrapper = wrapper;
+    this.hiddenInput = $("<input type='hidden' name='%id%'>".replace('%id%', $(this.datePicker).attr('data-name')));
+    $(this.wrapper).append(this.hiddenInput);
+    this.wrapper.component = this;
     this.generateHours(6,20);
-    this.handleSelection(this.wrapper.find('.mdc-list-item--selected'));
+    this.handleSelection($(this.wrapper).find('.mdc-list-item--selected'));
     this.initMenu();
   }
 
   initMenu() {
     let self = this;
 
-    this.mdcMenu = mdc.menu.MDCMenu.attachTo(this.wrapper.find('.mdc-menu')[0]);
+    this.mdcMenu = mdc.menu.MDCMenu.attachTo($(this.wrapper).find('.mdc-menu')[0]);
     listenToMDCMenuEvents(this.mdcMenu);
     this.mdcMenu.listen('MDCMenu:selected', function(e) {
       self.handleSelection($(e.detail.item));
     });
-    this.wrapper.find('.time-picker--button').click(function(e) {
+    $(this.wrapper).find('.time-picker--button').click(function(e) {
       self.handleClick();
     });
   }
@@ -545,13 +555,17 @@ class TimePicker {
           item.addClass('mdc-list-item--selected');
           item.attr('aria-selected', true);
         }
-        self.wrapper.find('.mdc-list').append(item);
+        $(self.wrapper).find('.mdc-list').append(item);
       });
     }
   }
 
+  update(data) {
+    this.handleSelection($(this.wrapper).find(`.mdc-menu .mdc-list-item[data-value='${ data }']`));
+  }
+
   getNextTime(from, to) {
-    let delta = this.wrapper.hasClass('from') ? 1 : 2;
+    let delta = $(this.wrapper).hasClass('from') ? 1 : 2;
     let hours = new Date().getHours() + delta;
     if (hours < from || hours >= to) {
       hours = from + delta - 1;
@@ -564,8 +578,8 @@ class TimePicker {
   }
 
   handleSelection(selected) {
-    this.wrapper.find('.time-picker--button .mdc-button__label').text(selected.find('span').text().trim());
-    this.wrapper.find('input[type=hidden]').val(selected.attr('data-value'));
+    $(this.wrapper).find('.time-picker--button .mdc-button__label').text(selected.find('span').text().trim());
+    $(this.wrapper).find('input[type=hidden]').val(selected.attr('data-value'));
   }
 }
 
@@ -576,6 +590,7 @@ TimePicker.timeEl = `<li class="mdc-list-item" data-value="%time%" role="option"
 class DatePicker {
   constructor(datePicker) {
     this.datePicker = datePicker;
+    this.datePicker.component = this;
     this.button = $(this.datePicker).find('.date-picker--button')[0];
     this.hiddenInput = $("<input type='hidden' name='%id%'>".replace('%id%', $(this.datePicker).attr('data-name')));
     $(this.datePicker).append(this.hiddenInput);
@@ -593,12 +608,17 @@ class DatePicker {
       zIndex: 200,
       onNewDate: function(date) {
         self.updateButtonLabel(date);
-        self.updateHiddenInput()
+        self.updateHiddenInput();
       },
       onOpen: function(date) {
         self.rectifyPosition();
       }
     });
+  }
+
+  update(data) {
+    this.materialPicker.newDate(new Date(data));
+    this.materialPicker.callbackOnNewDate();
   }
 
   rectifyPosition() {

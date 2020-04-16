@@ -104,9 +104,9 @@ function showGlobalNotification(type) {
 }
 
 function initDynamicCTAs() {
-  $('[data-dynamic-cta-target]').change(function(e, detail) {
-    if (detail) {
-      $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden', !detail.show);
+  $('[data-dynamic-cta-target]').change(function(e) {
+    if (e.detail) {
+      $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden', !e.detail.show);
     } else {
       $($(this).attr('data-dynamic-cta-target')).toggleClass('initially-hidden');
     }
@@ -258,14 +258,74 @@ function submitTreeSelection(treeSelection, dialogId, includeParent) {
   openDialog(dialogId, data);
 }
 
-function aulaEdit() {
+function eventoEdit(eventoId) {
+  // pedir al sever los datos del evento para enviarselos al popup
+  let data = {
+    titulo: 'Titulo evento',
+    fecha: '2020-05-04',
+    horario: 'definido',
+    agendas: 'aulas',
+    desde: '11:00',
+    hasta: '12:00',
+    aulas: [{ id: 'aula-01', label: 'Ciencias Sociales 5B' }, { id: 'aula-02', label: 'Ciencias Naturales 3A' }]
+  };
+  openDialog('editar-evento', data);
+}
+
+function noticiaEdit(noticiaId) {
+  // pedir al sever los datos de la noticia para enviarselos al popup
+  let data = {
+    titulo: 'Titulo noticia',
+    cuerpo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum a suscipit fermentum. In nec eleifend erat. Suspendisse ut blandit magna, vitae bibendum dui.',
+    vencimiento: '2020-05-04',
+    destacar: 'destacar',
+    publicar: 'cartelera,aulas',
+    visible: 'alumnos,docentes',
+    aulas: [{ id: 'aula-01', label: 'Ciencias Sociales 5B' }, { id: 'aula-02', label: 'Ciencias Naturales 3A' }]
+  };
+  openDialog('editar-anuncio', data);
+}
+
+function docenteEdit(docenteId) {
+  // pedir al sever los datos del docente para enviarselos al popup
+  let data = {
+    email: 'docente@email.com',
+    nombre: 'El Profesor',
+    password: 'password',
+    editable: 'editable',
+    permiso: 'docente',
+    aulas: [{ id: 'aula-01', label: 'Ciencias Sociales 5B' }, { id: 'aula-02', label: 'Ciencias Naturales 3A' }]
+  };
+  openDialog('editar-docente', data);
+}
+
+function aulaEdit(aulaId) {
+  // pedir al sever los datos del aula para enviarselos al popup
   let data = {
     nombre: 'Ciencias Sociales 5B',
     docentes: 'docente-01',
     cursos: 'curso-01,curso-02',
-    color: 'custom__09'
+    color: 'custom__09',
+    'copiar-contenido': 'on'
   };
   openDialog('editar-aula', data);
+}
+
+function updateForm(form, data) {
+  Object.keys(data).forEach(function(key) {
+    if (form.find(`[data-name=${ key }]`).length > 0) {
+      form.find(`[data-name=${ key }]`)[0].component.update(data[key]);
+    } else if (form.find(`input[type=checkbox][name=${ key }]`).length > 0) {
+      form.find(`input[type=checkbox][name=${ key }]`).each(function(i, input) {
+        input.mdc.checked = data[key].indexOf($(input).val()) > -1;
+        input.dispatchEvent(new CustomEvent('change', { detail: { show: input.mdc.checked } }));
+      });
+    } else if (form.find(`textarea[name=${ key }]`).length > 0) {
+      form.find(`textarea[name=${ key }]`).closest('.mdc-text-field--textarea')[0].mdc.value = data[key];
+    } else if (form.find(`input[name=${ key }]`).length > 0) {
+      form.find(`input[name=${ key }]`).closest('.mdc-text-field')[0].mdc.value = data[key];
+    }
+  });
 }
 
 function openDialog(dialogId, data) {
@@ -279,13 +339,7 @@ function openDialog(dialogId, data) {
   }
 
   if (data) {
-    Object.keys(data).forEach(function(key) {
-      if (dialogEl.find(`[data-name=${ key }]`).length > 0) {
-        dialogEl.find(`[data-name=${ key }]`)[0].component.update(data[key]);
-      } else {
-        dialogEl.find(`input[name=${ key }]`).closest('.mdc-text-field')[0].mdc.value = data[key];
-      }
-    });
+    updateForm(dialogEl.find('.admin-form'), data);
   }
 
   dialog = new mdc.dialog.MDCDialog(dialogEl[0]);

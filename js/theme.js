@@ -83,7 +83,7 @@ function initSearchTextFields() {
 function initCheckboxes() {
   var checkboxes = $('.mdc-checkbox');
   for (var i = 0, checkbox; checkbox = checkboxes[i]; i++) {
-    mdc.checkbox.MDCCheckbox.attachTo(checkbox);
+    checkbox.querySelector('input').mdc = mdc.checkbox.MDCCheckbox.attachTo(checkbox);
   }
 }
 
@@ -104,7 +104,7 @@ function initTabScrollers() {
 function initSwitchControls() {
   var switchControls = $('.mdc-switch');
   for (var i = 0, switchControl; switchControl = switchControls[i]; i++) {
-    mdc.switchControl.MDCSwitch.attachTo(switchControl);
+    switchControl.querySelector('input').mdc = mdc.switchControl.MDCSwitch.attachTo(switchControl);
   }
 }
 
