@@ -291,10 +291,6 @@
   margin-left: 0;
 }
 
-.date-picker__wrapper {
-  position: relative;
-}
-
 .mdc-button:not(:disabled).date-picker--button + .picker-output {
   display: none;
 }

@@ -163,7 +163,7 @@ class CheckBoxMenuSelect {
 
   update(data) {
     let self = this;
-    let ids = data.split(',');
+    let ids = (typeof data === 'string') ? data.split(',') : data.map((item) => item.id);
     ids.forEach(function(id) {
       let index = $(self.select).find(`.mdc-list-item[data-value=${ id }]`).index();
       if (index > -1) {
@@ -657,18 +657,23 @@ class DatePicker {
       lang: 'es',
       minDate: new Date().setHours(0,0,0,0),
       orientation: 'portrait',
-      outputElement: '.picker-output',
+      outputElement: this.datePicker.querySelector('.picker-output'),
       outputFormat: 'YYYY-MM-DD',
       position: 'fixed',
       zIndex: 200,
       onNewDate: function(date) {
         self.updateButtonLabel(date);
-        self.updateHiddenInput();
+        self.updateHiddenInput(date);
       },
       onOpen: function(date) {
         self.rectifyPosition();
       }
     });
+
+    this.datePicker.querySelector('.mdc-button--delete').onclick = function() {
+      self.updateButtonLabel();
+      self.updateHiddenInput();
+    };
   }
 
   update(data) {
@@ -696,11 +701,19 @@ class DatePicker {
   }
 
   updateButtonLabel(date) {
-    $(this.button).find('.mdc-button__label').text(formatDate(date));
+    if (date) {
+      $(this.button).find('.mdc-button__label').text(formatDate(date));
+    } else {
+      $(this.button).find('.mdc-button__label').text('Seleccionar fecha');
+    }
   }
 
-  updateHiddenInput() {
-    this.hiddenInput.val($(this.datePicker).find('.picker-output').text().trim());
+  updateHiddenInput(date) {
+    if (date) {
+      this.hiddenInput.val(moment(date).format("YYYY-MM-DD"));
+    } else {
+      this.hiddenInput.val('');
+    }
   }
 }
 
