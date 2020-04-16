@@ -1,7 +1,29 @@
 function listenToMDCMenuEvents(mdcMenu) {
   mdcMenu.listen('MDCMenuSurface:opened', function(e) {
     $(this).css('max-height', 192);
+    if ($(this).hasClass('mdc-menu-surface--fixed')) {
+      rectifyPosition(this);
+
+      $(window).one('scroll', function() {
+        mdcMenu.open = false;
+      })
+    }
   });
+}
+
+function rectifyPosition(menu) {
+  let select = $(menu).prev();
+  let padding = Number(select.css('padding-top').split('px')[0]);
+  let position = select[0].getBoundingClientRect();
+
+  $(menu).css('left', position.left + padding);
+  $(menu).css('top', position.top + position.height + padding);
+
+  /*if (this.spaceBelow() >= $(this.materialPicker.picker).outerHeight()) {*/
+  /*} else {
+    let position = inputPosition.top - $(this.materialPicker.picker).outerHeight();
+    $(this.materialPicker.picker).css('top', position - inputPadding);
+  }*/
 }
 
 class MDCSearchTextField {
@@ -140,7 +162,6 @@ class CheckBoxMenuSelect {
   }
 
   update(data) {
-    console.log(data);
     let self = this;
     let ids = data.split(',');
     ids.forEach(function(id) {
@@ -209,6 +230,39 @@ CheckBoxMenuSelect.chipHtml = `
   <div id='%id%' data-index='%index%' class='mdc-chip' role='row'>
     <span class='mdc-chip__text mdc-typography--body2'>%name%</span>
   </div>`;
+
+class CustomSelect {
+  constructor(wrapper) {
+    this.wrapper = wrapper;
+    this.hiddenInput = $("<input type='hidden' name='%id%'>".replace('%id%', $(this.wrapper).attr('data-name')));
+    $(this.wrapper).append(this.hiddenInput);
+    this.wrapper.component = this;
+    this.handleSelection($(this.wrapper).find('.mdc-list-item--selected'));
+    this.initMenu();
+  }
+
+  initMenu() {
+    let self = this;
+
+    this.mdcMenu = mdc.menu.MDCMenu.attachTo($(this.wrapper).find('.mdc-menu')[0]);
+    listenToMDCMenuEvents(this.mdcMenu);
+    this.mdcMenu.listen('MDCMenu:selected', function(e) {
+      self.handleSelection($(e.detail.item));
+    });
+    $(this.wrapper).find('.custom-select--button').click(function(e) {
+      self.handleClick();
+    });
+  }
+
+  handleClick() {
+    this.mdcMenu.open = !this.mdcMenu.open;
+  }
+
+  handleSelection(selected) {
+    $(this.wrapper).find('.custom-select--button .mdc-button__label').text(selected.find('span').text().trim());
+    $(this.wrapper).find('input[type=hidden]').val(selected.attr('data-value'));
+  }
+}
 
 class MultiSelectionList {
   constructor(multiSelectionList) {
@@ -524,7 +578,7 @@ class MDCSortable {
 class TimePicker {
   constructor(wrapper) {
     this.wrapper = wrapper;
-    this.hiddenInput = $("<input type='hidden' name='%id%'>".replace('%id%', $(this.datePicker).attr('data-name')));
+    this.hiddenInput = $("<input type='hidden' name='%id%'>".replace('%id%', $(this.wrapper).attr('data-name')));
     $(this.wrapper).append(this.hiddenInput);
     this.wrapper.component = this;
     this.generateHours(6,20);

@@ -299,6 +299,7 @@
   display: none;
 }
 
+.mdc-button:not(:disabled).custom-select--button,
 .mdc-button:not(:disabled).time-picker--button,
 .mdc-button:not(:disabled).date-picker--button {
   border-bottom: 1px solid rgba(33, 33, 33, 0.2);
@@ -309,9 +310,10 @@
   text-transform: none;
 }
 
+.mdc-button:not(:disabled).custom-select--button .mdc-button__label + .mdc-icon,
 .mdc-button:not(:disabled).time-picker--button .mdc-button__label + .mdc-icon,
 .mdc-button:not(:disabled).date-picker--button .mdc-button__label + .mdc-icon {
-  margin-left: 12px;
+  margin-left: auto;
 }
 
 .mp-picker {
@@ -331,6 +333,7 @@
   display: none;
 }
 
+.custom-select--button .mdc-button__label,
 .date-picker--button .mdc-button__label,
 .time-picker--button .mdc-button__label {
   font-weight: 500;

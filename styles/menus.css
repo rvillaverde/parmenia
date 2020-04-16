@@ -170,6 +170,11 @@ body.nav-menu-open .mdc-top-app-bar__action-item .mdc-menu .mdc-list:not(.profil
   width: 100%;
 }
 
+.mdc-menu-surface.mdc-menu-surface--fixed {
+  margin-top: 0;
+  z-index: 28;
+}
+
 .mdc-menu.mdc-select__menu .mdc-list .mdc-list-item {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -299,6 +304,7 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
   margin-top: 36px;
 }
 
+body:not(.nav-menu-open) .custom-select .mdc-menu .mdc-list .mdc-list-item,
 body:not(.nav-menu-open) .time-picker__wrapper .mdc-menu .mdc-list .mdc-list-item {
   min-width: unset;
 }

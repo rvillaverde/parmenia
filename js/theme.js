@@ -129,22 +129,22 @@ function initCheckboxSelects() {
   }
 }
 
+function initCustomSelects() {
+  var selects = $('.custom-select');
+  for (var i = 0, select; select = selects[i]; i++) {
+    new CustomSelect(select);
+  }
+}
+
 function initMenus() {
-  var menus = $('.mdc-menu').not('.mdc-select .mdc-menu').not('.time-picker__wrapper .mdc-menu');
+  var menus = $('.mdc-menu').not('.mdc-select .mdc-menu').not('.time-picker__wrapper .mdc-menu').not('.custom-select .mdc-menu');
   for (var i = 0, menu; menu = menus[i]; i++) {
     menu.mdc = mdc.menu.MDCMenu.attachTo(menu);
     listenToMDCMenuEvents(menu.mdc);
   }
 }
-/*
-function initTreeCheckboxLists() {
-  var checkBoxLists = $('.mdc-list.mdc-checkbox-list.mdc-list--parent:not(.mdc-list--nested)').not('.mdc-menu .mdc-list');
-  for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
-    new TreeCheckboxList(checkBoxList);
-  }
-}
-*/
-function initTreeCheckboxLists() {
+
+function initMultiSelectionLists() {
   var checkBoxLists = $('.mdc-multiselection-list');
   for (var i = 0, checkBoxList; checkBoxList = checkBoxLists[i]; i++) {
     new MultiSelectionList(checkBoxList);
@@ -265,8 +265,9 @@ initSwitchControls();
 initDataTables();
 initSelects();
 initCheckboxSelects();
+initCustomSelects();
 initMenus();
-initTreeCheckboxLists();
+initMultiSelectionLists();
 initLists();
 initCheckboxLists();
 initTimePickers();
