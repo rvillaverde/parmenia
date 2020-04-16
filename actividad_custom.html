@@ -294,14 +294,11 @@
               <span>/</span>
               <a class="mdc-typography--headline5" href="#">Clase X</a>
             </div>
-            <div class="mdc-header__editable-title mdc-inline-editable__wrapper">
-              <h1 class="mdc-typography--headline1 mdc-inline-editable__preview">Nombre de la actividad</h1>
-              <input type="text" class="mdc-inline-editable__input mdc-typography--headline1">
-
-              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined mdc-inline-editable__toggle" aria-pressed="false" data-mdc-tooltip="Editar" data-role="admin,docente">
+            <div class="mdc-header__editable-title">
+              <h1 class="mdc-typography--headline1">Nombre de la actividad</h1>
+              <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" data-mdc-tooltip="Editar" data-role="admin,docente" onclick="openDialog('editar-actividad');">
                 <i class="mdc-icon small edit-icon-small-white"></i>
               </button>
-
               <button class="mdc-button mdc-icon-button mdc-icon-button--white mdc-icon-button--outlined" aria-pressed="false" data-mdc-tooltip="Agregar a la mochila" data-role="alumno" onclick="addToBag(this);">
                 <i class="mdc-icon small mochila-icon-small-white"></i>
               </button>
@@ -395,6 +392,164 @@
         </section>
       </div>
     </header>
+
+    <div id="editar-actividad" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="my-dialog-title"
+          aria-describedby="my-dialog-content">
+          <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+          <div class="mdc-dialog__title-wrapper">
+            <h2 class="mdc-dialog__title mdc-typography--headline2">
+              Editar actividad
+            </h2>
+            <div class="mdc-dialog__title-actions">
+              <button class="mdc-icon-button mdc-icon-button--secondary" aria-pressed="false" aria-label="Cerrar" data-mdc-tooltip="Cerrar" data-mdc-dialog-action="no">
+                <i class="mdc-icon" style="background-image: url('icons/cross-icon.svg');"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mdc-dialog__content">
+            <form class="mdc-dialog__form admin-form" id="crear-actividad__form">
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="mdc-text-field__wrapper">
+                      <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                        <input type="text" name="titulo" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__notch">
+                            <span class="mdc-floating-label" id="titulo">Nombre de la actividad</span>
+                          </div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </label>
+                      <div class="mdc-text-field-helper-line">
+                        <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Max. 80 caracteres</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Tipo de tarea</h4>
+                    <div class="mdc-radio-button__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-parmenia" name="tipo" value="parmenia">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-parmenia">Actividad Parmenia</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-archivo" name="tipo" value="archivo">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-archivo">Carga de archivo</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-customizada" name="tipo" value="customizada">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-customizada">Actividad personalizada</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="tipo-redaccion" name="tipo" value="redaccion">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="tipo-redaccion">Redacción</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="admin-form__subsection-inner">
+                    <h4 class="mdc-typography--headline4 admin-form__title">Formato</h4>
+                    <div class="mdc-radio-button__wrapper">
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="formato-individual" name="formato" value="individual">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="formato-individual">Individual</label>
+                      </div>
+                      <div class="mdc-form-field">
+                        <div class="mdc-radio">
+                          <input class="mdc-radio__native-control" type="radio" id="formato-grupal" name="formato" value="grupal">
+                          <div class="mdc-radio__background">
+                            <div class="mdc-radio__outer-circle"></div>
+                            <div class="mdc-radio__inner-circle"></div>
+                          </div>
+                          <div class="mdc-radio__ripple"></div>
+                        </div>
+                        <label class="mdc-typography--body1" for="formato-grupal">Grupal</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-form__section">
+                <div class="admin-form__subsection">
+                  <div class="admin-form__subsection-inner">
+                    <div class="date-picker__wrapper">
+                      <span for="date-picker-01" class="mdc-typography--headline6">Fecha de entrega</span>
+                      <button type="button" class="mdc-button date-picker--button" id="date-piker-01">
+                        <span class="mdc-button__label mdc-typography--body1">Seleccionar fecha</span>
+                        <i class="mdc-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="#757575" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </i>
+                      </button>
+                      <span class="picker-output"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-button--outlined mdc-dialog__button" data-mdc-dialog-action="no">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Cancelar</span>
+            </button>
+            <button type="submit" form="crear-actividad__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">Crear</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
 
     <div id="recurso-select-01" class="mdc-dialog">
       <div class="mdc-dialog__container">
