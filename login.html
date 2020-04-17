@@ -87,10 +87,16 @@
         <i class="mdc-icon cross-icon-white"></i>
       </button>
     </div>
+    <div class="global-notification__wrapper error" id="internet-explorer-message">
+      <i class="mdc-icon info-icon-white"></i>
+      <h4 class="global-notification__message mdc-typography--headline4">
+        El Aula virtual no es compatible con Internet Explorer. Para ingresar, utilizá alguno de estos navegadores: Google Chrome, Firefox, Microsoft Edge o Safari.
+      </h4>
+    </div>
 
     <main class="login-wrapper">
       <div class="login-school-info">
-        <div class="school-avatar login" style="background-image:url('img/placeholder.png')"></div>
+        <div class="school-avatar login" style="background-image:url('img/institucionales/Parmenia_Institucional_Generica.png')"></div>
 
         <h2 class="mdc-typography--headline2 login-wrapper__heading">Nombre colegio</h2>
         <h4 class="mdc-typography--headline4 login-wrapper__heading">Aula virtual</h4>
@@ -126,7 +132,7 @@
       </p>
 
       <div class="login-controls">
-        <a class="mdc-button mdc-button--raised" href="dashboard.html">
+        <a class="mdc-button mdc-button--raised" href="dashboard.html" id="login-button">
           <span class="mdc-button__label">Ingresar</span>
         </a>
       </div>
@@ -145,6 +151,7 @@
     </footer>
   </body>
 
+  <script src="js/login.js"></script>
   <script src="js/components.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/script.js"></script>

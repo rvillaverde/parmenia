@@ -64,8 +64,11 @@
 
 /* RAISED BUTTONS */
 .mdc-button--raised, .mdc-button--raised:not(:disabled) {
+  background-color: white;
   background-color: var(--mdc-theme-surface);
+  border: 2px solid #6274E5;;
   border: 2px solid var(--mdc-theme-secondary);
+  color: #6274E5;;
   color: var(--mdc-theme-secondary);
 }
 
@@ -181,6 +184,11 @@
   z-index: 2;
 }
 
+.mdc-icon-button:not(.mdc-ripple-upgraded):not(.mdc-button--active):focus:not(:hover)::before,
+.mdc-icon-button:not(.mdc-ripple-upgraded):not(.mdc-button--active):focus:not(:hover)::after {
+  background-color: transparent;
+}
+
 .mdc-icon-button:not(.mdc-icon-button--white):hover::before {
   opacity: 0.15;
   z-index: 0;
@@ -193,7 +201,7 @@
 
 .mdc-icon-button.mdc-ripple-upgraded--background-focused::before,
 .mdc-icon-button:not(.mdc-ripple-upgraded):focus::before {
-  opacity: 0;
+  /*opacity: 0;*/
 }
 
 .mdc-icon-button:not(.mdc-icon-button--white):active::after,
@@ -212,10 +220,6 @@
 
 .mdc-icon-button:disabled {
   opacity: 0.5;
-}
-.mdc-icon-button:not(.mdc-ripple-upgraded):not(.mdc-button--active):focus::before,
-.mdc-icon-button:not(.mdc-ripple-upgraded):not(.mdc-button--active):focus::after {
-  background-color: var(--mdc-theme-surface);
 }
 
 .mdc-icon-button::before, .mdc-icon-button:hover::before,

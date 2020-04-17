@@ -1,7 +1,14 @@
 .global-notification__wrapper {
+  -webkit-transition: top .3s cubic-bezier(.46,.31,.12,.87);
+  -o-transition: top .3s cubic-bezier(.46,.31,.12,.87);
   transition: top .3s cubic-bezier(.46,.31,.12,.87);
-  align-items: center;
-  box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 48px;
   position: fixed;
@@ -34,17 +41,24 @@
 }
 
 .global-notification__wrapper.error {
+  background-color: #EC485E;
   background-color: var(--mdc-theme-error);
 }
 
 .global-notification__message {
+  color: white;
   color: var(--mdc-theme-surface);
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .global-notification__wrapper .mdc-icon {
-  flex-grow: 0;
-  flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .global-notification__wrapper .dismiss-button {

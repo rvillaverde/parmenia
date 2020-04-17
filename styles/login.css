@@ -17,6 +17,7 @@
 }
 
 .login-container {
+  background: #60718B;
   background: var(--mdc-theme-primary__500);
   background-image: url('../img/login-background.svg');
   background-position: bottom;
@@ -29,6 +30,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: white;
   color: var(--mdc-theme-surface);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,6 +44,7 @@
 }
 
 .login-wrapper p {
+  color: white;
   color: var(--mdc-theme-surface);
   padding-bottom: 24px;
   text-align: center;
@@ -64,6 +67,7 @@
 }
 
 .password-recovery a {
+  color: white;
   color: var(--mdc-theme-surface);
 }
 
