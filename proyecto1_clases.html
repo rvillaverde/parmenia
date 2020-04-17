@@ -665,7 +665,7 @@
                   <div class="admin-form__subsection-inner">
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <input type="text" name="fecha" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <input type="text" name="fecha" class="mdc-text-field__input mdc-typography--body1" required>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -681,7 +681,7 @@
 
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" required>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -697,7 +697,7 @@
 
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--textarea mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <textarea class="mdc-text-field__input mdc-typography--body1" name="descripcion" aria-labelledby="my-label-id" rows="2" cols="40" maxlength="140"></textarea>
+                        <textarea class="mdc-text-field__input mdc-typography--body1" name="descripcion" required rows="2" cols="40" maxlength="140"></textarea>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -720,7 +720,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="nueva-clase__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear</span>
             </button>
@@ -866,7 +866,7 @@
                   <div class="admin-form__subsection-inner">
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <input type="text" name="titulo" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <input type="text" name="titulo" class="mdc-text-field__input mdc-typography--body1" required>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -978,6 +978,9 @@
                         </i>
                       </button>
                       <span class="picker-output"></span>
+                      <button type="button" class="mdc-icon-button mdc-icon-button--secondary mdc-icon-button--outlined mdc-button--delete" aria-pressed="false" aria-label="Eliminar" data-mdc-tooltip="Eliminar">
+                        <i class="mdc-icon small delete-icon-small"></i>
+                      </button>
                     </div>
                   </div>
                 </div>

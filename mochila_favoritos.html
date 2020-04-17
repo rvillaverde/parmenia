@@ -267,13 +267,13 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form admin-form" id="nueva-clase__form">
+            <form class="mdc-dialog__form admin-form" id="nuevo-favorito__form">
               <div class="admin-form__section">
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <input type="text" name="fecha" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" required>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -289,7 +289,7 @@
 
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" required="">
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -309,7 +309,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="nuevo-favorito__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear favorito</span>
             </button>

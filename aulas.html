@@ -332,7 +332,7 @@
                   <div class="admin-form__subsection-inner">
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="nombre">
+                        <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="nombre" required>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -346,10 +346,10 @@
                       </div>
                     </div>
 
-                    <div class="mdc-select mdc-select--checkbox mdc-select--outlined" data-name="docentes">
+                    <div class="mdc-select mdc-select--checkbox mdc-select--outlined mdc-select--required" data-name="docentes">
                       <div class="mdc-select__anchor">
                         <i class="mdc-select__dropdown-icon"></i>
-                        <div class="mdc-select__selected-text" aria-labelledby="outlined-select-label"></div>
+                        <div class="mdc-select__selected-text" aria-labelledby="outlined-select-label" aria-required="true"></div>
                         <div class="mdc-chip-set"></div>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
@@ -478,10 +478,10 @@
                       </div>
                     </div>
 
-                    <div class="mdc-select mdc-select--checkbox mdc-select--outlined" data-name="cursos">
+                    <div class="mdc-select mdc-select--checkbox mdc-select--outlined mdc-select--required" data-name="cursos">
                       <div class="mdc-select__anchor">
                         <i class="mdc-select__dropdown-icon"></i>
-                        <div class="mdc-select__selected-text" aria-labelledby="outlined-select-label"></div>
+                        <div class="mdc-select__selected-text" aria-labelledby="outlined-select-label" aria-required="true"></div>
                         <div class="mdc-chip-set"></div>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
@@ -584,10 +584,10 @@
                   <div class="admin-form__subsection-inner">
                     <h4 class="mdc-typography--headline4 admin-form__title">Color</h4>
 
-                    <div class="mdc-select mdc-select--outlined" data-name="color">
+                    <div class="mdc-select mdc-select--outlined mdc-select--required" data-name="color">
                       <div class="mdc-select__anchor">
                         <i class="mdc-select__dropdown-icon"></i>
-                        <div class="mdc-select__selected-text mdc-typography--body1" aria-labelledby="color-select-label"></div>
+                        <div class="mdc-select__selected-text mdc-typography--body1" aria-labelledby="color-select-label" aria-required="true"></div>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -708,7 +708,7 @@
                     <div class="mdc-checkbox__wrapper">
                       <div class="mdc-form-field">
                         <div class="mdc-checkbox">
-                          <input type="checkbox" class="mdc-checkbox__native-control" name="copiar-contenido" id="copiar-contenido" data-dynamic-cta-target="#aula-select"/>
+                          <input type="checkbox" class="mdc-checkbox__native-control" name="copiar-contenido" id="copiar-contenido-create" data-dynamic-cta-target="#aula-select-create"/>
                           <div class="mdc-checkbox__background">
                             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                               <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -717,11 +717,11 @@
                           </div>
                           <div class="mdc-checkbox__ripple"></div>
                         </div>
-                        <label for="copiar-contenido" class="mdc-typography--headline4">Copiar contenido de otro aula</label>
+                        <label for="copiar-contenido-create" class="mdc-typography--headline4">Copiar contenido de otro aula</label>
                       </div>
                     </div>
 
-                    <div class="mdc-select mdc-select--outlined initially-hidden" data-name="aulas" id="aula-select" data-dynamic-cta-target="#aula-content-select">
+                    <div class="mdc-select mdc-select--outlined mdc-select--required initially-hidden" data-name="aulas" id="aula-select-create" data-dynamic-cta-target="#aula-content-select-create">
                       <div class="mdc-select__anchor">
                         <i class="mdc-select__dropdown-icon"></i>
                         <div class="mdc-select__selected-text  mdc-typography--body1" aria-labelledby="aula-select-label"></div>
@@ -749,7 +749,7 @@
                       </div>
                     </div>
 
-                    <div class="selection-wrapper initially-hidden" id="aula-content-select">
+                    <div class="selection-wrapper initially-hidden" id="aula-content-select-create">
                       <div class="mdc-chip-set mdc-chip-set--input selection-wrapper__target no-content" role="grid" data-name="aula-content"></div>
 
                       <div class="no-content-placeholder">

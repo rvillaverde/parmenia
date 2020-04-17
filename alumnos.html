@@ -268,12 +268,12 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form admin-form" id="alumno-form-01">
+            <form class="mdc-dialog__form admin-form" id="crear-alumno__form">
               <div class="admin-form__section">
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
-                    <label class="mdc-text-field mdc-text-field--outlined">
-                      <input type="email" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="email" name="email" class="mdc-text-field__input mdc-typography--body1" required>
                       <div class="mdc-notched-outline">
                         <div class="mdc-notched-outline__leading"></div>
                         <div class="mdc-notched-outline__notch">
@@ -283,8 +283,8 @@
                       </div>
                     </label>
 
-                    <label class="mdc-text-field mdc-text-field--outlined">
-                      <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="text" name="nombre" class="mdc-text-field__input mdc-typography--body1" required>
                       <div class="mdc-notched-outline">
                         <div class="mdc-notched-outline__leading"></div>
                         <div class="mdc-notched-outline__notch">
@@ -294,8 +294,8 @@
                       </div>
                     </label>
 
-                    <label class="mdc-text-field mdc-text-field--outlined">
-                      <input type="password" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="password" name="password" class="mdc-text-field__input mdc-typography--body1" required>
                       <div class="mdc-notched-outline">
                         <div class="mdc-notched-outline__leading"></div>
                         <div class="mdc-notched-outline__notch">
@@ -351,7 +351,7 @@
                   <div class="admin-form__subsection-inner">
                     <h4 class="admin-form__title mdc-typography--headline4">Curso</h4>
 
-                    <div class="mdc-select mdc-select--outlined">
+                    <div class="mdc-select mdc-select--outlined mdc-select--required">
                       <div class="mdc-select__anchor">
                         <i class="mdc-select__dropdown-icon"></i>
                         <div id="demo-selected-text" class="mdc-select__selected-text" aria-labelledby="outlined-select-label"></div>
@@ -391,7 +391,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="crear-alumno__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear usuario</span>
             </button>
@@ -537,12 +537,12 @@
             </div>
           </div>
           <div class="mdc-dialog__content">
-            <form class="mdc-dialog__form admin-form" id="curso-form-01">
+            <form class="mdc-dialog__form admin-form" id="crear-curso__form">
               <div class="admin-form__section">
                 <div class="admin-form__subsection">
                   <div class="admin-form__subsection-inner">
-                    <label class="mdc-text-field mdc-text-field--outlined">
-                      <input type="text" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                    <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
+                      <input type="text" class="mdc-text-field__input mdc-typography--body1" name="nombre">
                       <div class="mdc-notched-outline">
                         <div class="mdc-notched-outline__leading"></div>
                         <div class="mdc-notched-outline__notch">
@@ -588,7 +588,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio-01" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="crear-curso__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Crear curso</span>
             </button>

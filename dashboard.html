@@ -720,7 +720,7 @@
                   <div class="admin-form__subsection-inner">
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <input type="text" name="titulo" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id">
+                        <input type="text" name="titulo" class="mdc-text-field__input mdc-typography--body1" aria-labelledby="my-label-id" required>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -736,7 +736,7 @@
 
                     <div class="mdc-text-field__wrapper">
                       <label class="mdc-text-field mdc-text-field--textarea mdc-text-field--outlined mdc-text-field--fullwidth">
-                        <textarea class="mdc-text-field__input mdc-typography--body1" name="cuerpo" rows="2" cols="40" maxlength="140"></textarea>
+                        <textarea class="mdc-text-field__input mdc-typography--body1" name="cuerpo" rows="2" cols="40" maxlength="140" required></textarea>
                         <div class="mdc-notched-outline">
                           <div class="mdc-notched-outline__leading"></div>
                           <div class="mdc-notched-outline__notch">
@@ -771,7 +771,7 @@
                         <div class="mdc-switch__track"></div>
                         <div class="mdc-switch__thumb-underlay">
                           <div class="mdc-switch__thumb"></div>
-                          <input type="checkbox" id="destacar-noticia-create" name="destacar" value="destacar" class="mdc-switch__native-control" role="switch" aria-checked="false">
+                          <input type="checkbox" id="destacar-noticia-create" name="destacar" value="destacar" class="mdc-switch__native-control" role="switch" aria-checked="false" required>
                         </div>
                       </div>
                       <label class="mdc-switch__label" for="destacar-noticia-create">Destacar noticia*</label>
@@ -926,7 +926,7 @@
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Cancelar</span>
             </button>
-            <button type="submit" form="crear-anuncio__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes" disabled>
+            <button type="submit" form="crear-anuncio__form" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="yes">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label">Publicar</span>
             </button>

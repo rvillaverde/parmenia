@@ -47,6 +47,7 @@ $(function() {
   $('.mdc-text-field--search input[type=text][data-filter-target]').keyup(handleSearchField);
   $('.cards--selectable .mdc-card.foro-discusion-card').click(toggleDiscusion);
   $('.cards--selectable .mdc-card.cursos-card').click(filterCursos);
+  initForms();
 });
 
 function filterCursos() {

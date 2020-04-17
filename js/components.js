@@ -76,10 +76,15 @@ class MDCRadioButtonWrapper {
   }
 
   handleChange(radio) {
-    this.hiddenInput.val($(radio).find('input').val());
+    this.updateHiddenInput(radio);
     $(this.wrapper).find('.mdc-radio input:not(:checked)[data-dynamic-cta-target]').each(function(i, input) {
       $($(input).attr('data-dynamic-cta-target')).addClass('initially-hidden');
     });
+  }
+
+  updateHiddenInput(radio) {
+    this.hiddenInput.val($(radio).find('input').val());
+    this.hiddenInput[0].dispatchEvent(new CustomEvent('change'));
   }
 }
 
@@ -100,6 +105,7 @@ class SelectMenuWithSearch {
 
     this.select.mdc.listen('MDCSelect:change', function(e) {
       self.select.dispatchEvent(new CustomEvent('change', { detail: { show: true } }));
+      self.updateHiddenInput(e.detail.value);
     });
 
     listenToMDCMenuEvents(this.select.mdc.menu_);
@@ -122,6 +128,7 @@ class SelectMenuWithSearch {
 
   updateHiddenInput(selectedItem) {
     this.hiddenInput.val(selectedItem);
+    this.hiddenInput[0].dispatchEvent(new CustomEvent('change'));
   }
 }
 
@@ -158,6 +165,10 @@ class CheckBoxMenuSelect {
 
     this.select.mdc.menu_.listen('MDCMenuSurface:opened', function(e) {
       $(this).css('max-height', 192);
+    });
+
+    this.select.mdc.menu_.listen('MDCMenuSurface:closed', function(e) {
+      self.validate();
     });
   }
 
@@ -207,6 +218,18 @@ class CheckBoxMenuSelect {
 
     this.updateChipset(selectedItems);
     this.updateHiddenInput(selectedItems);
+    this.validate();
+  }
+
+  validate() {
+    let selectedIndex = this.select.mdc.menu_.list_.selectedIndex;
+    if ($(this.select).hasClass('mdc-select--required')) {
+      if (selectedIndex.length > 0) {
+        this.select.mdc.valid = true;
+      } else {
+        this.select.mdc.valid = false;
+      }
+    }
   }
 
   updateChipset(items) {
@@ -223,6 +246,7 @@ class CheckBoxMenuSelect {
 
   updateHiddenInput(selectedItems) {
     this.hiddenInput.val(selectedItems.map(item => item.id).join(','));
+    this.hiddenInput.trigger('change');
   }
 }
 
@@ -670,10 +694,12 @@ class DatePicker {
       }
     });
 
-    this.datePicker.querySelector('.mdc-button--delete').onclick = function() {
-      self.updateButtonLabel();
-      self.updateHiddenInput();
-    };
+    if (this.datePicker.querySelector('.mdc-button--delete')) {
+      this.datePicker.querySelector('.mdc-button--delete').onclick = function() {
+        self.updateButtonLabel();
+        self.updateHiddenInput();
+      };
+    }
   }
 
   update(data) {
@@ -986,6 +1012,7 @@ class MDCInputChipset {
 
   updateHiddenInput() {
     this.hiddenInput.val(this.chipset.mdc.chips.map((chip) => chip.id).join(','));
+    this.hiddenInput.trigger('change');
   }
 }
 

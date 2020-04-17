@@ -132,6 +132,12 @@ textarea.mdc-text-field__input {
   resize: none;
 }
 
+.mdc-select--required .mdc-floating-label::after,
+.mdc-text-field__input:required ~ .mdc-floating-label::after,
+.mdc-text-field__input:required ~ .mdc-notched-outline .mdc-floating-label::after {
+  content: none;
+}
+
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
   color: var(--mdc-theme-gray__700);
 }
