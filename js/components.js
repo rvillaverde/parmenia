@@ -6,7 +6,7 @@ function listenToMDCMenuEvents(mdcMenu) {
 
       $(window).one('scroll', function() {
         mdcMenu.open = false;
-      })
+      });
     }
   });
 }
@@ -18,12 +18,6 @@ function rectifyPosition(menu) {
 
   $(menu).css('left', position.left + padding);
   $(menu).css('top', position.top + position.height + padding);
-
-  /*if (this.spaceBelow() >= $(this.materialPicker.picker).outerHeight()) {*/
-  /*} else {
-    let position = inputPosition.top - $(this.materialPicker.picker).outerHeight();
-    $(this.materialPicker.picker).css('top', position - inputPadding);
-  }*/
 }
 
 class MDCSearchTextField {

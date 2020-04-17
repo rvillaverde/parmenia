@@ -204,6 +204,11 @@ body.nav-menu-open :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disab
   content: none;
 }
 
+.mdc-select.mdc-select--static .mdc-select__menu {
+  position: static;
+  margin-bottom: 0;
+}
+
 .mdc-select__menu .round-photo-wrapper {
   border: none;
   height: 24px;

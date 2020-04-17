@@ -7,6 +7,11 @@
   text-decoration: none;
 }
 
+.mdc-card__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .mdc-card__divider {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   -webkit-box-sizing: border-box;
