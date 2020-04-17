@@ -977,6 +977,11 @@ class MDCInputChipset {
     }
 
     this.updateHiddenInput();
+
+    let quantityWrapper = $(this.chipset).closest('.selection-wrapper').find('.quantity-wrapper');
+    if (quantityWrapper.length > 0) {
+      quantityWrapper.find('span').text(data.length);
+    }
   }
 
   updateHiddenInput() {

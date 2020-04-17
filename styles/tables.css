@@ -150,6 +150,10 @@
   width: 30%;
 }
 
+.mdc-data-table__header-cell.span-40 {
+  width: 40%;
+}
+
 .mdc-data-table__cell .mdc-chip-set {
   padding: 4px 0;
 }
