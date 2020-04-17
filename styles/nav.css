@@ -81,12 +81,6 @@ body:not(.nav-menu-open) .mdc-top-app-bar__actions .mdc-button--app-bar.mdc-butt
   color: white;
 }
 
-
-/*
-.mdc-top-app-bar__actions .mdc-button--app-bar.mdc-button .mdc-icon:last-of-type:not(:first-child) {
-  margin-left: 8px;
-}*/
-
 .mdc-top-app-bar__actions .mdc-button--app-bar.mdc-button .nav-menu-icon.mdc-icon {
   background-image: url('../icons/nav-menu-icon.svg');
   margin: 0;
@@ -209,10 +203,6 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
   .mdc-top-app-bar__section:nth-child(3) {
     display: none;
   }
-/*
-  .mdc-top-app-bar__section:nth-child(2) .mdc-top-app-bar__actions:nth-of-type(3) {
-    margin-right: 36px;
-  }*/
 
   .mdc-icon.nav-mochila-icon + .mdc-button__label,
   .mdc-icon.nav-notificaciones-icon + .mdc-button__label {
@@ -256,6 +246,10 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
   .mdc-top-app-bar__section:nth-child(3) {
     display: block;
   }
+
+  #notificaciones-menu-toggle input {
+    display: none;
+  }
 }
 
 @media (max-width: 759px) {
@@ -280,6 +274,10 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item:hover {
     padding-left: 0;
     position: absolute;
     width: 100%;
+  }
+
+  #notificaciones-menu-toggle input {
+    display: none;
   }
 }
 
