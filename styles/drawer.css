@@ -3,7 +3,6 @@
 }
 
 .drawer-side-wrapper .main-wrapper {
-  /*box-sizing: border-box;*/
   padding: 0 24px;
 }
 
@@ -261,4 +260,3 @@ body[data-role="admin"] .mdc-drawer.agenda .mdc-drawer__content-item .mdc-list-i
 .mdc-drawer.agenda .mdc-multiselection-list .mdc-list .mdc-list-item__graphic {
   margin-right: 8px;
 }
-

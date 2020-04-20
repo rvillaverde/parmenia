@@ -879,6 +879,7 @@ class MDCInlineEdit {
         this.wrapper.find('.mdc-inline-editable__input').val(value);
         this.wrapper.find('.mdc-inline-editable__input').focus();
       } else {
+        // guardar en base de datos
         let newValue = this.wrapper.find('.mdc-inline-editable__input').val();
         this.wrapper.find('.mdc-inline-editable__preview').text(newValue);
       }

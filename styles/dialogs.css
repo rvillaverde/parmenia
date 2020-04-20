@@ -218,14 +218,20 @@
 }
 
 .mdc-dialog.event.automatic-event .mdc-dialog__actions #event-view-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 body:not([data-role*="alumno"]) .mdc-dialog.event:not(.automatic-event) .mdc-dialog__actions #event-edit-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 body:not([data-role*="alumno"]) .mdc-dialog.event:not(.automatic-event) .mdc-dialog__actions #event-delete-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -246,7 +252,11 @@ body:not([data-role*="alumno"]) .mdc-dialog.event:not(.automatic-event) .mdc-dia
 }
 
 .event-agenda__wrapper {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 

@@ -147,7 +147,8 @@ textarea.mdc-text-field__input {
 }
 
 .mdc-text-field--fullwidth:not(.mdc-text-field--textarea) .mdc-text-field__input {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 12px 16px;
 }
 
@@ -241,7 +242,8 @@ textarea.mdc-text-field__input {
 }
 
 .mdc-text-field.mdc-text-field--with-leading-icon.mdc-text-field--search .mdc-text-field__input {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 12px 16px;
   padding-left: 48px;
   margin-left: 0;
@@ -518,8 +520,13 @@ textarea.mdc-text-field__input {
 
 @media (min-width: 760px) and (max-width: 1024px) {
   .mdc-header__actions {
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .mdc-header__actions .mdc-button:not(:first-child) {
@@ -631,7 +638,10 @@ body[data-role="alumno"] .mdc-header__background {
 
 @media (max-width: 460px) {
   .mdc-header__caption-group {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .mdc-header__caption-group .mdc-header__caption {
     margin: 4px 0;

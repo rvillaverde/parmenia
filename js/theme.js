@@ -252,6 +252,7 @@ function initInlineEdits(wrapper = undefined) {
   }
 }
 
+function initForms() {
   function validateForm(form) {
     var requiredFields = getRequiredFields(form);
     var valid = true;
@@ -271,7 +272,6 @@ function initInlineEdits(wrapper = undefined) {
                     .mdc-select.mdc-select--required:visible > input[type=hidden]`;
     return $(form).find(selector);
   }
-function initForms() {
 
   $('.admin-form').each(function(i, form) {
     var id = $(form).attr('id');

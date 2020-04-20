@@ -166,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   $("#calendar-preview").on("CalendarPreview:newDate", (e, detail) => {
-    console.log(detail.date);
     calendar.gotoDate(detail.date);
     updateTitle();
   });

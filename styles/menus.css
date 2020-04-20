@@ -66,7 +66,9 @@ body:not(.nav-menu-open) .mdc-top-app-bar__action-item.mdc-menu--hover:hover .md
 }
 
 body:not(.nav-menu-open) .mdc-menu:not(.mdc-select__menu) .mdc-list .mdc-list-item.notification__wrapper {
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   min-width: 360px;
   padding: 0;
   padding-left: 12px;

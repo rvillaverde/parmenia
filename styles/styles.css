@@ -70,7 +70,6 @@
   -webkit-box-shadow: none;
   box-shadow: none;
   background: var(--mdc-theme-primary__100);
-  -webkit-border-radius: 8px;
   border-radius: 8px;
   min-height: 40px;
 }
@@ -221,7 +220,11 @@ section .subtitle-wrapper {
 }
 
 .section-headline__wrapper .section-headline__editable-title {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -355,6 +358,8 @@ input[type=file] {
           box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -936,7 +941,10 @@ input[type=file] {
 }
 
 .ql-editor {
-  user-select: text;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
 }
 
 .ql-snow .ql-editor h1,
@@ -1148,7 +1156,10 @@ body[data-role*="alumno"] .mdc-inline-editable__wrapper:not(.mdc-inline-editable
 
 @media (max-width: 960px) {
   .mdc-data-filter__wrapper {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .mdc-data-filter__wrapper .mdc-data-filter__chips {
@@ -1174,13 +1185,18 @@ tr.sortable-placeholder:last-child {
 }
 
 .date-picker__wrapper {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
 
 .calendar-preview .mp-picker {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   width: 100%;
 }
 
@@ -1196,9 +1212,15 @@ tr.sortable-placeholder:last-child {
 
 .mp-picker .mp-picker-choose [class*="mp-picker-click"] {
   border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 28px;
 }
 
@@ -1237,8 +1259,12 @@ tr.sortable-placeholder:last-child {
 }
 
 .time-pickers:not(.initially-hidden) {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 540px) {
