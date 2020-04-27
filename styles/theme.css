@@ -255,6 +255,12 @@ textarea.mdc-text-field__input {
   position: absolute;
 }
 
+.mdc-text-field--with-leading-icon.mdc-text-field--with-trailing-icon .mdc-text-field__icon--trailing {
+  left: initial;
+  position: absolute;
+  right: 12px;
+}
+
 .mdc-select:not(.mdc-select--disabled) .mdc-floating-label {
   color: var(--mdc-theme-gray__400);
 }
