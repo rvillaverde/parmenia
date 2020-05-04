@@ -1200,6 +1200,13 @@ tr.sortable-placeholder:last-child {
   width: 100%;
 }
 
+@media (max-width: 650px), (max-height: 650px) {
+  #calendar-preview .mp-picker {
+    position: static !important;
+    transform: none !important;
+  }
+}
+
 .calendar-preview .mp-picker .mp-picker-info {
   display: none;
 }

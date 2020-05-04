@@ -253,34 +253,8 @@ function initInlineEdits(wrapper = undefined) {
 }
 
 function initForms() {
-  function validateForm(form) {
-    var requiredFields = getRequiredFields(form);
-    var valid = true;
-    requiredFields.each(function(i, field) {
-      valid = valid && $(field).val().length > 0 && $(field).closest('.mdc-text-field--invalid').length == 0;
-    });
-    return valid;
-  }
-
-  function getRequiredFields(form) {
-    var selector = `input[required][type=text],
-                    input[required][type=email],
-                    input[required][type=password],
-                    textarea[required],
-                    .mdc-radio-button__wrapper > input[type=hidden],
-                    .selection-wrapper:visible > .mdc-chip-set--input > input[type=hidden],
-                    .mdc-select.mdc-select--required:visible > input[type=hidden]`;
-    return $(form).find(selector);
-  }
-
   $('.admin-form').each(function(i, form) {
-    var id = $(form).attr('id');
-    var submitButton = $(`form#${ id } button[type=submit], button[type=submit][form=${ id }]`);
-    submitButton.attr('disabled', true);
-    $(form).find('input, textarea').on('change blur', function() {
-      var valid = validateForm(form);
-      submitButton.attr('disabled', !valid);
-    });
+    new MDCForm(form);
   });
 }
 

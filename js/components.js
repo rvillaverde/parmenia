@@ -1146,3 +1146,48 @@ class MDCDataTable {
     this.counter.find('#quantity').text(this.table.mdc.getSelectedRowIds().length);
   }
 }
+
+class MDCForm {
+  constructor(form) {
+    this.form = $(form);
+    let id = this.form.attr('id');
+    let submitButton = $(`form#${ id } button[type=submit], button[type=submit][form=${ id }]`);
+    submitButton.attr('disabled', true);
+
+    let that = this;
+    this.form.find('input, textarea').on('change blur', function() {
+      let valid = that.validateForm();
+      submitButton.attr('disabled', !valid);
+    });
+    console.log('mdcform', id)
+    this.form.submit(function(e) {
+      e.preventDefault();
+      that.handleFormSubmit();
+    });
+  }
+
+  handleFormSubmit() {
+    let fields = getFormFields(this.form);
+    console.log(fields);
+  }
+
+  validateForm() {
+    let requiredFields = this.getRequiredFields();
+    let valid = true;
+    requiredFields.each(function(i, field) {
+      valid = valid && $(field).val().length > 0 && $(field).closest('.mdc-text-field--invalid').length == 0;
+    });
+    return valid;
+  }
+
+  getRequiredFields() {
+    let selector = `input[required][type=text],
+                    input[required][type=email],
+                    input[required][type=password],
+                    textarea[required],
+                    .mdc-radio-button__wrapper > input[type=hidden],
+                    .selection-wrapper:visible > .mdc-chip-set--input > input[type=hidden],
+                    .mdc-select.mdc-select--required:visible > input[type=hidden]`;
+    return this.form.find(selector);
+  }
+}
