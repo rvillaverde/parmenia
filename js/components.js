@@ -156,7 +156,7 @@ class CheckBoxMenuSelect {
     });
 
     this.select.mdc = mdc.select.MDCSelect.attachTo(select);
-
+    //this.select.mdc.menu_.list_.singleSelection = false;
     this.select.mdc.menu_.listen('MDCMenuSurface:opened', function(e) {
       $(this).css('max-height', 192);
     });
@@ -166,7 +166,17 @@ class CheckBoxMenuSelect {
     });
   }
 
+  refresh() {
+    let self = this;
+    $(self.select).find(`.mdc-list-item[aria-checked=true]`).each(function(i, item) {
+      self.select.mdc.menu_.list_.foundation_.toggleCheckboxAtIndex_($(item).index(), true);
+    });
+    this.select.mdc.selectedIndex = -1;
+    this.updateChipset();
+  }
+
   update(data) {
+    this.refresh();
     let self = this;
     let ids = (typeof data === 'string') ? data.split(',') : data.map((item) => item.id);
     ids.forEach(function(id) {

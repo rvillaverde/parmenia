@@ -261,6 +261,20 @@ textarea.mdc-text-field__input {
   right: 12px;
 }
 
+.mdc-text-field__input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+  background-color: white !important;
+}
+
+.mdc-text-field__input:-webkit-autofill + .mdc-floating-label {
+  -webkit-transform: translateY(-106%) scale(0.75);
+  transform: translateY(-106%) scale(0.75);
+}
+
+.mdc-icon.mdc-text-field__icon + .mdc-text-field__input {
+  margin: 0;
+}
+
 .mdc-select:not(.mdc-select--disabled) .mdc-floating-label {
   color: var(--mdc-theme-gray__400);
 }
