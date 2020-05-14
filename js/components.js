@@ -1087,6 +1087,7 @@ class MDCDataTable {
 
     if (this.searchInput.length) {
       this.searchInput.keyup(function(e) {
+        console.log('search')
         self.handleSearch(self);
       });
     }
@@ -1107,11 +1108,11 @@ class MDCDataTable {
 
   handleSearch(self) {
     let search = self.searchInput.val().toLowerCase().trim();
-
     $(self.table).find('.mdc-data-table__content tr').each(function(i, row) {
       let content = $.trim($(row).text()).toLowerCase();
+
       if (content.indexOf(search) > -1) {
-        let show = false;
+        let show = self.hiddenFilters.length === 0;
         self.hiddenFilters.each(function(i, filter) {
           show = show || $(row).find(`td:nth-of-type(${ $(filter).attr('data-col-index') })`).text().trim().indexOf($(filter).val()) > -1;
         });
@@ -1169,7 +1170,7 @@ class MDCForm {
       let valid = that.validateForm();
       submitButton.attr('disabled', !valid);
     });
-    console.log('mdcform', id)
+
     this.form.submit(function(e) {
       e.preventDefault();
       that.handleFormSubmit();
