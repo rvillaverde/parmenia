@@ -983,7 +983,9 @@ class MDCInputChipset {
 
     this.chipset.mdc = mdc.chips.MDCChipSet.attachTo(this.chipset);
     this.chipset.mdc.listen('MDCChip:removal', function(e) {
+      console.log('chip removed')
       self.updateHiddenInput();
+      $(`.quantity-wrapper[data-quantity=${ $(self.chipset).attr('data-quantity') }] span`).text(self.chipset.mdc.chips.length)
       if (self.chipset.mdc.chips.length === 0) {
         $(self.chipset).addClass('no-content');
       }
@@ -1066,7 +1068,7 @@ class MDCDataTable {
     this.table.mdc = mdc.dataTable.MDCDataTable.attachTo(this.table);
     let self = this;
 
-    this.hiddenFilters = $('input.table-filter[type=hidden]');
+    this.hiddenFilters = $(`input.table-filter[data-table=${ $(this.table).attr('data-table') }][type=hidden]`);
     this.hiddenFilters.each(function(i, filter) {
       $(filter).change(function(e) {
         self.handleSearch(self);
@@ -1093,9 +1095,9 @@ class MDCDataTable {
     }
 
     if ($(this.table).find('.mdc-data-table__header-cell--with-sort').length > 0) {
-      $(this.table).find('table').tablesorter({ 
-        selectorSort: '.mdc-data-table__header-cell--with-sort',
-      });
+      // $(this.table).find('table').tablesorter({ 
+      //   selectorSort: '.mdc-data-table__header-cell--with-sort',
+      // });
       $(this.table).find('.mdc-data-table__header-cell--with-sort').click(function(e) {
         self.handleSort(e.currentTarget);
       });
@@ -1103,6 +1105,7 @@ class MDCDataTable {
   }
 
   handleSort(button) {
+    console.log('handle sort')
     $(button).find('.mdc-icon').toggleClass('sort-up-icon sort-down-icon');
   }
 
@@ -1138,14 +1141,21 @@ class MDCDataTable {
   update(data) {
     let self = this;
 
+    if (data.length === 0) {
+      $('.mdc-data-table__header-cell--checkbox input')[0].mdc.checked = false;
+      $('.mdc-data-table__header-cell--checkbox input')[0].mdc.indeterminate = false;
+    } else if (data.length < this.table.mdc.content_.rows.length) {
+      $('.mdc-data-table__header-cell--checkbox input')[0].mdc.checked = false;
+      $('.mdc-data-table__header-cell--checkbox input')[0].mdc.indeterminate = true;
+    }
+
     $(this.table.mdc.content_.rows).each(function(i, row) {
       let rowId = $(row).attr('data-row-id');
       let check = data.indexOf(rowId) > -1;
       let input = $(self.table).find(`tr[data-row-id=${ rowId }]`).find('.mdc-checkbox input[type=checkbox]');
 
-      if (check != !!input.prop('checked')) {
-        input.prop('checked', !input.prop('checked'));
-        $(input).trigger('change');
+      if (check != input[0].mdc.checked) {
+        input[0].mdc.checked = !input[0].mdc.checked;
         $(row).toggleClass('mdc-data-table__row--selected');
       }
     });
